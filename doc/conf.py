@@ -45,7 +45,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Nanoind-data-analysis toolbox'
+project = u'NIMS toolbox'
 copyright = u'Copyright 2014 MERCIER David'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -181,7 +181,7 @@ html_theme = 'nature' # no option !
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'nanoind-data-analysis_matlabdoc'
+htmlhelp_basename = 'NIMS_matlabdoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -201,7 +201,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'nanoind-data-analysis_doc.tex', u'Nanoind-data-analysis Documentation',
+  ('index', 'NIMS_doc.tex', u'NIMS Documentation',
    u'Mercier D.', 'manual'),
 ]
 
@@ -231,7 +231,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-  ('index', 'nanoind-data-analysis_doc.tex', u'Nanoind-data-analysis Documentation',
+  ('index', 'NIMS_doc.tex', u'NIMS Documentation',
    u'Mercier D.', 'manual'),
 ]
 
@@ -245,7 +245,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'nanoind-data-analysis_doc.tex', u'Nanoind-data-analysis Documentation',
+  ('index', 'NIMS_doc.tex', u'NIMS Documentation',
    u'Mercier D.', 'manual'),
 ]
 
