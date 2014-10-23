@@ -6,5 +6,5 @@ function customized_menu(parent)
 help_menu = uimenu(parent, 'Label', 'Help_Toolbox');
 
 uimenu(help_menu, 'Label', 'HTML Documentation', ...
-    'Callback', 'gui = guidata(gcf); web(gui.config.doc_website,''-browser'')');
+    'Callback', 'gui = guidata(gcf); web(gui.config.url_help,''-browser'')');
 end
