@@ -5,7 +5,7 @@
 
 First of all, download the source code of the |matlab| toolbox.
 
-`Source code is hosted at Github. <https://github.com/DavidMercier/nanoind-data-analysis>`_
+`Source code is hosted at Github. <https://github.com/DavidMercier/NIMSNIMS>`_
 
 To have more details about the use of the toolbox, please have a look to :
 
