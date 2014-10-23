@@ -3,9 +3,6 @@ Copyright 2014 MERCIER David
 This Matlab toolbox / GUI (Graphical User Interface) has been developed to plot and to analyze
 (nano)indentation data (with conical indenters).
 
-If you don't have the YAML Matlab code, please download the source code here : http://code.google.com/p/yamlmatlab/
-Visit the official YAML website : http://www.yaml.org/
-
 First, unzip the downloaded file and follow the instructions :
 
 1) Update the YAML configuration file (in the YAML folder) and write in this file the properties
@@ -58,11 +55,8 @@ Format of the name of the YAML file : 'data_name / multi- or bilayer model / .ya
 
 Format of the name of the .png picture : 'data_name / multi- or bilayer model / .yaml.png'
 
+%% Links %%
 
-%% REFERENCES %%
+YAML Matlab code : http://code.google.com/p/yamlmatlab/
 
-More details about this toolbox, please visit the google code page : 
-https://code.google.com/p/nanoind-data-analysis/
-
-
-
+Official YAML website : http://www.yaml.org/
