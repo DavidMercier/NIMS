@@ -13,8 +13,8 @@ How to use the toolbox for indentation data analysis ?
 
 The NIMS toolbox has been developed to plot and to analyze (nano)indentation data (obtained with conical indenters) for bulk material or multilayer sample.
 
-With this toolbox, it is possible to :
-    * plot and correct nanoindentation data
+With this Matlab toolbox, it is possible to :
+    * plot and correct nanoindentation data;
     * calculate the coefficient of the power law fit of the load-displacement curve;
     * calculate the energy of the loading (area below the load-displacement curve);
     * calculate the Young's modulus and Hardness of bulk materials;
