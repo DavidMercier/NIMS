@@ -66,7 +66,7 @@ if ~isempty(scriptpath_multilayer_model)
     for ii = 1:length(t_f)
         k(ii) = wid/t_f(ii);
         n_elem_y(ii) = t_f(ii) / x_min_elem;
-        n_elem_x(ii) = round(n_elem_y(ii) * k(ii));
+        n_elem_x(ii) = round(n_elem_x_min);
     end
     
     % Definition of indentation displacement
@@ -78,6 +78,8 @@ if ~isempty(scriptpath_multilayer_model)
     py{end+1} = sprintf('# AUTHOR: %s', username_str);
     py{end+1} = sprintf('# DATE: %s', datestr(datenum(clock),'mmm.dd,yyyy HH:MM'));
     py{end+1} = sprintf('# GENERATED WITH: %s written by D. Mercier', strcat(gui.config.name_toolbox, '_', gui.config.version_toolbox));
+    py{end+1} = sprintf('# See https://github.com/DavidMercier/nanoind-data-analysis');
+    py{end+1} = sprintf('# or http://www.mathworks.fr/matlabcentral/fileexchange/43392-toolbox-to-analyze-nanoindentation-data');
     py{end+1} = sprintf('# Modelling of indentation experiments with a (sphero-)conical indenter performed on a multilayer system');
     py{end+1} = sprintf('# To run this procedure Python script, open Abaqus, then ==> File/Run Script');
     py{end+1} = sprintf('# Units: Displacement in nm, Young''s modulus in GPa ==> Load in nN.');
