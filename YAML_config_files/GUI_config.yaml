@@ -1,4 +1,4 @@
-# Copyright 2013 MERCIER David
+# Copyright 2014 MERCIER David
 # Do not remove Berkovich, Vickers and Conical indenters in Indenter_IDs
 # For user-defined indenters, name your indenters with the 4 first letters of the original indenter name
 # e.g. : for a Berkovich indenter : Berk_TB10161_110210

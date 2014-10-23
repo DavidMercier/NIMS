@@ -512,6 +512,9 @@ gui.handles.quit_GUI = uicontrol('Parent', gui.handles.MainWindows,...
     'BackgroundColor', [0.745 0.745 0.745],...
     'Callback', 'close(gcf);clear all');
 
+%% Help menu
+customized_menu(gcf);
+
 %% Set flags
 gui.flag.flag = 0;
 gui.flag.flag_data = 0;
