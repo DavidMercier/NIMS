@@ -7,7 +7,7 @@
 ..  |matlab| replace:: Matlab\ :sup:`TM` \
    
 NIMS |matlab| toolbox
-==================================
+=====================
 
 How to use the toolbox for indentation data analysis ?
 
