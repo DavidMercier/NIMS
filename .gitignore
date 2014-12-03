@@ -6,3 +6,9 @@
 
 # sphinx documentation builds
 doc/_build
+
+# sphinx documentation builds
+doc/_Papers
+
+# sphinx documentation builds
+doc/_Pictures
