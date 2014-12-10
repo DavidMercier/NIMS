@@ -5,7 +5,8 @@ This Matlab toolbox has been developed to plot and to analyze (nano)indentation 
 Please, have a look to the full documentation here: http://nims.readthedocs.org/en/latest/
 
 To get started with NIMS, clone the repository, then run Matlab, and cd into the folder containing this README file.
-Finally you can start the launcher by typing "GUI_Extraction_EP_properties_for_multilayer_sample" at the Matlab command prompt.
+
+You can start the launcher by typing "GUI_Extraction_EP_properties_for_multilayer_sample" at the Matlab command prompt.
 
 Features
 --------

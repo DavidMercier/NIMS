@@ -19,8 +19,8 @@ Links
 References
 ##########
 
-Material properties
--------------------
+Material and indenters properties
+---------------------------------
 
 * `Fischer-Cripps, A.C., "Nanoindentation 2nd ed." (2004) <http://link.springer.com/book/10.1007%2F978-1-4419-9872-9>`_
 

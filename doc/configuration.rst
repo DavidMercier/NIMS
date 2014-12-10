@@ -25,7 +25,7 @@ A YAML configuration file is given as an example in the `YAML folder <https://gi
    :scale: 50 %
    :align: center
    
-   *Main window of the toolbox.*
+   *Screenshot of a YAML configuration file.*
 
 Make a copy of this YAML configuration file in the `YAML folder <https://github.com/DavidMercier/nanoind-data-analysis/tree/master/YAML_config_files>`_
 

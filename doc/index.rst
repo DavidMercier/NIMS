@@ -9,17 +9,36 @@
 NIMS |matlab| toolbox
 =====================
 
-How to use the toolbox for indentation data analysis ?
-
 The NIMS toolbox has been developed to plot and to analyze (nano)indentation data (obtained with conical indenters) for bulk material or multilayer sample.
 
 With this Matlab toolbox, it is possible to :
     * plot and correct nanoindentation data;
     * calculate the coefficient of the power law fit of the load-displacement curve;
     * calculate the energy of the loading (area below the load-displacement curve);
-    * calculate the Young's modulus and Hardness of bulk materials;
-    * calculate the Young's modulus of thin films on a substrate (for a bilayer or a multilayer sample (--> 3 layers on a substrate));
-    * generate python script for FEM model with Abaqus 6.12 (cono-spherical indentation of multilayer sample).
+    * calculate the Young's modulus and hardness of bulk materials;
+    * calculate the Young's modulus of thin films on a substrate (for a bilayer or a multilayer sample (until 3 layers on a substrate));
+    * generate python script of axisymmetrical FEM model for use in Abaqus 6.12 (cono-spherical indentation of multilayer sample).
+	
+.. figure:: ./_pictures/download.png
+   :scale: 20 %
+   :align: left
+   :target: https://github.com/DavidMercier/NIMS
+
+`Source code is hosted at Github. <https://github.com/DavidMercier/NIMS>`_
+
+.. figure:: ./_pictures/normal_folder.png
+   :scale: 4 %
+   :align: left
+   :target: https://github.com/DavidMercier/NIMS/archive/master.zip
+   
+`Download source code as a .zip file <https://github.com/DavidMercier/NIMS/archive/master.zip>`_.
+
+.. figure:: ./_pictures/normal_folder.png
+   :scale: 4 %
+   :align: left
+   :target: https://media.readthedocs.org/pdf/nims/latest/nims.pdf
+   
+`Download the documentation as a pdf file. <https://media.readthedocs.org/pdf/nims/latest/nims.pdf>`_.
    
 .. figure:: ./_pictures/GUI_Main_Window_Efilm_curve.png
    :scale: 50 %
@@ -35,6 +54,7 @@ Contents
    
    getting_started
    configuration
+   models
    overview_of_the_toolbox
    examples
    links_ref
@@ -51,4 +71,4 @@ The author is grateful to V. Mandrillon of `CEA Grenoble <http://www.cea.fr/le-c
 
 Keywords
 ========
-|matlab| Toolbox; Graphical User Interface (GUI); Nanoindentation; Young's modulus; thin film; multilayer system; analytical model; finite element modelling
+|matlab| toolbox; nanoindentation; Young's modulus; hardness; thin film; multilayer system; analytical model; finite element modelling.
