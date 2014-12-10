@@ -24,7 +24,7 @@ With this Matlab toolbox, it is possible to :
    :align: left
    :target: https://github.com/DavidMercier/NIMS
 
-`Source code is hosted at Github. <https://github.com/DavidMercier/NIMS>`_
+`Source code is hosted at Github <https://github.com/DavidMercier/NIMS>`_.
 
 .. figure:: ./_pictures/normal_folder.png
    :scale: 4 %
@@ -38,7 +38,7 @@ With this Matlab toolbox, it is possible to :
    :align: left
    :target: https://media.readthedocs.org/pdf/nims/latest/nims.pdf
    
-`Download the documentation as a pdf file. <https://media.readthedocs.org/pdf/nims/latest/nims.pdf>`_.
+`Download the documentation as a pdf file <https://media.readthedocs.org/pdf/nims/latest/nims.pdf>`_.
    
 .. figure:: ./_pictures/GUI_Main_Window_Efilm_curve.png
    :scale: 50 %
@@ -71,4 +71,4 @@ The author is grateful to V. Mandrillon of `CEA Grenoble <http://www.cea.fr/le-c
 
 Keywords
 ========
-|matlab| toolbox; nanoindentation; Young's modulus; hardness; thin film; multilayer system; analytical model; finite element modelling.
+|matlab| toolbox; nanoindentation ; Young's modulus ; hardness ; thin film ; multilayer system ; analytical model ; python script ; finite element modelling.
