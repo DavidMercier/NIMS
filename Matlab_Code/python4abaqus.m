@@ -2,7 +2,7 @@
 function python4abaqus
 %% Function to generate a Python script for Abaqus (FEM model)
 
-A_get_param_GUI;
+get_param_GUI;
 gui = guidata(gcf); guidata(gcf);
 
 if gui.flag.flag_data ~= 0
@@ -10,9 +10,11 @@ if gui.flag.flag_data ~= 0
     PATHNAME = gui.data.pathname_data;
 else
     %scriptpath_multilayer_model = uigetdir(pwd, 'Pick a Directory to save FEM model');
-    [FILENAME, PATHNAME, FILTERINDEX] = uiputfile('*.py', 'Select a directory to save FEM model as a *.py file');
+    [FILENAME, PATHNAME, FILTERINDEX] = uiputfile(...
+        '*.py', 'Select a directory to save FEM model as a *.py file');
     if isequal(FILENAME, 0)
-        FILENAME = strcat(datestr(datenum(clock),'yyyy_mm_dd'), '_userdata_abaqus_fem_model');
+        FILENAME = strcat(datestr(datenum(clock),'yyyy_mm_dd'), ...
+            '_userdata_abaqus_fem_model');
     end
 end
 

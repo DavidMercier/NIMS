@@ -49,10 +49,16 @@ Correction factors and Correction of experimental data
 Bilayer models to extract Young's modulus of a thin film on a substrate (with conical indenters)
 ------------------------------------------------------------------------------------------------
 
+* `Bückle H., "VDI Berichte" (1961).`_
 * `Doerner M.F. and Nix W.D.,"A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
+* `Yu H. Y. et al., "The effect of substrate on the elastic properties of films determined by the indentation test - axisymmetric Boussinesq problem" (1990). <http://dx.doi.org/10.1016/0022-5096(90)90038-6>`_
 * `Gao H. et al., "Elastic contact versus indentation modeling of multi-layered materials" (1992). <http://dx.doi.org/10.1016/0020-7683(92)90004-D>`_
+* `Mencik. J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
+* `Chen X. et Vlassak J.J., "Numerical study on the measurement of thin film mechanical properties by means of nanoindentation" (2001). <http://dx.doi.org/10.1557/JMR.2001.0408>`_
 * `Perriot A. and Barthel E., "Elastic contact to a coated half-space: Effective elastic modulus and real penetration" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.2.600>`_
 * `Bec S. et al., "A simple guide to determine elastic properties of films on substrate from nanoindentation experiments" (2006). <http://dx.doi.org/10.1080/14786430600660856>`_
+* `Li H. et Vlassak J. J., "Determining the elastic modulus and hardness of an ultra-thin film on a substrate using nanoindentation" (2009). <http://dx.doi.org/10.1557/jmr.2009.0144>`_
+* `Sakai M., "Substrate-affected indentation contact parameters of elastoplastic coating/substrate composites" (2009). <http://dx.doi.org/10.1557/jmr.2009.0102>`_
 * `Hay J. and Crawford B., "Measuring substrate-independent modulus of thin films" (2011). <http://dx.doi.org/10.1557/jmr.2011.8>`_
 
 Multilayer model to extract Young's moduli of thin films on a multilayer sample (with conical indenters)
@@ -60,3 +66,4 @@ Multilayer model to extract Young's moduli of thin films on a multilayer sample 
 
 * `Pailler-Mattei C. et al., "In vivo measurements of the elastic mechanical properties of human skin by indentation tests" (2008). <http://dx.doi.org/10.1016/j.medengphy.2007.06.011>`_
 * `Mercier D. et al., "Mesure de module d'Young d'un film mince à partir de mesures expérimentales de nanoindentation réalisées sur des systèmes multicouches" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
+* `Constantinescu A. et al., "Symbolic and numerical solution of the axisymmetric indentation problem for a multilayered elastic coating" (2013). <http://dx.doi.org/10.1016/j.ijsolstr.2013.04.017>`_

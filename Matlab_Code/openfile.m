@@ -192,10 +192,10 @@ else
     gui.flag.flag_data = 1;
     guidata(gcf, gui);
     
-    A_refresh_indenters_GUI;
+    refresh_indenters_GUI;
     gui = guidata(gcf); guidata(gcf, gui);
     
-    A_get_and_plot;
+    get_and_plot;
     gui = guidata(gcf); guidata(gcf, gui);
     
 end

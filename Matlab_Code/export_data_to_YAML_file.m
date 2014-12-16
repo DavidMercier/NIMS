@@ -16,7 +16,11 @@ else
     else
         gui.results.username = getenv('USERNAME');
     end
-    gui.results.date             = strcat(datestr(datenum(clock), 'yyyy-mm-dd'), '_', datestr(datenum(clock), 'HH'), 'h-', datestr(datenum(clock), 'MM'), 'min-', datestr(datenum(clock), 'SS'), 's');
+    gui.results.date             = strcat(...
+        datestr(datenum(clock), 'yyyy-mm-dd'), ...
+        '_', datestr(datenum(clock), 'HH'), 'h-', ...
+        datestr(datenum(clock), 'MM'), 'min-', ...
+        datestr(datenum(clock), 'SS'), 's');
     gui.results.data_filename    = gui.data.filename_data;
     gui.results.data_pathname    = gui.data.pathname_data;
     gui.results.indenter         = gui.data.indenter_id_str;
@@ -45,10 +49,12 @@ else
     
     if get(gui.handles.cb_corr_thickness_GUI, 'Value') == 1
         param2_corr_model_str = 'Correction of the effective thickness applied. See in Mencik et al. (2003)';
-        gui.results.correction_multi_bilayer_model_elastic = param2_corr_model_str;
+        gui.results.correction_multi_bilayer_model_elastic = ...
+            param2_corr_model_str;
     else
         param2_corr_model_str = 'No correction of the effective thickness';
-        gui.results.correction_multi_bilayer_model_elastic = param2_corr_model_str;
+        gui.results.correction_multi_bilayer_model_elastic = ...
+            param2_corr_model_str;
     end
     
     if get(gui.handles.cb_CSM_corr_GUI, 'Value')==1
@@ -59,8 +65,10 @@ else
     
     %% Save results for the sample
     if isfield(gui.results, 'Esample_red')
-        gui.results.mean_reduced_young_modulus_sample_GPa = mean(gui.results.Esample_red);
-        gui.results.mean_hardness_sample_GPa              = (round(mean(gui.results.H.*1000)./10)./100);
+        gui.results.mean_reduced_young_modulus_sample_GPa = ...
+            mean(gui.results.Esample_red);
+        gui.results.mean_hardness_sample_GPa              = ...
+            round(mean(gui.results.H.*1000)./10)./100;
     end
     
     %% Save thin films and substrate properties & results
@@ -81,7 +89,7 @@ else
         gui.results.thickness_film0_nm           = gui.data.t0;
         
     elseif gui.variables.num_thinfilm == 3
-        gui.results.Young_modulus_film0_GPa      = str2double (get(gui.handles.value_youngfilm0_GUI, 'String'));
+        gui.results.Young_modulus_film0_GPa      = str2double(get(gui.handles.value_youngfilm0_GUI, 'String'));
         gui.results.Poisson_coeff_film0          = gui.data.nuf0;
         gui.results.thickness_film0_nm           = gui.data.t0;
         gui.results.mean_Young_modulus_film1_GPa = gui.results.Ef_sol_fit;
@@ -90,7 +98,7 @@ else
         gui.results.thickness_film1_nm           = gui.data.t1;
         
     elseif gui.variables.num_thinfilm == 4
-        gui.results.Young_modulus_film0_GPa      = str2double (get(gui.handles.value_youngfilm0_GUI, 'String'));
+        gui.results.Young_modulus_film0_GPa      = str2double(get(gui.handles.value_youngfilm0_GUI, 'String'));
         gui.results.Poisson_coeff_film0          = gui.data.nuf0;
         gui.results.thickness_film0_nm           = gui.data.t0;
         gui.results.Young_modulus_film1_GPa      = str2double (get(gui.handles.value_youngfilm1_GUI, 'String'));
