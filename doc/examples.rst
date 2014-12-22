@@ -19,11 +19,11 @@ Examples
     - Data for a bulk Silicon sample obtained by Berkovich indentation with CSM mode (amplitude 2nm).
     - Data obtained by Berkovich indentation with CSM mode (amplitude 2nm) (no standard deviation).
 
-* 1films_SiO2_Si_CSM-2nm.xls
+* 1film_SiO2_Si_CSM-2nm.xls
     - Data for a thin film of thermal oxide of Silicon (500nm) on a bulk Silicon sample.
     - Data obtained by Berkovich indentation with CSM mode (amplitude 2nm).
 
-* 1films_SiO2_Si_CSM-2nm_noCSM.xls
+* 1film_SiO2_Si_CSM-2nm_noCSM.xls
     - Data for a thin film of thermal oxide of Silicon (500nm) on a bulk Silicon sample.
     - Data obtained by Berkovich indentation with CSM mode (amplitude 2nm) (no standard deviation).
 

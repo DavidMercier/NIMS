@@ -53,7 +53,7 @@ Model of Oliver and Pharr [#OliverPharr_1992]_ :
 				
 where :math:`\epsilon` is a constant function of the indenter's geometry (0.72 for the Berkovich indenter and 0.75 for paraboloids of revolution).
 				
-Model of Loubet et al. [#Bec_1996]_ ,[#Hochstetter_1999]_ :
+Model of Loubet et al. [#Bec_1996]_ , [#Hochstetter_1999]_ :
 				
 		.. math:: h_\text{c} = \alpha * (h_\text{t} - F/S)
 				:label: loubet_model
@@ -74,13 +74,13 @@ Elastic properties of a thin film on a multilayer system
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. figure:: ./_pictures/multilayer_sample_elastic_model.png
-   :scale: 40 %
+   :scale: 30 %
    :align: center
    
    *Figure 3 : Schematic of elastic multilayer model.*
    
 .. figure:: ./_pictures/multilayer_sample_methodology.png
-   :scale: 40 %
+   :scale: 30 %
    :align: center
    
    *Figure 4 : Experimental process to apply for elastic multilayer model.*
