@@ -40,28 +40,18 @@ if gui.variables.val0 == 1 % Berkovich indenter
     gui.data.theta    = 65.3;   % Semi-angle from the apex (in degrees)
     gui.data.theta_eq = 70.32;  % Equivalent cone angle (in degrees)
     
-    if gui.variables.param_corr == 1
+    if gui.variables.King_correction == 1
         gui.data.beta  = 1.167; % 1.034 whitout the contribution of 2/(pi^0.5). See in Pharr et al. (1992).
-        gui.data.gamma = 1;
-        
-    elseif gui.variables.param_corr == 2
-        gui.data.beta  = 1;
-        % gamma = 1+((1-2*nuf)/(4*(1-nuf)*tand(gui.data.theta_eq))); 1st version of gamma
+    end
+    
+    if gui.variables.Hay_correction == 1
+        % 1st version of gamma
+        % gui.data.gamma = 1+((1-2*nuf)/(4*(1-nuf)*tand(gui.data.theta_eq)));
         gui.data.gamma = pi * (((pi/4) + ...
             (0.15483073.*cotd(gui.data.theta_eq) * ...
             ((1-2*gui.data.nuf)/(4*(1-gui.data.nuf))))) / ...
             ((pi/2)-(0.83119312.*cotd(gui.data.theta_eq) * ...
             ((1-2*gui.data.nuf)/(4*(1-gui.data.nuf)))))^2);
-        
-    elseif gui.variables.param_corr == 3
-        gui.data.beta  = 1.167;
-        % gamma = 1+((1-2*gui.data.nuf)/(4*(1-gui.data.nuf)*tand(gui.data.theta_eq))); 1st version of gamma
-        gui.data.gamma = pi * (((pi/4) + ...
-            (0.15483073.*cotd(gui.data.theta_eq) * ...
-            ((1-2*gui.data.nuf)/(4*(1-gui.data.nuf))))) / ...
-            ((pi/2)-(0.83119312.*cotd(gui.data.theta_eq) * ...
-            ((1-2*gui.data.nuf)/(4*(1-gui.data.nuf)))))^2);
-        
     end
     
 elseif gui.variables.val0 == 2; % Vickers indenter
@@ -70,26 +60,16 @@ elseif gui.variables.val0 == 2; % Vickers indenter
     gui.data.theta    = 68;  % Semi-angle from the apex (in degrees)
     gui.data.theta_eq = 70.2996;  % Equivalent cone angle (in degrees)
     
-    if gui.variables.param_corr == 1
+    if gui.variables.King_correction == 1
         gui.data.beta  = 1.142; % 1.012 whitout the contribution of 2/(pi^0.5). See in Pharr et al. (1992).
-        gui.data.gamma = 1;
-        
-    elseif gui.variables.param_corr == 2
-        gui.data.beta  = 1;
+    end
+    
+    if gui.variables.Hay_correction == 1
         gui.data.gamma = pi*(((pi/4) + ...
             (0.15483073.*cotd(gui.data.theta_eq) * ...
             ((1-2*gui.data.nuf)/(4*(1-gui.data.nuf))))) / ...
             ((pi/2)-(0.83119312.*cotd(gui.data.theta_eq) * ...
             ((1-2*gui.data.nuf)/(4*(1-gui.data.nuf)))))^2);
-        
-    elseif gui.variables.param_corr == 3
-        gui.data.beta  = 1.142;
-        gui.data.gamma = pi*(((pi/4) + ...
-            (0.15483073.*cotd(gui.data.theta_eq) * ...
-            ((1-2*gui.data.nuf)/(4*(1-gui.data.nuf))))) / ...
-            ((pi/2)-(0.83119312.*cotd(gui.data.theta_eq) * ...
-            ((1-2*gui.data.nuf)/(4*(1-gui.data.nuf)))))^2);
-        
     end
     
 elseif gui.variables.val0 == 3  % Conical indenter
@@ -97,26 +77,16 @@ elseif gui.variables.val0 == 3  % Conical indenter
     gui.data.h_tip    = gui.data.h_Coni;
     gui.data.theta_eq = gui.data.Ang;
     
-    if gui.variables.param_corr == 1
+    if gui.variables.King_correction == 1
         gui.data.beta  = 1.129; % 1.000 whitout the contribution of 2/(pi^0.5). See in Pharr et al. (1992).
-        gui.data.gamma = 1;
-        
-    elseif gui.variables.param_corr == 2
-        gui.data.beta = 1;
+    end
+    
+    if gui.variables.Hay_correction == 1
         gui.data.gamma = pi * (((pi/4) + ...
             (0.15483073.*cotd(gui.data.theta_eq) * ...
             ((1-2*gui.data.nuf)/(4*(1-gui.data.nuf))))) / ...
             ((pi/2)-(0.83119312.*cotd(gui.data.theta_eq) * ...
             ((1-2*gui.data.nuf)/(4*(1-gui.data.nuf)))))^2);
-        
-    elseif gui.variables.param_corr == 3
-        gui.data.beta = 1.129;
-        gui.data.gamma = pi * (((pi/4) + ...
-            (0.15483073.*cotd(gui.data.theta_eq) * ...
-            ((1-2*gui.data.nuf)/(4*(1-gui.data.nuf))))) / ...
-            ((pi/2)-(0.83119312.*cotd(gui.data.theta_eq) * ...
-            ((1-2*gui.data.nuf)/(4*(1-gui.data.nuf)))))^2);
-        
     end
 end
 

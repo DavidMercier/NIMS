@@ -31,8 +31,11 @@ Material and indenters properties
 * `Loubet J.L. et al., "Vickers indentation curves of elastoplastic materials" (1986). <http://www.astm.org/DIGITAL_LIBRARY/STP/PAGES/STP32952S.htm>`_
 * `Oliver W.C. and Pharr G.M., "An improved technique for determining hardness and elastic modulus using load and displacement sensing indentation experiments" (1992). <http://dx.doi.org/10.1557/JMR.1992.1564>`_
 * `Pharr G.M. et al., "On the generality of the relationship among contact stiffness, contact area, and elastic modulus during indentation" (1992). <http://dx.doi.org/10.1557/JMR.1992.0613>`_
+* `Loubet J. L. et al., "Nanoindentation with a surface force apparatus.", (1993). <http://dx.doi.org/10.1007/978-94-011-1765-4>`_
 * `Hainsworth S.V. et al., "Analysis of nanoindentation load-displacement loading curves" (1996). <http://dx.doi.org/10.1557/JMR.1996.0250>`_
+* `Bec S. et al., "Improvements in the indentation method with a surface force apparatus" (1996). <http://dx.doi.org/10.1080/01418619608239707>`_
 * `Mencik J., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
+* `Hochstetter G. et al., "Strain-rate effects on hardness of glassy polymers in the nanoscale range. Comparison between quasi-static and continuous stiffness measurements" (1999). <http://dx.doi.org/10.1080/00222349908248131>`_
 * `Oliver W.C. and Pharr G.M., "Measurement of hardness and elastic modulus by instrumented indentation: Advances in understanding and refinements to methodology" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.1.3>`_
 * `Guillonneau G. et al., "Determination of mechanical properties by nanoindentation independently of indentation depth measurement" (2012). <http://dx.doi.org/10.1557/jmr.2012.261>`_
 

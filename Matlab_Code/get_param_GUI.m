@@ -57,11 +57,12 @@ gui.data.C5 = str2double(get(gui.handles.value_C5_GUI, 'String'));
 gui.data.Ang = str2double(get(gui.handles.value_indentercon_ang_prop_GUI, 'String')); % µm
 
 % Model properties
-gui.variables.num_thinfilm = get(gui.handles.value_numthinfilm_GUI,     'Value');
-gui.variables.param_corr   = get(gui.handles.value_corrparam_GUI,       'Value');
-gui.variables.val1         = get(gui.handles.value_modeldisp_GUI,       'Value');
-gui.variables.val2         = get(gui.handles.value_bilayermodel_GUI,    'Value');
-gui.variables.val2_mm      = get(gui.handles.value_multilayermodel_GUI, 'Value');
+gui.variables.num_thinfilm    = get(gui.handles.value_numthinfilm_GUI,     'Value');
+gui.variables.King_correction = get(gui.handles.cb_corr_King_GUI,          'Value');
+gui.variables.Hay_correction  = get(gui.handles.cb_corr_Hay_GUI,           'Value');
+gui.variables.val1            = get(gui.handles.value_modeldisp_GUI,       'Value');
+gui.variables.val2            = get(gui.handles.value_bilayermodel_GUI,    'Value');
+gui.variables.val2_mm         = get(gui.handles.value_multilayermodel_GUI, 'Value');
 
 % Plot properties
 gui.variables.x_axis = get(gui.handles.value_param2plotinxaxis_GUI, 'Value');
