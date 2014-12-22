@@ -49,7 +49,7 @@ Correction factors and Correction of experimental data
 Bilayer models to extract Young's modulus of a thin film on a substrate (with conical indenters)
 ------------------------------------------------------------------------------------------------
 
-* `Bückle H., "VDI Berichte" (1961).`_
+* Bückle H., "VDI Berichte" (1961).
 * `Doerner M.F. and Nix W.D.,"A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
 * `Yu H. Y. et al., "The effect of substrate on the elastic properties of films determined by the indentation test - axisymmetric Boussinesq problem" (1990). <http://dx.doi.org/10.1016/0022-5096(90)90038-6>`_
 * `Gao H. et al., "Elastic contact versus indentation modeling of multi-layered materials" (1992). <http://dx.doi.org/10.1016/0020-7683(92)90004-D>`_
