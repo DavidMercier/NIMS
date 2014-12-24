@@ -17,26 +17,26 @@ N.B. : It is advised to use average results from at least 10 indentation tests t
 Examples
 ########
 
-* 0film_Si_CSM-2nm_noCSM.txt
-    - Data for a bulk Silicon sample obtained by Berkovich indentation with CSM mode (amplitude 2nm).
+* `0film_Si_CSM-2nm_noSD.txt <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/0film_Si_CSM-2nm_noSD.txt>`_
+    - Data for a bulk Silicon sample obtained by Berkovich indentation with no CSM mode (amplitude 2nm).
     - Data obtained by Berkovich indentation with CSM mode (amplitude 2nm) (no standard deviation).
 
-* 1film_SiO2_Si_CSM-2nm.xls
+* `1film_SiO2_Si_CSM-2nm.xls <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/1film_SiO2_Si_CSM-2nm.xls>`_
     - Data for a thin film of Silicon thermal oxide (500nm) on a bulk Silicon sample.
     - Data obtained by Berkovich indentation with CSM mode (amplitude 2nm).
 
-* 1film_SiO2_Si_CSM-2nm_noCSM.xls
+* `1film_SiO2_Si_CSM-2nm_noSD.xls <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/1film_SiO2_Si_CSM-2nm_noSD.xls>`_
     - Data for a thin film of Silicon thermal oxide (500nm) on a bulk Silicon sample.
     - Data obtained by Berkovich indentation with CSM mode (amplitude 2nm) (no standard deviation).
 
-* 2films_Al_SiO2_Si_CSM-2nm.xls
+* `2films_Al_SiO2_Si_CSM-2nm.xls <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/2films_Al_SiO2_Si_CSM-2nm.xls>`_
     - Data for a thin film of PVD Aluminum (500nm) deposited on a bulk Silicon sample with a Silicon thermal oxide (500nm).
     - Data obtained by Berkovich indentation with CSM mode (amplitude 2nm).
 
-* 3films_Au-Ti-SiO2-Si_CSM-1nm.txt
+* `3films_Au-Ti-SiO2-Si_CSM-1nm.txt <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/3films_Au-Ti-SiO2-Si_CSM-1nm.txt>`_
     - Data for a thin film of PVD Gold (500nm) deposited on thin film of PVD Titanium (500nm) on a bulk Silicon sample with a Silicon thermal oxide (500nm).
-    - Data obtained by Berkovich indentation with CSM mode (amplitude 2nm).
+    - Data obtained by Berkovich indentation with CSM mode (amplitude 1nm).
 
-* 3films_Au-Ti-SiO2-Si_CSM-1nm.xls
+* `3films_Au-Ti-SiO2-Si_CSM-1nm.xls <hhttps://github.com/DavidMercier/NIMS/blob/master/Data_indentation/3films_Au-Ti-SiO2-Si_CSM-1nm.xls>`_
     - Data for a thin film of PVD Gold (500nm) deposited on thin film of PVD Titanium (500nm) on a bulk Silicon sample with a Silicon thermal oxide (500nm).
-    - Data obtained by Berkovich indentation with CSM mode (amplitude 2nm).
+    - Data obtained by Berkovich indentation with CSM mode (amplitude 1nm).

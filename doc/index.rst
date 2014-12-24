@@ -62,7 +62,7 @@ Contents
 Contact
 =======
 
-:Authors: `David Mercier <david9684@gmail.com>`_ [1]
+:Author: `David Mercier <david9684@gmail.com>`_ [1]
 
 [1] `Max-Planck-Institut für Eisenforschung, 40237 Düsseldorf, Germany <http://www.mpie.de/>`_
 
