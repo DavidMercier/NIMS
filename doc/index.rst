@@ -61,13 +61,14 @@ Contents
    
 Contact
 =======
-:Author: `David Mercier <david9684@gmail.com>`_ [1]
+
+:Authors: `David Mercier <david9684@gmail.com>`_ [1]
 
 [1] `Max-Planck-Institut für Eisenforschung, 40237 Düsseldorf, Germany <http://www.mpie.de/>`_
 
 Acknowledgements
 ================
-The author is grateful to V. Mandrillon of `CEA Grenoble <http://www.cea.fr/le-cea/les-centres-cea/grenoble>`_.
+The author is grateful to V. Mandrillon from `CEA Grenoble <http://www.cea.fr/le-cea/les-centres-cea/grenoble>`_ and to M. Verdier from `SIMaP <http://simap.grenoble-inp.fr/>`_
 
 Keywords
 ========
