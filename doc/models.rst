@@ -70,8 +70,36 @@ Elastic properties of bulk material
 Elastic properties of a thin film on a substrate
 +++++++++++++++++++++++++++++++++++++++++++++++++
 
+
+			
+			
+
+Doerner & Nix (1986) modified by King (1987)
+********************************************
+
+	.. math:: E_\text{m}^{'} = (((1/E_\text{f}^{'}) * (1-exp(k_\text{DN}))) + ((1/E_\text{s}^{'})*(exp(k_\text{DN}))))^{-1}
+			:label: doerner_nix
+
+Gao et al. (1992)
+*****************
+
+Mencik et al. (linear model) (1997)
+***********************************
+
+Perriot et al. (2003)
+*********************
+
+Bec et al. (2006)
+*****************
+
+Hay et al. (2011)
+*****************
+
 Elastic properties of a thin film on a multilayer system
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Mercier et al. (2010)
+*********************
 
 .. figure:: ./_pictures/multilayer_sample_elastic_model.png
    :scale: 30 %
