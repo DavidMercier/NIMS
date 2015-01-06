@@ -55,7 +55,6 @@ Contents
    getting_started
    configuration
    models
-   overview_of_the_toolbox
    examples
    links_ref
    
