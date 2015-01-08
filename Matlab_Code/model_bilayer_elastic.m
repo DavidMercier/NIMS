@@ -122,7 +122,7 @@ if gui.variables.val2 ~= 1
         
         %% Calculation of Ef with elastic bilayer models and Esample_red
     elseif gui.variables.y_axis == 4
-        x       = (t_corr)./ac;
+        x       = (gui.results.t_corr)./gui.results.ac;
         gui.data.phigao1 = (2/pi).*atan(x)+(x./pi).*log((1+(x).^2)./(x).^2); % Hay et al. (2011)
         gui.data.nuc     = 1-(((1-gui.data.nus)*(1-gui.data.nuf))./(1-(1-gui.data.phigao1)*gui.data.nuf-(gui.data.phigao1*gui.data.nus))); % Hay et al. (2011) - Poisson's coefficient of the composite (film + substrate)
         gui.data.phigao0 = (2.*atan(x)./pi) + ((1./(2.*pi.*(1-gui.data.nuc))).* (((1-2*gui.data.nuc).*x.*log(1+(1./x).^2)) - (x./(1+(x).^2))));
