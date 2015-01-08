@@ -119,11 +119,11 @@ elseif gui.variables.num_thinfilm == 2
     
     if gui.variables.y_axis == 3 && gui.variables.val2 ~= 4
         set(gui.handles.value_youngfilm0_GUI, 'String', round(gui.results.Ef_sol_fit));
-        title(['Mean Young''s modulus of the film (when h < t) = ', num2str(round(gui.results.Ef_sol_fit)), 'GPa'], 'FontSize', 18);
+        title(['Mean Young''s modulus of the film (when h < t) = ', num2str(round(gui.results.Ef_sol_fit(1))), 'GPa'], 'FontSize', 18);
         
     elseif gui.variables.y_axis == 3 && gui.variables.val2 == 4
         set(gui.handles.value_youngfilm0_GUI, 'String', round(gui.results.Ef_sol_fit(1)));
-        title(['Mean Young''s modulus of the film (when h < t) = ', num2str(round(gui.results.Ef_sol_fit(1))), 'GPa',' / n(Pierrot-et_al.) = ', num2str(gui.results.Ef_red_solfit(2))], 'FontSize', 18);
+        title(['Mean Young''s modulus of the film (when h < t) = ', num2str(round(gui.results.Ef_sol_fit(1))), 'GPa',' / n(Perriot et al.) = ', num2str(gui.results.Ef_red_solfit(2))], 'FontSize', 18);
         
     elseif gui.variables.y_axis == 4 && gui.variables.val2 ~= 4
         set(gui.handles.value_youngfilm0_GUI, 'String', round(gui.results.Ef_sol));
@@ -131,7 +131,7 @@ elseif gui.variables.num_thinfilm == 2
         
     elseif gui.variables.y_axis == 4 && gui.variables.val2 == 4
         set(gui.handles.value_youngfilm0_GUI, 'String', round(gui.results.Ef_sol));
-        title(['Mean Young''s modulus of the film (when h < t) = ', num2str(round(gui.results.Ef_sol)), 'GPa', ' / n(Pierrot-et_al.) = ', num2str(gui.results.Ef_red_solfit(2))], 'FontSize', 18);
+        title(['Mean Young''s modulus of the film (when h < t) = ', num2str(round(gui.results.Ef_sol)), 'GPa', ' / n(Perriot et al.) = ', num2str(gui.results.Ef_red_solfit(2))], 'FontSize', 18);
         
     end
     

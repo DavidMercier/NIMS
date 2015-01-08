@@ -137,6 +137,7 @@ if gui.variables.val2 ~= 1
             
         elseif gui.variables.val2 == 4 % Perriot et al. (2003)
             model_perriot_barthel;
+            gui = guidata(gcf); guidata(gcf, gui);
             
         elseif gui.variables.val2 == 5 % Bec et al. (2006)
             gui.results.Ef_red = 1e-9 * ...
