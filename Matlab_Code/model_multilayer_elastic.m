@@ -4,7 +4,7 @@ function model_multilayer_elastic
 gui = guidata(gcf);
 
 %% Refreshing the GUI
-if (gui.variables.y_axis ~= 3 && gui.variables.y_axis ~= 4)
+if (gui.variables.y_axis ~= 4 && gui.variables.y_axis ~= 5)
     set(gui.handles.title_bilayermodel_GUI,    'Visible', 'off');
     set(gui.handles.value_bilayermodel_GUI,    'Visible', 'off');
     set(gui.handles.cb_corr_thickness_GUI,     'Visible', 'off');

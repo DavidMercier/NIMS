@@ -9,7 +9,7 @@ gui.results.t_corr = 0;
 guidata(gcf, gui);
 
 %% Refreshing the GUI
-if (gui.variables.y_axis ~= 3 && gui.variables.y_axis ~= 4)
+if (gui.variables.y_axis ~= 4 && gui.variables.y_axis ~= 5)
     set(gui.handles.value_bilayermodel_GUI,   'Value', 1);
     set(gui.handles.value_multilayermodel_GUI,'Value', 1);
     set(gui.handles.cb_corr_thickness_GUI,    'Value', 0);
@@ -42,7 +42,7 @@ guidata(gcf, gui);
 
 %% Optimization of Young's modulus of the thin film
 if gui.variables.val2 ~= 1
-    if gui.variables.y_axis == 3
+    if gui.variables.y_axis == 4
         x = gui.results.t_corr./gui.results.ac;
         gui.data.phigao1 = (2/pi).*atan(x)+(x./pi).*log((1+(x).^2)./(x).^2); % Hay et al. (2011)
         gui.data.nuc     = 1-(((1-gui.data.nus)*(1-gui.data.nuf))./(1-(1-gui.data.phigao1)*gui.data.nuf-(gui.data.phigao1*gui.data.nus))); % Hay et al. (2011)  - Poisson's coefficient of the composite (film + substrate)
@@ -82,24 +82,35 @@ if gui.variables.val2 ~= 1
             model_mencik_linear;
             gui = guidata(gcf); guidata(gcf, gui);
             
+        elseif gui.variables.val2 == 8 % Mencik et al. (exponential model) (1997)
+            model_mencik_exponential;
+            gui = guidata(gcf); guidata(gcf, gui);
+            
         end
         
         if gui.variables.val2 < 6
             try
-            % Make a starting guess at the solution (Ef in GPa)
-            gui.results.Ef_red_sol0 = str2double(get(...
-                gui.handles.value_youngfilm1_GUI, 'String'));
-            
-            OPTIONS = optimset('lsqcurvefit');
-            OPTIONS = optimset(OPTIONS, 'TolFun',  1e-20);
-            OPTIONS = optimset(OPTIONS, 'TolX',    1e-20);
-            OPTIONS = optimset(OPTIONS, 'MaxIter', 10000);
-            [gui.results.Ef_red_solfit, gui.results.resnorm, gui.results.residual, gui.results.exitflag, gui.results.output, gui.results.lambda, gui.results.jacobian] =...
-                lsqcurvefit(bilayer_model, gui.results.Ef_red_sol0, x, gui.results.Esample_red,0, 1000, OPTIONS);
-            
-            gui.results.Ef_sol_fit = ...
-                gui.results.Ef_red_solfit * (1-gui.data.nuf^2);
-            
+                % Make a starting guess at the solution (Ef in GPa)
+                gui.results.Ef_red_sol0 = str2double(get(...
+                    gui.handles.value_youngfilm1_GUI, 'String'));
+                
+                OPTIONS = optimset('lsqcurvefit');
+                OPTIONS = optimset(OPTIONS, 'TolFun',  1e-20);
+                OPTIONS = optimset(OPTIONS, 'TolX',    1e-20);
+                OPTIONS = optimset(OPTIONS, 'MaxIter', 10000);
+                [gui.results.Ef_red_solfit, ...
+                    gui.results.resnorm, ...
+                    gui.results.residual, ...
+                    gui.results.exitflag, ...
+                    gui.results.output, ...
+                    gui.results.lambda, ...
+                    gui.results.jacobian] =...
+                    lsqcurvefit(bilayer_model, gui.results.Ef_red_sol0, x, ...
+                    gui.results.Esample_red,0, 1000, OPTIONS);
+                
+                gui.results.Ef_sol_fit = ...
+                    gui.results.Ef_red_solfit * (1-gui.data.nuf^2);
+                
             catch
                 commandwindow;
                 gui.results.Ef_sol_fit = 0;
@@ -112,11 +123,11 @@ if gui.variables.val2 ~= 1
             elseif gui.variables.val2 == 3 %Gao et al. (1992)
                 gui.results.Em_red = 1e-9 * ((((1e9*gui.results.Ef_red_solfit) - gui.data.Es_red) .* gui.data.phigao0) + gui.data.Es_red);
                 
-            elseif gui.variables.val2 == 5 % Bec et al. (2006)
+            elseif gui.variables.val2 == 4 % Bec et al. (2006)
                 gui.results.Em_red = 1e-9 * (((2.*gui.results.ac)./(1+2.*(gui.results.t_corr)./(pi.*gui.results.ac))) .* ...
                     ((gui.results.t_corr./(pi.*gui.results.ac.^2.*(1e9*gui.results.Ef_red_solfit)) + (1./(2.*gui.results.ac*gui.data.Es_red))))).^-1;
                 
-            elseif gui.variables.val2 == 6 % Hay et al. (2011)
+            elseif gui.variables.val2 == 5 % Hay et al. (2011)
                 gui.results.Em_red =((1e-9 * ((2.*(1+gui.data.nuc)))./(((1-gui.data.phigao0) .* (1./((gui.data.Es./(2.*(1+gui.data.nus)))))) + ...
                     (gui.data.phigao0.*(1./(1e9*(gui.results.Ef_red_solfit.*(1-gui.data.nuf.^2))./(2.*(1+gui.data.nuf))))))))./(1-gui.data.nuc.^2);
                 
@@ -126,7 +137,7 @@ if gui.variables.val2 ~= 1
         end
         
         %% Calculation of Ef with elastic bilayer models and Esample_red
-    elseif gui.variables.y_axis == 4
+    elseif gui.variables.y_axis == 5
         x = (gui.results.t_corr)./gui.results.ac;
         gui.data.phigao1 = (2/pi).*atan(x)+(x./pi).*log((1+(x).^2)./(x).^2); % Hay et al. (2011)
         gui.data.nuc     = 1-(((1-gui.data.nus)*(1-gui.data.nuf))./(1-(1-gui.data.phigao1)*gui.data.nuf-(gui.data.phigao1*gui.data.nus))); % Hay et al. (2011) - Poisson's coefficient of the composite (film + substrate)
@@ -167,13 +178,19 @@ if gui.variables.val2 ~= 1
         elseif gui.variables.val2 == 7 % Mencik et al. (linear model) (1997)
             model_mencik_linear;
             gui = guidata(gcf); guidata(gcf, gui);
+            
+        elseif gui.variables.val2 == 8 % Mencik et al. (exponential model) (1997)
+            model_mencik_exponential;
+            gui = guidata(gcf); guidata(gcf, gui);
+            
         end
         gui.results.Ef = gui.results.Ef_red.*(1 - gui.data.nuf^2);
         
     end
     
 elseif gui.variables.val2 == 1 || gui.variables.y_axis == 5 || ...
-        gui.variables.val5 == 1 || gui.variables.y_axis == 2 % No Bilayer Model
+        gui.variables.val5 == 1 || gui.variables.y_axis == 2 || ...
+        gui.variables.y_axis == 3 % No Bilayer Model
     
     % Preallocation
     gui.results.Ef     = NaN(length(gui.data.h), 1);
