@@ -21,7 +21,7 @@ Author
 ------
 Written by D. Mercier [1].
 
-[1] Max-Planck-Institut für Eisenforschung, 40237 Düsseldorf, Germany
+[1] Max-Planck-Institut für Eisenforschung, 40237 Düsseldorf, Germany (http://www.mpie.de/)
 
 Reference paper
 ----------------
