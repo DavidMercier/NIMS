@@ -6,11 +6,11 @@
 Links
 #####
 
-* `Matlab GUI. <http://www.yaml.org/>`_
+* `Matlab GUI. <http://www.mathworks.com/discovery/matlab-gui.html>`_
 
 * `Coding GUI behavior. <http://www.mathworks.fr/fr/help/matlab/code-to-run-the-gui.html?searchHighlight=gui>`_
 
-* `Visit the YAML website for more informations. <http://www.mathworks.com/discovery/matlab-gui.html>`_
+* `Visit the YAML website for more informations. <http://www.yaml.org/>`_
 
 * `Visit the YAML code for Matlab. <http://code.google.com/p/yamlmatlab/>`_
 

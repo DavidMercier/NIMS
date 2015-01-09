@@ -1,6 +1,5 @@
 NIMS
 =====
-
 This Matlab toolbox has been developed to plot and to analyze (nano)indentation data (with conical indenters).
 Please, have a look to the full documentation here: http://nims.readthedocs.org/en/latest/
 
@@ -32,7 +31,9 @@ http://www.mattech-journal.org/articles/mattech/abs/2011/02/mt110025/mt110025.ht
 
 Acknowledgements
 ----------------
-The author is grateful to V. Mandrillon of CEA Grenoble.
+The author is grateful to V. Mandrillon from CEA Grenoble and to M. Verdier from SIMaP.
+CEA: http://www.cea.fr/le-cea/les-centres-cea/grenoble
+SIMaP: http://simap.grenoble-inp.fr
 
 Keywords
 --------
@@ -40,4 +41,4 @@ Matlab Toolbox; Graphical User Interface; Nanoindentation; Young’s modulus; thin
 
 Links
 -----
-http://www.mathworks.fr/matlabcentral/fileexchange/45376--pop-in--analysis-from-indentation-tests
+http://fr.mathworks.com/matlabcentral/fileexchange/43392-davidmercier-nims
