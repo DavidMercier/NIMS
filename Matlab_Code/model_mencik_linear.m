@@ -3,7 +3,14 @@ function model_mencik_linear
 %% Function used to calculate Young's modulus in bilayer system with the linear model of Mencik et al. (1997)
 gui = guidata(gcf);
 
-x = gui.results.ac./gui.results.t_corr;
+if get(gui.handles.cb_corr_thickness_GUI, 'Value') == 1
+    set(gui.handles.cb_corr_thickness_GUI, 'Value', 0);
+    commandwindow;
+    warning(['The correction of the thickness can''t be used ', ...
+        'with Mencik''s linear model']);
+end
+
+x = gui.results.ac./gui.data.t;
 
 % Ef_red_sol(2) = gui.data.Es_red
 bilayer_model = @(Ef_red_sol, x) (Ef_red_sol(1) + ...
@@ -40,7 +47,8 @@ set(gui.handles.value_youngsub_GUI, ...
 gui.results.Em_red = (gui.results.Ef_red_solfit(1) + ...
     (gui.results.Ef_red_solfit(2) - gui.results.Ef_red_solfit(1))*(x));
 
-gui.results.Ef_red(1:length(gui.results.Em_red)) = gui.results.Ef_red_solfit(1);
+gui.results.Ef_red(1:length(x)) = gui.results.Ef_red_solfit(1);
+gui.results.Ef_red = gui.results.Ef_red';
 
 guidata(gcf, gui);
 

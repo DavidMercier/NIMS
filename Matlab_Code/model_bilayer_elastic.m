@@ -3,6 +3,10 @@ function model_bilayer_elastic
 %% Function used to calculate the bilayer elastic model
 gui = guidata(gcf);
 gui.results.Ef_red_solfit = 0;
+gui.results.Em_red = 0;
+gui.results.Ef_red = 0;
+gui.results.t_corr = 0;
+guidata(gcf, gui);
 
 %% Refreshing the GUI
 if (gui.variables.y_axis ~= 3 && gui.variables.y_axis ~= 4)
@@ -34,6 +38,7 @@ else
 end
 
 gui.axis.legend2 = 'Results with the bilayer model';
+guidata(gcf, gui);
 
 %% Optimization of Young's modulus of the thin film
 if gui.variables.val2 ~= 1
