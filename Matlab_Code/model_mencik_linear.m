@@ -16,10 +16,10 @@ x = gui.results.ac./gui.data.t;
 bilayer_model = @(Ef_red_sol, x) (Ef_red_sol(1) + ...
     (Ef_red_sol(2) - Ef_red_sol(1))*(x));
 
-% Make a starting guess at the solution (Ef in GPa)
+% Make a starting guess (Ef and Es in GPa)
 gui.results.Ef_red_sol0 = [...
     str2double(get(gui.handles.value_youngfilm1_GUI, 'String'))/(1-gui.data.nuf.^2); ...
-    str2double(get(gui.handles.value_youngsub_GUI, 'String'))/(1-gui.data.nus.^2)];
+    gui.data.Es_red];
 
 OPTIONS = optimset('lsqcurvefit');
 OPTIONS = optimset(OPTIONS, 'TolFun',  1e-20);

@@ -10,7 +10,6 @@ if gui.flag.flag_data == 0
     helpdlg('Import data first !','!!!');
     
 else
-    
     list_indenters = get(gui.handles.value_indentertype_GUI, 'String');
     num_indenters  = get(gui.handles.value_indentertype_GUI, 'Value');
     indenter_id    = list_indenters(num_indenters, :);
@@ -24,23 +23,30 @@ else
             
             if strcmp(indenter_id_str(1:4), 'Berk') == 1 && (get(gui.handles.cb_CSM_corr_GUI, 'Value')) == 1
                 
-                gui.data.K_Pharr = 0.757; % Constant given by Pharr et al . (2009)
-                gui.data.m_Pharr = 1.380; % Constant given by Pharr et al . (2009)
+                gui.data.K_Pharr = 0.757; % Constant given by Pharr et al. (2009)
+                gui.data.m_Pharr = 1.380; % Constant given by Pharr et al. (2009)
                 
                 gui.data.h_CSM_Corr = gui.data.h + ((2^0.5).*gui.data.delta_h);
                 gui.data.P_CSM_Corr = gui.data.P + ((2^0.5).*gui.data.delta_P);
-                gui.data.S_CSM_Corr = ((1/((2*pi)^0.5)) .* ((1/gui.data.K_Pharr).^(1/gui.data.m_Pharr))) .*...
-                    (1-(1-(((2*(2.^0.5).*gui.data.delta_h.*gui.data.S)./(max(gui.data.P))))).^(1/gui.data.m_Pharr)) .* (max(gui.data.P)./gui.data.delta_h);
+                gui.data.S_CSM_Corr = ((1/((2*pi)^0.5)) .* ...
+                    ((1/gui.data.K_Pharr).^(1/gui.data.m_Pharr))) .*...
+                    (1-(1-(((2*(2.^0.5).*gui.data.delta_h.*gui.data.S) ./ ...
+                    (max(gui.data.P))))).^(1/gui.data.m_Pharr)) .* ...
+                    (max(gui.data.P)./gui.data.delta_h);
                 
                 gui.data.h = gui.data.h_CSM_Corr;
                 gui.data.P = gui.data.P_CSM_Corr;
                 gui.data.S = gui.data.S_CSM_Corr;
                 
             else
+                gui.data.h = gui.data.h_final.'; 
+                gui.data.delta_h = gui.data.delta_h_final.'; % in nm
                 
-                gui.data.h = gui.data.h_final.'; gui.data.delta_h = gui.data.delta_h_final.'; % in nm
-                gui.data.P = gui.data.P_final.'; gui.data.delta_P = gui.data.delta_P_final.'; % in mN
-                gui.data.S = gui.data.S_final.'; gui.data.delta_S = gui.data.delta_S_final.'; % in mN/nm
+                gui.data.P = gui.data.P_final.';
+                gui.data.delta_P = gui.data.delta_P_final.'; % in mN
+                
+                gui.data.S = gui.data.S_final.';
+                gui.data.delta_S = gui.data.delta_S_final.'; % in mN/nm
                 
             end
         end

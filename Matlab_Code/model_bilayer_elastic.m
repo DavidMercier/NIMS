@@ -55,11 +55,10 @@ if gui.variables.val2 ~= 1
             bilayer_model = @(Ef_red_sol, x) ...
                 (1e-9*(((1./(1e9*Ef_red_sol))*(1-exp(gui.data.k_DN)))+((1./gui.data.Es_red)*(exp(gui.data.k_DN)))).^-1);
             
-        elseif gui.variables.val2 == 3 %Gao et al. (1992)
+        elseif gui.variables.val2 == 3 %Gao et al. (1992) (for flat cylindrical indentation test...)
             bilayer_model = @(Ef_red_sol, x) ...
                 (1e-9*((((1e9*Ef_red_sol)-gui.data.Es_red).*gui.data.phigao0)+gui.data.Es_red));
-            
-            
+
         elseif gui.variables.val2 == 4 %Bec et al. (2006)
             x             = gui.data.h;
             bilayer_model = @(Ef_red_sol, x) ...
@@ -90,7 +89,7 @@ if gui.variables.val2 ~= 1
         
         if gui.variables.val2 < 6
             try
-                % Make a starting guess at the solution (Ef in GPa)
+                % Make a starting guess (Ef in GPa)
                 gui.results.Ef_red_sol0 = str2double(get(...
                     gui.handles.value_youngfilm1_GUI, 'String'));
                 
@@ -106,7 +105,7 @@ if gui.variables.val2 ~= 1
                     gui.results.lambda, ...
                     gui.results.jacobian] =...
                     lsqcurvefit(bilayer_model, gui.results.Ef_red_sol0, x, ...
-                    gui.results.Esample_red,0, 1000, OPTIONS);
+                    gui.results.Esample_red, 0, 1000, OPTIONS);
                 
                 gui.results.Ef_sol_fit = ...
                     gui.results.Ef_red_solfit * (1-gui.data.nuf^2);

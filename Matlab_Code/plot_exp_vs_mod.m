@@ -131,30 +131,23 @@ if gui.variables.num_thinfilm == 1 && (gui.variables.y_axis == 4 || gui.variable
     
 elseif gui.variables.num_thinfilm == 2
     
-    if gui.variables.y_axis == 4 && gui.variables.val2 < 6
-        set(gui.handles.value_youngfilm0_GUI, 'String', round(gui.results.Ef_sol_fit));
-        gui.axis.title_str = ['Mean Young''s modulus of the film (when h < t) = ', num2str(round(gui.results.Ef_sol_fit(1))), 'GPa'];
-        
-    elseif gui.variables.y_axis == 4 && gui.variables.val2 == 6
-        set(gui.handles.value_youngfilm0_GUI, 'String', round(gui.results.Ef_sol_fit(1)));
-        gui.axis.title_str = ['Mean Young''s modulus of the film (when h < t) = ', num2str(round(gui.results.Ef_sol_fit(1))), 'GPa / n(Perriot et al.) = ', num2str(gui.results.Ef_sol_fit(2))];
-        
-    elseif gui.variables.y_axis == 4 && gui.variables.val2 == 7
-        set(gui.handles.value_youngfilm0_GUI, 'String', round(gui.results.Ef_sol_fit(1)));
-        gui.axis.title_str = ['Mean Young''s modulus of the film (when h < t) = ', num2str(round(gui.results.Ef_sol_fit(1))), 'GPa / Es = ', num2str(round(gui.results.Ef_sol_fit(2))), 'GPa'];
-        
-    elseif gui.variables.y_axis == 5 && gui.variables.val2 < 6
-        set(gui.handles.value_youngfilm0_GUI, 'String', round(gui.results.Ef_sol));
-        gui.axis.title_str = ['Mean Young''s modulus of the film (when h < t) = ', num2str(round(gui.results.Ef_sol)), 'GPa'];
-        
-    elseif gui.variables.y_axis == 5 && gui.variables.val2 == 6
-        set(gui.handles.value_youngfilm0_GUI, 'String', round(gui.results.Ef_sol));
-        gui.axis.title_str = ['Mean Young''s modulus of the film (when h < t) = ', num2str(round(gui.results.Ef_sol)), 'GPa / n(Perriot et al.) = ', num2str(gui.results.Ef_sol_fit(2))];
-        
-    elseif gui.variables.y_axis == 5 && gui.variables.val2 == 7
-        set(gui.handles.value_youngfilm0_GUI, 'String', round(gui.results.Ef_sol_fit(1)));
-        gui.axis.title_str = ['Mean Young''s modulus of the film (when h < t) = ', num2str(round(gui.results.Ef_sol_fit(1))), 'GPa / Es = ', num2str(round(gui.results.Ef_sol_fit(2))), 'GPa'];
-        
+    if gui.variables.y_axis == 4 || gui.variables.y_axis == 5
+        if gui.variables.val2 < 6
+            set(gui.handles.value_youngfilm0_GUI, 'String', round(gui.results.Ef_sol_fit));
+            gui.axis.title_str = ['Mean Young''s modulus of the film (when h < t) = ', num2str(round(gui.results.Ef_sol_fit(1))), 'GPa'];
+            
+        elseif gui.variables.val2 == 6
+            set(gui.handles.value_youngfilm0_GUI, 'String', round(gui.results.Ef_sol_fit(1)));
+            gui.axis.title_str = ['Mean Young''s modulus of the film (when h < t) = ', num2str(round(gui.results.Ef_sol_fit(1))), 'GPa / n(Perriot et al.) = ', num2str(gui.results.Ef_sol_fit(2))];
+            
+        elseif gui.variables.val2 == 7
+            set(gui.handles.value_youngfilm0_GUI, 'String', round(gui.results.Ef_sol_fit(1)));
+            gui.axis.title_str = ['Mean Young''s modulus of the film (when h < t) = ', num2str(round(gui.results.Ef_sol_fit(1))), 'GPa / Es = ', num2str(round(gui.results.Ef_sol_fit(2))), 'GPa'];
+            
+        elseif gui.variables.val2 == 8
+            set(gui.handles.value_youngfilm0_GUI, 'String', round(gui.results.Ef_sol_fit(1)));
+            gui.axis.title_str = ['Mean Young''s modulus of the film (when h < t) = ', num2str(round(gui.results.Ef_sol_fit(1))), 'GPa / alpha = ', num2str(round(1000*gui.results.Ef_sol_fit(2))/1000)];
+        end
     end
     
 elseif gui.variables.num_thinfilm == 3
