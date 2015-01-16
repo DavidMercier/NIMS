@@ -43,23 +43,22 @@ Three models were developed to take into account this indentation contact topogr
 
 Model of Doerner and Nix [#DoernerNix_1986]_ :
    
-		.. math:: h_\text{c} = h_\text{t} - F/S
-				:label: doerner_nix_model
-				
+        .. math:: h_\text{c} = h_\text{t} - {F \over S}
+                :label: doerner_nix_model
+
 Model of Oliver and Pharr [#OliverPharr_1992]_ :
-			
-		.. math:: h_\text{c} = h_\text{t} - \epsilon * F/S
-				:label: oliver_pharr_model
-				
+
+        .. math:: h_\text{c} = h_\text{t} - \epsilon * {F \over S}
+                :label: oliver_pharr_model
+
 where :math:`\epsilon` is a constant function of the indenter's geometry (0.72 for the Berkovich indenter and 0.75 for paraboloids of revolution).
-				
+
 Model of Loubet et al. [#Bec_1996]_ , [#Hochstetter_1999]_ :
-				
-		.. math:: h_\text{c} = \alpha * (h_\text{t} - F/S)
-				:label: loubet_model
+
+        .. math:: h_\text{c} = \alpha * (h_\text{t} - {F \over S})
+                :label: loubet_model
 
 where :math:`\alpha` is a constant function of the indented material (usually around 1.2).
-			
 
 Extraction of elastic properties
 --------------------------------
@@ -67,24 +66,47 @@ Extraction of elastic properties
 Elastic properties of bulk material
 +++++++++++++++++++++++++++++++++++
 
+    .. math:: E^{*} = {1 \over 2} \sqrt{\pi \over A} {dF \over dh}
+            :label: experimental_youngs_modulus
+            
+    .. math:: {1 \over E^{*}} = {1 \over E^{'}} + {1 \over E_i^{'}}
+            :label: youngs_modulus
+            
+    .. math:: E^{'} = {E \over (1-\nu^{2})}
+            :label: reduced_youngs_modulus
+
+
 Elastic properties of a thin film on a substrate
 +++++++++++++++++++++++++++++++++++++++++++++++++
+          
+    .. math:: E^{'} = E^{'}_\text{s} + (E^{'}_\text{f} - E^{'}_\text{s}) * \phi(x)
+            :label: youngs_modulus_evolution_phi
 
+    .. math:: E^{'} = E^{'}_\text{s} + (E^{'}_\text{f} - E^{'}_\text{s}) * \psi(x)
+            :label: youngs_modulus_evolution_psi
+            
+.. note::
+    If the difference between Poisson’s ratio of the thin film and substrate is small, the values for uniaxial loading Young's moduli, 
+    :math:`E`, :math:`E_f`, :math:`E_s` can be used in previous equation.
 
-			
-			
 
 Doerner & Nix (1986) modified by King (1987)
 ********************************************
 
-	.. math:: E_\text{m}^{'} = (((1/E_\text{f}^{'}) * (1-exp(k_\text{DN}))) + ((1/E_\text{s}^{'})*(exp(k_\text{DN}))))^{-1}
-			:label: doerner_nix
+    .. math:: E^{'} = (({1 \over E_\text{f}^{'}} * (1-exp(k_\text{DN}))) + ({1 \over E_\text{s}^{'}}*(exp(k_\text{DN}))))^{-1}
+            :label: doerner_nix
 
 Gao et al. (1992)
 *****************
 
-Mencik et al. (linear model) (1997)
+Menčík et al. (linear model) (1997)
 ***********************************
+
+Menčík et al. (exponential model) (1997)
+*****************************************
+
+Menčík et al. (reciprocal exponential model) (1997)
+****************************************************
 
 Perriot et al. (2003)
 *********************
@@ -116,8 +138,8 @@ Mercier et al. (2010)
 Corrections to apply for thin film indentation
 +++++++++++++++++++++++++++++++++++++++++++++++
 
-	.. math:: t_\text{eff} = t - h_\text{c}/3
-			:label: thickness_correction
+    .. math:: t_\text{eff} = t - {h_\text{c} \over 3}
+            :label: thickness_correction
 
 .. figure:: ./_pictures/thickness_correction.png
    :scale: 60 %
@@ -128,9 +150,9 @@ Corrections to apply for thin film indentation
 Extraction of plastic properties
 --------------------------------
 
-	.. math:: H = F_\text{c,max}/A_\text{c}
-			:label: hardness
-			
+    .. math:: H = {F_\text{c,max} \over A_\text{c}}
+            :label: hardness
+
 References
 ----------
 
