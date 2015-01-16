@@ -144,7 +144,7 @@ elseif gui.variables.num_thinfilm == 2
             set(gui.handles.value_youngfilm0_GUI, 'String', round(gui.results.Ef_sol_fit(1)));
             gui.axis.title_str = ['Mean Young''s modulus of the film (when h < t) = ', num2str(round(gui.results.Ef_sol_fit(1))), 'GPa / Es = ', num2str(round(gui.results.Ef_sol_fit(2))), 'GPa'];
             
-        elseif gui.variables.val2 == 8
+        elseif gui.variables.val2 == 8 || 9
             set(gui.handles.value_youngfilm0_GUI, 'String', round(gui.results.Ef_sol_fit(1)));
             gui.axis.title_str = ['Mean Young''s modulus of the film (when h < t) = ', num2str(round(gui.results.Ef_sol_fit(1))), 'GPa / alpha = ', num2str(round(1000*gui.results.Ef_sol_fit(2))/1000)];
         end

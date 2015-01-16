@@ -85,6 +85,10 @@ if gui.variables.val2 ~= 1
             model_mencik_exponential;
             gui = guidata(gcf); guidata(gcf, gui);
             
+        elseif gui.variables.val2 == 9 % Mencik et al. (reciprocal exponential model) (1997)
+            model_mencik_reciprocal_exponential;
+            gui = guidata(gcf); guidata(gcf, gui);
+            
         end
         
         if gui.variables.val2 < 6
@@ -180,6 +184,10 @@ if gui.variables.val2 ~= 1
             
         elseif gui.variables.val2 == 8 % Mencik et al. (exponential model) (1997)
             model_mencik_exponential;
+            gui = guidata(gcf); guidata(gcf, gui);
+            
+        elseif gui.variables.val2 == 9 % Mencik et al. (reciprocal exponential model) (1997)
+            model_mencik_reciprocal_exponential;
             gui = guidata(gcf); guidata(gcf, gui);
             
         end
