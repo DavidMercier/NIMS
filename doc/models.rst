@@ -110,17 +110,24 @@ With :math:`x=t/a_c`.
 Gao et al. (1992)
 *****************
 
-    .. math:: E^{'} = E^{'}_\text{s} + (E^{'}_\text{f} - E^{'}_\text{s}) * \phi_{Gao}(x)
+    .. math:: E^{'} = E^{'}_\text{s} + (E^{'}_\text{f} - E^{'}_\text{s}) \phi_{Gao_0}(x)
             :label: gao
 			
-    .. math:: \phi_{Gao} = {2 \over \pi} arctan {1 \over x} + {1 \over {2\pi(1-\nu)}} [(1-2\nu){1 \over x}ln(1+x^2) - {x \over {1+x^2}}]
-            :label: phi_gao
+    .. math:: \phi_{Gao_0} = {2 \over \pi} arctan {1 \over x} + {1 \over {2\pi(1-\nu_c)}} [(1-2\nu_c){1 \over x}ln(1 + x^2) - {x \over {1+x^2}}]
+            :label: phi_gao_0
+			
+    .. math:: \nu_{c} = 1 + [{{(1-\nu_{s})(1-\nu_{f})} \over {1-(1-\phi_{Gao_1})\nu_{f}-\phi_{Gao_1}\nu_{s}}}]
+			:label: poisson_ratio_composite
+			
+
+	.. math:: \phi_{Gao_1} = {2 \over \pi} arctan {1 \over x} + {1 \over {x\pi}}ln(1+x^2)
+			:label: phi_gao_1
 			
 With :math:`x=a_c/t`.
 
 Menčík et al. (linear model) (1997)
 ***********************************
-
+			
 Menčík et al. (exponential model) (1997)
 *****************************************
 

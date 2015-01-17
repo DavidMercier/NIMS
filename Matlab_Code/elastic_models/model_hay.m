@@ -3,7 +3,7 @@ function model_hay
 %% Function used to calculate Young's modulus in bilayer system with
 % the model of Hay et al. (2011)
 % see also Gao et al. (1992)
-% Errors for phigao0 in Mencik et al. (1997) and in Fischer-Cripps "Nanoindentation 2nd Ed.".
+% Errors for phigao0 in Fischer-Cripps "Nanoindentation 2nd Ed.".
 
 gui = guidata(gcf);
 
