@@ -48,14 +48,14 @@ Model of Doerner and Nix [#DoernerNix_1986]_ :
 
 Model of Oliver and Pharr [#OliverPharr_1992]_ :
 
-        .. math:: h_\text{c} = h_\text{t} - \epsilon * {F \over S}
+        .. math:: h_\text{c} = h_\text{t} - \epsilon {F \over S}
                 :label: oliver_pharr_model
 
 where :math:`\epsilon` is a constant function of the indenter's geometry (0.72 for the Berkovich indenter and 0.75 for paraboloids of revolution).
 
 Model of Loubet et al. [#Bec_1996]_ , [#Hochstetter_1999]_ :
 
-        .. math:: h_\text{c} = \alpha * (h_\text{t} - {F \over S})
+        .. math:: h_\text{c} = \alpha (h_\text{t} - {F \over S})
                 :label: loubet_model
 
 where :math:`\alpha` is a constant function of the indented material (usually around 1.2).
@@ -74,15 +74,17 @@ Elastic properties of bulk material
             
     .. math:: E^{'} = {E \over (1-\nu^{2})}
             :label: reduced_youngs_modulus
-
+			
+    .. math:: E_i^{'} = {E_i \over (1-\nu_i^{2})}
+            :label: indenter_reduced_youngs_modulus
 
 Elastic properties of a thin film on a substrate
 +++++++++++++++++++++++++++++++++++++++++++++++++
           
-    .. math:: E^{'} = E^{'}_\text{s} + (E^{'}_\text{f} - E^{'}_\text{s}) * \phi(x)
+    .. math:: E^{'} = E^{'}_\text{s} + (E^{'}_\text{f} - E^{'}_\text{s}) \phi(x)
             :label: youngs_modulus_evolution_phi
 
-    .. math:: E^{'} = E^{'}_\text{s} + (E^{'}_\text{f} - E^{'}_\text{s}) * \psi(x)
+    .. math:: E^{'} = E^{'}_\text{s} + (E^{'}_\text{f} - E^{'}_\text{s}) \psi(x)
             :label: youngs_modulus_evolution_psi
             
 .. note::
@@ -90,14 +92,31 @@ Elastic properties of a thin film on a substrate
     :math:`E`, :math:`E_f`, :math:`E_s` can be used in previous equation.
 
 
-Doerner & Nix (1986) modified by King (1987)
-********************************************
+Doerner & Nix (1986)
+********************
 
-    .. math:: E^{'} = (({1 \over E_\text{f}^{'}} * (1-exp(k_\text{DN}))) + ({1 \over E_\text{s}^{'}}*(exp(k_\text{DN}))))^{-1}
+    .. math:: {1 \over E^{'}} = {1 \over E_\text{f}^{'}} + ({1 \over E_\text{s}^{'}} - {1 \over E_\text{f}^{'}}) e^{-\alpha(x)}
             :label: doerner_nix
+	
+With :math:`x=t/h`.
+	
+The equation was modified by King (1987), by the replacement of :math:`t/h` by :math:`t/a_c`.
 
+    .. math:: {1 \over E^{'}} = {1 \over E_\text{f}^{'}} + ({1 \over E_\text{s}^{'}} - {1 \over E_\text{f}^{'}}) e^{-\alpha(x)}
+            :label: doerner_nix_king
+
+With :math:`x=t/a_c`.
+			
 Gao et al. (1992)
 *****************
+
+    .. math:: E^{'} = E^{'}_\text{s} + (E^{'}_\text{f} - E^{'}_\text{s}) * \phi_{Gao}(x)
+            :label: gao
+			
+    .. math:: \phi_{Gao} = {2 \over \pi} arctan {1 \over x} + {1 \over {2\pi(1-\nu)}} [(1-2\nu){1 \over x}ln(1+x^2) - {x \over {1+x^2}}]
+            :label: phi_gao
+			
+With :math:`x=a_c/t`.
 
 Menčík et al. (linear model) (1997)
 ***********************************
@@ -105,8 +124,18 @@ Menčík et al. (linear model) (1997)
 Menčík et al. (exponential model) (1997)
 *****************************************
 
+    .. math:: E^{'} = E^{'}_\text{s} + (E^{'}_\text{f} - E^{'}_\text{s}) e^{-\alpha(x)}
+            :label: mencik_exponential
+			
+With :math:`x=a_c/t`.
+
 Menčík et al. (reciprocal exponential model) (1997)
 ****************************************************
+
+    .. math:: {1 \over E^{'}} = {1 \over E_\text{s}^{'}} + ({1 \over E_\text{f}^{'}} - {1 \over E_\text{s}^{'}}) e^{-\alpha(x)}
+            :label: mencik_reciprocal_exponential
+
+With :math:`x=a_c/t`.
 
 Perriot et al. (2003)
 *********************
