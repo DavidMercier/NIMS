@@ -118,7 +118,8 @@ Gao et al. (1992)
 			
     .. math:: \nu_{c} = 1 + [{{(1-\nu_{s})(1-\nu_{f})} \over {1-(1-\phi_{Gao_1})\nu_{f}-\phi_{Gao_1}\nu_{s}}}]
 			:label: poisson_ratio_composite
-			
+
+With :math:`\nu_{s}` the Poisson's ratio of the substrate and :math:`\nu_{f}` the Poisson's ratio of the thin film.
 
 	.. math:: \phi_{Gao_1} = {2 \over \pi} arctan {1 \over x} + {1 \over {x\pi}}ln(1+x^2)
 			:label: phi_gao_1
