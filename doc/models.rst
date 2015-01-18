@@ -39,26 +39,31 @@ Pile-up occurs when work-hardening coefficient is low (< 0.3) or if the ratio yi
    
    *Figure 2 : Schematic of indentation contact topography : a) « pile-up » and b) « sink-in ».*
    
-Three models were developed to take into account this indentation contact topography.
+Three models defining the depth of contact :math:`h_\text{c}` were developed to take into account this indentation contact topography.
 
 Model of Doerner and Nix [#DoernerNix_1986]_ :
    
         .. math:: h_\text{c} = h_\text{t} - {F \over S}
                 :label: doerner_nix_model
 
-Model of Oliver and Pharr [#OliverPharr_1992]_ :
+Model of Oliver and Pharr [#OliverPharr_1992]_ in case of sink-in:
 
         .. math:: h_\text{c} = h_\text{t} - \epsilon {F \over S}
                 :label: oliver_pharr_model
 
-where :math:`\epsilon` is a constant function of the indenter's geometry (0.72 for the Berkovich indenter and 0.75 for paraboloids of revolution).
+Where :math:`\epsilon` is a constant function of the indenter's geometry (0.72 for the Berkovich indenter and 0.75 for paraboloids of revolution).
 
-Model of Loubet et al. [#Bec_1996]_ , [#Hochstetter_1999]_ :
+Model of Loubet et al. [#Bec_1996]_ , [#Hochstetter_1999]_ in case of pile-up:
 
         .. math:: h_\text{c} = \alpha (h_\text{t} - {F \over S})
                 :label: loubet_model
 
-where :math:`\alpha` is a constant function of the indented material (usually around 1.2).
+Where :math:`\alpha` is a constant function of the indented material (usually around 1.2).
+
+Knowing the depth of contact and the geometry of the indenter, it is possible to determine the area of contact :math:`A_\text{c}` [#OliverPharr_1992]_.
+
+        .. math:: A_\text{c} = C h_\text{c}^2 + \sum_{i=0}^5{C_\text{i} h_\text{c}^{1/2^i}}
+                :label: area_function
 
 Extraction of elastic properties
 --------------------------------
@@ -66,9 +71,14 @@ Extraction of elastic properties
 Elastic properties of bulk material
 +++++++++++++++++++++++++++++++++++
 
-    .. math:: E^{*} = {1 \over 2} \sqrt{\pi \over A} {dF \over dh}
+    .. math:: E^{*} = \beta {1 \over 2} \sqrt{\pi \over A} {dF \over dh}
             :label: experimental_youngs_modulus
-            
+
+Where the values of the constant :math:`\beta` are [#King_1987]_ :
+	- 1 for circular indenters (e.g. : conical and spherical indenter);
+	- 1.034 for three-sided pyramid indenters (e.g. : Berkovich indenter);
+	- 1.012 for four-sided pyramid indenters (e.g. : Vickers indenter).
+
     .. math:: {1 \over E^{*}} = {1 \over E^{'}} + {1 \over E_i^{'}}
             :label: youngs_modulus
             
@@ -92,8 +102,8 @@ Elastic properties of a thin film on a substrate
     :math:`E`, :math:`E_f`, :math:`E_s` can be used in previous equation.
 
 
-Doerner & Nix (1986)
-********************
+Doerner & Nix (1986) [#DoernerNix_1986]_ [#King_1987]_
+*******************************************************
 
     .. math:: {1 \over E^{'}} = {1 \over E_\text{f}^{'}} + ({1 \over E_\text{s}^{'}} - {1 \over E_\text{f}^{'}}) e^{-\alpha(x)}
             :label: doerner_nix
@@ -192,8 +202,8 @@ Extraction of plastic properties
 
 References
 ----------
-
-.. [#DoernerNix_1986] `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
-.. [#OliverPharr_1992] `Oliver W.C. and Pharr G.M., "An improved technique for determining hardness and elastic modulus using load and displacement sensing indentation experiments" (1992). <http://dx.doi.org/10.1557/JMR.1992.1564>`_
 .. [#Bec_1996] `Bec S. et al., "Improvements in the indentation method with a surface force apparatus" (1996). <http://dx.doi.org/10.1080/01418619608239707>`_
+.. [#DoernerNix_1986] `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
+.. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <http://dx.doi.org/10.1016/0020-7683(87)90116-8>`_
 .. [#Hochstetter_1999] `Hochstetter G. et al., "Strain-rate effects on hardness of glassy polymers in the nanoscale range. Comparison between quasi-static and continuous stiffness measurements" (1999). <http://dx.doi.org/10.1080/00222349908248131>`_
+.. [#OliverPharr_1992] `Oliver W.C. and Pharr G.M., "An improved technique for determining hardness and elastic modulus using load and displacement sensing indentation experiments" (1992). <http://dx.doi.org/10.1557/JMR.1992.1564>`_

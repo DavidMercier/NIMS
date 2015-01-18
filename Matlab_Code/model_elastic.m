@@ -41,7 +41,7 @@ if gui.variables.val0 == 1 % Berkovich indenter
     gui.data.theta_eq = 70.32;  % Equivalent cone angle (in degrees)
     
     if gui.variables.King_correction == 1
-        gui.data.beta  = 1.167; % 1.034 whitout the contribution of 2/(pi^0.5). See in Pharr et al. (1992).
+        gui.data.beta  = 1.167; % 1.034 without the contribution of 2/(pi^0.5). See in Pharr et al. (1992).
     end
     
     if gui.variables.Hay_correction == 1
@@ -61,7 +61,7 @@ elseif gui.variables.val0 == 2; % Vickers indenter
     gui.data.theta_eq = 70.2996;  % Equivalent cone angle (in degrees)
     
     if gui.variables.King_correction == 1
-        gui.data.beta  = 1.142; % 1.012 whitout the contribution of 2/(pi^0.5). See in Pharr et al. (1992).
+        gui.data.beta  = 1.142; % 1.012 without the contribution of 2/(pi^0.5). See in Pharr et al. (1992).
     end
     
     if gui.variables.Hay_correction == 1
@@ -78,7 +78,7 @@ elseif gui.variables.val0 == 3  % Conical indenter
     gui.data.theta_eq = gui.data.Ang;
     
     if gui.variables.King_correction == 1
-        gui.data.beta  = 1.129; % 1.000 whitout the contribution of 2/(pi^0.5). See in Pharr et al. (1992).
+        gui.data.beta  = 1.129; % 1.000 without the contribution of 2/(pi^0.5). See in Pharr et al. (1992).
     end
     
     if gui.variables.Hay_correction == 1
