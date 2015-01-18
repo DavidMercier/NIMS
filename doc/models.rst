@@ -60,10 +60,30 @@ Model of Loubet et al. [#Bec_1996]_ , [#Hochstetter_1999]_ in case of pile-up:
 
 Where :math:`\alpha` is a constant function of the indented material (usually around 1.2).
 
-Knowing the depth of contact and the geometry of the indenter, it is possible to determine the area of contact :math:`A_\text{c}` [#OliverPharr_1992]_.
+Knowing the depth of contact and the geometry of the indenter, it is possible to determine the area of contact :math:`A_\text{c}` [#OliverPharr_1992]_ and [#OliverPharr_2004]_.
 
-        .. math:: A_\text{c} = C h_\text{c}^2 + \sum_{i=0}^5{C_\text{i} h_\text{c}^{1/2^i}}
+        .. math:: A_\text{c} = C h_\text{c}^2 + \sum_{i=0}^8{C_\text{i} h_\text{c}^{1/2^i}}
                 :label: area_function
+				
+With the coefficients :math:`C` and :math:`C_\text{i}` obtained by curve fitting procedures, from nanoindentation experiments in fused silica (amorphous and isotropic material).
+
+The first coefficient :math:`C` alone defined a perfect pyramid and is given by the following formulae:
+
+        .. math:: C = \pi a_\text{c}^2 = \pi tan^2(\theta) h_\text{c}^2
+                :label: first_coefficient
+
+With :math:`a_\text{c}` the contact radius and :math:`\theta` the equivalent cone angle (70.32° for a Berkovich indenter and 70.2996° for a Vickers indenter).
+
+For a perfect Berkovich indenter :math:`C` is equal to 24.56 and for a perfect Vickers indenter :math:`C` is equal to 24.504.
+				
+The second term of the area function :math:`A_\text{c}` describes a paraboloid of revolution, which approximates to a sphere at small penetration depths.
+A perfect sphere of radius :math:`R` is defined by the first two terms with :math:`C_0 = -\pi` and :math:`C_1 = 2 \pi R`.
+The first two terms also describe a hyperboloid of revolution, a very reasonable shape for a tip-rounded cone or pyramid that approaches
+a fixed angle at large distances from the tip.
+
+.. note::
+	Only, the first 4th coefficients :math:`C_\text{i}` are used for calculations in this toolbox.
+
 
 Extraction of elastic properties
 --------------------------------
@@ -207,3 +227,4 @@ References
 .. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <http://dx.doi.org/10.1016/0020-7683(87)90116-8>`_
 .. [#Hochstetter_1999] `Hochstetter G. et al., "Strain-rate effects on hardness of glassy polymers in the nanoscale range. Comparison between quasi-static and continuous stiffness measurements" (1999). <http://dx.doi.org/10.1080/00222349908248131>`_
 .. [#OliverPharr_1992] `Oliver W.C. and Pharr G.M., "An improved technique for determining hardness and elastic modulus using load and displacement sensing indentation experiments" (1992). <http://dx.doi.org/10.1557/JMR.1992.1564>`_
+.. [#OliverPharr_2004] `Oliver W.C. and Pharr G.M., "Measurement of hardness and elastic modulus by instrumented indentation: Advances in understanding and refinements to methodology" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.1.3>`_

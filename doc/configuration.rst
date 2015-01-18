@@ -19,7 +19,7 @@ This YAML configuration file provides :
 How to create your YAML configuration file ?
 ############################################
 
-A YAML configuration file is given as an example in the `YAML folder <https://github.com/DavidMercier/nanoind-data-analysis/tree/master/YAML_config_files>`_
+A `YAML configuration file <https://github.com/DavidMercier/NIMS/blob/master/YAML_config_files/GUI_config.yaml>`_ is given as an example in the `YAML folder <https://github.com/DavidMercier/nanoind-data-analysis/tree/master/YAML_config_files>`_
 
 .. figure:: ./_pictures/YAML_config_file.png
    :scale: 50 %
@@ -27,15 +27,13 @@ A YAML configuration file is given as an example in the `YAML folder <https://gi
    
    *Screenshot of a YAML configuration file.*
 
-Make a copy of this YAML configuration file in the `YAML folder <https://github.com/DavidMercier/nanoind-data-analysis/tree/master/YAML_config_files>`_
-
 Open your YAML config. file and fill it:
     * Write your Indenter_ID(s) (e.g. : Conical indenter, Berk_TB10161_091208, ...);
-    * Write indenter's properties(e.g. : Berk_TB10161_091208: [22.233, 437.603, 127.765, -417.878, -84.0989, 0]);
+    * Write indenter's properties (e.g. : Berk_TB10161_091208: [22.233, 437.603, 127.765, -417.878, -84.0989, 0]);
     * Write the (absolute) path for the folder where you store your indentation data.
-    
 
-* N.B. : Be careful to put a comma + a space between each data...! (YAML convention)
-* N.B. : Use # in the beginning of the line to add comments.
-* N.B. : For user-defined indenters, make the name of the indenter begins with the 4th first letters of the indenter name (e.g.: 'Berk_130214' for 'Berkovich').
-* N.B. : Do not remove standard indenters
+..  warning::
+	* Be careful to put a comma + a space between each data...! (YAML convention)
+	* Use # in the beginning of the line to add comments.
+	* For user-defined indenters, make the name of the indenter begins with the 4th first letters of the indenter name (e.g.: 'Berk_130214' for 'Berkovich').
+	* Do not remove standard indenters

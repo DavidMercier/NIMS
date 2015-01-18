@@ -12,7 +12,8 @@ Format of data
 * Units : Displacement (nm) / Load (mN) / Stiffness (N/m)
 * For .xls files : It is possible to import a 'Sample' sheet obtained from MTS software - Analyst (with a 'Hold Segment Type')
 
-N.B. : It is advised to use average results from at least 10 indentation tests to avoid artifacts.
+..  warning::
+	It is advised to use average results from at least 10 indentation tests to avoid artifacts.
 
 Examples
 ########
