@@ -31,7 +31,7 @@ The indentation total depth is rarely equal to the indentation contact depth.
 Two kind of topography can occur: the pile-up (indentation contact depth > indentation total depth) or the sink-in (indentation contact depth < indentation total depth) (see Figure 2).
 
 The flow of material below the indenter is function of mechanical properties of the material.
-Pile-up occurs when work-hardening coefficient is low (< 0.3) or if the ratio yield stress over Young's modulus is less than 1%.
+Pile-up occurs when work-hardening coefficient is low (< 0.3) or if the ratio yield stress over Young's modulus is less than 1% [#Bolshakov_1998]_, [#Cheng_1998]_ and [#Cheng_2004]_.
 
 .. figure:: ./_pictures/contact_topography.png
    :scale: 60 %
@@ -53,7 +53,7 @@ Model of Oliver and Pharr [#OliverPharr_1992]_ in case of sink-in:
 
 Where :math:`\epsilon` is a constant function of the indenter's geometry (0.72 for the Berkovich indenter and 0.75 for paraboloids of revolution).
 
-Model of Loubet et al. [#Bec_1996]_ , [#Hochstetter_1999]_ in case of pile-up:
+Model of Loubet et al. [#Hochstetter_1999]_, [#Bec_2006]_in case of pile-up:
 
         .. math:: h_\text{c} = \alpha (h_\text{t} - {F \over S})
                 :label: loubet_model
@@ -83,7 +83,6 @@ a fixed angle at large distances from the tip.
 
 .. note::
 	Only, the first 4th coefficients :math:`C_\text{i}` are used for calculations in this toolbox.
-
 
 Extraction of elastic properties
 --------------------------------
@@ -137,8 +136,8 @@ The equation was modified by King (1987), by the replacement of :math:`t/h` by :
 
 With :math:`x=t/a_c`.
 			
-Gao et al. (1992)
-*****************
+Gao et al. (1992) [#Gao_1992]_
+********************************
 
     .. math:: E^{'} = E^{'}_\text{s} + (E^{'}_\text{f} - E^{'}_\text{s}) \phi_{Gao_0}(x)
             :label: gao
@@ -156,39 +155,53 @@ With :math:`\nu_{s}` the Poisson's ratio of the substrate and :math:`\nu_{f}` th
 			
 With :math:`x=a_c/t`.
 
-Menčík et al. (linear model) (1997)
-***********************************
+Menčík et al. (linear model) (1997) [#Mencik_1997]_
+*******************************************************
+
+    .. math:: E^{'} = E^{'}_\text{f} + (E^{'}_\text{s} - E^{'}_\text{f})(x)
+            :label: mencik_linear
 			
-Menčík et al. (exponential model) (1997)
-*****************************************
+With :math:`x=a_c/t`.
+			
+Menčík et al. (exponential model) (1997) [#Mencik_1997]_
+*********************************************************
 
     .. math:: E^{'} = E^{'}_\text{s} + (E^{'}_\text{f} - E^{'}_\text{s}) e^{-\alpha(x)}
             :label: mencik_exponential
 			
 With :math:`x=a_c/t`.
 
-Menčík et al. (reciprocal exponential model) (1997)
-****************************************************
+Menčík et al. (reciprocal exponential model) (1997) [#Mencik_1997]_
+**********************************************************************
 
     .. math:: {1 \over E^{'}} = {1 \over E_\text{s}^{'}} + ({1 \over E_\text{f}^{'}} - {1 \over E_\text{s}^{'}}) e^{-\alpha(x)}
             :label: mencik_reciprocal_exponential
 
 With :math:`x=a_c/t`.
 
-Perriot et al. (2003)
-*********************
+Perriot et al. (2003) [#Perriot_2004]_
+***************************************
 
-Bec et al. (2006)
-*****************
+    .. math:: E^{'} = E^{'}_\text{f} + {{E^{'}_\text{s}-E^{'}_\text{f}} \over 1+({{k_0} \over x})^n}
+            :label: perriot_barthel
+			
+    .. math:: log(k_0) = -0.093+0.792log({E^{'}_\text{s} \over E^{'}_\text{f}}) + 0.05[log{E^{'}_\text{s} \over E^{'}_\text{f}}]^2
+            :label: perriot_barthel_k0
 
-Hay et al. (2011)
-*****************
+With :math:`x=a_c/t`, and :math:`k_0` and :math:`n` are adjustable constants.
+
+Bec et al. (2006) [#Bec_2006]_
+********************************
+
+Hay et al. (2011) [#Hay_2011]_
+*******************************
+
 
 Elastic properties of a thin film on a multilayer system
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Mercier et al. (2010)
-*********************
+Mercier et al. (2010) [#Mercier_2010]_
+***************************************
 
 .. figure:: ./_pictures/multilayer_sample_elastic_model.png
    :scale: 30 %
@@ -202,9 +215,19 @@ Mercier et al. (2010)
    
    *Figure 4 : Experimental process to apply for elastic multilayer model.*
 
-Corrections to apply for thin film indentation
-+++++++++++++++++++++++++++++++++++++++++++++++
+Corrections to apply for thin film indentation [#Mencik_1997]_ and [#Bec_2006]_
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+During nanoindentation tests of thin film on substrate, the thickness of the film beneath the indenter is smaller than its original value,
+because of plastic flow during loading. The use of the original film thickness :math:`t` in the regression model cause a systematic shift or distortion of the Young's modulus curve.
+A correction proposed by Menčík et al. can be apply, assuming a rigid substrate and determining the effective thickness :math:`t_{eff}`.
+
+    .. math:: \pi a^2 t_\text{eff} = \pi a^2 t - V
+            :label: general_thickness_correction
+			
+With :math:`V` the volume displaced by the indenter and approximated by :math:`\pi a^2 h_\text{c} / 3`, 
+for a conical indenter and contact depths :math:`h_\text{c}` smaller than the film thickness.
+			
     .. math:: t_\text{eff} = t - {h_\text{c} \over 3}
             :label: thickness_correction
 
@@ -222,9 +245,22 @@ Extraction of plastic properties
 
 References
 ----------
-.. [#Bec_1996] `Bec S. et al., "Improvements in the indentation method with a surface force apparatus" (1996). <http://dx.doi.org/10.1080/01418619608239707>`_
+.. [#Bec_2006] `Bec S. et al., "Improvements in the indentation method with a surface force apparatus" (2006). <http://dx.doi.org/10.1080/01418619608239707>`_
+.. [#Bolshakov_1998] `Bolshakov A. and Pharr G. M., "Influences of pile-up on the measurement of mechanical properties by load and depth sensing indentation techniques." (1998) <http://dx.doi.org/10.1557/JMR.1998.0146>`_
+.. [#Cheng_1998] `Cheng Y. T. et Cheng C.M. ,"Effects of ‘sinking in’ and ‘piling up’ on estimating the contact area under load in indentation." (1998) <http://dx.doi.org/10.1080/095008398178093>`_
+.. [#Cheng_2004] `Cheng Y. T. et Cheng C.M., "Scaling, dimensional analysis, and indentation measurements." (2004) <http://dx.doi.org/10.1016/j.mser.2004.05.001>`_
 .. [#DoernerNix_1986] `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
-.. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <http://dx.doi.org/10.1016/0020-7683(87)90116-8>`_
+.. [#Gao_1992] `Gao H. et al., "Elastic contact versus indentation modeling of multi-layered materials" (1992). <http://dx.doi.org/10.1016/0020-7683(92)90004-D>`_
+.. [#Hay_2011] `Hay J. and Crawford B., "Measuring substrate-independent modulus of thin films" (2011). <http://dx.doi.org/10.1557/jmr.2011.8>`_
 .. [#Hochstetter_1999] `Hochstetter G. et al., "Strain-rate effects on hardness of glassy polymers in the nanoscale range. Comparison between quasi-static and continuous stiffness measurements" (1999). <http://dx.doi.org/10.1080/00222349908248131>`_
+.. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <http://dx.doi.org/10.1016/0020-7683(87)90116-8>`_
+.. [#Mencik_1997] `Menčík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
+.. [#Mercier_2010] `Mercier D. et al., "Mesure de module d'Young d'un film mince à partir de mesures expérimentales de nanoindentation réalisées sur des systèmes multicouches" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
 .. [#OliverPharr_1992] `Oliver W.C. and Pharr G.M., "An improved technique for determining hardness and elastic modulus using load and displacement sensing indentation experiments" (1992). <http://dx.doi.org/10.1557/JMR.1992.1564>`_
 .. [#OliverPharr_2004] `Oliver W.C. and Pharr G.M., "Measurement of hardness and elastic modulus by instrumented indentation: Advances in understanding and refinements to methodology" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.1.3>`_
+.. [#Perriot_2004] `Perriot A. and Barthel E., "Elastic contact to a coated half-space: Effective elastic modulus and real penetration" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.2.600>`_
+
+
+
+
+

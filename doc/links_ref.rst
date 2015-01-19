@@ -34,9 +34,12 @@ Material and indenters properties
 * `Loubet J. L. et al., "Nanoindentation with a surface force apparatus.", (1993). <http://dx.doi.org/10.1007/978-94-011-1765-4>`_
 * `Hainsworth S.V. et al., "Analysis of nanoindentation load-displacement loading curves" (1996). <http://dx.doi.org/10.1557/JMR.1996.0250>`_
 * `Bec S. et al., "Improvements in the indentation method with a surface force apparatus" (1996). <http://dx.doi.org/10.1080/01418619608239707>`_
-* `Mencik J., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
+* `Menčík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
+* `Bolshakov A. and Pharr G. M., "Influences of pile-up on the measurement of mechanical properties by load and depth sensing indentation techniques." (1998) <http://dx.doi.org/10.1557/JMR.1998.0146>`_
+* `Cheng Y. T. et Cheng C.M. ,"Effects of ‘sinking in’ and ‘piling up’ on estimating the contact area under load in indentation." (1998) <http://dx.doi.org/10.1080/095008398178093>`_
 * `Hochstetter G. et al., "Strain-rate effects on hardness of glassy polymers in the nanoscale range. Comparison between quasi-static and continuous stiffness measurements" (1999). <http://dx.doi.org/10.1080/00222349908248131>`_
 * `Oliver W.C. and Pharr G.M., "Measurement of hardness and elastic modulus by instrumented indentation: Advances in understanding and refinements to methodology" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.1.3>`_
+* `Cheng Y. T. et Cheng C.M., "Scaling, dimensional analysis, and indentation measurements." (2004) <http://dx.doi.org/10.1016/j.mser.2004.05.001>`_
 * `Guillonneau G. et al., "Determination of mechanical properties by nanoindentation independently of indentation depth measurement" (2012). <http://dx.doi.org/10.1557/jmr.2012.261>`_
 
 Correction factors and Correction of experimental data
@@ -56,7 +59,7 @@ Bilayer models to extract Young's modulus of a thin film on a substrate (with co
 * `Doerner M.F. and Nix W.D.,"A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
 * `Yu H. Y. et al., "The effect of substrate on the elastic properties of films determined by the indentation test - axisymmetric Boussinesq problem" (1990). <http://dx.doi.org/10.1016/0022-5096(90)90038-6>`_
 * `Gao H. et al., "Elastic contact versus indentation modeling of multi-layered materials" (1992). <http://dx.doi.org/10.1016/0020-7683(92)90004-D>`_
-* `Mencik. J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
+* `Menčík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
 * `Chen X. et Vlassak J.J., "Numerical study on the measurement of thin film mechanical properties by means of nanoindentation" (2001). <http://dx.doi.org/10.1557/JMR.2001.0408>`_
 * `Perriot A. and Barthel E., "Elastic contact to a coated half-space: Effective elastic modulus and real penetration" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.2.600>`_
 * `Bec S. et al., "A simple guide to determine elastic properties of films on substrate from nanoindentation experiments" (2006). <http://dx.doi.org/10.1080/14786430600660856>`_
