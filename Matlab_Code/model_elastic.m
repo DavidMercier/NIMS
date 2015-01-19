@@ -13,21 +13,10 @@ gui.data.aloubet  = 1.24;                 % alpha of Loubet's model. See in Guil
 gui.results.W = 1e-6 * trapz(gui.data.h, gui.data.P); % in µJ / 1J=1N.m
 
 %% Fit of the load-displacement curve
-% Calculate fit parameters
-h = gui.data.h;
-P = gui.data.P;
-load_disp_model = @(k, h) k(1) .* h.^k(2); % Fit with empirical power law. See in Hainsworth (1996).
-k0 = [1e-5 1.5];                           % Initialization
-OPTIONS = optimset('lsqcurvefit');
-OPTIONS = optimset(OPTIONS, 'TolFun',  1e-20);
-OPTIONS = optimset(OPTIONS, 'TolX',    1e-20);
-OPTIONS = optimset(OPTIONS, 'MaxIter', 10000);
-[k_fit, gui.results.resnorm, gui.results.residual, gui.results.exitflag, gui.results.output, gui.results.lambda, gui.results.jacobian] =...
-    lsqcurvefit(load_disp_model, k0, h, P, 0, 1000, OPTIONS);
-
+[k_fit, gui.results.P_fit] = load_displacement_fit(...
+    gui.variables.loaddisp_model, gui.data.h, gui.data.P);
 gui.results.fac_fit = k_fit(1);
 gui.results.exp_fit = k_fit(2);
-gui.results.P_fit   = gui.results.fac_fit .* h.^gui.results.exp_fit;
 
 %% Corrections parameters definition
 % epsilon from Oliver et al. (2003) (epsilon = 1 for flat punch)
@@ -93,21 +82,27 @@ end
 %% Calculation of hc (contact depth), Ac (contact area), a (contact radius), Eeff_red (effective reduced Young's modulus)
 % Contact depth calculation in nm
 if gui.variables.val1 == 1 % Doerner et al. (1986)
-    gui.results.hc = (gui.data.h+gui.data.h_tip) - (gui.data.P./gui.data.S); % Contact displacement
+    gui.results.hc = (gui.data.h+gui.data.h_tip) - ...
+        (gui.data.P./gui.data.S);
     
 elseif gui.variables.val1 == 2 % Oliver et al. (1992)
-    gui.results.hc = (gui.data.h+gui.data.h_tip) - (gui.data.epsilon.*(gui.data.P./gui.data.S));
+    gui.results.hc = (gui.data.h+gui.data.h_tip) - ...
+        (gui.data.epsilon.*(gui.data.P./gui.data.S));
     
 elseif gui.variables.val1 == 3 % Loubet et al. (1992)
-    gui.results.hc = gui.data.aloubet .* (gui.data.h - (gui.data.P./gui.data.S) + gui.data.h_tip);
+    gui.results.hc = gui.data.aloubet .* ...
+        (gui.data.h - (gui.data.P./gui.data.S) + gui.data.h_tip);
     
 end
 
 % Contact area calculation in nm2
 % Berkovich & Vickers indenters
 if gui.variables.val0 == 1 || gui.variables.val0 == 2
-    gui.results.Ac = gui.data.C1.*(gui.results.hc.^2) + gui.data.C2.*(gui.results.hc.^1) + ...
-        gui.data.C3.*(gui.results.hc.^0.5) + gui.data.C4.*(gui.results.hc.^0.25) + gui.data.C5.*(gui.results.hc.^0.125);
+    gui.results.Ac = gui.data.C1.*(gui.results.hc.^2) + ...
+        gui.data.C2.*(gui.results.hc.^1) + ...
+        gui.data.C3.*(gui.results.hc.^0.5) + ...
+        gui.data.C4.*(gui.results.hc.^0.25) + ...
+        gui.data.C5.*(gui.results.hc.^0.125);
     
     % Conical indenter
 elseif gui.variables.val0 == 3
@@ -119,7 +114,8 @@ end
 gui.results.ac = sqrt(gui.results.Ac./pi);
 
 % Effective reduced Young's modulus (sample+indenter) in GPa
-gui.results.Eeff_red = (1./(gui.data.beta .* gui.data.gamma)).* 10^6.*gui.data.S.*(1./sqrt(gui.results.Ac));
+gui.results.Eeff_red = (1./(gui.data.beta .* gui.data.gamma)).* ...
+    10^6.*gui.data.S.*(1./sqrt(gui.results.Ac));
 
 %% Young's modulus calculation - See in Pharr et al. (1992)
 % Reduced Young's modulus of the sample in GPa (no indenter's contribution)

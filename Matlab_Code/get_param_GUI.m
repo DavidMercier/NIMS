@@ -51,6 +51,10 @@ gui.data.C5 = str2double(get(gui.handles.value_C5_GUI, 'String'));
 %gui.variables.R = str2double(get(gui.handles.value_indentercon_rad_prop_GUI, 'String')); % µm
 gui.data.Ang = str2double(get(gui.handles.value_indentercon_ang_prop_GUI, 'String')); % µm
 
+
+% Load-disp. model properties
+gui.variables.loaddisp_model = get(gui.handles.value_loaddisp_model_GUI,  'Value');
+
 % Model properties
 gui.variables.num_thinfilm    = get(gui.handles.value_numthinfilm_GUI,     'Value');
 gui.variables.King_correction = get(gui.handles.cb_corr_King_GUI,          'Value');

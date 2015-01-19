@@ -24,6 +24,20 @@ The evolution of this curve depends on material properties of the sample and the
    
    *Figure 1 : Schematic of indentation load-displacement curve.*
 
+Loubet et al. founded a good fit to the load-displacement data with a power-law relationship of the form [#Loubet_1986]_ :
+
+        .. math:: F_\text{c} = K h_\text{t}^n
+                :label: Loubet_load_displacement
+
+With :math:`K` and :math:`n` constants for a given material for a fixed indenter geometry.
+
+Using the load-displacement curves analysis performed by Loubet et al.,  Hainsworth et al. proposed the following relationship to describe load-displacement curves [#Hainsworth_1996]_ :
+
+        .. math:: F_\text{c} = K h_\text{t}^2
+                :label: Hainsworth_load_displacement
+                
+With :math:`K` a constant function of material properties (Young's modulus and hardness) and the indenter
+
 Indentation contact topography
 -------------------------------
 
@@ -43,19 +57,19 @@ Three models defining the depth of contact :math:`h_\text{c}` were developed to 
 
 Model of Doerner and Nix [#DoernerNix_1986]_ :
    
-        .. math:: h_\text{c} = h_\text{t} - {F \over S}
+        .. math:: h_\text{c} = h_\text{t} - {F_\text{c} \over S}
                 :label: doerner_nix_model
 
 Model of Oliver and Pharr [#OliverPharr_1992]_ in case of sink-in:
 
-        .. math:: h_\text{c} = h_\text{t} - \epsilon {F \over S}
+        .. math:: h_\text{c} = h_\text{t} - \epsilon {F_\text{c} \over S}
                 :label: oliver_pharr_model
 
 Where :math:`\epsilon` is a constant function of the indenter's geometry (0.72 for the Berkovich indenter and 0.75 for paraboloids of revolution).
 
 Model of Loubet et al. [#Hochstetter_1999]_, [#Bec_2006]_in case of pile-up:
 
-        .. math:: h_\text{c} = \alpha (h_\text{t} - {F \over S})
+        .. math:: h_\text{c} = \alpha (h_\text{t} - {F_\text{c} \over S})
                 :label: loubet_model
 
 Where :math:`\alpha` is a constant function of the indented material (usually around 1.2).
@@ -64,7 +78,7 @@ Knowing the depth of contact and the geometry of the indenter, it is possible to
 
         .. math:: A_\text{c} = C h_\text{c}^2 + \sum_{i=0}^8{C_\text{i} h_\text{c}^{1/2^i}}
                 :label: area_function
-				
+
 With the coefficients :math:`C` and :math:`C_\text{i}` obtained by curve fitting procedures, from nanoindentation experiments in fused silica (amorphous and isotropic material).
 
 The first coefficient :math:`C` alone defined a perfect pyramid and is given by the following formulae:
@@ -75,7 +89,7 @@ The first coefficient :math:`C` alone defined a perfect pyramid and is given by 
 With :math:`a_\text{c}` the contact radius and :math:`\theta` the equivalent cone angle (70.32° for a Berkovich indenter and 70.2996° for a Vickers indenter).
 
 For a perfect Berkovich indenter :math:`C` is equal to 24.56 and for a perfect Vickers indenter :math:`C` is equal to 24.504.
-				
+
 The second term of the area function :math:`A_\text{c}` describes a paraboloid of revolution, which approximates to a sphere at small penetration depths.
 A perfect sphere of radius :math:`R` is defined by the first two terms with :math:`C_0 = -\pi` and :math:`C_1 = 2 \pi R`.
 The first two terms also describe a hyperboloid of revolution, a very reasonable shape for a tip-rounded cone or pyramid that approaches
@@ -90,20 +104,20 @@ Extraction of elastic properties
 Elastic properties of bulk material
 +++++++++++++++++++++++++++++++++++
 
-    .. math:: E^{*} = \beta {1 \over 2} \sqrt{\pi \over A} {dF \over dh}
+    .. math:: E^{*} = \beta {1 \over 2} \sqrt{\pi \over A} {dF_\text{c} \over dh_\text{c}}
             :label: experimental_youngs_modulus
 
 Where the values of the constant :math:`\beta` are [#King_1987]_ :
-	- 1 for circular indenters (e.g. : conical and spherical indenter);
-	- 1.034 for three-sided pyramid indenters (e.g. : Berkovich indenter);
-	- 1.012 for four-sided pyramid indenters (e.g. : Vickers indenter).
+    - 1 for circular indenters (e.g. : conical and spherical indenter);
+    - 1.034 for three-sided pyramid indenters (e.g. : Berkovich indenter);
+    - 1.012 for four-sided pyramid indenters (e.g. : Vickers indenter).
 
     .. math:: {1 \over E^{*}} = {1 \over E^{'}} + {1 \over E_i^{'}}
             :label: youngs_modulus
             
     .. math:: E^{'} = {E \over (1-\nu^{2})}
             :label: reduced_youngs_modulus
-			
+
     .. math:: E_i^{'} = {E_i \over (1-\nu_i^{2})}
             :label: indenter_reduced_youngs_modulus
 
@@ -126,28 +140,28 @@ Doerner & Nix (1986) [#DoernerNix_1986]_ [#King_1987]_
 
     .. math:: {1 \over E^{'}} = {1 \over E_\text{f}^{'}} + ({1 \over E_\text{s}^{'}} - {1 \over E_\text{f}^{'}}) e^{-\alpha(x)}
             :label: doerner_nix
-	
+
 With :math:`x=t/h`.
-	
+
 The equation was modified by King (1987), by the replacement of :math:`t/h` by :math:`t/a_c`.
-			
+
 Gao et al. (1992) [#Gao_1992]_
 ********************************
 
     .. math:: E^{'} = E^{'}_\text{s} + (E^{'}_\text{f} - E^{'}_\text{s}) \phi_{Gao_0}(x)
             :label: gao
-			
+
     .. math:: \phi_{Gao_0} = {2 \over \pi} arctan {1 \over x} + {1 \over {2\pi(1-\nu_c)}} [(1-2\nu_c){1 \over x}ln(1 + x^2) - {x \over {1+x^2}}]
             :label: phi_gao_0
-			
+
     .. math:: \nu_{c} = 1 + [{{(1-\nu_{s})(1-\nu_{f})} \over {1-(1-\phi_{Gao_1})\nu_{f}-\phi_{Gao_1}\nu_{s}}}]
-			:label: poisson_ratio_composite
+            :label: poisson_ratio_composite
 
 With :math:`\nu_{s}` the Poisson's ratio of the substrate and :math:`\nu_{f}` the Poisson's ratio of the thin film.
 
-	.. math:: \phi_{Gao_1} = {2 \over \pi} arctan {1 \over x} + {1 \over {x\pi}}ln(1+x^2)
-			:label: phi_gao_1
-			
+    .. math:: \phi_{Gao_1} = {2 \over \pi} arctan {1 \over x} + {1 \over {x\pi}}ln(1+x^2)
+            :label: phi_gao_1
+
 With :math:`x=a_c/t`.
 
 Menčík et al. (linear model) (1997) [#Mencik_1997]_
@@ -155,15 +169,15 @@ Menčík et al. (linear model) (1997) [#Mencik_1997]_
 
     .. math:: E^{'} = E^{'}_\text{f} + (E^{'}_\text{s} - E^{'}_\text{f})(x)
             :label: mencik_linear
-			
+
 With :math:`x=a_c/t`.
-			
+
 Menčík et al. (exponential model) (1997) [#Mencik_1997]_
 *********************************************************
 
     .. math:: E^{'} = E^{'}_\text{s} + (E^{'}_\text{f} - E^{'}_\text{s}) e^{-\alpha(x)}
             :label: mencik_exponential
-			
+
 With :math:`x=a_c/t`.
 
 Menčík et al. (reciprocal exponential model) (1997) [#Mencik_1997]_
@@ -179,7 +193,7 @@ Perriot et al. (2003) [#Perriot_2004]_
 
     .. math:: E^{'} = E^{'}_\text{f} + {{E^{'}_\text{s}-E^{'}_\text{f}} \over 1+({{k_0} \over x})^n}
             :label: perriot_barthel
-			
+
     .. math:: log(k_0) = -0.093+0.792log({E^{'}_\text{s} \over E^{'}_\text{f}}) + 0.05[log{E^{'}_\text{s} \over E^{'}_\text{f}}]^2
             :label: perriot_barthel_k0
 
@@ -219,10 +233,10 @@ A correction proposed by Menčík et al. can be apply, assuming a rigid substrat
 
     .. math:: \pi a^2 t_\text{eff} = \pi a^2 t - V
             :label: general_thickness_correction
-			
+
 With :math:`V` the volume displaced by the indenter and approximated by :math:`\pi a^2 h_\text{c} / 3`, 
 for a conical indenter and contact depths :math:`h_\text{c}` smaller than the film thickness.
-			
+
     .. math:: t_\text{eff} = t - {h_\text{c} \over 3}
             :label: thickness_correction
 
@@ -246,9 +260,11 @@ References
 .. [#Cheng_2004] `Cheng Y. T. et Cheng C.M., "Scaling, dimensional analysis, and indentation measurements." (2004) <http://dx.doi.org/10.1016/j.mser.2004.05.001>`_
 .. [#DoernerNix_1986] `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
 .. [#Gao_1992] `Gao H. et al., "Elastic contact versus indentation modeling of multi-layered materials" (1992). <http://dx.doi.org/10.1016/0020-7683(92)90004-D>`_
+.. [#Hainsworth_1996] `Hainsworth S.V. et al., "Analysis of nanoindentation load-displacement loading curves" (1996). <http://dx.doi.org/10.1557/JMR.1996.0250>`_
 .. [#Hay_2011] `Hay J. and Crawford B., "Measuring substrate-independent modulus of thin films" (2011). <http://dx.doi.org/10.1557/jmr.2011.8>`_
 .. [#Hochstetter_1999] `Hochstetter G. et al., "Strain-rate effects on hardness of glassy polymers in the nanoscale range. Comparison between quasi-static and continuous stiffness measurements" (1999). <http://dx.doi.org/10.1080/00222349908248131>`_
 .. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <http://dx.doi.org/10.1016/0020-7683(87)90116-8>`_
+.. [#Loubet_1986] `Loubet J.L. et al., "Vickers indentation curves of elastoplastic materials" (1986). <http://dx.doi.org/10.1520/STP889-EB>`_
 .. [#Mencik_1997] `Menčík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
 .. [#Mercier_2010] `Mercier D. et al., "Mesure de module d'Young d'un film mince à partir de mesures expérimentales de nanoindentation réalisées sur des systèmes multicouches" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
 .. [#OliverPharr_1992] `Oliver W.C. and Pharr G.M., "An improved technique for determining hardness and elastic modulus using load and displacement sensing indentation experiments" (1992). <http://dx.doi.org/10.1557/JMR.1992.1564>`_

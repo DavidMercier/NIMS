@@ -71,4 +71,4 @@ The author is grateful to V. Mandrillon from `CEA Grenoble <http://www.cea.fr/le
 
 Keywords
 ========
-|matlab| toolbox; nanoindentation ; Young's modulus ; hardness ; thin film ; multilayer system ; analytical model ; python script ; finite element modelling.
+|matlab| toolbox; nanoindentation ; conical indenter; Young's modulus ; hardness ; thin film ; multilayer system ; analytical model ; python script ; finite element modelling.
