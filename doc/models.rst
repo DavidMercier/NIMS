@@ -96,7 +96,13 @@ The first two terms also describe a hyperboloid of revolution, a very reasonable
 a fixed angle at large distances from the tip.
 
 .. note::
-	Only, the first 4th coefficients :math:`C_\text{i}` are used for calculations in this toolbox.
+    Only, the first 4th coefficients :math:`C_\text{i}` are used for calculations in this toolbox.
+    
+Continuous stiffness measurement [#OliverPharr_1992]_
+------------------------------------------------------
+
+The "continuous stiffness measurement" technique (CSM) consists to calculate the stiffness continuously during the loading of the indenter.
+A small dynamic oscillation is imposed on the force (or displacement) signal and the amplitude and phase of the corresponding displacement (or force) signal are measured using a frequency-specific amplifier.
 
 Extraction of elastic properties
 --------------------------------
@@ -107,10 +113,12 @@ Elastic properties of bulk material
     .. math:: E^{*} = \beta {1 \over 2} \sqrt{\pi \over A} {dF_\text{c} \over dh_\text{c}}
             :label: experimental_youngs_modulus
 
-Where the values of the constant :math:`\beta` are [#King_1987]_ :
+With :math:`\beta` a geometrical correction factor [#King_1987]_ and [#Pharr_1992]_, equal to :
     - 1 for circular indenters (e.g. : conical and spherical indenter);
     - 1.034 for three-sided pyramid indenters (e.g. : Berkovich indenter);
     - 1.012 for four-sided pyramid indenters (e.g. : Vickers indenter).
+    
+Woirgard has demonstrated analytically that the exact value of  :math:`\beta` for the perfectly sharp Berkovich indenter should be 1.062 [#Troyon_2006]_.
 
     .. math:: {1 \over E^{*}} = {1 \over E^{'}} + {1 \over E_i^{'}}
             :label: youngs_modulus
@@ -224,8 +232,8 @@ Mercier et al. (2010) [#Mercier_2010]_
    
    *Figure 4 : Experimental process to apply for elastic multilayer model.*
 
-Corrections to apply for thin film indentation [#Mencik_1997]_ and [#Bec_2006]_
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Corrections to apply for thin film indentation [#Mencik_1997]_, [#Saha_2002]_and [#Bec_2006]_
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 During nanoindentation tests of thin film on substrate, the thickness of the film beneath the indenter is smaller than its original value,
 because of plastic flow during loading. The use of the original film thickness :math:`t` in the regression model cause a systematic shift or distortion of the Young's modulus curve.
@@ -246,8 +254,8 @@ for a conical indenter and contact depths :math:`h_\text{c}` smaller than the fi
    
    *Figure 5 : Indentation penetration of a thin film on a sample.*
 
-Extraction of plastic properties
---------------------------------
+Extraction of plastic properties [#OliverPharr_1992]_
+------------------------------------------------------
 
     .. math:: H = {F_\text{c,max} \over A_\text{c}}
             :label: hardness
@@ -255,9 +263,9 @@ Extraction of plastic properties
 References
 ----------
 .. [#Bec_2006] `Bec S. et al., "Improvements in the indentation method with a surface force apparatus" (2006). <http://dx.doi.org/10.1080/01418619608239707>`_
-.. [#Bolshakov_1998] `Bolshakov A. and Pharr G. M., "Influences of pile-up on the measurement of mechanical properties by load and depth sensing indentation techniques." (1998) <http://dx.doi.org/10.1557/JMR.1998.0146>`_
-.. [#Cheng_1998] `Cheng Y. T. et Cheng C.M. ,"Effects of ‘sinking in’ and ‘piling up’ on estimating the contact area under load in indentation." (1998) <http://dx.doi.org/10.1080/095008398178093>`_
-.. [#Cheng_2004] `Cheng Y. T. et Cheng C.M., "Scaling, dimensional analysis, and indentation measurements." (2004) <http://dx.doi.org/10.1016/j.mser.2004.05.001>`_
+.. [#Bolshakov_1998] `Bolshakov A. and Pharr G.M., "Influences of pile-up on the measurement of mechanical properties by load and depth sensing indentation techniques." (1998) <http://dx.doi.org/10.1557/JMR.1998.0146>`_
+.. [#Cheng_1998] `Cheng Y.T. and Cheng C.M. ,"Effects of ‘sinking in’ and ‘piling up’ on estimating the contact area under load in indentation." (1998) <http://dx.doi.org/10.1080/095008398178093>`_
+.. [#Cheng_2004] `Cheng Y.T. and Cheng C.M., "Scaling, dimensional analysis, and indentation measurements." (2004) <http://dx.doi.org/10.1016/j.mser.2004.05.001>`_
 .. [#DoernerNix_1986] `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
 .. [#Gao_1992] `Gao H. et al., "Elastic contact versus indentation modeling of multi-layered materials" (1992). <http://dx.doi.org/10.1016/0020-7683(92)90004-D>`_
 .. [#Hainsworth_1996] `Hainsworth S.V. et al., "Analysis of nanoindentation load-displacement loading curves" (1996). <http://dx.doi.org/10.1557/JMR.1996.0250>`_
@@ -270,7 +278,9 @@ References
 .. [#OliverPharr_1992] `Oliver W.C. and Pharr G.M., "An improved technique for determining hardness and elastic modulus using load and displacement sensing indentation experiments" (1992). <http://dx.doi.org/10.1557/JMR.1992.1564>`_
 .. [#OliverPharr_2004] `Oliver W.C. and Pharr G.M., "Measurement of hardness and elastic modulus by instrumented indentation: Advances in understanding and refinements to methodology" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.1.3>`_
 .. [#Perriot_2004] `Perriot A. and Barthel E., "Elastic contact to a coated half-space: Effective elastic modulus and real penetration" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.2.600>`_
-
+.. [#Pharr_1992] `Pharr G. M.  et al., "On the generality of the relationship among contact stiffness, contact area, and elastic modulus during indentation." (1992). <http://dx.doi.org/10.1557/JMR.1992.0613>`_
+.. [#Saha_2002] `Saha R. and Nix W.D., "Effects of the substrate on the determination of thin film mechanical properties by nanoindentation" (2002). <http://dx.doi.org/10.1016/S1359-6454(01)00328-7>`_
+.. [#Troyon_2006] `Troyon M. and Lafaye S., "About the importance of introducing a correction factor in the Sneddon relationship for nanoindentation measurements" (2002). <http://dx.doi.org/10.1080/14786430600606834>`_
 
 
 
