@@ -130,11 +130,6 @@ Doerner & Nix (1986) [#DoernerNix_1986]_ [#King_1987]_
 With :math:`x=t/h`.
 	
 The equation was modified by King (1987), by the replacement of :math:`t/h` by :math:`t/a_c`.
-
-    .. math:: {1 \over E^{'}} = {1 \over E_\text{f}^{'}} + ({1 \over E_\text{s}^{'}} - {1 \over E_\text{f}^{'}}) e^{-\alpha(x)}
-            :label: doerner_nix_king
-
-With :math:`x=t/a_c`.
 			
 Gao et al. (1992) [#Gao_1992]_
 ********************************
