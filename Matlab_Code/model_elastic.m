@@ -11,7 +11,7 @@ gui.data.nuind    = gui.data.indenter_material_pr; % Poisson's coefficient of in
 gui.data.Eind_red = (gui.data.Eind / (1-gui.data.nuind^2)); % Reduced Young's modulus of diamond. See in Fischer-Cripps "Nanoindentation 2nd Ed.".
 
 % Effective reduced Young's modulus (sample+indenter) in GPa
-gui.results.Eeff_red = ((pi^0.5)/(2*gui.data.beta .* gui.data.gamma)).* ...
+gui.results.Eeff_red = ((pi^0.5)/(2*gui.data.beta)).* ...
     10^6.*gui.data.S.*(1./sqrt(gui.results.Ac));
 
 % Reduced Young's modulus of the sample in GPa (no indenter's contribution)

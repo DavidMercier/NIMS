@@ -31,13 +31,12 @@ indenter_id    = list_indenters(num_indenters, :);
 
 if strcmp(val0_str(1:4), 'Berk') == 1
     gui.variables.val0 = 1;
-    
 elseif strcmp(val0_str(1:4), 'Vick') == 1
     gui.variables.val0 = 2;
-    
-elseif strcmp(val0_str(1:4), 'Coni') == 1
+elseif strcmp(val0_str(1:4), 'Cub') == 1
     gui.variables.val0 = 3;
-    
+elseif strcmp(val0_str(1:4), 'Coni') == 1
+    gui.variables.val0 = 4;
 end
 
 gui.data.h_Berk = str2double(get(gui.handles.value_indenterberk_prop_GUI,    'String')); % nm
@@ -52,12 +51,11 @@ gui.data.C5 = str2double(get(gui.handles.value_C5_GUI, 'String'));
 gui.data.Ang = str2double(get(gui.handles.value_indentercon_ang_prop_GUI, 'String')); % µm
 
 % Load-disp. model properties
-gui.variables.loaddisp_model = get(gui.handles.value_loaddisp_model_GUI,  'Value');
+gui.variables.loaddisp_model = get(gui.handles.value_loaddisp_model_GUI, 'Value');
 
 % Model properties
 gui.variables.num_thinfilm    = get(gui.handles.value_numthinfilm_GUI,     'Value');
-gui.variables.King_correction = get(gui.handles.cb_corr_King_GUI,          'Value');
-gui.variables.Hay_correction  = get(gui.handles.cb_corr_Hay_GUI,           'Value');
+gui.variables.King_correction = get(gui.handles.popup_corr_King_GUI,       'Value');
 gui.variables.val1            = get(gui.handles.value_modeldisp_GUI,       'Value');
 gui.variables.val2            = get(gui.handles.value_bilayermodel_GUI,    'Value');
 gui.variables.val2_mm         = get(gui.handles.value_multilayermodel_GUI, 'Value');

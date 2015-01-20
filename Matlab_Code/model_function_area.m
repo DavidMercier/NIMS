@@ -27,17 +27,13 @@ if gui.variables.val0 == 1 % Berkovich indenter
     gui.data.theta_eq = 70.32;  % Equivalent cone angle (in degrees)
     
     if gui.variables.King_correction == 1
-        gui.data.beta  = 1.034;
+        gui.data.beta  = 1.034; % See in King (1987)
         %gui.data.beta  = 1.062; % See Troyon (2006)
-    end
-    
-    if gui.variables.Hay_correction == 1
-        % 1st version of gamma
-        % gui.data.gamma = 1+((1-2*nuf)/(4*(1-nuf)*tand(gui.data.theta_eq)));
-        gui.data.gamma = pi * (((pi/4) + ...
-            (0.15483073.*cotd(gui.data.theta_eq) * ...
+    elseif gui.variables.King_correction == 2 % See in Hay (1999)
+        gui.data.beta = pi * (((pi/4) + ...
+            (0.15483073*cotd(gui.data.theta_eq) * ...
             ((1-2*gui.data.nuf)/(4*(1-gui.data.nuf))))) / ...
-            ((pi/2)-(0.83119312.*cotd(gui.data.theta_eq) * ...
+            ((pi/2)-(0.83119312*cotd(gui.data.theta_eq) * ...
             ((1-2*gui.data.nuf)/(4*(1-gui.data.nuf)))))^2);
     end
     
@@ -48,32 +44,29 @@ elseif gui.variables.val0 == 2; % Vickers indenter
     gui.data.theta_eq = 70.2996;  % Equivalent cone angle (in degrees)
     
     if gui.variables.King_correction == 1
-        gui.data.beta  = 1.012;
+        gui.data.beta  = 1.012; % See in King (1987)
     end
     
-    if gui.variables.Hay_correction == 1
-        gui.data.gamma = pi*(((pi/4) + ...
-            (0.15483073.*cotd(gui.data.theta_eq) * ...
-            ((1-2*gui.data.nuf)/(4*(1-gui.data.nuf))))) / ...
-            ((pi/2)-(0.83119312.*cotd(gui.data.theta_eq) * ...
-            ((1-2*gui.data.nuf)/(4*(1-gui.data.nuf)))))^2);
+elseif gui.variables.val0 == 3  % Cube-Corner indenter
+    gui.data.epsilon  = 0.75; % Oliver & Pharr's constant. See in Pharr et al. (1992).
+    gui.data.h_tip    = gui.data.h_Coni;
+    gui.data.theta    = 35.2644;  % Semi-angle from the apex (in degrees)
+    gui.data.theta_eq = 42.286;  % Equivalent cone angle (in degrees)
+    
+    if gui.variables.King_correction == 1
+        gui.data.beta  = 1.034; % ???
+    elseif gui.variables.King_correction == 2 % See in Hay (1999)
+        gui.data.beta = 1 + ((1-2*gui.data.nuf) / ...
+            (4*(1-gui.data.nuf) * tand(gui.data.theta_eq)));
     end
     
-elseif gui.variables.val0 == 3  % Conical indenter
+elseif gui.variables.val0 == 4  % Conical indenter
     gui.data.epsilon  = 0.75; % Oliver & Pharr's constant. See in Pharr et al. (1992).
     gui.data.h_tip    = gui.data.h_Coni;
     gui.data.theta_eq = gui.data.Ang;
     
     if gui.variables.King_correction == 1
-        gui.data.beta  = 1.000;
-    end
-    
-    if gui.variables.Hay_correction == 1
-        gui.data.gamma = pi * (((pi/4) + ...
-            (0.15483073.*cotd(gui.data.theta_eq) * ...
-            ((1-2*gui.data.nuf)/(4*(1-gui.data.nuf))))) / ...
-            ((pi/2)-(0.83119312.*cotd(gui.data.theta_eq) * ...
-            ((1-2*gui.data.nuf)/(4*(1-gui.data.nuf)))))^2);
+        gui.data.beta  = 1.000; % See in King (1987)
     end
 end
 
@@ -91,8 +84,8 @@ elseif gui.variables.val1 == 3 % Loubet et al. (1992)
 end
 
 % Contact area calculation in nm2
-% Berkovich & Vickers indenters
-if gui.variables.val0 == 1 || gui.variables.val0 == 2
+% Berkovich, Vickers and Cune-Corner indenters
+if gui.variables.val0 < 4
     gui.results.Ac = gui.data.C1.*(gui.results.hc.^2) + ...
         gui.data.C2.*(gui.results.hc.^1) + ...
         gui.data.C3.*(gui.results.hc.^0.5) + ...
@@ -100,7 +93,7 @@ if gui.variables.val0 == 1 || gui.variables.val0 == 2
         gui.data.C5.*(gui.results.hc.^0.125);
     
     % Conical indenter
-elseif gui.variables.val0 == 3
+elseif gui.variables.val0 == 4
     gui.results.Ac = pi * (gui.results.hc.^2) * tand(gui.data.theta_eq)^2;
     
 end

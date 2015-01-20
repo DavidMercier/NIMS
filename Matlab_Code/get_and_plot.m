@@ -20,9 +20,9 @@ if ~gui.flag.wrong_inputs
         CSM_correction;
     end
     
-    %% Refreshing of the GUI
-    refresh_param_GUI;
+    %% Getting parameters and Refreshing the GUI
     get_param_GUI;
+    refresh_param_GUI;
     
     %% Get parameters
     model_set_parameters;
