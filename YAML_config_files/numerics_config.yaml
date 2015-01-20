@@ -1,0 +1,36 @@
+# Copyright 2014 MERCIER David
+# Be careful to put a comma + a space between each data...! (YAML convention)
+
+#################################################################################
+alpha_Loubet: 1.24
+
+#################################################################################
+epsilonParaboloidRevolution_OliverPharr: 0.75
+epsilonConical_OliverPharr: 0.72
+epsilonFlatPunch_OliverPharr: 1
+
+epsilon_Merle: 0.76
+
+#################################################################################
+betaBerkovich_King: 1.034
+betaVickers_King: 1.012
+betaConical_King: 1.000
+
+betaBerkovich_Troyon: 1.062
+
+#################################################################################
+# Semi-angle from the apex (in degrees)
+# Equivalent cone angle (in degrees)
+
+thetaBerkovich: 65.3
+thetaBerkovich_eq: 70.32
+
+thetaVickers: 68
+thetaVickers: 70.2996
+
+thetaCubeCorner: 35.2644
+thetaCubeCorner: 42.286
+
+#################################################################################
+CSM_K_Pharr: 0.757
+CSM_m_Pharr: 1.380

@@ -3,14 +3,14 @@
 # For user-defined indenters, name your indenters with the 4 first letters of the original indenter name
 # e.g. : for a Berkovich indenter : Berk_TB10161_110210
 # Be careful to put a comma + a space between each data...! (YAML convention)
-
+#################################################################################
 # List of indenters - !!! Do not remove Berkovich, Vickers and Conical !!!
 # For user_defined indenters, make the name of the indenter begins with the 4th first letters of the indenters
-# e.g. : Berk_TB10161_091208 or Coni_120812 or Vick120512_oldtip
+# e.g. : Berk_TB10161_091208 or Coni_120812 or Vick120512_oldtip or CubeCornerXXXFFF
 Indenter_IDs: [Berkovich, Vickers, Conical, Berk_TB10161_091208, Berk_TB10161_110210]
 # Set the indenter you want to use by default
 Indenter_ID: Berkovich
-
+#################################################################################
 # List of material indenters - !!! Do not remove !!!
 Indenter_materials: [Diamond, Sapphire]
 # Set the indenter material you want to use by default
@@ -18,21 +18,22 @@ Indenter_material: Diamond
 # Set the material properties [Young's modulus in GPa, Poisson's ratio]
 # Values from A.C. Fischer-Cripps "Nanoindentation" - Springer 2nd Ed. (2004)
 Indenter_material_properties: {Diamond: [1070, 0.07], Sapphire: [400, 0.25]}
-
+#################################################################################
 # !!! Do not remove !!!
-# For Berkovich : [C1, C2, C3, C4, C5, Tip defect in nm]
+# For Berkovich, Vickers and Cube-Corner : [C1, C2, C3, C4, C5, Tip defect in nm]
 # For Conical : [Angle in degrees, Tip defect in nm]
 Berkovich: [24.56, 0, 0, 0, 0, 1]
 Vickers: [20.506, 0, 0, 0, 0, 1]
+CubeCorner: [2.598, 0, 0, 0, 0, 1]
 Conical: [45, 0]
+#################################################################################
 # !!! Do not remove !!!
-
 # Parameters of user-defined indenters (optional)
 # For Berkovich : [C1, C2, C3, C4, C5, Tip defect in nm]
 # For Conical : [Angle in degrees, Radius in µm]
 # Use the same indenter name as given in the list of indenters !!!
 Berk_TB10161_091208: [22.233, 437.603, 127.765, -417.878, -84.0989, 0]
 Berk_TB10161_110210: [23.9198, 1217.67, -12231, 41727.1, -32286.3, 0]
-
+#################################################################################
 # Absolute path to your nanoindentation results (optional)
 data_path: C:\Users\d.mercier\Desktop\NanoInd_Properties_Extraction\Data_indentation\
