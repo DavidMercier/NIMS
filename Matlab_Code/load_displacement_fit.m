@@ -1,5 +1,5 @@
 %% Copyright 2014 MERCIER David
-function [k_fit, P_fit] = load_displacement_fit(model, h, P)
+function [k_fit, P_fit, results] = load_displacement_fit(model, h, P)
 %% Function used to fit the loading part of the load-displacement curves
 
 % Loubet J. L. et al., "Nanoindentation with a surface force apparatus.", (1993).
@@ -25,8 +25,8 @@ OPTIONS = optimset('lsqcurvefit');
 OPTIONS = optimset(OPTIONS, 'TolFun',  1e-20);
 OPTIONS = optimset(OPTIONS, 'TolX',    1e-20);
 OPTIONS = optimset(OPTIONS, 'MaxIter', 10000);
-[k_fit, gui.results.resnorm, gui.results.residual, gui.results.exitflag, ...
-    gui.results.output, gui.results.lambda, gui.results.jacobian] =...
+[k_fit, results.resnorm, results.residual, results.exitflag, ...
+    results.output, results.lambda, results.jacobian] =...
     lsqcurvefit(load_disp_model, k0, h, P, lb, ub, OPTIONS);
 
 if model == 2

@@ -1,5 +1,5 @@
 %% Copyright 2014 MERCIER David
-function model_elastic_set
+function model_set_parameters
 %% Function used to set the properties of the top film
 gui = guidata(gcf);
 

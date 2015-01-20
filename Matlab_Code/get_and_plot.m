@@ -18,37 +18,37 @@ gui = guidata(gcf); guidata(gcf, gui);
 if ~gui.flag.wrong_inputs
     if gui.flag.flag_no_csm ~= 1
         CSM_correction;
-        gui = guidata(gcf); guidata(gcf, gui);
     end
     
     %% Refreshing of the GUI
     refresh_param_GUI;
-    gui = guidata(gcf); guidata(gcf, gui);
-    
     get_param_GUI;
+    
+    %% Get parameters
+    model_set_parameters;
+    
+    %% Calculations of function area
+    model_function_area;
     gui = guidata(gcf); guidata(gcf, gui);
     
-    %% Calculations of elastic properties
-    model_elastic_set;
-    gui = guidata(gcf); guidata(gcf, gui);
-    
-    model_elastic;
-    gui = guidata(gcf); guidata(gcf, gui);
-    
-    %% Set model to use for calculations
-    if get(gui.handles.value_numthinfilm_GUI, 'Value') == 2
-        model_bilayer_elastic;
-        gui = guidata(gcf); guidata(gcf, gui);
-        
-    elseif get(gui.handles.value_numthinfilm_GUI, 'Value') == 3 || get(gui.handles.value_numthinfilm_GUI, 'Value') == 4
-        model_multilayer_elastic;
-        gui = guidata(gcf); guidata(gcf, gui);
-        
-    else
+    %% Calculations of Young's modulus
+    if gui.variables.y_axis == 4 || gui.variables.y_axis == 5
+        model_elastic;
+        %% Set model to use for calculations
+        if get(gui.handles.value_numthinfilm_GUI, 'Value') == 2
+            model_bilayer_elastic;
+        elseif get(gui.handles.value_numthinfilm_GUI, 'Value') == 3 || ...
+                get(gui.handles.value_numthinfilm_GUI, 'Value') == 4
+            model_multilayer_elastic;
+        end        
+    elseif gui.variables.y_axis == 6
         gui.results.H = model_hardness(gui.data.P, gui.results.Ac);
     end
     
-    delete(gui.handles.h_waitbar);
+    % Be careful of the order of the 3 following lines, because gcf is
+    % the waitbar during calculations !!!
+    gui = guidata(gcf);
+    delete(gui.handles.h_waitbar); 
     guidata(gcf, gui);
     
     %% Plot data
@@ -60,19 +60,13 @@ if ~gui.flag.wrong_inputs
         
         if residual_plot_value == 0
             plot_exp_vs_mod;
-            gui = guidata(gcf); guidata(gcf, gui);
-            
         else
             plot_residuals;
-            gui = guidata(gcf); guidata(gcf, gui);
-            
         end
-        
     else
         plot_exp_vs_mod;
-        gui = guidata(gcf); guidata(gcf, gui);
-        
     end
+    gui = guidata(gcf);
 else
     delete(gui.handles.h_waitbar);
 end
