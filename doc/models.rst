@@ -3,20 +3,37 @@
 ..  include:: <isonum.txt>
 ..  |matlab| replace:: Matlab\ :sup:`TM` \
 
-Nanoindentation test
---------------------
+Nanoindentation tests
+-----------------------
 
-The following part is about extraction of mechanical properties of material from indentation experiments with conical indenters.
+The nanoindentation (or instrumented indentation) is a variety of indentation hardness tests applied to small volumes. 
+
+The following parts give a short overview of models existing in the literature used for the extraction of mechanical properties
+of bulk and thin film materials from indentation experiments with conical indenters.
 
 Conical indenters
-------------------
+-----------------------
+.. csv-table::
+   :header: "Indenter", "Berkovich", "Vickers", "Cube-Corner", "Conical"
+   :widths: 25,25,25,25,25
 
+   "Shape",                    "3-sided pyramid",   "4-sided pyramid",   "3-sided pyramid",   "Conical (angle :math:`\psi`)"
+   "Semi-angle from the apex", "65.3°",             "68°",               "35.2644°",          "--"
+   "Equivalent cone angle",    "70.32°",            "70.2996°",          "42.28°",            ":math:`\psi`"  
+   "Projected Area",           ":math:`24.56h^2`",  ":math:`24.504h^2`", ":math:`2.5981h^2`", ":math:`\pi{a_\text{c}}^2`"
+   "Volume-depth relation",    ":math:`8.1873h^3`", ":math:`8.1681h^3`", ":math:`0.8657h^3`", "--"
+   "Projected area/face area", ":math:`0.908`",     ":math:`0.927`",      ":math:`0.5774`",    "--"
+   "Contact radius",           "--",                 "--",                 "--",                 ":math:`h.tan\psi`"
+      
 Load-Displacement curves
 ------------------------
+Parameters such as contact load :math:`F_\text{c}` and depth of penetration :math:`h` are recorded during indentation tests.
 
-An schematic of the load-displacement curve obtained from nanoindentation experiment is given Figure 1.
-The applied load :math:`F_\text{c}` is plotted in function of the indentation depth :math:`h`.
+A schematic of the load-displacement curve obtained from nanoindentation experiment is given Figure 1.
+
 The evolution of this curve depends on material properties of the sample and the indenter, and of the indenter's geometry.
+
+The slope of this curve during unloading gives access to the contact stiffness :math:`S = dF_\text{c}/dh`.
 
 .. figure:: ./_pictures/load-disp_curve.png
    :scale: 60 %
@@ -36,7 +53,7 @@ Using the load-displacement curves analysis performed by Loubet et al.,  Hainswo
         .. math:: F_\text{c} = K h_\text{t}^2
                 :label: Hainsworth_load_displacement
                 
-With :math:`K` a constant function of material properties (Young's modulus and hardness) and the indenter
+With :math:`K` a constant function of material properties (Young's modulus and hardness) and the indenter.
 
 Indentation contact topography
 -------------------------------
@@ -53,6 +70,12 @@ Pile-up occurs when work-hardening coefficient is low (< 0.3) or if the ratio yi
    
    *Figure 2 : Schematic of indentation contact topography : a) « pile-up » and b) « sink-in ».*
    
+.. figure:: ./_pictures/pile_up.png
+   :scale: 35 %
+   :align: center
+
+   *Figure 3 : Residual topography of a Berkovich indent in PVD Gold thin film (500nm thick) with « pile-up » surrounding the indent, measured by atomic force microscopy.*
+   
 Three models defining the depth of contact :math:`h_\text{c}` were developed to take into account this indentation contact topography.
 
 Model of Doerner and Nix [#DoernerNix_1986]_ :
@@ -60,14 +83,20 @@ Model of Doerner and Nix [#DoernerNix_1986]_ :
         .. math:: h_\text{c} = h_\text{t} - {F_\text{c} \over S}
                 :label: doerner_nix_model
 
-Model of Oliver and Pharr [#OliverPharr_1992]_ in case of sink-in:
+Model of Oliver and Pharr [#OliverPharr_1992]_, [#Pharr_2002]_ and [#OliverPharr_2004]_ in case of sink-in:
 
         .. math:: h_\text{c} = h_\text{t} - \epsilon {F_\text{c} \over S}
                 :label: oliver_pharr_model
+              
+Where :math:`\epsilon` is a function of the indenter's geometry (0.72 for conical indenter, 0.75 for paraboloids of revolution and 1 for a flat cylindrical punch).
 
-Where :math:`\epsilon` is a constant function of the indenter's geometry (0.72 for the Berkovich indenter and 0.75 for paraboloids of revolution).
+0.72 should be most applicable for a Berkovich indenter, which is more like a cone than a paraboloid of revolution.
+But, Oliver and Pharr concluded after a large number of experiments that the best value for the Berkovich indenter is 0.75.
 
-Model of Loubet et al. [#Hochstetter_1999]_, [#Bec_2006]_in case of pile-up:
+More recently, Merle et al. have found experimentally with indentation test in fused silica, a value of 0.76 for :math:`\epsilon`, which is in a good agreement with the literature
+for a paraboloid of revolution [#Merle_2012]_.
+
+Model of Loubet et al. [#Hochstetter_1999]_, [#Bec_2006]_ in case of pile-up:
 
         .. math:: h_\text{c} = \alpha (h_\text{t} - {F_\text{c} \over S})
                 :label: loubet_model
@@ -97,6 +126,11 @@ a fixed angle at large distances from the tip.
 
 .. note::
     Only, the first 4th coefficients :math:`C_\text{i}` are used for calculations in this toolbox.
+
+An equivalent contact radius :math:`a_\text{c}` is also defined based on the area function.
+
+        .. math:: a_\text{c} = \sqrt{A_\text{c} \over \pi}
+                :label: contact_radius
     
 Continuous stiffness measurement [#OliverPharr_1992]_
 ------------------------------------------------------
@@ -104,11 +138,16 @@ Continuous stiffness measurement [#OliverPharr_1992]_
 The "continuous stiffness measurement" technique (CSM) consists to calculate the stiffness continuously during the loading of the indenter.
 A small dynamic oscillation is imposed on the force (or displacement) signal and the amplitude and phase of the corresponding displacement (or force) signal are measured using a frequency-specific amplifier.
 
+[#Pharr_2009]_
+
 Extraction of elastic properties
 --------------------------------
 
 Elastic properties of bulk material
 +++++++++++++++++++++++++++++++++++
+
+The following method used to analyze indentation data is based on equations valid for
+isotropic homogeneous elastic solids.
 
     .. math:: E^{*} = \beta {1 \over 2} \sqrt{\pi \over A} {dF_\text{c} \over dh_\text{c}}
             :label: experimental_youngs_modulus
@@ -120,38 +159,68 @@ With :math:`\beta` a geometrical correction factor [#King_1987]_ and [#Pharr_199
     
 Woirgard has demonstrated analytically that the exact value of  :math:`\beta` for the perfectly sharp Berkovich indenter should be 1.062 [#Troyon_2006]_.
 
-    .. math:: {1 \over E^{*}} = {1 \over E^{'}} + {1 \over E_i^{'}}
+Some authors proposed another correction factor function of the angle of the conical indenter and the Poisson's ration of the indented material [#Hay_1999]_ and [#Strader_2006]_.
+Analytical approximations were developed for Berkovich and Cube-Corner indenters after many finite element simulations.
+
+Knowing the material properties of the indenter, it is possible to calculate the reduced Young's modulus of the indented material. 
+
+    .. math:: {1 \over E^{'}} = {1 \over E^{*}} - {1 \over E_\text{i}^{'}}
             :label: youngs_modulus
             
-    .. math:: E^{'} = {E \over (1-\nu^{2})}
+    .. math:: E = E^{'} * (1-\nu^{2})
             :label: reduced_youngs_modulus
 
-    .. math:: E_i^{'} = {E_i \over (1-\nu_i^{2})}
+    .. math:: E_\text{i}^{'} = {E_\text{i} \over (1-\nu_\text{i}^{2})}
             :label: indenter_reduced_youngs_modulus
 
 Elastic properties of a thin film on a substrate
 +++++++++++++++++++++++++++++++++++++++++++++++++
-          
+
+For indentation test on a multilayer sample (thin films deposited on a substrate for example),
+the calculated composite reduced modulus :math:`E^{'}` with previous models, can generally be expressed as
+a combination of the respective reduced moduli of the films, :math:`E^{'}_\text{f}`, and of the substrate, :math:`E^{'}_\text{s}`.
+
+If the films moduli differs from that of the substrate, then :math:`E^{'}` changes
+with the depth of penetration :math:`h`. The evolution of the composite modulus :math:`E^{'}` is 
+function of the material properties of the materials, the thickness :math:`t` and the density of the thin films and 
+the properties and the geometry of the indenter.
+
+If the characterized film is thick enough, it is possible to extract the elastic properties
+for indentation depth lower than 10% of the film thickness (:math:`h < 10% t`) [#Bückle_1961]_.
+
+Because of the imperfections of the indenters, the roughness and the surface pollution, it is more or less meaningful
+to use this rule of the 10%, for film thicker than 500nm.
+
+Several models to analyze bilayer sample indentation and to extract intrinsic
+material properties of the film from are detailed in the following part.
+
+Menčík et al. proposed the following structures to express the combination of :math:`E^{'}_\text{f}` and :math:`E^{'}_\text{s}` [#Mencik_1997]_.
+         
     .. math:: E^{'} = E^{'}_\text{s} + (E^{'}_\text{f} - E^{'}_\text{s}) \phi(x)
             :label: youngs_modulus_evolution_phi
 
     .. math:: E^{'} = E^{'}_\text{s} + (E^{'}_\text{f} - E^{'}_\text{s}) \psi(x)
             :label: youngs_modulus_evolution_psi
             
+Where :math:`x` is the ratio of the contact radius (:math:`a_\text{c}`) or the
+contact depth (:math:`h_\text{c}`), to the film thickness (:math:`t`), and 
+:math:`\phi` and :math:`\psi` are weight functions of the relative penetration :math:`x`.
+
+:math:`\phi` is equal to 1 when :math:`x` is equal to 0 and 0 when :math:`x` is infinite.
+           
 .. note::
     If the difference between Poisson’s ratio of the thin film and substrate is small, the values for uniaxial loading Young's moduli, 
-    :math:`E`, :math:`E_f`, :math:`E_s` can be used in previous equation.
+    :math:`E`, :math:`E_\text{f}`, :math:`E_\text{s}` can be used in previous equation.
 
-
-Doerner & Nix (1986) [#DoernerNix_1986]_ [#King_1987]_
-*******************************************************
+Doerner & Nix (1986) [#DoernerNix_1986]_, [#King_1987]_ and [#Saha_2002]_
+***************************************************************************
 
     .. math:: {1 \over E^{'}} = {1 \over E_\text{f}^{'}} + ({1 \over E_\text{s}^{'}} - {1 \over E_\text{f}^{'}}) e^{-\alpha(x)}
             :label: doerner_nix
 
 With :math:`x=t/h`.
 
-The equation was modified by King (1987), by the replacement of :math:`t/h` by :math:`t/a_c`.
+The equation was modified by King (1987), by the replacement of :math:`t/h` by :math:`t/a_\text{c}`.
 
 Gao et al. (1992) [#Gao_1992]_
 ********************************
@@ -159,18 +228,18 @@ Gao et al. (1992) [#Gao_1992]_
     .. math:: E^{'} = E^{'}_\text{s} + (E^{'}_\text{f} - E^{'}_\text{s}) \phi_{Gao_0}(x)
             :label: gao
 
-    .. math:: \phi_{Gao_0} = {2 \over \pi} arctan {1 \over x} + {1 \over {2\pi(1-\nu_c)}} [(1-2\nu_c){1 \over x}ln(1 + x^2) - {x \over {1+x^2}}]
+    .. math:: \phi_{Gao_0} = {2 \over \pi} arctan {1 \over x} + {1 \over {2\pi(1-\nu_\text{c})}} [(1-2\nu_\text{c}){1 \over x}ln(1 + x^2) - {x \over {1+x^2}}]
             :label: phi_gao_0
 
-    .. math:: \nu_{c} = 1 + [{{(1-\nu_{s})(1-\nu_{f})} \over {1-(1-\phi_{Gao_1})\nu_{f}-\phi_{Gao_1}\nu_{s}}}]
+    .. math:: \nu_{c} = 1 + [{{(1-\nu_\text{s})(1-\nu_\text{f})} \over {1-(1-\phi_{Gao_1})\nu_\text{f}-\phi_{Gao_1}\nu_\text{s}}}]
             :label: poisson_ratio_composite
 
-With :math:`\nu_{s}` the Poisson's ratio of the substrate and :math:`\nu_{f}` the Poisson's ratio of the thin film.
+With :math:`\nu_{c}` the composite Poisson's ratio, :math:`\nu_{s}` the Poisson's ratio of the substrate and :math:`\nu_{f}` the Poisson's ratio of the thin film.
 
     .. math:: \phi_{Gao_1} = {2 \over \pi} arctan {1 \over x} + {1 \over {x\pi}}ln(1+x^2)
             :label: phi_gao_1
 
-With :math:`x=a_c/t`.
+With :math:`x=a_\text{c}/t`.
 
 Menčík et al. (linear model) (1997) [#Mencik_1997]_
 *******************************************************
@@ -178,7 +247,7 @@ Menčík et al. (linear model) (1997) [#Mencik_1997]_
     .. math:: E^{'} = E^{'}_\text{f} + (E^{'}_\text{s} - E^{'}_\text{f})(x)
             :label: mencik_linear
 
-With :math:`x=a_c/t`.
+With :math:`x=a_\text{c}/t`.
 
 Menčík et al. (exponential model) (1997) [#Mencik_1997]_
 *********************************************************
@@ -186,7 +255,7 @@ Menčík et al. (exponential model) (1997) [#Mencik_1997]_
     .. math:: E^{'} = E^{'}_\text{s} + (E^{'}_\text{f} - E^{'}_\text{s}) e^{-\alpha(x)}
             :label: mencik_exponential
 
-With :math:`x=a_c/t`.
+With :math:`x=a_\text{c}/t`.
 
 Menčík et al. (reciprocal exponential model) (1997) [#Mencik_1997]_
 **********************************************************************
@@ -194,7 +263,7 @@ Menčík et al. (reciprocal exponential model) (1997) [#Mencik_1997]_
     .. math:: {1 \over E^{'}} = {1 \over E_\text{s}^{'}} + ({1 \over E_\text{f}^{'}} - {1 \over E_\text{s}^{'}}) e^{-\alpha(x)}
             :label: mencik_reciprocal_exponential
 
-With :math:`x=a_c/t`.
+With :math:`x=a_\text{c}/t`.
 
 Perriot et al. (2003) [#Perriot_2004]_
 ***************************************
@@ -205,35 +274,113 @@ Perriot et al. (2003) [#Perriot_2004]_
     .. math:: log(k_0) = -0.093+0.792log({E^{'}_\text{s} \over E^{'}_\text{f}}) + 0.05[log{E^{'}_\text{s} \over E^{'}_\text{f}}]^2
             :label: perriot_barthel_k0
 
-With :math:`x=a_c/t`, and :math:`k_0` and :math:`n` are adjustable constants.
+With :math:`x=a_\text{c}/t`, and :math:`k_0` and :math:`n` are adjustable constants.
 
 Bec et al. (2006) [#Bec_2006]_
 ********************************
 
+This elastic model is based on indentation by a rigid cylindrical punch (radius :math:`a_\text{c}`)
+of a homogeneous film deposited on a semi-infinite half space.
+
+This system is modelled by two springs connected in series (see Figure 4).
+
+.. figure:: ./_pictures/Bec_bilayer_model.png
+   :scale: 40 %
+   :align: center
+   
+   *Figure 4 : Schematic description of the bilayer model of Bec et al. .*
+
+    .. math:: K_\text{f} = \pi a_\text{c}^2 {E^{'}_\text{f} \over t}
+            :label: bec_kf
+            
+    .. math:: K_\text{s} = 2 a_\text{c} E^{'}_\text{s}
+            :label: bec_ks
+
+    .. math:: K_\text{z} = 2 a_\text{c} E^{'}
+            :label: bec_kz
+                       
+    .. math:: {1 \over K_\text{z}} = {1 \over {f_\text{f}(a_\text{c}) K_\text{f}}} + {1 \over {f_\text{s}(a_\text{c})K_\text{s}}}
+            :label: bec_sum_kf_ks
+
+    .. math:: f_\text{f}(a_\text{c}) = f_\text{s}(a_\text{c}) = 1 + {{2t} \over {\pi a_\text{c}}}
+            :label: bec_f_ac
+            
+    .. math:: {1 \over {2 a_\text{c} E^{'}}} = {t \over {(\pi a_\text{c}^2 + 2ta_\text{c})E^{'}_\text{f}}} + {1 \over {2(a_\text{c} + {2t \over \pi})E^{'}_\text{s}}}
+            :label: bec_Eeq
+            
 Hay et al. (2011) [#Hay_2011]_
 *******************************
+The present model is a development of the Song–Pharr model [#Rar_2002]_ and [#Xu_2006]_ , which is already inspired by the Gao model [#Gao_1992]_.
 
+    .. math:: {1 \over \mu_\text{c}} = (1-\phi_{Gao_0}) {1 \over {\mu_\text{s} + F\phi_{Gao_0}\mu_\text{f}}} + \phi_{Gao_0}{1 \over \mu_\text{f}}
+            :label: hay_model
+            
+Where :math:`\mu_\text{c}` is the composite shear modulus calculated from the composite Young’s modulus as :
 
+    .. math:: \mu_\text{c} = {E \over {2(1+\nu_\text{c})}}
+            :label: hay_muc
+            
+Where :math:`\nu_\text{c}` is the composite Poisson's ratio given in Gao's model.
+
+    .. math:: E = (1 - \nu_\text{c}^2)E^{'}
+            :label: hay_Ec
+
+Knowing :math:`\mu_\text{c}`, it is possible to calculate :math:`\mu_\text{f}` :
+
+    .. math:: \mu_\text{f} = {{-B + \sqrt{B^2-4AC}} \over {2A}}
+            :label: hay_muf
+            
+Where :math:`A = F \phi_{Gao_0}`
+            
+    .. math:: B = \mu_\text{s} - (F \phi_{Gao_0}^2 - \phi_{Gao_0} + 1)\mu_\text{c}
+            :label: hay_B
+            
+    .. math:: C = -\phi_{Gao_0}\mu_\text{c}\mu_\text{s}
+            :label: hay_C
+            
+    .. math:: \mu_\text{s} = {E_\text{s} \over {2(1+\nu_\text{s})}}
+            :label: hay_mus
+            
+Finally, the Young’s modulus of the film is calculated from the shear modulus and Poisson’s ratio of the film :
+
+    .. math:: E_\text{f} = 2\mu_\text{f}(1 + \nu_\text{f})
+            :label: hay_Ef
+            
 Elastic properties of a thin film on a multilayer system
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Mercier et al. (2010) [#Mercier_2010]_
 ***************************************
 
+The elastic model of Mercier et al. for a multilayer sample on :math:`N+1` layers is an extension of the Bec et al. model.
+                      
+    .. math:: {1 \over {2 a_{\text{c},0} E^{'}}} = \sum_{i=0}^{N} {t_i \over {(\pi a_{\text{c},i}^2 + 2t_ia_{\text{c},i})E^{'}_{\text{f},i}}} + {1 \over {2(a_{\text{c},N} + {2t_N \over \pi})E^{'}_\text{s}}}
+            :label: mercier_Eeq
+            
+    .. math:: a_{\text{c},i+1} = a_{\text{c},i} + {2t \over \pi}
+            :label: mercier_ac
+            
+With :math:`a_{\text{c},0}` equal to :math:`a_{\text{c}}`.
+
+Thus, the Young’s modulus of the film can be calculated as :
+
+    .. math:: E^{'}_{\text{f},0} = [{{\pi a_{\text{c},0}^2 + 2t_0a_{\text{c},0}} \over t_0} [{1 \over {2 a_{\text{c},0} E^{'}}} - {(\sum_{i=1}^{N} {{t_i \over {(\pi a_{\text{c},i}^2 + 2t_ia_{\text{c},i})E^{'}_{\text{f},i}}} + {1 \over {2(a_{\text{c},N}+ {2t_N \over \pi})E^{'}_\text{s}}}})}]]^{-1}
+            :label: mercier_Ef
+
 .. figure:: ./_pictures/multilayer_sample_elastic_model.png
    :scale: 30 %
    :align: center
    
-   *Figure 3 : Schematic of elastic multilayer model.*
+   *Figure 5 : Schematic of elastic multilayer model.*
    
 .. figure:: ./_pictures/multilayer_sample_methodology.png
    :scale: 30 %
    :align: center
    
-   *Figure 4 : Experimental process to apply for elastic multilayer model.*
+   *Figure 6 : Experimental process to apply for elastic multilayer model.*
 
-Corrections to apply for thin film indentation [#Mencik_1997]_, [#Saha_2002]_and [#Bec_2006]_
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Corrections to apply for thin film indentation [#Mencik_1997]_, [#Saha_2002]_, [#Bec_2006]_ and [#Li_2010]_
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 During nanoindentation tests of thin film on substrate, the thickness of the film beneath the indenter is smaller than its original value,
 because of plastic flow during loading. The use of the original film thickness :math:`t` in the regression model cause a systematic shift or distortion of the Young's modulus curve.
@@ -252,7 +399,17 @@ for a conical indenter and contact depths :math:`h_\text{c}` smaller than the fi
    :scale: 60 %
    :align: center
    
-   *Figure 5 : Indentation penetration of a thin film on a sample.*
+   *Figure 7 : Indentation penetration of a thin film on a sample.*
+   
+Recently, Li et al. proposed to express the local thinning effect as [#Li_2010]_:
+
+    .. math:: t_\text{eff} = t - \eta h_\text{c}
+            :label: thickness_correction_Li
+
+With :math:`\eta` a parameter depending on the mechanical properties of the film and
+the substrate, and on the geometry of the indenter. Preliminary finite element calculations show that
+:math:`\eta` should be independent of indentation depth and that its value ranges from
+0.3 to 0.7 for materials that do not work harden. 
 
 Extraction of plastic properties [#OliverPharr_1992]_
 ------------------------------------------------------
@@ -263,25 +420,31 @@ Extraction of plastic properties [#OliverPharr_1992]_
 References
 ----------
 .. [#Bec_2006] `Bec S. et al., "Improvements in the indentation method with a surface force apparatus" (2006). <http://dx.doi.org/10.1080/01418619608239707>`_
+.. [#Bückle_1961] Bückle H., "VDI Berichte" (1961).
 .. [#Bolshakov_1998] `Bolshakov A. and Pharr G.M., "Influences of pile-up on the measurement of mechanical properties by load and depth sensing indentation techniques." (1998) <http://dx.doi.org/10.1557/JMR.1998.0146>`_
 .. [#Cheng_1998] `Cheng Y.T. and Cheng C.M. ,"Effects of ‘sinking in’ and ‘piling up’ on estimating the contact area under load in indentation." (1998) <http://dx.doi.org/10.1080/095008398178093>`_
 .. [#Cheng_2004] `Cheng Y.T. and Cheng C.M., "Scaling, dimensional analysis, and indentation measurements." (2004) <http://dx.doi.org/10.1016/j.mser.2004.05.001>`_
 .. [#DoernerNix_1986] `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
 .. [#Gao_1992] `Gao H. et al., "Elastic contact versus indentation modeling of multi-layered materials" (1992). <http://dx.doi.org/10.1016/0020-7683(92)90004-D>`_
-.. [#Hainsworth_1996] `Hainsworth S.V. et al., "Analysis of nanoindentation load-displacement loading curves" (1996). <http://dx.doi.org/10.1557/JMR.1996.0250>`_
+.. [#Hainsworth_1996] `Hainsworth S.V. et al., "Analysis of nanoindentation load-displacement loading curves." J. Mater. Res. (1996). <http://dx.doi.org/10.1557/JMR.1996.0250>`_
+.. [#Hay_1999] `Hay J.C. et al., "A critical examination of the fundamental relations used in the analysis of nanoindentation data." J. Mater. Res. (1999). <http://dx.doi.org/10.1557/JMR.1999.0306>`_
 .. [#Hay_2011] `Hay J. and Crawford B., "Measuring substrate-independent modulus of thin films" (2011). <http://dx.doi.org/10.1557/jmr.2011.8>`_
 .. [#Hochstetter_1999] `Hochstetter G. et al., "Strain-rate effects on hardness of glassy polymers in the nanoscale range. Comparison between quasi-static and continuous stiffness measurements" (1999). <http://dx.doi.org/10.1080/00222349908248131>`_
 .. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <http://dx.doi.org/10.1016/0020-7683(87)90116-8>`_
+.. [#Li_2010] `Li H. et al., "New methods of analyzing indentation experiments on very thin films" (2010). <http://dx.doi.org/10.1557/JMR.2010.0095>`_
 .. [#Loubet_1986] `Loubet J.L. et al., "Vickers indentation curves of elastoplastic materials" (1986). <http://dx.doi.org/10.1520/STP889-EB>`_
 .. [#Mencik_1997] `Menčík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
 .. [#Mercier_2010] `Mercier D. et al., "Mesure de module d'Young d'un film mince à partir de mesures expérimentales de nanoindentation réalisées sur des systèmes multicouches" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
+.. [#Merle_2012] `Merle B. et al., "Experimental determination of the effective indenter shape and e-factor for nanoindentation by continuously measuring the unloading stiffness.", J. Mater. Res. (2012). <http://dx.doi.org/10.1557/jmr.2011.245>`_
 .. [#OliverPharr_1992] `Oliver W.C. and Pharr G.M., "An improved technique for determining hardness and elastic modulus using load and displacement sensing indentation experiments" (1992). <http://dx.doi.org/10.1557/JMR.1992.1564>`_
 .. [#OliverPharr_2004] `Oliver W.C. and Pharr G.M., "Measurement of hardness and elastic modulus by instrumented indentation: Advances in understanding and refinements to methodology" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.1.3>`_
 .. [#Perriot_2004] `Perriot A. and Barthel E., "Elastic contact to a coated half-space: Effective elastic modulus and real penetration" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.2.600>`_
 .. [#Pharr_1992] `Pharr G. M.  et al., "On the generality of the relationship among contact stiffness, contact area, and elastic modulus during indentation." (1992). <http://dx.doi.org/10.1557/JMR.1992.0613>`_
+.. [#Pharr_2002] `Pharr G. M.  and Bolshakov A., "Understanding nanoindentation unloading curves." J. Mater. Res. (2002). <http://dx.doi.org/10.1557/JMR.2002.0386>`_
+.. [#Pharr_2009] `Pharr G.M.et al., "Critical issues in making small-depth mechanical property measurements by nanoindentation with continuous stiffness measurement" (2009). <http://dx.doi.org/10.1557/jmr.2009.0096>`_
+.. [#Rar_2002] `Rar A. et al., "Assessment of new relation for the elastic compliance of a film–substrate system.", Thin Films: Stresses and Mechanical Properties IX (2002). <http://dx.doi.org/10.1557/PROC-695-L10.10.1>`_ 
 .. [#Saha_2002] `Saha R. and Nix W.D., "Effects of the substrate on the determination of thin film mechanical properties by nanoindentation" (2002). <http://dx.doi.org/10.1016/S1359-6454(01)00328-7>`_
+.. [#Strader_2006] `Strader J.H. et al., "An experimental evaluation of the constant b relating the contact stiffness to the contact area in nanoindentation.", Philosophical Magazine (2006) <http://dx.doi.org/10.1080/14786430600567747>`_
 .. [#Troyon_2006] `Troyon M. and Lafaye S., "About the importance of introducing a correction factor in the Sneddon relationship for nanoindentation measurements" (2002). <http://dx.doi.org/10.1080/14786430600606834>`_
-
-
-
+.. [#Xu_2006] `Xu H. and Pharr G.M., "An improved relation for the effective elastic compliance of a film/substrate system during indentation by a flat cylindrical punch.", Scr. Mater. (2006). <http://dx.doi.org/10.1016/j.scriptamat.2006.04.037>`_
 
