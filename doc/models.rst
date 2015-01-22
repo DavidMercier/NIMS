@@ -11,8 +11,8 @@ The nanoindentation (or instrumented indentation) is a variety of indentation ha
 The following parts give a short overview of models existing in the literature used for the extraction of mechanical properties
 of bulk and thin film materials from indentation experiments with conical indenters.
 
-Conical indenters
------------------------
+Conical indenters [#Fischer-Cripps_2004]_
+-------------------------------------------
 .. csv-table::
    :header: "Indenter", "Berkovich", "Vickers", "Cube-Corner", "Conical"
    :widths: 25,25,25,25,25
@@ -26,7 +26,11 @@ Conical indenters
    "Contact radius",           "--",                 "--",                 "--",                 ":math:`h.tan\psi`"
       
 Load-Displacement curves
-------------------------
+-------------------------
+
+Loading
+********
+
 Parameters such as contact load :math:`F_\text{c}` and depth of penetration :math:`h` are recorded during indentation tests.
 
 A schematic of the load-displacement curve obtained from nanoindentation experiment is given Figure 1.
@@ -54,6 +58,12 @@ Using the load-displacement curves analysis performed by Loubet et al.,  Hainswo
                 :label: Hainsworth_load_displacement
                 
 With :math:`K` a constant function of material properties (Young's modulus and hardness) and the indenter.
+
+Unloading
+************
+
+Energy approach
+*****************
 
 Indentation contact topography
 -------------------------------
@@ -146,18 +156,21 @@ Extraction of elastic properties
 Elastic properties of bulk material
 +++++++++++++++++++++++++++++++++++
 
-The following method used to analyze indentation data is based on equations valid for
-isotropic homogeneous elastic solids.
+Bulychev et al. [#BULYCHEV_1973]_ and Shorshorov M. K. et al. [#SHORSHOROV_1982]_ were the first to determine
+the reduced Young's modulus of a material with the relationships established by Love [#Love_1939]_, Galin [#Galin_1946]_ and Sneddon [#Sneddon_1948]_, between the applied load and the displacement during an
+indentation test of an elastic material.
 
-    .. math:: E^{*} = \beta {1 \over 2} \sqrt{\pi \over A} {dF_\text{c} \over dh_\text{c}}
+They proposed to expressed the reduced Young's modulus in function of the contact area and the contact stiffness :
+
+    .. math:: E^{*} = {1 \over {2\beta}} \sqrt{\pi \over A} S
             :label: experimental_youngs_modulus
 
 With :math:`\beta` a geometrical correction factor [#King_1987]_ and [#Pharr_1992]_, equal to :
-    - 1 for circular indenters (e.g. : conical and spherical indenter);
-    - 1.034 for three-sided pyramid indenters (e.g. : Berkovich indenter);
-    - 1.012 for four-sided pyramid indenters (e.g. : Vickers indenter).
-    
-Woirgard has demonstrated analytically that the exact value of  :math:`\beta` for the perfectly sharp Berkovich indenter should be 1.062 [#Troyon_2006]_.
+	- 1 for circular indenters (e.g. : conical and spherical indenter);
+	- 1.034 for three-sided pyramid indenters (e.g. : Berkovich indenter);
+	- 1.012 for four-sided pyramid indenters (e.g. : Vickers indenter).
+
+Woirgard has demonstrated analytically that the exact value of :math:`\beta` for the perfectly sharp Berkovich indenter should be 1.062 [#Troyon_2006]_.
 
 Some authors proposed another correction factor function of the angle of the conical indenter and the Poisson's ration of the indented material [#Hay_1999]_ and [#Strader_2006]_.
 Analytical approximations were developed for Berkovich and Cube-Corner indenters after many finite element simulations.
@@ -167,11 +180,20 @@ Knowing the material properties of the indenter, it is possible to calculate the
     .. math:: {1 \over E^{'}} = {1 \over E^{*}} - {1 \over E_\text{i}^{'}}
             :label: youngs_modulus
             
-    .. math:: E = E^{'} * (1-\nu^{2})
+    .. math:: E = E^{'} (1-\nu^{2})
             :label: reduced_youngs_modulus
 
     .. math:: E_\text{i}^{'} = {E_\text{i} \over (1-\nu_\text{i}^{2})}
             :label: indenter_reduced_youngs_modulus
+
+With :math:`\nu` the Poisson's ratio of the indented material and :math:`\nu_\text{i}` the Poisson's ratio of the material of the indenter.
+
+.. note::			
+	This method used to analyze indentation data is based on equations valid for
+	isotropic homogeneous elastic solids.
+	
+.. note::			
+	Indenters are mainly in diamond. Diamond has a Young's modulus of 1070GPa and a Poisson's ratio of 0.07 [#Fischer-Cripps_2004]_.
 
 Elastic properties of a thin film on a substrate
 +++++++++++++++++++++++++++++++++++++++++++++++++
@@ -334,6 +356,8 @@ Where :math:`A = F \phi_{Gao_0}`
             
     .. math:: B = \mu_\text{s} - (F \phi_{Gao_0}^2 - \phi_{Gao_0} + 1)\mu_\text{c}
             :label: hay_B
+			
+With :math:`F = 0.0626`, a constant obtained from finite element simulations.
             
     .. math:: C = -\phi_{Gao_0}\mu_\text{c}\mu_\text{s}
             :label: hay_C
@@ -421,10 +445,13 @@ References
 ----------
 .. [#Bec_2006] `Bec S. et al., "Improvements in the indentation method with a surface force apparatus" (2006). <http://dx.doi.org/10.1080/01418619608239707>`_
 .. [#Bückle_1961] Bückle H., "VDI Berichte" (1961).
+.. [#Bulychev_1973] Bulychev S. I. et al., “Determining Young’s modulus from the indentor penetration diagram.”, Zavod. Lab., 1973, 39, pp. 1137-1142.
 .. [#Bolshakov_1998] `Bolshakov A. and Pharr G.M., "Influences of pile-up on the measurement of mechanical properties by load and depth sensing indentation techniques." (1998) <http://dx.doi.org/10.1557/JMR.1998.0146>`_
 .. [#Cheng_1998] `Cheng Y.T. and Cheng C.M. ,"Effects of ‘sinking in’ and ‘piling up’ on estimating the contact area under load in indentation." (1998) <http://dx.doi.org/10.1080/095008398178093>`_
 .. [#Cheng_2004] `Cheng Y.T. and Cheng C.M., "Scaling, dimensional analysis, and indentation measurements." (2004) <http://dx.doi.org/10.1016/j.mser.2004.05.001>`_
 .. [#DoernerNix_1986] `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
+.. [#Fischer-Cripps_2004] `Fischer-Cripps A.C., "Nanoindentation" Springer 2nd ed. (2004). <http://dx.doi.org/10.1007/978-1-4419-9872-9>`_
+.. [#Galin_1946] Galin L. A., "Spatial contact problems of the theory of elasticity for punches of circular shape in planar projection.", J. Appl. Math. Mech. (PMM) (1946), 10, pp. 425-448.
 .. [#Gao_1992] `Gao H. et al., "Elastic contact versus indentation modeling of multi-layered materials" (1992). <http://dx.doi.org/10.1016/0020-7683(92)90004-D>`_
 .. [#Hainsworth_1996] `Hainsworth S.V. et al., "Analysis of nanoindentation load-displacement loading curves." J. Mater. Res. (1996). <http://dx.doi.org/10.1557/JMR.1996.0250>`_
 .. [#Hay_1999] `Hay J.C. et al., "A critical examination of the fundamental relations used in the analysis of nanoindentation data." J. Mater. Res. (1999). <http://dx.doi.org/10.1557/JMR.1999.0306>`_
@@ -433,6 +460,7 @@ References
 .. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <http://dx.doi.org/10.1016/0020-7683(87)90116-8>`_
 .. [#Li_2010] `Li H. et al., "New methods of analyzing indentation experiments on very thin films" (2010). <http://dx.doi.org/10.1557/JMR.2010.0095>`_
 .. [#Loubet_1986] `Loubet J.L. et al., "Vickers indentation curves of elastoplastic materials" (1986). <http://dx.doi.org/10.1520/STP889-EB>`_
+.. [#Love_1939] `Love A. E. H., "Boussinesq’s problem for a rigid cone.", The Quarterly J. of Mathematics (1939). <http://dx.doi.org/10.1093/qmath/os-10.1.161>`_
 .. [#Mencik_1997] `Menčík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
 .. [#Mercier_2010] `Mercier D. et al., "Mesure de module d'Young d'un film mince à partir de mesures expérimentales de nanoindentation réalisées sur des systèmes multicouches" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
 .. [#Merle_2012] `Merle B. et al., "Experimental determination of the effective indenter shape and e-factor for nanoindentation by continuously measuring the unloading stiffness.", J. Mater. Res. (2012). <http://dx.doi.org/10.1557/jmr.2011.245>`_
@@ -444,6 +472,8 @@ References
 .. [#Pharr_2009] `Pharr G.M.et al., "Critical issues in making small-depth mechanical property measurements by nanoindentation with continuous stiffness measurement" (2009). <http://dx.doi.org/10.1557/jmr.2009.0096>`_
 .. [#Rar_2002] `Rar A. et al., "Assessment of new relation for the elastic compliance of a film–substrate system.", Thin Films: Stresses and Mechanical Properties IX (2002). <http://dx.doi.org/10.1557/PROC-695-L10.10.1>`_ 
 .. [#Saha_2002] `Saha R. and Nix W.D., "Effects of the substrate on the determination of thin film mechanical properties by nanoindentation" (2002). <http://dx.doi.org/10.1016/S1359-6454(01)00328-7>`_
+.. [#Sneddon_1948] `Sneddon I. N., "Boussinesqs problem for a rigid cone.", Proc. of the Cambridge Philosophical Soc. (1948). <http://dx.doi.org/10.1017/S0305004100024518>`_
+.. [#Shorshorov_1982] Shorshorov M. K. et al., Sov. Phys. Dokl., 1982, 26.
 .. [#Strader_2006] `Strader J.H. et al., "An experimental evaluation of the constant b relating the contact stiffness to the contact area in nanoindentation.", Philosophical Magazine (2006) <http://dx.doi.org/10.1080/14786430600567747>`_
 .. [#Troyon_2006] `Troyon M. and Lafaye S., "About the importance of introducing a correction factor in the Sneddon relationship for nanoindentation measurements" (2002). <http://dx.doi.org/10.1080/14786430600606834>`_
 .. [#Xu_2006] `Xu H. and Pharr G.M., "An improved relation for the effective elastic compliance of a film/substrate system during indentation by a flat cylindrical punch.", Scr. Mater. (2006). <http://dx.doi.org/10.1016/j.scriptamat.2006.04.037>`_
