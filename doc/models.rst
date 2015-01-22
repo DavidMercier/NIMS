@@ -15,7 +15,7 @@ Conical indenters [#Fischer-Cripps_2004]_
 -------------------------------------------
 .. csv-table::
    :header: "Indenter", "Berkovich", "Vickers", "Cube-Corner", "Conical"
-   :widths: 25,25,25,25,25
+   :widths: 20,20,20,20,20
 
    "Shape",                    "3-sided pyramid",   "4-sided pyramid",   "3-sided pyramid",   "Conical (angle :math:`\psi`)"
    "Semi-angle from the apex", "65.3°",             "68°",               "35.2644°",          "--"
@@ -29,7 +29,7 @@ Load-Displacement curves
 -------------------------
 
 Loading
-********
++++++++++
 
 Parameters such as contact load :math:`F_\text{c}` and depth of penetration :math:`h` are recorded during indentation tests.
 
@@ -60,16 +60,38 @@ Using the load-displacement curves analysis performed by Loubet et al.,  Hainswo
 With :math:`K` a constant function of material properties (Young's modulus and hardness) and the indenter.
 
 Unloading
-************
++++++++++++
+
+Pharr and Bolshakov founded that unloading curves were well described by the following power-law relationship [#Pharr_2002]_ :
+
+        .. math:: F_\text{c} = \alpha_\text{u} (h_\text{t} - h_\text{r})^m
+                :label: unload_displacement
+
+Where :math:`h_\text{r}` is the final displacement after complete unloading, and 
+and :math:`\alpha_\text{u}` and :math:`m` are material constants. Many experiments performed by 
+Pharr and Bolshakov leaded to an average value for :math:`m` close to 1.5 for the Berkovich indenter.
 
 Energy approach
-*****************
+++++++++++++++++++
 
+.. figure:: ./_pictures/load-disp_curve_energy.png
+   :scale: 60 %
+   :align: center
+
+   *Figure 2 : Schematic representation of indentation load–displacement curves with definition of different works of indentation.*
+   
+[#ChengCheng_1998]_
+
+[#Malzbender_2002]_
+
+    .. math:: {{W_\text{tot} - W_\text{u}} \over W_\text{tot}} = 1 - 5{H \over E^{'}}
+            :label: energy
+            
 Indentation contact topography
 -------------------------------
 
 The indentation total depth is rarely equal to the indentation contact depth.
-Two kind of topography can occur: the pile-up (indentation contact depth > indentation total depth) or the sink-in (indentation contact depth < indentation total depth) (see Figure 2).
+Two kind of topography can occur: the pile-up (indentation contact depth > indentation total depth) or the sink-in (indentation contact depth < indentation total depth) (see Figure 3).
 
 The flow of material below the indenter is function of mechanical properties of the material.
 Pile-up occurs when work-hardening coefficient is low (< 0.3) or if the ratio yield stress over Young's modulus is less than 1% [#Bolshakov_1998]_, [#Cheng_1998]_ and [#Cheng_2004]_.
@@ -78,13 +100,13 @@ Pile-up occurs when work-hardening coefficient is low (< 0.3) or if the ratio yi
    :scale: 60 %
    :align: center
    
-   *Figure 2 : Schematic of indentation contact topography : a) « pile-up » and b) « sink-in ».*
+   *Figure 3 : Schematic of indentation contact topography : a) « pile-up » and b) « sink-in ».*
    
 .. figure:: ./_pictures/pile_up.png
    :scale: 35 %
    :align: center
 
-   *Figure 3 : Residual topography of a Berkovich indent in PVD Gold thin film (500nm thick) with « pile-up » surrounding the indent, measured by atomic force microscopy.*
+   *Figure 4 : Residual topography of a Berkovich indent in PVD Gold thin film (500nm thick) with « pile-up » surrounding the indent, measured by atomic force microscopy.*
    
 Three models defining the depth of contact :math:`h_\text{c}` were developed to take into account this indentation contact topography.
 
@@ -98,7 +120,8 @@ Model of Oliver and Pharr [#OliverPharr_1992]_, [#Pharr_2002]_ and [#OliverPharr
         .. math:: h_\text{c} = h_\text{t} - \epsilon {F_\text{c} \over S}
                 :label: oliver_pharr_model
               
-Where :math:`\epsilon` is a function of the indenter's geometry (0.72 for conical indenter, 0.75 for paraboloids of revolution and 1 for a flat cylindrical punch).
+Where :math:`\epsilon` is a function of the indenter's geometry (0.72 for conical indenter, 0.75 for `paraboloids of revolution <https://en.wikipedia.org/wiki/Paraboloid>`_
+and 1 for a flat cylindrical punch). An expression of :math:`\epsilon` in function of the power law exponent :math:`m` of the unloading curve fit has been proposed by Pharr et Bolshakov [#Pharr_2002]_.
 
 0.72 should be most applicable for a Berkovich indenter, which is more like a cone than a paraboloid of revolution.
 But, Oliver and Pharr concluded after a large number of experiments that the best value for the Berkovich indenter is 0.75.
@@ -156,24 +179,39 @@ Extraction of elastic properties
 Elastic properties of bulk material
 +++++++++++++++++++++++++++++++++++
 
-Bulychev et al. [#BULYCHEV_1973]_ and Shorshorov M. K. et al. [#SHORSHOROV_1982]_ were the first to determine
-the reduced Young's modulus of a material with the relationships established by Love [#Love_1939]_, Galin [#Galin_1946]_ and Sneddon [#Sneddon_1948]_, between the applied load and the displacement during an
-indentation test of an elastic material.
+Bulychev et al. [#Bulychev_1973]_ and Shorshorov M. K. et al. [#Shorshorov_1982]_ were the first to determine
+the reduced Young's modulus of a material with the relationships established by Love [#Love_1939]_, Galin [#Galin_1946]_
+and Sneddon [#Sneddon_1948]_, between the applied load and the displacement during an indentation test of an elastic material.
 
 They proposed to expressed the reduced Young's modulus in function of the contact area and the contact stiffness :
 
-    .. math:: E^{*} = {1 \over {2\beta}} \sqrt{\pi \over A} S
+    .. math:: E^{*} = {1 \over 2} \sqrt{\pi \over A} S
             :label: experimental_youngs_modulus
 
-With :math:`\beta` a geometrical correction factor [#King_1987]_ and [#Pharr_1992]_, equal to :
-	- 1 for circular indenters (e.g. : conical and spherical indenter);
-	- 1.034 for three-sided pyramid indenters (e.g. : Berkovich indenter);
-	- 1.012 for four-sided pyramid indenters (e.g. : Vickers indenter).
+Then, Oliver and Pharr [#Pharr_1992]_, [#OliverPharr_1992]_ democratized this formulae after introducing a correction factor identified by King [#King_1987]_ :
+
+    .. math:: E^{*} = {1 \over {2\beta}} \sqrt{\pi \over A} S
+            :label: experimental_youngs_modulus_OP
+
+With :math:`\beta` a geometrical correction factor equal to :
+    - 1 for circular indenters (e.g. : conical and spherical indenter);
+    - 1.034 for three-sided pyramid indenters (e.g. : Berkovich indenter);
+    - 1.012 for four-sided pyramid indenters (e.g. : Vickers indenter).
 
 Woirgard has demonstrated analytically that the exact value of :math:`\beta` for the perfectly sharp Berkovich indenter should be 1.062 [#Troyon_2006]_.
 
 Some authors proposed another correction factor function of the angle of the conical indenter and the Poisson's ration of the indented material [#Hay_1999]_ and [#Strader_2006]_.
-Analytical approximations were developed for Berkovich and Cube-Corner indenters after many finite element simulations.
+For a conical indenter with an half-angle of :math:`\gamma <= 60°` (e.g. Cube-Corner indenter), the analytical approximation is :
+
+    .. math:: \beta = 1 + {{2(1-2\nu)} \over {4(1-\nu)tan\gamma}}
+            :label: gamma_low_angle
+
+For a conical indenter with larger half-angle (e.g. Berkovich indenter), the analytical approximation is :
+            
+    .. math:: \beta = \pi{ {\pi/4 + 0.1548cot\gamma{{1-2\nu} \over {4(1-\nu)}}} \over {[\pi/2-0.8311cot\gamma{{1-2\nu} \over {4(1-\nu)}}]^2}}
+            :label: gamma_high_angle
+
+With :math:`\nu` the Poisson's ratio of the indented material.
 
 Knowing the material properties of the indenter, it is possible to calculate the reduced Young's modulus of the indented material. 
 
@@ -188,12 +226,12 @@ Knowing the material properties of the indenter, it is possible to calculate the
 
 With :math:`\nu` the Poisson's ratio of the indented material and :math:`\nu_\text{i}` the Poisson's ratio of the material of the indenter.
 
-.. note::			
-	This method used to analyze indentation data is based on equations valid for
-	isotropic homogeneous elastic solids.
-	
-.. note::			
-	Indenters are mainly in diamond. Diamond has a Young's modulus of 1070GPa and a Poisson's ratio of 0.07 [#Fischer-Cripps_2004]_.
+.. note::
+    This method used to analyze indentation data is based on equations valid for
+    isotropic homogeneous elastic solids.
+
+.. note::
+    Indenters are mainly in diamond. Diamond has a Young's modulus of 1070GPa and a Poisson's ratio of 0.07 [#Fischer-Cripps_2004]_.
 
 Elastic properties of a thin film on a substrate
 +++++++++++++++++++++++++++++++++++++++++++++++++
@@ -304,13 +342,13 @@ Bec et al. (2006) [#Bec_2006]_
 This elastic model is based on indentation by a rigid cylindrical punch (radius :math:`a_\text{c}`)
 of a homogeneous film deposited on a semi-infinite half space.
 
-This system is modelled by two springs connected in series (see Figure 4).
+This system is modelled by two springs connected in series (see Figure 5).
 
 .. figure:: ./_pictures/Bec_bilayer_model.png
    :scale: 40 %
    :align: center
    
-   *Figure 4 : Schematic description of the bilayer model of Bec et al. .*
+   *Figure 5 : Schematic description of the bilayer model of Bec et al. .*
 
     .. math:: K_\text{f} = \pi a_\text{c}^2 {E^{'}_\text{f} \over t}
             :label: bec_kf
@@ -356,7 +394,7 @@ Where :math:`A = F \phi_{Gao_0}`
             
     .. math:: B = \mu_\text{s} - (F \phi_{Gao_0}^2 - \phi_{Gao_0} + 1)\mu_\text{c}
             :label: hay_B
-			
+
 With :math:`F = 0.0626`, a constant obtained from finite element simulations.
             
     .. math:: C = -\phi_{Gao_0}\mu_\text{c}\mu_\text{s}
@@ -395,13 +433,13 @@ Thus, the Young’s modulus of the film can be calculated as :
    :scale: 30 %
    :align: center
    
-   *Figure 5 : Schematic of elastic multilayer model.*
+   *Figure 6 : Schematic of elastic multilayer model.*
    
 .. figure:: ./_pictures/multilayer_sample_methodology.png
    :scale: 30 %
    :align: center
    
-   *Figure 6 : Experimental process to apply for elastic multilayer model.*
+   *Figure 7 : Experimental process to apply for elastic multilayer model.*
 
 Corrections to apply for thin film indentation [#Mencik_1997]_, [#Saha_2002]_, [#Bec_2006]_ and [#Li_2010]_
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -423,7 +461,7 @@ for a conical indenter and contact depths :math:`h_\text{c}` smaller than the fi
    :scale: 60 %
    :align: center
    
-   *Figure 7 : Indentation penetration of a thin film on a sample.*
+   *Figure 8 : Indentation penetration of a thin film on a sample.*
    
 Recently, Li et al. proposed to express the local thinning effect as [#Li_2010]_:
 
@@ -440,6 +478,24 @@ Extraction of plastic properties [#OliverPharr_1992]_
 
     .. math:: H = {F_\text{c,max} \over A_\text{c}}
             :label: hardness
+            
+Methodology to extract properties without the function area [#OliverPharr_2004]_
+-----------------------------------------------------------------------------------
+
+The ratio of the irreversible work :math:`W_\text{tot} - W_\text{u}` to the total work :math:`W_\text{tot}`,
+appears to be a unique function of the Young's modulus and the hardness of the material, independent of the work-hardening behavior [#ChengCheng_1998]_.
+
+    .. math:: {{W_\text{tot} - W_\text{u}} \over W_\text{tot}} = 1 - 5{H \over E^{'}}
+            :label: energy_ratio
+
+Then, combining the expression of the reduced Young's modulus with the expression of the hardness, leads to
+the following equation :
+
+    .. math:: {4 \over \pi} {F_\text{c,max} \over S^2} = {H \over E^{'}}
+            :label: P_squareS
+            
+These two last equations represent two independent relations that can be solved for :math:`H` and :math:`E^{'}` in
+a manner that does not directly involve the contact area.
 
 References
 ----------
@@ -448,6 +504,7 @@ References
 .. [#Bulychev_1973] Bulychev S. I. et al., “Determining Young’s modulus from the indentor penetration diagram.”, Zavod. Lab., 1973, 39, pp. 1137-1142.
 .. [#Bolshakov_1998] `Bolshakov A. and Pharr G.M., "Influences of pile-up on the measurement of mechanical properties by load and depth sensing indentation techniques." (1998) <http://dx.doi.org/10.1557/JMR.1998.0146>`_
 .. [#Cheng_1998] `Cheng Y.T. and Cheng C.M. ,"Effects of ‘sinking in’ and ‘piling up’ on estimating the contact area under load in indentation." (1998) <http://dx.doi.org/10.1080/095008398178093>`_
+.. [#ChengCheng_1998] `Cheng Y.T. and Cheng C.M. ,"Relationships between hardness, elastic modulus, and the work of indentation." (1998) <http://dx.doi.org/10.1063/1.121873>`_
 .. [#Cheng_2004] `Cheng Y.T. and Cheng C.M., "Scaling, dimensional analysis, and indentation measurements." (2004) <http://dx.doi.org/10.1016/j.mser.2004.05.001>`_
 .. [#DoernerNix_1986] `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
 .. [#Fischer-Cripps_2004] `Fischer-Cripps A.C., "Nanoindentation" Springer 2nd ed. (2004). <http://dx.doi.org/10.1007/978-1-4419-9872-9>`_
@@ -461,6 +518,7 @@ References
 .. [#Li_2010] `Li H. et al., "New methods of analyzing indentation experiments on very thin films" (2010). <http://dx.doi.org/10.1557/JMR.2010.0095>`_
 .. [#Loubet_1986] `Loubet J.L. et al., "Vickers indentation curves of elastoplastic materials" (1986). <http://dx.doi.org/10.1520/STP889-EB>`_
 .. [#Love_1939] `Love A. E. H., "Boussinesq’s problem for a rigid cone.", The Quarterly J. of Mathematics (1939). <http://dx.doi.org/10.1093/qmath/os-10.1.161>`_
+.. [#Malzbender_2002] `Malzbender J. and de With G., "Indentation load–displacement curve, plastic deformation, and energy.", J. Mater. Res. (2002). <http://dx.doi.org/10.1557/JMR.2002.0070>`_
 .. [#Mencik_1997] `Menčík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
 .. [#Mercier_2010] `Mercier D. et al., "Mesure de module d'Young d'un film mince à partir de mesures expérimentales de nanoindentation réalisées sur des systèmes multicouches" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
 .. [#Merle_2012] `Merle B. et al., "Experimental determination of the effective indenter shape and e-factor for nanoindentation by continuously measuring the unloading stiffness.", J. Mater. Res. (2012). <http://dx.doi.org/10.1557/jmr.2011.245>`_
