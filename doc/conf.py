@@ -89,6 +89,7 @@ exclude_patterns = ['_build']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
+pygments_style = 'bootstrap'
 
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
@@ -102,14 +103,14 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 # See http://sphinx-doc.org/theming.html
-#html_theme = 'default'
+html_theme = 'default'
 #html_theme = 'agogo'
 #html_theme =  'traditional'
 #html_theme =  'pyramid'
 #html_theme =  'sphinxdoc'
 #html_theme = 'nature' # no option !
 #html_theme_options{}
-html_theme = 'bootstrap'
+#html_theme = 'bootstrap'
 html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 
 # Theme options are theme-specific and customize the look and feel of a theme
