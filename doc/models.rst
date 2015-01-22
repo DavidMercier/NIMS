@@ -23,7 +23,7 @@ Conical indenters [#Fischer-Cripps_2004]_
    "Projected Area",           ":math:`24.56h^2`",  ":math:`24.504h^2`", ":math:`2.5981h^2`", ":math:`\pi{a_\text{c}}^2`"
    "Volume-depth relation",    ":math:`8.1873h^3`", ":math:`8.1681h^3`", ":math:`0.8657h^3`", "--"
    "Projected area/face area", ":math:`0.908`",     ":math:`0.927`",      ":math:`0.5774`",    "--"
-   "Contact radius",           "--",                 "--",                 "--",                 ":math:`h.tan\psi`"
+   "Contact radius",           "--",                 "--",                 "--",                 ":math:`htan\psi`"
       
 Load-Displacement curves
 -------------------------
@@ -201,7 +201,7 @@ With :math:`\beta` a geometrical correction factor equal to :
 Woirgard has demonstrated analytically that the exact value of :math:`\beta` for the perfectly sharp Berkovich indenter should be 1.062 [#Troyon_2006]_.
 
 Some authors proposed another correction factor function of the angle of the conical indenter and the Poisson's ration of the indented material [#Hay_1999]_ and [#Strader_2006]_.
-For a conical indenter with an half-angle of :math:`\gamma <= 60°` (e.g. Cube-Corner indenter), the analytical approximation is :
+For a conical indenter with an half-angle of :math:`\gamma \leq 60°` (e.g. Cube-Corner indenter), the analytical approximation is :
 
     .. math:: \beta = 1 + {{2(1-2\nu)} \over {4(1-\nu)tan\gamma}}
             :label: gamma_low_angle
@@ -246,7 +246,7 @@ function of the material properties of the materials, the thickness :math:`t` an
 the properties and the geometry of the indenter.
 
 If the characterized film is thick enough, it is possible to extract the elastic properties
-for indentation depth lower than 10% of the film thickness (:math:`h < 10% t`) [#Bückle_1961]_.
+for indentation depth lower than 10% of the film thickness (:math:`h \leq 10% t`) [#Bückle_1961]_.
 
 Because of the imperfections of the indenters, the roughness and the surface pollution, it is more or less meaningful
 to use this rule of the 10%, for film thicker than 500nm.
