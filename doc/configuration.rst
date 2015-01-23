@@ -47,7 +47,7 @@ Please find the 3 YAML configuration files in the `YAML folder <https://github.c
     * Do not remove standard indenters and standard materials !
     
     
-*data_config.yaml* can be used to modify the default absolute path for the folder where you store your indentation data.
+*data_config.yaml* can be used to set the default absolute path for the folder where you store your indentation data.
 
 *numerics_config.yaml* can be used to change the numerical parameters used by the toolbox from their standard values.
 

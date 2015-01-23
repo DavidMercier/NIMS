@@ -116,40 +116,46 @@ for a paraboloid of revolution [#Merle_2012]_.
 
 Model of Loubet et al. [#Hochstetter_1999]_, [#Bec_2006]_ in case of pile-up:
 
-        .. math:: h_\text{c} = \alpha (h_\text{t} - {F_\text{c_unloading} \over S})
+        .. math:: h_\text{c} = \alpha (h_\text{t} - {F_\text{c_unloading} \over S} + h_0)
                 :label: loubet_model
 
-Where :math:`\alpha` is a constant function of the indented material (usually around 1.2).
+Where :math:`\alpha` is a constant function of the indented material (usually around 1.2) and the tip-defect :math:`h_0`.
 
-Knowing the depth of contact and the geometry of the indenter, it is possible to determine the area of contact :math:`A_\text{c}` [#OliverPharr_1992]_ and [#OliverPharr_2004]_.
+Knowing the depth of contact, it is possible to determine the area of contact
+:math:`A_\text{c}` for a perfect conical indenter (with a semi-angle from the apex :math:`\theta`):
 
-        .. math:: A_\text{c} = C h_\text{c}^2 + \sum_{i=0}^8{C_\text{i} h_\text{c}^{1/2^i}}
+        .. math:: A_\text{c} = \pi h_\text{c}^2 tan^2(\theta)
+                :label: area_function_conical
+
+But, because conical indenters present imperfections and Berkovich or Vickers indenters are not perfectly conical,
+a general formulae of the contact area has been established by Oliver and Pharr [#OliverPharr_1992]_, [#OliverPharr_2004]_ :
+
+        .. math:: A_\text{c} = C_0 h_\text{c}^2 + \sum_{n=1}^8{C_\text{n} h_\text{c}^{1/2^{n-1}}}
                 :label: area_function
 
-With the coefficients :math:`C` and :math:`C_\text{i}` obtained by curve fitting procedures, from nanoindentation experiments in fused silica (amorphous and isotropic material).
+With the coefficients :math:`C_0` and :math:`C_\text{n}` obtained by curve fitting procedures, from nanoindentation experiments in fused silica (amorphous and isotropic material).
 
-The first coefficient :math:`C` alone defined a perfect pyramid and is given by the following formulae:
-
-        .. math:: C = \pi a_\text{c}^2 = \pi tan^2(\theta) h_\text{c}^2
-                :label: first_coefficient
-
-With :math:`a_\text{c}` the contact radius and :math:`\theta` the equivalent cone angle (70.32° for a Berkovich indenter and 70.2996° for a Vickers indenter).
-
-For a perfect Berkovich indenter :math:`C` is equal to 24.56 and for a perfect Vickers indenter :math:`C` is equal to 24.504.
+For a perfect Berkovich indenter :math:`C_0` is equal to 24.56 and for a perfect Vickers indenter :math:`C_0` is equal to 24.504 (see Table 1).
 
 The second term of the area function :math:`A_\text{c}` describes a paraboloid of revolution, which approximates to a sphere at small penetration depths.
 A perfect sphere of radius :math:`R` is defined by the first two terms with :math:`C_0 = -\pi` and :math:`C_1 = 2 \pi R`.
 The first two terms also describe a hyperboloid of revolution, a very reasonable shape for a tip-rounded cone or pyramid that approaches
 a fixed angle at large distances from the tip.
 
-.. note::
-    Only, the first 4th coefficients :math:`C_\text{i}` are used for calculations in this toolbox.
-
 An equivalent contact radius :math:`a_\text{c}` is also defined based on the area function.
 
         .. math:: a_\text{c} = \sqrt{A_\text{c} \over \pi}
                 :label: contact_radius
-    
+
+One other way to express the function area is that suggested by Loubet et al. [#Loubet_1984]_, 
+which describes a pyramid with a small flat region on its tip, the so-called tip defect (:math:`h_0`).
+This geometry is described by the addition of a constant to the first two terms in :eq:`area_function`.
+
+More recently, Guillonneau et al. proposed a model to extract mechanical properties without using the indentation depth [#Guillonneau_2012_1]_ and [#Guillonneau_2012_2]_.
+The method is based on the detection of the second harmonic for dynamic indentation testing.
+This model is interesting especially for penetration depths in the range of 25 to 100nm, where the
+uncertainties related to the displacement measurement disturb a lot.
+
 Continuous stiffness measurement [#OliverPharr_1992]_
 ------------------------------------------------------
 
@@ -179,19 +185,19 @@ Then, Oliver and Pharr [#Pharr_1992]_, [#OliverPharr_1992]_ democratized this fo
             :label: experimental_youngs_modulus_OP
 
 With :math:`\beta` a geometrical correction factor equal to :
-    - 1 for circular indenters (e.g. : conical and spherical indenter);
-    - 1.034 for three-sided pyramid indenters (e.g. : Berkovich indenter);
-    - 1.012 for four-sided pyramid indenters (e.g. : Vickers indenter).
+    - 1 for circular indenters (e.g.: conical and spherical indenter);
+    - 1.034 for three-sided pyramid indenters (e.g.: Berkovich indenter);
+    - 1.012 for four-sided pyramid indenters (e.g.: Vickers indenter).
 
 Woirgard has demonstrated analytically that the exact value of :math:`\beta` for the perfectly sharp Berkovich indenter should be 1.062 [#Troyon_2006]_.
 
 Some authors proposed another correction factor function of the angle of the conical indenter and the Poisson's ration of the indented material [#Hay_1999]_ and [#Strader_2006]_.
-For a conical indenter with an half-angle of :math:`\gamma \leq 60°` (e.g. Cube-Corner indenter), the analytical approximation is :
+For a conical indenter with an half-angle of :math:`\gamma \leq 60°` (e.g.: Cube-Corner indenter), the analytical approximation is :
 
-    .. math:: \beta = 1 + {{2(1-2\nu)} \over {4(1-\nu)tan\gamma}}
+    .. math:: \beta = 1 + {{(1-2\nu)} \over {4(1-\nu)tan\gamma}}
             :label: gamma_low_angle
 
-For a conical indenter with larger half-angle (e.g. Berkovich indenter), the analytical approximation is :
+For a conical indenter with larger half-angle (e.g.: Berkovich indenter), the analytical approximation is :
             
     .. math:: \beta = \pi{ {\pi/4 + 0.1548cot\gamma{{1-2\nu} \over {4(1-\nu)}}} \over {[\pi/2-0.8311cot\gamma{{1-2\nu} \over {4(1-\nu)}}]^2}}
             :label: gamma_high_angle
@@ -495,14 +501,18 @@ appears to be a unique function of the Young's modulus and the hardness of the m
     .. math:: {{W_\text{tot} - W_\text{e}} \over W_\text{tot}} = 1 - 5{H \over E^{'}}
             :label: energy_ratio
 
-Then, combining the expression of the reduced Young's modulus with the expression of the hardness, leads to
-the following equation :
+Then, combining the expression of the reduced Young's modulus :eq:`experimental_youngs_modulus_OP` with the expression of the hardness :eq:`hardness`,
+leads to the following equation :
 
     .. math:: {4 \over \pi} {F_\text{c,max} \over S^2} = {H \over E^{'}}
             :label: P_squareS
             
 These two last equations represent two independent relations that can be solved for :math:`H` and :math:`E^{'}` in
 a manner that does not directly involve the contact area.
+
+The equation :eq:`P_squareS` is used as well to determine coefficients of the function area :eq:`area_function`.
+Based on the assumption that the hardness and the Young's modulus remain constant during indentation test in fused silica (isotropic material),
+the evolution of the ratio :math:`{F_\text{c,max} \over S^2}` should stay constant as well in function of the indentation depth.
 
 References
 ----------
@@ -517,13 +527,16 @@ References
 .. [#Fischer-Cripps_2004] `Fischer-Cripps A.C., "Nanoindentation" Springer 2nd ed. (2004). <http://dx.doi.org/10.1007/978-1-4419-9872-9>`_
 .. [#Galin_1946] Galin L. A., "Spatial contact problems of the theory of elasticity for punches of circular shape in planar projection.", J. Appl. Math. Mech. (PMM) (1946), 10, pp. 425-448.
 .. [#Gao_1992] `Gao H. et al., "Elastic contact versus indentation modeling of multi-layered materials" (1992). <http://dx.doi.org/10.1016/0020-7683(92)90004-D>`_
+.. [#Guillonneau_2012_1] `Guillonneau G. et al.,"Extraction of mechanical properties with second harmonic detection for dynamic nanoindentation testing.", Experimental Mechanics (2012). <http://dx.doi.org/10.1007/s11340-011-9561-5>`_
+.. [#Guillonneau_2012_2] `Guillonneau G. et al.,"Determination of mechanical properties by nanoindentation independently of indentation depth measurement.", J. Mater. Res. (2012). <http://dx.doi.org/10.1557/jmr.2012.261>`_
 .. [#Hainsworth_1996] `Hainsworth S.V. et al., "Analysis of nanoindentation load-displacement loading curves." J. Mater. Res. (1996). <http://dx.doi.org/10.1557/JMR.1996.0250>`_
 .. [#Hay_1999] `Hay J.C. et al., "A critical examination of the fundamental relations used in the analysis of nanoindentation data." J. Mater. Res. (1999). <http://dx.doi.org/10.1557/JMR.1999.0306>`_
 .. [#Hay_2011] `Hay J. and Crawford B., "Measuring substrate-independent modulus of thin films" (2011). <http://dx.doi.org/10.1557/jmr.2011.8>`_
 .. [#Hochstetter_1999] `Hochstetter G. et al., "Strain-rate effects on hardness of glassy polymers in the nanoscale range. Comparison between quasi-static and continuous stiffness measurements" (1999). <http://dx.doi.org/10.1080/00222349908248131>`_
 .. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <http://dx.doi.org/10.1016/0020-7683(87)90116-8>`_
 .. [#Li_2010] `Li H. et al., "New methods of analyzing indentation experiments on very thin films" (2010). <http://dx.doi.org/10.1557/JMR.2010.0095>`_
-.. [#Loubet_1986] `Loubet J.L. et al., "Vickers indentation curves of elastoplastic materials" (1986). <http://dx.doi.org/10.1520/STP889-EB>`_
+.. [#Loubet_1984] `Loubet J.L. et al., "Vickers Indentation Curves of Magnesium Oxide (MgO).", J. Tribol. (1984) <http://dx.doi.org/10.1115/1.3260865>`_
+.. [#Loubet_1986] `Loubet J.L. et al., "Vickers indentation curves of elastoplastic materials." Microindentation Techniques in Materials Science and Engineering (1986). <http://dx.doi.org/10.1520/STP889-EB>`_
 .. [#Love_1939] `Love A. E. H., "Boussinesq’s problem for a rigid cone.", The Quarterly J. of Mathematics (1939). <http://dx.doi.org/10.1093/qmath/os-10.1.161>`_
 .. [#Malzbender_2002] `Malzbender J. and de With G., "Indentation load–displacement curve, plastic deformation, and energy.", J. Mater. Res. (2002). <http://dx.doi.org/10.1557/JMR.2002.0070>`_
 .. [#Mencik_1997] `Menčík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
@@ -542,4 +555,3 @@ References
 .. [#Strader_2006] `Strader J.H. et al., "An experimental evaluation of the constant b relating the contact stiffness to the contact area in nanoindentation.", Philosophical Magazine (2006) <http://dx.doi.org/10.1080/14786430600567747>`_
 .. [#Troyon_2006] `Troyon M. and Lafaye S., "About the importance of introducing a correction factor in the Sneddon relationship for nanoindentation measurements" (2002). <http://dx.doi.org/10.1080/14786430600606834>`_
 .. [#Xu_2006] `Xu H. and Pharr G.M., "An improved relation for the effective elastic compliance of a film/substrate system during indentation by a flat cylindrical punch.", Scr. Mater. (2006). <http://dx.doi.org/10.1016/j.scriptamat.2006.04.037>`_
-
