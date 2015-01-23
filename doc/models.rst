@@ -31,13 +31,11 @@ Load-Displacement curves
 Loading
 +++++++++
 
-Parameters such as contact load :math:`F_\text{c}` and depth of penetration :math:`h` are recorded during indentation tests.
+Parameters such as contact load :math:`F_\text{c}` during loading and unloading and depth of penetration :math:`h` are recorded during indentation tests.
 
 A schematic of the load-displacement curve obtained from nanoindentation experiment is given Figure 1.
 
 The evolution of this curve depends on material properties of the sample and the indenter, and of the indenter's geometry.
-
-The slope of this curve during unloading gives access to the contact stiffness :math:`S = dF_\text{c}/dh`.
 
 .. figure:: ./_pictures/load-disp_curve.png
    :scale: 60 %
@@ -47,14 +45,14 @@ The slope of this curve during unloading gives access to the contact stiffness :
 
 Loubet et al. founded a good fit to the load-displacement data with a power-law relationship of the form [#Loubet_1986]_ :
 
-        .. math:: F_\text{c} = K h_\text{t}^n
+        .. math:: F_\text{c_loading} = K h_\text{t}^n
                 :label: Loubet_load_displacement
 
 With :math:`K` and :math:`n` constants for a given material for a fixed indenter geometry.
 
 Using the load-displacement curves analysis performed by Loubet et al.,  Hainsworth et al. proposed the following relationship to describe load-displacement curves [#Hainsworth_1996]_ :
 
-        .. math:: F_\text{c} = K h_\text{t}^2
+        .. math:: F_\text{c_loading} = K h_\text{t}^2
                 :label: Hainsworth_load_displacement
                 
 With :math:`K` a constant function of material properties (Young's modulus and hardness) and the indenter.
@@ -62,36 +60,23 @@ With :math:`K` a constant function of material properties (Young's modulus and h
 Unloading
 +++++++++++
 
+The slope of unloading curve gives access to the contact stiffness :math:`S = {dF_\text{c_unloading} \over dh}`.
+
 Pharr and Bolshakov founded that unloading curves were well described by the following power-law relationship [#Pharr_2002]_ :
 
-        .. math:: F_\text{c} = \alpha_\text{u} (h_\text{t} - h_\text{r})^m
+        .. math:: F_\text{c_unloading} = \alpha_\text{u} (h_\text{t} - h_\text{r})^m
                 :label: unload_displacement
 
 Where :math:`h_\text{r}` is the final displacement after complete unloading, and 
-and :math:`\alpha_\text{u}` and :math:`m` are material constants. Many experiments performed by 
+:math:`\alpha_\text{u}` and :math:`m` are material constants. Many experiments performed by 
 Pharr and Bolshakov leaded to an average value for :math:`m` close to 1.5 for the Berkovich indenter.
-
-Energy approach
-++++++++++++++++++
-
-.. figure:: ./_pictures/load-disp_curve_energy.png
-   :scale: 60 %
-   :align: center
-
-   *Figure 2 : Schematic representation of indentation load–displacement curves with definition of different works of indentation.*
-   
-[#ChengCheng_1998]_
-
-[#Malzbender_2002]_
-
-    .. math:: {{W_\text{tot} - W_\text{u}} \over W_\text{tot}} = 1 - 5{H \over E^{'}}
-            :label: energy
-            
+           
 Indentation contact topography
 -------------------------------
 
-The indentation total depth is rarely equal to the indentation contact depth.
-Two kind of topography can occur: the pile-up (indentation contact depth > indentation total depth) or the sink-in (indentation contact depth < indentation total depth) (see Figure 3).
+The indentation total depth is rarely equal to the indentation contact depth. Two kind of topography can occur:
+    - the pile-up (indentation contact depth > indentation total depth) (see Figure 2-a);
+    - the sink-in (indentation contact depth < indentation total depth) (see Figure 2-b).
 
 The flow of material below the indenter is function of mechanical properties of the material.
 Pile-up occurs when work-hardening coefficient is low (< 0.3) or if the ratio yield stress over Young's modulus is less than 1% [#Bolshakov_1998]_, [#Cheng_1998]_ and [#Cheng_2004]_.
@@ -100,24 +85,24 @@ Pile-up occurs when work-hardening coefficient is low (< 0.3) or if the ratio yi
    :scale: 60 %
    :align: center
    
-   *Figure 3 : Schematic of indentation contact topography : a) « pile-up » and b) « sink-in ».*
+   *Figure 2 : Schematic of indentation contact topography : a) « pile-up » and b) « sink-in ».*
    
 .. figure:: ./_pictures/pile_up.png
    :scale: 35 %
    :align: center
 
-   *Figure 4 : Residual topography of a Berkovich indent in PVD Gold thin film (500nm thick) with « pile-up » surrounding the indent, measured by atomic force microscopy.*
+   *Figure 3 : Residual topography of a Berkovich indent in PVD Gold thin film (500nm thick) with « pile-up » surrounding the indent, measured by atomic force microscopy.*
    
-Three models defining the depth of contact :math:`h_\text{c}` were developed to take into account this indentation contact topography.
+Three main models defining the depth of contact :math:`h_\text{c}` were developed to take into account this indentation contact topography.
 
 Model of Doerner and Nix [#DoernerNix_1986]_ :
    
-        .. math:: h_\text{c} = h_\text{t} - {F_\text{c} \over S}
+        .. math:: h_\text{c} = h_\text{t} - {F_\text{c_unloading} \over S}
                 :label: doerner_nix_model
 
 Model of Oliver and Pharr [#OliverPharr_1992]_, [#Pharr_2002]_ and [#OliverPharr_2004]_ in case of sink-in:
 
-        .. math:: h_\text{c} = h_\text{t} - \epsilon {F_\text{c} \over S}
+        .. math:: h_\text{c} = h_\text{t} - \epsilon {F_\text{c_unloading} \over S}
                 :label: oliver_pharr_model
               
 Where :math:`\epsilon` is a function of the indenter's geometry (0.72 for conical indenter, 0.75 for `paraboloids of revolution <https://en.wikipedia.org/wiki/Paraboloid>`_
@@ -131,7 +116,7 @@ for a paraboloid of revolution [#Merle_2012]_.
 
 Model of Loubet et al. [#Hochstetter_1999]_, [#Bec_2006]_ in case of pile-up:
 
-        .. math:: h_\text{c} = \alpha (h_\text{t} - {F_\text{c} \over S})
+        .. math:: h_\text{c} = \alpha (h_\text{t} - {F_\text{c_unloading} \over S})
                 :label: loubet_model
 
 Where :math:`\alpha` is a constant function of the indented material (usually around 1.2).
@@ -278,7 +263,7 @@ Doerner & Nix (1986) [#DoernerNix_1986]_, [#King_1987]_ and [#Saha_2002]_
     .. math:: {1 \over E^{'}} = {1 \over E_\text{f}^{'}} + ({1 \over E_\text{s}^{'}} - {1 \over E_\text{f}^{'}}) e^{-\alpha(x)}
             :label: doerner_nix
 
-With :math:`x=t/h`.
+With :math:`x=t/h` and :math:`\alpha` is an empirically constant determined using the method of least squares.
 
 The equation was modified by King (1987), by the replacement of :math:`t/h` by :math:`t/a_\text{c}`.
 
@@ -315,7 +300,8 @@ Menčík et al. (exponential model) (1997) [#Mencik_1997]_
     .. math:: E^{'} = E^{'}_\text{s} + (E^{'}_\text{f} - E^{'}_\text{s}) e^{-\alpha(x)}
             :label: mencik_exponential
 
-With :math:`x=a_\text{c}/t`.
+With :math:`x=a_\text{c}/t` and :math:`\alpha` is an empirically constant determined using the method of least squares.
+
 
 Menčík et al. (reciprocal exponential model) (1997) [#Mencik_1997]_
 **********************************************************************
@@ -323,7 +309,7 @@ Menčík et al. (reciprocal exponential model) (1997) [#Mencik_1997]_
     .. math:: {1 \over E^{'}} = {1 \over E_\text{s}^{'}} + ({1 \over E_\text{f}^{'}} - {1 \over E_\text{s}^{'}}) e^{-\alpha(x)}
             :label: mencik_reciprocal_exponential
 
-With :math:`x=a_\text{c}/t`.
+With :math:`x=a_\text{c}/t` and :math:`\alpha` is an empirically constant determined using the method of least squares.
 
 Perriot et al. (2003) [#Perriot_2004]_
 ***************************************
@@ -334,7 +320,7 @@ Perriot et al. (2003) [#Perriot_2004]_
     .. math:: log(k_0) = -0.093+0.792log({E^{'}_\text{s} \over E^{'}_\text{f}}) + 0.05[log{E^{'}_\text{s} \over E^{'}_\text{f}}]^2
             :label: perriot_barthel_k0
 
-With :math:`x=a_\text{c}/t`, and :math:`k_0` and :math:`n` are adjustable constants.
+With :math:`x=a_\text{c}/t`, and :math:`k_0` and :math:`n` are adjustable constants  determined using the method of least squares.
 
 Bec et al. (2006) [#Bec_2006]_
 ********************************
@@ -342,13 +328,13 @@ Bec et al. (2006) [#Bec_2006]_
 This elastic model is based on indentation by a rigid cylindrical punch (radius :math:`a_\text{c}`)
 of a homogeneous film deposited on a semi-infinite half space.
 
-This system is modelled by two springs connected in series (see Figure 5).
+This system is modelled by two springs connected in series (see Figure 4).
 
 .. figure:: ./_pictures/Bec_bilayer_model.png
    :scale: 40 %
    :align: center
    
-   *Figure 5 : Schematic description of the bilayer model of Bec et al. .*
+   *Figure 4 : Schematic description of the bilayer model of Bec et al. .*
 
     .. math:: K_\text{f} = \pi a_\text{c}^2 {E^{'}_\text{f} \over t}
             :label: bec_kf
@@ -433,13 +419,13 @@ Thus, the Young’s modulus of the film can be calculated as :
    :scale: 30 %
    :align: center
    
-   *Figure 6 : Schematic of elastic multilayer model.*
+   *Figure 5 : Schematic of elastic multilayer model.*
    
 .. figure:: ./_pictures/multilayer_sample_methodology.png
    :scale: 30 %
    :align: center
    
-   *Figure 7 : Experimental process to apply for elastic multilayer model.*
+   *Figure 6 : Experimental process to apply for elastic multilayer model.*
 
 Corrections to apply for thin film indentation [#Mencik_1997]_, [#Saha_2002]_, [#Bec_2006]_ and [#Li_2010]_
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -461,7 +447,7 @@ for a conical indenter and contact depths :math:`h_\text{c}` smaller than the fi
    :scale: 60 %
    :align: center
    
-   *Figure 8 : Indentation penetration of a thin film on a sample.*
+   *Figure 7 : Indentation penetration of a thin film on a sample.*
    
 Recently, Li et al. proposed to express the local thinning effect as [#Li_2010]_:
 
@@ -479,13 +465,34 @@ Extraction of plastic properties [#OliverPharr_1992]_
     .. math:: H = {F_\text{c,max} \over A_\text{c}}
             :label: hardness
             
+Energy approach
+----------------
+
+Another way to access indentation data is the use of the energy dissipated during the indentation.
+The elastic and plastic energies are based on the integral of the loading and unloading curve (see Figure 8) [#ChengCheng_1998]_ and [#Malzbender_2002]_.
+
+.. figure:: ./_pictures/load-disp_curve_energy.png
+   :scale: 60 %
+   :align: center
+
+   *Figure 8 : Schematic representation of indentation load–displacement curves with definition of different works of indentation.*
+
+    .. math:: W_\text{tot} = \int_{0}^{h_\text{t}} {F_\text{c_loading}(dh)}
+            :label: energy_tot
+            
+    .. math:: W_\text{e} = \int_{h_\text{r}}^{h_\text{t}} {F_\text{c_unloading}(dh)}
+            :label: energy_elastic
+            
+    .. math:: W_\text{p} = W_\text{tot} - W_\text{e}
+            :label: energy_plastic
+            
 Methodology to extract properties without the function area [#OliverPharr_2004]_
 -----------------------------------------------------------------------------------
 
-The ratio of the irreversible work :math:`W_\text{tot} - W_\text{u}` to the total work :math:`W_\text{tot}`,
+The ratio of the irreversible work :math:`W_\text{tot} - W_\text{e}` to the total work :math:`W_\text{tot}`,
 appears to be a unique function of the Young's modulus and the hardness of the material, independent of the work-hardening behavior [#ChengCheng_1998]_.
 
-    .. math:: {{W_\text{tot} - W_\text{u}} \over W_\text{tot}} = 1 - 5{H \over E^{'}}
+    .. math:: {{W_\text{tot} - W_\text{e}} \over W_\text{tot}} = 1 - 5{H \over E^{'}}
             :label: energy_ratio
 
 Then, combining the expression of the reduced Young's modulus with the expression of the hardness, leads to
