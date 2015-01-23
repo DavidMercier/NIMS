@@ -27,12 +27,13 @@ Indenter_material_properties: {Diamond: [1070, 0.07], Sapphire: [400, 0.25]}
 
 #################################################################################
 # !!! Do not remove !!!
-# For Berkovich, Vickers and Cube-Corner : [C1, C2, C3, C4, C5, Tip defect in nm]
-# For Conical : [Angle in degrees, Tip defect in nm]
+# For Berkovich, Vickers and Cube-Corner : [C0, C1, C2, C3, C4, C5, C6, C7, C8, Tip defect in nm, Semi-angle in degrees]
+# If C0 is not given (=0), the semi-angle from the apex has to be given in degrees and C0 will be calculated using the formulae for a perfect conical indenter.
+# C0 to C8 are coefficients from the function area defined by Oliver et al. (1992) - DOI: 10.1557/JMR.1992.1564
 # Use the same indenter name as given in the list of indenters !!!
-Berkovich: [24.56, 0, 0, 0, 0, 1]
-Vickers: [20.506, 0, 0, 0, 0, 1]
-CubeCorner: [2.598, 0, 0, 0, 0, 1]
-Conical: [45, 0]
-Berk_TB10161_091208: [22.233, 437.603, 127.765, -417.878, -84.0989, 0]
-Berk_TB10161_110210: [23.9198, 1217.67, -12231, 41727.1, -32286.3, 0]
+Berkovich: [24.56, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Vickers: [20.50, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+CubeCorner: [2.598, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Conical: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 45]
+Berk_TB10161_091208: [22.233, 437.603, 127.765, -417.878, -84.0989, 0, 0, 0, 0, 0]
+Berk_TB10161_110210: [23.9198, 1217.67, -12231, 41727.1, -32286.3, 0, 0, 0, 0, 0]

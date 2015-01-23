@@ -1,7 +1,8 @@
 # Copyright 2014 MERCIER David
 # Be careful to put a comma + a space between each data...! (YAML convention)
 #################################################################################
-# Constants given by Loubet et al. (1986) - DOI: 10.1520/STP889-EB
+# Constant given by Hochstetter et al. (1999) - DOI: 10.1080/00222349908248131 
+# and Bec et al. (2006) - DOI: 10.1080/01418619608239707
 alpha_Loubet: 1.24
 
 #################################################################################

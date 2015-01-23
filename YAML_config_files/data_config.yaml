@@ -2,4 +2,5 @@
 # Be careful to put a comma + a space between each data...! (YAML convention)
 #################################################################################
 # Absolute path to your nanoindentation results (optional)
-data_path: C:\Users\d.mercier\Desktop\NanoInd_Properties_Extraction\Data_indentation\
+# Uncomment to activate...
+#data_path: C:\Users\d.mercier\Desktop\
