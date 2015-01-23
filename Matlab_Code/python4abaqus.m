@@ -37,20 +37,20 @@ if ~isempty(scriptpath_multilayer_model)
     t_sub = 2 * max([gui.data.t0, gui.data.t1, gui.data.t2]);
     t_f = [gui.data.t2, gui.data.t1, gui.data.t0, t_sub];
     
-    if gui.data.indenter_tip_radius == 0
-        gui.data.indenter_tip_radius = 0.1;
+    if gui.data.indenter_tip_defect == 0
+        gui.data.indenter_tip_defect = 0.1;
     end
     
-    if gui.data.indenter_tip_radius > t_sub + t_sub/2
-        wid = 2 * gui.data.indenter_tip_radius;
-        abaqus_sketch_sheet_size = 3 * gui.data.indenter_tip_radius;
+    if gui.data.indenter_tip_defect > t_sub + t_sub/2
+        wid = 2 * gui.data.indenter_tip_defect;
+        abaqus_sketch_sheet_size = 3 * gui.data.indenter_tip_defect;
     else
         wid = 2 * (t_sub + t_sub/2);
         abaqus_sketch_sheet_size = 3 * (t_sub + t_sub/2);
     end
     
     % Definition of spherical part
-    r_ind = str2num(gui.data.indenter_tip_radius);
+    r_ind = str2num(gui.data.indenter_tip_defect);
     a_ind = str2num(gui.data.indenter_tip_angle);
     y_trans = r_ind * (1 - sind(a_ind));
     x_trans = (((r_ind)^2)-((r_ind - y_trans)^2))^0.5;
@@ -120,7 +120,7 @@ if ~isempty(scriptpath_multilayer_model)
     py{end+1} = sprintf('#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
     py{end+1} = sprintf('myModel = mdb.Model(name=''%s'')', strcat('multilayer_model_', datestr(datenum(clock),'yyyy-mm-dd')));
     py{end+1} = sprintf('indenter_used = ''%s''', gui.config.Indenter_ID);
-    py{end+1} = sprintf('r_ind = %s', gui.data.indenter_tip_radius);
+    py{end+1} = sprintf('r_ind = %s', gui.data.indenter_tip_defect);
     py{end+1} = sprintf('a_ind = %s', gui.data.indenter_tip_angle);
     py{end+1} = sprintf('sheet_Size = %f', abaqus_sketch_sheet_size);
     py{end+1} = sprintf('step_Load = ''Loading''');

@@ -130,7 +130,6 @@ if gui.variables.num_thinfilm == 1 && (gui.variables.y_axis == 4 || gui.variable
     gui.axis.title_str = ['Mean Young''s modulus of the film (when h < t) = ', num2str(round(mean(gui.results.Esample))), 'GPa'];
     
 elseif gui.variables.num_thinfilm == 2
-    
     if gui.variables.y_axis == 4 || gui.variables.y_axis == 5
         if gui.variables.val2 > 2 && gui.variables.val2 < 6
             set(gui.handles.value_youngfilm0_GUI, 'String', round(gui.results.Ef_sol_fit));
@@ -151,7 +150,6 @@ elseif gui.variables.num_thinfilm == 2
     end
     
 elseif gui.variables.num_thinfilm == 3
-    
     if gui.variables.y_axis == 4
         set(gui.handles.value_youngfilm1_GUI, 'String', round(gui.results.Ef_sol_fit));
         gui.axis.title_str = ['Mean Young''s modulus of the film (when h < t)= ', num2str(round(gui.results.Ef_sol_fit)), 'GPa'];
@@ -163,7 +161,6 @@ elseif gui.variables.num_thinfilm == 3
     end
     
 elseif gui.variables.num_thinfilm == 4
-    
     if gui.variables.y_axis == 4
         set(gui.handles.value_youngfilm2_GUI, 'String', round(gui.results.Ef_sol_fit));
         gui.axis.title_str = ['Mean Young''s modulus of the film (when h < t)= ', num2str(round(gui.results.Ef_sol_fit)), 'GPa'];

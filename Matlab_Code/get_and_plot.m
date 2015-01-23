@@ -26,10 +26,18 @@ if ~gui.flag.wrong_inputs
     
     %% Get parameters
     model_set_parameters;
+    gui = guidata(gcf); guidata(gcf, gui);
+    
+    %% Load-Displacement curve analysis
+    if gui.variables.y_axis == 1
+        model_load_disp;
+    end
     
     %% Calculations of function area
-    model_function_area;
-    gui = guidata(gcf); guidata(gcf, gui);
+    if gui.variables.y_axis > 3
+        model_function_area;
+        gui = guidata(gcf); guidata(gcf, gui);
+    end
     
     %% Calculations of Young's modulus
     if gui.variables.y_axis == 4 || gui.variables.y_axis == 5
@@ -40,7 +48,7 @@ if ~gui.flag.wrong_inputs
         elseif get(gui.handles.value_numthinfilm_GUI, 'Value') == 3 || ...
                 get(gui.handles.value_numthinfilm_GUI, 'Value') == 4
             model_multilayer_elastic;
-        end        
+        end
     elseif gui.variables.y_axis == 6
         gui.results.H = model_hardness(gui.data.P, gui.results.Ac);
     end
@@ -48,7 +56,7 @@ if ~gui.flag.wrong_inputs
     % Be careful of the order of the 3 following lines, because gcf is
     % the waitbar during calculations !!!
     gui = guidata(gcf);
-    delete(gui.handles.h_waitbar); 
+    delete(gui.handles.h_waitbar);
     guidata(gcf, gui);
     
     %% Plot data
@@ -57,7 +65,6 @@ if ~gui.flag.wrong_inputs
     
     if strcmp(get(gui.handles.cb_residual_plot_GUI, 'Visible'), 'on') == 1
         residual_plot_value = get(gui.handles.cb_residual_plot_GUI, 'Value');
-        
         if residual_plot_value == 0
             plot_exp_vs_mod;
         else

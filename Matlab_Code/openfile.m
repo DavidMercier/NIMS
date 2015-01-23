@@ -10,8 +10,8 @@ gui.handles.h_waitbar_load = waitbar(0, 'Import data in progress...');
 gui.flag.flag = 0;
 
 %% Open window to select file
-[gui.data.filename_data, gui.data.pathname_data, filterindex_data] = uigetfile([gui.config.data_path, '*.xls;*.txt'], 'File Selector');
-% datapath_config_filename=sprintf('GUI_path_%s.yaml',getenv('USERNAME'));
+[gui.data.filename_data, gui.data.pathname_data, filterindex_data] = ...
+    uigetfile([gui.config.data.data_path, '*.xls;*.txt'], 'File Selector');
 
 %% Waitbar
 steps = 1000;
@@ -38,7 +38,8 @@ if isequal(gui.data.filename_data,'')
     ext = '.nul';
     
 else
-    disp(['User selected', fullfile(gui.data.pathname_data, gui.data.filename_data)]);
+    disp(['User selected', ...
+        fullfile(gui.data.pathname_data, gui.data.filename_data)]);
     [pathstr, name, ext] = fileparts(gui.data.filename_data);
     
 end

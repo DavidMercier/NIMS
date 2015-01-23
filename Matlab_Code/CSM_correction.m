@@ -14,24 +14,26 @@ else
     num_indenters  = get(gui.handles.value_indentertype_GUI, 'Value');
     indenter_id    = list_indenters(num_indenters, :);
     
-    for ii = 1:1:length(gui.config.Indenter_IDs)
-        func_area_fields = getfield(gui.config,{1}, indenter_id{':'},{':'});
+    for ii = 1:1:length(gui.config.indenter.Indenter_IDs)
+        func_area_fields = getfield(gui.config.indenter,{1}, indenter_id{':'},{':'});
         gui.config.func_area = cell2mat(func_area_fields(:));
         
-        if strcmp(indenter_id, gui.config.Indenter_IDs(ii)) == 1
+        if strcmp(indenter_id, gui.config.indenter.Indenter_IDs(ii)) == 1
             [indenter_id_str] = indenter_id{:};
             
-            if strcmp(indenter_id_str(1:4), 'Berk') == 1 && (get(gui.handles.cb_CSM_corr_GUI, 'Value')) == 1
+            if strcmp(indenter_id_str(1:4), 'Berk') == 1 && ...
+                    (get(gui.handles.cb_CSM_corr_GUI, 'Value')) == 1
                 
-                gui.data.K_Pharr = 0.757; % Constant given by Pharr et al. (2009)
-                gui.data.m_Pharr = 1.380; % Constant given by Pharr et al. (2009)
+                % Constants given by Pharr et al. (2009)
+                K_Pharr = gui.config.numerics.CSM_K_Pharr;
+                m_Pharr = gui.config.numerics.CSM_m_Pharr;
                 
                 gui.data.h_CSM_Corr = gui.data.h + ((2^0.5).*gui.data.delta_h);
                 gui.data.P_CSM_Corr = gui.data.P + ((2^0.5).*gui.data.delta_P);
                 gui.data.S_CSM_Corr = ((1/((2*pi)^0.5)) .* ...
-                    ((1/gui.data.K_Pharr).^(1/gui.data.m_Pharr))) .*...
+                    ((1/K_Pharr).^(1/m_Pharr))) .*...
                     (1-(1-(((2*(2.^0.5).*gui.data.delta_h.*gui.data.S) ./ ...
-                    (max(gui.data.P))))).^(1/gui.data.m_Pharr)) .* ...
+                    (max(gui.data.P))))).^(1/m_Pharr)) .* ...
                     (max(gui.data.P)./gui.data.delta_h);
                 
                 gui.data.h = gui.data.h_CSM_Corr;

@@ -39,16 +39,20 @@ elseif strcmp(val0_str(1:4), 'Coni') == 1
     gui.variables.val0 = 4;
 end
 
-gui.data.h_Berk = str2double(get(gui.handles.value_indenterberk_prop_GUI,    'String')); % nm
-gui.data.h_Vick = str2double(get(gui.handles.value_indentervickers_prop_GUI, 'String')); % nm
-gui.data.h_Coni = str2double(get(gui.handles.value_indentercon_def_prop_GUI, 'String')); % nm
-gui.data.C1 = str2double(get(gui.handles.value_C1_GUI, 'String')); % C1=24.56 for Berkovich and C1=24.506 for Vickers
-gui.data.C2 = str2double(get(gui.handles.value_C2_GUI, 'String'));
-gui.data.C3 = str2double(get(gui.handles.value_C3_GUI, 'String'));
-gui.data.C4 = str2double(get(gui.handles.value_C4_GUI, 'String'));
-gui.data.C5 = str2double(get(gui.handles.value_C5_GUI, 'String'));
-%gui.variables.R = str2double(get(gui.handles.value_indentercon_rad_prop_GUI, 'String')); % µm
-gui.data.Ang = str2double(get(gui.handles.value_indentercon_ang_prop_GUI, 'String')); % µm
+gui.data.indenter_tip_defect = get(gui.handles.value_indenter_def_prop_GUI, 'String'); % in nm
+gui.data.indenter_tip_angle = get(gui.handles.value_indenter_ang_prop_GUI, 'String'); % in degrees
+
+func_area = getfield(gui.config.indenter, {1}, indenter_id{':'}, {':'});
+func_area = cell2mat(func_area(:));
+gui.data.C0 = str2double(get(gui.handles.value_C0_GUI, 'String'));
+gui.data.C1 = func_area(1);
+gui.data.C2 = func_area(2);
+gui.data.C3 = func_area(3);
+gui.data.C4 = func_area(4);
+gui.data.C5 = func_area(5);
+gui.data.C6 = func_area(6);
+gui.data.C7 = func_area(7);
+gui.data.C8 = func_area(8);
 
 % Load-disp. model properties
 gui.variables.loaddisp_model = get(gui.handles.value_loaddisp_model_GUI, 'Value');

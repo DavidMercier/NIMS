@@ -30,11 +30,11 @@ OPTIONS = optimset(OPTIONS, 'MaxIter', 10000);
     gui.results.jacobian] =...
     lsqcurvefit(bilayer_model, gui.results.A0, x, ...
     gui.results.Esample_red, ...
-    [0;0], [1000;1], OPTIONS);
+    [0;0], [1000;0.5], OPTIONS); % By default alpha = 0.25 in Doerner and Nix paper
 
-gui.results.Ef_red_solfit(1) = gui.results.A(1);
+gui.results.Ef_red_sol_fit(1) = gui.results.A(1);
 
-gui.results.Ef_sol_fit(1) = gui.results.Ef_red_solfit(1) * ...
+gui.results.Ef_sol_fit(1) = gui.results.Ef_red_sol_fit(1) * ...
     (1-gui.data.nuf^2);
 
 gui.results.Ef_sol_fit(2) = gui.results.A(2);
@@ -44,7 +44,7 @@ gui.results.Em_red = ...
     ((1./gui.data.Es_red)*(exp(-gui.results.A(2)*x)))).^-1);
 
 gui.results.Ef_red = 1e-9*(((1./(1e9.*gui.results.Esample_red)) - ...
-    ((1./gui.data.Es_red)*(exp(gui.results.A(2).*x))))./(1-exp(gui.results.A(2).*x))).^-1;
+    ((1./gui.data.Es_red)*(exp(-gui.results.A(2).*x))))./(1-exp(-gui.results.A(2).*x))).^-1;
 
 guidata(gcf, gui);
 

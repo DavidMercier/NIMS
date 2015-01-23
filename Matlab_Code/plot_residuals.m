@@ -32,16 +32,32 @@ elseif gui.variables.x_axis == 3
 end
 
 %% Definiton of the plot
-plot(gui.axis.x2plot, residual_norm, 'rx', 'LineWidth', 2);
+if gui.variables.log_plot_value == 0
+    gui.handles.plot_data = ...
+        plot(gui.axis.x2plot, residual_norm, 'rx', 'LineWidth', 2);
+elseif gui.variables.log_plot_value == 1
+    gui.handles.plot_data = ...
+        loglog(gui.axis.x2plot, residual_norm, 'rx', 'LineWidth', 2);
+end
+%% Plot properties
+xlabel(gui.axis.xlabelstr, 'Color', [0,0,0], 'FontSize', 14);
+ylabel('Residuals / Young''s modulus of the sample (%)', 'Color', [0,0,0], 'FontSize', 14);
+xlim([gui.axis.xmin gui.axis.xmax]);
+ylim([min(residual_norm) max(residual_norm)]);
+set(gui.handles.AxisPlot_GUI, 'FontSize', 14);
+set(gui.handles.plot_data, 'MarkerSize', 10);
+for ii = 1:length(gui.handles.plot_data)
+    gui.handles.plot_data(ii).LineWidth = 2;
+end
+
 legend('Residuals / Young''s modulus of the sample', 'Location', 'NorthWest');
 title('Residuals / Young''s modulus of the sample', 'FontSize', 18);
 
-%% Plot properties
-xlabel(gui.axis.xlabelstr, 'Color', [0,0,0]);
-ylabel('Residuals / Young''s modulus of the sample (%)', 'Color', [0,0,0]);
-xlim([gui.axis.xmin gui.axis.xmax]);
-ylim([min(residual_norm) max(residual_norm)]);
-grid on;
+if get(gui.handles.cb_grid_plot_GUI, 'Value') == 1
+    grid on;
+else
+    grid off;
+end
 
 guidata(gcf, gui);
 

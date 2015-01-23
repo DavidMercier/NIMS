@@ -13,6 +13,8 @@ end
 
 x = gui.results.ac./gui.data.t;
 
+
+
 % A(1) = ln(Ef-Es)
 % A(2) = -alpha
 bilayer_model = @(A, x) (A(1) + A(2)*x);
@@ -43,18 +45,18 @@ else
     k = -1;
 end
 
-gui.results.Ef_red_solfit(1) = gui.data.Es_red*1e-9 + k * exp(gui.results.A(1));
+gui.results.Ef_red_sol_fit(1) = gui.data.Es_red*1e-9 + k * exp(gui.results.A(1));
 
-gui.results.Ef_sol_fit(1) = gui.results.Ef_red_solfit(1) * ...
+gui.results.Ef_sol_fit(1) = gui.results.Ef_red_sol_fit(1) * ...
     (1-gui.data.nuf^2);
 
 gui.results.Ef_sol_fit(2) = gui.results.A(2);
 
 gui.results.Em_red = gui.data.Es_red*1e-9 + ...
-    ((gui.results.Ef_red_solfit(1) - gui.data.Es_red*1e-9) .* ...
+    ((gui.results.Ef_red_sol_fit(1) - gui.data.Es_red*1e-9) .* ...
     exp(gui.results.A(2) .* x));
 
-gui.results.Ef_red(1:length(x)) = gui.results.Ef_red_solfit(1);
+gui.results.Ef_red(1:length(x)) = gui.results.Ef_red_sol_fit(1);
 gui.results.Ef_red = gui.results.Ef_red';
 
 guidata(gcf, gui);

@@ -2,7 +2,7 @@
 function model_bilayer_elastic
 %% Function used to calculate the bilayer elastic model
 gui = guidata(gcf);
-gui.results.Ef_red_solfit = 0;
+gui.results.Ef_red_sol_fit = 0;
 gui.results.Em_red = 0;
 gui.results.Ef_red = 0;
 gui.results.t_corr = 0;
@@ -68,9 +68,7 @@ if gui.variables.val2 ~= 1
         guidata(gcf, gui);
     end
     
-elseif gui.variables.val2 == 1 || gui.variables.y_axis == 1 || ...
-        gui.variables.y_axis == 2 || gui.variables.y_axis == 3 ...
-        || gui.variables.y_axis == 6 % No Bilayer Model
+elseif gui.variables.val2 == 1 % No Bilayer Model
     
     % Preallocation
     gui.results.Ef     = NaN(length(gui.data.h), 1);
@@ -86,14 +84,9 @@ elseif gui.variables.val2 == 1 || gui.variables.y_axis == 1 || ...
         gui.results.Em_red(ii)  = 0;
         gui.results.Em_red      = gui.results.Em_red.';
     end
-    
 end
 
 set(gui.handles.MainWindows, 'CurrentAxes', gui.handles.AxisPlot_GUI);
-guidata(gcf, gui);
-
-%% Calculation of hardness
-gui.results.H = model_hardness(gui.data.P, gui.results.Ac);
 
 guidata(gcf, gui);
 
