@@ -1,0 +1,38 @@
+# Copyright 2014 MERCIER David
+# Be careful to put a comma + a space between each data...! (YAML convention)
+#################################################################################
+# Semi-angle from the apex (in degrees) and equivalent cone angle (in degrees)
+theta_Berkovich: 65.3
+thetaeq_Berkovich: 70.32
+theta_Vickers: 68
+thetaeq_Vickers: 70.2996
+theta_CubeCorner: 35.2644
+thetaeq_CubeCorner: 42.286
+
+#################################################################################
+# List of indenters
+# For user_defined indenters, make the name of the indenter begins with the 4th first letters of the indenters
+# e.g. : Berk_TB10161_091208 or Coni_120812 or Vick120512_oldtip or CubeCornerXXXFFF
+Indenter_IDs: [Berkovich, Vickers, CubeCorner, Conical, Berk_TB10161_091208, Berk_TB10161_110210]
+# Set the indenter you want to use by default
+Indenter_ID: Berkovich
+
+#################################################################################
+# List of indenter's material - !!! Do not remove !!!
+Indenter_materials: [Diamond, Sapphire]
+# Default indenter's material
+Indenter_material: Diamond
+# Material properties [Young's modulus in GPa, Poisson's ratio] from A.C. Fischer-Cripps "Nanoindentation" - Springer 2nd Ed. (2004)
+Indenter_material_properties: {Diamond: [1070, 0.07], Sapphire: [400, 0.25]}
+
+#################################################################################
+# !!! Do not remove !!!
+# For Berkovich, Vickers and Cube-Corner : [C1, C2, C3, C4, C5, Tip defect in nm]
+# For Conical : [Angle in degrees, Tip defect in nm]
+# Use the same indenter name as given in the list of indenters !!!
+Berkovich: [24.56, 0, 0, 0, 0, 1]
+Vickers: [20.506, 0, 0, 0, 0, 1]
+CubeCorner: [2.598, 0, 0, 0, 0, 1]
+Conical: [45, 0]
+Berk_TB10161_091208: [22.233, 437.603, 127.765, -417.878, -84.0989, 0]
+Berk_TB10161_110210: [23.9198, 1217.67, -12231, 41727.1, -32286.3, 0]
