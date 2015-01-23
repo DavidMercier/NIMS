@@ -6,7 +6,7 @@
 What is a YAML File ?
 #########################
 
-"YAML is a human friendly data serialization standard for all programming languages."
+*"YAML is a human friendly data serialization standard for all programming languages."*
 
 `Visit the YAML website for more informations. <http://www.yaml.org/>`_
 
