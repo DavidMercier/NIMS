@@ -14,7 +14,6 @@ else
     
     set(gui.handles.value_y_values_GUI, 'String', ...
         num2str((round((y_value*1000)/10))/100));
-    
 end
 
 end

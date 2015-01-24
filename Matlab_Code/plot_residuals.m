@@ -8,7 +8,17 @@ set(gui.handles.MainWindows, 'CurrentAxes', gui.handles.AxisPlot_GUI);
 cla;
 
 %% Normalization
-residual_norm = gui.results.residual./gui.results.Esample_red;
+if gui.variables.y_axis == 1
+    residual_norm = gui.results.residual./gui.data.P;
+    gui.axis.legend_str = 'Residuals / Load';
+    gui.axis.title_str = 'Residuals / Load';
+    gui.axis.ylabelstr = 'Residuals / Load (%)';
+elseif gui.variables.y_axis > 3
+    residual_norm = gui.results.residual./gui.results.Esample_red;
+    gui.axis.legend_str = 'Residuals / Young''s modulus of the sample';
+    gui.axis.title_str = 'Residuals / Young''s modulus of the sample';
+    gui.axis.ylabelstr = 'Residuals / Young''s modulus of the sample (%)';
+end
 
 %% Setting of the plot
 if gui.variables.x_axis == 1
@@ -40,25 +50,14 @@ elseif gui.variables.log_plot_value == 1
         loglog(gui.axis.x2plot, residual_norm, 'rx', 'LineWidth', 2);
 end
 %% Plot properties
-xlabel(gui.axis.xlabelstr, 'Color', [0,0,0], 'FontSize', 14);
-ylabel('Residuals / Young''s modulus of the sample (%)', 'Color', [0,0,0], 'FontSize', 14);
-xlim([gui.axis.xmin gui.axis.xmax]);
-ylim([min(residual_norm) max(residual_norm)]);
-set(gui.handles.AxisPlot_GUI, 'FontSize', 14);
-set(gui.handles.plot_data, 'MarkerSize', 10);
-for ii = 1:length(gui.handles.plot_data)
-    gui.handles.plot_data(ii).LineWidth = 2;
-end
+gui.axis.ymin = min(residual_norm);
+gui.axis.ymax = max(residual_norm);
 
-legend('Residuals / Young''s modulus of the sample', 'Location', 'NorthWest');
-title('Residuals / Young''s modulus of the sample', 'FontSize', 18);
-
-if get(gui.handles.cb_grid_plot_GUI, 'Value') == 1
-    grid on;
-else
-    grid off;
-end
+set(gui.handles.pb_residual_plot_GUI, 'string', 'Plot');
+set(gui.handles.pb_residual_plot_GUI, 'Callback', 'plot_selection(1)');
 
 guidata(gcf, gui);
+
+plot_properties;
 
 end
