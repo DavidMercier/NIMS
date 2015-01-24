@@ -34,7 +34,7 @@ gui.results.t0_corr = gui.data.t0;
 
 %% Optimization of Young's modulus of the thin film
 if gui.variables.val2 ~= 1
-    x = gui.data.h; 
+    x = gui.data.h;
     
     % 2 Films + Substrat
     if gui.variables.num_thinfilm == 3 && gui.variables.val2 == 2 % Mercier et al. (2010)
@@ -54,15 +54,26 @@ if gui.variables.val2 ~= 1
             (1./((2.*(gui.results.ac0+((2.*gui.results.t0_corr)./pi))).*gui.data.Es_red)))).^-1));
         
         Ef_red_sol0 = (str2double(get(gui.handles.value_youngfilm2_GUI, 'String')));                    % Make a starting guess at the solution (Ef in GPa)
-        
     end
     
     OPTIONS = optimset('lsqcurvefit');
-    OPTIONS = optimset(OPTIONS, 'TolFun',  1e-20);
-    OPTIONS = optimset(OPTIONS, 'TolX',    1e-20);
-    OPTIONS = optimset(OPTIONS, 'MaxIter', 10000);
-    [gui.results.Ef_red_sol_fit, gui.results.resnorm, gui.results.residual, gui.results.exitflag, gui.results.output, gui.results.lambda, gui.results.jacobian] = ...
-        lsqcurvefit(multilayer_model, Ef_red_sol0,x, gui.results.Esample_red, 0, 1000, OPTIONS);
+    OPTIONS = optimset(OPTIONS, 'TolFun',  gui.config.numerics.TolFun_value);
+    OPTIONS = optimset(OPTIONS, 'TolX',    gui.config.numerics.TolX_value);
+    OPTIONS = optimset(OPTIONS, 'MaxIter', gui.config.numerics.MaxIter_value);
+    
+    [gui.results.Ef_red_sol_fit, ...
+        gui.results.resnorm, ...
+        gui.results.residual, ...
+        gui.results.exitflag, ...
+        gui.results.output, ...
+        gui.results.lambda, ...
+        gui.results.jacobian] = ...
+        lsqcurvefit(multilayer_model, ...
+        Ef_red_sol0,x, ...
+        gui.results.Esample_red, ...
+        gui.config.numerics.Min_YoungModulus, ...
+        gui.config.numerics.Max_YoungModulus, ...
+        OPTIONS);
     
     gui.results.Ef_sol_fit = gui.results.Ef_red_sol_fit * (1-gui.data.nuf^2);
     
@@ -117,7 +128,6 @@ elseif gui.variables.val2 == 1
         gui.results.Em_red(ii)  = 0;
         gui.results.Em_red      = gui.results.Em_red.';
     end
-    
 end
 
 set(gui.handles.MainWindows, 'CurrentAxes', gui.handles.AxisPlot_GUI);

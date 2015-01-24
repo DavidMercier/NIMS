@@ -1,5 +1,5 @@
 %% Copyright 2014 MERCIER David
-function model_mencik_exponential
+function model_mencik_exponential(OPTIONS)
 %% Function used to calculate Young's modulus in bilayer system with
 % the exponential model of Mencik et al. (1997)
 gui = guidata(gcf);
@@ -13,7 +13,9 @@ end
 
 x = gui.results.ac./gui.data.t;
 
-
+% Minimum and maximum boundaries for the constant alpha
+min_alpha = gui.config.numerics.alpha_min_Mencik;
+max_alpha = gui.config.numerics.alpha_max_Mencik;
 
 % A(1) = ln(Ef-Es)
 % A(2) = -alpha
@@ -22,12 +24,8 @@ bilayer_model = @(A, x) (A(1) + A(2)*x);
 % Make a starting guess
 gui.results.A0 = [...
     str2double(get(gui.handles.value_youngfilm1_GUI, 'String')) / ...
-    (1-gui.data.nuf.^2); -1];
+    (1-gui.data.nuf.^2); (min_alpha + max_alpha)/2];
 
-OPTIONS = optimset('lsqcurvefit');
-OPTIONS = optimset(OPTIONS, 'TolFun',  1e-20);
-OPTIONS = optimset(OPTIONS, 'TolX',    1e-20);
-OPTIONS = optimset(OPTIONS, 'MaxIter', 10000);
 [gui.results.A, ...
     gui.results.resnorm, ...
     gui.results.residual, ...
@@ -37,7 +35,9 @@ OPTIONS = optimset(OPTIONS, 'MaxIter', 10000);
     gui.results.jacobian] =...
     lsqcurvefit(bilayer_model, gui.results.A0, x, ...
     log(abs(gui.results.Esample_red - gui.data.Es_red*1e-9)), ...
-    [0;-10000], [1000;10000], OPTIONS);
+    [gui.config.numerics.Min_YoungModulus; min_alpha], ...
+    [gui.config.numerics.Max_YoungModulus; max_alpha], ...
+    OPTIONS);
 
 if sum(gui.results.Esample_red - gui.data.Es_red*1e-9) > 0
     k = 1;

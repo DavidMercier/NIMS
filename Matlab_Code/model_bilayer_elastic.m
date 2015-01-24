@@ -25,23 +25,28 @@ guidata(gcf, gui);
 %% Optimization of Young's modulus of the thin film
 if gui.variables.val2 ~= 1
     if gui.variables.y_axis == 4 || gui.variables.y_axis == 5
-        
+	
+        OPTIONS = optimset('lsqcurvefit');
+		OPTIONS = optimset(OPTIONS, 'TolFun',  gui.config.numerics.TolFun_value);
+		OPTIONS = optimset(OPTIONS, 'TolX',    gui.config.numerics.TolX_value);
+		OPTIONS = optimset(OPTIONS, 'MaxIter', gui.config.numerics.MaxIter_value);
+
         if gui.variables.val2 == 2 %Doerner & Nix (1986) modified by King (1987)
-            model_doerner_nix_king;
+            model_doerner_nix_king(OPTIONS);
         elseif gui.variables.val2 == 3 %Gao et al. (1992) (for flat cylindrical indentation test...)
-            model_gao;
+            model_gao(OPTIONS);
         elseif gui.variables.val2 == 4 %Bec et al. (2006)
-            model_bec;
+            model_bec(OPTIONS);
         elseif gui.variables.val2 == 5 %Hay et al. (2011)
-            model_hay;
+            model_hay(OPTIONS);
         elseif gui.variables.val2 == 6 %Perriot et al. (2003)
-            model_perriot_barthel;
+            model_perriot_barthel(OPTIONS);
         elseif gui.variables.val2 == 7 % Mencik et al. (linear model) (1997)
-            model_mencik_linear;
+            model_mencik_linear(OPTIONS);
         elseif gui.variables.val2 == 8 % Mencik et al. (exponential model) (1997)
-            model_mencik_exponential;
+            model_mencik_exponential(OPTIONS);
         elseif gui.variables.val2 == 9 % Mencik et al. (reciprocal exponential model) (1997)
-            model_mencik_reciprocal_exponential;
+            model_mencik_reciprocal_exponential(OPTIONS);
         end
         
         gui = guidata(gcf); guidata(gcf, gui);

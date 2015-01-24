@@ -1,5 +1,5 @@
 %% Copyright 2014 MERCIER David
-function model_hay
+function model_hay(OPTIONS)
 %% Function used to calculate Young's modulus in bilayer system with
 % the model of Hay et al. (2011)
 % see also Gao et al. (1992)
@@ -11,7 +11,7 @@ x = gui.results.t_corr./gui.results.ac;
 
 gui.data.phigao1 = (2/pi).*atan(x)+(x./pi).*log((1+(x).^2)./(x).^2);
 
-% Hay et al. (2011)  - Poisson's coefficient of the composite (film + substrate)
+% Poisson's coefficient of the composite (film + substrate)
 gui.data.nuc = 1-(((1-gui.data.nus)*(1-gui.data.nuf)) ./ ...
     (1-(1-gui.data.phigao1)*gui.data.nuf-(gui.data.phigao1*gui.data.nus)));
 
@@ -29,10 +29,6 @@ gui.results.Ef_red_sol0 = ...
     str2double(get(gui.handles.value_youngfilm1_GUI, 'String')) / ...
     (1-gui.data.nuf.^2);
 
-OPTIONS = optimset('lsqcurvefit');
-OPTIONS = optimset(OPTIONS, 'TolFun',  1e-20);
-OPTIONS = optimset(OPTIONS, 'TolX',    1e-20);
-OPTIONS = optimset(OPTIONS, 'MaxIter', 10000);
 [gui.results.Ef_red_sol_fit, ...
     gui.results.resnorm, ...
     gui.results.residual, ...
@@ -42,7 +38,9 @@ OPTIONS = optimset(OPTIONS, 'MaxIter', 10000);
     gui.results.jacobian] =...
     lsqcurvefit(bilayer_model, gui.results.Ef_red_sol0, x, ...
     gui.results.Esample_red, ...
-    0, 1000, OPTIONS);
+    gui.config.numerics.Min_YoungModulus, ...
+    gui.config.numerics.Max_YoungModulus, ...
+    OPTIONS);
 
 gui.results.Ef_sol_fit = gui.results.Ef_red_sol_fit * ...
     (1-gui.data.nuf^2);
@@ -52,7 +50,7 @@ gui.results.Em_red =((1e-9 * ((2.*(1+gui.data.nuc)))./(((1-gui.data.phigao0) ...
     (gui.data.phigao0.*(1./(1e9*(gui.results.Ef_red_sol_fit.*(1-gui.data.nuf.^2)) ...
     ./(2.*(1+gui.data.nuf))))))))./(1-gui.data.nuc.^2);
 
-F      = 0.626;
+F      = gui.config.numerics.F_Hay;
 mueq   = gui.results.Esample./(2.*(1+gui.data.nuc));
 mus    = 1e-9.*gui.data.Es./(2.*(1+gui.data.nus));
 A_Hay  = F.*gui.data.phigao0;
