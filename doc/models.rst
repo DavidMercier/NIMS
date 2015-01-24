@@ -13,7 +13,7 @@ of bulk and thin film materials from indentation experiments with conical indent
 
 Conical indenters [#Fischer-Cripps_2004]_
 -------------------------------------------
-.. csv-table::
+.. csv-table:: Table 1 : **Geometric properties of conical indenters.**
    :header: "Indenter", "Berkovich", "Vickers", "Cube-Corner", "Conical"
    :widths: 20,20,20,20,20
 
@@ -24,7 +24,7 @@ Conical indenters [#Fischer-Cripps_2004]_
    "Volume-depth relation",    ":math:`8.1873h^3`", ":math:`8.1681h^3`", ":math:`0.8657h^3`", "--"
    "Projected area/face area", ":math:`0.908`",     ":math:`0.927`",      ":math:`0.5774`",    "--"
    "Contact radius",           "--",                 "--",                 "--",                 ":math:`htan\psi`"
-      
+   
 Load-Displacement curves
 -------------------------
 
@@ -60,7 +60,10 @@ With :math:`K` a constant function of material properties (Young's modulus and h
 Unloading
 +++++++++++
 
-The slope of unloading curve gives access to the contact stiffness :math:`S = {dF_\text{c_unloading} \over dh}`.
+The slope of unloading curve gives access to the contact stiffness :
+
+        .. math:: S = {dF_\text{c} \over dh}
+                :label: stiffness
 
 Pharr and Bolshakov founded that unloading curves were well described by the following power-law relationship [#Pharr_2002]_ :
 
@@ -79,6 +82,7 @@ The indentation total depth is rarely equal to the indentation contact depth. Tw
     - the sink-in (indentation contact depth < indentation total depth) (see Figure 2-b).
 
 The flow of material below the indenter is function of mechanical properties of the material.
+
 Pile-up occurs when work-hardening coefficient is low (< 0.3) or if the ratio yield stress over Young's modulus is less than 1% [#Bolshakov_1998]_, [#Cheng_1998]_ and [#Cheng_2004]_.
 
 .. figure:: ./_pictures/contact_topography.png
@@ -97,12 +101,12 @@ Three main models defining the depth of contact :math:`h_\text{c}` were develope
 
 Model of Doerner and Nix [#DoernerNix_1986]_ :
    
-        .. math:: h_\text{c} = h_\text{t} - {F_\text{c_unloading} \over S}
+        .. math:: h_\text{c} = h_\text{t} - {F_\text{c} \over S}
                 :label: doerner_nix_model
 
 Model of Oliver and Pharr [#OliverPharr_1992]_, [#Pharr_2002]_ and [#OliverPharr_2004]_ in case of sink-in:
 
-        .. math:: h_\text{c} = h_\text{t} - \epsilon {F_\text{c_unloading} \over S}
+        .. math:: h_\text{c} = h_\text{t} - \epsilon {F_\text{c} \over S}
                 :label: oliver_pharr_model
               
 Where :math:`\epsilon` is a function of the indenter's geometry (0.72 for conical indenter, 0.75 for `paraboloids of revolution <https://en.wikipedia.org/wiki/Paraboloid>`_
@@ -116,7 +120,7 @@ for a paraboloid of revolution [#Merle_2012]_.
 
 Model of Loubet et al. [#Hochstetter_1999]_, [#Bec_2006]_ in case of pile-up:
 
-        .. math:: h_\text{c} = \alpha (h_\text{t} - {F_\text{c_unloading} \over S} + h_0)
+        .. math:: h_\text{c} = \alpha (h_\text{t} - {F_\text{c} \over S} + h_0)
                 :label: loubet_model
 
 Where :math:`\alpha` is a constant function of the indented material (usually around 1.2) and the tip-defect :math:`h_0`.
@@ -151,19 +155,40 @@ One other way to express the function area is that suggested by Loubet et al. [#
 which describes a pyramid with a small flat region on its tip, the so-called tip defect (:math:`h_0`).
 This geometry is described by the addition of a constant to the first two terms in :eq:`area_function`.
 
-More recently, Guillonneau et al. proposed a model to extract mechanical properties without using the indentation depth [#Guillonneau_2012_1]_ and [#Guillonneau_2012_2]_.
-The method is based on the detection of the second harmonic for dynamic indentation testing.
-This model is interesting especially for penetration depths in the range of 25 to 100nm, where the
-uncertainties related to the displacement measurement disturb a lot.
+Continuous stiffness measurement [#OliverPharr_1992]_, [#Li_2002]_
+--------------------------------------------------------------------
 
-Continuous stiffness measurement [#OliverPharr_1992]_
-------------------------------------------------------
-
-The "continuous stiffness measurement" technique (CSM) consists to calculate the stiffness continuously during the loading of the indenter.
+The **Continuous Stiffness Measurement** technique (CSM) consists to calculate the stiffness continuously during the loading of the indenter.
 A small dynamic oscillation is imposed on the force (or displacement) signal and the amplitude and phase of the corresponding displacement (or force) signal are measured using a frequency-specific amplifier.
 
-[#Pharr_2009]_
+.. figure:: ./_pictures/load-disp_curve_csm.png
+   :scale: 60 %
+   :align: center
+   
+   *Figure 4 : Schematic of the CSM loading cycle.*
 
+Pharr et al. have highlighted the influence of displacement oscillation on basic measured quantities, like the contact load, the total displacement and the stiffness of the contact [#Pharr_2009]_.
+According to the authors, *"the sources of the measurement error have their origin in the relative stiffness of the contact and its relation to the displacements that can be
+recovered during the unloading portion of the oscillation"*. Based on that, the authors proposed the following corrections to determine the actual load (:math:`F_\text{c_act}`),
+the actual displacement (:math:`h_\text{t_act}`) and the actual stiffness (:math:`S_\text{act}`) :
+
+    .. math:: F_\text{c_act} = F_\text{c} + {\Delta F_\text{c} \over 2} = F_\text{c} + \sqrt{2} \Delta F_\text{c_rms}
+            :label: csm_correction_load
+			
+    .. math:: h_\text{t_act} = h_\text{t} + {\Delta h_\text{t} \over 2} = h_\text{t} + \sqrt{2} \Delta h_\text{t_rms}
+            :label: csm_correction_disp
+			
+    .. math:: S_\text{act} = {1 \over \sqrt{2\pi}} ({1 \over K})^{1 \over m}[1-(1-S{{2\sqrt{2} \Delta h_\text{t_rms}} \over {F_\text{c_max}}})^{1 \over m}]{F_\text{c_max} \over {\Delta h_\text{t_rms}}}
+            :label: csm_correction_stiffness
+			
+With :math:`K` and :math:`m` constants determined from unloading curves. These constants are related by the following equation :
+
+    .. math:: K = ({2 \over ^{m\sqrt{2\pi}}})^m
+            :label: csm_K_m
+
+Pharr and Bolshakov founded a value of 1.380 for :math:`m` after many Berkovich indentation tests on a variety of materials [#Pharr_2002]_.
+Thus, a value of 0.757 is used for the constant :math:`K`, using :eq:`csm_K_m`.
+ 
 Extraction of elastic properties
 --------------------------------
 
@@ -334,13 +359,13 @@ Bec et al. (2006) [#Bec_2006]_
 This elastic model is based on indentation by a rigid cylindrical punch (radius :math:`a_\text{c}`)
 of a homogeneous film deposited on a semi-infinite half space.
 
-This system is modelled by two springs connected in series (see Figure 4).
+This system is modelled by two springs connected in series (see Figure 5).
 
 .. figure:: ./_pictures/Bec_bilayer_model.png
    :scale: 40 %
    :align: center
    
-   *Figure 4 : Schematic description of the bilayer model of Bec et al. .*
+   *Figure 5 : Schematic description of the bilayer model of Bec et al. .*
 
     .. math:: K_\text{f} = \pi a_\text{c}^2 {E^{'}_\text{f} \over t}
             :label: bec_kf
@@ -425,13 +450,13 @@ Thus, the Young’s modulus of the film can be calculated as :
    :scale: 30 %
    :align: center
    
-   *Figure 5 : Schematic of elastic multilayer model.*
+   *Figure 6 : Schematic of elastic multilayer model.*
    
 .. figure:: ./_pictures/multilayer_sample_methodology.png
    :scale: 30 %
    :align: center
    
-   *Figure 6 : Experimental process to apply for elastic multilayer model.*
+   *Figure 7 : Experimental process to apply for elastic multilayer model.*
 
 Corrections to apply for thin film indentation [#Mencik_1997]_, [#Saha_2002]_, [#Bec_2006]_ and [#Li_2010]_
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -453,7 +478,7 @@ for a conical indenter and contact depths :math:`h_\text{c}` smaller than the fi
    :scale: 60 %
    :align: center
    
-   *Figure 7 : Indentation penetration of a thin film on a sample.*
+   *Figure 8 : Indentation penetration of a thin film on a sample.*
    
 Recently, Li et al. proposed to express the local thinning effect as [#Li_2010]_:
 
@@ -475,13 +500,13 @@ Energy approach
 ----------------
 
 Another way to access indentation data is the use of the energy dissipated during the indentation.
-The elastic and plastic energies are based on the integral of the loading and unloading curve (see Figure 8) [#ChengCheng_1998]_ and [#Malzbender_2002]_.
+The elastic and plastic energies are based on the integral of the loading and unloading curve (see Figure 9) [#ChengCheng_1998]_ and [#Malzbender_2002]_.
 
 .. figure:: ./_pictures/load-disp_curve_energy.png
    :scale: 60 %
    :align: center
 
-   *Figure 8 : Schematic representation of indentation load–displacement curves with definition of different works of indentation.*
+   *Figure 9 : Schematic representation of indentation load–displacement curves with definition of different works of indentation.*
 
     .. math:: W_\text{tot} = \int_{0}^{h_\text{t}} {F_\text{c_loading}(dh)}
             :label: energy_tot
@@ -514,6 +539,11 @@ The equation :eq:`P_squareS` is used as well to determine coefficients of the fu
 Based on the assumption that the hardness and the Young's modulus remain constant during indentation test in fused silica (isotropic material),
 the evolution of the ratio :math:`{F_\text{c,max} \over S^2}` should stay constant as well in function of the indentation depth.
 
+More recently, Guillonneau et al. proposed a model to extract mechanical properties without using the indentation depth [#Guillonneau_2012_1]_ and [#Guillonneau_2012_2]_.
+The method is based on the detection of the second harmonic for dynamic indentation testing.
+This model is interesting especially for penetration depths in the range of 25 to 100nm, where the
+uncertainties related to the displacement measurement disturb a lot.
+
 References
 ----------
 .. [#Bec_2006] `Bec S. et al., "Improvements in the indentation method with a surface force apparatus" (2006). <http://dx.doi.org/10.1080/01418619608239707>`_
@@ -534,6 +564,7 @@ References
 .. [#Hay_2011] `Hay J. and Crawford B., "Measuring substrate-independent modulus of thin films" (2011). <http://dx.doi.org/10.1557/jmr.2011.8>`_
 .. [#Hochstetter_1999] `Hochstetter G. et al., "Strain-rate effects on hardness of glassy polymers in the nanoscale range. Comparison between quasi-static and continuous stiffness measurements" (1999). <http://dx.doi.org/10.1080/00222349908248131>`_
 .. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <http://dx.doi.org/10.1016/0020-7683(87)90116-8>`_
+.. [#Li_2002] `Li X. et Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications.", Mater. Characterization, 2002. <http://dx.doi.org/10.1016/S1044-5803(02)00192-4>`_
 .. [#Li_2010] `Li H. et al., "New methods of analyzing indentation experiments on very thin films" (2010). <http://dx.doi.org/10.1557/JMR.2010.0095>`_
 .. [#Loubet_1984] `Loubet J.L. et al., "Vickers Indentation Curves of Magnesium Oxide (MgO).", J. Tribol. (1984) <http://dx.doi.org/10.1115/1.3260865>`_
 .. [#Loubet_1986] `Loubet J.L. et al., "Vickers indentation curves of elastoplastic materials." Microindentation Techniques in Materials Science and Engineering (1986). <http://dx.doi.org/10.1520/STP889-EB>`_
