@@ -27,3 +27,31 @@ betaBerkovich_Troyon: 1.062
 # Constants given by Pharr et al. (2009) - DOI: 10.1557/jmr.2009.0096
 CSM_K_Pharr: 0.757
 CSM_m_Pharr: 1.380
+
+#################################################################################
+# Constant in the model of Doerner and Nix (1986) - DOI: 10.1557/JMR.1986.0601
+# By default alpha = 0.25 in Doerner and Nix paper
+alpha_min_DoernerNix: 0
+alpha_max_DoernerNix: 0.5
+
+#################################################################################
+# Constant in the model of Perriot et al. (2003) - DOI: 10.1557/jmr.2004.19.2.600
+n_min_Perriot: 1
+n_max_Perriot: 1.4
+
+#################################################################################
+# Constant in the model of Hay et al. (2011) - DOI: 10.1557/jmr.2011.8
+F_Hay: 0.626
+
+#################################################################################
+# Constant in the model of Mencik et al. (1997) - DOI: 10.1557/JMR.1997.0327
+alpha_min_Mencik: -10000
+alpha_max_Mencik: 10000
+
+#################################################################################
+# Options for the least square method of Matlab used to fit experimental curves
+TolFun_value: 1e-20
+TolX_value: 1e-20
+MaxIter_value: 10000
+Min_YoungModulus: 0 #in GPa
+Max_YoungModulus: 1000 #in GPa
