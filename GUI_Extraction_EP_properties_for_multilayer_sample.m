@@ -25,49 +25,9 @@ gui.config = struct();
 gui.config.indenter = struct();
 gui.config.data = struct();
 gui.config.numerics = struct();
-flag_YAML = 1;
 
-configYAML = sprintf('indenters_config.yaml');
-if ~exist(configYAML, 'file')
-    errordlg('indenters_config.yaml doesn''t exist !', 'File Error');
-    flag_YAML = 0;
-else
-    gui.config.indenter = ReadYaml(configYAML);
-    
-    if ~isfield(gui.config.indenter, 'Indenter_IDs')
-        gui.config.indenter.Indenter_IDs = {'No Indenter defined'};
-    end
-    
-    if ~isfield(gui.config.indenter, 'Indenter_ID')
-        gui.config.indenter.Indenter_ID = 'No Indenter defined';
-    end
-    
-    if ~isfield(gui.config.indenter, 'Indenter_materials')
-        gui.config.indenter.Indenter_materials = {'No Indenter defined'};
-    end
-    if ~isfield(gui.config.indenter, 'Indenter_material')
-        gui.config.indenter.Indenter_material = 'No Indenter defined';
-    end
-end
-
-configYAML = sprintf('data_config.yaml');
-if ~exist(configYAML, 'file')
-    errordlg('data_config.yaml doesn''t exist !', 'File Error');
-    flag_YAML = 0;
-else
-    gui.config.data = ReadYaml(configYAML);
-    if ~isfield(gui.config.data, 'data_path')
-        gui.config.data.data_path = '';
-    end
-end
-
-configYAML = sprintf('numerics_config.yaml');
-if ~exist(configYAML, 'file')
-    errordlg('numerics_config.yaml doesn''t exist !', 'File Error');
-    flag_YAML = 0;
-else
-    gui.config.numerics = ReadYaml(configYAML);
-end
+[gui.config.indenter, gui.config.data, ...
+    gui.config.numerics, flag_YAML] = load_YAML_config_file;
 
 %% Set Toolbox version and help paths
 gui.config.name_toolbox = 'NIMS';
