@@ -105,7 +105,8 @@ if ~isempty(scriptpath_multilayer_model)
     py{end+1} = sprintf('import interaction');
     py{end+1} = sprintf('import load');
     py{end+1} = sprintf('import mesh');
-    py{end+1} = sprintf('import optimization');
+    py{end+1} = sprintf('if (''12'' in version) == True:');
+    py{end+1} = sprintf('    import optimization # Not available in versions released before Abaqus 6.12');
     py{end+1} = sprintf('import job');
     py{end+1} = sprintf('import sketch');
     py{end+1} = sprintf('import visualization');
@@ -119,7 +120,7 @@ if ~isempty(scriptpath_multilayer_model)
     py{end+1} = sprintf('# PARAMETERS');
     py{end+1} = sprintf('#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
     py{end+1} = sprintf('myModel = mdb.Model(name=''%s'')', strcat('multilayer_model_', datestr(datenum(clock),'yyyy-mm-dd')));
-    py{end+1} = sprintf('indenter_used = ''%s''', gui.config.Indenter_ID);
+    py{end+1} = sprintf('indenter_used = ''%s''', gui.config.indenter.Indenter_ID);
     py{end+1} = sprintf('r_ind = %s', gui.data.indenter_tip_defect);
     py{end+1} = sprintf('a_ind = %s', gui.data.indenter_tip_angle);
     py{end+1} = sprintf('sheet_Size = %f', abaqus_sketch_sheet_size);
@@ -311,6 +312,7 @@ if ~isempty(scriptpath_multilayer_model)
         fprintf(fid, '%s\n', py{iln});
     end
     fclose(fid);
+    commandwindow;
     display('Python script has been generated...');
     
 end
