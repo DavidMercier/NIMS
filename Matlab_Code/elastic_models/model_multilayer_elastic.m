@@ -3,22 +3,6 @@ function model_multilayer_elastic
 %% Function used to calculate Young's modulus in multilayer system with the model of Mercier et al. (2010)
 gui = guidata(gcf);
 
-%% Refreshing the GUI
-if (gui.variables.y_axis ~= 4 && gui.variables.y_axis ~= 5)
-    set(gui.handles.title_bilayermodel_GUI,    'Visible', 'off');
-    set(gui.handles.value_bilayermodel_GUI,    'Visible', 'off');
-    set(gui.handles.cb_corr_thickness_GUI,     'Visible', 'off');
-    set(gui.handles.value_multilayermodel_GUI, 'Value', 1);
-    set(gui.handles.value_bilayermodel_GUI,    'Value', 1);
-    set(gui.handles.cb_corr_thickness_GUI,     'Value', 0);
-    
-else
-    set(gui.handles.title_multilayermodel_GUI, 'Visible', 'on');
-    set(gui.handles.value_multilayermodel_GUI, 'Visible', 'on');
-    set(gui.handles.cb_corr_thickness_GUI,     'Visible', 'on');
-    
-end
-
 %% Setting variables & parameters
 gui.data.Es_red = gui.data.Es / (1-gui.data.nus^2);   % Reduced Young's modulus of the substrate (in GPa)
 gui.data.E0_red = gui.data.E0 / (1-gui.data.nuf0^2);  % Reduced Young's modulus of the film 0 (in GPa)
@@ -28,10 +12,8 @@ gui.axis.legend2 = 'Results with the multilayer model';
 
 if get(gui.handles.cb_corr_thickness_GUI, 'Value') == 1
     gui.results.t2_corr = gui.data.t2 - (gui.results.hc ./ 3);
-    
 else
     gui.results.t2_corr = gui.data.t2;
-    
 end
 
 if gui.variables.num_thinfilm == 4
@@ -43,22 +25,19 @@ elseif gui.variables.num_thinfilm == 3
     
     if get(gui.handles.cb_corr_thickness_GUI, 'Value') == 1
         gui.results.t1_corr = gui.data.t1 - (gui.results.hc ./ 3);
-        
     else
         gui.results.t1_corr = gui.data.t1;
-        
     end
 end
 gui.results.ac0     = gui.results.ac1 + ((2.*gui.data.t1)./pi);
 gui.results.t0_corr = gui.data.t0;
 
 %% Optimization of Young's modulus of the thin film
-if gui.variables.val2_mm ~= 1
-    
+if gui.variables.val2 ~= 1
     x = gui.data.h; 
     
     % 2 Films + Substrat
-    if gui.variables.num_thinfilm == 3 && gui.variables.val2_mm == 2 % Mercier et al. (2010)
+    if gui.variables.num_thinfilm == 3 && gui.variables.val2 == 2 % Mercier et al. (2010)
         multilayer_model = @(Ef_red_sol, x) ...
             1e-9 .* (((2.*gui.results.ac1.*((gui.results.t1_corr./(((pi.*gui.results.ac1.^2)+(2.*gui.results.ac1.*gui.results.t1_corr)).*1e9*Ef_red_sol)) + ...
             (gui.results.t0_corr./(((pi.*gui.results.ac0.^2)+(2.*gui.results.ac0.*gui.results.t0_corr)).*gui.data.E0_red)) + ...
@@ -67,7 +46,7 @@ if gui.variables.val2_mm ~= 1
         Ef_red_sol0 = (str2double (get(gui.handles.value_youngfilm1_GUI,'String')));                    % Make a starting guess at the solution (Ef in GPa)
         
         %3 Films + Substrat
-    elseif gui.variables.num_thinfilm == 4 && gui.variables.val2_mm == 2 % Mercier et al. (2010)
+    elseif gui.variables.num_thinfilm == 4 && gui.variables.val2 == 2 % Mercier et al. (2010)
         multilayer_model = @(Ef_red_sol, x) ...
             1e-9 .* (((2.*gui.results.ac2.*((gui.results.t2_corr./(((pi.*gui.results.ac2.^2)+(2.*gui.results.ac2.*gui.results.t2_corr)).*1e9*Ef_red_sol)) + ...
             (gui.results.t1_corr./(((pi.*gui.results.ac1.^2)+(2.*gui.results.ac1.*gui.results.t1_corr)).*gui.data.E1_red)) + ...
@@ -89,13 +68,13 @@ if gui.variables.val2_mm ~= 1
     
     %% Calculation of Ef with elastic multilayer model and Esample_red
     % 2 Films + Substrat
-    if gui.variables.num_thinfilm == 3 && gui.variables.val2_mm == 2 % Mercier et al. (2010)
+    if gui.variables.num_thinfilm == 3 && gui.variables.val2 == 2 % Mercier et al. (2010)
         gui.results.Ef_red = 1e-9.*(((((pi.*gui.results.ac1.^2)+(2.*gui.results.ac1.*gui.results.t1_corr))./gui.results.t1_corr).*((1./(2.*gui.results.ac1.*(1e9.*gui.results.Esample_red))) - ...
             ((gui.results.t0_corr./((pi.*(gui.results.ac0.^2)+2.*gui.results.t0_corr.*gui.results.ac0).*gui.data.E0_red)) + ...
             (1./((2.*(gui.results.ac0+((2.*gui.results.t0_corr)./pi))).*gui.data.Es_red))))).^-1);
         
         % 3 Films + Substrat
-    elseif gui.variables.num_thinfilm == 4 && gui.variables.val2_mm == 2 % Mercier et al. (2010)
+    elseif gui.variables.num_thinfilm == 4 && gui.variables.val2 == 2 % Mercier et al. (2010)
         gui.results.Ef_red = 1e-9.*(((((pi.*gui.results.ac2.^2)+(2.*gui.results.ac2.*gui.results.t2_corr))./gui.results.t2_corr).*((1./(2.*gui.results.ac2.*(1e9.*gui.results.Esample_red))) - ...
             ((gui.results.t1_corr./((pi.*(gui.results.ac1.^2)+(2.*gui.results.ac1.*gui.results.t1_corr)).*gui.data.E1_red)) + ...
             (gui.results.t0_corr./((pi.*(gui.results.ac0.^2)+2.*gui.results.t0_corr.*gui.results.ac0).*gui.data.E0_red)) + ...
@@ -107,13 +86,13 @@ if gui.variables.val2_mm ~= 1
     
     %% Calculation of Em with elastic multilayer model
     % 2 Films + Substrat
-    if gui.variables.num_thinfilm == 3 || gui.variables.val2_mm == 1 % Mercier et al. (2010)
+    if gui.variables.num_thinfilm == 3 || gui.variables.val2 == 1 % Mercier et al. (2010)
         gui.results.Em_red = 1e-9 .* ((2.*gui.results.ac1.*((gui.results.t1_corr./(((pi.*gui.results.ac1.^2)+(2.*gui.results.ac1.*gui.results.t1_corr)).*1e9*gui.results.Ef_red_sol_fit)) + ...
             (gui.results.t0_corr./(((pi.*gui.results.ac0.^2)+(2.*gui.results.ac0.*gui.results.t0_corr)).*gui.data.E0_red)) + ...
             (1./((2.*(gui.results.ac0+((2.*gui.results.t0_corr)./pi))).*gui.data.Es_red)))).^-1);
         
         % 3 Films + Substrat
-    elseif gui.variables.num_thinfilm == 4 || gui.variables.val2_mm == 1 % Mercier et al. (2010)
+    elseif gui.variables.num_thinfilm == 4 || gui.variables.val2 == 1 % Mercier et al. (2010)
         gui.results.Em_red = 1e-9 .* ((2.*gui.results.ac2.*((gui.results.t2_corr./(((pi.*gui.results.ac2.^2)+(2.*gui.results.ac2.*gui.results.t2_corr)).*1e9*gui.results.Ef_red_sol_fit)) + ...
             (gui.results.t1_corr./(((pi.*gui.results.ac1.^2)+(2.*gui.results.ac1.*gui.results.t1_corr)).*gui.data.E1_red)) + ...
             (gui.results.t0_corr./(((pi.*gui.results.ac0.^2)+(2.*gui.results.ac0.*gui.results.t0_corr)).*gui.data.E0_red)) + ...
@@ -123,7 +102,7 @@ if gui.variables.val2_mm ~= 1
     
     gui.results.Em = gui.results.Em_red * (1-gui.data.nuf.^2); % Em in GPa
     
-elseif gui.variables.val2_mm == 1
+elseif gui.variables.val2 == 1
     % Preallocation
     gui.results.Ef     = NaN(length(gui.data.h), 1);
     gui.results.Ef_red = NaN(length(gui.data.h), 1);

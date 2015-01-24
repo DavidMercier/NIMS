@@ -20,9 +20,9 @@ if ~gui.flag.wrong_inputs
         CSM_correction;
     end
     
-    %% Getting parameters and Refreshing the GUI
-    get_param_GUI;
+    %% Refreshing the GUI and getting parameters and 
     refresh_param_GUI;
+    get_param_GUI;
     
     %% Get parameters
     model_set_parameters;
@@ -31,6 +31,7 @@ if ~gui.flag.wrong_inputs
     %% Load-Displacement curve analysis
     if gui.variables.y_axis == 1
         model_load_disp;
+        gui = guidata(gcf); guidata(gcf, gui);
     end
     
     %% Calculations of function area
@@ -51,6 +52,7 @@ if ~gui.flag.wrong_inputs
         end
     elseif gui.variables.y_axis == 6
         gui.results.H = model_hardness(gui.data.P, gui.results.Ac);
+        guidata(gcf, gui);
     end
     
     % Be careful of the order of the 3 following lines, because gcf is
@@ -63,16 +65,7 @@ if ~gui.flag.wrong_inputs
     plot_exp_vs_mod_setvariables;
     gui = guidata(gcf); guidata(gcf, gui);
     
-    if strcmp(get(gui.handles.cb_residual_plot_GUI, 'Visible'), 'on') == 1
-        residual_plot_value = get(gui.handles.cb_residual_plot_GUI, 'Value');
-        if residual_plot_value == 0
-            plot_exp_vs_mod;
-        else
-            plot_residuals;
-        end
-    else
-        plot_exp_vs_mod;
-    end
+    plot_exp_vs_mod;
     gui = guidata(gcf);
 else
     delete(gui.handles.h_waitbar);

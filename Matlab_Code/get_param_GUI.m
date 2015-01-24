@@ -39,8 +39,11 @@ elseif strcmp(val0_str(1:4), 'Coni') == 1
     gui.variables.val0 = 4;
 end
 
-gui.data.indenter_tip_defect = get(gui.handles.value_indenter_def_prop_GUI, 'String'); % in nm
-gui.data.indenter_tip_angle = get(gui.handles.value_indenter_ang_prop_GUI, 'String'); % in degrees
+gui.data.indenter_tip_defect = ...
+    get(gui.handles.value_indenter_def_prop_GUI, 'String'); % in nm
+
+gui.data.indenter_tip_angle = ...
+    get(gui.handles.value_indenter_ang_prop_GUI, 'String'); % in degrees
 
 func_area = getfield(gui.config.indenter, {1}, indenter_id{':'}, {':'});
 func_area = cell2mat(func_area(:));
@@ -54,19 +57,17 @@ gui.data.C6 = func_area(6);
 gui.data.C7 = func_area(7);
 gui.data.C8 = func_area(8);
 
-% Load-disp. model properties
-gui.variables.loaddisp_model = get(gui.handles.value_loaddisp_model_GUI, 'Value');
-
 % Model properties
-gui.variables.num_thinfilm    = get(gui.handles.value_numthinfilm_GUI,     'Value');
-gui.variables.King_correction = get(gui.handles.popup_corr_King_GUI,       'Value');
-gui.variables.val1            = get(gui.handles.value_modeldisp_GUI,       'Value');
-gui.variables.val2            = get(gui.handles.value_bilayermodel_GUI,    'Value');
-gui.variables.val2_mm         = get(gui.handles.value_multilayermodel_GUI, 'Value');
+gui.variables.num_thinfilm = get(gui.handles.value_numthinfilm_GUI, 'Value');
+gui.variables.num_thinfilm_old = gui.variables.num_thinfilm;
+gui.variables.King_correction = get(gui.handles.popup_corr_King_GUI, 'Value');
+gui.variables.val1 = get(gui.handles.value_modeldisp_GUI, 'Value');
+gui.variables.val2 = get(gui.handles.value_model_GUI, 'Value');
 
 % Plot properties
 gui.variables.x_axis = get(gui.handles.value_param2plotinxaxis_GUI, 'Value');
 gui.variables.y_axis = get(gui.handles.value_param2plotinyaxis_GUI, 'Value');
+gui.variables.y_axis_old = gui.variables.y_axis;
 
 %% Error message for inputs
 if gui.data.nuf0 < -1 || gui.data.nuf0 > 0.5 || gui.data.nuf1 <- 1 || ...

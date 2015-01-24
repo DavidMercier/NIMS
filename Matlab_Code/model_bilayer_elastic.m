@@ -8,24 +8,6 @@ gui.results.Ef_red = 0;
 gui.results.t_corr = 0;
 guidata(gcf, gui);
 
-%% Refreshing the GUI
-if (gui.variables.y_axis ~= 4 && gui.variables.y_axis ~= 5)
-    set(gui.handles.value_bilayermodel_GUI,   'Value', 1);
-    set(gui.handles.value_multilayermodel_GUI,'Value', 1);
-    set(gui.handles.cb_corr_thickness_GUI,    'Value', 0);
-    set(gui.handles.title_bilayermodel_GUI,   'Visible', 'off');
-    set(gui.handles.value_bilayermodel_GUI,   'Visible', 'off');
-    set(gui.handles.title_multilayermodel_GUI,'Visible', 'off');
-    set(gui.handles.value_multilayermodel_GUI,'Visible', 'off');
-    set(gui.handles.cb_corr_thickness_GUI,    'Visible', 'off');
-    
-else
-    set(gui.handles.title_bilayermodel_GUI, 'Visible', 'on');
-    set(gui.handles.value_bilayermodel_GUI, 'Visible', 'on');
-    set(gui.handles.cb_corr_thickness_GUI,  'Visible', 'on');
-    
-end
-
 %% Setting variables & parameters
 gui.data.Es_red = gui.data.Es / (1-gui.data.nus^2);  % Reduced Young's modulus of the substrate (in GPa)
 
