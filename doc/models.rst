@@ -24,6 +24,13 @@ Conical indenters [#Fischer-Cripps_2004]_
    "Volume-depth relation",    ":math:`8.1873h^3`", ":math:`8.1681h^3`", ":math:`0.8657h^3`", "--"
    "Projected area/face area", ":math:`0.908`",     ":math:`0.927`",      ":math:`0.5774`",    "--"
    "Contact radius",           "--",                 "--",                 "--",                 ":math:`htan\psi`"
+
+
+.. figure:: ./_pictures/indenters.png
+   :scale: 60 %
+   :align: center
+   
+   *Figure 1 : a) Conical indenter (45°) and b) Berkovich indenter.*
    
 Load-Displacement curves
 -------------------------
@@ -33,7 +40,7 @@ Loading
 
 Parameters such as contact load :math:`F_\text{c}` during loading and unloading and depth of penetration :math:`h` are recorded during indentation tests.
 
-A schematic of the load-displacement curve obtained from nanoindentation experiment is given Figure 1.
+A schematic of the load-displacement curve obtained from nanoindentation experiment is given Figure 2.
 
 The evolution of this curve depends on material properties of the sample and the indenter, and of the indenter's geometry.
 
@@ -41,7 +48,7 @@ The evolution of this curve depends on material properties of the sample and the
    :scale: 60 %
    :align: center
    
-   *Figure 1 : Schematic of indentation load-displacement curve.*
+   *Figure 2 : Schematic of indentation load-displacement curve.*
 
 Loubet et al. founded a good fit to the load-displacement data with a power-law relationship of the form [#Loubet_1986]_ :
 
@@ -78,8 +85,8 @@ Indentation contact topography
 -------------------------------
 
 The indentation total depth is rarely equal to the indentation contact depth. Two kind of topography can occur:
-    - the pile-up (indentation contact depth > indentation total depth) (see Figure 2-a);
-    - the sink-in (indentation contact depth < indentation total depth) (see Figure 2-b).
+    - the pile-up (indentation contact depth > indentation total depth) (see Figure 3-a);
+    - the sink-in (indentation contact depth < indentation total depth) (see Figure 3-b).
 
 The flow of material below the indenter is function of mechanical properties of the material.
 
@@ -89,13 +96,13 @@ Pile-up occurs when work-hardening coefficient is low (< 0.3) or if the ratio yi
    :scale: 60 %
    :align: center
    
-   *Figure 2 : Schematic of indentation contact topography : a) « pile-up » and b) « sink-in ».*
+   *Figure 3 : Schematic of indentation contact topography : a) « pile-up » and b) « sink-in ».*
    
 .. figure:: ./_pictures/pile_up.png
    :scale: 35 %
    :align: center
 
-   *Figure 3 : Residual topography of a Berkovich indent in PVD Gold thin film (500nm thick) with « pile-up » surrounding the indent, measured by atomic force microscopy.*
+   *Figure 4 : Residual topography of a Berkovich indent in PVD Gold thin film (500nm thick) with « pile-up » surrounding the indent, measured by atomic force microscopy.*
    
 Three main models defining the depth of contact :math:`h_\text{c}` were developed to take into account this indentation contact topography.
 
@@ -155,6 +162,19 @@ One other way to express the function area is that suggested by Loubet et al. [#
 which describes a pyramid with a small flat region on its tip, the so-called tip defect (:math:`h_0`).
 This geometry is described by the addition of a constant to the first two terms in :eq:`area_function`.
 
+Recently, in the paper of Yetna N’jock M. et al. [#YetnaNjock_2015]_, a criterion was proposed to forecast the behaviour during indentation experiments, following Giannakopoulos and Suresh methodology [#Giannakopoulos_1999]_.
+After analyzing either Vickers or Berkovich indentation tests on a wide range of materials, the following criterion is established :math:`\Delta` :
+
+        .. math:: \Delta = {h_\text{r}^{'} \over h_\text{t}^{'}}
+                :label: Yetna_Njock_model
+
+With :math:`h_\text{r}^{'}` and :math:`h_\text{t}^{'}` residual contact depth and maximum depth after applying a compliance correction. Three preponderant deformation modes are distinguished :
+	- :math:`\Delta = 0.83` no deformation mode is preponderant (either Loubet et al. or Oliver and Pharr corrections can be used to calculate the true contact area);
+	- :math:`\Delta < 0.83` implies sink-in formation;
+	- :math:`\Delta > 0.83` implies pile-up formation.
+
+Giannakopoulos and Suresh founded a critical value for a similar criterion about 0.875 [#Giannakopoulos_1999]_.
+
 Continuous stiffness measurement [#OliverPharr_1992]_, [#Li_2002]_
 --------------------------------------------------------------------
 
@@ -165,7 +185,7 @@ A small dynamic oscillation is imposed on the force (or displacement) signal and
    :scale: 60 %
    :align: center
    
-   *Figure 4 : Schematic of the CSM loading cycle.*
+   *Figure 5 : Schematic of the CSM loading cycle.*
 
 Pharr et al. have highlighted the influence of displacement oscillation on basic measured quantities, like the contact load, the total displacement and the stiffness of the contact [#Pharr_2009]_.
 According to the authors, *"the sources of the measurement error have their origin in the relative stiffness of the contact and its relation to the displacements that can be
@@ -359,13 +379,13 @@ Bec et al. (2006) [#Bec_2006]_
 This elastic model is based on indentation by a rigid cylindrical punch (radius :math:`a_\text{c}`)
 of a homogeneous film deposited on a semi-infinite half space.
 
-This system is modelled by two springs connected in series (see Figure 5).
+This system is modelled by two springs connected in series (see Figure 6).
 
 .. figure:: ./_pictures/Bec_bilayer_model.png
    :scale: 40 %
    :align: center
    
-   *Figure 5 : Schematic description of the bilayer model of Bec et al. .*
+   *Figure 6 : Schematic description of the bilayer model of Bec et al. .*
 
     .. math:: K_\text{f} = \pi a_\text{c}^2 {E^{'}_\text{f} \over t}
             :label: bec_kf
@@ -450,13 +470,13 @@ Thus, the Young’s modulus of the film can be calculated as :
    :scale: 30 %
    :align: center
    
-   *Figure 6 : Schematic of elastic multilayer model.*
+   *Figure 7 : Schematic of elastic multilayer model.*
    
 .. figure:: ./_pictures/multilayer_sample_methodology.png
    :scale: 30 %
    :align: center
    
-   *Figure 7 : Experimental process to apply for elastic multilayer model.*
+   *Figure 8 : Experimental process to apply for elastic multilayer model.*
 
 Corrections to apply for thin film indentation [#Mencik_1997]_, [#Saha_2002]_, [#Bec_2006]_ and [#Li_2010]_
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -478,7 +498,7 @@ for a conical indenter and contact depths :math:`h_\text{c}` smaller than the fi
    :scale: 60 %
    :align: center
    
-   *Figure 8 : Indentation penetration of a thin film on a sample.*
+   *Figure 9 : Indentation penetration of a thin film on a sample.*
    
 Recently, Li et al. proposed to express the local thinning effect as [#Li_2010]_:
 
@@ -500,13 +520,13 @@ Energy approach
 ----------------
 
 Another way to access indentation data is the use of the energy dissipated during the indentation.
-The elastic and plastic energies are based on the integral of the loading and unloading curve (see Figure 9) [#ChengCheng_1998]_ and [#Malzbender_2002]_.
+The elastic and plastic energies are based on the integral of the loading and unloading curve (see Figure 10) [#ChengCheng_1998]_ and [#Malzbender_2002]_.
 
 .. figure:: ./_pictures/load-disp_curve_energy.png
    :scale: 60 %
    :align: center
 
-   *Figure 9 : Schematic representation of indentation load–displacement curves with definition of different works of indentation.*
+   *Figure 10 : Schematic representation of indentation load–displacement curves with definition of different works of indentation.*
 
     .. math:: W_\text{tot} = \int_{0}^{h_\text{t}} {F_\text{c_loading}(dh)}
             :label: energy_tot
@@ -557,6 +577,7 @@ References
 .. [#Fischer-Cripps_2004] `Fischer-Cripps A.C., "Nanoindentation" Springer 2nd ed. (2004). <http://dx.doi.org/10.1007/978-1-4419-9872-9>`_
 .. [#Galin_1946] Galin L. A., "Spatial contact problems of the theory of elasticity for punches of circular shape in planar projection.", J. Appl. Math. Mech. (PMM) (1946), 10, pp. 425-448.
 .. [#Gao_1992] `Gao H. et al., "Elastic contact versus indentation modeling of multi-layered materials" (1992). <http://dx.doi.org/10.1016/0020-7683(92)90004-D>`_
+.. [#Giannakopoulos_1999] `Giannakopoulos A.E. and Suresh S., "Determination of elastoplastic properties by instrumented sharp indentation.", Scripta Materialia (1999). <http://dx.doi.org/10.1016/S1359-6462(99)00011-1>`_
 .. [#Guillonneau_2012_1] `Guillonneau G. et al.,"Extraction of mechanical properties with second harmonic detection for dynamic nanoindentation testing.", Experimental Mechanics (2012). <http://dx.doi.org/10.1007/s11340-011-9561-5>`_
 .. [#Guillonneau_2012_2] `Guillonneau G. et al.,"Determination of mechanical properties by nanoindentation independently of indentation depth measurement.", J. Mater. Res. (2012). <http://dx.doi.org/10.1557/jmr.2012.261>`_
 .. [#Hainsworth_1996] `Hainsworth S.V. et al., "Analysis of nanoindentation load-displacement loading curves." J. Mater. Res. (1996). <http://dx.doi.org/10.1557/JMR.1996.0250>`_
@@ -586,3 +607,4 @@ References
 .. [#Strader_2006] `Strader J.H. et al., "An experimental evaluation of the constant b relating the contact stiffness to the contact area in nanoindentation.", Philosophical Magazine (2006) <http://dx.doi.org/10.1080/14786430600567747>`_
 .. [#Troyon_2006] `Troyon M. and Lafaye S., "About the importance of introducing a correction factor in the Sneddon relationship for nanoindentation measurements" (2002). <http://dx.doi.org/10.1080/14786430600606834>`_
 .. [#Xu_2006] `Xu H. and Pharr G.M., "An improved relation for the effective elastic compliance of a film/substrate system during indentation by a flat cylindrical punch.", Scr. Mater. (2006). <http://dx.doi.org/10.1016/j.scriptamat.2006.04.037>`_
+.. [#YetnaNjock_2015] `Yetna N’jock M. et al., "A criterion to identify sinking-in and piling-up in indentation of materials.", International Journal of Mechanical Sciences (2015). <http://dx.doi.org/10.1016/j.ijmecsci.2014.11.008>`_
