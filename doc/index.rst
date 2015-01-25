@@ -56,6 +56,7 @@ Contents
    configuration
    models
    examples
+   python_abaqus
    links_ref
    
 Contact

@@ -54,3 +54,5 @@ Please find the 3 YAML configuration files in the `YAML folder <https://github.c
 ..  warning::
     * Be careful to put a comma + a space between each data...! (YAML convention)
     * Use # in the beginning of the line to add comments.
+	
+It is also possible to edit and to load the different YAML configuration files, via the customized menu of the GUI.
