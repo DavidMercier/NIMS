@@ -35,10 +35,10 @@ Conical indenters [#Fischer-Cripps_2004]_
 Load-Displacement curves
 -------------------------
 
+Parameters such as contact load :math:`F_\text{c}` and depth of penetration :math:`h` are recorded during loading and unloading steps of the indentation test.
+
 Loading
 +++++++++
-
-Parameters such as contact load :math:`F_\text{c}` during loading and unloading and depth of penetration :math:`h` are recorded during indentation tests.
 
 A schematic of the load-displacement curve obtained from nanoindentation experiment is given Figure 2.
 
@@ -52,14 +52,14 @@ The evolution of this curve depends on material properties of the sample and the
 
 Loubet et al. founded a good fit to the load-displacement data with a power-law relationship of the form [#Loubet_1986]_ :
 
-        .. math:: F_\text{c_loading} = K h_\text{t}^n
+        .. math:: F_\text{c} = K h_\text{t}^n
                 :label: Loubet_load_displacement
 
 With :math:`K` and :math:`n` constants for a given material for a fixed indenter geometry.
 
 Using the load-displacement curves analysis performed by Loubet et al.,  Hainsworth et al. proposed the following relationship to describe load-displacement curves [#Hainsworth_1996]_ :
 
-        .. math:: F_\text{c_loading} = K h_\text{t}^2
+        .. math:: F_\text{c} = K h_\text{t}^2
                 :label: Hainsworth_load_displacement
                 
 With :math:`K` a constant function of material properties (Young's modulus and hardness) and the indenter.
@@ -74,7 +74,7 @@ The slope of unloading curve gives access to the contact stiffness :
 
 Pharr and Bolshakov founded that unloading curves were well described by the following power-law relationship [#Pharr_2002]_ :
 
-        .. math:: F_\text{c_unloading} = \alpha_\text{u} (h_\text{t} - h_\text{r})^m
+        .. math:: F_\text{c} = \alpha_\text{u} \left(h_\text{t} - h_\text{r}\right)^m
                 :label: unload_displacement
 
 Where :math:`h_\text{r}` is the final displacement after complete unloading, and 
@@ -127,7 +127,7 @@ for a paraboloid of revolution [#Merle_2012]_.
 
 Model of Loubet et al. [#Hochstetter_1999]_, [#Bec_2006]_ in case of pile-up:
 
-        .. math:: h_\text{c} = \alpha (h_\text{t} - {F_\text{c} \over S} + h_0)
+        .. math:: h_\text{c} = \alpha \left(h_\text{t} - {F_\text{c} \over S} + h_0\right)
                 :label: loubet_model
 
 Where :math:`\alpha` is a constant function of the indented material (usually around 1.2) and the tip-defect :math:`h_0`.
@@ -135,7 +135,7 @@ Where :math:`\alpha` is a constant function of the indented material (usually ar
 Knowing the depth of contact, it is possible to determine the area of contact
 :math:`A_\text{c}` for a perfect conical indenter (with a semi-angle from the apex :math:`\theta`):
 
-        .. math:: A_\text{c} = \pi h_\text{c}^2 tan^2(\theta)
+        .. math:: A_\text{c} = \pi h_\text{c}^2 tan^2\left(\theta\right)
                 :label: area_function_conical
 
 But, because conical indenters present imperfections and Berkovich or Vickers indenters are not perfectly conical,
@@ -198,12 +198,12 @@ the actual displacement (:math:`h_\text{t_act}`) and the actual stiffness (:math
     .. math:: h_\text{t_act} = h_\text{t} + {\Delta h_\text{t} \over 2} = h_\text{t} + \sqrt{2} \Delta h_\text{t_rms}
             :label: csm_correction_disp
 			
-    .. math:: S_\text{act} = {1 \over \sqrt{2\pi}} ({1 \over K})^{1 \over m}[1-(1-S{{2\sqrt{2} \Delta h_\text{t_rms}} \over {F_\text{c_max}}})^{1 \over m}]{F_\text{c_max} \over {\Delta h_\text{t_rms}}}
+    .. math:: S_\text{act} = {1 \over \sqrt{2\pi}} \left({1 \over K}\right)^{1 \over m} \left[1-\left(1-S{{2\sqrt{2} \Delta h_\text{t_rms}} \over {F_\text{c_max}}}\right)^{1 \over m}\right]{F_\text{c_max} \over {\Delta h_\text{t_rms}}}
             :label: csm_correction_stiffness
 			
 With :math:`K` and :math:`m` constants determined from unloading curves. These constants are related by the following equation :
 
-    .. math:: K = ({2 \over ^{m\sqrt{2\pi}}})^m
+    .. math:: K = \left({2 \over ^{m\sqrt{2\pi}}}\right)^m
             :label: csm_K_m
 
 Pharr and Bolshakov founded a value of 1.380 for :math:`m` after many Berkovich indentation tests on a variety of materials [#Pharr_2002]_.
@@ -239,12 +239,12 @@ Woirgard has demonstrated analytically that the exact value of :math:`\beta` for
 Some authors proposed another correction factor function of the angle of the conical indenter and the Poisson's ration of the indented material [#Hay_1999]_ and [#Strader_2006]_.
 For a conical indenter with an half-angle of :math:`\gamma \leq 60°` (e.g.: Cube-Corner indenter), the analytical approximation is :
 
-    .. math:: \beta = 1 + {{(1-2\nu)} \over {4(1-\nu)tan\gamma}}
+    .. math:: \beta = 1 + {{\left(1-2\nu\right)} \over {4\left(1-\nu\right)tan\gamma}}
             :label: gamma_low_angle
 
 For a conical indenter with larger half-angle (e.g.: Berkovich indenter), the analytical approximation is :
             
-    .. math:: \beta = \pi{ {\pi/4 + 0.1548cot\gamma{{1-2\nu} \over {4(1-\nu)}}} \over {[\pi/2-0.8311cot\gamma{{1-2\nu} \over {4(1-\nu)}}]^2}}
+    .. math:: \beta = \pi{ {\pi/4 + 0.1548cot\gamma{{1-2\nu} \over {4\left(1-\nu\right)}}} \over {\left[\pi/2-0.8311cot\gamma{{1-2\nu} \over {4\left(1-\nu\right)}}\right]^2}}
             :label: gamma_high_angle
 
 With :math:`\nu` the Poisson's ratio of the indented material.
@@ -254,10 +254,10 @@ Knowing the material properties of the indenter, it is possible to calculate the
     .. math:: {1 \over E^{'}} = {1 \over E^{*}} - {1 \over E_\text{i}^{'}}
             :label: youngs_modulus
             
-    .. math:: E = E^{'} (1-\nu^{2})
+    .. math:: E = E^{'} \left(1-\nu^{2}\right)
             :label: reduced_youngs_modulus
 
-    .. math:: E_\text{i}^{'} = {E_\text{i} \over (1-\nu_\text{i}^{2})}
+    .. math:: E_\text{i}^{'} = {E_\text{i} \over \left(1-\nu_\text{i}^{2}\right)}
             :label: indenter_reduced_youngs_modulus
 
 With :math:`\nu` the Poisson's ratio of the indented material and :math:`\nu_\text{i}` the Poisson's ratio of the material of the indenter.
@@ -292,10 +292,10 @@ material properties of the film from are detailed in the following part.
 
 Menčík et al. proposed the following structures to express the combination of :math:`E^{'}_\text{f}` and :math:`E^{'}_\text{s}` [#Mencik_1997]_.
          
-    .. math:: E^{'} = E^{'}_\text{s} + (E^{'}_\text{f} - E^{'}_\text{s}) \phi(x)
+    .. math:: E^{'} = E^{'}_\text{s} + \left(E^{'}_\text{f} - E^{'}_\text{s}\right) \phi\left(x\right)
             :label: youngs_modulus_evolution_phi
 
-    .. math:: E^{'} = E^{'}_\text{s} + (E^{'}_\text{f} - E^{'}_\text{s}) \psi(x)
+    .. math:: E^{'} = E^{'}_\text{s} + \left(E^{'}_\text{f} - E^{'}_\text{s}\right) \psi\left(x\right)
             :label: youngs_modulus_evolution_psi
             
 Where :math:`x` is the ratio of the contact radius (:math:`a_\text{c}`) or the
@@ -311,7 +311,7 @@ contact depth (:math:`h_\text{c}`), to the film thickness (:math:`t`), and
 Doerner & Nix (1986) [#DoernerNix_1986]_, [#King_1987]_ and [#Saha_2002]_
 ***************************************************************************
 
-    .. math:: {1 \over E^{'}} = {1 \over E_\text{f}^{'}} + ({1 \over E_\text{s}^{'}} - {1 \over E_\text{f}^{'}}) e^{-\alpha(x)}
+    .. math:: {1 \over E^{'}} = {1 \over E_\text{f}^{'}} + \left({1 \over E_\text{s}^{'}} - {1 \over E_\text{f}^{'}}\right) e^{-\alpha\left(x\right)}
             :label: doerner_nix
 
 With :math:`x=t/h` and :math:`\alpha` is an empirically constant determined using the method of least squares.
@@ -321,18 +321,18 @@ The equation was modified by King (1987), by the replacement of :math:`t/h` by :
 Gao et al. (1992) [#Gao_1992]_
 ********************************
 
-    .. math:: E^{'} = E^{'}_\text{s} + (E^{'}_\text{f} - E^{'}_\text{s}) \phi_{Gao_0}(x)
+    .. math:: E^{'} = E^{'}_\text{s} + \left(E^{'}_\text{f} - E^{'}_\text{s}\right) \phi_{Gao_0}\left(x\right)
             :label: gao
 
-    .. math:: \phi_{Gao_0} = {2 \over \pi} arctan {1 \over x} + {1 \over {2\pi(1-\nu_\text{c})}} [(1-2\nu_\text{c}){1 \over x}ln(1 + x^2) - {x \over {1+x^2}}]
+    .. math:: \phi_{Gao_0} = {2 \over \pi} arctan {1 \over x} + {1 \over {2\pi\left(1-\nu_\text{c}\right)}} \left[\left(1-2\nu_\text{c}\right){1 \over x}ln \left(1 + x^2 \right) - {x \over {1+x^2}}\right]
             :label: phi_gao_0
 
-    .. math:: \nu_{c} = 1 + [{{(1-\nu_\text{s})(1-\nu_\text{f})} \over {1-(1-\phi_{Gao_1})\nu_\text{f}-\phi_{Gao_1}\nu_\text{s}}}]
+    .. math:: \nu_{c} = 1 + \left[{{\left(1-\nu_\text{s}\right)\left(1-\nu_\text{f}\right)} \over {1-\left(1-\phi_{Gao_1}\right)\nu_\text{f}-\phi_{Gao_1}\nu_\text{s}}}\right]
             :label: poisson_ratio_composite
 
 With :math:`\nu_{c}` the composite Poisson's ratio, :math:`\nu_{s}` the Poisson's ratio of the substrate and :math:`\nu_{f}` the Poisson's ratio of the thin film.
 
-    .. math:: \phi_{Gao_1} = {2 \over \pi} arctan {1 \over x} + {1 \over {x\pi}}ln(1+x^2)
+    .. math:: \phi_{Gao_1} = {2 \over \pi} arctan {1 \over x} + {1 \over {x\pi}}ln \left(1+x^2 \right)
             :label: phi_gao_1
 
 With :math:`x=a_\text{c}/t`.
@@ -340,7 +340,7 @@ With :math:`x=a_\text{c}/t`.
 Menčík et al. (linear model) (1997) [#Mencik_1997]_
 *******************************************************
 
-    .. math:: E^{'} = E^{'}_\text{f} + (E^{'}_\text{s} - E^{'}_\text{f})(x)
+    .. math:: E^{'} = E^{'}_\text{f} + \left(E^{'}_\text{s} - E^{'}_\text{f}\right)\left(x\right)
             :label: mencik_linear
 
 With :math:`x=a_\text{c}/t`.
@@ -348,7 +348,7 @@ With :math:`x=a_\text{c}/t`.
 Menčík et al. (exponential model) (1997) [#Mencik_1997]_
 *********************************************************
 
-    .. math:: E^{'} = E^{'}_\text{s} + (E^{'}_\text{f} - E^{'}_\text{s}) e^{-\alpha(x)}
+    .. math:: E^{'} = E^{'}_\text{s} + \left(E^{'}_\text{f} - E^{'}_\text{s}\right) e^{-\alpha\left(x\right)}
             :label: mencik_exponential
 
 With :math:`x=a_\text{c}/t` and :math:`\alpha` is an empirically constant determined using the method of least squares.
@@ -357,7 +357,7 @@ With :math:`x=a_\text{c}/t` and :math:`\alpha` is an empirically constant determ
 Menčík et al. (reciprocal exponential model) (1997) [#Mencik_1997]_
 **********************************************************************
 
-    .. math:: {1 \over E^{'}} = {1 \over E_\text{s}^{'}} + ({1 \over E_\text{f}^{'}} - {1 \over E_\text{s}^{'}}) e^{-\alpha(x)}
+    .. math:: {1 \over E^{'}} = {1 \over E_\text{s}^{'}} + \left({1 \over E_\text{f}^{'}} - {1 \over E_\text{s}^{'}}\right) e^{-\alpha\left(x\right)}
             :label: mencik_reciprocal_exponential
 
 With :math:`x=a_\text{c}/t` and :math:`\alpha` is an empirically constant determined using the method of least squares.
@@ -365,10 +365,10 @@ With :math:`x=a_\text{c}/t` and :math:`\alpha` is an empirically constant determ
 Perriot et al. (2003) [#Perriot_2004]_
 ***************************************
 
-    .. math:: E^{'} = E^{'}_\text{f} + {{E^{'}_\text{s}-E^{'}_\text{f}} \over 1+({{k_0} \over x})^n}
+    .. math:: E^{'} = E^{'}_\text{f} + {{E^{'}_\text{s}-E^{'}_\text{f}} \over 1+\left({{k_0} \over x}\right)^n}
             :label: perriot_barthel
 
-    .. math:: log(k_0) = -0.093+0.792log({E^{'}_\text{s} \over E^{'}_\text{f}}) + 0.05[log{E^{'}_\text{s} \over E^{'}_\text{f}}]^2
+    .. math:: log(k_0) = -0.093+0.792log\left({E^{'}_\text{s} \over E^{'}_\text{f}}\right) + 0.05\left[log{E^{'}_\text{s} \over E^{'}_\text{f}}\right]^2
             :label: perriot_barthel_k0
 
 With :math:`x=a_\text{c}/t`, and :math:`k_0` and :math:`n` are adjustable constants  determined using the method of least squares.
@@ -396,30 +396,30 @@ This system is modelled by two springs connected in series (see Figure 6).
     .. math:: K_\text{z} = 2 a_\text{c} E^{'}
             :label: bec_kz
                        
-    .. math:: {1 \over K_\text{z}} = {1 \over {f_\text{f}(a_\text{c}) K_\text{f}}} + {1 \over {f_\text{s}(a_\text{c})K_\text{s}}}
+    .. math:: {1 \over K_\text{z}} = {1 \over {f_\text{f}\left(a_\text{c}\right) K_\text{f}}} + {1 \over {f_\text{s}\left(a_\text{c}\right)K_\text{s}}}
             :label: bec_sum_kf_ks
 
-    .. math:: f_\text{f}(a_\text{c}) = f_\text{s}(a_\text{c}) = 1 + {{2t} \over {\pi a_\text{c}}}
+    .. math:: f_\text{f}\left(a_\text{c}\right) = f_\text{s}\left(a_\text{c}\right) = 1 + {{2t} \over {\pi a_\text{c}}}
             :label: bec_f_ac
             
-    .. math:: {1 \over {2 a_\text{c} E^{'}}} = {t \over {(\pi a_\text{c}^2 + 2ta_\text{c})E^{'}_\text{f}}} + {1 \over {2(a_\text{c} + {2t \over \pi})E^{'}_\text{s}}}
+    .. math:: {1 \over {2 a_\text{c} E^{'}}} = {t \over {\left(\pi a_\text{c}^2 + 2ta_\text{c}\right)E^{'}_\text{f}}} + {1 \over {2\left(a_\text{c} + {2t \over \pi}\right)E^{'}_\text{s}}}
             :label: bec_Eeq
             
 Hay et al. (2011) [#Hay_2011]_
 *******************************
 The present model is a development of the Song–Pharr model [#Rar_2002]_ and [#Xu_2006]_ , which is already inspired by the Gao model [#Gao_1992]_.
 
-    .. math:: {1 \over \mu_\text{c}} = (1-\phi_{Gao_0}) {1 \over {\mu_\text{s} + F\phi_{Gao_0}\mu_\text{f}}} + \phi_{Gao_0}{1 \over \mu_\text{f}}
+    .. math:: {1 \over \mu_\text{c}} = \left(1-\phi_{Gao_0}\right) {1 \over {\mu_\text{s} + F\phi_{Gao_0}\mu_\text{f}}} + \phi_{Gao_0}{1 \over \mu_\text{f}}
             :label: hay_model
             
 Where :math:`\mu_\text{c}` is the composite shear modulus calculated from the composite Young’s modulus as :
 
-    .. math:: \mu_\text{c} = {E \over {2(1+\nu_\text{c})}}
+    .. math:: \mu_\text{c} = {E \over {2\left(1+\nu_\text{c}\right)}}
             :label: hay_muc
             
 Where :math:`\nu_\text{c}` is the composite Poisson's ratio given in Gao's model.
 
-    .. math:: E = (1 - \nu_\text{c}^2)E^{'}
+    .. math:: E = \left(1 - \nu_\text{c}^2\right)E^{'}
             :label: hay_Ec
 
 Knowing :math:`\mu_\text{c}`, it is possible to calculate :math:`\mu_\text{f}` :
@@ -429,7 +429,7 @@ Knowing :math:`\mu_\text{c}`, it is possible to calculate :math:`\mu_\text{f}` :
             
 Where :math:`A = F \phi_{Gao_0}`
             
-    .. math:: B = \mu_\text{s} - (F \phi_{Gao_0}^2 - \phi_{Gao_0} + 1)\mu_\text{c}
+    .. math:: B = \mu_\text{s} - \left(F \phi_{Gao_0}^2 - \phi_{Gao_0} + 1\right)\mu_\text{c}
             :label: hay_B
 
 With :math:`F = 0.0626`, a constant obtained from finite element simulations.
@@ -437,12 +437,12 @@ With :math:`F = 0.0626`, a constant obtained from finite element simulations.
     .. math:: C = -\phi_{Gao_0}\mu_\text{c}\mu_\text{s}
             :label: hay_C
             
-    .. math:: \mu_\text{s} = {E_\text{s} \over {2(1+\nu_\text{s})}}
+    .. math:: \mu_\text{s} = {E_\text{s} \over {2\left(1+\nu_\text{s}\right)}}
             :label: hay_mus
             
 Finally, the Young’s modulus of the film is calculated from the shear modulus and Poisson’s ratio of the film :
 
-    .. math:: E_\text{f} = 2\mu_\text{f}(1 + \nu_\text{f})
+    .. math:: E_\text{f} = 2\mu_\text{f}\left(1 + \nu_\text{f}\right)
             :label: hay_Ef
             
 Elastic properties of a thin film on a multilayer system
@@ -453,7 +453,7 @@ Mercier et al. (2010) [#Mercier_2010]_
 
 The elastic model of Mercier et al. for a multilayer sample on :math:`N+1` layers is an extension of the Bec et al. model.
                       
-    .. math:: {1 \over {2 a_{\text{c},0} E^{'}}} = \sum_{i=0}^{N} {t_i \over {(\pi a_{\text{c},i}^2 + 2t_ia_{\text{c},i})E^{'}_{\text{f},i}}} + {1 \over {2(a_{\text{c},N} + {2t_N \over \pi})E^{'}_\text{s}}}
+    .. math:: {1 \over {2 a_{\text{c},0} E^{'}}} = \sum_{i=0}^{N} {t_i \over {\left(\pi a_{\text{c},i}^2 + 2t_ia_{\text{c},i}\right)E^{'}_{\text{f},i}}} + {1 \over {2\left(a_{\text{c},N} + {2t_N \over \pi}\right)E^{'}_\text{s}}}
             :label: mercier_Eeq
             
     .. math:: a_{\text{c},i+1} = a_{\text{c},i} + {2t \over \pi}
@@ -463,7 +463,7 @@ With :math:`a_{\text{c},0}` equal to :math:`a_{\text{c}}`.
 
 Thus, the Young’s modulus of the film can be calculated as :
 
-    .. math:: E^{'}_{\text{f},0} = [{{\pi a_{\text{c},0}^2 + 2t_0a_{\text{c},0}} \over t_0} [{1 \over {2 a_{\text{c},0} E^{'}}} - {(\sum_{i=1}^{N} {{t_i \over {(\pi a_{\text{c},i}^2 + 2t_ia_{\text{c},i})E^{'}_{\text{f},i}}} + {1 \over {2(a_{\text{c},N}+ {2t_N \over \pi})E^{'}_\text{s}}}})}]]^{-1}
+    .. math:: E^{'}_{\text{f},0} = \left[{{\pi a_{\text{c},0}^2 + 2t_0a_{\text{c},0}} \over t_0} \left[{1 \over {2 a_{\text{c},0} E^{'}}} - {\left(\sum_{i=1}^{N} {{t_i \over {\left(\pi a_{\text{c},i}^2 + 2t_ia_{\text{c},i}\right)E^{'}_{\text{f},i}}} + {1 \over {2\left(a_{\text{c},N}+ {2t_N \over \pi}\right)E^{'}_\text{s}}}}\right)}\right]\right]^{-1}
             :label: mercier_Ef
 
 .. figure:: ./_pictures/multilayer_sample_elastic_model.png
@@ -528,10 +528,10 @@ The elastic and plastic energies are based on the integral of the loading and un
 
    *Figure 10 : Schematic representation of indentation load–displacement curves with definition of different works of indentation.*
 
-    .. math:: W_\text{tot} = \int_{0}^{h_\text{t}} {F_\text{c_loading}(dh)}
+    .. math:: W_\text{tot} = \int_{0}^{h_\text{t}} {F_\text{c}\left(dh\right)}
             :label: energy_tot
             
-    .. math:: W_\text{e} = \int_{h_\text{r}}^{h_\text{t}} {F_\text{c_unloading}(dh)}
+    .. math:: W_\text{e} = \int_{h_\text{r}}^{h_\text{t}} {F_\text{c}\left(dh\right)}
             :label: energy_elastic
             
     .. math:: W_\text{p} = W_\text{tot} - W_\text{e}

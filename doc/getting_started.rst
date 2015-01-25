@@ -18,7 +18,7 @@ How to use the GUI for indentation data analysis ?
 
 * Create or update your personal YAML config. file stored in the `YAML folder <https://github.com/DavidMercier/nanoind-data-analysis/tree/master/YAML_config_files>`_
 
-`See here how to create / modify your YAML file... <./configuration.html>`_
+`See here how to create / modify your YAML file... <http://nims.readthedocs.org/en/latest/configuration.html>`_
 
 * Then, run the followin |matlab| script and answer 'y' or 'yes' to add path to the |matlab| search paths :
 
@@ -34,7 +34,7 @@ How to use the GUI for indentation data analysis ?
    
    *Screenshot of the main window of the NIMS toolbox.*
 
-* Import your (nano)indentation results, by clicking on the button 'Select file'. `Click here to have more details about valid format of data. <./examples.html>`_
+* Import your (nano)indentation results, by clicking on the button 'Select file'. `Click here to have more details about valid format of data. <http://nims.readthedocs.org/en/latest/examples.html>`_
 * A load-displacement curve is plotted (with a power law fit). The loading work is also given in the title of the plot.
 * It is possible to plot the stiffness (raw data) without setting the GUI for Young's modulus calculation.
 
