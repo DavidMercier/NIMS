@@ -27,25 +27,20 @@ else
     gui.results.min_max_depth_nm = [gui.data.min_depth, gui.data.max_depth];
     
     %% Get and save models and corrections setting
-        list_val1 = get(gui.handles.value_modeldisp_GUI, 'String');
-        num_val1  = get(gui.handles.value_modeldisp_GUI, 'Value');
-        val1_str  = list_val1(num_val1, :);
-        gui.results.model_elastic = val1_str;
+    list_val1 = get(gui.handles.value_modeldisp_GUI, 'String');
+    num_val1  = get(gui.handles.value_modeldisp_GUI, 'Value');
+    val1_str  = list_val1(num_val1, :);
+    gui.results.model_elastic = val1_str;
     
-        list_param_corr = get(gui.handles.value_corrparam_GUI, 'String');
-        num_param_corr  = get(gui.handles.value_corrparam_GUI, 'Value');
-        param1_corr_str = list_param_corr(num_param_corr, :);
-        gui.results.correction_model_elastic = param1_corr_str;
-
-        list_val2 = get(gui.handles.value_bilayermodel_GUI, 'String');
-        num_val2  = get(gui.handles.value_bilayermodel_GUI, 'Value');
-        val2_str  = list_val2(num_val2, :);
-        gui.results.multi_bilayer_model_elastic = val2_str;
+    list_param_corr = get(gui.handles.popup_corr_King_GUI, 'String');
+    num_param_corr  = get(gui.handles.popup_corr_King_GUI, 'Value');
+    param1_corr_str = list_param_corr(num_param_corr, :);
+    gui.results.correction_model_elastic = param1_corr_str;
     
-        list_val2_mm = get(gui.handles.value_multilayermodel_GUI, 'String');
-        num_val2_mm  = get(gui.handles.value_multilayermodel_GUI, 'Value');
-        val2_mm_str  = list_val2_mm(num_val2_mm, :);
-        gui.results.multi_multilayer_model_elastic = val2_mm_str;
+    list_val2 = get(gui.handles.value_model_GUI, 'String');
+    num_val2  = get(gui.handles.value_model_GUI, 'Value');
+    val2_str  = list_val2(num_val2, :);
+    gui.results.multi_bilayer_model_elastic = val2_str;
     
     if get(gui.handles.cb_corr_thickness_GUI, 'Value') == 1
         param2_corr_model_str = 'Correction of the effective thickness applied. See in Mencik et al. (2003)';
@@ -74,7 +69,8 @@ else
     %% Save thin films and substrate properties & results
     if ~isfield(gui.results, 'Ef_sol_fit')
         gui.results.Ef_sol_fit = 'Not Calculated !';
-    elseif ~isfield(gui.results, 'Ef_sol')
+    end
+    if ~isfield(gui.results, 'Ef_sol')
         gui.results.Ef_sol = 'Not Calculated !';
     end
     
@@ -112,26 +108,16 @@ else
     end
     
     %% Write data in a YAML file
-    yaml_result_title = strcat(gui.results.data_filename, '_', gui.results.date, '.yaml');
+    list_val2 = get(gui.handles.value_model_GUI, 'String');
+    num_val2  = get(gui.handles.value_model_GUI, 'Value');
+    val2_str  = list_val2(num_val2,  :);
+    yaml_result_title = strcat(gui.results.data_filename, '_', val2_str, '.yaml');
     
-    if gui.variables.num_thinfilm == 2
-        list_val2 = get(gui.handles.value_bilayermodel_GUI, 'String');
-        num_val2  = get(gui.handles.value_bilayermodel_GUI, 'Value');
-        val2_str  = list_val2(num_val2,  :);
-        yaml_result_title = strcat(gui.results.data_filename, '_', val2_str, '.yaml');
-        
-    elseif gui.variables.num_thinfilm ~= 2
-        list_val2_mm = get(gui.handles.value_multilayermodel_GUI, 'String');
-        num_val2_mm  = get(gui.handles.value_multilayermodel_GUI, 'Value');
-        val2_mm_str  = list_val2_mm(num_val2_mm, :);
-        yaml_result_title = strcat(gui.results.data_filename, '_', val2_mm_str, '.yaml');
-        
-    end
+    WriteYaml(char(yaml_result_title), gui.results);
+    movefile(char(yaml_result_title), gui.results.data_pathname);
     
-    WriteYaml(yaml_result_title, gui.results);
-    movefile(yaml_result_title, gui.results.data_pathname);
-    
-    save_figure(gui.results.data_pathname, gui.handles.AxisPlot_GUI, yaml_result_title);
+    save_figure(gui.results.data_pathname, ...
+        gui.handles.AxisPlot_GUI, yaml_result_title);
     
     helpdlg('Data and picture saved !', 'OK');
     
