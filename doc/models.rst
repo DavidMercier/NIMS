@@ -118,6 +118,13 @@ Model of Oliver and Pharr [#OliverPharr_1992]_, [#Pharr_2002]_ and [#OliverPharr
               
 Where :math:`\epsilon` is a function of the indenter's geometry (0.72 for conical indenter, 0.75 for `paraboloids of revolution <https://en.wikipedia.org/wiki/Paraboloid>`_
 and 1 for a flat cylindrical punch). An expression of :math:`\epsilon` in function of the power law exponent :math:`m` of the unloading curve fit has been proposed by Pharr et Bolshakov [#Pharr_2002]_.
+Find here the matlab function to plot this function : `epsilon_OliverPharr.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/load_displacement/epsilon_OliverPharr.m>`_.
+
+.. figure:: ./_pictures/epsilonOliverPharr.png
+   :scale: 35 %
+   :align: center
+
+   *Figure 5 : Evolution of epsilon in function of the power law exponent :math:`m` of the unloading curve.*
 
 0.72 should be most applicable for a Berkovich indenter, which is more like a cone than a paraboloid of revolution.
 But, Oliver and Pharr concluded after a large number of experiments that the best value for the Berkovich indenter is 0.75.
@@ -185,7 +192,7 @@ A small dynamic oscillation is imposed on the force (or displacement) signal and
    :scale: 60 %
    :align: center
    
-   *Figure 5 : Schematic of the CSM loading cycle.*
+   *Figure 6 : Schematic of the CSM loading cycle.*
 
 Pharr et al. have highlighted the influence of displacement oscillation on basic measured quantities, like the contact load, the total displacement and the stiffness of the contact [#Pharr_2009]_.
 According to the authors, *"the sources of the measurement error have their origin in the relative stiffness of the contact and its relation to the displacements that can be
@@ -379,13 +386,13 @@ Bec et al. (2006) [#Bec_2006]_
 This elastic model is based on indentation by a rigid cylindrical punch (radius :math:`a_\text{c}`)
 of a homogeneous film deposited on a semi-infinite half space.
 
-This system is modelled by two springs connected in series (see Figure 6).
+This system is modelled by two springs connected in series (see Figure 7).
 
 .. figure:: ./_pictures/Bec_bilayer_model.png
    :scale: 40 %
    :align: center
    
-   *Figure 6 : Schematic description of the bilayer model of Bec et al. .*
+   *Figure 7 : Schematic description of the bilayer model of Bec et al. .*
 
     .. math:: K_\text{f} = \pi a_\text{c}^2 {E^{'}_\text{f} \over t}
             :label: bec_kf
@@ -470,13 +477,13 @@ Thus, the Young’s modulus of the film can be calculated as :
    :scale: 30 %
    :align: center
    
-   *Figure 7 : Schematic of elastic multilayer model.*
+   *Figure 8 : Schematic of elastic multilayer model.*
    
 .. figure:: ./_pictures/multilayer_sample_methodology.png
    :scale: 30 %
    :align: center
    
-   *Figure 8 : Experimental process to apply for elastic multilayer model.*
+   *Figure 9 : Experimental process to apply for elastic multilayer model.*
 
 Corrections to apply for thin film indentation [#Mencik_1997]_, [#Saha_2002]_, [#Bec_2006]_ and [#Li_2010]_
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -498,7 +505,7 @@ for a conical indenter and contact depths :math:`h_\text{c}` smaller than the fi
    :scale: 60 %
    :align: center
    
-   *Figure 9 : Indentation penetration of a thin film on a sample.*
+   *Figure 10 : Indentation penetration of a thin film on a sample.*
    
 Recently, Li et al. proposed to express the local thinning effect as [#Li_2010]_:
 
@@ -520,13 +527,13 @@ Energy approach
 ----------------
 
 Another way to access indentation data is the use of the energy dissipated during the indentation.
-The elastic and plastic energies are based on the integral of the loading and unloading curve (see Figure 10) [#ChengCheng_1998]_ and [#Malzbender_2002]_.
+The elastic and plastic energies are based on the integral of the loading and unloading curve (see Figure 11) [#ChengCheng_1998]_ and [#Malzbender_2002]_.
 
 .. figure:: ./_pictures/load-disp_curve_energy.png
    :scale: 60 %
    :align: center
 
-   *Figure 10 : Schematic representation of indentation load–displacement curves with definition of different works of indentation.*
+   *Figure 11 : Schematic representation of indentation load–displacement curves with definition of different works of indentation.*
 
     .. math:: W_\text{tot} = \int_{0}^{h_\text{t}} {F_\text{c}\left(dh\right)}
             :label: energy_tot

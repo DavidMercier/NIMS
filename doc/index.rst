@@ -10,7 +10,7 @@ NIMS |matlab| toolbox
 =====================
 
 .. figure:: ./_pictures/nanoind-data-analysis.png
-	:scale: 75 %
+	:scale: 50 %
 	:align: right
 
 The NIMS toolbox has been developed to plot and to analyze (nano)indentation data (obtained with conical indenters) for bulk material or multilayer sample.
@@ -21,7 +21,7 @@ With this Matlab toolbox, it is possible to :
     * calculate the energy of the loading (area below the load-displacement curve);
     * calculate the Young's modulus and hardness of bulk materials;
     * calculate the Young's modulus of thin films on a substrate (for a bilayer or a multilayer sample (until 3 layers on a substrate));
-    * generate python script of axisymmetrical FEM model for use in Abaqus 6.12 (cono-spherical indentation of multilayer sample).
+    * generate Python script of axisymmetrical FEM model for use in Abaqus 6.12 (cono-spherical indentation of multilayer sample).
 	
 .. figure:: ./_pictures/download.png
    :scale: 20 %
@@ -76,4 +76,4 @@ The author is grateful to V. Mandrillon from `CEA Grenoble <http://www.cea.fr/le
 
 Keywords
 ========
-|matlab| toolbox; nanoindentation ; conical indenter; Young's modulus ; hardness ; thin film ; multilayer system ; analytical model ; python script ; finite element modelling.
+|matlab| toolbox ; nanoindentation ; conical indenter; Young's modulus ; hardness ; thin film ; multilayer system ; analytical model ; python script ; finite element modelling.
