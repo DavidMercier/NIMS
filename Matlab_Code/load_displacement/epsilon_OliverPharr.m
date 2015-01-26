@@ -4,7 +4,7 @@ function [epsilon, m] = epsilon_OliverPharr
 % of unloading curves.
 % See Pharr G. M.  and Bolshakov A. (2002)- DOI: 10.1557/JMR.2002.0386
 
-fig_epsilon = figure('Name', 'epsilon = f(m)',...
+figure('Name', 'epsilon = f(m)',...
     'NumberTitle', 'off');
 
 m = 1:0.0001:2;

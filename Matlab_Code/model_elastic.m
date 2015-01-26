@@ -20,16 +20,7 @@ if gui.variables.King_correction == 1 % See in King (1987)
         beta = gui.config.numerics.betaConical_King;
     end
 elseif gui.variables.King_correction == 2 % See in Hay (1999)
-    if theta_eq > 60
-        beta = pi * (((pi/4) + ...
-            (0.15483073*cotd(theta_eq) * ...
-            ((1-2*gui.data.nuf)/(4*(1-gui.data.nuf))))) / ...
-            ((pi/2)-(0.83119312*cotd(theta_eq) * ...
-            ((1-2*gui.data.nuf)/(4*(1-gui.data.nuf)))))^2);
-    else
-        beta = 1 + ((1-2*gui.data.nuf) / ...
-            (4*(1-gui.data.nuf) * tand(theta_eq)));
-    end
+    beta = beta_Hay(theta_eq, gui.data.nuf);
 end
 
 %% Young's modulus calculation - See in Pharr et al. (1992)
