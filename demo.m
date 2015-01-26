@@ -1,24 +1,17 @@
 %% Copyright 2014 MERCIER David
-function gui_handle = GUI_Extraction_EP_properties_for_multilayer_sample
+function gui_handle = demo
 %% Function to run the Matlab GUI for the calculations of elastic-plastic properties
 % of a multilayer system from indentation experiments with a conical indenter
 
-%% Initialization
-clear all; close all; clear classes;
-delete(findall(0,'Type','figure'));
-format compact;
-commandwindow; clc; clearvars;
-
 %% Paths Management
-path_management_GUI; %Definition of the Matlab search paths
-if ismac || isunix
-    addpath(genpath('path\to\codes'));
-else
-    addpath(genpath('path/to/codes'));
+try
+    get_nims_root; % ensure that environment is set
+catch
+    [startdir, dummy1, dummy2] = fileparts(mfilename('fullpath'));
+    cd(startdir);
+    commandwindow;
+    path_management;
 end
-
-[startdir, f, ext] = fileparts(mfilename('fullpath'));
-cd(startdir);
 
 %% Import data from YAML config files
 gui.config = struct();
@@ -46,11 +39,8 @@ gui.handles.MainWindows = figure('Name', ...
     (strcat(gui.config.name_toolbox, ...
     ' - Version_', gui.config.version_toolbox)),...
     'NumberTitle', 'off',...
-    'PaperUnits', get(0, 'defaultfigurePaperUnits'),...
     'Color', [0.9 0.9 0.9],...
-    'Colormap', get(0,'defaultfigureColormap'),...
     'toolBar', 'figure',...
-    'InvertHardcopy', get(0, 'defaultfigureInvertHardcopy'),...
     'PaperPosition', [0 7 50 15],...
     'Color', [0.906 0.906 0.906],...
     'Position', [WX WY WW WH]);
@@ -61,7 +51,7 @@ gui.handles.title_GUI_1 = uicontrol('Parent', gcf,...
     'Style', 'text',...
     'Position', [0.31 0.96 0.6 0.04],...
     'String', ['Extraction of mechanical properties of thin film(s) ',...
-    'on substrate by conical nanoindentation'],...
+    'on substrate by conical nanoindentation.'],...
     'FontWeight', 'bold',...
     'FontSize', 12,...
     'HorizontalAlignment', 'center',...
@@ -520,69 +510,4 @@ else
         'https://code.google.com/p/yamlmatlab/'], 'Error');
 end
 
-end
-
-function path_management_GUI(varargin)
-%% Set Matlab search path
-% http://www.mathworks.de/de/help/matlab/ref/addpath.html
-commandwindow;
-% http://stackoverflow.com/questions/2720140/find-location-of-current-m-file-in-matlab
-S = dbstack('-completenames');
-[folder, name, ext] = fileparts(S(1).file);
-display (folder);
-
-if nargin > 0 && ischar(varargin{1})
-    answer = varargin{1};
-else
-    answer = input(['Add the above folder with subfolders to the MATLAB', ...
-        'search path ?\n ([y](default)/n/rm(remove))'],'s');
-end
-
-path_to_add = genpath(folder);
-% TODO: remove everything under .git/...
-% this will be much easier with strsplit, available from matlab2013a (8.1)
-path_cell = regexp(path_to_add, pathsep, 'split');
-%try
-path_cell_genpath = path_cell;
-path_cell = cellstr_filter(path_cell, {'.git'});
-filtered_entries = numel(path_cell_genpath) - numel(path_cell)
-
-n_dirs = numel(path_cell);
-
-path_to_add = cell2path(path_cell);
-
-if strcmpi(answer, 'y') || isempty(answer)
-    display(sprintf('Adding %i entries to matlab search path', n_dirs));
-    addpath(path_to_add);
-    %rmpath(path_to_ignore)
-    %savepath;
-elseif strcmpi(answer, 'rm')
-    display(sprintf('Removing %i entries from matlab search path', n_dirs));
-    rmpath(path_to_add);
-else
-    display 'doing nothing';
-end
-
-%% Optionally display the matlab search path after modifications with the 'path' command
-%path
-end
-
-function path_cell_filtered = cellstr_filter(path_cell, extension2filter)
-
-for ii = 1:length(path_cell)
-    if strcmp(path_cell{ii}, extension2filter) == 1;
-        path_cell{ii} = {''};
-    end
-end
-path_cell_filtered = path_cell;
-end
-
-function path_list = cell2path(path_cell)
-
-path_strcat = '';
-
-for ii = 1:length(path_cell)
-    path_strcat = strcat(path_strcat, ';', path_cell{ii});
-end
-path_list = path_strcat;
 end
