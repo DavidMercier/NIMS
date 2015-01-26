@@ -1,5 +1,5 @@
 ﻿Links and References
-====================
+======================
 ..  include:: <isonum.txt>
 ..  |matlab| replace:: Matlab\ :sup:`TM` \
 
@@ -17,15 +17,15 @@ Links
 * `Matlab Li's code to determine elastic modulus and hardness of an ultra-thin film on a substrate using nanoindentation. <http://www.imechanica.org/node/4050>`_
 
 References
-##########
+###########
 
 Material and indenters properties
----------------------------------
+-----------------------------------
 
 * `Fischer-Cripps, A.C., "Nanoindentation 2nd ed." (2004) <http://link.springer.com/book/10.1007%2F978-1-4419-9872-9>`_
 
 (Nano)Indentation models (conical indenters)
---------------------------------------------
+---------------------------------------------
 
 * `Loubet J.L. et al., "Vickers Indentation Curves of Magnesium Oxide (MgO).", J. Tribol. (1984) <http://dx.doi.org/10.1115/1.3260865>`_
 * `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
@@ -41,25 +41,25 @@ Material and indenters properties
 * `Cheng Y.T. and Cheng C.M. ,"Relationships between hardness, elastic modulus, and the work of indentation." (1998) <http://dx.doi.org/10.1063/1.121873>`_
 * `Hochstetter G. et al., "Strain-rate effects on hardness of glassy polymers in the nanoscale range. Comparison between quasi-static and continuous stiffness measurements" (1999). <http://dx.doi.org/10.1080/00222349908248131>`_
 * `Malzbender J. and de With G., "Indentation load–displacement curve, plastic deformation, and energy.", J. Mater. Res. (2002). <http://dx.doi.org/10.1557/JMR.2002.0070>`_
-* `Li X. et Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications.", Mater. Characterization, 2002. <http://dx.doi.org/10.1016/S1044-5803(02)00192-4>`_
+* `Li X. and Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications.", Mater. Characterization, 2002. <http://dx.doi.org/10.1016/S1044-5803(02)00192-4>`_
 * `Oliver W.C. and Pharr G.M., "Measurement of hardness and elastic modulus by instrumented indentation: Advances in understanding and refinements to methodology" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.1.3>`_
 * `Cheng Y.T. and Cheng C.M., "Scaling, dimensional analysis, and indentation measurements." (2004) <http://dx.doi.org/10.1016/j.mser.2004.05.001>`_
 * `Guillonneau G. et al.,"Extraction of mechanical properties with second harmonic detection for dynamic nanoindentation testing.", Experimental Mechanics (2012). <http://dx.doi.org/10.1007/s11340-011-9561-5>`_
 * `Guillonneau G. et al., "Determination of mechanical properties by nanoindentation independently of indentation depth measurement" (2012). <http://dx.doi.org/10.1557/jmr.2012.261>`_
 
 Correction factors and Correction of experimental data
-------------------------------------------------------
+--------------------------------------------------------
 
 * `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <http://dx.doi.org/10.1016/0020-7683(87)90116-8>`_
-* `Mencik J., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
+* `Menčík J., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
 * `Hay J.C. et al., "A critical examination of the fundamental relations used in the analysis of nanoindentation data" (1999). <http://dx.doi.org/10.1557/JMR.1999.0306>`_
 * `Troyon M. and Lafaye S., "About the importance of introducing a correction factor in the Sneddon relationship for nanoindentation measurements" (2002). <http://dx.doi.org/10.1080/14786430600606834>`_
 * `Strader J.H. et al., "An experimental evaluation of the constant b relating the contact stiffness to the contact area in nanoindentation.", Philosophical Magazine (2006) <http://dx.doi.org/10.1080/14786430600567747>`_
-* `Pharr G.M.et al., "Critical issues in making small-depth mechanical property measurements by nanoindentation with continuous stiffness measurement" (2009). <http://dx.doi.org/10.1557/jmr.2009.0096>`_
+* `Pharr G.M. et al., "Critical issues in making small-depth mechanical property measurements by nanoindentation with continuous stiffness measurement" (2009). <http://dx.doi.org/10.1557/jmr.2009.0096>`_
 * `Li H. et al., "New methods of analyzing indentation experiments on very thin films" (2010). <http://dx.doi.org/10.1557/JMR.2010.0095>`_
 
 Bilayer models to extract Young's modulus of a thin film on a substrate (with conical indenters)
-------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
 
 * Bückle H., "VDI Berichte" (1961).
 * `Doerner M.F. and Nix W.D.,"A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
@@ -77,7 +77,7 @@ Bilayer models to extract Young's modulus of a thin film on a substrate (with co
 * `Hay J. and Crawford B., "Measuring substrate-independent modulus of thin films" (2011). <http://dx.doi.org/10.1557/jmr.2011.8>`_
 
 Multilayer model to extract Young's moduli of thin films on a multilayer sample (with conical indenters)
---------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
 
 * `Pailler-Mattei C. et al., "In vivo measurements of the elastic mechanical properties of human skin by indentation tests" (2008). <http://dx.doi.org/10.1016/j.medengphy.2007.06.011>`_
 * `Mercier D. et al., "Mesure de module d'Young d'un film mince à partir de mesures expérimentales de nanoindentation réalisées sur des systèmes multicouches" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
