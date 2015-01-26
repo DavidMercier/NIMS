@@ -9,6 +9,10 @@
 NIMS |matlab| toolbox
 =====================
 
+.. figure:: ./_pictures/nanoind-data-analysis.png
+	:scale: 75 %
+	:align: right
+
 The NIMS toolbox has been developed to plot and to analyze (nano)indentation data (obtained with conical indenters) for bulk material or multilayer sample.
 
 With this Matlab toolbox, it is possible to :
