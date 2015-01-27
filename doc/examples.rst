@@ -1,7 +1,7 @@
 ﻿Examples of nanoindentation data
 ================================
-..  include:: <isonum.txt>
-..  |matlab| replace:: Matlab\ :sup:`TM` \
+
+.. include:: includes.rst
 
 Format of data
 ##############

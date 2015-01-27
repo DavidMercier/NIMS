@@ -1,7 +1,7 @@
 ﻿Models
 ========
-..  include:: <isonum.txt>
-..  |matlab| replace:: Matlab\ :sup:`TM` \
+
+.. include:: includes.rst
 
 Nanoindentation tests
 #########################
@@ -70,13 +70,13 @@ Unloading
 
 The slope of unloading curve gives access to the contact stiffness :
 
-	.. math:: S = {dF_\text{c} \over dh}
-			:label: stiffness
+    .. math:: S = {dF_\text{c} \over dh}
+            :label: stiffness
 
 Pharr and Bolshakov founded that unloading curves were well described by the following power-law relationship [#Pharr_2002]_ :
 
-	.. math:: F_\text{c} = \alpha_\text{u} \left(h_\text{t} - h_\text{r}\right)^m
-			:label: unload_displacement
+    .. math:: F_\text{c} = \alpha_\text{u} \left(h_\text{t} - h_\text{r}\right)^m
+            :label: unload_displacement
 
 Where :math:`h_\text{r}` is the final displacement after complete unloading, and 
 :math:`\alpha_\text{u}` and :math:`m` are material constants. Many experiments performed by 
@@ -109,17 +109,18 @@ Three main models defining the depth of contact :math:`h_\text{c}` were develope
 
 Model of Doerner and Nix [#DoernerNix_1986]_ :
    
-	.. math:: h_\text{c} = h_\text{t} - {F_\text{c} \over S}
-			:label: doerner_nix_model
+    .. math:: h_\text{c} = h_\text{t} - {F_\text{c} \over S}
+            :label: doerner_nix_model
 
 Model of Oliver and Pharr [#OliverPharr_1992]_, [#Pharr_2002]_ and [#OliverPharr_2004]_ in case of sink-in:
 
-	.. math:: h_\text{c} = h_\text{t} - \epsilon {F_\text{c} \over S}
-			:label: oliver_pharr_model
+    .. math:: h_\text{c} = h_\text{t} - \epsilon {F_\text{c} \over S}
+            :label: oliver_pharr_model
               
 Where :math:`\epsilon` is a function of the indenter's geometry (0.72 for conical indenter, 0.75 for `paraboloids of revolution <https://en.wikipedia.org/wiki/Paraboloid>`_
 and 1 for a flat cylindrical punch). An expression of :math:`\epsilon` in function of the power law exponent :math:`m` of the unloading curve fit has been proposed by Pharr et Bolshakov [#Pharr_2002]_.
-Find here the matlab function to plot this function : `epsilon_OliverPharr.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/load_displacement/epsilon_OliverPharr.m>`_.
+
+Find here the |matlab| function to plot the :math:`\epsilon` function : `epsilon_OliverPharr.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/load_displacement/epsilon_OliverPharr.m>`_.
 
 .. figure:: ./_pictures/epsilonOliverPharr.png
    :scale: 35 %
@@ -135,22 +136,22 @@ for a paraboloid of revolution [#Merle_2012]_.
 
 Model of Loubet et al. [#Hochstetter_1999]_, [#Bec_2006]_ in case of pile-up:
 
-	.. math:: h_\text{c} = \alpha \left(h_\text{t} - {F_\text{c} \over S} + h_0\right)
-			:label: loubet_model
+    .. math:: h_\text{c} = \alpha \left(h_\text{t} - {F_\text{c} \over S} + h_0\right)
+            :label: loubet_model
 
 Where :math:`\alpha` is a constant function of the indented material (usually around 1.2) and the tip-defect :math:`h_0`.
 
 Knowing the depth of contact, it is possible to determine the area of contact
 :math:`A_\text{c}` for a perfect conical indenter (with a semi-angle from the apex :math:`\theta`):
 
-	.. math:: A_\text{c} = \pi h_\text{c}^2 tan^2\left(\theta\right)
-			:label: area_function_conical
+    .. math:: A_\text{c} = \pi h_\text{c}^2 tan^2\left(\theta\right)
+            :label: area_function_conical
 
 But, because conical indenters present imperfections and Berkovich or Vickers indenters are not perfectly conical,
 a general formulae of the contact area has been established by Oliver and Pharr [#OliverPharr_1992]_, [#OliverPharr_2004]_ :
 
-	.. math:: A_\text{c} = C_0 h_\text{c}^2 + \sum_{n=1}^8{C_\text{n} h_\text{c}^{1/2^{n-1}}}
-			:label: area_function
+    .. math:: A_\text{c} = C_0 h_\text{c}^2 + \sum_{n=1}^8{C_\text{n} h_\text{c}^{1/2^{n-1}}}
+            :label: area_function
 
 With the coefficients :math:`C_0` and :math:`C_\text{n}` obtained by curve fitting procedures, from nanoindentation experiments in fused silica (amorphous and isotropic material).
 
@@ -163,8 +164,8 @@ a fixed angle at large distances from the tip.
 
 An equivalent contact radius :math:`a_\text{c}` is also defined based on the area function.
 
-	.. math:: a_\text{c} = \sqrt{A_\text{c} \over \pi}
-			:label: contact_radius
+    .. math:: a_\text{c} = \sqrt{A_\text{c} \over \pi}
+            :label: contact_radius
 
 One other way to express the function area is that suggested by Loubet et al. [#Loubet_1984]_, 
 which describes a pyramid with a small flat region on its tip, the so-called tip defect (:math:`h_0`).
@@ -173,13 +174,13 @@ This geometry is described by the addition of a constant to the first two terms 
 Recently, in the paper of Yetna N'jock M. et al. [#YetnaNjock_2015]_, a criterion was proposed to forecast the behaviour during indentation experiments, following Giannakopoulos and Suresh methodology [#Giannakopoulos_1999]_.
 After analyzing either Vickers or Berkovich indentation tests on a wide range of materials, the following criterion is established :math:`\Delta` :
 
-	.. math:: \Delta = {h_\text{r}^{'} \over h_\text{t}^{'}}
-			:label: Yetna_Njock_model
+    .. math:: \Delta = {h_\text{r}^{'} \over h_\text{t}^{'}}
+            :label: Yetna_Njock_model
 
 With :math:`h_\text{r}^{'}` and :math:`h_\text{t}^{'}` residual contact depth and maximum depth after applying a compliance correction. Three preponderant deformation modes are distinguished :
-	- :math:`\Delta = 0.83` no deformation mode is preponderant;
-	- :math:`\Delta < 0.83` implies sink-in formation;
-	- :math:`\Delta > 0.83` implies pile-up formation.
+    - :math:`\Delta = 0.83` no deformation mode is preponderant;
+    - :math:`\Delta < 0.83` implies sink-in formation;
+    - :math:`\Delta > 0.83` implies pile-up formation.
 
 Giannakopoulos and Suresh founded a critical value for a similar criterion about 0.875 [#Giannakopoulos_1999]_.
 
@@ -202,13 +203,13 @@ the actual displacement (:math:`h_\text{t_act}`) and the actual stiffness (:math
 
     .. math:: F_\text{c_act} = F_\text{c} + {\Delta F_\text{c} \over 2} = F_\text{c} + \sqrt{2} \Delta F_\text{c_rms}
             :label: csm_correction_load
-			
+            
     .. math:: h_\text{t_act} = h_\text{t} + {\Delta h_\text{t} \over 2} = h_\text{t} + \sqrt{2} \Delta h_\text{t_rms}
             :label: csm_correction_disp
-			
+            
     .. math:: S_\text{act} = {1 \over \sqrt{2\pi}} \left({1 \over K}\right)^{1 \over m} \left[1-\left(1-S{{2\sqrt{2} \Delta h_\text{t_rms}} \over {F_\text{c_max}}}\right)^{1 \over m}\right]{F_\text{c_max} \over {\Delta h_\text{t_rms}}}
             :label: csm_correction_stiffness
-			
+            
 With :math:`K` and :math:`m` constants determined from unloading curves. These constants are related by the following equation :
 
     .. math:: K = \left({2 \over ^{m\sqrt{2\pi}}}\right)^m
@@ -256,6 +257,8 @@ For a conical indenter with larger half-angle (e.g.: Berkovich indenter), the an
             :label: gamma_high_angle
 
 With :math:`\nu` the Poisson's ratio of the indented material.
+
+Find here the |matlab| function to plot the :math:`\beta` function of Hay et al.: `beta_Hay.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/beta_Hay.m>`_.
 
 Knowing the material properties of the indenter, it is possible to calculate the reduced Young's modulus of the indented material. 
 
@@ -316,7 +319,7 @@ contact depth (:math:`h_\text{c}`), to the film thickness (:math:`t`), and
     If the difference between Poisson’s ratio of the thin film and substrate is small, the values for uniaxial loading Young's moduli, 
     :math:`E`, :math:`E_\text{f}`, :math:`E_\text{s}` can be used in previous equation.
 
-Doerner & Nix (1986) [#DoernerNix_1986]_, [#King_1987]_ and [#Saha_2002]_
+Doerner and Nix (1986) [#DoernerNix_1986]_, [#King_1987]_ and [#Saha_2002]_
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     .. math:: {1 \over E^{'}} = {1 \over E_\text{f}^{'}} + \left({1 \over E_\text{s}^{'}} - {1 \over E_\text{f}^{'}}\right) e^{-\alpha\left(x\right)}
@@ -325,6 +328,8 @@ Doerner & Nix (1986) [#DoernerNix_1986]_, [#King_1987]_ and [#Saha_2002]_
 With :math:`x=t/h` and :math:`\alpha` is an empirically constant determined using the method of least squares.
 
 The equation was modified by King (1987), by the replacement of :math:`t/h` by :math:`t/a_\text{c}`.
+
+Find here the |matlab| function for the Doerner and Nix function : `model_doerner_nix_king.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_doerner_nix_king.m>`_.
 
 Gao et al. (1992) [#Gao_1992]_
 +++++++++++++++++++++++++++++++++
@@ -345,6 +350,8 @@ With :math:`\nu_{c}` the composite Poisson's ratio, :math:`\nu_{s}` the Poisson'
 
 With :math:`x=a_\text{c}/t`.
 
+Find here the |matlab| function for the Gao et al. function : `model_gao.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_gao.m>`_.
+
 Menčík et al. (linear model) (1997) [#Menčík_1997]_
 +++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -352,6 +359,8 @@ Menčík et al. (linear model) (1997) [#Menčík_1997]_
             :label: mencik_linear
 
 With :math:`x=a_\text{c}/t`.
+
+Find here the |matlab| function for the Menčík et al. linear function : `model_menick_linear.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_mencik_linear.m>`_.
 
 Menčík et al. (exponential model) (1997) [#Menčík_1997]_
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -361,6 +370,7 @@ Menčík et al. (exponential model) (1997) [#Menčík_1997]_
 
 With :math:`x=a_\text{c}/t` and :math:`\alpha` is an empirically constant determined using the method of least squares.
 
+Find here the |matlab| function for the Menčík et al. exponential function : `model_menick_exponential.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_mencik_exponential.m>`_.
 
 Menčík et al. (reciprocal exponential model) (1997) [#Menčík_1997]_
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -369,6 +379,8 @@ Menčík et al. (reciprocal exponential model) (1997) [#Menčík_1997]_
             :label: mencik_reciprocal_exponential
 
 With :math:`x=a_\text{c}/t` and :math:`\alpha` is an empirically constant determined using the method of least squares.
+
+Find here the |matlab| function for the Menčík et al. reciprocal exponential function : `model_menick_reciprocal_exponential.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_mencik_reciprocal_exponential.m>`_.
 
 Perriot et al. (2003) [#Perriot_2004]_
 +++++++++++++++++++++++++++++++++++++++++
@@ -380,6 +392,8 @@ Perriot et al. (2003) [#Perriot_2004]_
             :label: perriot_barthel_k0
 
 With :math:`x=a_\text{c}/t`, and :math:`k_0` and :math:`n` are adjustable constants  determined using the method of least squares.
+
+Find here the |matlab| function for the Perriot et al. function : `model_perriot_barthel.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_perriot_barthel.m>`_.
 
 Bec et al. (2006) [#Bec_2006]_
 +++++++++++++++++++++++++++++++++
@@ -412,6 +426,8 @@ This system is modelled by two springs connected in series (see Figure 7).
             
     .. math:: {1 \over {2 a_\text{c} E^{'}}} = {t \over {\left(\pi a_\text{c}^2 + 2ta_\text{c}\right)E^{'}_\text{f}}} + {1 \over {2\left(a_\text{c} + {2t \over \pi}\right)E^{'}_\text{s}}}
             :label: bec_Eeq
+
+Find here the |matlab| function for the Bec et al. function : `model_bec.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_bec.m>`_.
             
 Hay et al. (2011) [#Hay_2011]_
 ++++++++++++++++++++++++++++++++++
@@ -453,6 +469,8 @@ Finally, the Young’s modulus of the film is calculated from the shear modulus 
 
     .. math:: E_\text{f} = 2\mu_\text{f}\left(1 + \nu_\text{f}\right)
             :label: hay_Ef
+
+Find here the |matlab| function for the Hay et al. function : `model_hay.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_hay.m>`_.
             
 Elastic properties of a thin film on a multilayer system
 ----------------------------------------------------------
@@ -487,6 +505,8 @@ Thus, the Young’s modulus of the film can be calculated as :
    
    *Figure 9 : Experimental process to apply for elastic multilayer model.*
 
+Find here the |matlab| function for the Mercier et al. function : `model_multilayer_elastic.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_multilayer_elastic.m>`_.
+  
 Corrections to apply for thin film indentation [#Menčík_1997]_, [#Saha_2002]_, [#Bec_2006]_ and [#Li_2010]_
 --------------------------------------------------------------------------------------------------------------------
 

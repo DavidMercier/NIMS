@@ -1,10 +1,10 @@
 ﻿Links and References
 ======================
-..  include:: <isonum.txt>
-..  |matlab| replace:: Matlab\ :sup:`TM` \
+
+.. include:: includes.rst
 
 Links
-#####
+######
 
 * `Matlab GUI. <http://www.mathworks.com/discovery/matlab-gui.html>`_
 

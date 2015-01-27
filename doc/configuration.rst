@@ -1,7 +1,7 @@
 ﻿Configuration
 =============
-..  include:: <isonum.txt>
-..  |matlab| replace:: Matlab\ :sup:`TM` \
+
+.. include:: includes.rst
 
 What is a YAML File ?
 #########################

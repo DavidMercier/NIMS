@@ -1,7 +1,7 @@
 ﻿FEM model
 ====================
-..  include:: <isonum.txt>
-..  |matlab| replace:: Matlab\ :sup:`TM` \
+
+.. include:: includes.rst
 
 Generation of python script for Abaqus
 ############################################
