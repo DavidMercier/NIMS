@@ -21,12 +21,19 @@ Author
 ------
 Written by D. Mercier [1].
 
-[1] Max-Planck-Institut für Eisenforschung, 40237 Düsseldorf, Germany (http://www.mpie.de/)
+[1] Max-Planck-Institut fÃ¼r Eisenforschung, 40237 DÃ¼sseldorf, Germany (http://www.mpie.de/)
+
+How to cite NIMS in your papers ?
+------------------------------------
+
+.. image::
+  https://zenodo.org/badge/5888/DavidMercier/NIMS.svg
+  :target: http://dx.doi.org/10.5281/zenodo.14610
 
 Reference paper
 ----------------
-"Young’s modulus measurement of a thin film from experimental nanoindentation performed on multilayer systems"
-D. Mercier et al., Matériaux & Techniques (2011) - 99(11)
+"Youngâ€™s modulus measurement of a thin film from experimental nanoindentation performed on multilayer systems"
+D. Mercier et al., MatÃ©riaux & Techniques (2011) - 99(11)
 http://www.mattech-journal.org/articles/mattech/abs/2011/02/mt110025/mt110025.html
 
 Acknowledgements
@@ -37,7 +44,7 @@ SIMaP: http://simap.grenoble-inp.fr
 
 Keywords
 --------
-Matlab Toolbox; Graphical User Interface; Nanoindentation; Young’s modulus; thin film; multilayer system; analytical model; finite element modelling
+Matlab Toolbox; Graphical User Interface; Nanoindentation; Youngâ€™s modulus; thin film; multilayer system; analytical model; finite element modelling
 
 Links
 -----
