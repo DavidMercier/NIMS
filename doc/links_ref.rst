@@ -32,7 +32,7 @@ Material and indenters properties
 * `Loubet J.L. et al., "Vickers indentation curves of elastoplastic materials" (1986). <http://dx.doi.org/10.1520/STP889-EB>`_
 * `Oliver W.C. and Pharr G.M., "An improved technique for determining hardness and elastic modulus using load and displacement sensing indentation experiments" (1992). <http://dx.doi.org/10.1557/JMR.1992.1564>`_
 * `Pharr G.M. et al., "On the generality of the relationship among contact stiffness, contact area, and elastic modulus during indentation" (1992). <http://dx.doi.org/10.1557/JMR.1992.0613>`_
-* `Loubet J. L. et al., "Nanoindentation with a surface force apparatus.", (1993). <http://dx.doi.org/10.1007/978-94-011-1765-4>`_
+* `Loubet J.L. et al., "Nanoindentation with a surface force apparatus.", (1993). <http://dx.doi.org/10.1007/978-94-011-1765-4>`_
 * `Hainsworth S.V. et al., "Analysis of nanoindentation load-displacement loading curves" (1996). <http://dx.doi.org/10.1557/JMR.1996.0250>`_
 * `Bec S. et al., "Improvements in the indentation method with a surface force apparatus" (1996). <http://dx.doi.org/10.1080/01418619608239707>`_
 * `Menčík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
@@ -63,7 +63,7 @@ Bilayer models to extract Young's modulus of a thin film on a substrate (with co
 
 * Bückle H., "VDI Berichte" (1961).
 * `Doerner M.F. and Nix W.D.,"A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
-* `Yu H. Y. et al., "The effect of substrate on the elastic properties of films determined by the indentation test - axisymmetric Boussinesq problem" (1990). <http://dx.doi.org/10.1016/0022-5096(90)90038-6>`_
+* `Yu H.Y. et al., "The effect of substrate on the elastic properties of films determined by the indentation test - axisymmetric Boussinesq problem" (1990). <http://dx.doi.org/10.1016/0022-5096(90)90038-6>`_
 * `Gao H. et al., "Elastic contact versus indentation modeling of multi-layered materials" (1992). <http://dx.doi.org/10.1016/0020-7683(92)90004-D>`_
 * `Menčík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
 * `Chen X. and Vlassak J.J., "Numerical study on the measurement of thin film mechanical properties by means of nanoindentation" (2001). <http://dx.doi.org/10.1557/JMR.2001.0408>`_
