@@ -133,9 +133,4 @@ end
 set(gui.handles.MainWindows, 'CurrentAxes', gui.handles.AxisPlot_GUI);
 guidata(gcf, gui);
 
-%% Calculation of hardness
-gui.results.H = model_hardness(gui.data.P, gui.results.Ac);
-
-guidata(gcf, gui);
-
 end
