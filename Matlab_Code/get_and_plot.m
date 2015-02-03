@@ -10,6 +10,7 @@ for step = 1:steps
 end
 
 %% Cleaning of data
+gui.results = struct();
 guidata(gcf, gui);
 
 clean_data;

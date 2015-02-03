@@ -7,6 +7,10 @@ gui = guidata(gcf);
 set(gui.handles.MainWindows, 'CurrentAxes', gui.handles.AxisPlot_GUI);
 cla;
 
+if ~isfield(gui.results, 'residual')
+    gui.results.residual = 0;
+end
+
 %% Normalization
 if gui.variables.y_axis == 1
     residual_norm = gui.results.residual./gui.data.P;
@@ -52,6 +56,10 @@ end
 %% Plot properties
 gui.axis.ymin = min(residual_norm);
 gui.axis.ymax = max(residual_norm);
+if max(residual_norm) == min(residual_norm)
+    gui.axis.ymin = min(residual_norm) - 1;
+    gui.axis.ymax = max(residual_norm) + 1;
+end
 
 set(gui.handles.pb_residual_plot_GUI, 'string', 'Plot');
 set(gui.handles.pb_residual_plot_GUI, 'Callback', 'plot_selection(1)');
