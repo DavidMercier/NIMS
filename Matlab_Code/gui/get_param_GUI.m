@@ -3,6 +3,8 @@ function get_param_GUI
 %% Function to get values of different variables from the GUI
 gui = guidata(gcf);
 
+check_param_GUI;
+
 %% Getting parameters from the GUI
 % Film 0
 gui.data.t0   = str2double(get(gui.handles.value_thinfilm0_GUI,  'String'));       % nm
@@ -69,35 +71,63 @@ gui.variables.x_axis = get(gui.handles.value_param2plotinxaxis_GUI, 'Value');
 gui.variables.y_axis = get(gui.handles.value_param2plotinyaxis_GUI, 'Value');
 gui.variables.y_axis_old = gui.variables.y_axis;
 
-%% Error message for inputs
-if gui.data.nuf0 < -1 || gui.data.nuf0 > 0.5 || gui.data.nuf1 <- 1 || ...
-        gui.data.nuf1 > 0.5 || gui.data.nuf2 < -1 || gui.data.nuf2 > 0.5 ...
-        || gui.data.nus < -1 || gui.data.nus > 0.5
+%% Wrong inputs
+% Poisson's ratio
+if gui.data.nuf0 < -1 || gui.data.nuf0 > 0.5 
     set(gui.handles.value_poissfilm0_GUI, 'String', 0.3);
+    warning('Wrong input for Poisson''s ratio !');
+end
+    
+if gui.data.nuf1 < -1 || gui.data.nuf1 > 0.5 
     set(gui.handles.value_poissfilm1_GUI, 'String', 0.3);
+    warning('Wrong input for Poisson''s ratio !');
+end
+
+if gui.data.nuf2 < -1 || gui.data.nuf2 > 0.5 
     set(gui.handles.value_poissfilm2_GUI, 'String', 0.3);
-    set(gui.handles.value_poisssub_GUI,   'String', 0.18);
-    errordlg('Wrong input for Poisson''s ratio !', 'Input Error');
-    %error('Wrong input for Poisson''s ratio !', 'Input Error');
-    return;
-    
-elseif gui.data.E0 < 0 || gui.data.E1 < 0 || gui.data.E2 < 0 || gui.data.Es < 0
+    warning('Wrong input for Poisson''s ratio !');
+end
+
+if gui.data.nus < -1 || gui.data.nus > 0.5 
+    set(gui.handles.value_poisssub_GUI, 'String', 0.3);
+    warning('Wrong input for Poisson''s ratio !');
+end
+
+% Young's modulus
+if gui.data.E0 < 0
     set(gui.handles.value_youngfilm0_GUI, 'String', 100); % in GPa
+    warning('Wrong input for Young''s modulus !');
+end
+
+if gui.data.E1 < 0
     set(gui.handles.value_youngfilm1_GUI, 'String', 100); % in GPa
+    warning('Wrong input for Young''s modulus !');
+end 
+    
+if gui.data.E2 < 0
     set(gui.handles.value_youngfilm2_GUI, 'String', 100); % in GPa
-    set(gui.handles.value_youngsub_GUI,   'String', 165); % in GPa
-    errordlg('Wrong input for Young''s modulus !', 'Input Error');
-    %error('Wrong input for Young''s modulus !', 'Input Error');
-    return;
+    warning('Wrong input for Young''s modulus !');
+end
     
-elseif gui.data.t0 < 0 || gui.data.t1 < 0 || gui.data.t2 < 0
+if gui.data.Es < 0
+    set(gui.handles.value_youngsub_GUI, 'String', 165); % in GPa
+    warning('Wrong input for Young''s modulus !');
+end 
+
+% Film thickness
+if gui.data.t0 < 0
     set(gui.handles.value_thinfilm0_GUI, 'String', 500); % in nm
+    warning('Wrong input for film''s thickness !');
+end
+
+if gui.data.t1 < 0
     set(gui.handles.value_thinfilm1_GUI, 'String', 500); % in nm
-    set(gui.handles.value_thinfilm2_GUI, 'String', 500); % in nm
-    errordlg('Wrong input for film''s thickness !', 'Input Error');
-    %error('Wrong input for film''s thickness !', 'Input Error');
-    return;
+    warning('Wrong input for film''s thickness !');
+end 
     
+if gui.data.t2 < 0
+    set(gui.handles.value_thinfilm2_GUI, 'String', 500); % in nm
+    warning('Wrong input for film''s thickness !');
 end
 
 guidata(gcf, gui);
