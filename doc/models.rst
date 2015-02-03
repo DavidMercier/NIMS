@@ -260,7 +260,7 @@ Woirgard has demonstrated analytically that the exact value of :math:`\beta`
 for the perfectly sharp Berkovich indenter should be 1.062 [#Troyon_2006]_.
 
 Some authors proposed another correction factor function of the angle of the conical
-indenter and the Poisson's ration of the indented material [#Hay_1999]_ and [#Strader_2006]_.
+indenter and the Poisson's ratio of the indented material [#Hay_1999]_ and [#Strader_2006]_.
 For a conical indenter with an half-angle of :math:`\gamma \leq 60°`
 (e.g.: Cube-Corner indenter), the analytical approximation is :
 
@@ -281,7 +281,7 @@ Find here the |matlab| function to plot the :math:`\beta` function of Hay et al.
    :scale: 35 %
    :align: center
    
-   *Figure 7 : Plots of beta Hay : a) in function of the half-angle of the conical indenter (for a Poisson's ration of 0.3), and b) in function of the Poisson's ration for a Berkovich indenter.*
+   *Figure 7 : Plots of beta Hay : a) in function of the half-angle of the conical indenter (for a Poisson's ratio of 0.3), and b) in function of the Poisson's ratio for a Berkovich indenter.*
 
 Knowing the material properties of the indenter, it is possible to calculate
 the reduced Young's modulus of the indented material. 
@@ -304,7 +304,7 @@ the Poisson's ratio of the material of the indenter.
 
 .. note::
     Indenters are mainly in diamond. Diamond has a Young's modulus of 1070GPa
-	and a Poisson's ratio of 0.07 [#Fischer-Cripps_2004]_.
+    and a Poisson's ratio of 0.07 [#Fischer-Cripps_2004]_.
 
 Elastic properties of a thin film on a substrate
 ----------------------------------------------------

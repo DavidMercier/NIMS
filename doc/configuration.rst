@@ -18,8 +18,8 @@ The YAML configuration files
 #############################
 
 Three YAML configuration files are used in the Matlab toolbox :
-    - indenters_config.yaml
-    - numerics_config.yaml
+  - indenters_config.yaml
+  - numerics_config.yaml
     
 *indenters_config.yaml* provides indenter's properties (geometry and material).
     
