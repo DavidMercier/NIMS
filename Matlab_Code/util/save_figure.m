@@ -22,9 +22,9 @@ isolated_figure = isolate_axes(figure);
 
 %% Defintion of the title of the figure
 %date_str = strcat(datestr(now,'yyyy-mmm-dd_HH'),'H',datestr(now,'MM'),'min',datestr(now,'ss'),'s');
-isolated_figure_title = strcat(path_data, title_YAMLfile, '.png');
+isolated_figure_title = strcat(path_data, title_YAMLfile);
 
 %% Exportation of the figure in a .png format
-export_fig(isolated_figure_title, isolated_figure);
+export_fig(sprintf('%s', char(isolated_figure_title)), '-png')
 
 end
