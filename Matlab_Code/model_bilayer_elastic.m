@@ -74,7 +74,6 @@ elseif gui.variables.val2 == 1 % No Bilayer Model
 end
 
 set(gui.handles.MainWindows, 'CurrentAxes', gui.handles.AxisPlot_GUI);
-
 guidata(gcf, gui);
 
 end

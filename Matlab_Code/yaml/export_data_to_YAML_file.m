@@ -62,7 +62,9 @@ else
     if isfield(gui.results, 'Esample_red')
         gui.results.mean_reduced_young_modulus_sample_GPa = ...
             mean(gui.results.Esample_red);
-        gui.results.mean_hardness_sample_GPa              = ...
+    end
+    if isfield(gui.results, 'mean_hardness_sample_GPa')
+        gui.results.mean_hardness_sample_GPa = ...
             round(mean(gui.results.H.*1000)./10)./100;
     end
     
