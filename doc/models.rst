@@ -255,22 +255,22 @@ oscillation on the basic measured quantities [#Pharr_2009]_. According to the au
 *"the sources of the measurement error have their origin in the relative stiffness of the contact
 and its relation to the displacements that can be recovered during the unloading portion
 of the oscillation"*. Based on that, the authors proposed the following corrections
-to determine the actual load (:math:`F_\text{c_act}`), the actual displacement
-(:math:`h_\text{t_act}`) and the actual stiffness (:math:`S_\text{act}`) :
+to determine the actual load (:math:`F_\text{c,act}`), the actual displacement
+(:math:`h_\text{t,act}`) and the actual stiffness (:math:`S_\text{act}`):
 
-    .. math:: F_\text{c_act} = F_\text{c} + \frac{\Delta F_\text{c}}{2} = 
-              F_\text{c} + \sqrt{2} \Delta F_\text{c_rms}
+    .. math:: F_\text{c,act} = F_\text{c} + \frac{\Delta F_\text{c}}{2} = 
+              F_\text{c} + \sqrt{2}{\Delta F_\text{c,rms}}
             :label: csm_correction_load
-            
-    .. math:: h_\text{t_act} = h_\text{t} + \frac{\Delta h_\text{t}}{2} = 
-              h_\text{t} + \sqrt{2} \Delta h_\text{t_rms}
+
+    .. math:: h_\text{t,act} = h_\text{t} + \frac{\Delta h_\text{t}}{2} = 
+              h_\text{t} + \sqrt{2} \Delta h_\text{t,rms}
             :label: csm_correction_disp
-            
+
     .. math:: S_\text{act} = \frac{1}{\sqrt{2\pi}} \left(\frac{1}{K}\right)^\frac{1}{m}
-              \left[1-\left(1-S{\frac{2\sqrt{2} \Delta h_\text{t_rms}}
-              {F_\text{c_max}}}\right)^\frac{1}{m}\right]\frac{F_\text{c_max}}{{\Delta h_\text{t_rms}}}
+              \left[1-\left(1-S{\frac{2\sqrt{2}{\Delta h_\text{t,rms}}}
+              {F_\text{c,max}}}\right)^\frac{1}{m}\right]\frac{F_\text{c,max}}{{\Delta h_\text{t,rms}}}
             :label: csm_correction_stiffness
-            
+
 With :math:`K` and :math:`m` constants determined from unloading curves.
 These constants are related by the following equation :
 
