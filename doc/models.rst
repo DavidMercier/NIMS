@@ -314,7 +314,7 @@ for the perfectly sharp Berkovich indenter should be 1.062 [#Troyon_2006]_.
 
 Some authors proposed another correction factor function of the angle of the conical
 indenter and the Poisson's ratio of the indented material [#Hay_1999]_ and [#Strader_2006]_.
-For a conical indenter with an half-angle of :math:`\gamma \leq 60°`
+For a conical indenter with an half-angle of :math:`\gamma \leq 60^{\circ}`
 (e.g.: Cube-Corner indenter), the analytical approximation is :
 
     .. math:: \beta = 1 + \frac{{\left(1-2\nu\right)}}{{4\left(1-\nu\right)tan\gamma}}
