@@ -6,13 +6,14 @@
 .. include:: includes.rst
    
 NIMS |matlab| toolbox
-=====================
+=======================
 
 .. figure:: ./_pictures/nanoind-data-analysis.png
-	:scale: 50 %
-	:align: right
+    :scale: 50 %
+    :align: right
 
-The NIMS toolbox has been developed to plot and to analyze (nano)indentation data (obtained with conical indenters) for bulk material or multilayer sample.
+The NIMS toolbox has been developed to plot and to analyze (nano)indentation
+data (obtained with conical indenters) for bulk material or multilayer sample.
 
 With this Matlab toolbox, it is possible to :
     * plot and correct nanoindentation data;
@@ -21,7 +22,7 @@ With this Matlab toolbox, it is possible to :
     * calculate the Young's modulus and hardness of bulk materials;
     * calculate the Young's modulus of thin films on a substrate (for a bilayer or a multilayer sample (until 3 layers on a substrate));
     * generate Python script of axisymmetrical FEM model for use in Abaqus 6.12 (cono-spherical indentation of multilayer sample).
-	
+
 .. figure:: ./_pictures/download.png
    :scale: 20 %
    :align: left
@@ -50,7 +51,7 @@ With this Matlab toolbox, it is possible to :
    *Screenshot of the main window of the NIMS toolbox.*
 
 Contents
-========
+==========
    
 .. toctree::
    :maxdepth: 3
@@ -58,21 +59,27 @@ Contents
    getting_started
    configuration
    models
+   models_thin_films
    examples
    python_abaqus
    links_ref
    
 Contact
-=======
+=========
 
 :Author: `David Mercier <david9684@gmail.com>`_ [1]
 
 [1] `Max-Planck-Institut für Eisenforschung, 40237 Düsseldorf, Germany <http://www.mpie.de/>`_
 
 Acknowledgements
-================
-The author is grateful to V. Mandrillon from `CEA Grenoble <http://www.cea.fr/le-cea/les-centres-cea/grenoble>`_ and to M. Verdier from `SIMaP <http://simap.grenoble-inp.fr/>`_
+==================
+
+The author is grateful to V. Mandrillon from 
+`CEA Grenoble <http://www.cea.fr/le-cea/les-centres-cea/grenoble>`_ 
+and to M. Verdier from `SIMaP <http://simap.grenoble-inp.fr/>`_
 
 Keywords
-========
-|matlab| toolbox ; nanoindentation ; conical indenter; Young's modulus ; hardness ; thin film ; multilayer system ; analytical model ; python script ; finite element modelling.
+==========
+
+|matlab| toolbox ; nanoindentation ; conical indenter; Young's modulus ; hardness ; 
+thin film ; multilayer system ; analytical model ; python script ; finite element modelling.

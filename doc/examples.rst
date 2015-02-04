@@ -1,10 +1,10 @@
 ﻿Examples of nanoindentation data
-================================
+==================================
 
 .. include:: includes.rst
 
 Format of data
-##############
+###############
 
 * Both .txt or .xls files are accepted.
 * Only the loading part from the load-displacement curves of your (nano)indentation results.
@@ -13,10 +13,10 @@ Format of data
 * For .xls files : It is possible to import a 'Sample' sheet obtained from MTS software - Analyst (with a 'Hold Segment Type')
 
 ..  warning::
-	It is advised to use average results from at least 10 indentation tests to avoid artifacts.
+    It is advised to use average results from at least 10 indentation tests to avoid artifacts.
 
 Examples
-########
+#########
 
 * `0film_Si_CSM-2nm_noSD.txt <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/0film_Si_CSM-2nm_noSD.txt>`_
     - Data for a bulk Silicon sample obtained by Berkovich indentation with no CSM mode (amplitude 2nm).

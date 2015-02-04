@@ -1,5 +1,5 @@
 ﻿Configuration
-=============
+==============
 
 .. include:: includes.rst
 
@@ -30,7 +30,8 @@ Three YAML configuration files are used in the Matlab toolbox :
 How to modify YAML configuration files ?
 ##############################################
 
-Please find the 3 YAML configuration files in the `YAML folder <https://github.com/DavidMercier/nanoind-data-analysis/tree/master/YAML_config_files>`_.
+Please find the 3 YAML configuration files in the
+`YAML folder <https://github.com/DavidMercier/nanoind-data-analysis/tree/master/YAML_config_files>`_.
 
 .. figure:: ./_pictures/YAML_config_file.png
    :scale: 50 %
@@ -54,5 +55,5 @@ Please find the 3 YAML configuration files in the `YAML folder <https://github.c
 ..  warning::
     * Be careful to put a comma + a space between each data...! (YAML convention)
     * Use # in the beginning of the line to add comments.
-	
+
 It is also possible to edit and to load the different YAML configuration files, via the customized menu of the GUI.
