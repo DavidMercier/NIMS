@@ -27,12 +27,17 @@ Material and indenters properties
 (Nano)Indentation models (conical indenters)
 ---------------------------------------------
 
+* `Love A.E.H., "Boussinesq’s problem for a rigid cone.", The Quarterly J. of Mathematics (1939). <http://dx.doi.org/10.1093/qmath/os-10.1.161>`_
+* Galin L.A., "Spatial contact problems of the theory of elasticity for punches of circular shape in planar projection.", J. Appl. Math. Mech. (PMM) (1946), 10, pp. 425-448.
+* Bulychev S.I. et al., “Determining Young’s modulus from the indentor penetration diagram.”, Zavod. Lab., 1973, 39, pp. 1137-1142.
+* Shorshorov M.K. et al., Sov. Phys. Dokl., 1982, 26.
 * `Loubet J.L. et al., "Vickers Indentation Curves of Magnesium Oxide (MgO).", J. Tribol. (1984) <http://dx.doi.org/10.1115/1.3260865>`_
 * `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
 * `Loubet J.L. et al., "Vickers indentation curves of elastoplastic materials" (1986). <http://dx.doi.org/10.1520/STP889-EB>`_
 * `Oliver W.C. and Pharr G.M., "An improved technique for determining hardness and elastic modulus using load and displacement sensing indentation experiments" (1992). <http://dx.doi.org/10.1557/JMR.1992.1564>`_
 * `Pharr G.M. et al., "On the generality of the relationship among contact stiffness, contact area, and elastic modulus during indentation" (1992). <http://dx.doi.org/10.1557/JMR.1992.0613>`_
 * `Loubet J.L. et al., "Nanoindentation with a surface force apparatus.", (1993). <http://dx.doi.org/10.1007/978-94-011-1765-4>`_
+* `Lucas B.N. et al., "Time Dependent Deformation During Indentation Testing.", MRS Proceedings (1996). <http://dx.doi.org/10.1557/PROC-436-233>`_
 * `Hainsworth S.V. et al., "Analysis of nanoindentation load-displacement loading curves" (1996). <http://dx.doi.org/10.1557/JMR.1996.0250>`_
 * `Bec S. et al., "Improvements in the indentation method with a surface force apparatus" (1996). <http://dx.doi.org/10.1080/01418619608239707>`_
 * `Menčík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
@@ -46,6 +51,7 @@ Material and indenters properties
 * `Cheng Y.T. and Cheng C.M., "Scaling, dimensional analysis, and indentation measurements." (2004) <http://dx.doi.org/10.1016/j.mser.2004.05.001>`_
 * `Guillonneau G. et al.,"Extraction of mechanical properties with second harmonic detection for dynamic nanoindentation testing.", Experimental Mechanics (2012). <http://dx.doi.org/10.1007/s11340-011-9561-5>`_
 * `Guillonneau G. et al., "Determination of mechanical properties by nanoindentation independently of indentation depth measurement" (2012). <http://dx.doi.org/10.1557/jmr.2012.261>`_
+* `Yetna N'jock M. et al., "A criterion to identify sinking-in and piling-up in indentation of materials.", International Journal of Mechanical Sciences (2015). <http://dx.doi.org/10.1016/j.ijmecsci.2014.11.008>`_
 
 Correction factors and Correction of experimental data
 --------------------------------------------------------

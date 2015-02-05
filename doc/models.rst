@@ -3,12 +3,12 @@
 
 .. include:: includes.rst
 
-The nanoindentation (or instrumented indentation) is a variety of
-indentation hardness tests applied to small volumes. 
+The nanoindentation (or instrumented  or depth sensing indentation) is a variety
+of indentation hardness tests applied to small volumes. 
 
 The following parts give a short overview of models existing in the
-literature used for the extraction of mechanical properties of bulk
-materials from indentation experiments with conical indenters.
+literature used for the extraction of mechanical properties of homogeneous 
+bulk materials from indentation experiments with conical indenters.
 
 Nanoindentation tests on bulk material
 ########################################
@@ -33,8 +33,15 @@ The geometric properties of conical indenters are well described in [#Fischer-Cr
 .. figure:: ./_pictures/indenters.png
    :scale: 60 %
    :align: center
-   
+
    *Figure 1 : a) Conical indenter (45°) and b) Berkovich indenter.*
+
+These indenters have self-similar geometries which implies a constant strain
+and similarity of the stress fields.
+
+.. note::
+    Indenters are mainly in diamond. Diamond has a Young's modulus of 1070GPa
+    and a Poisson's ratio of 0.07 [#Fischer-Cripps_2004]_.
    
 Load-Displacement curves
 -------------------------
@@ -90,6 +97,16 @@ by the following power-law relationship [#Pharr_2002]_ :
 Where :math:`h_\text{r}` is the final displacement after complete unloading, and
 :math:`\alpha_\text{u}` and :math:`m` are material constants. Many experiments performed by 
 Pharr and Bolshakov leaded to an average value for :math:`m` close to 1.5 for the Berkovich indenter.
+
+Loading rate
+++++++++++++++
+
+The mechanical response of a material is function of the imposed indentation
+strain rate :math:`\dot{\epsilon}` [#Lucas_1996]_. Thus, it is meaningful to perform indentation
+tests with a constant indentation strain rate.
+
+    .. math:: \dot{\epsilon} = \frac{\dot{h}}{h} = \frac{1}{2} \frac{\dot{P}}{P}
+            :label: strain_rate
            
 Indentation contact topography
 -------------------------------
@@ -358,10 +375,6 @@ the Poisson's ratio of the material of the indenter.
 .. note::
     This method used to analyze indentation data is based on equations valid for
     isotropic homogeneous elastic solids.
-
-.. note::
-    Indenters are mainly in diamond. Diamond has a Young's modulus of 1070GPa
-    and a Poisson's ratio of 0.07 [#Fischer-Cripps_2004]_.
     
 A loss modulus can be defined by the following equation :
 
@@ -459,7 +472,8 @@ References
 .. [#Li_2002] `Li X. and Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications.", Mater. Characterization, 2002. <http://dx.doi.org/10.1016/S1044-5803(02)00192-4>`_
 .. [#Loubet_1984] `Loubet J.L. et al., "Vickers Indentation Curves of Magnesium Oxide (MgO).", J. Tribol. (1984) <http://dx.doi.org/10.1115/1.3260865>`_
 .. [#Loubet_1986] `Loubet J.L. et al., "Vickers indentation curves of elastoplastic materials." Microindentation Techniques in Materials Science and Engineering (1986). <http://dx.doi.org/10.1520/STP889-EB>`_
-.. [#Love_1939] `Love A. E. H., "Boussinesq’s problem for a rigid cone.", The Quarterly J. of Mathematics (1939). <http://dx.doi.org/10.1093/qmath/os-10.1.161>`_
+.. [#Love_1939] `Love A.E.H., "Boussinesq’s problem for a rigid cone.", The Quarterly J. of Mathematics (1939). <http://dx.doi.org/10.1093/qmath/os-10.1.161>`_
+.. [#Lucas_1996]_`Lucas B.N. et al., "Time Dependent Deformation During Indentation Testing.", MRS Proceedings (1996). <http://dx.doi.org/10.1557/PROC-436-233>`_
 .. [#Malzbender_2002] `Malzbender J. and de With G., "Indentation load–displacement curve, plastic deformation, and energy.", J. Mater. Res. (2002). <http://dx.doi.org/10.1557/JMR.2002.0070>`_
 .. [#Merle_2012] `Merle B. et al., "Experimental determination of the effective indenter shape and e-factor for nanoindentation by continuously measuring the unloading stiffness.", J. Mater. Res. (2012). <http://dx.doi.org/10.1557/jmr.2011.245>`_
 .. [#OliverPharr_1992] `Oliver W.C. and Pharr G.M., "An improved technique for determining hardness and elastic modulus using load and displacement sensing indentation experiments" (1992). <http://dx.doi.org/10.1557/JMR.1992.1564>`_
