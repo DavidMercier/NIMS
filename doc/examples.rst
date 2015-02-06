@@ -7,13 +7,19 @@ Format of data
 ###############
 
 * Both .txt or .xls files are accepted.
-* Only the loading part from the load-displacement curves of your (nano)indentation results.
-* 3 columns (Displacement/Load/Stiffness) or 6 columns (Disp./SD of Disp./Load/SD of Load/Stiff./SD of Stiff.) (SD for Standard Deviation)
-* Units : Displacement (nm) / Load (mN) / Stiffness (N/m)
-* For .xls files : It is possible to import a 'Sample' sheet obtained from MTS software - Analyst (with a 'Hold Segment Type')
+* 3 columns (Displacement / Load / Stiffness)
+* 6 columns (Disp. / SD(Disp.) / Load / SD (Load.) / Stiff. / SD(Stiff.)) (SD for Standard Deviation)
 
 ..  warning::
-    It is advised to use average results from at least 10 indentation tests to avoid artifacts.
+    You data must only have the loading part from the load-displacement curves of your (nano)indentation results.
+    In the case of data saved in a 'Sample' sheet of a .xls file obtained from MTS software - Analyst with a 'Hold Segment Type',
+    the toolbox is able to consider only the loading part of your results.
+
+..  warning::
+    Units are imposed : Displacement (nm) / Load (mN) / Stiffness (N/m)
+
+..  warning::
+    It is advised to use average results from at least 10 indentation tests to avoid artefacts.
 
 Examples
 #########

@@ -322,9 +322,10 @@ after introducing a correction factor identified by King [#King_1987]_ :
             :label: experimental_youngs_modulus_OP
 
 With :math:`\beta` a geometrical correction factor equal to :
-    - 1 for circular indenters (e.g.: conical and spherical indenter);
-    - 1.034 for three-sided pyramid indenters (e.g.: Berkovich indenter);
-    - 1.012 for four-sided pyramid indenters (e.g.: Vickers indenter).
+
+- 1 for circular indenters (e.g.: conical and spherical indenter);
+- 1.034 for three-sided pyramid indenters (e.g.: Berkovich indenter);
+- 1.012 for four-sided pyramid indenters (e.g.: Vickers indenter).
 
 Woirgard has demonstrated analytically that the exact value of :math:`\beta` 
 for the perfectly sharp Berkovich indenter should be 1.062 [#Troyon_2006]_.
