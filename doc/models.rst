@@ -105,7 +105,7 @@ The mechanical response of a material is function of the imposed indentation
 strain rate :math:`\dot{\epsilon}` [#Lucas_1996]_. Thus, it is meaningful to perform indentation
 tests with a constant indentation strain rate.
 
-    .. math:: \dot{\epsilon} = \frac{\dot{h}}{h} = \frac{1}{2} \frac{\dot{P}}{P}
+    .. math:: \dot{\epsilon} = \frac{\dot{h}}{h} = \frac{1}{2} \frac{\dot{F_\text{c}}}{F_\text{c}}
             :label: strain_rate
            
 Indentation contact topography
@@ -473,7 +473,7 @@ References
 .. [#Loubet_1984] `Loubet J.L. et al., "Vickers Indentation Curves of Magnesium Oxide (MgO).", J. Tribol. (1984) <http://dx.doi.org/10.1115/1.3260865>`_
 .. [#Loubet_1986] `Loubet J.L. et al., "Vickers indentation curves of elastoplastic materials." Microindentation Techniques in Materials Science and Engineering (1986). <http://dx.doi.org/10.1520/STP889-EB>`_
 .. [#Love_1939] `Love A.E.H., "Boussinesq’s problem for a rigid cone.", The Quarterly J. of Mathematics (1939). <http://dx.doi.org/10.1093/qmath/os-10.1.161>`_
-.. [#Lucas_1996]_`Lucas B.N. et al., "Time Dependent Deformation During Indentation Testing.", MRS Proceedings (1996). <http://dx.doi.org/10.1557/PROC-436-233>`_
+.. [#Lucas_1996] `Lucas B.N. et al., "Time Dependent Deformation During Indentation Testing.", MRS Proceedings (1996). <http://dx.doi.org/10.1557/PROC-436-233>`_
 .. [#Malzbender_2002] `Malzbender J. and de With G., "Indentation load–displacement curve, plastic deformation, and energy.", J. Mater. Res. (2002). <http://dx.doi.org/10.1557/JMR.2002.0070>`_
 .. [#Merle_2012] `Merle B. et al., "Experimental determination of the effective indenter shape and e-factor for nanoindentation by continuously measuring the unloading stiffness.", J. Mater. Res. (2012). <http://dx.doi.org/10.1557/jmr.2011.245>`_
 .. [#OliverPharr_1992] `Oliver W.C. and Pharr G.M., "An improved technique for determining hardness and elastic modulus using load and displacement sensing indentation experiments" (1992). <http://dx.doi.org/10.1557/JMR.1992.1564>`_
