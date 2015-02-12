@@ -68,11 +68,12 @@ To generate the FEM model, apply the following procedure:
 
 - select the Python file containing the FEM model (\*.py) : File' ==> 'Run Script'
 
-.. figure:: ./_pictures/fem_model.png
-   :scale: 50 %
-   :align: center
-   
-   *Figure 3 : FEM model of conical nanoindentation on a multilayer sample.*
+.. 
+	.. figure:: ./_pictures/fem_model.png
+	   :scale: 50 %
+	   :align: center
+	   
+	   *Figure 3 : FEM model of conical nanoindentation on a multilayer sample.*
    
 References
 ############
