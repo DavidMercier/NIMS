@@ -50,8 +50,9 @@ if ~isempty(scriptpath_multilayer_model)
     end
     
     % Definition of spherical part
-    r_ind = str2num(gui.data.indenter_tip_defect);
-    a_ind = str2num(gui.data.indenter_tip_angle);
+	% See Mesa B. "Spherical and rounded cone nano indenters" Micro Star Technologies
+	a_ind = str2num(gui.data.indenter_tip_angle);
+    r_ind = str2num(gui.data.indenter_tip_defect) / (1/(sind(a_ind)-1));
     y_trans = r_ind * (1 - sind(a_ind));
     x_trans = (((r_ind)^2)-((r_ind - y_trans)^2))^0.5;
     
