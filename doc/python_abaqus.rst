@@ -24,9 +24,8 @@ This singularity would imply an infinite stress at the contact interface.
 The radius :math:`R` of the spherical part is calculated from the tip defect :math:`h_{tip}`
 and the cone angle :math:`\alpha`, using the following equation.
 
-		.. math:: R = \frac{h_{tip}}{\frac{1}{sin\alpha - 1}}
-				:label: tip_radius
-
+	.. math:: R = \frac{h_{tip}}{\frac{1}{sin\alpha - 1}}
+			:label: tip_radius
 
 .. figure:: ./_pictures/conospherical_indenter.png
    :scale: 50 %
