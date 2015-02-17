@@ -15,17 +15,20 @@ and restricted boundaries conditions.
 Geometry of the (multilayer) sample
 -------------------------------------
 
+The length and the thickness of the bulk are calculated in function of
+the indentation depth.
+
+The layers are characterized by their thickness (:math:`t`).
+
+No delamination is allowed between the thin films and the substrate.
+
 Geometry of the indenter
 ---------------------------------
 
 The indenter is defined as a rigid cono-spherical indenter.
-A spherical part is defined to avoid the geometrical singularity at the apex of the perfect conical indenter.
-This singularity would imply an infinite stress at the contact interface.
-The radius :math:`R` of the spherical part is calculated from the tip defect :math:`h_{tip}`
-and the cone angle :math:`\alpha`, using the following equation.
-
-	.. math:: R = \frac{h_{tip}}{\frac{1}{sin(\alpha) - 1}}
-			:label: tip_radius
+A spherical part is defined to avoid the geometrical singularity at the apex of
+the perfect conical indenter (see Figure 1). This singularity would imply an
+infinite stress at the contact interface.
 
 .. figure:: ./_pictures/conospherical_indenter.png
    :scale: 50 %
@@ -33,26 +36,54 @@ and the cone angle :math:`\alpha`, using the following equation.
    
    *Figure 1 : Scheme of a cono-spherical indenter.*
 
+The radius :math:`R` of the spherical part is calculated from the tip defect :math:`h_{tip}`
+and the cone angle :math:`\alpha`, using the following equation.
+
+	.. math:: R = \frac{h_{tip}}{\frac{1}{sin(\alpha) - 1}}
+			:label: tip_radius
+
 Mesh
 ---------------------------------
 
+The multilayer sample is divided into solid elements with four nodes
+and axisymmetric deformation element CAX4 is adopted.
 
 Material properties
 ---------------------------------
 
+For each layers of the multilayer sample, the material properties
+(Young's modulus and Poisson's ratio) are defined using the inputs
+given by the user from the GUI. Material properties are considered
+by default to be isotropic. The density is set by default to 1.0.
 
 Contact definition
 ---------------------------------
 
+The contact is defined by default frictionless for the tangential
+behavior and hard for the normal behavior.
+
+The external surface of the indenter is defined as the "master"
+region and the top surface of the (multilayer) sample is defined as the "slave" region.
 
 Boundaries conditions
 ---------------------------------
+
+Nodes are constrained along the rotation axis from moving in the radial direction (:math:`x`).
+The nodes on the bottom surface of the sample are constrained along the radial axis
+from moving in the radial (:math:`x`) and vertical (:math:`z`) directions (see Figure 2).
+
+Indentation process is simulated by imposing a vertical displacement
+to the rigid indenter along the (:math:`z`) axis (see Figure 2).
+A value of 200nm for the indentation depth is set by default.
 
 .. figure:: ./_pictures/bc_fem_model.png
    :scale: 50 %
    :align: center
    
    *Figure 2 : Description of boundaries conditions.*
+
+..  warning::
+    Indentation displacement is given in nanometers and is negative.
 
 Generation of the Python script for ABAQUS
 #################################################
