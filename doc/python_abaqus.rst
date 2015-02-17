@@ -24,7 +24,7 @@ This singularity would imply an infinite stress at the contact interface.
 The radius :math:`R` of the spherical part is calculated from the tip defect :math:`h_{tip}`
 and the cone angle :math:`\alpha`, using the following equation.
 
-	.. math:: R = \frac{h_{tip}}{\frac{1}{sin\alpha - 1}}
+	.. math:: R = \frac{h_{tip}}{\frac{1}{sin(\alpha) - 1}}
 			:label: tip_radius
 
 .. figure:: ./_pictures/conospherical_indenter.png
@@ -36,11 +36,14 @@ and the cone angle :math:`\alpha`, using the following equation.
 Mesh
 ---------------------------------
 
+
 Material properties
 ---------------------------------
 
+
 Contact definition
 ---------------------------------
+
 
 Boundaries conditions
 ---------------------------------
@@ -63,9 +66,7 @@ The python script is saved in the folder where are your nanoindentation results.
 To generate the FEM model, apply the following procedure:
 
 - start ABAQUS
-
 - select the folder containing input files : 'File' ==> 'Set Work Directory...'
-
 - select the Python file containing the FEM model (\*.py) : File' ==> 'Run Script'
    
 References

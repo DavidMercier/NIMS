@@ -114,8 +114,8 @@ Indentation contact topography
 The indentation total depth is rarely equal to the indentation contact depth.
 Two kind of topography can occur:
 
-    - the pile-up (indentation contact depth > indentation total depth) (see Figure 3-a);
-    - the sink-in (indentation contact depth < indentation total depth) (see Figure 3-b).
+- the pile-up (indentation contact depth > indentation total depth) (see Figure 3-a);
+- the sink-in (indentation contact depth < indentation total depth) (see Figure 3-b).
 
 The flow of material below the indenter is function of mechanical properties of the material.
 
@@ -473,7 +473,7 @@ References
 .. [#Li_2002] `Li X. and Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications.", Mater. Characterization, 2002. <http://dx.doi.org/10.1016/S1044-5803(02)00192-4>`_
 .. [#Loubet_1984] `Loubet J.L. et al., "Vickers Indentation Curves of Magnesium Oxide (MgO).", J. Tribol. (1984) <http://dx.doi.org/10.1115/1.3260865>`_
 .. [#Loubet_1986] `Loubet J.L. et al., "Vickers indentation curves of elastoplastic materials." Microindentation Techniques in Materials Science and Engineering (1986). <http://dx.doi.org/10.1520/STP889-EB>`_
-.. [#Love_1939] `Love A.E.H., "Boussinesq’s problem for a rigid cone.", The Quarterly J. of Mathematics (1939). <http://dx.doi.org/10.1093/qmath/os-10.1.161>`_
+.. [#Love_1939] `Love A.E.H., "Boussinesq's problem for a rigid cone.", The Quarterly J. of Mathematics (1939). <http://dx.doi.org/10.1093/qmath/os-10.1.161>`_
 .. [#Lucas_1996] `Lucas B.N. et al., "Time Dependent Deformation During Indentation Testing.", MRS Proceedings (1996). <http://dx.doi.org/10.1557/PROC-436-233>`_
 .. [#Malzbender_2002] `Malzbender J. and de With G., "Indentation load–displacement curve, plastic deformation, and energy.", J. Mater. Res. (2002). <http://dx.doi.org/10.1557/JMR.2002.0070>`_
 .. [#Merle_2012] `Merle B. et al., "Experimental determination of the effective indenter shape and e-factor for nanoindentation by continuously measuring the unloading stiffness.", J. Mater. Res. (2012). <http://dx.doi.org/10.1557/jmr.2011.245>`_

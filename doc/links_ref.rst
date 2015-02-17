@@ -27,7 +27,7 @@ Material and indenters properties
 (Nano)Indentation models (conical indenters)
 ---------------------------------------------
 
-* `Love A.E.H., "Boussinesq’s problem for a rigid cone.", The Quarterly J. of Mathematics (1939). <http://dx.doi.org/10.1093/qmath/os-10.1.161>`_
+* `Love A.E.H., "Boussinesq's problem for a rigid cone.", The Quarterly J. of Mathematics (1939). <http://dx.doi.org/10.1093/qmath/os-10.1.161>`_
 * Galin L.A., "Spatial contact problems of the theory of elasticity for punches of circular shape in planar projection.", J. Appl. Math. Mech. (PMM) (1946), 10, pp. 425-448.
 * Bulychev S.I. et al., "Determining Young’s modulus from the indentor penetration diagram.", Zavod. Lab., 1973, 39, pp. 1137-1142.
 * Shorshorov M.K. et al., Sov. Phys. Dokl., 1982, 26.
