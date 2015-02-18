@@ -114,3 +114,5 @@ Finite Element Modelling of conical indentation of thin film(s) on a substrate
 * `Chen C., "2-D Finite Element Modeling for Nanoindentation and Fracture Stress Analysis." PhD thesis - University of South Florida (2009). <http://scholarcommons.usf.edu/etd/1897/>`_
 * `Moore S.W. et al., "Nanoindentation in elastoplastic materials: insights from numerical simulations." (2010). <http://dx.doi.org/10.1080/19475411003589889>`_
 * `Kibech S. et al., "Nanoindentation" (2014). <https://nanohub.org/resources/nanoindentation>`_
+* `Charleux L., "Abapy Documentation" <http://abapy.readthedocs.org/en/latest/index.html>`_
+* ABAQUS documentation
