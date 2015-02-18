@@ -37,22 +37,24 @@ if ~isempty(scriptpath_multilayer_model)
     t_sub = 2 * max([gui.data.t0, gui.data.t1, gui.data.t2]);
     t_f = [gui.data.t2, gui.data.t1, gui.data.t0, t_sub];
     
-    if gui.data.indenter_tip_defect == 0
-        gui.data.indenter_tip_defect = 0.1;
+    if str2num(gui.data.indenter_tip_defect) == 0
+        indenter_tip_defect = 0.1;
+    else
+        indenter_tip_defect = str2num(gui.data.indenter_tip_defect);
     end
     
-    if gui.data.indenter_tip_defect > t_sub + t_sub/2
-        wid = 2 * gui.data.indenter_tip_defect;
-        abaqus_sketch_sheet_size = 3 * gui.data.indenter_tip_defect;
+    if indenter_tip_defect > t_sub + t_sub/2
+        wid = 2 * indenter_tip_defect;
+        abaqus_sketch_sheet_size = 3 * indenter_tip_defect;
     else
         wid = 2 * (t_sub + t_sub/2);
         abaqus_sketch_sheet_size = 3 * (t_sub + t_sub/2);
     end
     
     % Definition of spherical part
-	% See Mesa B. "Spherical and rounded cone nano indenters" Micro Star Technologies
-	a_ind = str2num(gui.data.indenter_tip_angle);
-    r_ind = str2num(gui.data.indenter_tip_defect) / (1/(sind(a_ind)-1));
+    % See Mesa B. "Spherical and rounded cone nano indenters" Micro Star Technologies
+    a_ind = str2num(gui.data.indenter_tip_angle);
+    r_ind = indenter_tip_defect / ((1/(sind(a_ind)))-1);
     y_trans = r_ind * (1 - sind(a_ind));
     x_trans = (((r_ind)^2)-((r_ind - y_trans)^2))^0.5;
     
@@ -71,6 +73,9 @@ if ~isempty(scriptpath_multilayer_model)
         n_elem_y(ii) = t_f(ii) / x_min_elem;
         n_elem_x(ii) = round(n_elem_x_min);
     end
+    
+    % Definition of elements type
+    linear_elements = 0; % 0 for quadratic elements and 1 for linear elements
     
     % Definition of indentation displacement
     ind_disp = -200;
@@ -122,7 +127,8 @@ if ~isempty(scriptpath_multilayer_model)
     py{end+1} = sprintf('#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
     py{end+1} = sprintf('myModel = mdb.Model(name=''%s'')', strcat('multilayer_model_', datestr(datenum(clock),'yyyy-mm-dd')));
     py{end+1} = sprintf('indenter_used = ''%s''', gui.config.indenter.Indenter_ID);
-    py{end+1} = sprintf('r_ind = %s', gui.data.indenter_tip_defect);
+    py{end+1} = sprintf('h_ind = %f', indenter_tip_defect);
+    py{end+1} = sprintf('r_ind = %f', r_ind);
     py{end+1} = sprintf('a_ind = %s', gui.data.indenter_tip_angle);
     py{end+1} = sprintf('sheet_Size = %f', abaqus_sketch_sheet_size);
     py{end+1} = sprintf('step_Load = ''Loading''');
@@ -175,14 +181,14 @@ if ~isempty(scriptpath_multilayer_model)
     py{end+1} = sprintf('# MATERIALS');
     py{end+1} = sprintf('#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
     py{end+1} = sprintf('myModel.Material(name=''%s'')', char(gui.data.indenter_material));
-	py{end+1} = sprintf('myModel.materials[''%s''].Density(table=((1.0, ), ))',...
+    py{end+1} = sprintf('myModel.materials[''%s''].Density(table=((1.0, ), ))',char(gui.data.indenter_material));
     py{end+1} = sprintf('myModel.materials[''%s''].Elastic(temperatureDependency=False,table=((%f, %f), ))',...
-        char(gui.data.indenter_material), gui.data.indenter_material_ym*1e9, gui.data.indenter_material_pr);
+        char(gui.data.indenter_material), gui.data.indenter_material_ym, gui.data.indenter_material_pr);
     for ii = 1:gui.variables.num_thinfilm
         py{end+1} = sprintf('myModel.Material(name=''%s'')', strcat('Material_', num2str(ii)));
-		py{end+1} = sprintf('myModel.materials[''%s''].Density(table=((1.0, ), ))',...
+        py{end+1} = sprintf('myModel.materials[''%s''].Density(table=((1.0, ), ))',strcat('Material_', num2str(ii)));
         py{end+1} = sprintf('myModel.materials[''%s''].Elastic(temperatureDependency=False,table=((%f, %f), ))',...
-            strcat('Material_', num2str(ii)), E(ii), nu(ii));
+            strcat('Material_', num2str(ii)), E(ii)/1e9, nu(ii));
     end
     py{end+1} = sprintf('#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
     py{end+1} = sprintf('# SECTIONS');
@@ -257,6 +263,21 @@ if ~isempty(scriptpath_multilayer_model)
     for ii = 1:gui.variables.num_thinfilm
         py{end+1} = sprintf('partInstances =(a.instances[''%s''], )', strcat('Film_', num2str(ii)));
         py{end+1} = sprintf('a.generateMesh(regions=partInstances)');
+    end
+    t_ori = 0;
+    if linear_elements == 1
+        py{end+1} = sprintf('elemType1 = mesh.ElemType(elemCode=CAX4R, elemLibrary=STANDARD)'); % CAX4R: A 4-node bilinear axisymmetric quadrilateral, reduced integration, hourglass control.
+        py{end+1} = sprintf('elemType2 = mesh.ElemType(elemCode=CAX3, elemLibrary=STANDARD)'); % CAX3:  A 3-node linear axisymmetric triangle.
+    else
+        py{end+1} = sprintf('elemType1 = mesh.ElemType(elemCode=CAX8R, elemLibrary=STANDARD)'); % CAX8R: An 8-node biquadratic axisymmetric quadrilateral, reduced integration.
+        py{end+1} = sprintf('elemType2 = mesh.ElemType(elemCode=CAX6M, elemLibrary=STANDARD)'); % CAX6M: A 6-node modified quadratic axisymmetric triangle.
+    end
+    for ii = 1:gui.variables.num_thinfilm
+        py{end+1} = sprintf('f = a.instances[''%s''].faces', strcat('Film_', num2str(ii)));
+        py{end+1} = sprintf('faces = f.findAt(((%f, %f, 0.0), ))', wid/2, t_ori-t_f(ii)/2);
+        py{end+1} = sprintf('pickedRegions =(faces, )');
+        py{end+1} = sprintf('a.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2))');
+        t_ori = t_ori-t_f(ii);
     end
     py{end+1} = sprintf('#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
     py{end+1} = sprintf('# INTERACTIONS');
