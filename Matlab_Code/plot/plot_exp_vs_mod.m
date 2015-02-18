@@ -4,7 +4,7 @@ function plot_exp_vs_mod
 gui = guidata(gcf);
 
 %% Initialization
-set(gui.handles.MainWindows, 'CurrentAxes', gui.handles.AxisPlot_GUI);
+set(gui.MainWindows, 'CurrentAxes', gui.handles.AxisPlot_GUI);
 cla;
 gui.axis.legend_str = '';
 

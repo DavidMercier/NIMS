@@ -4,7 +4,7 @@ function plot_properties
 gui = guidata(gcf);
 
 %% Initialization
-set(gui.handles.MainWindows, 'CurrentAxes', gui.handles.AxisPlot_GUI);
+set(gui.MainWindows, 'CurrentAxes', gui.handles.AxisPlot_GUI);
 
 xlabel(gui.axis.xlabelstr, 'Color', [0,0,0], 'FontSize', 14);
 ylabel(gui.axis.ylabelstr, 'Color', [0,0,0], 'FontSize', 14);

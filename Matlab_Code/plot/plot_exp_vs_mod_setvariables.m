@@ -8,7 +8,7 @@ if gui.flag.flag_data == 0
     
     %% Initialization
 else
-    set(gui.handles.MainWindows, 'CurrentAxes', gui.handles.AxisPlot_GUI);
+    set(gui.MainWindows, 'CurrentAxes', gui.handles.AxisPlot_GUI);
     gui.axis.title_str = '';
     gui.axis.title_str = strcat('Max displacement = ', ...
         num2str(round(max(gui.data.h))), 'nm');
