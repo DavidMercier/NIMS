@@ -9,6 +9,9 @@ Finite Element Modelling (FEM) of conical indentation
 The present model is a simulation of the conical nanoindentation process,
 using the FEM software ABAQUS.
 
+The |matlab| function used to generate a Python script for ABAQUS is :
+`python_abaqus <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/fem/python4abaqus.m>`_
+
 The model is axisymmetric with a geometry dependent mesh
 and restricted boundaries conditions.
 
@@ -26,7 +29,7 @@ No delamination is allowed between thin films or between thin film and substrate
     Dimensions are in nm.
     
 .. figure:: ./_pictures/fem_model_geometry.png
-   :scale: 50 %
+   :scale: 20 %
    :align: center
    
    *Figure 1 : Geometry of the sample in the FEM model.*
@@ -129,7 +132,7 @@ To generate the FEM model in ABAQUS, apply the following procedure:
 - select and run the Python file containing the FEM model (\*.py) : File' ==> 'Run Script'
 
 ..  note::
-    Dimensions are in nm and Young's moduli are in GPa. Load is in nN.
+    Dimensions are in nm and Young's moduli are in GPa ==> Load is in nN.
    
 References
 ############
