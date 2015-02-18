@@ -44,12 +44,11 @@ if ~isempty(scriptpath_multilayer_model)
     end
     
     if indenter_tip_defect > t_sub + t_sub/2
-        wid = 2 * indenter_tip_defect;
-        abaqus_sketch_sheet_size = 3 * indenter_tip_defect;
+        wid = 3 * indenter_tip_defect;
     else
         wid = 2 * (t_sub + t_sub/2);
-        abaqus_sketch_sheet_size = 3 * (t_sub + t_sub/2);
     end
+    abaqus_sketch_sheet_size = wid;
     
     % Definition of spherical part
     % See Mesa B. "Spherical and rounded cone nano indenters" Micro Star Technologies
