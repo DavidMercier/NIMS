@@ -24,18 +24,24 @@ No delamination is allowed between thin films or between thin film and substrate
 
 ..  note::
     Dimensions are in nm.
+    
+.. figure:: ./_pictures/fem_model_geometry.png
+   :scale: 50 %
+   :align: center
+   
+   *Figure 1 : Geometry of the sample in the FEM model.*
 
 Geometry of the indenter
 ---------------------------------
 
 The indenter is defined as a rigid cono-spherical indenter.
-A spherical part is defined at the apex of the conical indenter (see Figure 1).
+A spherical part is defined at the apex of the conical indenter (see Figure 2).
 
 .. figure:: ./_pictures/conospherical_indenter.png
    :scale: 50 %
    :align: center
    
-   *Figure 1 : Scheme of a cono-spherical indenter.*
+   *Figure 2 : Scheme of a cono-spherical indenter.*
 
 The radius :math:`R` of the spherical part is calculated from the tip defect :math:`h_\text{tip}`
 and the cone angle :math:`\alpha`, using the following equation.
@@ -57,15 +63,15 @@ and axisymmetric deformation element CAX8R is adopted.
 
 It is possible to divide the sample into solid elements with four nodes
 and with axisymmetric deformation element CAX4R, by changing the value of the
-variable "linear_elements" in the Matlab function
-`"python_abaqus" <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/fem/python4abaqus.m>`
+variable "linear_elements" in the |matlab| function
+`python_abaqus <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/fem/python4abaqus.m>`_
 from 0 (quadratic elements) to 1 (linear elements).
 
 ..  note::
-    CAX4R: A 4-node bilinear axisymmetric quadrilateral, reduced integration, hourglass control.
-    CAX3:  A 3-node linear axisymmetric triangle.
-    CAX8R: An 8-node biquadratic axisymmetric quadrilateral, reduced integration.
-    CAX6M: A 6-node modified quadratic axisymmetric triangle.
+    * CAX4R: A 4-node bilinear axisymmetric quadrilateral, reduced integration, hourglass control.
+    * CAX3:  A 3-node linear axisymmetric triangle.
+    * CAX8R: An 8-node biquadratic axisymmetric quadrilateral, reduced integration.
+    * CAX6M: A 6-node modified quadratic axisymmetric triangle.
 
 Material properties
 ---------------------------------
@@ -76,7 +82,7 @@ given by the user from the GUI. Material properties are considered
 by default to be isotropic. The density is set by default to 1.0.
 
 ..  note::
-    Young's moduli are in GPa
+    Young's moduli are in GPa.
 
 Contact definition
 ---------------------------------
@@ -92,17 +98,17 @@ Boundaries conditions
 
 Nodes are constrained along the rotation axis from moving in the radial direction (:math:`x`).
 The nodes on the bottom surface of the sample are constrained along the radial axis
-from moving in the radial (:math:`x`) and vertical (:math:`z`) directions (see Figure 2).
+from moving in the radial (:math:`x`) and vertical (:math:`z`) directions (see Figure 3).
 
 Indentation process is simulated by imposing a vertical displacement
-to the rigid indenter along the (:math:`z`) axis (see Figure 2).
+to the rigid indenter along the (:math:`z`) axis (see Figure 3).
 A value of 200nm for the indentation depth is set by default.
 
-.. figure:: ./_pictures/bc_fem_model.png
+.. figure:: ./_pictures/fem_model_bc.png
    :scale: 50 %
    :align: center
    
-   *Figure 2 : Description of boundaries conditions.*
+   *Figure 3 : Description of boundaries conditions.*
 
 ..  warning::
     Indentation displacement is given in nanometers and is negative.
