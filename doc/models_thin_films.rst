@@ -254,7 +254,26 @@ the shear modulus and Poisson’s ratio of the film :
 
 Find here the |matlab| function for the Hay et al. function :
 `model_hay.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_hay.m>`_.
+
+Bull (2014) 
+-------------------
+This model is a simple method to determine the elastic modulus
+of a coating on a substrate using nanoindentation based on the
+load support of a truncated cone of material beneath the indenter [#Bull_2014]_.
+
+    .. math:: E = \frac{F_\text{c}}{2a_0\left(h_\text{c} + h_\text{s} \right)}
+            :label: bull_contact_modulus
             
+    .. math:: h_\text{c} = \frac{F_\text{c}}{\pi E_\text{c}} \left[ \frac{1}{a_0 tan\alpha} - \frac{1}{a_0 tan\alpha + t_\text{c} tan^2\alpha} \right]
+            :label: bull_disp_coating
+
+    .. math:: h_\text{s} = \frac{F_\text{c}}{\pi E_\text{s}} \left[ \frac{1}{a_0 tan\alpha + t_\text{c} tan^2\alpha} - \frac{1}{a_0 tan\alpha + (t_\text{c} + t_\text{s}) tan^2\alpha} \right]
+            :label: bull_disp_substrate
+
+Where :math:`E_\text{c}` and :math:`E_\text{s}` are the Young’s Modulus of the coating and
+substrate, :math:`t_\text{c}` and :math:`t_\text{s}` are the coating and substrate thickness,
+and :math:`\alpha` is the semi-angle of the cone material which supports the load. 
+
 Elastic properties of a thin film on a multilayer system
 ###############################################################
 
@@ -341,6 +360,7 @@ References
 -----------
 
 .. [#Bec_2006] `Bec S. et al., "Improvements in the indentation method with a surface force apparatus" (2006). <http://dx.doi.org/10.1080/01418619608239707>`_
+.. [#Bull_2014] `Bull S.J., "A simple method for the assessment of the contact modulus for coated systems.", (2014). <http://dx.doi.org/10.1080/14786435.2014.909612>`_
 .. [#Bückle_1961] Bückle H., "VDI Berichte" (1961).
 .. [#DoernerNix_1986] `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
 .. [#Gao_1992] `Gao H. et al., "Elastic contact versus indentation modeling of multi-layered materials" (1992). <http://dx.doi.org/10.1016/0020-7683(92)90004-D>`_
