@@ -11,7 +11,7 @@ To have more details about the use of the toolbox, please have a look to :
 
 .. code-block:: matlab
 
-   README.txt
+   Getting_started.txt
   
 How to use the GUI for indentation data analysis ?
 ####################################################
@@ -74,7 +74,7 @@ How to use the GUI for indentation data analysis ?
   and a `picture of the figure (.png format) <https://github.com/DavidMercier/nanoind-data-analysis/blob/master/Data_indentation/3films_Au-Ti-SiO2-Si_CSM-1nm.xls_Mercier%26al..yaml.png>`_
   are created and stored in the `following folder <https://github.com/DavidMercier/nanoind-data-analysis/tree/master/Data_indentation>`_.
 * Press the button 'FEM' and generate a `Python script <https://github.com/DavidMercier/nanoind-data-analysis/blob/master/Data_indentation/3films_Au-Ti-SiO2-Si_CSM-1nm.py>`_
-  to model nanoindentation of multilayer sample based on parameters used in the GUI for Abaqus.
+  to model nanoindentation of multilayer sample based on parameters used in the GUI for ABAQUS.
 
 .. figure:: ./_pictures/GUI_Main_Window_Esample_curve.png
    :scale: 40 %

@@ -21,7 +21,7 @@ With this Matlab toolbox, it is possible to :
     * calculate the energy of the loading (area below the load-displacement curve);
     * calculate the Young's modulus and hardness of bulk materials;
     * calculate the Young's modulus of thin films on a substrate (for a bilayer or a multilayer sample (until 3 layers on a substrate));
-    * generate Python script of axisymmetrical FEM model for use in Abaqus 6.12 (cono-spherical indentation of multilayer sample).
+    * generate Python script of axisymmetrical FEM model for use in ABAQUS 6.12 (cono-spherical indentation of multilayer sample).
 
 .. figure:: ./_pictures/download.png
    :scale: 20 %
@@ -81,5 +81,5 @@ and to M. Verdier from `SIMaP <http://simap.grenoble-inp.fr/>`_
 Keywords
 ==========
 
-|matlab| toolbox ; nanoindentation ; conical indenter; Young's modulus ; hardness ; 
+|matlab| toolbox ; nanoindentation ; conical indenter ; Young's modulus ; hardness ; 
 thin film ; multilayer system ; analytical model ; python script ; finite element modelling.

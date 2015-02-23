@@ -15,7 +15,7 @@ This Matlab toolbox has been developed to :
 - Energy of the loading (area below the load-displacement curve); 
 - Young's modulus and Hardness of bulk materials; 
 - Young's modulus of thin films on a substrate (for a bilayer or a multilayer sample (3 layers on a substrate)); 
-- Generate Python script for FEM simulation of indentation test on multilayer sample with Abaqus.
+- Generate Python script for FEM simulation of indentation test on multilayer sample with ABAQUS 6.12.
 
 Author
 ------

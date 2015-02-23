@@ -1,9 +1,9 @@
 First, unzip the downloaded file and follow the instructions :
 
-1) Update the YAML configuration file (in the YAML folder) and write in this file the properties
-of your indenters and the search path.
+1) Update the "indenters_config.yaml" file in the YAML folder and write in this file
+the properties of your indenters. Update the default search path in "data_config.yaml".
 
-2) Run into Matlab the script : GUI_Extraction_EP_properties_for_multilayer_sample.m
+2) Run into Matlab the script : demo.m
 
 3) Answer "yes" to the 1st question in the Command Window of Matlab,
 in order to add the above folder with subfolders to the matlab search path.
@@ -24,7 +24,7 @@ from MTS software - Analyst (with a 'Hold Segment Type')
 
 7) Set the number of thin films (1 to 3) deposited on your substrate (bulk material).
 
-8) Then, set thin films properties
+8) Then, set thin films properties (thickness, Poisson's ratio, Young's modulus...)
 
 9) Select corrections to apply to your data and the model to use for contact displacement calculation.
 
@@ -46,7 +46,7 @@ are given for the plot of load vs. displacement.
 (in same the folder as the folder where the indentation data are stored),
 by pressing the button 'Save', when Young's modulus calculation is performed.
 
-15) Finally, press the button FEM to generate a Python script to model indentation of multilayer sample with Abaqus. 
+15) Finally, press the button 'FEM' to generate a Python script to model indentation of multilayer sample with ABAQUS 6.12. 
 
 Format of the name of the YAML file : 'data_name / multi- or bilayer model / .yaml'
 
@@ -54,7 +54,9 @@ Format of the name of the .png picture : 'data_name / multi- or bilayer model / 
 
 %% Links %%
 
-Matlab Central : http://www.mathworks.fr/matlabcentral/fileexchange/43392-davidmercier-nanoind-data-analysis
+Matlab Central : http://fr.mathworks.com/matlabcentral/fileexchange/43392-davidmercier-nims
+
+GitHub : https://github.com/DavidMercier/NIMS
 
 YAML Matlab code : http://code.google.com/p/yamlmatlab/
 
