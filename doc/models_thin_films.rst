@@ -264,14 +264,14 @@ load support of a truncated cone of material beneath the indenter [#Bull_2014]_.
     .. math:: E = \frac{F_\text{c}}{2a_0\left(h_\text{c} + h_\text{s} \right)}
             :label: bull_contact_modulus
             
-    .. math:: h_\text{c} = \frac{F_\text{c}}{\pi E_\text{c}} \left[ \frac{1}{a_0 tan\alpha} - \frac{1}{a_0 tan\alpha + t_\text{c} tan^2\alpha} \right]
+    .. math:: h_\text{c} = \frac{F_\text{c}}{\pi E_\text{f}} \left[ \frac{1}{a_0 tan\alpha} - \frac{1}{a_0 tan\alpha + t_\text{f} tan^2\alpha} \right]
             :label: bull_disp_coating
 
-    .. math:: h_\text{s} = \frac{F_\text{c}}{\pi E_\text{s}} \left[ \frac{1}{a_0 tan\alpha + t_\text{c} tan^2\alpha} - \frac{1}{a_0 tan\alpha + (t_\text{c} + t_\text{s}) tan^2\alpha} \right]
+    .. math:: h_\text{s} = \frac{F_\text{c}}{\pi E_\text{s}} \left[ \frac{1}{a_0 tan\alpha + t_\text{f} tan^2\alpha} - \frac{1}{a_0 tan\alpha + (t_\text{f} + t_\text{s}) tan^2\alpha} \right]
             :label: bull_disp_substrate
 
-Where :math:`E_\text{c}` and :math:`E_\text{s}` are the Young’s Modulus of the coating and
-substrate, :math:`t_\text{c}` and :math:`t_\text{s}` are the coating and substrate thickness,
+Where :math:`E_\text{f}` and :math:`E_\text{s}` are the Young’s Modulus of the coating and
+substrate, :math:`t_\text{f}` and :math:`t_\text{s}` are the coating and substrate thickness,
 and :math:`\alpha` is the semi-angle of the cone material which supports the load. 
 
 Elastic properties of a thin film on a multilayer system
@@ -308,7 +308,12 @@ Thus, the Young’s modulus of the film can be calculated as :
    :align: center
    
    *Figure 2 : Schematic of elastic multilayer model.*
-   
+
+It is advised to perform nanoindentation tests on each layer of the multilayer sample,
+from the substrate up to the final stack of layers (see Figure 3). By successive iterations using
+the model of Mercier et al., values of Young's modulus of each layer are extracted
+from the contact stiffness.
+
 .. figure:: ./_pictures/multilayer_sample_methodology.png
    :scale: 30 %
    :align: center
