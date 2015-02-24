@@ -155,6 +155,7 @@ References
 * `Bressan J.D. et al., "Modeling of nanoindentation of bulk and thin film by finite element method." (2005). <http://dx.doi.org/10.1016/j.wear.2004.05.021>`_
 * `Pelletier H. et al., "Characterization of mechanical properties of thin films using nanoindentation test." (2006) <http://dx.doi.org/10.1016/j.mechmat.2006.02.011>`_
 * `Xu H., "A Finite Element Study of the Contact Stiffness of Homogenous Materials and Thin Films." PhD thesis - University of Tennessee - Knoxville (2007) <http://etd.utk.edu/2007/XuHaitao.pdf>`_
+* `Chen S.H. et al., "Small scale, grain size and substrate effects in nano-indentation experiment of film–substrate systems." (2007). <http://dx.doi.org/10.1016/j.ijsolstr.2006.11.033>`_
 * `Huang X. and Pelegri A.A., "Finite element analysis on nanoindentation with friction contact at the film/substrate interface." (2007). <http://dx.doi.org/10.1016/j.compscitech.2006.10.005>`_
 * `Pelegri A.A. and Huang X., "Nanoindentation on soft film/hard substrate and hard film/soft substrate material systems with finite element analysis." (2008). <http://dx.doi.org/10.1016/j.compscitech.2007.05.033>`_
 * `Wittler O. et al., "Mechanical characterisation of thin metal layers by modelling of the nanoindentation experiment." (2008). <http://dx.doi.org/10.1109/ESTC.2008.4684488>`_
