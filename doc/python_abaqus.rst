@@ -70,7 +70,7 @@ and axisymmetric deformation element CAX8R is adopted.
 It is possible to divide the sample into solid elements with four nodes
 and with axisymmetric deformation element CAX4R, by changing the value of the
 variable "linear_elements" in the |matlab| function
-`python_abaqus <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/fem/python4abaqus.m>`_
+`python4abaqus <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/fem/python4abaqus.m>`_
 from 0 (quadratic elements) to 1 (linear elements).
 
 ..  note::
