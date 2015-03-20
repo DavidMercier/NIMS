@@ -9,12 +9,18 @@ You can start the launcher by typing "demo" at the Matlab command prompt.
 
 Features
 --------
-This Matlab toolbox has been developed to : 
-- Plot and Analyze nanoindentation dataset; 
-- Coefficient of the power law fit of the load-displacement curve; 
-- Energy of the loading (area below the load-displacement curve); 
-- Young's modulus and Hardness of bulk materials; 
-- Young's modulus of thin films on a substrate (for a bilayer or a multilayer sample (3 layers on a substrate)); 
+This Matlab toolbox has been developed to :
+
+- Plot and Analyze nanoindentation dataset;
+
+- Coefficient of the power law fit of the load-displacement curve;
+
+- Energy of the loading (area below the load-displacement curve);
+
+- Young's modulus and Hardness of bulk materials;
+
+- Young's modulus of thin films on a substrate (for a bilayer or a multilayer sample (3 layers on a substrate));
+
 - Generate Python script for FEM simulation of indentation test on multilayer sample with ABAQUS 6.12.
 
 Author
@@ -34,12 +40,15 @@ Reference paper
 ----------------
 "Young’s modulus measurement of a thin film from experimental nanoindentation performed on multilayer systems"
 D. Mercier et al., Matériaux & Techniques (2011) - 99(11)
+
 http://www.mattech-journal.org/articles/mattech/abs/2011/02/mt110025/mt110025.html
 
 Acknowledgements
 ----------------
 The author is grateful to V. Mandrillon from CEA Grenoble and to M. Verdier from SIMaP.
+
 CEA: http://www.cea.fr/le-cea/les-centres-cea/grenoble
+
 SIMaP: http://simap.grenoble-inp.fr
 
 Keywords
