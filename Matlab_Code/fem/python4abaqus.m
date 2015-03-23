@@ -173,8 +173,13 @@ if ~isempty(scriptpath_multilayer_model)
         py{end+1} = sprintf('p.BaseShell(sketch=s)');
         py{end+1} = sprintf('s.unsetPrimaryObject()');
         py{end+1} = sprintf('p = myModel.parts[''%s'']', strcat('Film_', num2str(num_film)));
-        py{end+1} = sprintf('session.viewports[''Viewport: 1''].setValues(displayedObject=p)');
-        py{end+1} = sprintf('del myModel.sketches[''__profile__'']');
+        py{end+1} = sprintf('s = p.edges');
+        py{end+1} = sprintf('side1Edges = s.findAt(((%f, %f, 0.0), ))', wid/2, t_ori);
+        py{end+1} = sprintf('p.Surface(side1Edges=side1Edges, name=''Surf-Top'')');
+        py{end+1} = sprintf('side1Edges = s.findAt(((%f, %f, 0.0), ))', wid/2, t_ori-t_f(ii));
+        py{end+1} = sprintf('p.Surface(side1Edges=side1Edges, name=''Surf-Bottom'')');
+        py{end+1} = sprintf('a = myModel.rootAssembly');
+        py{end+1} = sprintf('a.regenerate()');
         t_ori = t_ori - t_f(ii);
         num_film = num_film - 1;
     end
@@ -287,23 +292,35 @@ if ~isempty(scriptpath_multilayer_model)
         num_film = num_film - 1;
     end
     py{end+1} = sprintf('#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
-    py{end+1} = sprintf('# INTERACTIONS');
+    py{end+1} = sprintf('# INTERACTIONS INDENTER-FILM');
     py{end+1} = sprintf('#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
-    py{end+1} = sprintf('myModel.ContactProperty(''%s'')', strcat('Indenter-Film'));
-    py{end+1} = sprintf('myModel.interactionProperties[''%s''].TangentialBehavior(formulation=FRICTIONLESS)', strcat('Indenter-Film'));
-    py{end+1} = sprintf('myModel.interactionProperties[''%s''].NormalBehavior(pressureOverclosure=HARD, allowSeparation=OFF, constraintEnforcementMethod=DEFAULT)', strcat('Indenter-Film'));
-    py{end+1} = sprintf('session.viewports[''Viewport: 1''].assemblyDisplay.setValues(mesh=OFF, interactions=ON, constraints=ON, connectors=ON, engineeringFeatures=ON)');
-    py{end+1} = sprintf('session.viewports[''Viewport: 1''].assemblyDisplay.meshOptions.setValues(meshTechnique=OFF)');
+    py{end+1} = sprintf('myModel.ContactProperty(''Indenter-Film'')');
+    py{end+1} = sprintf('myModel.interactionProperties[''Indenter-Film''].TangentialBehavior(formulation=FRICTIONLESS)');
+    py{end+1} = sprintf('myModel.interactionProperties[''Indenter-Film''].NormalBehavior(pressureOverclosure=HARD, allowSeparation=OFF, constraintEnforcementMethod=DEFAULT)');
     py{end+1} = sprintf('a = myModel.rootAssembly');
     py{end+1} = sprintf('s1 = a.instances[indenter_used].edges');
     py{end+1} = sprintf('side2Edges1 = s1.findAt(((%f, %f, 0.0), ))', x_trans, y_trans);
     py{end+1} = sprintf('region1=regionToolset.Region(side2Edges=side2Edges1)');
-    py{end+1} = sprintf('a = myModel.rootAssembly');
     py{end+1} = sprintf('s1 = a.instances[''%s''].edges', strcat('Film_', num2str(gui.variables.num_thinfilm)));
     py{end+1} = sprintf('side1Edges1 = s1.findAt(((%f, 0.0, 0.0), ))', wid/2);
     py{end+1} = sprintf('region2=regionToolset.Region(side1Edges=side1Edges1)');
-    py{end+1} = sprintf('myModel.SurfaceToSurfaceContactStd(name=''%s'', createStepName=step_Load, master=region1, slave=region2, sliding=FINITE, thickness=ON, interactionProperty=''%s'', adjustMethod=NONE, initialClearance=OMIT, datumAxis=None, clearanceRegion=None)',...
-        strcat('Interaction_Indenter-Film'), strcat('Indenter-Film'));
+    py{end+1} = sprintf('myModel.SurfaceToSurfaceContactStd(name=''%s'', createStepName=step_Load, master=region1, slave=region2, sliding=FINITE, thickness=ON, interactionProperty=''Indenter-Film'', adjustMethod=NONE, initialClearance=OMIT, datumAxis=None, clearanceRegion=None)',...
+        strcat('Interaction_Indenter-Film'));
+    py{end+1} = sprintf('#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
+    py{end+1} = sprintf('# INTERACTIONS FILM-FILM');
+    py{end+1} = sprintf('#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
+    py{end+1} = sprintf('myModel.ContactProperty(''Film-Film'')');
+    py{end+1} = sprintf('myModel.interactionProperties[''Film-Film''].TangentialBehavior(formulation=ROUGH)');
+    py{end+1} = sprintf('myModel.interactionProperties[''Film-Film''].NormalBehavior(pressureOverclosure=HARD, allowSeparation=OFF, constraintEnforcementMethod=DEFAULT)');
+    num_film = gui.variables.num_thinfilm;
+    for ii = 1:num_film-1
+        py{end+1} = sprintf('a = myModel.rootAssembly');
+        py{end+1} = sprintf('region1=a.instances[''%s''].surfaces[''Surf-Bottom'']', strcat('Film_', num2str(num_film)));
+        py{end+1} = sprintf('region2=a.instances[''%s''].surfaces[''Surf-Top'']', strcat('Film_', num2str(num_film - 1)));
+        py{end+1} = sprintf('myModel.SurfaceToSurfaceContactStd(name=''%s'', createStepName=step_Load, master=region1, slave=region2, sliding=FINITE, thickness=ON, interactionProperty=''Film-Film'', adjustMethod=NONE, initialClearance=OMIT, datumAxis=None, clearanceRegion=None)',...
+            strcat('Interaction_Film',num2str(num_film),'-Film', num2str(num_film-1)));
+        num_film = num_film - 1;
+    end   
     py{end+1} = sprintf('#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
     py{end+1} = sprintf('# BOUNDARIES CONDITIONS');
     py{end+1} = sprintf('#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
@@ -323,7 +340,7 @@ if ~isempty(scriptpath_multilayer_model)
     py{end+1} = sprintf('e1 = a.instances[''Film_1''].edges');
     py{end+1} = sprintf('edges1 = e1.findAt(((%f, %f, 0.0), ))', wid/2, t_ori);
     py{end+1} = sprintf('region = regionToolset.Region(edges=edges1)');
-    py{end+1} = sprintf('myModel.DisplacementBC(name=''BC_Film_1_2'', createStepName=step_Load, region=region, u1=0.0, u2=0.0, ur3=0.0, amplitude=UNSET, fixed=OFF, distributionType=UNIFORM, fieldName='''', localCsys=None)');
+    py{end+1} = sprintf('myModel.DisplacementBC(name=''BC_Film_1_2'', createStepName=step_Load, region=region, u1=0.0, u2=0.0, ur3=UNSET, amplitude=UNSET, fixed=OFF, distributionType=UNIFORM, fieldName='''', localCsys=None)');
     py{end+1} = sprintf('# -------------------------------------------------------------------------------------------------------------------');
     py{end+1} = sprintf('# Indentation displacement');
     py{end+1} = sprintf('r1 = a.instances[indenter_used].referencePoints');
