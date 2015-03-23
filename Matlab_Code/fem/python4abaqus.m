@@ -316,15 +316,14 @@ if ~isempty(scriptpath_multilayer_model)
         py{end+1} = sprintf('edges1 = e1.findAt(((0.0, %f, 0.0), ))', t_ori-t_f(ii)/2);
         py{end+1} = sprintf('region = regionToolset.Region(edges=edges1)');
         py{end+1} = sprintf('myModel.DisplacementBC(name=''%s'', createStepName=step_Load, region=region, u1=0.0, u2=UNSET, ur3=UNSET, amplitude=UNSET, fixed=OFF, distributionType=UNIFORM, fieldName='''', localCsys=None)', ...
-            strcat('BC_Film_', num2str(ii)));
+            strcat('BC_Film_', num2str(num_film)));
         t_ori = t_ori-t_f(ii);
         num_film = num_film - 1;
     end
     py{end+1} = sprintf('e1 = a.instances[''Film_1''].edges');
     py{end+1} = sprintf('edges1 = e1.findAt(((%f, %f, 0.0), ))', wid/2, t_ori);
     py{end+1} = sprintf('region = regionToolset.Region(edges=edges1)');
-    py{end+1} = sprintf('myModel.DisplacementBC(name=''%s'', createStepName=step_Load, region=region, u1=0.0, u2=0.0, ur3=0.0, amplitude=UNSET, fixed=OFF, distributionType=UNIFORM, fieldName='''', localCsys=None)', ...
-        strcat('BC_Film_', num2str(ii), '_2'));
+    py{end+1} = sprintf('myModel.DisplacementBC(name=''BC_Film_1_2'', createStepName=step_Load, region=region, u1=0.0, u2=0.0, ur3=0.0, amplitude=UNSET, fixed=OFF, distributionType=UNIFORM, fieldName='''', localCsys=None)');
     py{end+1} = sprintf('# -------------------------------------------------------------------------------------------------------------------');
     py{end+1} = sprintf('# Indentation displacement');
     py{end+1} = sprintf('r1 = a.instances[indenter_used].referencePoints');
