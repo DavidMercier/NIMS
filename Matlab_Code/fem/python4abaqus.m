@@ -158,7 +158,8 @@ if ~isempty(scriptpath_multilayer_model)
     py{end+1} = sprintf('# -------------------------------------------------------------------------------------------------------------------');
     py{end+1} = sprintf('# Multilayer sample');
     t_ori = 0;
-    for ii = 1:gui.variables.num_thinfilm
+    num_film = gui.variables.num_thinfilm;
+    for ii = 1:num_film
         py{end+1} = sprintf('s = myModel.ConstrainedSketch(name=''__profile__'', sheetSize=sheet_Size)');
         py{end+1} = sprintf('g, v, d, c = s.geometry, s.vertices, s.dimensions, s.constraints');
         py{end+1} = sprintf('s.sketchOptions.setValues(viewStyle=AXISYM)');
@@ -167,14 +168,15 @@ if ~isempty(scriptpath_multilayer_model)
         py{end+1} = sprintf('s.FixedConstraint(entity=g[2])');
         py{end+1} = sprintf('s.rectangle(point1=(0.0, %f), point2=(%f, %f))', t_ori, wid, t_ori-t_f(ii));
         py{end+1} = sprintf('s.CoincidentConstraint(entity1=v[0], entity2=g[2], addUndoState=False)');
-        py{end+1} = sprintf('p = myModel.Part(name=''%s'', dimensionality=AXISYMMETRIC, type=DEFORMABLE_BODY)', strcat('Film_', num2str(ii)));
-        py{end+1} = sprintf('p = myModel.parts[''%s'']', strcat('Film_', num2str(ii)));
+        py{end+1} = sprintf('p = myModel.Part(name=''%s'', dimensionality=AXISYMMETRIC, type=DEFORMABLE_BODY)', strcat('Film_', num2str(num_film)));
+        py{end+1} = sprintf('p = myModel.parts[''%s'']', strcat('Film_', num2str(num_film)));
         py{end+1} = sprintf('p.BaseShell(sketch=s)');
         py{end+1} = sprintf('s.unsetPrimaryObject()');
-        py{end+1} = sprintf('p = myModel.parts[''%s'']', strcat('Film_', num2str(ii)));
+        py{end+1} = sprintf('p = myModel.parts[''%s'']', strcat('Film_', num2str(num_film)));
         py{end+1} = sprintf('session.viewports[''Viewport: 1''].setValues(displayedObject=p)');
         py{end+1} = sprintf('del myModel.sketches[''__profile__'']');
         t_ori = t_ori - t_f(ii);
+        num_film = num_film - 1;
     end
     py{end+1} = sprintf('#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
     py{end+1} = sprintf('# MATERIALS');
@@ -199,17 +201,19 @@ if ~isempty(scriptpath_multilayer_model)
     end
     py{end+1} = sprintf('myModel.rootAssembly.regenerate()');
     t_ori = 0;
-    for ii = 1:gui.variables.num_thinfilm
-        py{end+1} = sprintf('p = myModel.parts[''%s'']', strcat('Film_', num2str(ii)));
+    num_film = gui.variables.num_thinfilm;
+    for ii = 1:num_film
+        py{end+1} = sprintf('p = myModel.parts[''%s'']', strcat('Film_', num2str(num_film)));
         py{end+1} = sprintf('session.viewports[''Viewport: 1''].setValues(displayedObject=p)');
-        py{end+1} = sprintf('p = myModel.parts[''%s'']', strcat('Film_', num2str(ii)));
+        py{end+1} = sprintf('p = myModel.parts[''%s'']', strcat('Film_', num2str(num_film)));
         py{end+1} = sprintf('f = p.faces');
         py{end+1} = sprintf('faces = f.findAt(((%f, %f, 0.0), ))', wid/2, t_ori - t_f(ii)/2);
-        py{end+1} = sprintf('region = p.Set(faces=faces, name=''%s'')', strcat('Set_', num2str(ii)));
-        py{end+1} = sprintf('p = myModel.parts[''%s'']', strcat('Film_', num2str(ii)));
+        py{end+1} = sprintf('region = p.Set(faces=faces, name=''Set_1'')');
+        py{end+1} = sprintf('p = myModel.parts[''%s'']', strcat('Film_', num2str(num_film)));
         py{end+1} = sprintf('p.SectionAssignment(region=region, sectionName=''%s'', offset=0.0, offsetType=MIDDLE_SURFACE, offsetField='''', thicknessAssignment=FROM_SECTION)',...
-            strcat('Section_material_', num2str(ii)));
+            strcat('Section_material_', num2str(num_film)));
         t_ori = t_ori - t_f(ii);
+        num_film = num_film - 1;
     end
     py{end+1} = sprintf('#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
     py{end+1} = sprintf('# ASSEMBLY');
@@ -240,8 +244,9 @@ if ~isempty(scriptpath_multilayer_model)
     py{end+1} = sprintf('session.viewports[''Viewport: 1''].assemblyDisplay.meshOptions.setValues(meshTechnique=ON)');
     py{end+1} = sprintf('a = myModel.rootAssembly');
     t_ori = 0;
-    for ii = 1:gui.variables.num_thinfilm
-        py{end+1} = sprintf('e%s = a.instances[''%s''].edges', num2str(ii), strcat('Film_', num2str(ii)));
+    num_film = gui.variables.num_thinfilm;
+    for ii = 1:num_film
+        py{end+1} = sprintf('e%s = a.instances[''%s''].edges', num2str(ii), strcat('Film_', num2str(num_film)));
         py{end+1} = sprintf('pickedEdges = e%s.findAt(((0.0, %f, 0.0), ))', num2str(ii), t_ori-t_f(ii)/2);
         py{end+1} = sprintf('a.seedEdgeByNumber(edges=pickedEdges, number=int(%f), constraint=FINER)', n_elem_y(ii));
         py{end+1} = sprintf('pickedEdges = e%s.findAt(((%f, %f, 0.0), ))', num2str(ii), wid, t_ori-t_f(ii)/2);
@@ -252,10 +257,11 @@ if ~isempty(scriptpath_multilayer_model)
         %py{end+1} = sprintf('a.seedEdgeByBias(biasMethod=SINGLE, end1Edges=pickedEdges, ratio=5.0, number=int(%f), constraint=FINER))', n_elem_x(ii));
         %py{end+1} = sprintf('a.seedEdgeByBias(biasMethod=SINGLE, end2Edges=pickedEdges, ratio=5.0, number=int(%f), constraint=FINER))', n_elem_x(ii));
         %py{end+1} = sprintf('a.seedEdgeByBias(biasMethod=DOUBLE, endEdges=pickedEndEdges, ratio=5.0, number=int(%f), constraint=FINER))', n_elem_x(ii));
-        py{end+1} = sprintf('f = a.instances[''%s''].faces', strcat('Film_', num2str(ii)));
+        py{end+1} = sprintf('f = a.instances[''%s''].faces', strcat('Film_', num2str(num_film)));
         py{end+1} = sprintf('pickedRegions = f.findAt(((%f, %f, 0.0), ))', wid/2, t_ori-t_f(ii)/2);
         py{end+1} = sprintf('a.setMeshControls(regions=pickedRegions, elemShape=QUAD_DOMINATED)'); %TRI or QUAD
         t_ori = t_ori-t_f(ii);
+        num_film = num_film - 1;
     end
     py{end+1} = sprintf('pickedEdges = e%s.findAt(((%f, %f, 0.0), ))', num2str(gui.variables.num_thinfilm), wid/2, t_ori);
     py{end+1} = sprintf('a.seedEdgeByNumber(edges=pickedEdges, number=int(%f), constraint=FINER)', n_elem_x(ii));
@@ -271,19 +277,21 @@ if ~isempty(scriptpath_multilayer_model)
         py{end+1} = sprintf('elemType1 = mesh.ElemType(elemCode=CAX8R, elemLibrary=STANDARD)'); % CAX8R: An 8-node biquadratic axisymmetric quadrilateral, reduced integration.
         py{end+1} = sprintf('elemType2 = mesh.ElemType(elemCode=CAX6M, elemLibrary=STANDARD)'); % CAX6M: A 6-node modified quadratic axisymmetric triangle.
     end
-    for ii = 1:gui.variables.num_thinfilm
-        py{end+1} = sprintf('f = a.instances[''%s''].faces', strcat('Film_', num2str(ii)));
+    num_film = gui.variables.num_thinfilm;
+    for ii = 1:num_film
+        py{end+1} = sprintf('f = a.instances[''%s''].faces', strcat('Film_', num2str(num_film)));
         py{end+1} = sprintf('faces = f.findAt(((%f, %f, 0.0), ))', wid/2, t_ori-t_f(ii)/2);
         py{end+1} = sprintf('pickedRegions =(faces, )');
         py{end+1} = sprintf('a.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2))');
         t_ori = t_ori-t_f(ii);
+        num_film = num_film - 1;
     end
     py{end+1} = sprintf('#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
     py{end+1} = sprintf('# INTERACTIONS');
     py{end+1} = sprintf('#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
-    py{end+1} = sprintf('myModel.ContactProperty(''%s'')', strcat('Indenter-Film_1'));
-    py{end+1} = sprintf('myModel.interactionProperties[''%s''].TangentialBehavior(formulation=FRICTIONLESS)', strcat('Indenter-Film_1'));
-    py{end+1} = sprintf('myModel.interactionProperties[''%s''].NormalBehavior(pressureOverclosure=HARD, allowSeparation=OFF, constraintEnforcementMethod=DEFAULT)', strcat('Indenter-Film_1'));
+    py{end+1} = sprintf('myModel.ContactProperty(''%s'')', strcat('Indenter-Film'));
+    py{end+1} = sprintf('myModel.interactionProperties[''%s''].TangentialBehavior(formulation=FRICTIONLESS)', strcat('Indenter-Film'));
+    py{end+1} = sprintf('myModel.interactionProperties[''%s''].NormalBehavior(pressureOverclosure=HARD, allowSeparation=OFF, constraintEnforcementMethod=DEFAULT)', strcat('Indenter-Film'));
     py{end+1} = sprintf('session.viewports[''Viewport: 1''].assemblyDisplay.setValues(mesh=OFF, interactions=ON, constraints=ON, connectors=ON, engineeringFeatures=ON)');
     py{end+1} = sprintf('session.viewports[''Viewport: 1''].assemblyDisplay.meshOptions.setValues(meshTechnique=OFF)');
     py{end+1} = sprintf('a = myModel.rootAssembly');
@@ -291,36 +299,38 @@ if ~isempty(scriptpath_multilayer_model)
     py{end+1} = sprintf('side2Edges1 = s1.findAt(((%f, %f, 0.0), ))', x_trans, y_trans);
     py{end+1} = sprintf('region1=regionToolset.Region(side2Edges=side2Edges1)');
     py{end+1} = sprintf('a = myModel.rootAssembly');
-    py{end+1} = sprintf('s1 = a.instances[''%s''].edges', 'Film_1');
+    py{end+1} = sprintf('s1 = a.instances[''%s''].edges', strcat('Film_', num2str(gui.variables.num_thinfilm)));
     py{end+1} = sprintf('side1Edges1 = s1.findAt(((%f, 0.0, 0.0), ))', wid/2);
     py{end+1} = sprintf('region2=regionToolset.Region(side1Edges=side1Edges1)');
     py{end+1} = sprintf('myModel.SurfaceToSurfaceContactStd(name=''%s'', createStepName=step_Load, master=region1, slave=region2, sliding=FINITE, thickness=ON, interactionProperty=''%s'', adjustMethod=NONE, initialClearance=OMIT, datumAxis=None, clearanceRegion=None)',...
-        strcat('Interaction_Indenter-Film_1'), strcat('Indenter-Film_1'));
+        strcat('Interaction_Indenter-Film'), strcat('Indenter-Film'));
     py{end+1} = sprintf('#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
     py{end+1} = sprintf('# BOUNDARIES CONDITIONS');
     py{end+1} = sprintf('#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
     py{end+1} = sprintf('session.viewports[''Viewport: 1''].assemblyDisplay.setValues(loads=ON, bcs=ON, predefinedFields=ON, interactions=OFF, constraints=OFF, connectors=ON, engineeringFeatures=OFF)');
     py{end+1} = sprintf('a = myModel.rootAssembly');
     t_ori = 0;
-    for ii = 1:gui.variables.num_thinfilm
-        py{end+1} = sprintf('e1 = a.instances[''%s''].edges', strcat('Film_', num2str(ii)));
+    num_film = gui.variables.num_thinfilm;
+    for ii = 1:num_film
+        py{end+1} = sprintf('e1 = a.instances[''%s''].edges', strcat('Film_', num2str(num_film)));
         py{end+1} = sprintf('edges1 = e1.findAt(((0.0, %f, 0.0), ))', t_ori-t_f(ii)/2);
         py{end+1} = sprintf('region = regionToolset.Region(edges=edges1)');
         py{end+1} = sprintf('myModel.DisplacementBC(name=''%s'', createStepName=step_Load, region=region, u1=0.0, u2=UNSET, ur3=UNSET, amplitude=UNSET, fixed=OFF, distributionType=UNIFORM, fieldName='''', localCsys=None)', ...
             strcat('BC_Film_', num2str(ii)));
         t_ori = t_ori-t_f(ii);
+        num_film = num_film - 1;
     end
-    py{end+1} = sprintf('e1 = a.instances[''%s''].edges', strcat('Film_', num2str(gui.variables.num_thinfilm)));
+    py{end+1} = sprintf('e1 = a.instances[''Film_1''].edges');
     py{end+1} = sprintf('edges1 = e1.findAt(((%f, %f, 0.0), ))', wid/2, t_ori);
     py{end+1} = sprintf('region = regionToolset.Region(edges=edges1)');
-    py{end+1} = sprintf('myModel.DisplacementBC(name=''%s'', createStepName=step_Load, region=region, u1=0.0, u2=0.0, ur3=UNSET, amplitude=UNSET, fixed=OFF, distributionType=UNIFORM, fieldName='''', localCsys=None)', ...
+    py{end+1} = sprintf('myModel.DisplacementBC(name=''%s'', createStepName=step_Load, region=region, u1=0.0, u2=0.0, ur3=0.0, amplitude=UNSET, fixed=OFF, distributionType=UNIFORM, fieldName='''', localCsys=None)', ...
         strcat('BC_Film_', num2str(ii), '_2'));
     py{end+1} = sprintf('# -------------------------------------------------------------------------------------------------------------------');
     py{end+1} = sprintf('# Indentation displacement');
     py{end+1} = sprintf('r1 = a.instances[indenter_used].referencePoints');
     py{end+1} = sprintf('refPoints1=(r1[2], )');
     py{end+1} = sprintf('region = regionToolset.Region(referencePoints=refPoints1)');
-    py{end+1} = sprintf('myModel.DisplacementBC(name=''%s'', createStepName=step_Load, region=region, u1=0.0, u2=ind_h, ur3=UNSET, amplitude=UNSET, fixed=OFF, distributionType=UNIFORM, fieldName='''', localCsys=None)', ...
+    py{end+1} = sprintf('myModel.DisplacementBC(name=''%s'', createStepName=step_Load, region=region, u1=0.0, u2=ind_h, ur3=0.0, amplitude=UNSET, fixed=OFF, distributionType=UNIFORM, fieldName='''', localCsys=None)', ...
         'BC_Indentation_step');
     py{end+1} = sprintf('#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
     py{end+1} = sprintf('# JOB');

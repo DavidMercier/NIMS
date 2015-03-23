@@ -13,8 +13,6 @@ catch
     path_management;
 end
 
-
-
 %% Import data from YAML config files
 gui = struct();
 gui.config = struct();
