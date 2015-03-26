@@ -19,6 +19,8 @@ Links
 References
 ###########
 
+* `Mercier D., "Behaviour laws of materials used in electrical contacts for « flip chip » technologies", PhD thesis (2013) <https://tel.archives-ouvertes.fr/tel-01127940>`_
+
 Material and indenters properties
 -----------------------------------
 
