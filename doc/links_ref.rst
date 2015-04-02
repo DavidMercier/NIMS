@@ -92,6 +92,7 @@ Multilayer model to extract Young's moduli of thin films on a multilayer sample 
 * `Pailler-Mattei C. et al., "In vivo measurements of the elastic mechanical properties of human skin by indentation tests" (2008). <http://dx.doi.org/10.1016/j.medengphy.2007.06.011>`_
 * `Mercier D. et al., "Mesure de module d'Young d'un film mince à partir de mesures expérimentales de nanoindentation réalisées sur des systèmes multicouches" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
 * `Constantinescu A. et al., "Symbolic and numerical solution of the axisymmetric indentation problem for a multilayered elastic coating" (2013). <http://dx.doi.org/10.1016/j.ijsolstr.2013.04.017>`_
+* `Puchi-Cabrera. E.S. et al., "A description of the composite elastic modulus of multilayer coated systems" (2015). <http://dx.doi.org/10.1016/j.tsf.2015.02.078>`_
 
 Finite Element Modelling of conical indentation of thin film(s) on a substrate
 ---------------------------------------------------------------------------------
@@ -109,8 +110,9 @@ Finite Element Modelling of conical indentation of thin film(s) on a substrate
 * `Bouzakis K.-D. et al., "Thin hard coatings stress–strain curve determination through a FEM supported evaluation of nanoindentation test results.", (2001). <http://dx.doi.org/10.1016/S0257-8972(01)01275-0>`_
 * `Xu Z.-H. and Rowcliffe D., "Finite element analysis of substrate effects on indentation behaviour of thin films." (2004). <http://dx.doi.org/10.1016/S0040-6090(03)01071-X>`_
 * `Bressan J.D. et al., "Modeling of nanoindentation of bulk and thin film by finite element method." (2005). <http://dx.doi.org/10.1016/j.wear.2004.05.021>`_
-* `Pelletier H. et al., "Characterization of mechanical properties of thin films using nanoindentation test." (2006) <http://dx.doi.org/10.1016/j.mechmat.2006.02.011>`_
-* `Xu H., "A Finite Element Study of the Contact Stiffness of Homogenous Materials and Thin Films." PhD thesis - University of Tennessee - Knoxville (2007) <http://etd.utk.edu/2007/XuHaitao.pdf>`_
+* `Pelletier H. et al., "Characterization of mechanical properties of thin films using nanoindentation test." (2006). <http://dx.doi.org/10.1016/j.mechmat.2006.02.011>`_
+* `Antunes J.M. et al., "On the determination of the Young’s modulus of thin films using indentation tests" (2007). <http://dx.doi.org/10.1016/j.ijsolstr.2007.06.015>`_
+* `Xu H., "A Finite Element Study of the Contact Stiffness of Homogenous Materials and Thin Films." PhD thesis - University of Tennessee - Knoxville (2007). <http://etd.utk.edu/2007/XuHaitao.pdf>`_
 * `Chen S.H. et al., "Small scale, grain size and substrate effects in nano-indentation experiment of film–substrate systems." (2007). <http://dx.doi.org/10.1016/j.ijsolstr.2006.11.033>`_
 * `Huang X. and Pelegri A.A., "Finite element analysis on nanoindentation with friction contact at the film/substrate interface." (2007). <http://dx.doi.org/10.1016/j.compscitech.2006.10.005>`_
 * `Pelegri A.A. and Huang X., "Nanoindentation on soft film/hard substrate and hard film/soft substrate material systems with finite element analysis." (2008). <http://dx.doi.org/10.1016/j.compscitech.2007.05.033>`_
