@@ -3,6 +3,9 @@
 
 .. include:: includes.rst
 
+Please look at the experimental procedure proposed by Jennett N. M. and Bushby A. J. [#Jennett_2001]_,
+to perform nanoindentation tests on coatings or multilayer systems.
+
 Format of data
 ###############
 
@@ -47,3 +50,8 @@ Examples
 * `3films_Au-Ti-SiO2-Si_CSM-1nm.xls <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/3films_Au-Ti-SiO2-Si_CSM-1nm.xls>`_
     - Data for a thin film of PVD Gold (500nm) deposited on thin film of PVD Titanium (500nm) on a bulk Silicon sample with a Silicon thermal oxide (500nm).
     - Data obtained by Berkovich indentation with CSM mode (amplitude 1nm).
+    
+References
+###########
+
+.. [#Jennett_2001] `Jennett N. M. and Bushby A. J., "Adaptive Protocol for Robust Estimates of Coatings Properties by Nanoindentation" (2001). <http://dx.doi.org/10.1557/PROC-695-L3.1.1>`_

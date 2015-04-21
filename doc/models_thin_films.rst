@@ -47,6 +47,11 @@ contact depth (:math:`h_\text{c}`), to the film thickness (:math:`t`), and
     If the difference between Poisson’s ratio of the thin film and substrate is small,
     the values for uniaxial loading Young's moduli, :math:`E`, :math:`E_\text{f}`,
     :math:`E_\text{s}` can be used in previous equation.
+    
+Before, presenting the details of the following models developed for indentation test on coatings,
+is is worth to mention the work performed by Jennett N. M. and Bushby A. J. [#Jennett_2001]_,
+during the European project INDICOAT (SMT4-CT98-2249).
+Progress from this project help in the development of the ISO standard (ISO 14577-1 to 4).
 
 Doerner and Nix (1986) 
 -------------------------
@@ -370,6 +375,7 @@ References
 .. [#DoernerNix_1986] `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
 .. [#Gao_1992] `Gao H. et al., "Elastic contact versus indentation modeling of multi-layered materials" (1992). <http://dx.doi.org/10.1016/0020-7683(92)90004-D>`_
 .. [#Hay_2011] `Hay J. and Crawford B., "Measuring substrate-independent modulus of thin films" (2011). <http://dx.doi.org/10.1557/jmr.2011.8>`_
+.. [#Jennett_2001] `Jennett N. M. and Bushby A. J., "Adaptive Protocol for Robust Estimates of Coatings Properties by Nanoindentation" (2001). <http://dx.doi.org/10.1557/PROC-695-L3.1.1>`_
 .. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <http://dx.doi.org/10.1016/0020-7683(87)90116-8>`_
 .. [#Li_2010] `Li H. et al., "New methods of analyzing indentation experiments on very thin films" (2010). <http://dx.doi.org/10.1557/JMR.2010.0095>`_
 .. [#Mencík_1997] `Mencík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
