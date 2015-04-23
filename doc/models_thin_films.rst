@@ -51,7 +51,16 @@ contact depth (:math:`h_\text{c}`), to the film thickness (:math:`t`), and
 Before, presenting the details of the following models developed for indentation test on coatings,
 is is worth to mention the work performed by Jennett N. M. and Bushby A. J. [#Jennett_2001]_,
 during the European project INDICOAT (SMT4-CT98-2249).
-Progress from this project help in the development of the ISO standard (ISO 14577-1 to 4).
+
+Progress from this project help in the development of the ISO standard (ISO 14577 - 1-4).
+The ISO 14577 - 4 is dedicated to nanoindentation on coatings.
+
+`ISO 14577 - 1 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 1: Test method", (2002). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=30104>`_
+`ISO 14577 - 2 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 2: Verification and calibration of testing machines", (2002). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=30543>`_
+`ISO 14577 - 3 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 3: Calibration of reference blocks", (2002). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=32193>`_
+`ISO 14577 - 4 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 4: Test method for metallic and non-metallic coatings", (2007). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=39228>`_
+
+http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=30104
 
 Doerner and Nix (1986) 
 -------------------------
@@ -286,7 +295,7 @@ Mercier et al. (2010)
 ----------------------
 
 The elastic model of Mercier et al. for a multilayer sample on
-:math:`N+1` layers is an extension of the Bec et al. model [#Mercier_2010]_.
+:math:`N+1` layers is an extension of the Bec et al. model [#Mercier_2010]_ and [#Mercier_2013]_.
                       
     .. math:: \frac{1}{2 a_{\text{c},0} E^{'}} = \sum_{i=0}^{N}
               \frac{t_i}{\left(\pi a_{\text{c},i}^2 + 2t_ia_{\text{c},i}\right)E^{'}_{\text{f},i}} +
@@ -336,7 +345,7 @@ of the film beneath the indenter is smaller than its original value,
 because of plastic flow during loading. The use of the original film thickness
 :math:`t` in the regression model cause a systematic shift or distortion
 of the Young's modulus curve. A correction proposed by Mencík et al. can be
-applied, assuming a rigid substrate and determining the effective thickness :math:`t_{eff}`
+applied, assuming a rigid substrate and determining the effective thickness :math:`t_\text{eff}`
 [#Mencík_1997]_, [#Saha_2002]_, [#Bec_2006]_ and [#Li_2010]_.
 
     .. math:: \pi a^2 t_\text{eff} = \pi a^2 t - V
@@ -380,6 +389,7 @@ References
 .. [#Li_2010] `Li H. et al., "New methods of analyzing indentation experiments on very thin films" (2010). <http://dx.doi.org/10.1557/JMR.2010.0095>`_
 .. [#Mencík_1997] `Mencík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
 .. [#Mercier_2010] `Mercier D. et al., "Mesure de module d'Young d'un film mince à partir de mesures expérimentales de nanoindentation réalisées sur des systèmes multicouches" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
+.. [#Mercier_2013] `Mercier D., "Lois de comportement des matériaux utilisés dans les contacts électriques pour application " flip chip "" (2013). <http://www.theses.fr/2013GRENI083>`_
 .. [#Perriot_2004] `Perriot A. and Barthel E., "Elastic contact to a coated half-space: Effective elastic modulus and real penetration" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.2.600>`_
 .. [#Pharr_1992] `Pharr G.M. and Oliver W.C., "Measurement of Thin Film Mechanical Properties Using Nanoindentation" (1992). <http://dx.doi.org/10.1557/S0883769400041634>`_
 .. [#PuchiCabrera_1992] `Puchi-Cabrera. E.S. et al., "A description of the composite elastic modulus of multilayer coated systems" (2015). <http://dx.doi.org/10.1016/j.tsf.2015.02.078>`_
