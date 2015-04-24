@@ -122,7 +122,7 @@ A value of 200nm for the indentation depth is set by default.
    
    *Figure 4 : Schematic of boundaries conditions used in the FE model.*
     
-.. figure:: ./_pictures/fem_model_part_bc.png
+.. figure:: ./_pictures/fem_model_parts_bc.png
    :scale: 20 %
    :align: center
    
