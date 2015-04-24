@@ -79,11 +79,11 @@ from 0 (quadratic elements) to 1 (linear elements).
     * CAX8R: An 8-node biquadratic axisymmetric quadrilateral, reduced integration.
     * CAX6M: A 6-node modified quadratic axisymmetric triangle.
     
-.. figure:: ./_pictures/fem_model_parts_mesh.png
+.. figure:: ./_pictures/fem_model_mesh.png
    :scale: 20 %
    :align: center
    
-   *Figure 3 : Example of mesh used in the FEM model.*
+   *Figure 3 : Screenshot in Abaqus of the a mesh example used in the FE model.*
 
 Material properties
 ---------------------------------
@@ -110,18 +110,24 @@ Boundaries conditions
 
 Nodes are constrained along the rotation axis from moving in the radial direction (:math:`x`).
 The nodes on the bottom surface of the sample are constrained along the radial axis
-from moving in the radial (:math:`x`) and vertical (:math:`z`) directions (see Figure 4).
+from moving in the radial (:math:`x`) and vertical (:math:`z`) directions (see Figure 4 and 5).
 
 Indentation process is simulated by imposing a vertical displacement
-to the rigid indenter along the (:math:`z`) axis (see Figure 4).
+to the rigid indenter along the (:math:`z`) axis (see Figures 4 and 5).
 A value of 200nm for the indentation depth is set by default.
 
 .. figure:: ./_pictures/fem_model_bc.png
    :scale: 50 %
    :align: center
    
-   *Figure 4 : Description of boundaries conditions.*
-
+   *Figure 4 : Schematic of boundaries conditions used in the FE model.*
+    
+.. figure:: ./_pictures/fem_model_part_bc.png
+   :scale: 20 %
+   :align: center
+   
+   *Figure 5 : Screenshot of the FE model with BCs in Abaqus.*
+   
 ..  warning::
     Indentation displacement is given in nanometers and is negative.
 
