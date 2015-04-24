@@ -78,6 +78,12 @@ from 0 (quadratic elements) to 1 (linear elements).
     * CAX3:  A 3-node linear axisymmetric triangle.
     * CAX8R: An 8-node biquadratic axisymmetric quadrilateral, reduced integration.
     * CAX6M: A 6-node modified quadratic axisymmetric triangle.
+    
+.. figure:: ./_pictures/fem_model_parts_mesh.png
+   :scale: 20 %
+   :align: center
+   
+   *Figure 3 : Example of mesh used in the FEM model.*
 
 Material properties
 ---------------------------------
@@ -104,17 +110,17 @@ Boundaries conditions
 
 Nodes are constrained along the rotation axis from moving in the radial direction (:math:`x`).
 The nodes on the bottom surface of the sample are constrained along the radial axis
-from moving in the radial (:math:`x`) and vertical (:math:`z`) directions (see Figure 3).
+from moving in the radial (:math:`x`) and vertical (:math:`z`) directions (see Figure 4).
 
 Indentation process is simulated by imposing a vertical displacement
-to the rigid indenter along the (:math:`z`) axis (see Figure 3).
+to the rigid indenter along the (:math:`z`) axis (see Figure 4).
 A value of 200nm for the indentation depth is set by default.
 
 .. figure:: ./_pictures/fem_model_bc.png
    :scale: 50 %
    :align: center
    
-   *Figure 3 : Description of boundaries conditions.*
+   *Figure 4 : Description of boundaries conditions.*
 
 ..  warning::
     Indentation displacement is given in nanometers and is negative.
@@ -135,7 +141,7 @@ To generate the FEM model in ABAQUS, apply the following procedure:
 - select and run the Python file containing the FEM model (\*.py) : File' ==> 'Run Script'
 
 ..  note::
-    Dimensions are in nm and Young's moduli are in GPa ==> Load is in nN.
+    Dimensions are in nm and Young's moduli are in GPa, implying that load is in nN.
    
 References
 ############
