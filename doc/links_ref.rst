@@ -90,8 +90,8 @@ Multilayer model to extract Young's moduli of thin films on a multilayer sample 
 ----------------------------------------------------------------------------------------------------------
 
 * `Pailler-Mattei C. et al., "In vivo measurements of the elastic mechanical properties of human skin by indentation tests" (2008). <http://dx.doi.org/10.1016/j.medengphy.2007.06.011>`_
-* `Mercier D. et al., "Mesure de module d'Young d'un film mince à partir de mesures expérimentales de nanoindentation réalisées sur des systèmes multicouches" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
-* `Mercier D. et al., "Mesure de module d'Young d'un film mince à partir de mesures expérimentales de nanoindentation réalisées sur des systèmes multicouches" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
+* `Mercier D. et al., "Young's modulus measurement of a thin film from experimental nanoindentation performed on multilayer systems" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
+* `Mercier D., "Lois de comportement des matériaux utilisés dans les contacts électriques pour application " flip chip "" (2013). <http://www.theses.fr/2013GRENI083>`_
 * `Constantinescu A. et al., "Symbolic and numerical solution of the axisymmetric indentation problem for a multilayered elastic coating" (2013). <http://dx.doi.org/10.1016/j.ijsolstr.2013.04.017>`_
 * `Puchi-Cabrera. E.S. et al., "A description of the composite elastic modulus of multilayer coated systems" (2015). <http://dx.doi.org/10.1016/j.tsf.2015.02.078>`_
 

@@ -36,12 +36,12 @@ How to cite NIMS in your papers ?
   https://zenodo.org/badge/5888/DavidMercier/NIMS.svg
   :target: http://dx.doi.org/10.5281/zenodo.14610
 
-Reference paper
-----------------
-"Young’s modulus measurement of a thin film from experimental nanoindentation performed on multilayer systems"
-D. Mercier et al., Matériaux & Techniques (2011) - 99(11)
+Reference papers
+------------------
 
-http://www.mattech-journal.org/articles/mattech/abs/2011/02/mt110025/mt110025.html
+* `Mercier D. et al., "Young's modulus measurement of a thin film from experimental nanoindentation performed on multilayer systems" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
+
+* `Mercier D., "Lois de comportement des matériaux utilisés dans les contacts électriques pour application " flip chip "" (2013). <http://www.theses.fr/2013GRENI083>`_
 
 Acknowledgements
 ----------------
@@ -53,7 +53,7 @@ SIMaP: http://simap.grenoble-inp.fr
 
 Keywords
 --------
-Matlab Toolbox; Graphical User Interface; Nanoindentation; Young’s modulus; thin film; multilayer system; analytical model; finite element modelling
+Matlab Toolbox ; Graphical User Interface ; Nanoindentation ; Young's modulus ; thin film ; multilayer system ; analytical model ; finite element modelling.
 
 Links
 -----
