@@ -148,7 +148,30 @@ To generate the FEM model in ABAQUS, apply the following procedure:
 
 ..  note::
     Dimensions are in nm and Young's moduli are in GPa, implying that load is in nN.
+
+Results of the FEM simulation
+###############################
+
+The following pictures were obtained for a `multilayer Au/Ti/SiO2/Si <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/3films_Au-Ti-SiO2-Si_CSM-1nm.xls>`_
+
+.. figure:: ./_pictures/fem_result_S_Mises.png
+   :scale: 20 %
+   :align: center
    
+   *Figure 6 : Screenshot of the Von Mises stress distribution at maximum load.*
+
+.. figure:: ./_pictures/fem_result_S_Mises_zoom.png
+   :scale: 20 %
+   :align: center
+   
+   *Figure 7 : Screenshot (with a zoom in on the contact area) of the Von Mises stress distribution at maximum load.*
+   
+.. figure:: ./_pictures/fem_result_U_magnitude.png
+   :scale: 20 %
+   :align: center
+   
+   *Figure 8 : Screenshot (with a zoom in on the contact area) of the magnitude of the displacement at maximum load.*
+    
 References
 ############
 
