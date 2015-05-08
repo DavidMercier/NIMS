@@ -152,7 +152,7 @@ To generate the FEM model in ABAQUS, apply the following procedure:
 Results of the FEM simulation
 ###############################
 
-The following pictures were obtained for a `multilayer Au/Ti/SiO2/Si <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/3films_Au-Ti-SiO2-Si_CSM-1nm.xls>`_
+The following pictures were obtained for a `multilayer Au/Ti/SiO2/Si <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/3films_Au-Ti-SiO2-Si_CSM-1nm.xls>`_.
 
 .. figure:: ./_pictures/fem_result_S_Mises.png
    :scale: 20 %
