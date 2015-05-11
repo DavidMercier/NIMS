@@ -26,7 +26,7 @@ for indentation depth lower than 10% of the film thickness (:math:`h \leq 0.1*t`
 Because of the imperfections of the indenters, the roughness and the surface pollution,
 it is more or less meaningful to use this rule of the 10%, for film thicker than 500nm.
 
-Several models to analyze bilayer sample indentation and to extract intrinsic
+Several models to analyse bilayer sample indentation and to extract intrinsic
 material properties of the film from are detailed in the following part.
 
 Mencík et al. proposed the following structures to express the combination of
@@ -48,6 +48,9 @@ contact depth (:math:`h_\text{c}`), to the film thickness (:math:`t`), and
     the values for uniaxial loading Young's moduli, :math:`E`, :math:`E_\text{f}`,
     :math:`E_\text{s}` can be used in previous equation.
     
+Some of the following models developed are as well detailled in the chapter 8 ("Nanoindentaion of Thin Films")
+of the book "Nanoindentation" written by A.C. Fischer-Cripps [#FischerCripps_2004]_.
+    
 Before, presenting the details of the following models developed for indentation test on coatings,
 is is worth to mention the work performed by Jennett N. M. and Bushby A. J. [#Jennett_2001]_,
 during the European project INDICOAT (SMT4-CT98-2249).
@@ -66,20 +69,31 @@ The ISO 14577 - 4 is dedicated to nanoindentation on coatings.
 Doerner and Nix (1986) 
 -------------------------
 
-The model of Doerner and Nix is detailed in many papers [#DoernerNix_1986]_, [#King_1987]_, [#Pharr_1992]_ and [#Saha_2002]_, and
-is described by the following equation :
+The model of Doerner and Nix is detailed in many papers [#DoernerNix_1986]_, [#King_1987]_, [#Pharr_1992]_ and [#Saha_2002]_, and is described by the following equation :
 
     .. math:: \frac{1}{E^{'}} = \frac{1}{E_\text{f}^{'}} + \left(\frac{1}{E_\text{s}^{'}}
               - \frac{1}{E_\text{f}^{'}}\right) e^{-\alpha\left(x\right)}
             :label: doerner_nix
 
-With :math:`x=t/h` and :math:`\alpha` is an empirically constant
+With :math:`x=t/h` and :math:`\alpha` an empirically constant
 determined using the method of least squares.
 
 The equation was modified by King (1987), by the replacement of :math:`t/h` by :math:`t/a_\text{c}`.
 
 Find here the |matlab| function for the Doerner and Nix function :
 `model_doerner_nix_king.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_doerner_nix_king.m>`_.
+
+An empirical formulae based on the model of Doerner and Nix was proposed by Chen et al. in 2004 [#Chen_2004]_:
+
+    .. math:: \frac{1}{E^{'}} = \frac{1}{E_\text{f}^{'}}\left[1-e^{-\alpha\left(x\right)^(2/3)}\right] + 
+    \frac{1}{E_\text{s}^{'}}e^{-\alpha\left(x\right)^(2/3)}
+            :label: chen
+            
+With :math:`x=t/h` and :math:`\alpha` an empirically constant
+determined using the method of least squares.
+            
+Find here the |matlab| function for the Chen function :
+`model_chen.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_chen.m>`_.
 
 Gao et al. (1992) 
 ------------------
@@ -347,7 +361,7 @@ because of plastic flow during loading. The use of the original film thickness
 :math:`t` in the regression model cause a systematic shift or distortion
 of the Young's modulus curve. A correction proposed by Mencík et al. can be
 applied, assuming a rigid substrate and determining the effective thickness :math:`t_\text{eff}`
-[#Mencík_1997]_, [#Saha_2002]_, [#Bec_2006]_ and [#Li_2010]_.
+[#Mencík_1997]_, [#Saha_2002]_, [#Chen_2004]_, [#Bec_2006]_ and [#Li_2010]_.
 
     .. math:: \pi a^2 t_\text{eff} = \pi a^2 t - V
             :label: general_thickness_correction
@@ -382,7 +396,9 @@ References
 .. [#Bec_2006] `Bec S. et al., "Improvements in the indentation method with a surface force apparatus" (2006). <http://dx.doi.org/10.1080/01418619608239707>`_
 .. [#Bull_2014] `Bull S.J., "A simple method for the assessment of the contact modulus for coated systems.", (2014). <http://dx.doi.org/10.1080/14786435.2014.909612>`_
 .. [#Bückle_1961] Bückle H., "VDI Berichte" (1961).
+.. [#Chen_2004] `Chen S. et al., "Nanoindentation of thin-film-substrate system: Determination of film hardness and Young's modulus", (2004). <http://dx.doi.org/10.1007/BF02489376>`_
 .. [#DoernerNix_1986] `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
+.. [#FischerCripps_2004] `Fischer-Cripps, A.C., "Nanoindentation 2nd ed." (2004) <http://link.springer.com/book/10.1007%2F978-1-4419-9872-9>`_
 .. [#Gao_1992] `Gao H. et al., "Elastic contact versus indentation modeling of multi-layered materials" (1992). <http://dx.doi.org/10.1016/0020-7683(92)90004-D>`_
 .. [#Hay_2011] `Hay J. and Crawford B., "Measuring substrate-independent modulus of thin films" (2011). <http://dx.doi.org/10.1557/jmr.2011.8>`_
 .. [#Jennett_2001] `Jennett N. M. and Bushby A. J., "Adaptive Protocol for Robust Estimates of Coatings Properties by Nanoindentation" (2001). <http://dx.doi.org/10.1557/PROC-695-L3.1.1>`_
