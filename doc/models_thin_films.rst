@@ -85,8 +85,8 @@ Find here the |matlab| function for the Doerner and Nix function :
 
 An empirical formulae based on the model of Doerner and Nix was proposed by Chen et al. in 2004 [#Chen_2004]_:
 
-    .. math:: \frac{1}{E^{'}} = \frac{1}{E_\text{f}^{'}}\left[1-e^{-\alpha\left(x\right)^(2/3)}\right] + 
-    \frac{1}{E_\text{s}^{'}}e^{-\alpha\left(x\right)^(2/3)}
+    .. math:: \frac{1}{E^{'}} = \frac{1}{E_\text{f}^{'}}\left[1-e^{-\alpha\left(x\right)^{(2/3)}}\right] + 
+              \frac{1}{E_\text{s}^{'}}e^{-\alpha\left(x\right)^{(2/3)}}
             :label: chen
             
 With :math:`x=t/h` and :math:`\alpha` an empirically constant
