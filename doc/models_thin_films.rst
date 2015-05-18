@@ -7,8 +7,8 @@ The following parts give a short overview of models existing in the
 literature used for the extraction of mechanical properties of thin films
 deposited on a substrate from indentation experiments with conical indenters.
 
-Nanoindentation tests on thin film deposited on a substrate
-###############################################################
+Nanoindentation tests on thin films
+######################################
 
 For indentation test on a multilayer sample (thin films deposited on a substrate
 for example), the calculated composite reduced modulus :math:`E^{'}` with previous
@@ -65,6 +65,24 @@ The ISO 14577 - 4 is dedicated to nanoindentation on coatings.
 - `ISO 14577 - 3 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 3: Calibration of reference blocks", (2002). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=32193>`_
 
 - `ISO 14577 - 4 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 4: Test method for metallic and non-metallic coatings", (2007). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=39228>`_
+
+Indentation contact topography
+-------------------------------
+
+For nanoindentation tests on thin films, the contact topography is function of both thin film and substrate properties (see Figure 1).
+
+.. figure:: ./_pictures/contact_topography_thinfilm.png
+   :scale: 40 %
+   :align: center
+   
+   *Figure 1 : Schematic depiction of a) "pile-up" and b) "sink-in" for thin films.*
+   
+The Figure 1-a ("pile-up") is typical of the case of a softfilm on a hard substrate and the Figure 1-b ("sink-in") of a hard film on a soft substrate [#ChenVlassak2001]_.
+   
+To determine the depth of contact, `the same models <http://nims.readthedocs.org/en/latest/models.html#indentation-contact-topography>`_ described for bulk material indentation are used.
+
+Elastic properties of a thin film on a substrate
+##################################################
 
 Doerner and Nix (1986) 
 -------------------------
@@ -199,13 +217,13 @@ Bec et al. (2006)
 The elastic model of Bec et al. is based on indentation by a rigid cylindrical punch (radius :math:`a_\text{c}`)
 of a homogeneous film deposited on a semi-infinite half space [#Bec_2006]_.
 
-This system is modelled by two springs connected in series (see Figure 1).
+This system is modelled by two springs connected in series (see Figure 2).
 
 .. figure:: ./_pictures/Bec_bilayer_model.png
    :scale: 40 %
    :align: center
    
-   *Figure 1 : Schematic description of the bilayer model of Bec.*
+   *Figure 2 : Schematic description of the bilayer model of Bec.*
 
     .. math:: K_\text{f} = \pi a_\text{c}^2 \frac{E^{'}_\text{f}}{t}
             :label: bec_kf
@@ -336,10 +354,10 @@ Thus, the Young’s modulus of the film can be calculated as :
    :scale: 30 %
    :align: center
    
-   *Figure 2 : Schematic of elastic multilayer model.*
+   *Figure 3 : Schematic of elastic multilayer model.*
 
 It is advised to perform nanoindentation tests on each layer of the multilayer sample,
-from the substrate up to the final stack of layers (see Figure 3). By successive iterations using
+from the substrate up to the final stack of layers (see Figure 4). By successive iterations using
 the model of Mercier et al., values of Young's modulus of each layer are extracted
 from the contact stiffness.
 
@@ -347,7 +365,7 @@ from the contact stiffness.
    :scale: 30 %
    :align: center
    
-   *Figure 3 : Experimental process to apply for elastic multilayer model.*
+   *Figure 4 : Experimental process to apply for elastic multilayer model.*
 
 Find here the |matlab| function for the Mercier et al. function :
 `model_multilayer_elastic.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_multilayer_elastic.m>`_.
@@ -377,7 +395,7 @@ depths :math:`h_\text{c}` smaller than the film thickness.
    :scale: 60 %
    :align: center
    
-   *Figure 4 : Indentation penetration of a thin film on a sample.*
+   *Figure 5 : Indentation penetration of a thin film on a sample.*
    
 Recently, Li et al. proposed to express the local thinning effect as [#Li_2010]_:
 
@@ -394,9 +412,10 @@ References
 -----------
 
 .. [#Bec_2006] `Bec S. et al., "Improvements in the indentation method with a surface force apparatus" (2006). <http://dx.doi.org/10.1080/01418619608239707>`_
-.. [#Bull_2014] `Bull S.J., "A simple method for the assessment of the contact modulus for coated systems.", (2014). <http://dx.doi.org/10.1080/14786435.2014.909612>`_
+.. [#Bull_2014] `Bull S.J., "A simple method for the assessment of the contact modulus for coated systems." (2014). <http://dx.doi.org/10.1080/14786435.2014.909612>`_
 .. [#Bückle_1961] Bückle H., "VDI Berichte" (1961).
-.. [#Chen_2004] `Chen S. et al., "Nanoindentation of thin-film-substrate system: Determination of film hardness and Young's modulus", (2004). <http://dx.doi.org/10.1007/BF02489376>`_
+.. [#ChenVlassak2001] `Chen X. and Vlassak J.J., "Numerical study on the measurement of thin film mechanical properties by means of nanoindentation." (2001). <http://dx.doi.org/10.1557/JMR.2001.0408>`_
+.. [#Chen_2004] `Chen S. et al., "Nanoindentation of thin-film-substrate system: Determination of film hardness and Young's modulus" (2004). <http://dx.doi.org/10.1007/BF02489376>`_
 .. [#DoernerNix_1986] `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
 .. [#FischerCripps_2004] `Fischer-Cripps, A.C., "Nanoindentation 2nd ed." (2004) <http://link.springer.com/book/10.1007%2F978-1-4419-9872-9>`_
 .. [#Gao_1992] `Gao H. et al., "Elastic contact versus indentation modeling of multi-layered materials" (1992). <http://dx.doi.org/10.1016/0020-7683(92)90004-D>`_
@@ -410,6 +429,6 @@ References
 .. [#Perriot_2004] `Perriot A. and Barthel E., "Elastic contact to a coated half-space: Effective elastic modulus and real penetration" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.2.600>`_
 .. [#Pharr_1992] `Pharr G.M. and Oliver W.C., "Measurement of Thin Film Mechanical Properties Using Nanoindentation" (1992). <http://dx.doi.org/10.1557/S0883769400041634>`_
 .. [#PuchiCabrera_1992] `Puchi-Cabrera. E.S. et al., "A description of the composite elastic modulus of multilayer coated systems" (2015). <http://dx.doi.org/10.1016/j.tsf.2015.02.078>`_
-.. [#Rar_2002] `Rar A. et al., "Assessment of new relation for the elastic compliance of a film–substrate system.", Thin Films: Stresses and Mechanical Properties IX (2002). <http://dx.doi.org/10.1557/PROC-695-L10.10.1>`_ 
+.. [#Rar_2002] `Rar A. et al., "Assessment of new relation for the elastic compliance of a film–substrate system." (2002). <http://dx.doi.org/10.1557/PROC-695-L10.10.1>`_ 
 .. [#Saha_2002] `Saha R. and Nix W.D., "Effects of the substrate on the determination of thin film mechanical properties by nanoindentation" (2002). <http://dx.doi.org/10.1016/S1359-6454(01)00328-7>`_
-.. [#Xu_2006] `Xu H. and Pharr G.M., "An improved relation for the effective elastic compliance of a film/substrate system during indentation by a flat cylindrical punch.", Scr. Mater. (2006). <http://dx.doi.org/10.1016/j.scriptamat.2006.04.037>`_
+.. [#Xu_2006] `Xu H. and Pharr G.M., "An improved relation for the effective elastic compliance of a film/substrate system during indentation by a flat cylindrical punch." (2006). <http://dx.doi.org/10.1016/j.scriptamat.2006.04.037>`_

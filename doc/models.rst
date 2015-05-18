@@ -57,9 +57,6 @@ Load-Displacement curves
 Parameters such as contact load :math:`F_\text{c}` and depth of penetration :math:`h`
 are recorded during loading and unloading steps of the indentation test.
 
-Loading
-+++++++++
-
 A schematic of the load-displacement curve obtained from
 nanoindentation experiment is given Figure 2.
 
@@ -72,7 +69,10 @@ the sample and the indenter, and of the indenter's geometry.
    
    *Figure 2 : Schematic of indentation load-displacement curve.*
 
-Loubet et al. founded a good fit to the load-displacement data with a power-law relationship of the form [#Loubet_1986]_ :
+Loading
++++++++++
+
+Loubet et al. founded a good fit to the loading part of the load-displacement curve with a power-law relationship of the form [#Loubet_1986]_ :
 
         .. math:: F_\text{c} = K h_\text{t}^n
                 :label: Loubet_load_displacement
@@ -80,7 +80,7 @@ Loubet et al. founded a good fit to the load-displacement data with a power-law 
 With :math:`K` and :math:`n` constants for a given material for a fixed indenter geometry.
 
 Using the load-displacement curves analysis performed by Loubet et al., 
-Hainsworth et al. proposed the following relationship to describe load-displacement curves [#Hainsworth_1996]_ :
+Hainsworth et al. proposed the following relationship to describe loading curves [#Hainsworth_1996]_ :
 
         .. math:: F_\text{c} = K h_\text{t}^2
                 :label: Hainsworth_load_displacement
@@ -88,10 +88,20 @@ Hainsworth et al. proposed the following relationship to describe load-displacem
 With :math:`K` a constant function of material properties
 (Young's modulus and hardness) and the indenter.
 
+Other authors established parabolic relationships between the load and the indentation depth,
+for purely elastic indentation of bulk materials with ideally Berkovich indenter (:eq:`Larsson_Berkovich`) [#Larsson_1996]_
+and Vickers indenter (:eq:`Giannakopoulos_Vickers`) [#Giannakopoulos_1994]_, by numerical studies.
+
+        .. math:: F_\text{c} = 2.1891 \left(1-0.21\nu -0.01{\nu}^2 -0.41{\nu}^3 \right) \frac{E}{1-{\nu}^2} h_\text{t}^2
+                :label: Larsson_Berkovich
+                
+        .. math:: F_\text{c} = 2.0746 \left(1-0.1655\nu -0.1737{\nu}^2 -0.1862{\nu}^3 \right) \frac{E}{1-{\nu}^2} h_\text{t}^2
+                :label: Giannakopoulos_Vickers
+
 Unloading
 +++++++++++
 
-The slope of unloading curve gives access to the contact stiffness :
+The slope of unloading curve gives access to the contact stiffness (see Figure 2):
 
     .. math:: S = \frac{dF_\text{c}}{dh}
             :label: stiffness
@@ -367,7 +377,7 @@ Find here the |matlab| function to plot the :math:`\beta` function of Hay et al.
    in function of the Poisson's ratio for a Berkovich indenter.*
 
 Knowing the material properties of the indenter, it is possible to calculate
-the reduced Young's modulus of the indented material. 
+the reduced Young's modulus of the indented material (:math:`E^{'}`). 
 
     .. math:: \frac{1}{E^{'}} = \frac{1}{E^{*}} - \frac{1}{E_\text{i}^{'}}
             :label: youngs_modulus
@@ -471,27 +481,29 @@ References
 .. [#DoernerNix_1986] `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
 .. [#Fischer-Cripps_2004] `Fischer-Cripps A.C., "Nanoindentation" Springer 2nd ed. (2004). <http://dx.doi.org/10.1007/978-1-4419-9872-9>`_
 .. [#Galin_1946] Galin L.A., "Spatial contact problems of the theory of elasticity for punches of circular shape in planar projection.", J. Appl. Math. Mech. (PMM) (1946), 10, pp. 425-448.
-.. [#Giannakopoulos_1999] `Giannakopoulos A.E. and Suresh S., "Determination of elastoplastic properties by instrumented sharp indentation.", Scripta Materialia (1999). <http://dx.doi.org/10.1016/S1359-6462(99)00011-1>`_
-.. [#Guillonneau_2012_1] `Guillonneau G. et al.,"Extraction of mechanical properties with second harmonic detection for dynamic nanoindentation testing.", Experimental Mechanics (2012). <http://dx.doi.org/10.1007/s11340-011-9561-5>`_
-.. [#Guillonneau_2012_2] `Guillonneau G. et al.,"Determination of mechanical properties by nanoindentation independently of indentation depth measurement.", J. Mater. Res. (2012). <http://dx.doi.org/10.1557/jmr.2012.261>`_
-.. [#Hainsworth_1996] `Hainsworth S.V. et al., "Analysis of nanoindentation load-displacement loading curves." J. Mater. Res. (1996). <http://dx.doi.org/10.1557/JMR.1996.0250>`_
-.. [#Hay_1999] `Hay J.C. et al., "A critical examination of the fundamental relations used in the analysis of nanoindentation data." J. Mater. Res. (1999). <http://dx.doi.org/10.1557/JMR.1999.0306>`_
+.. [#Giannakopoulos_1994] `Giannakopoulos A.E. et al., "Analysis of Vickers indentation" (1994). <http://dx.doi.org/10.1016/0020-7683(94)90225-9>`_
+.. [#Giannakopoulos_1999] `Giannakopoulos A.E. and Suresh S., "Determination of elastoplastic properties by instrumented sharp indentation." (1999). <http://dx.doi.org/10.1016/S1359-6462(99)00011-1>`_
+.. [#Guillonneau_2012_1] `Guillonneau G. et al.,"Extraction of mechanical properties with second harmonic detection for dynamic nanoindentation testing." (2012). <http://dx.doi.org/10.1007/s11340-011-9561-5>`_
+.. [#Guillonneau_2012_2] `Guillonneau G. et al.,"Determination of mechanical properties by nanoindentation independently of indentation depth measurement." (2012). <http://dx.doi.org/10.1557/jmr.2012.261>`_
+.. [#Hainsworth_1996] `Hainsworth S.V. et al., "Analysis of nanoindentation load-displacement loading curves." (1996). <http://dx.doi.org/10.1557/JMR.1996.0250>`_
+.. [#Hay_1999] `Hay J.C. et al., "A critical examination of the fundamental relations used in the analysis of nanoindentation data." (1999). <http://dx.doi.org/10.1557/JMR.1999.0306>`_
 .. [#Hochstetter_1999] `Hochstetter G. et al., "Strain-rate effects on hardness of glassy polymers in the nanoscale range. Comparison between quasi-static and continuous stiffness measurements" (1999). <http://dx.doi.org/10.1080/00222349908248131>`_
 .. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <http://dx.doi.org/10.1016/0020-7683(87)90116-8>`_
-.. [#Li_2002] `Li X. and Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications.", Mater. Characterization, 2002. <http://dx.doi.org/10.1016/S1044-5803(02)00192-4>`_
-.. [#Loubet_1984] `Loubet J.L. et al., "Vickers Indentation Curves of Magnesium Oxide (MgO).", J. Tribol. (1984) <http://dx.doi.org/10.1115/1.3260865>`_
-.. [#Loubet_1986] `Loubet J.L. et al., "Vickers indentation curves of elastoplastic materials." Microindentation Techniques in Materials Science and Engineering (1986). <http://dx.doi.org/10.1520/STP889-EB>`_
-.. [#Love_1939] `Love A.E.H., "Boussinesq's problem for a rigid cone.", The Quarterly J. of Mathematics (1939). <http://dx.doi.org/10.1093/qmath/os-10.1.161>`_
-.. [#Lucas_1996] `Lucas B.N. et al., "Time Dependent Deformation During Indentation Testing.", MRS Proceedings (1996). <http://dx.doi.org/10.1557/PROC-436-233>`_
-.. [#Malzbender_2002] `Malzbender J. and de With G., "Indentation load–displacement curve, plastic deformation, and energy.", J. Mater. Res. (2002). <http://dx.doi.org/10.1557/JMR.2002.0070>`_
-.. [#Merle_2012] `Merle B. et al., "Experimental determination of the effective indenter shape and e-factor for nanoindentation by continuously measuring the unloading stiffness.", J. Mater. Res. (2012). <http://dx.doi.org/10.1557/jmr.2011.245>`_
+.. [#Larsson_1996] `Larsson et al., "Analysis of Berkovich indentation" (1996). <http://dx.doi.org/10.1016/0020-7683(95)00033-7>`_
+.. [#Li_2002] `Li X. and Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications." (2002). <http://dx.doi.org/10.1016/S1044-5803(02)00192-4>`_
+.. [#Loubet_1984] `Loubet J.L. et al., "Vickers Indentation Curves of Magnesium Oxide (MgO)." (1984) <http://dx.doi.org/10.1115/1.3260865>`_
+.. [#Loubet_1986] `Loubet J.L. et al., "Vickers indentation curves of elastoplastic materials." (1986). <http://dx.doi.org/10.1520/STP889-EB>`_
+.. [#Love_1939] `Love A.E.H., "Boussinesq's problem for a rigid cone." (1939). <http://dx.doi.org/10.1093/qmath/os-10.1.161>`_
+.. [#Lucas_1996] `Lucas B.N. et al., "Time Dependent Deformation During Indentation Testing." (1996). <http://dx.doi.org/10.1557/PROC-436-233>`_
+.. [#Malzbender_2002] `Malzbender J. and de With G., "Indentation load–displacement curve, plastic deformation, and energy." (2002). <http://dx.doi.org/10.1557/JMR.2002.0070>`_
+.. [#Merle_2012] `Merle B. et al., "Experimental determination of the effective indenter shape and e-factor for nanoindentation by continuously measuring the unloading stiffness." (2012). <http://dx.doi.org/10.1557/jmr.2011.245>`_
 .. [#OliverPharr_1992] `Oliver W.C. and Pharr G.M., "An improved technique for determining hardness and elastic modulus using load and displacement sensing indentation experiments" (1992). <http://dx.doi.org/10.1557/JMR.1992.1564>`_
 .. [#OliverPharr_2004] `Oliver W.C. and Pharr G.M., "Measurement of hardness and elastic modulus by instrumented indentation: Advances in understanding and refinements to methodology" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.1.3>`_
 .. [#Pharr_1992] `Pharr G.M. et al., "On the generality of the relationship among contact stiffness, contact area, and elastic modulus during indentation." (1992). <http://dx.doi.org/10.1557/JMR.1992.0613>`_
-.. [#Pharr_2002] `Pharr G.M. and Bolshakov A., "Understanding nanoindentation unloading curves." J. Mater. Res. (2002). <http://dx.doi.org/10.1557/JMR.2002.0386>`_
+.. [#Pharr_2002] `Pharr G.M. and Bolshakov A., "Understanding nanoindentation unloading curves." (2002). <http://dx.doi.org/10.1557/JMR.2002.0386>`_
 .. [#Pharr_2009] `Pharr G.M. et al., "Critical issues in making small-depth mechanical property measurements by nanoindentation with continuous stiffness measurement" (2009). <http://dx.doi.org/10.1557/jmr.2009.0096>`_
-.. [#Sneddon_1948] `Sneddon I.N., "Boussinesqs problem for a rigid cone.", Proc. of the Cambridge Philosophical Soc. (1948). <http://dx.doi.org/10.1017/S0305004100024518>`_
+.. [#Sneddon_1948] `Sneddon I.N., "Boussinesqs problem for a rigid cone." (1948). <http://dx.doi.org/10.1017/S0305004100024518>`_
 .. [#Shorshorov_1982] Shorshorov M.K. et al., Sov. Phys. Dokl., 1982, 26.
-.. [#Strader_2006] `Strader J.H. et al., "An experimental evaluation of the constant b relating the contact stiffness to the contact area in nanoindentation.", Philosophical Magazine (2006) <http://dx.doi.org/10.1080/14786430600567747>`_
+.. [#Strader_2006] `Strader J.H. et al., "An experimental evaluation of the constant b relating the contact stiffness to the contact area in nanoindentation." (2006) <http://dx.doi.org/10.1080/14786430600567747>`_
 .. [#Troyon_2006] `Troyon M. and Lafaye S., "About the importance of introducing a correction factor in the Sneddon relationship for nanoindentation measurements" (2002). <http://dx.doi.org/10.1080/14786430600606834>`_
-.. [#YetnaNjock_2015] `Yetna N'jock M. et al., "A criterion to identify sinking-in and piling-up in indentation of materials.", International Journal of Mechanical Sciences (2015). <http://dx.doi.org/10.1016/j.ijmecsci.2014.11.008>`_
+.. [#YetnaNjock_2015] `Yetna N'jock M. et al., "A criterion to identify sinking-in and piling-up in indentation of materials." (2015). <http://dx.doi.org/10.1016/j.ijmecsci.2014.11.008>`_
