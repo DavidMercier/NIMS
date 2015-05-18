@@ -44,10 +44,12 @@ else
     
 end
 
+data2import = [gui.data.pathname_data, gui.data.filename_data];
+
 %% .txt file
 if strcmp (ext, '.txt') == 1
     
-    comma2point_overwrite(gui.data.filename_data); % Replace comma with a point
+    comma2point_overwrite(data2import); % Replace comma with a point
     data = load(gui.data.filename_data); %importdata ??
     
     if size(data,2) == 3
@@ -72,15 +74,15 @@ if strcmp (ext, '.txt') == 1
     
     %% .xls file
 elseif strcmp (ext, '.xls') == 1
-    [data,txt] = xlsread(gui.data.filename_data);
+    [data,txt] = xlsread(data2import);
     L = txt(:,1); %limite
-    TF = strcmp(L, 'Hold Segment Type');
-    y_index = find(TF == 1);
+    TF_segm = strcmp(L, 'Hold Segment Type');
+    y_index = find(TF_segm == 1);
     
     if isempty(y_index)
         clear TF; clear z;
-        TF = strcmp(L, 'Unload From Peak Segment Type');
-        y_index = find(TF == 1);
+        TF_segm = strcmp(L, 'Unload From Peak Segment Type');
+        y_index = find(TF_segm == 1);
         
         if isempty(y_index)
             gui.flag.flag_xls_data = 1; % No segment
@@ -102,7 +104,14 @@ elseif strcmp (ext, '.xls') == 1
         
         data_index = sprintf('%c%d:%c%d', 'B', 1, 'I', y_index);
         
-        [data,txt]        = xlsread(gui.data.filename_data, 'Sample', data_index);
+        try
+            [data,txt]        = xlsread(data2import, 'Sample', data_index);
+            NoSampleFlag = 0;
+        catch
+            [data,txt]        = xlsread(data2import);
+            NoSampleFlag = 1;
+        end
+        
         L                 = txt(1,:); %limite
         TF_disp           = strcmp(L, 'Displacement Into Surface');
         x_index_disp      = find(TF_disp==1);
@@ -118,9 +127,15 @@ elseif strcmp (ext, '.xls') == 1
         x_index_stiff_dev = find(TF_dev == 1);
         
         if isempty(x_index_disp_dev) && isempty(x_index_load_dev) && isempty(x_index_stiff_dev)
-            data_clean(:,1) = data(:,x_index_disp);
-            data_clean(:,2) = data(:,x_index_load);
-            data_clean(:,3) = data(:,x_index_stiff);
+            if NoSampleFlag
+                data_clean(:,1) = data(:,x_index_disp-1);
+                data_clean(:,2) = data(:,x_index_load-1);
+                data_clean(:,3) = data(:,x_index_stiff-1);
+            else
+                data_clean(:,1) = data(:,x_index_disp);
+                data_clean(:,2) = data(:,x_index_load);
+                data_clean(:,3) = data(:,x_index_stiff);
+            end
             clear data;
             
             data(:,1) = data_clean(:,1);
