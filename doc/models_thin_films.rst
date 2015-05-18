@@ -72,7 +72,7 @@ Indentation contact topography
 For nanoindentation tests on thin films, the contact topography is function of both thin film and substrate properties (see Figure 1).
 
 .. figure:: ./_pictures/contact_topography_thinfilm.png
-   :scale: 40 %
+   :scale: 60 %
    :align: center
    
    *Figure 1 : Schematic depiction of a) "pile-up" and b) "sink-in" for thin films.*

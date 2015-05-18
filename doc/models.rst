@@ -88,15 +88,17 @@ Hainsworth et al. proposed the following relationship to describe loading curves
 With :math:`K` a constant function of material properties
 (Young's modulus and hardness) and the indenter.
 
-Other authors established parabolic relationships between the load and the indentation depth,
-for purely elastic indentation of bulk materials with ideally Berkovich indenter (:eq:`Larsson_Berkovich`) [#Larsson_1996]_
-and Vickers indenter (:eq:`Giannakopoulos_Vickers`) [#Giannakopoulos_1994]_, by numerical studies.
+In the same time, Giannakopoulos and Larsson established parabolic relationships between the load and the indentation depth,
+for purely elastic indentation of bulk materials with ideally Berkovich indenter :eq:`Larsson_Berkovich` [#Larsson_1996]_
+and Vickers indenter :eq:`Giannakopoulos_Vickers` [#Giannakopoulos_1994]_, by numerical studies.
 
         .. math:: F_\text{c} = 2.1891 \left(1-0.21\nu -0.01{\nu}^2 -0.41{\nu}^3 \right) \frac{E}{1-{\nu}^2} h_\text{t}^2
                 :label: Larsson_Berkovich
                 
         .. math:: F_\text{c} = 2.0746 \left(1-0.1655\nu -0.1737{\nu}^2 -0.1862{\nu}^3 \right) \frac{E}{1-{\nu}^2} h_\text{t}^2
                 :label: Giannakopoulos_Vickers
+
+With :math:`\nu` the Poisson's ratio and :math:`E` the Young's modulus of the indented material.
 
 Unloading
 +++++++++++
