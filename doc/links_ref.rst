@@ -88,7 +88,8 @@ Bilayer models to extract Young's modulus of a thin film on a substrate (with co
 * `Chen X. and Vlassak J.J., "Numerical study on the measurement of thin film mechanical properties by means of nanoindentation" (2001). <http://dx.doi.org/10.1557/JMR.2001.0408>`_
 * `Rar A. et al., "Assessment of new relation for the elastic compliance of a film–substrate system." (2002). <http://dx.doi.org/10.1557/PROC-695-L10.10.1>`_ 
 * `Saha R. and Nix W.D., "Effects of the substrate on the determination of thin film mechanical properties by nanoindentation" (2002). <http://dx.doi.org/10.1016/S1359-6454(01)00328-7>`_
-* `Chen S. et al., "Nanoindentation of thin-film-substrate system: Determination of film hardness and Young's modulus", (2004). <http://dx.doi.org/10.1007/BF02489376>`_
+* `Chen S. et al., "Nanoindentation of thin-film-substrate system: Determination of film hardness and Young's modulus" (2004). <http://dx.doi.org/10.1007/BF02489376>`_
+* `Jung Y.-G. et al. "Evaluation of elastic modulus and hardness of thin films by nanoindentation" (2004). <http://dx.doi.org/10.1557/JMR.2004.0380>`_
 * `Perriot A. and Barthel E., "Elastic contact to a coated half-space: Effective elastic modulus and real penetration" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.2.600>`_
 * `Bec S. et al., "A simple guide to determine elastic properties of films on substrate from nanoindentation experiments" (2006). <http://dx.doi.org/10.1080/14786430600660856>`_
 * `Xu H. and Pharr G.M., "An improved relation for the effective elastic compliance of a film/substrate system during indentation by a flat cylindrical punch." (2006). <http://dx.doi.org/10.1016/j.scriptamat.2006.04.037>`_

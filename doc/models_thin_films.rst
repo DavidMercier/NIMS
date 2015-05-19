@@ -93,10 +93,10 @@ The model of Doerner and Nix is detailed in many papers [#DoernerNix_1986]_, [#K
               - \frac{1}{E_\text{f}^{'}}\right) e^{-\alpha\left(x\right)}
             :label: doerner_nix
 
-With :math:`x=t/h` and :math:`\alpha` an empirically constant
+With :math:`x=t/h_\text{c}` and :math:`\alpha` an empirically constant
 determined using the method of least squares.
 
-The equation was modified by King (1987), by the replacement of :math:`t/h` by :math:`t/a_\text{c}`.
+The equation was modified by King (1987), by the replacement of :math:`t/h_\text{c}` by :math:`t/a_\text{c}`.
 
 Find here the |matlab| function for the Doerner and Nix function :
 `model_doerner_nix_king.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_doerner_nix_king.m>`_.
@@ -107,7 +107,7 @@ An empirical formulae based on the model of Doerner and Nix was proposed by Chen
               \frac{1}{E_\text{s}^{'}}e^{-\alpha\left(x\right)^{(2/3)}}
             :label: chen
             
-With :math:`x=t/h` and :math:`\alpha` an empirically constant
+With :math:`x=t/h_\text{c}` and :math:`\alpha` an empirically constant
 determined using the method of least squares.
             
 Find here the |matlab| function for the Chen function :
@@ -210,6 +210,24 @@ adjustable constants determined using the method of least squares.
 
 Find here the |matlab| function for the Perriot et al. function :
 `model_perriot_barthel.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_perriot_barthel.m>`_.
+
+Jung et al. (2004) 
+---------------------
+
+Jung et al. [#Jung_2004]_ have adapted for conical indentation of thin films,
+the simple empirical approach of Hu and Lawn [#Hu_1998]_ developed initially for spherical indentation on bilayer structures.
+
+The following power-law relationship allows the evaluation of the Young's modulus of a thin film deposited on a substrate from nanoindentation experiments :
+
+    .. math:: E^{'} = E_\text{s} {\frac{E_\text{f}}{E_\text{s}}}^L
+            :label: jung
+
+with :math:`L` is the exponent term described by a dimensionless function :
+
+    .. math:: L = \frac{1}{\left[1+A{\left(\frac{h_\text{c}}{t}\right)}^C\right]}
+            :label: jung_sigmoidal
+
+where :math:`A`, :math:`B`, :math:`C`, and :math:`D` are adjustable coefficients.
 
 Bec et al. (2006) 
 -------------------
@@ -420,7 +438,9 @@ References
 .. [#FischerCripps_2004] `Fischer-Cripps, A.C., "Nanoindentation 2nd ed." (2004) <http://link.springer.com/book/10.1007%2F978-1-4419-9872-9>`_
 .. [#Gao_1992] `Gao H. et al., "Elastic contact versus indentation modeling of multi-layered materials" (1992). <http://dx.doi.org/10.1016/0020-7683(92)90004-D>`_
 .. [#Hay_2011] `Hay J. and Crawford B., "Measuring substrate-independent modulus of thin films" (2011). <http://dx.doi.org/10.1557/jmr.2011.8>`_
+.. [#Hu_1998] `Hu X. Z. and Lawn B. R. "A simple indentation stress–strain relation for contacts with spheres on bilayer structures" (1998). <http://dx.doi.org/10.1016/S0040-6090(97)00919-X>`_
 .. [#Jennett_2001] `Jennett N. M. and Bushby A. J., "Adaptive Protocol for Robust Estimates of Coatings Properties by Nanoindentation" (2001). <http://dx.doi.org/10.1557/PROC-695-L3.1.1>`_
+.. [#Jung_2004] `Jung Y.-G. et al. "Evaluation of elastic modulus and hardness of thin films by nanoindentation" (2004). <http://dx.doi.org/10.1557/JMR.2004.0380>`_
 .. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <http://dx.doi.org/10.1016/0020-7683(87)90116-8>`_
 .. [#Li_2010] `Li H. et al., "New methods of analyzing indentation experiments on very thin films" (2010). <http://dx.doi.org/10.1557/JMR.2010.0095>`_
 .. [#Mencík_1997] `Mencík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
