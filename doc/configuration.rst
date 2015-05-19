@@ -19,11 +19,11 @@ The YAML configuration files
 
 Three YAML configuration files are used in the Matlab toolbox :
     
-- `*indenters_config.yaml* <https://github.com/DavidMercier/NIMS/blob/master/YAML_config_files/indenters_config.yaml>`_ provides indenter's properties (geometry and material).
+- `indenters_config.yaml <https://github.com/DavidMercier/NIMS/blob/master/YAML_config_files/indenters_config.yaml>`_ provides indenter's properties (geometry and material).
     
-- `*data_config.yaml* <https://github.com/DavidMercier/NIMS/blob/master/YAML_config_files/data_config.yaml>`_ provides a path on your computer to select easily your data.
+- `data_config.yaml <https://github.com/DavidMercier/NIMS/blob/master/YAML_config_files/data_config.yaml>`_ provides a path on your computer to select easily your data.
     
-- `*numerics_config.yaml* <https://github.com/DavidMercier/NIMS/blob/master/YAML_config_files/numerics_config.yaml>`_ provides numerical parameters used by the toolbox.
+- `numerics_config.yaml <https://github.com/DavidMercier/NIMS/blob/master/YAML_config_files/numerics_config.yaml>`_ provides numerical parameters used by the toolbox.
 
 How to modify YAML configuration files ?
 ##############################################
@@ -37,7 +37,8 @@ Please find the 3 YAML configuration files in the
 
    *Screenshot of the YAML configuration file used for indenter's properties.*
 
-`*indenters_config.yaml* <https://github.com/DavidMercier/NIMS/blob/master/YAML_config_files/indenters_config.yaml>`_  can be used to change indenter's properties :
+
+`indenters_config.yaml <https://github.com/DavidMercier/NIMS/blob/master/YAML_config_files/indenters_config.yaml>`_  can be used to change indenter's properties :
     - Write your Indenter_ID(s) (e.g. : Conical indenter, Berk_TB10161_091208, ...);
     - Write indenter's properties (e.g. : Berk_TB10161_091208: [22.233, 437.603, 127.765, -417.878, -84.0989, 0]);
 
@@ -45,9 +46,9 @@ Please find the 3 YAML configuration files in the
     * For user-defined indenters, make the name of the indenter begins with the 4th first letters of the indenter name (e.g.: 'Berk_130214' for 'Berkovich').
     * Do not remove standard indenters and standard materials !
 
-`*data_config.yaml* <https://github.com/DavidMercier/NIMS/blob/master/YAML_config_files/data_config.yaml>`_ can be used to set the default absolute path for the folder where you store your indentation data.
+`data_config.yaml <https://github.com/DavidMercier/NIMS/blob/master/YAML_config_files/data_config.yaml>`_ can be used to set the default absolute path for the folder where you store your indentation data.
 
-`*numerics_config.yaml* <https://github.com/DavidMercier/NIMS/blob/master/YAML_config_files/numerics_config.yaml>`_ can be used to change the numerical parameters used by the toolbox from their standard values.
+`numerics_config.yaml <https://github.com/DavidMercier/NIMS/blob/master/YAML_config_files/numerics_config.yaml>`_ can be used to change the numerical parameters used by the toolbox from their standard values.
 
 ..  warning::
     * Be careful to put a comma + a space between each data...! (YAML convention)

@@ -219,15 +219,15 @@ the simple empirical approach of Hu and Lawn [#Hu_1998]_ developed initially for
 
 The following power-law relationship allows the evaluation of the Young's modulus of a thin film deposited on a substrate from nanoindentation experiments :
 
-    .. math:: E^{'} = E_\text{s} {\frac{E_\text{f}}{E_\text{s}}}^L
+    .. math:: E^{'} = E_\text{s} {\left(\frac{E_\text{f}}{E_\text{s}}_right)}^L
             :label: jung
 
 with :math:`L` is the exponent term described by a dimensionless function :
 
-    .. math:: L = \frac{1}{\left[1+A{\left(\frac{h_\text{c}}{t}\right)}^C\right]}
+    .. math:: L = \frac{1}{\left[1+A{\left(\frac{h_\text{c}}{t}\right)}^B\right]}
             :label: jung_sigmoidal
 
-where :math:`A`, :math:`B`, :math:`C`, and :math:`D` are adjustable coefficients.
+where :math:`A` and :math:`B` are adjustable coefficients.
 
 Bec et al. (2006) 
 -------------------
