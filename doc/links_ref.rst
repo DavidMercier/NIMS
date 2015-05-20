@@ -122,6 +122,7 @@ Finite Element Modelling of conical indentation of thin film(s) on a substrate
 * `Chen X. and Vlassak J.J., "Numerical study on the measurement of thin film mechanical properties by means of nanoindentation." (2001). <http://dx.doi.org/10.1557/JMR.2001.0408>`_
 * `Bouzakis K.-D. et al., "Thin hard coatings stress–strain curve determination through a FEM supported evaluation of nanoindentation test results.", (2001). <http://dx.doi.org/10.1016/S0257-8972(01)01275-0>`_
 * `Xu Z.-H. and Rowcliffe D., "Finite element analysis of substrate effects on indentation behaviour of thin films." (2004). <http://dx.doi.org/10.1016/S0040-6090(03)01071-X>`_
+* `Panich N. and Sun Y. "Effect of penetration depth on indentation response of soft coatings on hard substrates: a finite element analysis" (2004) <http://dx.doi.org/10.1016/j.surfcoat.2003.07.002>`_
 * `Bressan J.D. et al., "Modeling of nanoindentation of bulk and thin film by finite element method." (2005). <http://dx.doi.org/10.1016/j.wear.2004.05.021>`_
 * `Pelletier H. et al., "Characterization of mechanical properties of thin films using nanoindentation test." (2006). <http://dx.doi.org/10.1016/j.mechmat.2006.02.011>`_
 * `Antunes J.M. et al., "On the determination of the Young’s modulus of thin films using indentation tests" (2007). <http://dx.doi.org/10.1016/j.ijsolstr.2007.06.015>`_
