@@ -88,9 +88,7 @@ Hainsworth et al. proposed the following relationship to describe loading curves
 With :math:`K` a constant function of material properties
 (Young's modulus and hardness) and the indenter.
 
-In the same time, Giannakopoulos and Larsson established parabolic relationships between the load and the indentation depth,
-for purely elastic indentation of bulk materials with ideally Berkovich indenter :eq:`Larsson_Berkovich` [#Larsson_1996]_
-and Vickers indenter :eq:`Giannakopoulos_Vickers` [#Giannakopoulos_1994]_, by numerical studies.
+In the same time, Giannakopoulos and Larsson established parabolic relationships between the load and the indentation depth, for purely elastic indentation of bulk materials with ideally Berkovich indenter :eq:`Larsson_Berkovich` [#Larsson_1996]_ and Vickers indenter :eq:`Giannakopoulos_Vickers` [#Giannakopoulos_1994]_, by numerical studies.
 
         .. math:: F_\text{c} = 2.1891 \left(1-0.21\nu -0.01{\nu}^2 -0.41{\nu}^3 \right) \frac{E}{1-{\nu}^2} h_\text{t}^2
                 :label: Larsson_Berkovich
@@ -175,7 +173,7 @@ a flat cylindrical punch). An expression of :math:`\epsilon` in function of the 
 exponent :math:`m` of the unloading curve fit has been proposed by Pharr et Bolshakov [#Pharr_2002]_.
 
 Find here the |matlab| function to plot the :math:`\epsilon` function :
-`epsilon_OliverPharr.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/load_displacement/epsilon_OliverPharr.m>`_.
+`epsilon_oliver_pharr.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/load_displacement/epsilon_oliver_pharr.m>`_.
 
 .. figure:: ./_pictures/epsilonOliverPharr.png
    :scale: 45 %
@@ -368,7 +366,7 @@ the analytical approximation is :
 With :math:`\nu` the Poisson's ratio of the indented material.
 
 Find here the |matlab| function to plot the :math:`\beta` function of Hay et al.:
-`beta_Hay.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/beta_Hay.m>`_.
+`beta_hay.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/beta_hay.m>`_.
 
 .. figure:: ./_pictures/betaHay.png
    :scale: 35 %

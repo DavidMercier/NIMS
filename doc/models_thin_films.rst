@@ -215,19 +215,25 @@ Jung et al. (2004)
 ---------------------
 
 Jung et al. [#Jung_2004]_ have adapted for conical indentation of thin films,
-the simple empirical approach of Hu and Lawn [#Hu_1998]_ developed initially for spherical indentation on bilayer structures.
+the simple empirical approach of Hu and Lawn [#Hu_1998]_ developed initially
+for spherical indentation on bilayer structures. The following power-law relationship
+allows the evaluation of the Young's modulus of a thin film deposited on a
+substrate from nanoindentation experiments :
 
-The following power-law relationship allows the evaluation of the Young's modulus of a thin film deposited on a substrate from nanoindentation experiments :
-
-    .. math:: E^{'} = E_\text{s} {\left(\frac{E_\text{f}}{E_\text{s}}\right)}^L
+    .. math:: E = E_\text{s} {\left(\frac{E_\text{f}}{E_\text{s}}\right)}^L
             :label: jung
 
 with :math:`L` is the exponent term described by a dimensionless function :
 
-    .. math:: L = \frac{1}{\left[1+A{\left(\frac{h_\text{c}}{t}\right)}^B\right]}
+    .. math:: L = \frac{1}{\left[1+A{\left(x\right)}^B\right]}
             :label: jung_sigmoidal
 
-where :math:`A` and :math:`B` are adjustable coefficients.
+With :math:`x=h_\text{c}/t` and where :math:`A` and :math:`B` are adjustable coefficients.
+
+Jung et al. founded :math:`A=3.76` and :math:`B=1.38` after regression fits of :eq:`jung` to different data sets.
+
+Find here the |matlab| function for the Jung et al. function :
+`jung.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_jung.m>`_.
 
 Bec et al. (2006) 
 -------------------
