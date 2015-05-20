@@ -1,5 +1,5 @@
 %% Copyright 2014 MERCIER David
-function [beta, theta_eq, nu] = beta_Hay(theta_eq, nu, varargin)
+function [beta, theta_eq, nu] = beta_hay(theta_eq, nu, varargin)
 %% Function used to plot beta parameter in function of the equivalent
 % semi-angle for a conical indentet and in funciton of the Poisson's
 % coefficient of the material indented.
@@ -9,7 +9,7 @@ if nargin  == 0
     % First plot in function of theta_eq
     nu = 0.3;
     theta_eq = 0:0.1:90;
-    [beta, theta_eq, nu] = beta_Hay(theta_eq, nu);
+    [beta, theta_eq, nu] = beta_hay(theta_eq, nu);
     figure;
     plot(theta_eq, beta, 'b-', 'LineWidth', 2, 'MarkerSize', 10);
     xlabel('\theta_{eq} (°)', 'Color', [0,0,0], 'FontSize', 14);
@@ -23,7 +23,7 @@ if nargin  == 0
     % Second plot in function of nu
     nu = 0:0.02:0.5;
     theta_eq = 70.32; % Equivalent cone angle (in degrees) of the Berkovich indenter
-    [beta, theta_eq, nu] = beta_Hay(theta_eq, nu);
+    [beta, theta_eq, nu] = beta_hay(theta_eq, nu);
     figure;
     plot(nu, beta, 'b-', 'LineWidth', 2, 'MarkerSize', 10);
     xlabel('\nu', 'Color', [0,0,0], 'FontSize', 14);

@@ -20,7 +20,7 @@ if gui.variables.King_correction == 1 % See in King (1987)
         beta = gui.config.numerics.betaConical_King;
     end
 elseif gui.variables.King_correction == 2 % See in Hay (1999)
-    beta = beta_Hay(theta_eq, gui.data.nuf);
+    beta = beta_hay(theta_eq, gui.data.nuf);
 end
 
 %% Young's modulus calculation - See in Pharr et al. (1992)
