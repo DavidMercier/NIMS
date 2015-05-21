@@ -44,7 +44,7 @@ contact depth (:math:`h_\text{c}`), to the film thickness (:math:`t`), and
 :math:`\phi` is equal to 1 when :math:`x` is equal to 0 and 0 when :math:`x` is infinite.
            
 .. note::
-    If the difference between Poisson’s ratio of the thin film and substrate is small,
+    If the difference between Poisson's ratio of the thin film and substrate is small,
     the values for uniaxial loading Young's moduli, :math:`E`, :math:`E_\text{f}`,
     :math:`E_\text{s}` can be used in previous equation.
     
@@ -77,7 +77,7 @@ For nanoindentation tests on thin films, the contact topography is function of b
    
    *Figure 1 : Schematic depiction of a) "pile-up" and b) "sink-in" for thin films.*
    
-The Figure 1-a ("pile-up") is typical of the case of a softfilm on a hard substrate and the Figure 1-b ("sink-in") of a hard film on a soft substrate [#ChenVlassak2001]_.
+The Figure 1-a ("pile-up") is typical of the case of a soft film on a hard substrate and the Figure 1-b ("sink-in") of a hard film on a soft substrate [#ChenVlassak2001]_.
    
 To determine the depth of contact, `the same models <http://nims.readthedocs.org/en/latest/models.html#indentation-contact-topography>`_ described for bulk material indentation are used.
 
@@ -98,7 +98,7 @@ determined using the method of least squares.
 
 The equation was modified by King (1987), by the replacement of :math:`t/h_\text{c}` by :math:`t/a_\text{c}`.
 
-Find here the |matlab| function for the Doerner and Nix function :
+Find here the |matlab| function for the Doerner and Nix model :
 `model_doerner_nix_king.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_doerner_nix_king.m>`_.
 
 An empirical formulae based on the model of Doerner and Nix was proposed by Chen et al. in 2004 [#Chen_2004]_:
@@ -110,7 +110,7 @@ An empirical formulae based on the model of Doerner and Nix was proposed by Chen
 With :math:`x=t/h_\text{c}` and :math:`\alpha` an empirically constant
 determined using the method of least squares.
             
-Find here the |matlab| function for the Chen function :
+Find here the |matlab| function for the Chen model :
 `model_chen.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_chen.m>`_.
 
 Gao et al. (1992) 
@@ -214,7 +214,7 @@ The following system of equation describes the model developed by Perriot et al.
 With :math:`x=a_\text{c}/t`, and :math:`k_0` and :math:`n` are 
 adjustable constants determined using the method of least squares.
 
-Find here the |matlab| function for the Perriot et al. function :
+Find here the |matlab| function for the Perriot et al. model :
 `model_perriot_barthel.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_perriot_barthel.m>`_.
 
 Jung et al. (2004) 
@@ -231,7 +231,7 @@ substrate from nanoindentation experiments :
 
 with :math:`L` is the exponent term described by a dimensionless function :
 
-    .. math:: L = \frac{1}{\left[1+A*{x}^B\right]}
+    .. math:: L = \frac{1}{\left[1+A{x}^B\right]}
             :label: jung_sigmoidal
 
 With :math:`x=h_\text{c}/t` and where :math:`A` and :math:`B` are adjustable coefficients.
@@ -242,9 +242,12 @@ or with finite element data for specified material systems.
 Finally, to be more consistent with other analytical models implemented in this toolbox, the model of Jung is modified by using the reduced form of the Young's moduli :
 
      .. math:: E^{'} = E^{'}_\text{s} {\left(\frac{E^{'}_\text{f}}{E^{'}_\text{s}}\right)}^L
-            :label: jung_mod
+            :label: jung_reduced
 
-Find here the |matlab| function for the Jung et al. function :
+Find here the |matlab| function for the sigmoidal function used in the Jung's model :
+`sigmoidal_jung.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/sigmoidal_jung.m>`_.
+
+Find here the |matlab| function for the Jung et al. model :
 `jung.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_jung.m>`_.
 
 Bec et al. (2006) 
@@ -259,7 +262,7 @@ This system is modelled by two springs connected in series (see Figure 2).
    :scale: 40 %
    :align: center
    
-   *Figure 2 : Schematic description of the bilayer model of Bec.*
+   *Figure 2 : Schematic description of the bilayer model of Bec et al.*
 
     .. math:: K_\text{f} = \pi a_\text{c}^2 \frac{E^{'}_\text{f}}{t}
             :label: bec_kf
@@ -285,14 +288,14 @@ This system is modelled by two springs connected in series (see Figure 2).
               \frac{2t}{\pi}\right)E^{'}_\text{s}}
             :label: bec_Eeq
 
-Find here the |matlab| function for the Bec et al. function :
+Find here the |matlab| function for the Bec et al. model :
 `model_bec.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_bec.m>`_.
             
 Hay et al. (2011) 
 -------------------
 
 The present model of Hay et al. [#Hay_2011]_ is a development of the Song–Pharr model [#Rar_2002]_
-and [#Xu_2006]_ , which is already inspired by the Gao model [#Gao_1992]_.
+and [#Xu_2006]_, which is already inspired by the Gao model [#Gao_1992]_.
 
     .. math:: \frac{1}{\mu_\text{c}} = \left(1-\phi_{Gao_0}\right)
               \frac{1}{\mu_\text{s} + F\phi_{Gao_0}\mu_\text{f}} +
@@ -335,7 +338,7 @@ the shear modulus and Poisson’s ratio of the film :
     .. math:: E_\text{f} = 2\mu_\text{f}\left(1 + \nu_\text{f}\right)
             :label: hay_Ef
 
-Find here the |matlab| function for the Hay et al. function :
+Find here the |matlab| function for the Hay et al. model :
 `model_hay.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_hay.m>`_.
 
 Bull (2014) 
@@ -353,7 +356,7 @@ load support of a truncated cone of material beneath the indenter [#Bull_2014]_.
     .. math:: h_\text{s} = \frac{F_\text{c}}{\pi E_\text{s}} \left[ \frac{1}{a_0 tan\alpha + t_\text{f} tan^2\alpha} - \frac{1}{a_0 tan\alpha + (t_\text{f} + t_\text{s}) tan^2\alpha} \right]
             :label: bull_disp_substrate
 
-Where :math:`E_\text{f}` and :math:`E_\text{s}` are the Young’s Modulus of the coating and
+Where :math:`E_\text{f}` and :math:`E_\text{s}` are the Young's Modulus of the coating and
 substrate, :math:`t_\text{f}` and :math:`t_\text{s}` are the coating and substrate thickness,
 and :math:`\alpha` is the semi-angle of the cone material which supports the load. 
 
@@ -403,7 +406,7 @@ from the contact stiffness.
    
    *Figure 4 : Experimental process to apply for elastic multilayer model.*
 
-Find here the |matlab| function for the Mercier et al. function :
+Find here the |matlab| function for the Mercier et al. model :
 `model_multilayer_elastic.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_multilayer_elastic.m>`_.
   
 Corrections to apply for thin film indentation 
