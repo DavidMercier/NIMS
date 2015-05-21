@@ -143,7 +143,13 @@ ratio of the substrate and :math:`\nu_{f}` the Poisson's ratio of the thin film.
 
 With :math:`x=a_\text{c}/t`.
 
-Find here the |matlab| function for the Gao et al. function :
+Find here the |matlab| function for the weighting function :math:`\phi_{Gao_0}` :
+`phi_gao_0.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/phi_gao_0.m>`_.
+Find here the |matlab| function for the weighting function :math:`\phi_{Gao_1}` :
+`phi_gao_1.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/phi_gao_1.m>`_.
+Find here the |matlab| function for :math:`\nu_{c}` the composite Poisson's ratio :
+`composite_poissons_ratio.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/composite_poissons_ratio.m>`_.
+Find here the |matlab| function for the Gao et al. model :
 `model_gao.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_gao.m>`_.
 
 Mencík et al. (linear model) (1997) 
@@ -225,12 +231,18 @@ substrate from nanoindentation experiments :
 
 with :math:`L` is the exponent term described by a dimensionless function :
 
-    .. math:: L = \frac{1}{\left[1+A{\left(x\right)}^B\right]}
+    .. math:: L = \frac{1}{\left[1+A*{x}^B\right]}
             :label: jung_sigmoidal
 
 With :math:`x=h_\text{c}/t` and where :math:`A` and :math:`B` are adjustable coefficients.
 
-Jung et al. founded :math:`A=3.76` and :math:`B=1.38` after regression fits of :eq:`jung` to different data sets.
+Jung et al. founded :math:`A=3.76` and :math:`B=1.38` after regression fits of :eq:`jung` to different data sets. These coefficients are not universal and need to be "calibrated" with experimental data
+or with finite element data for specified material systems.
+
+Finally, to be more consistent with other analytical models implemented in this toolbox, the model of Jung is modified by using the reduced form of the Young's moduli :
+
+     .. math:: E^{'} = E^{'}_\text{s} {\left(\frac{E^{'}_\text{f}}{E^{'}_\text{s}}\right)}^L
+            :label: jung_mod
 
 Find here the |matlab| function for the Jung et al. function :
 `jung.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_jung.m>`_.
