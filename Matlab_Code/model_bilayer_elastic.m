@@ -33,21 +33,23 @@ if gui.variables.val2 ~= 1
 
         if gui.variables.val2 == 2 %Doerner & Nix (1986) modified by King (1987)
             model_doerner_nix_king(OPTIONS);
-        elseif gui.variables.val2 == 3  %Doerner & Nix (1986) modified by Chen (2004)
-            model_doerner_nix_king(OPTIONS);
+        elseif gui.variables.val2 == 3 %Doerner & Nix (1986) modified by Chen (2004)
+            model_chen(OPTIONS);
         elseif gui.variables.val2 == 4 %Gao et al. (1992) (for flat cylindrical indentation test...)
             model_gao(OPTIONS);
         elseif gui.variables.val2 == 5 %Bec et al. (2006)
             model_bec(OPTIONS);
         elseif gui.variables.val2 == 6 %Hay et al. (2011)
             model_hay(OPTIONS);
-        elseif gui.variables.val2 == 7 %Perriot et al. (2003)
+        elseif gui.variables.val2 == 7 % Jung et al. (2004)
+            model_jung(OPTIONS);
+        elseif gui.variables.val2 == 8 %Perriot et al. (2003)
             model_perriot_barthel(OPTIONS);
-        elseif gui.variables.val2 == 8 % Mencik et al. (linear model) (1997)
+        elseif gui.variables.val2 == 9 % Mencik et al. (linear model) (1997)
             model_mencik_linear(OPTIONS);
-        elseif gui.variables.val2 == 9 % Mencik et al. (exponential model) (1997)
+        elseif gui.variables.val2 == 10 % Mencik et al. (exponential model) (1997)
             model_mencik_exponential(OPTIONS);
-        elseif gui.variables.val2 == 10 % Mencik et al. (reciprocal exponential model) (1997)
+        elseif gui.variables.val2 == 11 % Mencik et al. (reciprocal exponential model) (1997)
             model_mencik_reciprocal_exponential(OPTIONS);
         end
         
