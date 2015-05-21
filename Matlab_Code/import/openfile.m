@@ -11,7 +11,7 @@ gui.flag.flag = 0;
 
 %% Open window to select file
 [gui.data.filename_data, gui.data.pathname_data, filterindex_data] = ...
-    uigetfile([gui.config.data.data_path, '*.xls;*.txt'], 'File Selector');
+    uigetfile([gui.config.data.data_path, '*.xls;*.txt;*.xlsx'], 'File Selector');
 
 %% Waitbar
 steps = 1000;
@@ -73,7 +73,7 @@ if strcmp (ext, '.txt') == 1
     end
     
     %% .xls file
-elseif strcmp (ext, '.xls') == 1
+elseif strcmp (ext, '.xls') == 1 || strcmp (ext, '.xlsx') == 1
     [data,txt] = xlsread(data2import);
     L = txt(:,1); %limite
     TF_segm = strcmp(L, 'Hold Segment Type');
