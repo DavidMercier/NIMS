@@ -9,14 +9,13 @@ gui = guidata(gcf);
 
 x = gui.results.t_corr./gui.results.ac;
 
-gui.data.phigao1 = (2/pi).*atan(x)+(x./pi).*log((1+(x).^2)./(x).^2);
+gui.data.phigao1 = phi_gao_1(x);
 
+% Poisson's coefficient of the composite (film + substrate)
+gui.data.nuc = composite_poissons_ratio(gui.data.nus, gui.data.nuf, ...
+    gui.data.phigao1);
 
-gui.data.nuc = 1-(((1-gui.data.nus)*(1-gui.data.nuf)) ./ ...
-    (1-(1-gui.data.phigao1)*gui.data.nuf-(gui.data.phigao1*gui.data.nus)));
-
-gui.data.phigao0 = (2/pi).*atan(x) + ((1./(2.*pi.*(1-gui.data.nuc))) .* ...
-    (((1-2*gui.data.nuc).*x.*log(1+(1./x).^2)) - (x./(1+(x).^2))));
+gui.data.phigao0 = phi_gao_0(x, gui.data.nuc);
 
 bilayer_model = @(Ef_red_sol, x) ...
     (1e-9*((((1e9*Ef_red_sol)-gui.data.Es_red) .* ...
