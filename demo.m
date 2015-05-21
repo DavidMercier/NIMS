@@ -25,8 +25,9 @@ gui.config.numerics = struct();
 
 %% Set Toolbox version and help paths
 gui.config.name_toolbox = 'NIMS';
-gui.config.version_toolbox = '2.5';
+gui.config.version_toolbox = '2.6';
 gui.config.url_help = 'http://nims.readthedocs.org/en/latest/';
+gui.config.pdf_help = 'https://media.readthedocs.org/pdf/nims/latest/nims.pdf';
 
 %% Main Window Coordinates Configuration
 scrsize = get(0, 'ScreenSize'); % Get screen size
