@@ -408,7 +408,16 @@ from the contact stiffness.
 
 Find here the |matlab| function for the Mercier et al. model :
 `model_multilayer_elastic.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_multilayer_elastic.m>`_.
-  
+
+Extraction of plastic properties of a thin film on a multilayer system
+########################################################################
+
+
+
+
+
+
+
 Corrections to apply for thin film indentation 
 #################################################
 
@@ -448,7 +457,7 @@ be independent of indentation depth and that its value ranges from
 0.3 to 0.7 for materials that do not work harden.
 
 References
------------
+#############
 
 .. [#Bec_2006] `Bec S. et al., "Improvements in the indentation method with a surface force apparatus" (2006). <http://dx.doi.org/10.1080/01418619608239707>`_
 .. [#Bull_2014] `Bull S.J., "A simple method for the assessment of the contact modulus for coated systems." (2014). <http://dx.doi.org/10.1080/14786435.2014.909612>`_

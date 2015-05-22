@@ -470,7 +470,7 @@ especially for penetration depths in the range of 25 to 100nm, where the
 uncertainties related to the displacement measurement disturb a lot.
 
 References
------------
+############
 
 .. [#Bec_2006] `Bec S. et al., "Improvements in the indentation method with a surface force apparatus" (2006). <http://dx.doi.org/10.1080/01418619608239707>`_
 .. [#Bulychev_1973] Bulychev S.I. et al., "Determining Young’s modulus from the indentor penetration diagram.", Zavod. Lab., 1973, 39, pp. 1137-1142.
