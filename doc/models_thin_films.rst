@@ -412,7 +412,9 @@ Find here the |matlab| function for the Mercier et al. model :
 Extraction of plastic properties of a thin film on a multilayer system
 ########################################################################
 
-
+[#Jönsson_1984]_
+[#Korsunsky_1998]_
+[#Saha_2002]_
 
 
 
@@ -470,8 +472,10 @@ References
 .. [#Hay_2011] `Hay J. and Crawford B., "Measuring substrate-independent modulus of thin films" (2011). <http://dx.doi.org/10.1557/jmr.2011.8>`_
 .. [#Hu_1998] `Hu X. Z. and Lawn B. R. "A simple indentation stress–strain relation for contacts with spheres on bilayer structures" (1998). <http://dx.doi.org/10.1016/S0040-6090(97)00919-X>`_
 .. [#Jennett_2001] `Jennett N. M. and Bushby A. J., "Adaptive Protocol for Robust Estimates of Coatings Properties by Nanoindentation" (2001). <http://dx.doi.org/10.1557/PROC-695-L3.1.1>`_
+.. [#Jönsson_1984] `Jönsson B. and Hogmark S., "Hardness measurements of thin films" (1984). <http://dx.doi.org/10.1016/0040-6090(84)90123-8>`_
 .. [#Jung_2004] `Jung Y.-G. et al. "Evaluation of elastic modulus and hardness of thin films by nanoindentation" (2004). <http://dx.doi.org/10.1557/JMR.2004.0380>`_
 .. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <http://dx.doi.org/10.1016/0020-7683(87)90116-8>`_
+.. [#Korsunsky_1998] `Korsunsky A.M. et al. "On the hardness of coated system" (1998). <http://dx.doi.org/10.1016/S0257-8972(97)00522-7>`_
 .. [#Li_2010] `Li H. et al., "New methods of analyzing indentation experiments on very thin films" (2010). <http://dx.doi.org/10.1557/JMR.2010.0095>`_
 .. [#Mencík_1997] `Mencík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
 .. [#Mercier_2010] `Mercier D. et al., "Young's modulus measurement of a thin film from experimental nanoindentation performed on multilayer systems" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_

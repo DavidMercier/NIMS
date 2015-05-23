@@ -125,7 +125,7 @@ tests with a constant indentation strain rate.
 
     .. math:: \dot{\epsilon} = \frac{\dot{h}}{h} = \frac{1}{2} \frac{\dot{F_\text{c}}}{F_\text{c}}
             :label: strain_rate
-           
+
 Indentation contact topography
 -------------------------------
 
@@ -432,7 +432,7 @@ are based on the integral of the loading and unloading curve
             
     .. math:: W_\text{p} = W_\text{tot} - W_\text{e}
             :label: energy_plastic
-            
+
 Methodology to extract properties without the function area 
 #############################################################
 
@@ -446,7 +446,7 @@ independent of the work-hardening behavior [#ChengCheng_1998]_.
 
 Then, combining the expression of the reduced Young's modulus
 :eq:`experimental_youngs_modulus_OP` with the expression of the
-hardness :eq:`hardness`, leads to the following equation [#OliverPharr_2004]_ :
+hardness :eq:`hardness`, leads to the following equation [Joslin_1990]_,[#OliverPharr_2004]_ :
 
     .. math:: \frac{4}{\pi} \frac{F_\text{c,max}}{S^2} = \frac{H}{E^{*}}
             :label: P_squareS
@@ -488,6 +488,7 @@ References
 .. [#Hainsworth_1996] `Hainsworth S.V. et al., "Analysis of nanoindentation load-displacement loading curves." (1996). <http://dx.doi.org/10.1557/JMR.1996.0250>`_
 .. [#Hay_1999] `Hay J.C. et al., "A critical examination of the fundamental relations used in the analysis of nanoindentation data." (1999). <http://dx.doi.org/10.1557/JMR.1999.0306>`_
 .. [#Hochstetter_1999] `Hochstetter G. et al., "Strain-rate effects on hardness of glassy polymers in the nanoscale range. Comparison between quasi-static and continuous stiffness measurements" (1999). <http://dx.doi.org/10.1080/00222349908248131>`_
+.. [#Joslin_1990] `Joslin D.L. and Oliver W.C., "A new method for analyzing data from continuous depth-sensing microindentation tests" (1990). <http://dx.doi.org/10.1557/JMR.1990.0123>`_
 .. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <http://dx.doi.org/10.1016/0020-7683(87)90116-8>`_
 .. [#Larsson_1996] `Larsson et al., "Analysis of Berkovich indentation" (1996). <http://dx.doi.org/10.1016/0020-7683(95)00033-7>`_
 .. [#Li_2002] `Li X. and Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications." (2002). <http://dx.doi.org/10.1016/S1044-5803(02)00192-4>`_

@@ -46,6 +46,7 @@ Material and indenters properties
 * `Loubet J.L. et al., "Vickers Indentation Curves of Magnesium Oxide (MgO)." (1984). <http://dx.doi.org/10.1115/1.3260865>`_
 * `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
 * `Loubet J.L. et al., "Vickers indentation curves of elastoplastic materials" (1986). <http://dx.doi.org/10.1520/STP889-EB>`_
+* `Joslin D.L. and Oliver W.C., "A new method for analyzing data from continuous depth-sensing microindentation tests" (1990). <http://dx.doi.org/10.1557/JMR.1990.0123>`_
 * `Oliver W.C. and Pharr G.M., "An improved technique for determining hardness and elastic modulus using load and displacement sensing indentation experiments" (1992). <http://dx.doi.org/10.1557/JMR.1992.1564>`_
 * `Pharr G.M. et al., "On the generality of the relationship among contact stiffness, contact area, and elastic modulus during indentation" (1992). <http://dx.doi.org/10.1557/JMR.1992.0613>`_
 * `Loubet J.L. et al., "Nanoindentation with a surface force apparatus." (1993). <http://dx.doi.org/10.1007/978-94-011-1765-4>`_
