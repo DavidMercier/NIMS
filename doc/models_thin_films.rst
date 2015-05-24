@@ -412,11 +412,26 @@ Find here the |matlab| function for the Mercier et al. model :
 Extraction of plastic properties of a thin film on a multilayer system
 ########################################################################
 
+[#Bückle_1961]_
+
+    .. math:: H = aH_\text{f} + bH_\text{s}
+            :label: buckle_hardness
+
 [#Jönsson_1984]_
+
+[#Doerner_1986]_
+
+[#ChicotLesage_1995]_
+
+[#He_1996]_
+
 [#Korsunsky_1998]_
+
 [#Saha_2002]_
 
+[#Chen_2004]_
 
+[#Iost_2005]_
 
 
 
@@ -466,11 +481,15 @@ References
 .. [#Bückle_1961] Bückle H., "VDI Berichte" (1961).
 .. [#ChenVlassak2001] `Chen X. and Vlassak J.J., "Numerical study on the measurement of thin film mechanical properties by means of nanoindentation." (2001). <http://dx.doi.org/10.1557/JMR.2001.0408>`_
 .. [#Chen_2004] `Chen S. et al., "Nanoindentation of thin-film-substrate system: Determination of film hardness and Young's modulus" (2004). <http://dx.doi.org/10.1007/BF02489376>`_
+.. [#ChicotLesage_1995] `Chicot D. and Lesage J., "Absolute hardness of films and coatings" (1995). <http://dx.doi.org/10.1016/j.mechmat.2007.07.002>`_
 .. [#DoernerNix_1986] `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
+.. [#Doerner_1986] `Doerner M.F. et al., "Plastic properties of thin films on substrates as measured by submicron indentation hardness and substrate curvature techniques" (1986).<http://dx.doi.org/10.1557/JMR.1986.0845>`_
 .. [#FischerCripps_2004] `Fischer-Cripps, A.C., "Nanoindentation 2nd ed." (2004) <http://link.springer.com/book/10.1007%2F978-1-4419-9872-9>`_
 .. [#Gao_1992] `Gao H. et al., "Elastic contact versus indentation modeling of multi-layered materials" (1992). <http://dx.doi.org/10.1016/0020-7683(92)90004-D>`_
 .. [#Hay_2011] `Hay J. and Crawford B., "Measuring substrate-independent modulus of thin films" (2011). <http://dx.doi.org/10.1557/jmr.2011.8>`_
+.. [#He_1996] `He J. L. et al., "Hardness measurement of thin films: Separation from composite hardness" (1996). <http://dx.doi.org/10.1063/1.117595>`_
 .. [#Hu_1998] `Hu X. Z. and Lawn B. R. "A simple indentation stress–strain relation for contacts with spheres on bilayer structures" (1998). <http://dx.doi.org/10.1016/S0040-6090(97)00919-X>`_
+.. [#Iost_2005]_ `Iost A. et al., "Dureté des revêtements : quel modèle choisir ?" (2005). <http://dx.doi.org/10.1051/mattech:2005009>`_
 .. [#Jennett_2001] `Jennett N. M. and Bushby A. J., "Adaptive Protocol for Robust Estimates of Coatings Properties by Nanoindentation" (2001). <http://dx.doi.org/10.1557/PROC-695-L3.1.1>`_
 .. [#Jönsson_1984] `Jönsson B. and Hogmark S., "Hardness measurements of thin films" (1984). <http://dx.doi.org/10.1016/0040-6090(84)90123-8>`_
 .. [#Jung_2004] `Jung Y.-G. et al. "Evaluation of elastic modulus and hardness of thin films by nanoindentation" (2004). <http://dx.doi.org/10.1557/JMR.2004.0380>`_
