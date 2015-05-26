@@ -37,10 +37,10 @@ For indentation test on a coated specimen or on a multilayer sample (e.g.: thin 
 Thus, the composite reduced Young's modulus :math:`E^{'}` and the composite hardness :math:`H`
 calculated with the models used for bulk materials, can generally be expressed as a combination of respectively the reduced Young's moduli :math:`(E^{'}_\text{f})` or the hardness :math:`(H_\text{f})` of each underlayers and respectively the reduced Young's modulus :math:`(E^{'}_\text{s})` or the hardness :math:`(H_\text{s})` of the substrate.
 
-    .. math:: E^{'} = f(E^{'}_{\text{f},{i \rightarrow n}}, t_{i \rightarrow n}}, E^{'}_\text{s})
+    .. math:: E^{'} = f(E^{'}_{\text{f},{i \rightarrow n}}, t_{i \rightarrow n}, E^{'}_\text{s})
             :label: youngs_modulus_evolution
 
-    .. math:: H = f(H_{\text{f},{i \rightarrow n}}, t_{i \rightarrow n}}, H_\text{s})
+    .. math:: H = f(H_{\text{f},{i \rightarrow n}}, t_{i \rightarrow n}, H_\text{s})
             :label: hardness_evolution
 
 With :math:`i` the indice of the layer and :math:`n` the total number of layers.
