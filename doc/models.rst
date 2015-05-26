@@ -87,7 +87,7 @@ into the studied material. This frame compliance :math:`C_\text{f}` contributes 
     .. math:: S = \left(\frac{dh}{dF_\text{c}} - C_\text{f}\right)^{-1}
             :label: corrected_stiffness
 
-To determine the frame compliance, it is required to plot :math:`\frac{dh}{dF_\text{c}}` vs. the corrected total depth :math:`(1/h)` or the corrected plastic depth :math:`(1/{h_\text{c}})` (see `Indentation contact topography <http://nims.readthedocs.org/en/latest/models.html#indentation-contact-topography>` for the definition of the plastic depth) [#DoernerNix_1986]_ and [#Fischer-Cripps_2006]_. Then, a linear fit of this curve gives an intercept with the ordinate axis which is the frame compliance (see Figure 3).
+To determine the frame compliance, it is required to plot :math:`\frac{dh}{dF_\text{c}}` vs. the corrected total depth :math:`(1/h_\text{t})` or the corrected plastic depth :math:`(1/{h_\text{c}})` (see `Indentation contact topography <http://nims.readthedocs.org/en/latest/models.html#indentation-contact-topography>`_ for the definition of the plastic depth) [#DoernerNix_1986]_ and [#Fischer-Cripps_2006]_. Then, a linear fit of this curve gives an intercept with the ordinate axis which is the frame compliance (see Figure 3).
 
 .. figure:: ./_pictures/frame_compliance.png
    :scale: 60 %

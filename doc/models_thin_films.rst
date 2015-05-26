@@ -7,53 +7,7 @@ The following parts give a short overview of models existing in the
 literature used for the extraction of mechanical properties of thin films
 deposited on a substrate from indentation experiments with conical indenters.
 
-Nanoindentation tests on thin films
-######################################
-
-For indentation test on a multilayer sample (thin films deposited on a substrate
-for example), the calculated composite reduced modulus :math:`E^{'}` with previous
-models, can generally be expressed as a combination of the respective reduced
-moduli of the films, :math:`E^{'}_\text{f}`, and of the substrate, :math:`E^{'}_\text{s}`.
-
-If the films moduli differs from that of the substrate, then :math:`E^{'}` changes
-with the depth of penetration :math:`h`. The evolution of the composite modulus :math:`E^{'}`
-is function of the material properties of the materials, the thickness :math:`t` and 
-the density of the thin films and the properties and the geometry of the indenter.
-
-If the characterized film is thick enough, it is possible to extract the elastic properties
-for indentation depth lower than 10% of the film thickness (:math:`h \leq 0.1*t`) [#Bückle_1961]_.
-
-Because of the imperfections of the indenters, the roughness and the surface pollution,
-it is more or less meaningful to use this rule of the 10%, for film thicker than 500nm.
-
-Several models to analyse bilayer sample indentation and to extract intrinsic
-material properties of the film from are detailed in the following part.
-
-Mencík et al. proposed the following structures to express the combination of
-:math:`E^{'}_\text{f}` and :math:`E^{'}_\text{s}` [#Mencík_1997]_.
-         
-    .. math:: E^{'} = E^{'}_\text{s} + \left(E^{'}_\text{f} - E^{'}_\text{s}\right) \phi\left(x\right)
-            :label: youngs_modulus_evolution_phi
-
-    .. math:: E^{'} = E^{'}_\text{s} + \left(E^{'}_\text{f} - E^{'}_\text{s}\right) \psi\left(x\right)
-            :label: youngs_modulus_evolution_psi
-            
-Where :math:`x` is the ratio of the contact radius (:math:`a_\text{c}`) or the
-contact depth (:math:`h_\text{c}`), to the film thickness (:math:`t`), and 
-:math:`\phi` and :math:`\psi` are weight functions of the relative penetration :math:`x`.
-:math:`\phi` is equal to 1 when :math:`x` is equal to 0 and 0 when :math:`x` is infinite.
-           
-.. note::
-    If the difference between Poisson's ratio of the thin film and substrate is small,
-    the values for uniaxial loading Young's moduli, :math:`E`, :math:`E_\text{f}`,
-    :math:`E_\text{s}` can be used in previous equation.
-    
-Some of the following models developed are as well detailled in the chapter 8 ("Nanoindentaion of Thin Films")
-of the book "Nanoindentation" written by A.C. Fischer-Cripps [#FischerCripps_2004]_.
-    
-Before, presenting the details of the following models developed for indentation test on coatings,
-is is worth to mention the work performed by Jennett N. M. and Bushby A. J. [#Jennett_2001]_,
-during the European project INDICOAT (SMT4-CT98-2249).
+Before everything, it is is worth to mention the work performed by Jennett N. M. and Bushby A. J. [#Jennett_2001]_, about nanoindentation test on coatings, during the European project INDICOAT (SMT4-CT98-2249).
 
 Progress from this project help in the development of the ISO standard (ISO 14577 - 1-4).
 The ISO 14577 - 4 is dedicated to nanoindentation on coatings.
@@ -66,23 +20,60 @@ The ISO 14577 - 4 is dedicated to nanoindentation on coatings.
 
 - `ISO 14577 - 4 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 4: Test method for metallic and non-metallic coatings", (2007). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=39228>`_
 
+Nanoindentation tests on thin films
+######################################
+
+Composite reduced Young's modulus and composite hardness
+----------------------------------------------------------
+
+For indentation test on a coated specimen or on a multilayer sample (e.g.: thin films deposited on a substrate), the evolution of the Young's modulus and the hardness calculated with the models used for bulk materials, is function of the material properties, the thickness :math:`t` and the density of each underlying films (substrate included), and the properties and the geometry of the indenter.
+
+.. figure:: ./_pictures/evolution_EandH_thinfilm.png
+   :scale: 60 %
+   :align: center
+   
+   *Figure 1 : Schematic of the evolution of Young's modulus and hardness for a coated specimen in function of the normalized indentation depth.*
+
+Thus, the composite reduced Young's modulus :math:`E^{'}` and the composite hardness :math:`H`
+calculated with the models used for bulk materials, can generally be expressed as a combination of respectively the reduced Young's moduli :math:`(E^{'}_\text{f})` or the hardness :math:`(H_\text{f})` of each underlayers and respectively the reduced Young's modulus :math:`(E^{'}_\text{s})` or the hardness :math:`(H_\text{s})` of the substrate.
+
+    .. math:: E^{'} = f(E^{'}_{\text{f},{i \rightarrow n}}, t_i, E^{'}_\text{s})
+            :label: youngs_modulus_evolution
+
+    .. math:: H = f(H_{\text{f},{i \rightarrow n}}, t_i, H_\text{s})
+            :label: hardness_evolution
+
+With math:`i` the indice of the layer and math:`n` the total number of layers.
+
 Indentation contact topography
 -------------------------------
 
-For nanoindentation tests on thin films, the contact topography is function of both thin film and substrate properties (see Figure 1).
+For nanoindentation tests on thin films, the contact topography is function of both thin film and substrate properties.
 
 .. figure:: ./_pictures/contact_topography_thinfilm.png
    :scale: 60 %
    :align: center
    
-   *Figure 1 : Schematic depiction of a) "pile-up" and b) "sink-in" for thin films.*
+   *Figure 2 : Schematic depiction of a) "pile-up" and b) "sink-in" for thin films.*
    
-The Figure 1-a ("pile-up") is typical of the case of a soft film on a hard substrate and the Figure 1-b ("sink-in") of a hard film on a soft substrate [#ChenVlassak2001]_.
+The Figure 2-a ("pile-up") is typical of the case of a soft film on a hard substrate and the Figure 2-b ("sink-in") of a hard film on a soft substrate [#ChenVlassak2001]_.
    
 To determine the depth of contact, `the same models <http://nims.readthedocs.org/en/latest/models.html#indentation-contact-topography>`_ described for bulk material indentation are used.
 
 Elastic properties of a thin film on a substrate
 ##################################################
+
+Several models to analyse indentation tests on bilayer sample and multilayer sample and to extract intrinsic
+material properties of the upper film (or the top coating) are detailed in the following part.
+
+Some of the following models developed are detailed in the chapter 8 
+("Nanoindentation of Thin Films") of the book "Nanoindentation" written by A.C. Fischer-Cripps [#FischerCripps_2004]_.
+
+Bückle (1961) 
+--------------
+
+Bückle proposed an empirical law to characterize thick coatings on a substrate [#Bückle_1961]_.
+It is possible to estimate the Young's modulus of the coating for indentation depth lower than 10% of the film thickness. But, because of the imperfections of the indenters, the roughness and the surface pollution, it is more meaningful to use this rule of the "10%", for film thicker than 500nm.
 
 Doerner and Nix (1986) 
 -------------------------
@@ -152,10 +143,32 @@ Find here the |matlab| function for :math:`\nu_{c}` the composite Poisson's rati
 Find here the |matlab| function for the Gao et al. model :
 `model_gao.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_gao.m>`_.
 
+Mencík et al. (1997) 
+-----------------------
+
+Mencík et al. proposed the following structures to express the combination of
+:math:`E^{'}_\text{f}` and :math:`E^{'}_\text{s}` [#Mencík_1997]_.
+         
+    .. math:: E^{'} = E^{'}_\text{s} + \left(E^{'}_\text{f} - E^{'}_\text{s}\right) \phi\left(x\right)
+            :label: youngs_modulus_evolution_phi
+
+    .. math:: E^{'} = E^{'}_\text{s} + \left(E^{'}_\text{f} - E^{'}_\text{s}\right) \psi\left(x\right)
+            :label: youngs_modulus_evolution_psi
+            
+Where :math:`x` is the ratio of the contact radius (:math:`a_\text{c}`) or the
+contact depth (:math:`h_\text{c}`), to the film thickness (:math:`t`), and 
+:math:`\phi` and :math:`\psi` are weight functions of the relative penetration :math:`x`.
+:math:`\phi` is equal to 1 when :math:`x` is equal to 0 and 0 when :math:`x` is infinite.
+           
+.. note::
+    If the difference between Poisson's ratio of the thin film and substrate is small,
+    the values for uniaxial loading Young's moduli, :math:`E`, :math:`E_\text{f}`,
+    :math:`E_\text{s}` can be used in previous equation.
+    
 Mencík et al. (linear model) (1997) 
 ------------------------------------
 
-Mencík described the linear model by the following expression [#Mencík_1997]_ :
+Mencík described too the linear model by the following expression [#Mencík_1997]_ :
 
     .. math:: E^{'} = E^{'}_\text{f} + \left(E^{'}_\text{s} -
               E^{'}_\text{f}\right)\left(x\right)
@@ -256,13 +269,13 @@ Bec et al. (2006)
 The elastic model of Bec et al. is based on indentation by a rigid cylindrical punch (radius :math:`a_\text{c}`)
 of a homogeneous film deposited on a semi-infinite half space [#Bec_2006]_.
 
-This system is modelled by two springs connected in series (see Figure 2).
+This system is modelled by two springs connected in series :
 
 .. figure:: ./_pictures/Bec_bilayer_model.png
    :scale: 40 %
    :align: center
    
-   *Figure 2 : Schematic description of the bilayer model of Bec et al.*
+   *Figure 3 : Schematic description of the bilayer model of Bec et al.*
 
     .. math:: K_\text{f} = \pi a_\text{c}^2 \frac{E^{'}_\text{f}}{t}
             :label: bec_kf
@@ -393,10 +406,10 @@ Thus, the Young’s modulus of the film can be calculated as :
    :scale: 30 %
    :align: center
    
-   *Figure 3 : Schematic of elastic multilayer model.*
+   *Figure 4 : Schematic of elastic multilayer model.*
 
 It is advised to perform nanoindentation tests on each layer of the multilayer sample,
-from the substrate up to the final stack of layers (see Figure 4). By successive iterations using
+from the substrate up to the final stack of layers (see Figure 5). By successive iterations using
 the model of Mercier et al., values of Young's modulus of each layer are extracted
 from the contact stiffness.
 
@@ -404,7 +417,7 @@ from the contact stiffness.
    :scale: 30 %
    :align: center
    
-   *Figure 4 : Experimental process to apply for elastic multilayer model.*
+   *Figure 5 : Experimental process to apply for elastic multilayer model.*
 
 Find here the |matlab| function for the Mercier et al. model :
 `model_multilayer_elastic.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_multilayer_elastic.m>`_.
@@ -412,14 +425,30 @@ Find here the |matlab| function for the Mercier et al. model :
 Extraction of plastic properties of a thin film on a multilayer system
 ########################################################################
 
+Bückle proposed an expression of the composite hardness in the case of a two-layer material
+
+
+that the hardness of the
+stratified material should be expressed as a weighted
+sum of the different layer hardnesses during deformation.
+In the case of a two-layer material, the composite
+hardness H, is given by:
+
 [#Bückle_1961]_
 
     .. math:: H = aH_\text{f} + bH_\text{s}
             :label: buckle_hardness
 
+With :math:`a + b = 1`.
+
+
 [#Jönsson_1984]_
 
+    .. math:: H = aH_\text{f} + bH_\text{s}
+            :label: jonsson_hardness
+
 [#Doerner_1986]_
+
 
 [#ChicotLesage_1995]_
 
@@ -460,7 +489,7 @@ depths :math:`h_\text{c}` smaller than the film thickness.
    :scale: 60 %
    :align: center
    
-   *Figure 5 : Indentation penetration of a thin film on a sample.*
+   *Figure 6 : Indentation penetration of a thin film on a sample.*
    
 Recently, Li et al. proposed to express the local thinning effect as [#Li_2010]_:
 
