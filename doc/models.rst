@@ -87,7 +87,7 @@ into the studied material. This frame compliance :math:`C_\text{f}` contributes 
     .. math:: S = \left(\frac{dh}{dF_\text{c}} - C_\text{f}\right)^{-1}
             :label: corrected_stiffness
 
-To determine the frame compliance, it is required to plot :math:`\frac{dh}{dF_\text{c}}` vs. the corrected total depth :math:`(1/h)` or the corrected plastic depth :math:`(1/{h_\text{c}})` (see :ref:`_indentation_contact_topography` for the definition of the plastic depth) [#DoernerNix_1986]_ and [#Fischer-Cripps_2006]_.. Then, a linear fit of this curve gives an intercept with the ordinate axis which is the frame compliance (see Figure 3).
+To determine the frame compliance, it is required to plot :math:`\frac{dh}{dF_\text{c}}` vs. the corrected total depth :math:`(1/h)` or the corrected plastic depth :math:`(1/{h_\text{c}})` (see `Indentation contact topography <http://nims.readthedocs.org/en/latest/models.html#indentation-contact-topography>` for the definition of the plastic depth) [#DoernerNix_1986]_ and [#Fischer-Cripps_2006]_. Then, a linear fit of this curve gives an intercept with the ordinate axis which is the frame compliance (see Figure 3).
 
 .. figure:: ./_pictures/frame_compliance.png
    :scale: 60 %
@@ -95,7 +95,7 @@ To determine the frame compliance, it is required to plot :math:`\frac{dh}{dF_\t
    
    *Figure 3 : Schematic of the plot to determine the frame compliance.*
 
-It is advised to perform indentation tests on a variety of standard specimens (fused silica, silicon and sapphire provide a very good range), in order to estimate better the frame compliance.
+It is advised to perform indentation tests on a variety of bulk standard specimens (fused silica, silicon and sapphire provide a very good range), in order to estimate better the frame compliance.
 
 Moreover, when the sample flexes or has heterogeneities (free edges, interfaces between regions of different properties...), nanoindentation measurements are affected by the structural compliance :math:`C_\text{s}`. Then, it is possible to correct experimental data of this artifact by following the experimental approach proposed by [#Jakes_2008]_.
 
@@ -150,8 +150,6 @@ tests with a constant indentation strain rate.
 
     .. math:: \dot{\epsilon} = \frac{\dot{h}}{h} = \frac{1}{2} \frac{\dot{F_\text{c}}}{F_\text{c}}
             :label: strain_rate
-
-.. _indentation_contact_topography:
 
 Indentation contact topography
 -------------------------------
