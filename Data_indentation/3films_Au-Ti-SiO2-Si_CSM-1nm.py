@@ -2,10 +2,10 @@
 # Python script for use with Abaqus 6.12
 #====================================================================================================================
 # AUTHOR: d.mercier
-# DATE: Mar.23,2015 15:59
-# GENERATED WITH: NIMS_2.5 written by D. Mercier
-# See https://github.com/DavidMercier/nanoind-data-analysis
-# or http://www.mathworks.fr/matlabcentral/fileexchange/43392-toolbox-to-analyze-nanoindentation-data
+# DATE: May.26,2015 10:29
+# GENERATED WITH: NIMS_2.6 written by D. Mercier
+# See https://github.com/DavidMercier/NIMS
+# or http://fr.mathworks.com/matlabcentral/fileexchange/43392-davidmercier-nims
 # Modelling of indentation experiments with a (sphero-)conical indenter performed on a multilayer system
 # To run this procedure Python script, open Abaqus, then ==> File/Run Script
 # Units: Displacement in nm, Young's modulus in GPa ==> Load in nN.
@@ -43,10 +43,10 @@ backwardCompatibility.setValues(includeDeprecated=True, reportDeprecated=False)
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # PARAMETERS
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-myModel = mdb.Model(name='multilayer_model_2015-03-23')
-indenter_used = 'Berkovich'
-h_ind = 5.000000
-r_ind = 80.599078
+myModel = mdb.Model(name='multilayer_model_2015-05-26')
+indenter_used = 'BerkoSaclay'
+h_ind = 0.100000
+r_ind = 1.611982
 a_ind = 70.32
 sheet_Size = 3000.000000
 step_Load = 'Loading'
@@ -61,8 +61,8 @@ s.sketchOptions.setValues(viewStyle=AXISYM)
 s.setPrimaryObject(option=STANDALONE)
 s.ConstructionLine(point1=(0.0, -100.0), point2=(0.0, 100.0))
 s.FixedConstraint(entity=g[2])
-s.ArcByCenterEnds(center=(0.0, r_ind), point1=(27.143078 , 4.707941), point2=(0.0, 0.0),direction=CLOCKWISE)
-s.Line(point1=(27.143078 , 4.707941), point2=(1439.525312 , 509.857845))
+s.ArcByCenterEnds(center=(0.0, r_ind), point1=(0.542862 , 0.094159), point2=(0.0, 0.0),direction=CLOCKWISE)
+s.Line(point1=(0.542862 , 0.094159), point2=(1412.925095 , 505.244063))
 s.TangentConstraint(entity1=g[3], entity2=g[4])
 p = myModel.Part(name=indenter_used, dimensionality=AXISYMMETRIC, type=ANALYTIC_RIGID_SURFACE)
 p = myModel.parts[indenter_used]
@@ -167,13 +167,13 @@ myModel.materials['Material_1'].Density(table=((1.0, ), ))
 myModel.materials['Material_1'].Elastic(temperatureDependency=False,table=((165.000000, 0.280000), ))
 myModel.Material(name='Material_2')
 myModel.materials['Material_2'].Density(table=((1.0, ), ))
-myModel.materials['Material_2'].Elastic(temperatureDependency=False,table=((70.000000, 0.180000), ))
+myModel.materials['Material_2'].Elastic(temperatureDependency=False,table=((60.000000, 0.300000), ))
 myModel.Material(name='Material_3')
 myModel.materials['Material_3'].Density(table=((1.0, ), ))
-myModel.materials['Material_3'].Elastic(temperatureDependency=False,table=((120.000000, 0.340000), ))
+myModel.materials['Material_3'].Elastic(temperatureDependency=False,table=((60.000000, 0.300000), ))
 myModel.Material(name='Material_4')
 myModel.materials['Material_4'].Density(table=((1.0, ), ))
-myModel.materials['Material_4'].Elastic(temperatureDependency=False,table=((80.000000, 0.300000), ))
+myModel.materials['Material_4'].Elastic(temperatureDependency=False,table=((60.000000, 0.300000), ))
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # SECTIONS
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -325,7 +325,7 @@ myModel.interactionProperties['Indenter-Film'].TangentialBehavior(formulation=FR
 myModel.interactionProperties['Indenter-Film'].NormalBehavior(pressureOverclosure=HARD, allowSeparation=OFF, constraintEnforcementMethod=DEFAULT)
 a = myModel.rootAssembly
 s1 = a.instances[indenter_used].edges
-side2Edges1 = s1.findAt(((27.143078, 4.707941, 0.0), ))
+side2Edges1 = s1.findAt(((0.542862, 0.094159, 0.0), ))
 region1=regionToolset.Region(side2Edges=side2Edges1)
 s1 = a.instances['Film_4'].edges
 side1Edges1 = s1.findAt(((1500.000000, 0.0, 0.0), ))
@@ -384,4 +384,4 @@ myModel.DisplacementBC(name='BC_Indentation_step', createStepName=step_Load, reg
 # JOB
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, predefinedFields=OFF, connectors=OFF)
-mdb.Job(name='Job1', model='multilayer_model_2015-03-23', description='Indentation of multilayer sample', type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, queue=None, memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', scratch='', multiprocessingMode=DEFAULT, numCpus=1, numDomains=2)
+mdb.Job(name='Job1', model='multilayer_model_2015-05-26', description='Indentation of multilayer sample', type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, queue=None, memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', scratch='', multiprocessingMode=DEFAULT, numCpus=1, numDomains=2)

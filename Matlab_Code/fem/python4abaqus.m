@@ -85,8 +85,8 @@ if ~isempty(scriptpath_multilayer_model)
     py{end+1} = sprintf('# AUTHOR: %s', username_str);
     py{end+1} = sprintf('# DATE: %s', datestr(datenum(clock),'mmm.dd,yyyy HH:MM'));
     py{end+1} = sprintf('# GENERATED WITH: %s written by D. Mercier', strcat(gui.config.name_toolbox, '_', gui.config.version_toolbox));
-    py{end+1} = sprintf('# See https://github.com/DavidMercier/nanoind-data-analysis');
-    py{end+1} = sprintf('# or http://www.mathworks.fr/matlabcentral/fileexchange/43392-toolbox-to-analyze-nanoindentation-data');
+    py{end+1} = sprintf('# See https://github.com/DavidMercier/NIMS');
+    py{end+1} = sprintf('# or http://fr.mathworks.com/matlabcentral/fileexchange/43392-davidmercier-nims');
     py{end+1} = sprintf('# Modelling of indentation experiments with a (sphero-)conical indenter performed on a multilayer system');
     py{end+1} = sprintf('# To run this procedure Python script, open Abaqus, then ==> File/Run Script');
     py{end+1} = sprintf('# Units: Displacement in nm, Young''s modulus in GPa ==> Load in nN.');
@@ -363,7 +363,7 @@ if ~isempty(scriptpath_multilayer_model)
     fclose(fid);
     commandwindow;
     display('Python script has been generated...');
-    
+    cd(gui.config.NIMSroot);
 end
 
 end
