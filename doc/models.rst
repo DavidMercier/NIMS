@@ -63,11 +63,41 @@ nanoindentation experiment is given Figure 2.
 The evolution of this curve depends on material properties of
 the sample and the indenter, and of the indenter's geometry.
 
+The slope of unloading curve gives access to the contact stiffness :math:`S`:
+
+    .. math:: S = \frac{dF_\text{c}}{dh}
+            :label: stiffness
+
 .. figure:: ./_pictures/load-disp_curve.png
    :scale: 60 %
    :align: center
    
    *Figure 2 : Schematic of indentation load-displacement curve.*
+
+Frame compliance
++++++++++++++++++++
+
+Before any analysis, it is important to correct raw data of the effect of the frame compliance.
+The frame compliance is defined by the deflections of the load frame instead of displacement 
+into the studied material. This frame compliance :math:`C_\text{f}` contributes to the measured indentation depth and to the contact stiffness [#Fischer-Cripps_2006]_.
+
+    .. math:: h_\text{t} = h - F_\text{c}{C_\text{f}}
+            :label: corrected_totaldisp
+
+    .. math:: S = \left(\frac{dh}{dF_\text{c}} - C_\text{f}\right)^{-1}
+            :label: corrected_stiffness
+
+To determine the frame compliance, it is required to plot :math:`\frac{dF_\text{c}}{dh}` vs. the corrected total depth :math:`(h)` or the corrected plastic depth :math:`(h_\text{c})` (see :ref:`_indentation_contact_topography` for the definition of the plastic depth) [#DoernerNix_1986]_ and [#Fischer-Cripps_2006]_.. Then, a linear fit of this curve gives an intercept with the ordinate axis which is the frame compliance (see Figure 3).
+
+.. figure:: ./_pictures/frame_compliance_calibration.png
+   :scale: 60 %
+   :align: center
+   
+   *Figure 3 : Schematic of the plot to determine the frame compliance.*
+
+It is advised to perform indentation tests on a variety of standard specimens (fused silica, silicon and sapphire provide a very good range), in order to estimate better the frame compliance.
+
+Moreover, when the sample flexes or has heterogeneities (free edges, interfaces between regions of different properties...), nanoindentation measurements are affected by the structural compliance :math:`C_\text{s}`. Then, it is possible to correct experimental data of this artifact by following the experimental approach proposed by [#Jakes_2008]_.
 
 Loading
 +++++++++
@@ -101,11 +131,6 @@ With :math:`\nu` the Poisson's ratio and :math:`E` the Young's modulus of the in
 Unloading
 +++++++++++
 
-The slope of unloading curve gives access to the contact stiffness (see Figure 2):
-
-    .. math:: S = \frac{dF_\text{c}}{dh}
-            :label: stiffness
-
 Pharr and Bolshakov founded that unloading curves were well described
 by the following power-law relationship [#Pharr_2002]_ :
 
@@ -126,14 +151,16 @@ tests with a constant indentation strain rate.
     .. math:: \dot{\epsilon} = \frac{\dot{h}}{h} = \frac{1}{2} \frac{\dot{F_\text{c}}}{F_\text{c}}
             :label: strain_rate
 
+.. _indentation_contact_topography:
+
 Indentation contact topography
 -------------------------------
 
 The indentation total depth is rarely equal to the indentation contact depth.
 Two kind of topography can occur:
 
-- the pile-up (indentation contact depth > indentation total depth) (see Figure 3-a);
-- the sink-in (indentation contact depth < indentation total depth) (see Figure 3-b).
+- the pile-up (indentation contact depth > indentation total depth) (see Figure 4-a and Figure 5);
+- the sink-in (indentation contact depth < indentation total depth) (see Figure 4-b).
 
 The flow of material below the indenter is function of mechanical properties of the material.
 
@@ -144,13 +171,13 @@ over Young's modulus is less than 1% [#Bolshakov_1998]_, [#Cheng_1998]_ and [#Ch
    :scale: 60 %
    :align: center
    
-   *Figure 3 : Schematic of indentation contact topography : a) "pile-up" and b) "sink-in".*
+   *Figure 4 : Schematic of indentation contact topography : a) "pile-up" and b) "sink-in".*
    
 .. figure:: ./_pictures/pile_up.png
    :scale: 35 %
    :align: center
 
-   *Figure 4 : Residual topography of a Berkovich indent in PVD Gold thin film (500nm thick)
+   *Figure 5 : Residual topography of a Berkovich indent in PVD Gold thin film (500nm thick)
    with "pile-up" surrounding the indent, measured by atomic force microscopy.*
    
 Three main models defining the depth of contact :math:`h_\text{c}` were developed
@@ -179,7 +206,7 @@ Find here the |matlab| function to plot the :math:`\epsilon` function :
    :scale: 45 %
    :align: center
 
-   *Figure 5 : Evolution of epsilon in function of the power law exponent m of the unloading curve.*
+   *Figure 6 : Evolution of epsilon in function of the power law exponent m of the unloading curve.*
 
 0.72 should be most applicable for a Berkovich indenter, which is more like
 a cone than a paraboloid of revolution. But, Oliver and Pharr concluded after
@@ -266,7 +293,7 @@ frequency-specific amplifier.
    :scale: 60 %
    :align: center
    
-   *Figure 6 : Schematic of the CSM loading cycle.*
+   *Figure 7 : Schematic of the CSM loading cycle.*
 
     .. math:: S = \left[\frac{1}{\frac{F_\text{c}}{h_\text{t}}\cos\phi-\left(K_\text{s} - m\omega^2\right)} -
               \frac{1}{K_\text{f}}\right]^{-1}
@@ -372,7 +399,7 @@ Find here the |matlab| function to plot the :math:`\beta` function of Hay et al.
    :scale: 35 %
    :align: center
    
-   *Figure 7 : Plots of beta Hay : a) in function of the half-angle
+   *Figure 8 : Plots of beta Hay : a) in function of the half-angle
    of the conical indenter (for a Poisson's ratio of 0.3), and b)
    in function of the Poisson's ratio for a Berkovich indenter.*
 
@@ -415,13 +442,13 @@ Energy approach
 Another way to access indentation data is the use of the energy
 dissipated during the indentation. The elastic and plastic energies
 are based on the integral of the loading and unloading curve
-(see Figure 8) [#ChengCheng_1998]_ and [#Malzbender_2002]_.
+(see Figure 9) [#ChengCheng_1998]_ and [#Malzbender_2002]_.
 
 .. figure:: ./_pictures/load-disp_curve_energy.png
    :scale: 60 %
    :align: center
 
-   *Figure 8 : Schematic representation of indentation load–displacement
+   *Figure 9 : Schematic representation of indentation load–displacement
    curves with definition of different works of indentation.*
 
     .. math:: W_\text{tot} = \int_{0}^{h_\text{t}} {F_\text{c}\left(dh\right)}
@@ -480,6 +507,7 @@ References
 .. [#Cheng_2004] `Cheng Y.T. and Cheng C.M., "Scaling, dimensional analysis, and indentation measurements." (2004) <http://dx.doi.org/10.1016/j.mser.2004.05.001>`_
 .. [#DoernerNix_1986] `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
 .. [#Fischer-Cripps_2004] `Fischer-Cripps A.C., "Nanoindentation" Springer 2nd ed. (2004). <http://dx.doi.org/10.1007/978-1-4419-9872-9>`_
+.. [#Fischer-Cripps_2006] `Fischer-Cripps A.C., "Critical review of analysis and interpretation of nanoindentation test data" (2006). <http://dx.doi.org/10.1016/j.surfcoat.2005.03.018>`_
 .. [#Galin_1946] Galin L.A., "Spatial contact problems of the theory of elasticity for punches of circular shape in planar projection.", J. Appl. Math. Mech. (PMM) (1946), 10, pp. 425-448.
 .. [#Giannakopoulos_1994] `Giannakopoulos A.E. et al., "Analysis of Vickers indentation" (1994). <http://dx.doi.org/10.1016/0020-7683(94)90225-9>`_
 .. [#Giannakopoulos_1999] `Giannakopoulos A.E. and Suresh S., "Determination of elastoplastic properties by instrumented sharp indentation." (1999). <http://dx.doi.org/10.1016/S1359-6462(99)00011-1>`_
@@ -488,6 +516,7 @@ References
 .. [#Hainsworth_1996] `Hainsworth S.V. et al., "Analysis of nanoindentation load-displacement loading curves." (1996). <http://dx.doi.org/10.1557/JMR.1996.0250>`_
 .. [#Hay_1999] `Hay J.C. et al., "A critical examination of the fundamental relations used in the analysis of nanoindentation data." (1999). <http://dx.doi.org/10.1557/JMR.1999.0306>`_
 .. [#Hochstetter_1999] `Hochstetter G. et al., "Strain-rate effects on hardness of glassy polymers in the nanoscale range. Comparison between quasi-static and continuous stiffness measurements" (1999). <http://dx.doi.org/10.1080/00222349908248131>`_
+.. [#Jakes_2008] `Jakes J.E. et al., "Experimental method to account for structural compliance in nanoindentation measurements" (2008).<http://dx.doi.org/10.1557/jmr.2008.0131>`_
 .. [#Joslin_1990] `Joslin D.L. and Oliver W.C., "A new method for analyzing data from continuous depth-sensing microindentation tests" (1990). <http://dx.doi.org/10.1557/JMR.1990.0123>`_
 .. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <http://dx.doi.org/10.1016/0020-7683(87)90116-8>`_
 .. [#Larsson_1996] `Larsson et al., "Analysis of Berkovich indentation" (1996). <http://dx.doi.org/10.1016/0020-7683(95)00033-7>`_

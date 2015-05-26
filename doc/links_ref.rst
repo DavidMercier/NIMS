@@ -62,6 +62,7 @@ Material and indenters properties
 * `Li X. and Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications." (2002). <http://dx.doi.org/10.1016/S1044-5803(02)00192-4>`_
 * `Oliver W.C. and Pharr G.M., "Measurement of hardness and elastic modulus by instrumented indentation: Advances in understanding and refinements to methodology" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.1.3>`_
 * `Cheng Y.T. and Cheng C.M., "Scaling, dimensional analysis, and indentation measurements." (2004). <http://dx.doi.org/10.1016/j.mser.2004.05.001>`_
+* `Fischer-Cripps A.C., "Critical review of analysis and interpretation of nanoindentation test data" (2006). <http://dx.doi.org/10.1016/j.surfcoat.2005.03.018>`_
 * `Guillonneau G. et al.,"Extraction of mechanical properties with second harmonic detection for dynamic nanoindentation testing." (2012). <http://dx.doi.org/10.1007/s11340-011-9561-5>`_
 * `Guillonneau G. et al., "Determination of mechanical properties by nanoindentation independently of indentation depth measurement" (2012). <http://dx.doi.org/10.1557/jmr.2012.261>`_
 * `Yetna N'jock M. et al., "A criterion to identify sinking-in and piling-up in indentation of materials." (2015). <http://dx.doi.org/10.1016/j.ijmecsci.2014.11.008>`_
@@ -74,6 +75,8 @@ Correction factors and Correction of experimental data
 * `Hay J.C. et al., "A critical examination of the fundamental relations used in the analysis of nanoindentation data" (1999). <http://dx.doi.org/10.1557/JMR.1999.0306>`_
 * `Troyon M. and Lafaye S., "About the importance of introducing a correction factor in the Sneddon relationship for nanoindentation measurements" (2002). <http://dx.doi.org/10.1080/14786430600606834>`_
 * `Strader J.H. et al., "An experimental evaluation of the constant b relating the contact stiffness to the contact area in nanoindentation." (2006) <http://dx.doi.org/10.1080/14786430600567747>`_
+* `Fischer-Cripps A.C., "Critical review of analysis and interpretation of nanoindentation test data" (2006). <http://dx.doi.org/10.1016/j.surfcoat.2005.03.018>`_
+* `Jakes J.E. et al., "Experimental method to account for structural compliance in nanoindentation measurements" (2008).<http://dx.doi.org/10.1557/jmr.2008.0131>`_
 * `Pharr G.M. et al., "Critical issues in making small-depth mechanical property measurements by nanoindentation with continuous stiffness measurement" (2009). <http://dx.doi.org/10.1557/jmr.2009.0096>`_
 * `Li H. et al., "New methods of analyzing indentation experiments on very thin films" (2010). <http://dx.doi.org/10.1557/JMR.2010.0095>`_
 
