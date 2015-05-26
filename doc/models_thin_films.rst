@@ -37,13 +37,13 @@ For indentation test on a coated specimen or on a multilayer sample (e.g.: thin 
 Thus, the composite reduced Young's modulus :math:`E^{'}` and the composite hardness :math:`H`
 calculated with the models used for bulk materials, can generally be expressed as a combination of respectively the reduced Young's moduli :math:`(E^{'}_\text{f})` or the hardness :math:`(H_\text{f})` of each underlayers and respectively the reduced Young's modulus :math:`(E^{'}_\text{s})` or the hardness :math:`(H_\text{s})` of the substrate.
 
-    .. math:: E^{'} = f(E^{'}_{\text{f},{i \rightarrow n}}, t_i, E^{'}_\text{s})
+    .. math:: E^{'} = f(E^{'}_{\text{f},{i \rightarrow n}}, t_{i \rightarrow n}}, E^{'}_\text{s})
             :label: youngs_modulus_evolution
 
-    .. math:: H = f(H_{\text{f},{i \rightarrow n}}, t_i, H_\text{s})
+    .. math:: H = f(H_{\text{f},{i \rightarrow n}}, t_{i \rightarrow n}}, H_\text{s})
             :label: hardness_evolution
 
-With math:`i` the indice of the layer and math:`n` the total number of layers.
+With :math:`i` the indice of the layer and :math:`n` the total number of layers.
 
 Indentation contact topography
 -------------------------------
@@ -426,15 +426,7 @@ Extraction of plastic properties of a thin film on a multilayer system
 ########################################################################
 
 Bückle proposed an expression of the composite hardness in the case of a two-layer material
-
-
-that the hardness of the
-stratified material should be expressed as a weighted
-sum of the different layer hardnesses during deformation.
-In the case of a two-layer material, the composite
-hardness H, is given by:
-
-[#Bückle_1961]_
+with a weighted sum of the different layer hardnesses during indentation process [#Bückle_1961]_.
 
     .. math:: H = aH_\text{f} + bH_\text{s}
             :label: buckle_hardness
