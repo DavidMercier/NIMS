@@ -3,16 +3,6 @@ function gui_handle = demo
 %% Function to run the Matlab GUI for the calculations of elastic-plastic properties
 % of a multilayer system from indentation experiments with a conical indenter
 
-%% Paths Management
-try
-    get_nims_root; % ensure that environment is set
-catch
-    [startdir, dummy1, dummy2] = fileparts(mfilename('fullpath'));
-    cd(startdir);
-    commandwindow;
-    path_management;
-end
-
 %% Import data from YAML config files
 gui = struct();
 gui.config = struct();
@@ -22,6 +12,16 @@ gui.config.numerics = struct();
 
 [gui.config.indenter, gui.config.data, ...
     gui.config.numerics, flag_YAML] = load_YAML_config_file;
+
+%% Paths Management
+try
+    gui.config.NIMSroot = get_nims_root; % ensure that environment is set
+catch
+    [startdir, dummy1, dummy2] = fileparts(mfilename('fullpath'));
+    cd(startdir);
+    commandwindow;
+    path_management;
+end
 
 %% Set Toolbox version and help paths
 gui.config.name_toolbox = 'NIMS';
