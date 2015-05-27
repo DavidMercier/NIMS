@@ -74,9 +74,9 @@ Correction factors and Correction of experimental data
 * `Menčík J., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
 * `Hay J.C. et al., "A critical examination of the fundamental relations used in the analysis of nanoindentation data" (1999). <http://dx.doi.org/10.1557/JMR.1999.0306>`_
 * `Troyon M. and Lafaye S., "About the importance of introducing a correction factor in the Sneddon relationship for nanoindentation measurements" (2002). <http://dx.doi.org/10.1080/14786430600606834>`_
-* `Strader J.H. et al., "An experimental evaluation of the constant b relating the contact stiffness to the contact area in nanoindentation." (2006) <http://dx.doi.org/10.1080/14786430600567747>`_
+* `Strader J.H. et al., "An experimental evaluation of the constant b relating the contact stiffness to the contact area in nanoindentation." (2006). <http://dx.doi.org/10.1080/14786430600567747>`_
 * `Fischer-Cripps A.C., "Critical review of analysis and interpretation of nanoindentation test data" (2006). <http://dx.doi.org/10.1016/j.surfcoat.2005.03.018>`_
-* `Jakes J.E. et al., "Experimental method to account for structural compliance in nanoindentation measurements" (2008).<http://dx.doi.org/10.1557/jmr.2008.0131>`_
+* `Jakes J.E. et al., "Experimental method to account for structural compliance in nanoindentation measurements" (2008). <http://dx.doi.org/10.1557/jmr.2008.0131>`_
 * `Pharr G.M. et al., "Critical issues in making small-depth mechanical property measurements by nanoindentation with continuous stiffness measurement" (2009). <http://dx.doi.org/10.1557/jmr.2009.0096>`_
 * `Li H. et al., "New methods of analyzing indentation experiments on very thin films" (2010). <http://dx.doi.org/10.1557/JMR.2010.0095>`_
 
@@ -110,6 +110,20 @@ Multilayer model to extract Young's moduli of thin films on a multilayer sample 
 * `Mercier D., "Lois de comportement des matériaux utilisés dans les contacts électriques pour application " flip chip "" (2013). <http://www.theses.fr/2013GRENI083>`_
 * `Constantinescu A. et al., "Symbolic and numerical solution of the axisymmetric indentation problem for a multilayered elastic coating" (2013). <http://dx.doi.org/10.1016/j.ijsolstr.2013.04.017>`_
 * `Puchi-Cabrera. E.S. et al., "A description of the composite elastic modulus of multilayer coated systems" (2015). <http://dx.doi.org/10.1016/j.tsf.2015.02.078>`_
+
+Bilayer models to extract hardness of a thin film on a substrate (with conical indenters)
+--------------------------------------------------------------------------------------------------
+* Bückle H., "VDI Berichte" (1961).
+* `Jönsson B. and Hogmark S., "Hardness measurements of thin films" (1984). <http://dx.doi.org/10.1016/0040-6090(84)90123-8>`_
+* `Doerner M.F. et al., "Plastic properties of thin films on substrates as measured by submicron indentation hardness and substrate curvature techniques" (1986).<http://dx.doi.org/10.1557/JMR.1986.0845>`_
+* `Burnett P.J. and Rickerby D.S., "The mechanical properties of wear-resistant coatings: I: Modelling of hardness behaviour." (1987). <http://dx.doi.org/10.1016/0040-6090(87)90119-2>`_
+* `Burnett P.J. and Rickerby D.S., "The mechanical properties of wear-resistant coatings: II: Experimental studies and interpretation of hardness." (1987). <http://dx.doi.org/10.1016/0040-6090(87)90120-9>`_
+* `Fernandes J.V. et al., "http://dx.doi.org/10.1016/S0257-8972(00)00839-2" (2000). <http://dx.doi.org/10.1016/S0257-8972(00)00839-2>`_
+
+Multilayer model to extract hardness of thin films on a multilayer sample (with conical indenters)
+----------------------------------------------------------------------------------------------------------
+* `Rahmoun K. et al., "A multilayer model for describing hardness variations of aged porous silicon low-dielectric-constant thin films" (2009). <http://dx.doi.org/10.1016/j.tsf.2009.07.040>`_
+* `Arrazat B. et al., "Nano indentation de couches dures ultra minces de ruthénium sur or" (2010). <http://dx.doi.org/10.1051/mattech/2011031>`_
 
 Finite Element Modelling of conical indentation of thin film(s) on a substrate
 ---------------------------------------------------------------------------------

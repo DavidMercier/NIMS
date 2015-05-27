@@ -97,7 +97,9 @@ To determine the frame compliance, it is required to plot :math:`\frac{dh}{dF_\t
 
 It is advised to perform indentation tests on a variety of bulk standard specimens (fused silica, silicon and sapphire provide a very good range), in order to estimate better the frame compliance.
 
-Moreover, when the sample flexes or has heterogeneities (free edges, interfaces between regions of different properties...), nanoindentation measurements are affected by the structural compliance :math:`C_\text{s}`. Then, it is possible to correct experimental data of this artifact by following the experimental approach proposed by [#Jakes_2008]_.
+Moreover, when the sample flexes or has heterogeneities (free edges, interfaces between regions of different properties...),
+nanoindentation measurements are affected by the structural compliance :math:`C_\text{s}`.
+Then, it is possible to correct experimental data of this artifact by following the experimental approach proposed by [#Jakes_2008]_.
 
 Loading
 +++++++++
@@ -514,12 +516,12 @@ References
 .. [#Hainsworth_1996] `Hainsworth S.V. et al., "Analysis of nanoindentation load-displacement loading curves." (1996). <http://dx.doi.org/10.1557/JMR.1996.0250>`_
 .. [#Hay_1999] `Hay J.C. et al., "A critical examination of the fundamental relations used in the analysis of nanoindentation data." (1999). <http://dx.doi.org/10.1557/JMR.1999.0306>`_
 .. [#Hochstetter_1999] `Hochstetter G. et al., "Strain-rate effects on hardness of glassy polymers in the nanoscale range. Comparison between quasi-static and continuous stiffness measurements" (1999). <http://dx.doi.org/10.1080/00222349908248131>`_
-.. [#Jakes_2008] `Jakes J.E. et al., "Experimental method to account for structural compliance in nanoindentation measurements" (2008).<http://dx.doi.org/10.1557/jmr.2008.0131>`_
+.. [#Jakes_2008] `Jakes J.E. et al., "Experimental method to account for structural compliance in nanoindentation measurements" (2008). <http://dx.doi.org/10.1557/jmr.2008.0131>`_
 .. [#Joslin_1990] `Joslin D.L. and Oliver W.C., "A new method for analyzing data from continuous depth-sensing microindentation tests" (1990). <http://dx.doi.org/10.1557/JMR.1990.0123>`_
 .. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <http://dx.doi.org/10.1016/0020-7683(87)90116-8>`_
 .. [#Larsson_1996] `Larsson et al., "Analysis of Berkovich indentation" (1996). <http://dx.doi.org/10.1016/0020-7683(95)00033-7>`_
 .. [#Li_2002] `Li X. and Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications." (2002). <http://dx.doi.org/10.1016/S1044-5803(02)00192-4>`_
-.. [#Loubet_1984] `Loubet J.L. et al., "Vickers Indentation Curves of Magnesium Oxide (MgO)." (1984) <http://dx.doi.org/10.1115/1.3260865>`_
+.. [#Loubet_1984] `Loubet J.L. et al., "Vickers Indentation Curves of Magnesium Oxide (MgO)." (1984). <http://dx.doi.org/10.1115/1.3260865>`_
 .. [#Loubet_1986] `Loubet J.L. et al., "Vickers indentation curves of elastoplastic materials." (1986). <http://dx.doi.org/10.1520/STP889-EB>`_
 .. [#Love_1939] `Love A.E.H., "Boussinesq's problem for a rigid cone." (1939). <http://dx.doi.org/10.1093/qmath/os-10.1.161>`_
 .. [#Lucas_1996] `Lucas B.N. et al., "Time Dependent Deformation During Indentation Testing." (1996). <http://dx.doi.org/10.1557/PROC-436-233>`_
