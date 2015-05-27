@@ -26,13 +26,19 @@ Nanoindentation tests on thin films
 Composite reduced Young's modulus and composite hardness
 ----------------------------------------------------------
 
-For indentation test on a coated specimen or on a multilayer sample (e.g.: thin films deposited on a substrate), the evolution of the Young's modulus and the hardness calculated with the models used for bulk materials, is function of the material properties, the thickness :math:`t` and the density of each underlying films (substrate included), and the properties and the geometry of the indenter.
+For indentation test on a coated specimen or on a multilayer sample (e.g.: thin films deposited on a substrate), the evolution of the Young's modulus and the hardness calculated with the models used for bulk materials, is function of the material properties, the thickness :math:`t` and the density of each underlying film (substrate included), and the properties and the geometry of the indenter.
+
+.. figure:: ./_pictures/multilayerSEM.png
+   :scale: 60 %
+   :align: center
+   
+   *Figure 1 : SEM observation of a multilayer sample.*
 
 .. figure:: ./_pictures/evolution_EandH_thinfilm.png
    :scale: 60 %
    :align: center
    
-   *Figure 1 : Schematic of the evolution of Young's modulus and hardness for a coated specimen in function of the normalized indentation depth.*
+   *Figure 2 : Schematic of the evolution of Young's modulus and hardness for a coated specimen in function of the normalized indentation depth.*
 
 Thus, the composite reduced Young's modulus :math:`E^{'}` and the composite hardness :math:`H`
 calculated with the models used for bulk materials, can generally be expressed as a combination of respectively the reduced Young's moduli :math:`(E^{'}_\text{f})` or the hardness :math:`(H_\text{f})` of each underlayers and respectively the reduced Young's modulus :math:`(E^{'}_\text{s})` or the hardness :math:`(H_\text{s})` of the substrate.
@@ -54,9 +60,9 @@ For nanoindentation tests on thin films, the contact topography is function of b
    :scale: 60 %
    :align: center
    
-   *Figure 2 : Schematic depiction of a) "pile-up" and b) "sink-in" for thin films.*
+   *Figure 3 : Schematic depiction of a) "pile-up" and b) "sink-in" for thin films.*
    
-The Figure 2-a ("pile-up") is typical of the case of a soft film on a hard substrate and the Figure 2-b ("sink-in") of a hard film on a soft substrate [#ChenVlassak2001]_.
+The Figure 3-a ("pile-up") is typical of the case of a soft film on a hard substrate and the Figure 3-b ("sink-in") of a hard film on a soft substrate [#ChenVlassak2001]_.
    
 To determine the depth of contact, `the same models <http://nims.readthedocs.org/en/latest/models.html#indentation-contact-topography>`_ described for bulk material indentation are used.
 
@@ -136,10 +142,13 @@ With :math:`x=a_\text{c}/t`.
 
 Find here the |matlab| function for the weighting function :math:`\phi_{Gao_0}` :
 `phi_gao_0.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/phi_gao_0.m>`_.
+
 Find here the |matlab| function for the weighting function :math:`\phi_{Gao_1}` :
 `phi_gao_1.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/phi_gao_1.m>`_.
+
 Find here the |matlab| function for :math:`\nu_{c}` the composite Poisson's ratio :
 `composite_poissons_ratio.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/composite_poissons_ratio.m>`_.
+
 Find here the |matlab| function for the Gao et al. model :
 `model_gao.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_gao.m>`_.
 
@@ -275,7 +284,7 @@ This system is modelled by two springs connected in series :
    :scale: 40 %
    :align: center
    
-   *Figure 3 : Schematic description of the bilayer model of Bec et al.*
+   *Figure 4 : Schematic description of the bilayer model of Bec et al.*
 
     .. math:: K_\text{f} = \pi a_\text{c}^2 \frac{E^{'}_\text{f}}{t}
             :label: bec_kf
@@ -406,10 +415,10 @@ Thus, the Young’s modulus of the film can be calculated as :
    :scale: 30 %
    :align: center
    
-   *Figure 4 : Schematic of elastic multilayer model.*
+   *Figure 5 : Schematic of elastic multilayer model.*
 
 It is advised to perform nanoindentation tests on each layer of the multilayer sample,
-from the substrate up to the final stack of layers (see Figure 5). By successive iterations using
+from the substrate up to the final stack of layers (see Figure 6). By successive iterations using
 the model of Mercier et al., values of Young's modulus of each layer are extracted
 from the contact stiffness.
 
@@ -417,7 +426,7 @@ from the contact stiffness.
    :scale: 30 %
    :align: center
    
-   *Figure 5 : Experimental process to apply for elastic multilayer model.*
+   *Figure 6 : Experimental process to apply for elastic multilayer model.*
 
 Find here the |matlab| function for the Mercier et al. model :
 `model_multilayer_elastic.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_multilayer_elastic.m>`_.
@@ -481,7 +490,7 @@ depths :math:`h_\text{c}` smaller than the film thickness.
    :scale: 60 %
    :align: center
    
-   *Figure 6 : Indentation penetration of a thin film on a sample.*
+   *Figure 7 : Indentation penetration of a thin film on a sample.*
    
 Recently, Li et al. proposed to express the local thinning effect as [#Li_2010]_:
 
