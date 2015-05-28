@@ -48,12 +48,20 @@ else
     elseif gui.variables.x_axis == 2
         gui.axis.x2plot = gui.results.ac./gui.data.t;
         gui.axis.xlabelstr = 'Contact Radius / Film Thickness (t)';
-        gui.axis.xmax = round(max(gui.results.ac./gui.data.t));
+        if max(gui.results.ac./gui.data.t) < 1
+            gui.axis.xmax = 1;
+        else
+            gui.axis.xmax = round(max(gui.results.ac./gui.data.t));
+        end
         gui.axis.xmin = round(min(gui.results.ac./gui.data.t));
     elseif gui.variables.x_axis == 3
         gui.axis.x2plot = gui.data.h/gui.data.t;
         gui.axis.xlabelstr = 'Displ. (h) / Film Thickness (t)';
-        gui.axis.xmax = round(max(gui.data.h/gui.data.t));
+        if max(gui.data.h/gui.data.t) < 1
+            gui.axis.xmax = 1;
+        else
+            gui.axis.xmax = round(max(gui.data.h/gui.data.t));
+        end
         gui.axis.xmin = 0;
     end
     
