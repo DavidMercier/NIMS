@@ -3,6 +3,11 @@ function clean_data
 %% Function used to correct data (minimum displacement, CSM correction...)
 gui = guidata(gcf);
 
+% Displacement in nm
+% Load in mN
+% Stiffness in N/m
+% Compliance in um/mN
+
 % Correction of data (minimum and maximum depths)
 if gui.flag.flag_data == 0
     gui.flag.wrong_inputs = 1;
@@ -10,9 +15,9 @@ if gui.flag.flag_data == 0
     
 else
     gui.data.min_depth = ...
-        str2double(get(gui.handles.value_mindepth_GUI, 'String')); % in nm
+        str2double(get(gui.handles.value_mindepth_GUI, 'String'));
     gui.data.max_depth = ...
-        str2double(get(gui.handles.value_maxdepth_GUI, 'String')); % in nm
+        str2double(get(gui.handles.value_maxdepth_GUI, 'String'));
     gui.flag.wrong_inputs = 0;
     
     if gui.data.min_depth < gui.data.max_depth && ...
@@ -22,9 +27,9 @@ else
     else
         delete(gui.handles.h_waitbar);
         set(gui.handles.value_mindepth_GUI, ...
-            'String', round(min(gui.data.h_init))); % in nm
+            'String', round(min(gui.data.h_init)));
         set(gui.handles.value_maxdepth_GUI, ...
-            'String', round(max(gui.data.h_init))); % in nm
+            'String', round(max(gui.data.h_init)));
         gui.data.min_depth = round(min(gui.data.h_init));
         gui.data.max_depth = round(max(gui.data.h_init));
         warndlg('Wrong inputs for minimum and maximum depth values !', ...
@@ -40,9 +45,9 @@ else
         else
             delete(gui.handles.h_waitbar);
             set(gui.handles.value_mindepth_GUI, ...
-                'String', round(min(gui.data.h_init))); % in nm
+                'String', round(min(gui.data.h_init)));
             set(gui.handles.value_maxdepth_GUI, ...
-                'String', round(max(gui.data.h_init))); % in nm
+                'String', round(max(gui.data.h_init)));
             gui.data.min_depth = round(min(gui.data.h_init));
             gui.data.max_depth = round(max(gui.data.h_init));
             warndlg('Wrong inputs for minimum and maximum depth values !', ...
@@ -99,15 +104,18 @@ else
         gui.data.delta_S_final = NaN(max(col), 1);
         
         for ii = row(1):(max(row))
-            gui.data.h_final(ii)       = h_int(ii);
+            % With frame compliance correction
+            gui.data.h_final(ii) = ...
+                h_int(ii) - P_int(ii)*1e3*gui.config.data.frame_compliance;
             gui.data.delta_h_final(ii) = delta_h_int(ii);
             
-            gui.data.P_final(ii)       = P_int(ii);
+            gui.data.P_final(ii) = P_int(ii);
             gui.data.delta_P_final(ii) = delta_P_int(ii);
             
-            gui.data.S_final(ii)       = S_int(ii);
+            % With frame compliance correction
+            gui.data.S_final(ii) = ...
+                ((1/S_int(ii)) - (1e-3*gui.config.data.frame_compliance))^-1;
             gui.data.delta_S_final(ii) = delta_S_int(ii);
-            
         end
         
         gui.data.h = gui.data.h_final.';

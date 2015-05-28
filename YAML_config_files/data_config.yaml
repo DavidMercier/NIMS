@@ -4,3 +4,10 @@
 # Absolute path to your nanoindentation results (optional)
 # Uncomment to activate...
 #data_path: C:\Users\d.mercier\Desktop\
+
+#################################################################################
+# Value of the frame compliance (in um/mN) in case data (displacement and stiffness) 
+# from nanoindentation tests are not corrected.
+# See Fischer-Cripps A.C. (2006). - DOI: 10.1016/j.surfcoat.2005.03.018
+#frame_compliance: 0.00014
+frame_compliance: 0
