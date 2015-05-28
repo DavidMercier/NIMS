@@ -41,6 +41,14 @@ gui.results.Ac = gui.data.C0.*(gui.results.hc.^2) + ...
     gui.data.C7.*(gui.results.hc.^(1/64)) + ...
     gui.data.C8.*(gui.results.hc.^(1/128));
 
+% Check to avoid negative contact area introducing error in other
+% calculations of Young's modulus and hardness
+for ii = 1:length(gui.results.Ac)
+    if gui.results.Ac(ii) < 1
+        gui.results.Ac(ii) = 0;
+    end
+end
+
 % Contact radius calculation in nm
 gui.results.ac = sqrt(gui.results.Ac./pi);
 
