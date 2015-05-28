@@ -54,11 +54,9 @@ guidata(gcf, gui);
 
 % Set properties of indenter
 indenters_properties_GUI;
-
-%% Encapsulation of data into the GUI
 gui = guidata(gcf); guidata(gcf, gui);
 
-%% Help menu
+% Help menu
 customized_menu(gcf);
 
 %% Set flags
