@@ -67,9 +67,7 @@ For nanoindentation tests on thin films, the contact topography is function of b
    
    *Figure 3 : Schematic depiction of a) "pile-up" and b) "sink-in" for thin films.*
    
-The Figure 3-a ("pile-up") is typical of the case of a soft film on a hard substrate and the Figure 3-b ("sink-in") of a hard film on a soft substrate [#ChenVlassak2001]_.
-   
-To determine the depth of contact,
+The Figure 3-a ("pile-up") is typical of the case of a soft film on a hard substrate and the Figure 3-b ("sink-in") of a hard film on a soft substrate [#ChenVlassak2001]_. To determine the depth of contact,
 `the same models <http://nims.readthedocs.org/en/latest/models.html#indentation-contact-topography>`_ described for bulk material indentation are used.
 
 Corrections to apply for thin film indentation 
@@ -97,7 +95,7 @@ depths :math:`h_\text{c}` smaller than the film thickness.
    :scale: 60 %
    :align: center
    
-   *Figure 7 : Indentation penetration of a thin film on a sample.*
+   *Figure 4 : Indentation penetration of a thin film on a sample.*
    
 Recently, Li et al. proposed to express the local thinning effect as [#Li_2010]_:
 
@@ -330,7 +328,7 @@ This system is modelled by two springs connected in series :
    :scale: 40 %
    :align: center
    
-   *Figure 4 : Schematic description of the bilayer model of Bec et al.*
+   *Figure 5 : Schematic description of the bilayer model of Bec et al.*
 
     .. math:: K_\text{f} = \pi a_\text{c}^2 \frac{E^{'}_\text{f}}{t}
             :label: bec_kf
@@ -465,10 +463,10 @@ Thus, the Young’s modulus of the film can be calculated as :
    :scale: 30 %
    :align: center
    
-   *Figure 5 : Schematic of elastic multilayer model.*
+   *Figure 6 : Schematic of elastic multilayer model.*
 
 It is advised to perform nanoindentation tests on each layer of the multilayer sample,
-from the substrate up to the final stack of layers (see Figure 6). By successive iterations using
+from the substrate up to the final stack of layers (see Figure 7). By successive iterations using
 the model of Mercier et al., values of Young's modulus of each layer are extracted
 from the contact stiffness.
 
@@ -476,7 +474,7 @@ from the contact stiffness.
    :scale: 30 %
    :align: center
    
-   *Figure 6 : Experimental process to apply for elastic multilayer model.*
+   *Figure 7 : Experimental process to apply for elastic multilayer model.*
 
 Find here the |matlab| function for the Mercier et al. model :
 `model_multilayer_elastic.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_multilayer_elastic.m>`_.
@@ -554,6 +552,10 @@ mixtures”
 
 [#Fernandes_2000]_
 
+
+Saha and Nix (2002)
+---------------------------
+
 [#Saha_2002]_
 
 [#Chen_2004]_
@@ -588,7 +590,7 @@ References
 .. [#Hay_2011] `Hay J. and Crawford B., "Measuring substrate-independent modulus of thin films" (2011). <http://dx.doi.org/10.1557/jmr.2011.8>`_
 .. [#He_1996] `He J. L. et al., "Hardness measurement of thin films: Separation from composite hardness" (1996). <http://dx.doi.org/10.1063/1.117595>`_
 .. [#Hu_1998] `Hu X. Z. and Lawn B. R. "A simple indentation stress–strain relation for contacts with spheres on bilayer structures" (1998). <http://dx.doi.org/10.1016/S0040-6090(97)00919-X>`_
-.. [#Iost_1996]_ `Iost A. and Bigot R., "Hardness of coatings" (1996). <http://dx.doi.org/10.1016/0257-8972(95)02697-5>`_
+.. [#Iost_1996] `Iost A. and Bigot R., "Hardness of coatings" (1996). <http://dx.doi.org/10.1016/0257-8972(95)02697-5>`_
 .. [#Iost_2005]_ `Iost A. et al., "Dureté des revêtements : quel modèle choisir ?" (2005). <http://dx.doi.org/10.1051/mattech:2005009>`_
 .. [#Jennett_2001] `Jennett N. M. and Bushby A. J., "Adaptive Protocol for Robust Estimates of Coatings Properties by Nanoindentation" (2001). <http://dx.doi.org/10.1557/PROC-695-L3.1.1>`_
 .. [#Jönsson_1984] `Jönsson B. and Hogmark S., "Hardness measurements of thin films" (1984). <http://dx.doi.org/10.1016/0040-6090(84)90123-8>`_
@@ -598,7 +600,7 @@ References
 .. [#Li_2010] `Li H. et al., "New methods of analyzing indentation experiments on very thin films" (2010). <http://dx.doi.org/10.1557/JMR.2010.0095>`_
 .. [#Mencík_1997] `Mencík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
 .. [#Mercier_2010] `Mercier D. et al., "Young's modulus measurement of a thin film from experimental nanoindentation performed on multilayer systems" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
-.. [#Mercier_2013] `Mercier D., "Lois de comportement des matériaux utilisés dans les contacts électriques pour application " flip chip "" (2013). <http://www.theses.fr/2013GRENI083>`_
+.. [#Mercier_2013] `Mercier D., "Behaviour laws of materials used in electrical contacts for « flip chip » technologies" (2013). <http://www.theses.fr/2013GRENI083>`_
 .. [#PaillerMattei_2008] `Pailler-Mattei C. et al., "In vivo measurements of the elastic mechanical properties of human skin by indentation tests" (2008). <http://dx.doi.org/10.1016/j.medengphy.2007.06.011>`_
 .. [#Perriot_2004] `Perriot A. and Barthel E., "Elastic contact to a coated half-space: Effective elastic modulus and real penetration" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.2.600>`_
 .. [#Pharr_1992] `Pharr G.M. and Oliver W.C., "Measurement of Thin Film Mechanical Properties Using Nanoindentation" (1992). <http://dx.doi.org/10.1557/S0883769400041634>`_
