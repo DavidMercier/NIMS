@@ -12,6 +12,7 @@ if get(gui.handles.cb_corr_thickness_GUI, 'Value') == 1
 end
 
 x = gui.results.ac./gui.data.t;
+x = checkValues(x);
 
 % Ef_red_sol(1) = Ef_red
 % Ef_red_sol(2) = Es_red

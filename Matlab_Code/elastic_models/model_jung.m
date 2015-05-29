@@ -5,6 +5,7 @@ function model_jung(OPTIONS)
 gui = guidata(gcf);
 
 x = gui.results.hc./gui.results.t_corr;
+x = checkValues(x);
 
 % Minimum and maximum boundaries for the constant alpha
 A_Jung = gui.config.numerics.A_Jung;

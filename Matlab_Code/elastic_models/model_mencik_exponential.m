@@ -12,6 +12,7 @@ if get(gui.handles.cb_corr_thickness_GUI, 'Value') == 1
 end
 
 x = gui.results.ac./gui.data.t;
+x = checkValues(x);
 
 % Minimum and maximum boundaries for the constant alpha
 min_alpha = gui.config.numerics.alpha_min_Mencik;

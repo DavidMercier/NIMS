@@ -5,6 +5,7 @@ function model_bec(OPTIONS)
 gui = guidata(gcf);
 
 x = gui.data.h;
+x = checkValues(x);
 
 bilayer_model = @(Ef_red_sol, x) ...
     (1e-9*(((2.*gui.results.ac)./(1+2.*(gui.results.t_corr)./(pi.*gui.results.ac))) .* ...

@@ -15,6 +15,8 @@ if nargin < 1
     save_figure(pwd, gca, '_phi1Gao');
 end
 
+x = checkValues(x);
+
 phigao1 = (2/pi).*atan(x)+(x./pi).*log((1+(x).^2)./(x).^2);
 
 end

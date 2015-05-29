@@ -4,6 +4,7 @@ function model_perriot_barthel(OPTIONS)
 gui = guidata(gcf);
 
 x = gui.results.t_corr./gui.results.ac;
+x = checkValues(x);
 
 % Coefficient 'n_perriot' between 1.06 and 1.32 function of the ratio Es/Ef !!!
 bilayer_model = @(Ef_red_sol, x) (1e-9*((1e9*Ef_red_sol(1)) + ...

@@ -5,6 +5,7 @@ function model_doerner_nix_king(OPTIONS)
 gui = guidata(gcf);
 
 x = gui.results.t_corr./gui.results.ac;
+x = checkValues(x);
 
 % A(1) = Ef_red
 % A(2) = alpha

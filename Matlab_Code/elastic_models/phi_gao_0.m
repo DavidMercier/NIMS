@@ -21,6 +21,8 @@ if nargin < 1
     save_figure(pwd, gca, '_phi0Gao');
 end
 
+x = checkValues(x);
+
 phigao0 = (2/pi).*atan(x) + ((1./(2.*pi.*(1-nuc))) .* ...
     (((1-2*nuc).*x.*log(1+(1./x).^2)) - (x./(1+(x).^2))));
 

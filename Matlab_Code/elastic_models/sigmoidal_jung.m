@@ -27,6 +27,8 @@ if nargin < 1
     save_figure(pwd, gca, '_sigmoidalYung');
 end
 
+x = checkValues(x);
+
 L_Jung = (1./(1+A_Jung.*x.^B_Jung));
 
 end

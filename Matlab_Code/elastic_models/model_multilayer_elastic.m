@@ -35,6 +35,7 @@ gui.results.t0_corr = gui.data.t0;
 %% Optimization of Young's modulus of the thin film
 if gui.variables.val2 ~= 1
     x = gui.data.h;
+    x = checkValues(x);
     
     % 2 Films + Substrat
     if gui.variables.num_thinfilm == 3 && gui.variables.val2 == 2 % Mercier et al. (2010)
@@ -43,7 +44,7 @@ if gui.variables.val2 ~= 1
             (gui.results.t0_corr./(((pi.*gui.results.ac0.^2)+(2.*gui.results.ac0.*gui.results.t0_corr)).*gui.data.E0_red)) + ...
             (1./((2.*(gui.results.ac0+((2.*gui.results.t0_corr)./pi))).*gui.data.Es_red)))).^-1));
         
-        Ef_red_sol0 = (str2double (get(gui.handles.value_youngfilm1_GUI,'String')));                    % Make a starting guess at the solution (Ef in GPa)
+        Ef_red_sol0 = (str2double (get(gui.handles.value_youngfilm1_GUI,'String'))); % Make a starting guess at the solution (Ef in GPa)
         
         %3 Films + Substrat
     elseif gui.variables.num_thinfilm == 4 && gui.variables.val2 == 2 % Mercier et al. (2010)
@@ -53,7 +54,7 @@ if gui.variables.val2 ~= 1
             (gui.results.t0_corr./(((pi.*gui.results.ac0.^2)+(2.*gui.results.ac0.*gui.results.t0_corr)).*gui.data.E0_red)) + ...
             (1./((2.*(gui.results.ac0+((2.*gui.results.t0_corr)./pi))).*gui.data.Es_red)))).^-1));
         
-        Ef_red_sol0 = (str2double(get(gui.handles.value_youngfilm2_GUI, 'String')));                    % Make a starting guess at the solution (Ef in GPa)
+        Ef_red_sol0 = (str2double(get(gui.handles.value_youngfilm2_GUI, 'String'))); % Make a starting guess at the solution (Ef in GPa)
     end
     
     OPTIONS = optimset('lsqcurvefit');

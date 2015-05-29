@@ -8,6 +8,7 @@ function model_hay(OPTIONS)
 gui = guidata(gcf);
 
 x = gui.results.t_corr./gui.results.ac;
+x = checkValues(x);
 
 gui.data.phigao1 = phi_gao_1(x);
 
