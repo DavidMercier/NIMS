@@ -30,6 +30,14 @@ elseif gui.variables.val1 == 3 % Loubet et al. (1992)
         (gui.data.h + h_tip - (gui.data.P./gui.data.S));
 end
 
+% Check to avoid negative contact area introducing error in other
+% calculations of Young's modulus and hardness
+for ii = 1:length(gui.results.hc)
+    if gui.results.hc(ii) < 1
+        gui.results.hc(ii) = 0;
+    end
+end
+
 % Contact area calculation in nm2
 gui.results.Ac = gui.data.C0.*(gui.results.hc.^2) + ...
     gui.data.C1.*(gui.results.hc.^1) + ...
