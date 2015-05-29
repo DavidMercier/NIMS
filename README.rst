@@ -58,7 +58,7 @@ Matlab Toolbox ; Graphical User Interface ; Nanoindentation ; Young's modulus ; 
 Screenshots
 -------------
 
-.. figure:: ./_pictures/GUI_Main_Window_Esample_curve.png
+.. figure:: ./doc/_pictures/GUI_Main_Window_Esample_curve.png
    :scale: 40 %
    :align: center
    
