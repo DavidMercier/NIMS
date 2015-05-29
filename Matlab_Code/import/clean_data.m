@@ -5,7 +5,7 @@ gui = guidata(gcf);
 
 % Displacement in nm
 % Load in mN
-% Stiffness in N/m
+% Stiffness in mN/nm
 % Compliance in um/mN
 
 % Correction of data (minimum and maximum depths)
@@ -14,13 +14,14 @@ if gui.flag.flag_data == 0
     gui.flag.wrong_inputs = 1;
     
 else
+    unit_data;
+    gui = guidata(gcf); guidata(gcf, gui);
+    
     gui.data.min_depth = ...
         str2double(get(gui.handles.value_mindepth_GUI, 'String'));
     gui.data.max_depth = ...
         str2double(get(gui.handles.value_maxdepth_GUI, 'String'));
     gui.flag.wrong_inputs = 0;
-    gui.config.data.frame_compliance =  ...
-        str2double(get(gui.handles.value_frame_compliance_GUI, 'String'));
     
     if gui.data.min_depth < gui.data.max_depth && ...
             gui.data.min_depth + 1 >= min(gui.data.h_init) && ...
@@ -60,7 +61,7 @@ else
     
     if ~gui.flag.wrong_inputs
         % Remove data below a minimum displacement
-        h_set_min = (gui.data.h_init > gui.data.min_depth);
+        h_set_min = (gui.data.h_init_f > (gui.data.min_depth*gui.data.dispFact));
         
         for ii = 1:length(h_set_min)
             [row, col] = find(h_set_min >= 1);
@@ -75,22 +76,25 @@ else
         delta_S_int = NaN(max(col), 1);
         
         for ii = row(1):(max(row))
-            h_int(ii-row(1)+1)       = gui.data.h_init(ii);
-            delta_h_int(ii-row(1)+1) = gui.data.delta_h_init(ii);
+            h_int(ii-row(1)+1)       = gui.data.h_init_f(ii);
+            delta_h_int(ii-row(1)+1) = gui.data.delta_h_init_f(ii);
             
-            P_int(ii-row(1)+1)       = gui.data.P_init(ii);
-            delta_P_int(ii-row(1)+1) = gui.data.delta_P_init(ii);
+            P_int(ii-row(1)+1)       = gui.data.P_init_f(ii);
+            delta_P_int(ii-row(1)+1) = gui.data.delta_P_init_f(ii);
             
-            S_int(ii-row(1)+1)       = gui.data.S_init(ii);
-            delta_S_int(ii-row(1)+1) = gui.data.delta_S_init(ii);
+            S_int(ii-row(1)+1)       = gui.data.S_init_f(ii);
+            delta_S_int(ii-row(1)+1) = gui.data.delta_S_init_f(ii);
         end
         
-        h_int = h_int.'; delta_h_int = delta_h_int.';
-        P_int = P_int.'; delta_P_int = delta_P_int.';
-        S_int = S_int.'; delta_S_int = delta_S_int.';
+        h_int = h_int.';
+        delta_h_int = delta_h_int.';
+        P_int = P_int.';
+        delta_P_int = delta_P_int.';
+        S_int = S_int.';
+        delta_S_int = delta_S_int.';
         
         % Remove data below a maximum displacement
-        h_set_max = (h_int < gui.data.max_depth);
+        h_set_max = (h_int < (gui.data.max_depth*gui.data.dispFact));
         
         clear [row, col];
         for ii = 1:length(h_set_max)
@@ -108,9 +112,13 @@ else
         % Value of the frame compliance (in um/mN) in case data (displacement and stiffness)
         % from nanoindentation tests are not corrected.
         % See Fischer-Cripps A.C. (2006). - DOI: 10.1016/j.surfcoat.2005.03.018
+        gui.config.data.frame_compliance =  ...
+            str2double(get(gui.handles.value_frame_compliance_GUI, 'String'));
+        frameComp = 1e3*gui.config.data.frame_compliance; % Convert from um/mN to nm/mN
+        
         for ii = row(1):(max(row))
             % With frame compliance correction
-            h_FrameCorrected = h_int(ii) - P_int(ii)*1e3*gui.config.data.frame_compliance;
+            h_FrameCorrected = h_int(ii) - P_int(ii)*frameComp;
             if h_FrameCorrected > 0
                 gui.data.h_final(ii) = h_FrameCorrected;
                 gui.data.delta_h_final(ii) = delta_h_int(ii);
@@ -119,8 +127,7 @@ else
                 gui.data.delta_P_final(ii) = delta_P_int(ii);
                 
                 % With frame compliance correction
-                gui.data.S_final(ii) = ...
-                    ((1/S_int(ii)) - (1e-3*gui.config.data.frame_compliance))^-1;
+                gui.data.S_final(ii) = ((1/S_int(ii))-frameComp)^-1;
                 gui.data.delta_S_final(ii) = delta_S_int(ii);
             else
                 gui.flag.warnText = ...

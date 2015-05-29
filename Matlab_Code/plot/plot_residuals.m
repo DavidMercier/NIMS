@@ -27,7 +27,7 @@ end
 %% Setting of the plot
 if gui.variables.x_axis == 1
     gui.axis.x2plot = gui.data.h;
-    gui.axis.xlabelstr = 'Displacement (nm)';
+    gui.axis.xlabelstr = ['Displacement (h) (', char(gui.data.dispUnit), ')'];
     gui.axis.xmax = round(max(gui.data.h));
     gui.axis.xmin = 0;
     

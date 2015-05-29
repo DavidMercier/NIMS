@@ -7,6 +7,7 @@ gui = guidata(gcf);
 set(gui.MainWindows, 'CurrentAxes', gui.handles.AxisPlot_GUI);
 cla;
 gui.axis.legend_str = '';
+gui.data.t = gui.data.t / gui.data.dispFact;
 
 gui.variables.log_plot_value = get(gui.handles.cb_log_plot_GUI, 'Value');
 

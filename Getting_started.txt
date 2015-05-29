@@ -12,7 +12,7 @@ in order to add the above folder with subfolders to the matlab search path.
 See examples files given in the folder "Data_indentation" for the accepted format.
 Only the loading part of your (nano)indentation results !
 
-Units : Displacement (nm) / Load (mN) / Stiffness (N/m)
+Files must contain :
 - 3 columns : Displacement/Load/Stiffness
 - 6 columns : Disp./SD of Disp./Load/SD of Load/Stiff./SD of Stiff. (SD for Standard Deviation)
 For .xls files : It is possible to import a 'Sample' sheet obtained

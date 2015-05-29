@@ -62,6 +62,15 @@ if ~gui.flag.wrong_inputs
     delete(gui.handles.h_waitbar);
     guidata(gcf, gui);
     
+    % Refactor data for plot
+    gui.data.h = gui.data.h/gui.data.dispFact;
+    gui.data.delta_h = gui.data.delta_h/gui.data.dispFact;
+    gui.data.P = gui.data.P/gui.data.loadFact;
+    gui.data.delta_P = gui.data.delta_P/gui.data.loadFact;
+    gui.data.S = gui.data.S/gui.data.stifFact;
+    gui.data.delta_S = gui.data.delta_S/gui.data.stifFact;
+    guidata(gcf, gui);
+    
     %% Plot data
     plot_exp_vs_mod_setvariables;
     gui = guidata(gcf); guidata(gcf, gui);
