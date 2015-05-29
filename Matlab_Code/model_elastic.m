@@ -8,19 +8,19 @@ theta_eq = str2num(gui.data.indenter_tip_angle); % Equivalent cone angle (in deg
 
 if gui.variables.King_correction == 1 % See in King (1987)
     if gui.variables.val0 == 1 % Berkovich indenter
-        beta = gui.config.numerics.betaBerkovich_King;
+        beta_Val = gui.config.numerics.betaBerkovich_King;
         
     elseif gui.variables.val0 == 2; % Vickers indenter
-        beta = gui.config.numerics.betaVickers_King;
+        beta_Val = gui.config.numerics.betaVickers_King;
         
     elseif gui.variables.val0 == 3  % Cube-Corner indenter
-        beta = gui.config.numerics.betaVickers_King;
+        beta_Val = gui.config.numerics.betaVickers_King;
         
     elseif gui.variables.val0 == 4  % Conical indenter
-        beta = gui.config.numerics.betaConical_King;
+        beta_Val = gui.config.numerics.betaConical_King;
     end
 elseif gui.variables.King_correction == 2 % See in Hay (1999)
-    beta = beta_hay(theta_eq, gui.data.nuf);
+    beta_Val = beta_hay(theta_eq, gui.data.nuf);
 end
 
 %% Young's modulus calculation - See in Pharr et al. (1992)
@@ -29,7 +29,7 @@ gui.data.nuind    = gui.data.indenter_material_pr; % Poisson's coefficient of in
 gui.data.Eind_red = (gui.data.Eind / (1-gui.data.nuind^2)); % Reduced Young's modulus of diamond. See in Fischer-Cripps "Nanoindentation 2nd Ed.".
 
 % Effective reduced Young's modulus (sample+indenter) in GPa
-gui.results.Eeff_red = ((pi^0.5)/(2*beta)).* ...
+gui.results.Eeff_red = ((pi^0.5)/(2*beta_Val)).* ...
     10^6.*gui.data.S.*(1./sqrt(gui.results.Ac));
 
 % Reduced Young's modulus of the sample in GPa (no indenter's contribution)
