@@ -8,8 +8,16 @@ set(gui.MainWindows, 'CurrentAxes', gui.handles.AxisPlot_GUI);
 
 xlabel(gui.axis.xlabelstr, 'Color', [0,0,0], 'FontSize', 14);
 ylabel(gui.axis.ylabelstr, 'Color', [0,0,0], 'FontSize', 14);
-xlim([gui.axis.xmin gui.axis.xmax]);
-ylim([gui.axis.ymin gui.axis.ymax]);
+if gui.axis.xmin < gui.axis.xmax
+    xlim([gui.axis.xmin gui.axis.xmax]);
+else
+    xlim([gui.axis.xmax gui.axis.xmin]);
+end
+if gui.axis.ymin < gui.axis.ymax
+    ylim([gui.axis.ymin gui.axis.ymax]);
+else
+    ylim([gui.axis.ymax gui.axis.ymin]);
+end
 set(gui.handles.AxisPlot_GUI, 'FontSize', 14);
 set(gui.handles.plot_data, 'MarkerSize', 10);
 for ii = 1:length(gui.handles.plot_data)
