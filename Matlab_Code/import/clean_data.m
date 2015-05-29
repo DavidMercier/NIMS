@@ -10,8 +10,8 @@ gui = guidata(gcf);
 
 % Correction of data (minimum and maximum depths)
 if gui.flag.flag_data == 0
+    gui.flag.warnText = 'Import data first !';
     gui.flag.wrong_inputs = 1;
-    helpdlg('Import data first !','!!!');
     
 else
     gui.data.min_depth = ...
@@ -19,6 +19,8 @@ else
     gui.data.max_depth = ...
         str2double(get(gui.handles.value_maxdepth_GUI, 'String'));
     gui.flag.wrong_inputs = 0;
+    gui.config.data.frame_compliance =  ...
+        str2double(get(gui.handles.value_frame_compliance_GUI, 'String'));
     
     if gui.data.min_depth < gui.data.max_depth && ...
             gui.data.min_depth + 1 >= min(gui.data.h_init) && ...
@@ -32,8 +34,8 @@ else
             'String', round(max(gui.data.h_init)));
         gui.data.min_depth = round(min(gui.data.h_init));
         gui.data.max_depth = round(max(gui.data.h_init));
-        warndlg('Wrong inputs for minimum and maximum depth values !', ...
-            'Input Error');
+        gui.flag.warnText = ...
+            ('Wrong inputs for minimum and maximum depth values !');
         gui.flag.wrong_inputs = 1;
     end
     
@@ -50,8 +52,8 @@ else
                 'String', round(max(gui.data.h_init)));
             gui.data.min_depth = round(min(gui.data.h_init));
             gui.data.max_depth = round(max(gui.data.h_init));
-            warndlg('Wrong inputs for minimum and maximum depth values !', ...
-                'Input Error');
+            gui.flag.warnText = ...
+                ('Wrong inputs for minimum and maximum depth values !');
             gui.flag.wrong_inputs = 1;
         end
     end
@@ -103,34 +105,43 @@ else
         gui.data.S_final       = NaN(max(col), 1);
         gui.data.delta_S_final = NaN(max(col), 1);
         
+        % Value of the frame compliance (in um/mN) in case data (displacement and stiffness)
+        % from nanoindentation tests are not corrected.
+        % See Fischer-Cripps A.C. (2006). - DOI: 10.1016/j.surfcoat.2005.03.018
         for ii = row(1):(max(row))
             % With frame compliance correction
-            gui.data.h_final(ii) = ...
-                h_int(ii) - P_int(ii)*1e3*gui.config.data.frame_compliance;
-            gui.data.delta_h_final(ii) = delta_h_int(ii);
+            h_FrameCorrected = h_int(ii) - P_int(ii)*1e3*gui.config.data.frame_compliance;
+            if h_FrameCorrected > 0
+                gui.data.h_final(ii) = h_FrameCorrected;
+                gui.data.delta_h_final(ii) = delta_h_int(ii);
+                
+                gui.data.P_final(ii) = P_int(ii);
+                gui.data.delta_P_final(ii) = delta_P_int(ii);
+                
+                % With frame compliance correction
+                gui.data.S_final(ii) = ...
+                    ((1/S_int(ii)) - (1e-3*gui.config.data.frame_compliance))^-1;
+                gui.data.delta_S_final(ii) = delta_S_int(ii);
+            else
+                gui.flag.warnText = ...
+                    ('Wrong input for the frame compliance !');
+                gui.flag.wrong_inputs = 1;
+            end
             
-            gui.data.P_final(ii) = P_int(ii);
-            gui.data.delta_P_final(ii) = delta_P_int(ii);
-            
-            % With frame compliance correction
-            gui.data.S_final(ii) = ...
-                ((1/S_int(ii)) - (1e-3*gui.config.data.frame_compliance))^-1;
-            gui.data.delta_S_final(ii) = delta_S_int(ii);
+            if ~gui.flag.wrong_inputs
+                gui.data.h = gui.data.h_final.';
+                gui.data.delta_h = gui.data.delta_h_final.'; % in nm
+                
+                gui.data.P = gui.data.P_final.';
+                gui.data.delta_P = gui.data.delta_P_final.'; % in mN
+                
+                gui.data.S = gui.data.S_final.';
+                gui.data.delta_S = gui.data.delta_S_final.'; % in mN/nm
+            end
         end
         
-        gui.data.h = gui.data.h_final.';
-        gui.data.delta_h = gui.data.delta_h_final.'; % in nm
-        
-        gui.data.P = gui.data.P_final.';
-        gui.data.delta_P = gui.data.delta_P_final.'; % in mN
-        
-        gui.data.S = gui.data.S_final.';
-        gui.data.delta_S = gui.data.delta_S_final.'; % in mN/nm
-        
     end
-    
 end
-
 guidata(gcf, gui);
 
 end

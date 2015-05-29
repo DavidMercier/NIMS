@@ -21,7 +21,7 @@ if ~gui.flag.wrong_inputs
         CSM_correction;
     end
     
-    %% Refreshing the GUI and getting parameters and 
+    %% Refreshing the GUI and getting parameters and
     refresh_param_GUI;
     get_param_GUI;
     
@@ -69,6 +69,7 @@ if ~gui.flag.wrong_inputs
     plot_exp_vs_mod;
     gui = guidata(gcf);
 else
+    warndlg(gui.flag.warnText, 'Input Error');
     delete(gui.handles.h_waitbar);
 end
 guidata(gcf, gui);
