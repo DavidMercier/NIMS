@@ -70,7 +70,7 @@ else
         gui.axis.delta_y2plot = gui.data.delta_P;
         gui.axis.y2plot_2 = gui.results.P_fit;
         gui.axis.ylabelstr = ['Load (', char(gui.data.loadUnit),')'];
-        gui.axis.ymax = round(max(gui.data.P.*1000)./10)./100;
+        gui.axis.ymax = max(gui.data.P);
         gui.axis.title_str = strcat('Loading work (W) = ', ...
             num2str(gui.results.W_microJ), 'µJ', ' / ', ...
             sprintf(' k(fit)= %.2e', ...
@@ -81,12 +81,12 @@ else
         gui.axis.y2plot = gui.data.S;
         gui.axis.delta_y2plot = gui.data.delta_S;
         gui.axis.ylabelstr = ['Stiffness (', char(gui.data.stifUnit),')'];
-        gui.axis.ymax = round(max(gui.data.S.*1000)./10)./100;
+        gui.axis.ymax = max(gui.data.S);
     elseif gui.variables.y_axis == 3
         gui.axis.y2plot = gui.data.P ./ (gui.data.S.^2);
         gui.axis.delta_y2plot = gui.data.delta_P - 2*(gui.data.delta_S);
         gui.axis.ylabelstr = 'Load oved Stiffness squared (1/GPa)';
-        gui.axis.ymax = round(max(gui.axis.y2plot.*1000)./10)./100;
+        gui.axis.ymax = max(gui.axis.y2plot);
     elseif gui.variables.y_axis == 4
         gui.axis.y2plot = gui.results.Esample_red;
         gui.axis.delta_y2plot = 0;
