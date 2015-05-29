@@ -55,6 +55,15 @@ Keywords
 --------
 Matlab Toolbox ; Graphical User Interface ; Nanoindentation ; Young's modulus ; thin film ; multilayer system ; analytical model ; finite element modelling.
 
+Screenshots
+-------------
+
+.. figure:: ./_pictures/GUI_Main_Window_Esample_curve.png
+   :scale: 40 %
+   :align: center
+   
+   *Plot of the evolution of the Young's modulus of the sample in function of the indentation depth.*
+
 Links
 -----
 http://fr.mathworks.com/matlabcentral/fileexchange/43392-davidmercier-nims
