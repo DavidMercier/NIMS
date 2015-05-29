@@ -3,7 +3,7 @@ NIMS
 This Matlab toolbox has been developed to plot and to analyze (nano)indentation data (with conical indenters).
 Please, have a look to the full documentation here: http://nims.readthedocs.org/en/latest/
 
-To get started with NIMS, clone the repository, then run Matlab, and cd into the folder containing this README file.
+To get started with the NIMS toolbox, clone the repository, then run Matlab, and cd into the folder containing this README file.
 
 You can start the launcher by typing "demo" at the Matlab command prompt.
 
@@ -19,9 +19,9 @@ This Matlab toolbox has been developed to :
 
 - Young's modulus and Hardness of bulk materials;
 
-- Young's modulus of thin films on a substrate (for a bilayer or a multilayer sample (3 layers on a substrate));
+- Young's modulus of a thin film on a substrate or on a multilayer sample (3 layers on a substrate));
 
-- Generate Python script for FEM simulation of indentation test on multilayer sample with ABAQUS 6.12.
+- Generate Python script for FEM simulation of indentation test on bulk or multilayer sample with ABAQUS 6.12.
 
 Author
 ------
@@ -55,7 +55,7 @@ Keywords
 --------
 Matlab Toolbox ; Graphical User Interface ; Nanoindentation ; Young's modulus ; thin film ; multilayer system ; analytical model ; finite element modelling.
 
-Screenshots
+Screenshot
 -------------
 
 .. figure:: ./doc/_pictures/GUI_Main_Window_Esample_curve.png
