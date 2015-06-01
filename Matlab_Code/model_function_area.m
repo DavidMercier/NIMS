@@ -4,7 +4,7 @@ function model_function_area
 gui = guidata(gcf);
 
 %% Constants definition
-h_tip = str2num(gui.data.indenter_tip_defect); % Tip defect (in nm)
+h_tip = str2double(gui.data.indenter_tip_defect); % Tip defect (in nm)
 aloubet = gui.config.numerics.alpha_Loubet;
 
 if gui.variables.val0 == 1 % Berkovich indenter
@@ -34,7 +34,7 @@ end
 % calculations of Young's modulus and hardness
 for ii = 1:length(gui.results.hc)
     if gui.results.hc(ii) < 1
-        gui.results.hc(ii) = 0;
+        gui.results.hc(ii) = 1e-9;
     end
 end
 
@@ -53,7 +53,7 @@ gui.results.Ac = gui.data.C0.*(gui.results.hc.^2) + ...
 % calculations of Young's modulus and hardness
 for ii = 1:length(gui.results.Ac)
     if gui.results.Ac(ii) < 1
-        gui.results.Ac(ii) = 0;
+        gui.results.Ac(ii) = 1e-9;
     end
 end
 
