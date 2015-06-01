@@ -40,21 +40,32 @@ else
                 gui.data.P = gui.data.P_CSM_Corr;
                 gui.data.S = gui.data.S_CSM_Corr;
                 
+                if abs(imag(gui.data.S))>0 % Wrong inputs or wrong units !
+                    gui.flag.flagCSM = 0;
+                    commandwindow;
+                    display('Wrong inputs or wrong units !');
+                else
+                    gui.flag.flagCSM = 1;
+                end
             else
-                gui.data.h = gui.data.h_final.'; 
-                gui.data.delta_h = gui.data.delta_h_final.'; % in nm
-                
-                gui.data.P = gui.data.P_final.';
-                gui.data.delta_P = gui.data.delta_P_final.'; % in mN
-                
-                gui.data.S = gui.data.S_final.';
-                gui.data.delta_S = gui.data.delta_S_final.'; % in mN/nm
-                
+                gui.flag.flagCSM = 0;
             end
         end
     end
     
 end
+
+if gui.flag.flagCSM == 0
+    gui.data.h = gui.data.h_final.';
+    gui.data.delta_h = gui.data.delta_h_final.'; % in nm
+    
+    gui.data.P = gui.data.P_final.';
+    gui.data.delta_P = gui.data.delta_P_final.'; % in mN
+    
+    gui.data.S = gui.data.S_final.';
+    gui.data.delta_S = gui.data.delta_S_final.'; % in mN/nm
+end
+
 
 guidata(gcf, gui);
 
