@@ -12,6 +12,6 @@ if nargin == 0
     display(nu);
 end
 
-Esample_red = Esample / (1-nu^2);
+Esample_red = Esample ./ (1-nu.^2);
 
 end
