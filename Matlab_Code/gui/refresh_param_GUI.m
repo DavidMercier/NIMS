@@ -21,6 +21,8 @@ if get(gui.handles.value_param2plotinyaxis_GUI , 'Value') < 4 || ...
     set(gui.handles.popup_corr_King_GUI,       'Visible', 'off');
     set(gui.handles.cb_corr_thickness_GUI,     'Visible', 'off');
     set(gui.handles.cb_corr_thickness_GUI,     'Value',0);
+    set(gui.handles.title_neta_corr_thickness_GUI, 'Visible', 'off');
+    set(gui.handles.value_neta_corr_thickness_GUI, 'Visible', 'off');
 else
     set(gui.handles.title_modeldisp_GUI,       'Visible', 'on');
     set(gui.handles.value_modeldisp_GUI,       'Visible', 'on');
@@ -29,6 +31,8 @@ else
     set(gui.handles.title_corr_King_GUI,       'Visible', 'on');
     set(gui.handles.popup_corr_King_GUI,       'Visible', 'on');
     set(gui.handles.cb_corr_thickness_GUI,     'Visible', 'on');
+    set(gui.handles.title_neta_corr_thickness_GUI, 'Visible', 'on');
+    set(gui.handles.value_neta_corr_thickness_GUI, 'Visible', 'on');
 end
 
 if get(gui.handles.value_param2plotinyaxis_GUI , 'Value') == 1 || ...
@@ -58,6 +62,18 @@ elseif get(gui.handles.value_param2plotinyaxis_GUI , 'Value') == 4 || ...
             'String', gui.handles.title_multilayermodel);
         set(gui.handles.value_model_GUI, ...
             'String', gui.handles.list_multilayermodel);
+    end
+elseif get(gui.handles.value_param2plotinyaxis_GUI , 'Value') == 6
+    if get(gui.handles.value_numthinfilm_GUI, 'Value') == 2
+        set(gui.handles.title_model_GUI, ...
+            'String', gui.handles.title_bilayermodel);
+        set(gui.handles.value_model_GUI, ...
+            'String', gui.handles.list_bilayermodel);
+    elseif get(gui.handles.value_numthinfilm_GUI, 'Value') > 2
+        set(gui.handles.title_model_GUI, ...
+            'String', gui.handles.title_multilayermodel_plastic);
+        set(gui.handles.value_model_GUI, ...
+            'String', gui.handles.list_multilayermodel_plastic);
     end
 end
 

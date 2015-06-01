@@ -15,6 +15,8 @@ set_default_values_txtbox(gui.handles.value_youngfilm2_GUI, '60');
 set_default_values_txtbox(gui.handles.value_poissfilm2_GUI, '0.3');
 set_default_values_txtbox(gui.handles.value_youngsub_GUI, '165');
 set_default_values_txtbox(gui.handles.value_poisssub_GUI, '0.18');
+set_default_values_txtbox(gui.handles.value_neta_corr_thickness_GUI, ...
+    num2str(gui.config.numerics.thicknessCorrection_low));
 
 if isempty(get(gui.handles.value_indenter_def_prop_GUI, 'String')) == 1
     refresh_indenters_GUI;

@@ -13,7 +13,8 @@ gui.results.t_corr = 0;
 gui.data.Es_red = reduced_YM(gui.data.Es, gui.data.nus);
 
 if get(gui.handles.cb_corr_thickness_GUI, 'Value') == 1
-    gui.results.t_corr = gui.data.t - (gui.results.hc./3);
+    gui.results.t_corr = gui.data.t - ...
+        (gui.variables.thickness_correctionFactor .* gui.results.hc);
 else
     gui.results.t_corr = gui.data.t;
 end

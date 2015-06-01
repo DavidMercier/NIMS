@@ -65,6 +65,8 @@ gui.variables.num_thinfilm_old = gui.variables.num_thinfilm;
 gui.variables.King_correction = get(gui.handles.popup_corr_King_GUI, 'Value');
 gui.variables.val1 = get(gui.handles.value_modeldisp_GUI, 'Value');
 gui.variables.val2 = get(gui.handles.value_model_GUI, 'Value');
+gui.variables.thickness_correctionFactor = ...
+    str2double(get(gui.handles.value_neta_corr_thickness_GUI, 'String'));
 
 % Plot properties
 gui.variables.x_axis = get(gui.handles.value_param2plotinxaxis_GUI, 'Value');
@@ -128,6 +130,14 @@ end
 if gui.data.t2 < 0
     set(gui.handles.value_thinfilm2_GUI, 'String', 500); % in nm
     warning('Wrong input for film''s thickness !');
+end
+
+% Film thickness correction
+if gui.variables.thickness_correctionFactor < gui.config.numerics.thicknessCorrection_low || ...
+        gui.variables.thickness_correctionFactor > gui.config.numerics.thicknessCorrection_high
+    set(gui.handles.value_neta_corr_thickness_GUI, 'String', ...
+        num2str(gui.config.numerics.thicknessCorrection_low));
+    warning('Wrong input for film''s thickness correction factor !');
 end
 
 guidata(gcf, gui);

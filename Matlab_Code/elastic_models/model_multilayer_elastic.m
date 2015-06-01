@@ -12,7 +12,8 @@ gui.results.ac2 = gui.results.ac;
 gui.axis.legend2 = 'Results with the multilayer model';
 
 if get(gui.handles.cb_corr_thickness_GUI, 'Value') == 1
-    gui.results.t2_corr = gui.data.t2 - (gui.results.hc ./ 3);
+    gui.results.t2_corr = gui.data.t2 - ...
+        (gui.variables.thickness_correctionFactor .* gui.results.hc);
 else
     gui.results.t2_corr = gui.data.t2;
 end
@@ -25,7 +26,8 @@ elseif gui.variables.num_thinfilm == 3
     gui.results.ac1 = gui.results.ac;
     
     if get(gui.handles.cb_corr_thickness_GUI, 'Value') == 1
-        gui.results.t1_corr = gui.data.t1 - (gui.results.hc ./ 3);
+    gui.results.t1_corr = gui.data.t1 - ...
+        (gui.variables.thickness_correctionFactor .* gui.results.hc);
     else
         gui.results.t1_corr = gui.data.t1;
     end
