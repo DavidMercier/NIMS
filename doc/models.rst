@@ -473,7 +473,7 @@ independent of the work-hardening behavior [#ChengCheng_1998]_.
 
 Then, combining the expression of the reduced Young's modulus
 :eq:`experimental_youngs_modulus_OP` with the expression of the
-hardness :eq:`hardness`, leads to the following equation [#Joslin_1990]_ and[#OliverPharr_2004]_:
+hardness :eq:`hardness`, leads to the following equation [#Joslin_1990]_ and [#OliverPharr_2004]_:
 
     .. math:: \beta \frac{4}{\pi} \frac{F_\text{c,max}}{S^2} = \frac{H}{E^{*}}
             :label: P_squareS

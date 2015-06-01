@@ -119,8 +119,7 @@ Bilayer models to extract hardness of a thin film on a substrate (with conical i
 * `Burnett P.J. and Rickerby D.S., "The mechanical properties of wear-resistant coatings: I: Modelling of hardness behaviour." (1987). <http://dx.doi.org/10.1016/0040-6090(87)90119-2>`_
 * `Burnett P.J. and Rickerby D.S., "The mechanical properties of wear-resistant coatings: II: Experimental studies and interpretation of hardness." (1987). <http://dx.doi.org/10.1016/0040-6090(87)90120-9>`_
 * `Fernandes J.V. et al., "http://dx.doi.org/10.1016/S0257-8972(00)00839-2" (2000). <http://dx.doi.org/10.1016/S0257-8972(00)00839-2>`_
-* `Han S.M. et al., "Determining hardness of thin films in elastically mismatched
-film-on-substrate systems using nanoindentation" (2006). <http://dx.doi.org/10.1016/j.actamat.2005.11.026>`_
+* `Han S.M. et al., "Determining hardness of thin films in elastically mismatched film-on-substrate systems using nanoindentation" (2006). <http://dx.doi.org/10.1016/j.actamat.2005.11.026>`_
 
 Multilayer model to extract hardness of thin films on a multilayer sample (with conical indenters)
 ----------------------------------------------------------------------------------------------------------
