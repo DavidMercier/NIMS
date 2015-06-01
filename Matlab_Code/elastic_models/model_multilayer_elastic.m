@@ -4,9 +4,10 @@ function model_multilayer_elastic
 gui = guidata(gcf);
 
 %% Setting variables & parameters
-gui.data.Es_red = gui.data.Es / (1-gui.data.nus^2);   % Reduced Young's modulus of the substrate (in GPa)
-gui.data.E0_red = gui.data.E0 / (1-gui.data.nuf0^2);  % Reduced Young's modulus of the film 0 (in GPa)
-gui.data.E1_red = gui.data.E1 / (1-gui.data.nuf1^2);  % Reduced Young's modulus of the film 1 (in GPa)
+gui.data.Es_red = reduced_YM(gui.data.Es, gui.data.nus); % Reduced Young's modulus of the substrate (in GPa)
+gui.data.E0_red = reduced_YM(gui.data.E0, gui.data.nuf0); % Reduced Young's modulus of the film 0 (in GPa)
+gui.data.E1_red = reduced_YM(gui.data.E1, gui.data.nuf1); % Reduced Young's modulus of the film 1 (in GPa)
+
 gui.results.ac2 = gui.results.ac;
 gui.axis.legend2 = 'Results with the multilayer model';
 
@@ -44,7 +45,8 @@ if gui.variables.val2 ~= 1
             (gui.results.t0_corr./(((pi.*gui.results.ac0.^2)+(2.*gui.results.ac0.*gui.results.t0_corr)).*gui.data.E0_red)) + ...
             (1./((2.*(gui.results.ac0+((2.*gui.results.t0_corr)./pi))).*gui.data.Es_red)))).^-1));
         
-        Ef_red_sol0 = (str2double (get(gui.handles.value_youngfilm1_GUI,'String'))); % Make a starting guess at the solution (Ef in GPa)
+        % Make a starting guess at the solution (Ef in GPa)
+        Ef_red_sol0 = str2double (get(gui.handles.value_youngfilm1_GUI,'String'));
         
         %3 Films + Substrat
     elseif gui.variables.num_thinfilm == 4 && gui.variables.val2 == 2 % Mercier et al. (2010)
@@ -54,7 +56,8 @@ if gui.variables.val2 ~= 1
             (gui.results.t0_corr./(((pi.*gui.results.ac0.^2)+(2.*gui.results.ac0.*gui.results.t0_corr)).*gui.data.E0_red)) + ...
             (1./((2.*(gui.results.ac0+((2.*gui.results.t0_corr)./pi))).*gui.data.Es_red)))).^-1));
         
-        Ef_red_sol0 = (str2double(get(gui.handles.value_youngfilm2_GUI, 'String'))); % Make a starting guess at the solution (Ef in GPa)
+        % Make a starting guess at the solution (Ef in GPa)
+        Ef_red_sol0 = str2double(get(gui.handles.value_youngfilm2_GUI, 'String'));
     end
     
     OPTIONS = optimset('lsqcurvefit');
@@ -94,7 +97,7 @@ if gui.variables.val2 ~= 1
         
     end
     
-    gui.results.Ef = gui.results.Ef_red*(1-gui.data.nuf^2);  % Ef in GPa
+    gui.results.Ef = non_reduced_YM(gui.results.Ef_red, gui.data.nuf);a
     
     %% Calculation of Em with elastic multilayer model
     % 2 Films + Substrat
@@ -112,7 +115,7 @@ if gui.variables.val2 ~= 1
         
     end
     
-    gui.results.Em = gui.results.Em_red * (1-gui.data.nuf.^2); % Em in GPa
+    gui.results.Em = non_reduced_YM(gui.results.Em_red, gui.data.nuf);
     
 elseif gui.variables.val2 == 1
     % Preallocation

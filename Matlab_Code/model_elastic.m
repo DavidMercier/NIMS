@@ -1,44 +1,43 @@
 %% Copyright 2014 MERCIER David
-function model_elastic
+function [Eeff_red, Esample_red, Esample] = ...
+    model_elastic(stiffness, contact_area, nu_sample, gcfValue, varargin)
 %% Function used for the calculation of the reduced Young's modulus
-gui = guidata(gcf);
+% stiffness : Contact stiffness in mN/nm
+% contact_area : Contact area in nm2
+% nu_sample : Poisson's ratio of the sample
+% Eeff_red, Esample_red, Esample in GPa
 
-%% Constants definition
-theta_eq = str2num(gui.data.indenter_tip_angle); % Equivalent cone angle (in degrees)
-
-if gui.variables.King_correction == 1 % See in King (1987)
-    if gui.variables.val0 == 1 % Berkovich indenter
-        beta_Val = gui.config.numerics.betaBerkovich_King;
-        
-    elseif gui.variables.val0 == 2; % Vickers indenter
-        beta_Val = gui.config.numerics.betaVickers_King;
-        
-    elseif gui.variables.val0 == 3  % Cube-Corner indenter
-        beta_Val = gui.config.numerics.betaVickers_King;
-        
-    elseif gui.variables.val0 == 4  % Conical indenter
-        beta_Val = gui.config.numerics.betaConical_King;
-    end
-elseif gui.variables.King_correction == 2 % See in Hay (1999)
-    beta_Val = beta_hay(theta_eq, gui.data.nuf);
+if nargin == 0
+    % Values for Si bulk sample
+    stiffness = 1.32;
+    contact_area = 5e7;
+    nu_sample = 0.3;
+    display(stiffness);
+    display(contact_area);
+    display(nu_sample);
+    [Eeff_red, Esample_red, Esample] = ...
+    model_elastic(stiffness, contact_area, nu_sample);
+    display(Eeff_red);
+    display(Esample_red);
+    display(Esample);
+    gcfValue=[];
 end
 
-%% Young's modulus calculation - See in Pharr et al. (1992)
-gui.data.Eind     = gui.data.indenter_material_ym * 10^9; % Young's modulus of of indenter material (in Pa)
-gui.data.nuind    = gui.data.indenter_material_pr; % Poisson's coefficient of indenter material
-gui.data.Eind_red = (gui.data.Eind / (1-gui.data.nuind^2)); % Reduced Young's modulus of diamond. See in Fischer-Cripps "Nanoindentation 2nd Ed.".
+%% Constants definition
+beta_Val = beta_selection;
 
+%% Indenter's properties
+[Eind, nuind, Eind_red] = indenter_properties(gcfValue);
+
+%% Young's modulus calculation - See in Pharr et al. (1992)
 % Effective reduced Young's modulus (sample+indenter) in GPa
-gui.results.Eeff_red = ((pi^0.5)/(2*beta_Val)).* ...
-    10^6.*gui.data.S.*(1./sqrt(gui.results.Ac));
+Eeff_red = ((pi^0.5)/(2*beta_Val)).* ...
+    10^6.*stiffness.*(1./sqrt(contact_area));
 
 % Reduced Young's modulus of the sample in GPa (no indenter's contribution)
-gui.results.Esample_red = ((1./gui.results.Eeff_red) - ...
-    (1/(1e-9*gui.data.Eind_red))).^-1;
+Esample_red = ((1./Eeff_red) - (1/(1e-9*Eind_red))).^-1;
 
 % Young's modulus of the sample in GPa
-gui.results.Esample = gui.results.Esample_red * (1-gui.data.nuf.^2);
-
-guidata(gcf, gui);
+Esample = non_reduced_YM(Esample_red, nu_sample); 
 
 end

@@ -2,21 +2,20 @@
 function model_bilayer_elastic
 %% Function used to calculate the bilayer elastic model
 gui = guidata(gcf);
+
+%% Setting variables & parameters
 gui.results.Ef_red_sol_fit = 0;
 gui.results.Em_red = 0;
 gui.results.Ef_red = 0;
 gui.results.t_corr = 0;
-guidata(gcf, gui);
 
-%% Setting variables & parameters
-gui.data.Es_red = gui.data.Es / (1-gui.data.nus^2);  % Reduced Young's modulus of the substrate (in GPa)
+% Reduced Young's modulus of the substrate (in GPa)
+gui.data.Es_red = reduced_YM(gui.data.Es, gui.data.nus);
 
 if get(gui.handles.cb_corr_thickness_GUI, 'Value') == 1
     gui.results.t_corr = gui.data.t - (gui.results.hc./3);
-    
 else
     gui.results.t_corr = gui.data.t;
-    
 end
 
 gui.axis.legend2 = 'Results with the bilayer model';
@@ -54,8 +53,8 @@ if gui.variables.val2 ~= 1
         end
         
         gui = guidata(gcf); guidata(gcf, gui);
-        gui.results.Em = gui.results.Em_red*(1 - gui.data.nuf.^2); % Em in GPa
-        gui.results.Ef = gui.results.Ef_red.*(1 - gui.data.nuf^2); % Ef in GPa
+        gui.results.Em = non_reduced_YM(gui.results.Em_red, gui.data.nuf);
+        gui.results.Ef = non_reduced_YM(gui.results.Ef_red, gui.data.nuf);
         guidata(gcf, gui);
     end
     

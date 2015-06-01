@@ -43,7 +43,9 @@ if ~gui.flag.wrong_inputs
     
     %% Calculations of Young's modulus
     if gui.variables.y_axis == 4 || gui.variables.y_axis == 5
-        model_elastic;
+        [gui.results.Eeff_red,gui.results.Esample_red, gui.results.Esample] = ...
+            model_elastic(gui.data.S, gui.results.Ac, gui.data.nuf, gcf);
+        guidata(gcf, gui);
         %% Set model to use for calculations
         if get(gui.handles.value_numthinfilm_GUI, 'Value') == 2
             model_bilayer_elastic;
@@ -55,7 +57,7 @@ if ~gui.flag.wrong_inputs
         gui.results.H = model_hardness(gui.data.P, gui.results.Ac);
         guidata(gcf, gui);
     end
-    
+
     % Be careful of the order of the 3 following lines, because gcf is
     % the waitbar during calculations !!!
     gui = guidata(gcf);
