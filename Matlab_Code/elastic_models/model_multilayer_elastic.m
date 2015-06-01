@@ -97,7 +97,7 @@ if gui.variables.val2 ~= 1
         
     end
     
-    gui.results.Ef = non_reduced_YM(gui.results.Ef_red, gui.data.nuf);a
+    gui.results.Ef = non_reduced_YM(gui.results.Ef_red, gui.data.nuf);
     
     %% Calculation of Em with elastic multilayer model
     % 2 Films + Substrat

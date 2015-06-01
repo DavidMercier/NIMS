@@ -22,8 +22,7 @@ max_alpha = gui.config.numerics.alpha_max_Mencik;
 % A(2) = -alpha
 bilayer_model = @(A, x) (A(1) + A(2)*x);
 
-Ef_red = str2double(get(gui.handles.value_youngfilm1_GUI, 'String')) / ...
-    (1-gui.data.nuf.^2);
+Ef_red = reduced_YM(str2double(get(gui.handles.value_youngfilm1_GUI, 'String')), gui.data.nuf);
 
 % Make a starting guess
 gui.results.A0 = [log(abs((1/Ef_red)-(1/(gui.data.Es_red*1e-9)))); ...
