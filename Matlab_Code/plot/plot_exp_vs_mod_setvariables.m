@@ -19,6 +19,7 @@ else
             gui.results.Ef_red     = gui.results.Ef_red.';
             gui.results.Em_red(ii) = 0;
             gui.results.Em_red     = gui.results.Em_red.';
+            gui.results.Hf(ii) = 0;
         end
         gui.data.t = max(gui.data.h)+1;
         gui.results.Ef_sol_fit = 0;
@@ -96,6 +97,7 @@ else
         cleaned_Esample_red(isinf(cleaned_Esample_red)) = [];
         cleaned_Esample_red(isnan(cleaned_Esample_red)) = [];
         cleaned_Esample_red(cleaned_Esample_red < 0) = [];
+        gui.results.cleaned_Esample_red = cleaned_Esample_red;
         gui.axis.ymax = mean(cleaned_Esample_red) + ...
             0.5*mean(cleaned_Esample_red);
     elseif gui.variables.y_axis == 5
@@ -110,17 +112,18 @@ else
         cleaned_Esample_red(cleaned_Esample_red < 0) = [];
         gui.axis.ymax = mean(cleaned_Esample_red) + ...
             0.5*mean(cleaned_Esample_red);
+        gui.results.cleaned_Esample_red = cleaned_Esample_red;
     elseif gui.variables.y_axis == 6
         gui.axis.y2plot = gui.results.H;
         gui.axis.delta_y2plot = 0;
+        gui.axis.y2plot_2 = gui.results.Hf;
         gui.axis.ylabelstr = 'Hardness (GPa)';
         cleaned_H = gui.results.H;
         cleaned_H(isinf(cleaned_H)) = [];
         cleaned_H(isnan(cleaned_H)) = [];
         cleaned_H(cleaned_H < 0) = [];
         gui.axis.ymax = mean(cleaned_H)+0.5*mean(cleaned_H);
-        gui.axis.title_str = strcat('Mean Hardness= ', ...
-            num2str(round(mean(cleaned_H.*1000)./10)./100), 'GPa');
+        gui.results.cleaned_H = cleaned_H;
     end
     
 end

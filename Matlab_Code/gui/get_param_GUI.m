@@ -65,6 +65,7 @@ gui.variables.num_thinfilm_old = gui.variables.num_thinfilm;
 gui.variables.King_correction = get(gui.handles.popup_corr_King_GUI, 'Value');
 gui.variables.val1 = get(gui.handles.value_modeldisp_GUI, 'Value');
 gui.variables.val2 = get(gui.handles.value_model_GUI, 'Value');
+gui.variables.val3 = get(gui.handles.value_models_Saha_GUI, 'Value');
 gui.variables.thickness_correctionFactor = ...
     str2double(get(gui.handles.value_neta_corr_thickness_GUI, 'String'));
 

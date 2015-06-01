@@ -46,7 +46,8 @@ gui.results.Em_red = ...
     ((1./gui.data.Es_red)*(exp(-gui.results.Ef_red_sol_fit(2)*x)))).^-1);
 
 gui.results.Ef_red = 1e-9*(((1./(1e9.*gui.results.Esample_red)) - ...
-    ((1./gui.data.Es_red)*(exp(-gui.results.Ef_red_sol_fit(2).*x))))./(1-exp(-gui.results.Ef_red_sol_fit(2).*x))).^-1;
+    ((1./gui.data.Es_red)*(exp(-gui.results.Ef_red_sol_fit(2).*x))))./...
+    (1-exp(-gui.results.Ef_red_sol_fit(2).*x))).^-1;
 
 guidata(gcf, gui);
 

@@ -1,5 +1,5 @@
 %% Copyright 2014 MERCIER David
-function model_bilayer_elastic
+function model_bilayer_elastic(val2)
 %% Function used to set the bilayer elastic model
 gui = guidata(gcf);
 
@@ -23,37 +23,37 @@ gui.axis.legend2 = 'Results with the bilayer model';
 guidata(gcf, gui);
 
 %% Optimization of Young's modulus of the thin film
-if gui.variables.val2 ~= 1
-    if gui.variables.y_axis == 4 || gui.variables.y_axis == 5
+if val2 ~= 1
+    if gui.variables.y_axis > 3
 	
         OPTIONS = optimset('lsqcurvefit');
 		OPTIONS = optimset(OPTIONS, 'TolFun',  gui.config.numerics.TolFun_value);
 		OPTIONS = optimset(OPTIONS, 'TolX',    gui.config.numerics.TolX_value);
 		OPTIONS = optimset(OPTIONS, 'MaxIter', gui.config.numerics.MaxIter_value);
 
-        if gui.variables.val2 == 2 %Doerner & Nix (1986)
+        if val2 == 2 %Doerner & Nix (1986)
             model_doerner_nix(OPTIONS);
-        elseif gui.variables.val2 == 3 %Doerner & Nix (1986) modified by King (1987)
+        elseif val2 == 3 %Doerner & Nix (1986) modified by King (1987)
             model_doerner_nix_king(OPTIONS);
-        elseif gui.variables.val2 == 4 %Doerner & Nix (1986) modified by Saha (2002)
+        elseif val2 == 4 %Doerner & Nix (1986) modified by Saha (2002)
             model_doerner_nix_saha(OPTIONS);
-        elseif gui.variables.val2 == 5 %Doerner & Nix (1986) modified by Chen (2004)
+        elseif val2 == 5 %Doerner & Nix (1986) modified by Chen (2004)
             model_doerner_nix_chen(OPTIONS);
-        elseif gui.variables.val2 == 6 %Gao et al. (1992) (for flat cylindrical indentation test...)
+        elseif val2 == 6 %Gao et al. (1992) (for flat cylindrical indentation test...)
             model_gao(OPTIONS);
-        elseif gui.variables.val2 == 7 %Bec et al. (2006)
+        elseif val2 == 7 %Bec et al. (2006)
             model_bec(OPTIONS);
-        elseif gui.variables.val2 == 8 %Hay et al. (2011)
+        elseif val2 == 8 %Hay et al. (2011)
             model_hay(OPTIONS);
-        elseif gui.variables.val2 == 9 % Jung et al. (2004)
+        elseif val2 == 9 % Jung et al. (2004)
             model_jung(OPTIONS);
-        elseif gui.variables.val2 == 10 %Perriot et al. (2003)
+        elseif val2 == 10 %Perriot et al. (2003)
             model_perriot_barthel(OPTIONS);
-        elseif gui.variables.val2 == 11 % Mencik et al. (linear model) (1997)
+        elseif val2 == 11 % Mencik et al. (linear model) (1997)
             model_mencik_linear(OPTIONS);
-        elseif gui.variables.val2 == 12 % Mencik et al. (exponential model) (1997)
+        elseif val2 == 12 % Mencik et al. (exponential model) (1997)
             model_mencik_exponential(OPTIONS);
-        elseif gui.variables.val2 == 13 % Mencik et al. (reciprocal exponential model) (1997)
+        elseif val2 == 13 % Mencik et al. (reciprocal exponential model) (1997)
             model_mencik_reciprocal_exponential(OPTIONS);
         end
         
@@ -63,7 +63,7 @@ if gui.variables.val2 ~= 1
         guidata(gcf, gui);
     end
     
-elseif gui.variables.val2 == 1 % No Bilayer Model
+elseif val2 == 1 % No Bilayer Model
     
     % Preallocation
     gui.results.Ef     = NaN(length(gui.data.h), 1);
