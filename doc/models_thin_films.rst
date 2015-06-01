@@ -137,22 +137,28 @@ The model of Doerner and Nix is detailed in many papers [#DoernerNix_1986]_, [#K
 With :math:`x=t/h_\text{c}` and :math:`\alpha` an empirically constant
 determined using the method of least squares.
 
-The equation was modified by King (1987), by the replacement of :math:`t/h_\text{c}` by :math:`t/a_\text{c}`.
-
-Find here the |matlab| function for the Doerner and Nix model :
-`model_doerner_nix_king.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_doerner_nix_king.m>`_.
+The equation was modified by King [#King_1987]_ with the replacement of :math:`t/h_\text{c}` by :math:`t/a_\text{c}`, and then by Saha and Nix [#Saha_2002]_ with the replacement of :math:`t/h_\text{c}` by :math:`(t-h_\text{c})/a_\text{c}`.
 
 An empirical formulae based on the model of Doerner and Nix was proposed by Chen et al. in 2004 [#Chen_2004]_:
 
     .. math:: \frac{1}{E^{'}} = \frac{1}{E_\text{f}^{'}}\left[1-e^{-\alpha\left(x\right)^{(2/3)}}\right] + 
               \frac{1}{E_\text{s}^{'}}e^{-\alpha\left(x\right)^{(2/3)}}
             :label: chen
-            
+
 With :math:`x=t/h_\text{c}` and :math:`\alpha` an empirically constant
 determined using the method of least squares.
-            
-Find here the |matlab| function for the Chen model :
-`model_chen.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_chen.m>`_.
+
+Find here the |matlab| function for the Doerner and Nix model [#DoernerNix_1986]_:
+`model_doerner_nix.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_doerner_nix.m>`_.
+
+Find here the |matlab| function for the Doerner and Nix model modified by King [#King_1987]_:
+`model_doerner_nix_king.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_doerner_nix_king.m>`_.
+
+Find here the |matlab| function for the Doerner and Nix model modified by Saha [#Saha_2002]_:
+`model_doerner_nix_saha.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_doerner_nix_saha.m>`_.
+
+Find here the |matlab| function function for the Doerner and Nix model modified by Chen [#Chen_2004]_:
+`model_chen.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_doerner_nix_chen.m>`_.
 
 Gao et al. (1992) 
 ------------------
@@ -558,6 +564,11 @@ Saha and Nix (2002)
 
 [#Saha_2002]_
 
+[#Han_2006]_
+
+    .. math:: H = {\beta}^2 \frac{4}{\pi} \frac{F_\text{c,max}}{S^2} E^{*2}
+            :label: hardness_saha
+
 [#Chen_2004]_
 
 [#Iost_2005]_
@@ -587,9 +598,11 @@ References
 .. [#Fernandes_2000] `Fernandes J.V. et al., "http://dx.doi.org/10.1016/S0257-8972(00)00839-2" (2000). <http://dx.doi.org/10.1016/S0257-8972(00)00839-2>`_
 .. [#FischerCripps_2004] `Fischer-Cripps, A.C., "Nanoindentation 2nd ed." (2004) <http://link.springer.com/book/10.1007%2F978-1-4419-9872-9>`_
 .. [#Gao_1992] `Gao H. et al., "Elastic contact versus indentation modeling of multi-layered materials" (1992). <http://dx.doi.org/10.1016/0020-7683(92)90004-D>`_
+.. [#Han_2006] `Han S.M. et al., "Determining hardness of thin films in elastically mismatched
+film-on-substrate systems using nanoindentation" (2006). <http://dx.doi.org/10.1016/j.actamat.2005.11.026>`_
 .. [#Hay_2011] `Hay J. and Crawford B., "Measuring substrate-independent modulus of thin films" (2011). <http://dx.doi.org/10.1557/jmr.2011.8>`_
-.. [#He_1996] `He J. L. et al., "Hardness measurement of thin films: Separation from composite hardness" (1996). <http://dx.doi.org/10.1063/1.117595>`_
-.. [#Hu_1998] `Hu X. Z. and Lawn B. R. "A simple indentation stress–strain relation for contacts with spheres on bilayer structures" (1998). <http://dx.doi.org/10.1016/S0040-6090(97)00919-X>`_
+.. [#He_1996] `He J.L. et al., "Hardness measurement of thin films: Separation from composite hardness" (1996). <http://dx.doi.org/10.1063/1.117595>`_
+.. [#Hu_1998] `Hu X.Z. and Lawn B. R. "A simple indentation stress–strain relation for contacts with spheres on bilayer structures" (1998). <http://dx.doi.org/10.1016/S0040-6090(97)00919-X>`_
 .. [#Iost_1996] `Iost A. and Bigot R., "Hardness of coatings" (1996). <http://dx.doi.org/10.1016/0257-8972(95)02697-5>`_
 .. [#Iost_2005]_ `Iost A. et al., "Dureté des revêtements : quel modèle choisir ?" (2005). <http://dx.doi.org/10.1051/mattech:2005009>`_
 .. [#Jennett_2001] `Jennett N. M. and Bushby A. J., "Adaptive Protocol for Robust Estimates of Coatings Properties by Nanoindentation" (2001). <http://dx.doi.org/10.1557/PROC-695-L3.1.1>`_
