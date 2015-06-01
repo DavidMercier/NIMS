@@ -49,13 +49,18 @@ if ~gui.flag.wrong_inputs
         %% Set model to use for calculations
         if get(gui.handles.value_numthinfilm_GUI, 'Value') == 2
             model_bilayer_elastic;
-        elseif get(gui.handles.value_numthinfilm_GUI, 'Value') == 3 || ...
-                get(gui.handles.value_numthinfilm_GUI, 'Value') == 4
+        elseif get(gui.handles.value_numthinfilm_GUI, 'Value') > 2
             model_multilayer_elastic;
         end
     elseif gui.variables.y_axis == 6
         gui.results.H = model_hardness(gui.data.P, gui.results.Ac);
         guidata(gcf, gui);
+        %% Set model to use for calculations
+        if get(gui.handles.value_numthinfilm_GUI, 'Value') == 2
+            model_bilayer_plastic;
+        elseif get(gui.handles.value_numthinfilm_GUI, 'Value') > 2
+            %model_multilayer_plastic;
+        end
     end
 
     % Be careful of the order of the 3 following lines, because gcf is
