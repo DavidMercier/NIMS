@@ -12,6 +12,7 @@ gui.results.t_corr = 0;
 % Reduced Young's modulus of the substrate (in GPa)
 gui.data.Es_red = reduced_YM(gui.data.Es, gui.data.nus);
 
+% Thickness correction
 if get(gui.handles.cb_corr_thickness_GUI, 'Value') == 1
     gui.results.t_corr = gui.data.t - ...
         (gui.variables.thickness_correctionFactor .* gui.results.hc);
