@@ -51,6 +51,9 @@ if val2 ~= 1
         if val2 == 2 %Saha (2002)
             gui.results.Hf = model_saha(gui.data.S, gui.data.P, ...
                 gui.results.Em_red, gcf);
+        elseif val2 == 3 %Mercier (2010)
+            gui.results.Hf = model_mercier(gui.data.S, gui.data.P, ...
+                gui.results.Ef_red, gcf);
         end
         guidata(gcf, gui);
     end
