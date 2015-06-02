@@ -59,7 +59,7 @@ if ~gui.flag.wrong_inputs
         if get(gui.handles.value_numthinfilm_GUI, 'Value') == 2
             model_bilayer_plastic(gui.variables.val2);
         elseif get(gui.handles.value_numthinfilm_GUI, 'Value') > 2
-            %model_multilayer_plastic;
+            model_multilayer_plastic(gui.variables.val2);
         end
     end
 
