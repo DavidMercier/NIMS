@@ -25,6 +25,17 @@ else
                     (get(gui.handles.cb_CSM_corr_GUI, 'Value')) == 1
                 
                 % Constants given by Pharr et al. (2009)
+                if ~isfield(gui.config.numerics, 'CSM_m_Pharr') || ...
+                        gui.config.numerics.CSM_m_Pharr == 0 || ...
+                        isnan(gui.config.numerics.CSM_m_Pharr)
+                    gui.config.numerics.CSM_m_Pharr = 1.38;
+                end
+                if ~isfield(gui.config.numerics, 'CSM_K_Pharr') || ...
+                        gui.config.numerics.CSM_K_Pharr == 0 || ...
+                        isnan(gui.config.numerics.CSM_K_Pharr)
+                    gui.config.numerics.CSM_K_Pharr = ...
+                        unload_k_m(gui.config.numerics.CSM_m_Pharr);
+                end
                 K_Pharr = gui.config.numerics.CSM_K_Pharr;
                 m_Pharr = gui.config.numerics.CSM_m_Pharr;
                 
