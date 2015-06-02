@@ -22,10 +22,8 @@ max_alpha = gui.config.numerics.alpha_max_Mencik;
 % A(2) = -alpha
 bilayer_model = @(A, x) (A(1) + A(2)*x);
 
-Ef_red = reduced_YM(str2double(get(gui.handles.value_youngfilm1_GUI, 'String')), gui.data.nuf);
-
 % Make a starting guess
-gui.results.A0 = [log(abs((1/Ef_red)-(1/(gui.data.Es_red*1e-9)))); ...
+gui.results.A0 = [log(abs((1/gui.data.Ef_red)-(1/(gui.data.Es_red*1e-9)))); ...
     (min_alpha + max_alpha)/2];
 
 [gui.results.A, ...
@@ -51,10 +49,7 @@ end
 gui.results.Ef_red_sol_fit(1) = 1/((1/(gui.data.Es_red*1e-9)) + ...
     k * exp(gui.results.A(1)));
 
-gui.results.Ef_sol_fit(1) = gui.results.Ef_red_sol_fit(1) * ...
-    (1-gui.data.nuf^2);
-
-gui.results.Ef_sol_fit(2) = gui.results.A(2); % -alpha
+% gui.results.A(2) = -alpha
 
 gui.results.Em_red = (1/(gui.data.Es_red*1e-9) + ...
     (((1/gui.results.Ef_red_sol_fit(1)) - (1/(gui.data.Es_red*1e-9))) .* ...

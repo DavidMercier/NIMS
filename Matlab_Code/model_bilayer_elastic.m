@@ -11,6 +11,9 @@ gui.results.t_corr = 0;
 
 % Reduced Young's modulus of the substrate (in GPa)
 gui.data.Es_red = reduced_YM(gui.data.Es, gui.data.nus);
+gui.data.Ef_red = reduced_YM(...
+    str2double(get(gui.handles.value_youngfilm1_GUI, 'String')),...
+    gui.data.nuf);
 
 % Thickness correction
 if get(gui.handles.cb_corr_thickness_GUI, 'Value') == 1
@@ -26,12 +29,12 @@ guidata(gcf, gui);
 %% Optimization of Young's modulus of the thin film
 if val2 ~= 1
     if gui.variables.y_axis > 3
-	
+        
         OPTIONS = optimset('lsqcurvefit');
-		OPTIONS = optimset(OPTIONS, 'TolFun',  gui.config.numerics.TolFun_value);
-		OPTIONS = optimset(OPTIONS, 'TolX',    gui.config.numerics.TolX_value);
-		OPTIONS = optimset(OPTIONS, 'MaxIter', gui.config.numerics.MaxIter_value);
-
+        OPTIONS = optimset(OPTIONS, 'TolFun',  gui.config.numerics.TolFun_value);
+        OPTIONS = optimset(OPTIONS, 'TolX',    gui.config.numerics.TolX_value);
+        OPTIONS = optimset(OPTIONS, 'MaxIter', gui.config.numerics.MaxIter_value);
+        
         if val2 == 2 %Doerner & Nix (1986)
             model_doerner_nix(OPTIONS);
         elseif val2 == 3 %Doerner & Nix (1986) modified by King (1987)
@@ -59,6 +62,12 @@ if val2 ~= 1
         end
         
         gui = guidata(gcf); guidata(gcf, gui);
+        gui.results.Ef_sol_fit(1) = non_reduced_YM(...
+            gui.results.Ef_red_sol_fit(1), gui.data.nuf);
+        if length(gui.results.Ef_red_sol_fit) < 2
+            gui.results.Ef_red_sol_fit(2) = NaN;
+        end
+        gui.results.Ef_sol_fit(2) = gui.results.Ef_red_sol_fit(2);
         gui.results.Em = non_reduced_YM(gui.results.Em_red, gui.data.nuf);
         gui.results.Ef = non_reduced_YM(gui.results.Ef_red, gui.data.nuf);
         guidata(gcf, gui);
