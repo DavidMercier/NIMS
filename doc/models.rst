@@ -347,7 +347,7 @@ tests on a variety of materials [#Pharr_2002]_. Thus, a value of 0.757 is used f
 constant :math:`K`, using :eq:`csm_K_m`.
 
 .. figure:: ./_pictures/K(m).png
-   :scale: 60 %
+   :scale: 45 %
    :align: center
    
    *Figure 8 : Evolution of K in function of m.*

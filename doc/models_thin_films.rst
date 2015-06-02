@@ -567,7 +567,7 @@ of indentation depth, even when pile-up occurs [#Saha_2002]_:
     .. math:: H = {\beta}^2 \frac{4}{\pi} \frac{F_\text{c,max}}{S^2} E^{*2}
             :label: hardness_saha
             
-    .. math:: \frac{1}E^{*} = \frac{1}{E_\text{i}^{'}} + \frac{1}{E_\text{f}^{'}} + \left(\frac{1}{E_\text{s}^{'}} - \frac{1}{E_\text{f}^{'}}\right) e^{-\alpha\left(x\right)}
+    .. math:: \frac{1}{E^{*}} = \frac{1}{E_\text{i}^{'}} + \frac{1}{E_\text{f}^{'}} + \left(\frac{1}{E_\text{s}^{'}} - \frac{1}{E_\text{f}^{'}}\right) e^{-\alpha\left(x\right)}
             :label: doerner_nix_saha
 
 With :math:`x=(t-h_\text{c})/a_\text{c}` and :math:`E_\text{i}^{'}` the reduced Young's modulus of the indenter.
