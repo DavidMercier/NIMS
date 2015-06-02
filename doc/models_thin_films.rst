@@ -549,10 +549,7 @@ mixtures”
 [#ChicotLesage_1995]_
 
 
-
-
 [#He_1996]_
-
 
 [#Korsunsky_1998]_
 
@@ -562,14 +559,32 @@ mixtures”
 Saha and Nix (2002)
 ---------------------------
 
-[#Saha_2002]_
-
-[#Han_2006]_
+Based on the methodology proposed by Joslin and Oliver (1990) [#Joslin_1990]_ for a bulk material,
+extended to the coated system by Page et al. [#Page_1998]_, Saha and Nix proposed
+to use the following equation, giving the evolution of the hardness in function
+of indentation depth, even when pile-up occurs [#Saha_2002]_:
 
     .. math:: H = {\beta}^2 \frac{4}{\pi} \frac{F_\text{c,max}}{S^2} E^{*2}
             :label: hardness_saha
+            
+    .. math:: \frac{1}E^{*} = \frac{1}{E_\text{i}^{'}} + \frac{1}{E_\text{f}^{'}} + \left(\frac{1}{E_\text{s}^{'}} - \frac{1}{E_\text{f}^{'}}\right) e^{-\alpha\left(x\right)}
+            :label: doerner_nix_saha
+
+With :math:`x=(t-h_\text{c})/a_\text{c}` and :math:`E_\text{i}^{'}` the reduced Young's modulus of the indenter.
+
+This model was reused later by [#Han_2005]_ and [#Han_2006]_.
+
+.. note::
+    This model is valid only for the case of elastically inhomogeneous film/substrate systems.
+    
+Chen (2004)
+---------------------------
 
 [#Chen_2004]_
+
+
+Iost (2005)
+---------------------------
 
 [#Iost_2005]_
 
@@ -598,14 +613,16 @@ References
 .. [#Fernandes_2000] `Fernandes J.V. et al., "http://dx.doi.org/10.1016/S0257-8972(00)00839-2" (2000). <http://dx.doi.org/10.1016/S0257-8972(00)00839-2>`_
 .. [#FischerCripps_2004] `Fischer-Cripps, A.C., "Nanoindentation 2nd ed." (2004) <http://link.springer.com/book/10.1007%2F978-1-4419-9872-9>`_
 .. [#Gao_1992] `Gao H. et al., "Elastic contact versus indentation modeling of multi-layered materials" (1992). <http://dx.doi.org/10.1016/0020-7683(92)90004-D>`_
+.. [#Han_2005] `Han S.M. et al., "Combinatorial studies of mechanical properties of Ti–Al thin films using nanoindentation" (2005). <http://dx.doi.org/10.1016/j.actamat.2005.01.017>`_
 .. [#Han_2006] `Han S.M. et al., "Determining hardness of thin films in elastically mismatched film-on-substrate systems using nanoindentation" (2006). <http://dx.doi.org/10.1016/j.actamat.2005.11.026>`_
 .. [#Hay_2011] `Hay J. and Crawford B., "Measuring substrate-independent modulus of thin films" (2011). <http://dx.doi.org/10.1557/jmr.2011.8>`_
 .. [#He_1996] `He J.L. et al., "Hardness measurement of thin films: Separation from composite hardness" (1996). <http://dx.doi.org/10.1063/1.117595>`_
 .. [#Hu_1998] `Hu X.Z. and Lawn B. R. "A simple indentation stress–strain relation for contacts with spheres on bilayer structures" (1998). <http://dx.doi.org/10.1016/S0040-6090(97)00919-X>`_
 .. [#Iost_1996] `Iost A. and Bigot R., "Hardness of coatings" (1996). <http://dx.doi.org/10.1016/0257-8972(95)02697-5>`_
-.. [#Iost_2005]_ `Iost A. et al., "Dureté des revêtements : quel modèle choisir ?" (2005). <http://dx.doi.org/10.1051/mattech:2005009>`_
+.. [#Iost_2005] `Iost A. et al., "Dureté des revêtements : quel modèle choisir ?" (2005). <http://dx.doi.org/10.1051/mattech:2005009>`_
 .. [#Jennett_2001] `Jennett N. M. and Bushby A. J., "Adaptive Protocol for Robust Estimates of Coatings Properties by Nanoindentation" (2001). <http://dx.doi.org/10.1557/PROC-695-L3.1.1>`_
 .. [#Jönsson_1984] `Jönsson B. and Hogmark S., "Hardness measurements of thin films" (1984). <http://dx.doi.org/10.1016/0040-6090(84)90123-8>`_
+.. [#Joslin_1990] `Joslin D.L. and Oliver W.C., "A new method for analyzing data from continuous depth-sensing microindentation tests" (1990). <http://dx.doi.org/10.1557/JMR.1990.0123>`_
 .. [#Jung_2004] `Jung Y.-G. et al. "Evaluation of elastic modulus and hardness of thin films by nanoindentation" (2004). <http://dx.doi.org/10.1557/JMR.2004.0380>`_
 .. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <http://dx.doi.org/10.1016/0020-7683(87)90116-8>`_
 .. [#Korsunsky_1998] `Korsunsky A.M. et al. "On the hardness of coated system" (1998). <http://dx.doi.org/10.1016/S0257-8972(97)00522-7>`_
@@ -613,6 +630,7 @@ References
 .. [#Mencík_1997] `Mencík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
 .. [#Mercier_2010] `Mercier D. et al., "Young's modulus measurement of a thin film from experimental nanoindentation performed on multilayer systems" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
 .. [#Mercier_2013] `Mercier D., "Behaviour laws of materials used in electrical contacts for « flip chip » technologies" (2013). <http://www.theses.fr/2013GRENI083>`_
+.. [#Page_1998] `Page T.F. et al., "Nanoindentation Characterisation of Coated Systems: P:S2 - A New Approach Using the Continuous Stiffness Technique" (1998). <http://dx.doi.org/10.1557/PROC-522-53>`_
 .. [#PaillerMattei_2008] `Pailler-Mattei C. et al., "In vivo measurements of the elastic mechanical properties of human skin by indentation tests" (2008). <http://dx.doi.org/10.1016/j.medengphy.2007.06.011>`_
 .. [#Perriot_2004] `Perriot A. and Barthel E., "Elastic contact to a coated half-space: Effective elastic modulus and real penetration" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.2.600>`_
 .. [#Pharr_1992] `Pharr G.M. and Oliver W.C., "Measurement of Thin Film Mechanical Properties Using Nanoindentation" (1992). <http://dx.doi.org/10.1557/S0883769400041634>`_

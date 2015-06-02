@@ -260,6 +260,9 @@ One other way to express the function area is that suggested by Loubet et al. [#
 which describes a pyramid with a small flat region on its tip, the so-called tip defect (:math:`h_0`).
 This geometry is described by the addition of a constant to the first two terms in :eq:`functionArea`.
 
+Find here the |matlab| function to calculate the contact depth, the function area and the contact radius:
+`model_function_area.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/model_function_area.m>`_.
+
 Recently, in the paper of Yetna N'jock M. et al. [#YetnaNjock_2015]_, a criterion was proposed
 to forecast the behaviour during indentation experiments, following Giannakopoulos and Suresh
 methodology [#Giannakopoulos_1999]_. After analyzing either Vickers or Berkovich indentation
@@ -336,12 +339,24 @@ to determine the actual load (:math:`F_\text{c,act}`), the actual displacement
 With :math:`K` and :math:`m` constants determined from unloading curves.
 These constants are related by the following equation :
 
-    .. math:: K = \left(\frac{2}{{m\sqrt{2\pi}}}\right)^m
+    .. math:: K = \left(\frac{2}{{m\sqrt{\pi}}}\right)^m
             :label: csm_K_m
 
 Pharr and Bolshakov founded a value of 1.380 for :math:`m` after many Berkovich indentation
 tests on a variety of materials [#Pharr_2002]_. Thus, a value of 0.757 is used for the
 constant :math:`K`, using :eq:`csm_K_m`.
+
+.. figure:: ./_pictures/K(m).png
+   :scale: 60 %
+   :align: center
+   
+   *Figure 8 : Evolution of K in function of m.*
+
+Find here the |matlab| function to calculate the CSM corrections to apply on depth, load and stiffness:
+`CSM_correction.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/CSM_correction.m>`_.
+
+Find here the |matlab| function to calculate the constant :math:`K` in function of :math:`m`:
+`unload_k_m.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/load_displacement/unload_k_m.m>`_.
  
 Extraction of elastic properties
 ##################################################
@@ -399,7 +414,7 @@ Find here the |matlab| function to plot the :math:`\beta` function of Hay et al.
    :scale: 35 %
    :align: center
    
-   *Figure 8 : Plots of beta Hay : a) in function of the half-angle
+   *Figure 9 : Plots of beta Hay : a) in function of the half-angle
    of the conical indenter (for a Poisson's ratio of 0.3), and b)
    in function of the Poisson's ratio for a Berkovich indenter.*
 
@@ -422,6 +437,9 @@ the Poisson's ratio of the material of the indenter.
     This method used to analyze indentation data is based on equations valid for
     isotropic homogeneous elastic solids.
     
+Find here the |matlab| function to calculate the Young's modulus:
+`model_elastic.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_elastic.m>`_.
+    
 A loss modulus can be defined by the following equation :
 
     .. math:: E^{'*} = \frac{C\omega}{2} \sqrt\frac{\pi}{A}
@@ -435,20 +453,23 @@ Oliver and Pharr [#OliverPharr_1992]_, by the following expression :
 
     .. math:: H = \frac{F_\text{c,max}}{A_\text{c}}
             :label: hardness
-            
+
+Find here the |matlab| function to calculate the hardness:
+`model_hardness.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/plastic_models/model_hardness.m>`_.
+
 Energy approach
 #################
 
 Another way to access indentation data is the use of the energy
 dissipated during the indentation. The elastic and plastic energies
 are based on the integral of the loading and unloading curve
-(see Figure 9) [#ChengCheng_1998]_ and [#Malzbender_2002]_.
+(see Figure 10) [#ChengCheng_1998]_ and [#Malzbender_2002]_.
 
 .. figure:: ./_pictures/load-disp_curve_energy.png
    :scale: 60 %
    :align: center
 
-   *Figure 9 : Schematic representation of indentation load–displacement
+   *Figure 10 : Schematic representation of indentation load–displacement
    curves with definition of different works of indentation.*
 
     .. math:: W_\text{tot} = \int_{0}^{h_\text{t}} {F_\text{c}\left(dh\right)}
@@ -459,6 +480,9 @@ are based on the integral of the loading and unloading curve
             
     .. math:: W_\text{p} = W_\text{tot} - W_\text{e}
             :label: energy_plastic
+
+The "trapz" |matlab| function is used to calculate the area below the load-displacement curve:
+`trapz.m <http://de.mathworks.com/help/matlab/ref/trapz.html?refresh=true>`_.
 
 Methodology to extract properties without the function area 
 #############################################################
