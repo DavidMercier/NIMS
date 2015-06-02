@@ -22,7 +22,7 @@ if val2 ~= 1
         
         if val2 == 2 %Saha (2002)
             gui.results.Hf = model_saha(gui.data.S, gui.data.P, ...
-                gui.results.Ef_red, gcf);
+                gui.results.Em_red, gcf);
         end
         guidata(gcf, gui);
     end
@@ -33,13 +33,8 @@ elseif val2 == 1 % No Bilayer Model
     gui.results.Hf = NaN(length(gui.data.h), 1);
     
     for ii = 1:1:length(gui.data.h)
-        gui.results.Ef(ii)      = 0;
-        gui.results.Ef          = gui.results.Ef.';
-        gui.results.Ef_red(ii)  = 0;
-        gui.results.Ef_red      = gui.results.Ef_red.';
-        gui.results.Ef_sol_fit  = 0;
-        gui.results.Em_red(ii)  = 0;
-        gui.results.Em_red      = gui.results.Em_red.';
+        gui.results.Hf(ii) = 0;
+        gui.results.Hf     = gui.results.Ef.';
     end
 end
 
