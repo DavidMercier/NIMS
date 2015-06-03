@@ -94,6 +94,8 @@ The slope of unloading curve gives access to the contact stiffness :math:`S`:
    
    *Figure 3 : Schematic of indentation load-displacement curve.*
 
+With :math:`h_\text{t}` the total penetration corrected of the frame compliance and :math:`h_\text{r}` the residual indentation depth after unloading.
+
 Frame compliance
 +++++++++++++++++++
 
