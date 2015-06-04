@@ -142,7 +142,9 @@ Hainsworth et al. proposed the following relationship to describe loading curves
 With :math:`K` a constant function of material properties
 (Young's modulus and hardness) and the indenter.
 
-In the same time, Giannakopoulos and Larsson established parabolic relationships between the load and the indentation depth, for purely elastic indentation of bulk materials with ideally Berkovich indenter :eq:`Larsson_Berkovich` [#Larsson_1996]_ and Vickers indenter :eq:`Giannakopoulos_Vickers` [#Giannakopoulos_1994]_, by numerical studies.
+In the same time, Giannakopoulos and Larsson established parabolic relationships between the load and the indentation depth,
+for purely elastic indentation of bulk materials with ideally Berkovich indenter :eq:`Larsson_Berkovich` [#Larsson_1996]_
+and Vickers indenter :eq:`Giannakopoulos_Vickers` [#Giannakopoulos_1994]_, by numerical studies.
 
         .. math:: F_\text{c} = 2.1891 \left(1-0.21\nu -0.01{\nu}^2 -0.41{\nu}^3 \right) \frac{E}{1-{\nu}^2} h_\text{t}^2
                 :label: Larsson_Berkovich
@@ -219,7 +221,13 @@ Model of Oliver and Pharr [#OliverPharr_1992]_, [#Pharr_2002]_ and
 Where :math:`\epsilon` is a function of the indenter's geometry (0.72 for conical indenter,
 0.75 for `paraboloids of revolution <https://en.wikipedia.org/wiki/Paraboloid>`_ and 1 for
 a flat cylindrical punch). An expression of :math:`\epsilon` in function of the power law
-exponent :math:`m` of the unloading curve fit has been proposed by Pharr et Bolshakov [#Pharr_2002]_.
+exponent :math:`m` of the unloading curve fit has been proposed by Pharr et Bolshakov [#Pharr_2002]_ :
+
+    .. math:: m \left{1- _frac{2\Gamma\left(\frac{m}{2(m-1)} \right)}{\pi^0.5 \Gamma \left( \frac{1}{2(m-1)}(m-1) \right)} \right}
+            :label: oliver_pharr_epsilon
+
+Whit :math:`\Gamma` a |matlab| function which interpolates the factorial function : 
+`gamma <http://de.mathworks.com/help/matlab/ref/gamma.html?refresh=true>`_.
 
 Find here the |matlab| function to plot the :math:`\epsilon` function :
 `epsilon_oliver_pharr.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/load_displacement/epsilon_oliver_pharr.m>`_.
@@ -310,7 +318,8 @@ Continuous stiffness measurement
 The **Continuous Stiffness Measurement** technique (CSM) consists to calculate the elastic
 stiffness continuously during the loading of the indenter [#OliverPharr_1992]_, [#Li_2002]_.
 A small dynamic oscillation (usually 2nm) with a given frequency (:math:`\omega`) (usually 45Hz)
-is imposed on the force (or displacement) signal. The amplitude of the displacement (or load) and the phase angle between the force and displacement signals (:math:`\phi`) are measured using a
+is imposed on the force (or displacement) signal. The amplitude of the displacement (or load)
+and the phase angle between the force and displacement signals (:math:`\phi`) are measured using a
 frequency-specific amplifier.
 
 .. figure:: ./_pictures/load-disp_curve_csm.png

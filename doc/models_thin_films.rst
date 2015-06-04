@@ -572,7 +572,7 @@ of indentation depth, even when pile-up occurs [#Saha_2002]_:
 
 With :math:`x=(t-h_\text{c})/a_\text{c}` and :math:`E_\text{i}^{'}` the reduced Young's modulus of the indenter.
 
-This model was reused later by [#Han_2005]_ and [#Han_2006]_.
+This model was reused later by Han et al. [#Han_2005]_ and [#Han_2006]_.
 
 .. note::
     This model is valid only for the case of elastically inhomogeneous film/substrate systems.
