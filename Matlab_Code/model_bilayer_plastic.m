@@ -31,14 +31,9 @@ if val2 ~= 1
     end
     
 elseif val2 == 1 % No Bilayer Model
-    
-    % Preallocation
-    gui.results.Hf = NaN(length(gui.data.h), 1);
-    
-    for ii = 1:1:length(gui.data.h)
-        gui.results.Hf(ii) = 0;
-        gui.results.Hf     = gui.results.Ef.';
-    end
+    emptyVariables;
+    gui = guidata(gcf); guidata(gcf, gui);
+
 end
 
 set(gui.MainWindows, 'CurrentAxes', gui.handles.AxisPlot_GUI);

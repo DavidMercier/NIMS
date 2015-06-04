@@ -56,7 +56,7 @@ muf    = (-B_Hay+(B_Hay.^2-(4.*A_Hay.*C_Hay)).^0.5) ./ ...
     (2.*A_Hay);
 Ef     = (2.*muf.*(1+gui.data.nuf));
 
-gui.results.Ef_red = Ef./(1-gui.data.nuf^2);  % Ef in GPa
+gui.results.Ef_red = reduced_YM(Ef, gui.data.nuf^2);
 
 guidata(gcf, gui);
 

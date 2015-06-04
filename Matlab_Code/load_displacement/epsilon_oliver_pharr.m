@@ -3,12 +3,12 @@ function [epsilon, m] = epsilon_oliver_pharr
 %% Function used to plot epsilon parameter in function of m coefficient
 % of unloading curves.
 % See Pharr G. M.  and Bolshakov A. (2002)- DOI: 10.1557/JMR.2002.0386
+% gamma function : http://de.mathworks.com/help/matlab/ref/gamma.html
 
 figure('Name', 'epsilon = f(m)',...
     'NumberTitle', 'off');
 
-m = 1:0.0001:2;
-m = m';
+ m = (1:0.0001:2)';
 
 epsilon = m.*(1 - ((2*gamma(m./(2*(m-1))) ./ ...
     ((pi^0.5)*gamma(1./(2*(m-1))))).*(m-1)));

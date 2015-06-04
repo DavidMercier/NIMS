@@ -62,21 +62,9 @@ if val2 ~= 1
     guidata(gcf, gui);
     
 elseif val2 == 1 % No Bilayer Model
+    emptyVariables;
+    gui = guidata(gcf); guidata(gcf, gui);
     
-    % Preallocation
-    gui.results.Ef     = NaN(length(gui.data.h), 1);
-    gui.results.Ef_red = NaN(length(gui.data.h), 1);
-    gui.results.Em_red = NaN(length(gui.data.h), 1);
-    
-    for ii = 1:1:length(gui.data.h)
-        gui.results.Ef(ii)      = 0;
-        gui.results.Ef          = gui.results.Ef.';
-        gui.results.Ef_red(ii)  = 0;
-        gui.results.Ef_red      = gui.results.Ef_red.';
-        gui.results.Ef_sol_fit  = 0;
-        gui.results.Em_red(ii)  = 0;
-        gui.results.Em_red      = gui.results.Em_red.';
-    end
 end
 
 set(gui.MainWindows, 'CurrentAxes', gui.handles.AxisPlot_GUI);

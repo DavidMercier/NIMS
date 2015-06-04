@@ -3,7 +3,6 @@ function CSM_correction
 %% Function used to correct experimental data from CSM effects ("jack-hammering")
 % CSM = Continuous Stiffness Measurement
 % CSM correction from Pharr et al . (2009), only valid for Berkovich indenter !!!
-% Vachhani et al. (2013) model is used for spherical indenters.
 gui = guidata(gcf);
 
 if gui.flag.flag_data == 0
