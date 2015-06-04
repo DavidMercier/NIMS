@@ -115,7 +115,7 @@ Bilayer models to extract hardness of a thin film on a substrate (with conical i
 --------------------------------------------------------------------------------------------------
 * Bückle H., "VDI Berichte" (1961).
 * `Jönsson B. and Hogmark S., "Hardness measurements of thin films" (1984). <http://dx.doi.org/10.1016/0040-6090(84)90123-8>`_
-* `Doerner M.F. et al., "Plastic properties of thin films on substrates as measured by submicron indentation hardness and substrate curvature techniques" (1986).<http://dx.doi.org/10.1557/JMR.1986.0845>`_
+* `Doerner M.F. et al., "Plastic properties of thin films on substrates as measured by submicron indentation hardness and substrate curvature techniques" (1986). <http://dx.doi.org/10.1557/JMR.1986.0845>`_
 * `Burnett P.J. and Rickerby D.S., "The mechanical properties of wear-resistant coatings: I: Modelling of hardness behaviour." (1987). <http://dx.doi.org/10.1016/0040-6090(87)90119-2>`_
 * `Burnett P.J. and Rickerby D.S., "The mechanical properties of wear-resistant coatings: II: Experimental studies and interpretation of hardness." (1987). <http://dx.doi.org/10.1016/0040-6090(87)90120-9>`_
 * `Page T.F. et al., "Nanoindentation Characterisation of Coated Systems: P:S2 - A New Approach Using the Continuous Stiffness Technique" (1998). <http://dx.doi.org/10.1557/PROC-522-53>`_
