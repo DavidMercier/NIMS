@@ -223,7 +223,7 @@ Where :math:`\epsilon` is a function of the indenter's geometry (0.72 for conica
 a flat cylindrical punch). An expression of :math:`\epsilon` in function of the power law
 exponent :math:`m` of the unloading curve fit has been proposed by Pharr et Bolshakov [#Pharr_2002]_ :
 
-    .. math:: \epsilon = m \left{ 1 - \frac{2\Gamma\left(\frac{m}{2(m-1)} \right)}{\pi^0.5 \Gamma \left( \frac{1}{2(m-1)}(m-1) \right)} \right}
+    .. math:: \epsilon = m \left{ 1 - \frac{2 \Gamma \left(\frac{m}{2(m-1)} \right)}{\pi^{0.5} \Gamma \left( \frac{1}{2(m-1)}(m-1) \right)} \right}
             :label: oliver_pharr_epsilon
 
 With :math:`\Gamma` a |matlab| function which interpolates the factorial function : 
