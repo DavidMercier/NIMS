@@ -92,7 +92,7 @@ else
         gui.axis.y2plot = gui.results.Esample_red;
         gui.axis.delta_y2plot = 0;
         gui.axis.y2plot_2 = gui.results.Em_red;
-        gui.axis.ylabelstr = 'Reduced Young''s modulus (sample) (GPa)';
+        gui.axis.ylabelstr = 'Reduced Young''s modulus (GPa)';
         cleaned_Esample_red = gui.results.Esample_red;
         cleaned_Esample_red(isinf(cleaned_Esample_red)) = [];
         cleaned_Esample_red(isnan(cleaned_Esample_red)) = [];
@@ -104,8 +104,7 @@ else
         gui.axis.y2plot = gui.results.Esample_red;
         gui.axis.delta_y2plot = 0;
         gui.axis.y2plot_2 = gui.results.Ef_red;
-        gui.axis.ylabelstr = ['Reduced Young''s modulus (film) vs. ', ...
-            'Young''s modulus(film + substrate) (GPa)'];
+        gui.axis.ylabelstr = ['Reduced Young''s modulus (GPa)'];
         cleaned_Esample_red = gui.results.Esample_red;
         cleaned_Esample_red(isinf(cleaned_Esample_red)) = [];
         cleaned_Esample_red(isnan(cleaned_Esample_red)) = [];
