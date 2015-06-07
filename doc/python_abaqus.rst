@@ -200,6 +200,7 @@ References
 * `Chen C., "2-D Finite Element Modeling for Nanoindentation and Fracture Stress Analysis." PhD thesis - University of South Florida (2009). <http://scholarcommons.usf.edu/etd/1897/>`_
 * `Moore S.W. et al., "Nanoindentation in elastoplastic materials: insights from numerical simulations." (2010). <http://dx.doi.org/10.1080/19475411003589889>`_
 * `Isselé H. et al., "Determination of the Young's modulus of a TiN Thin Film by nanoindentation: analytical models and numerical FEM simulation." (2012). <http://doi.org/10.1380/ejssnt.2012.624>`_
+* `Phiciato's blog (2013) <http://www.google.de/imgres?imgurl=https%3A%2F%2Fphiciato.files.wordpress.com%2F2013%2F07%2Fmesh1.jpg&imgrefurl=https%3A%2F%2Fphiciato.wordpress.com%2F2013%2F07%2F11%2Fabaqus-simple-case-indentation-of-thin-coating%2F&h=488&w=960&tbnid=xDHpOKtFhSsCZM%3A&zoom=1&docid=hsQqoXqz1e8COM&ei=JLtxVYatHIzyUKGkgqgH&tbm=isch&iact=rc&uact=3&dur=343&page=10&start=148&ndsp=18&ved=0CJ4BEK0DMDM4ZA>`_
 * `Moćko W. et al., "Simulation of nanoindentation experiments of single-layer and double-layer thin films using finite element method." (2014). <http://doi.org/10.1002/sia.5473>`_
 * `Kibech S. et al., "Nanoindentation" (2014). <https://nanohub.org/resources/nanoindentation>`_
 * `Charleux L., "Abapy Documentation" <http://abapy.readthedocs.org/en/latest/index.html>`_
