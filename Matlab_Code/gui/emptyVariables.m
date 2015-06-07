@@ -22,6 +22,6 @@ for ii = 1:1:length(g.data.h)
     g.results.Hf     = g.results.Ef.';
 end
 
-guidqtq(gcf, g);
+guidata(gcf, g);
 
 end
