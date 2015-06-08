@@ -160,13 +160,13 @@ elseif gui.variables.num_thinfilm == 2
     elseif gui.variables.y_axis == 6
         if gui.variables.val2 == 1
             gui.axis.title_str = strcat('Mean Hardness of the film= ', ...
-                num2str(round(mean(gui.results.Hf.*1000)./10)./100), 'GPa');
+                num2str(round(mean(gui.results.H.*1000)./10)./100), 'GPa');
         else
             set(gui.handles.value_youngfilm0_GUI, ...
                 'String', round(gui.results.Ef_sol_fit(1)));
             gui.axis.title_str = ...
                 ['Mean hardness of the film (when h < t)= ', ...
-                num2str(round(mean(gui.results.Hf))), 'GPa'];
+                num2str(round(mean(gui.results.Hf.*1000)./10)./100), 'GPa'];
         end
     end
     
@@ -188,13 +188,13 @@ elseif gui.variables.num_thinfilm == 3
     elseif gui.variables.y_axis == 6
         if gui.variables.val2 == 1
             gui.axis.title_str = strcat('Mean Hardness of the film= ', ...
-                num2str(round(mean(gui.results.Hf.*1000)./10)./100), 'GPa');
+                num2str(round(mean(gui.results.H.*1000)./10)./100), 'GPa');
         else
             set(gui.handles.value_youngfilm1_GUI, ...
                 'String', round(gui.results.Ef_sol_fit(1)));
             gui.axis.title_str = ...
                 ['Mean hardness of the film (when h < t)= ', ...
-                num2str(round(mean(gui.results.Hf))), 'GPa'];
+                num2str(round(mean(gui.results.Hf.*1000)./10)./100), 'GPa'];
         end
         
     end
@@ -217,13 +217,13 @@ elseif gui.variables.num_thinfilm == 4
     elseif gui.variables.y_axis == 6
         if gui.variables.val2 == 1
             gui.axis.title_str = strcat('Mean Hardness of the film= ', ...
-                num2str(round(mean(gui.results.Hf.*1000)./10)./100), 'GPa');
+                num2str(round(mean(gui.results.H.*1000)./10)./100), 'GPa');
         else
             set(gui.handles.value_youngfilm2_GUI, ...
                 'String', round(gui.results.Ef_sol_fit(1)));
             gui.axis.title_str = ...
                 ['Mean hardness of the film (when h < t)= ', ...
-                num2str(round(mean(gui.results.Hf))), 'GPa'];
+                num2str(round(mean(gui.results.Hf.*1000)./10)./100), 'GPa'];
         end
         
     end
