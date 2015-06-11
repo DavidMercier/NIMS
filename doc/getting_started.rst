@@ -5,7 +5,7 @@
 
 First of all, download the source code of the |matlab| toolbox.
 
-`Source code is hosted at Github. <https://github.com/DavidMercier/NIMSNIMS>`_
+`Source code is hosted at Github. <https://github.com/DavidMercier/NIMS>`_
 
 To have more details about the use of the toolbox, please have a look to :
 
@@ -22,8 +22,13 @@ How to use the GUI for indentation data analysis ?
 `See here how to create / modify your YAML file... 
 <http://nims.readthedocs.org/en/latest/configuration.html>`_
 
-* Then, run the following |matlab| script and answer 'y' or
-  'yes' to add path to the |matlab| search paths :
+* Run the following |matlab| script and answer 'y' or 'yes' to add path to the |matlab| search paths :
+
+.. code-block:: matlab
+
+   path_management.m
+   
+* Then, run the following |matlab| script :
 
 .. code-block:: matlab
 

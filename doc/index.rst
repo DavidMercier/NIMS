@@ -16,11 +16,11 @@ The NIMS toolbox has been developed to plot and to analyze (nano)indentation
 data (obtained with conical indenters) for bulk material or multilayer sample.
 
 With this Matlab toolbox, it is possible to :
-    * plot and correct nanoindentation data;
-    * calculate the coefficient of the power law fit of the load-displacement curve;
-    * calculate the energy of the loading (area below the load-displacement curve);
-    * calculate the Young's modulus and hardness of bulk materials;
-    * calculate the Young's modulus of thin films on a substrate (for a bilayer or a multilayer sample (until 3 layers on a substrate));
+    * plot and correct nanoindentation data ;
+    * calculate the coefficient of the power law fit of the load-displacement curve ;
+    * calculate the energy of the loading (area below the load-displacement curve) ;
+    * calculate the Young's modulus and hardness of bulk materials ;
+    * calculate the Young's modulus of thin films on a substrate (for a bilayer or a multilayer sample (until 3 layers on a substrate)) ;
     * generate Python script of axisymmetrical FEM model for use in ABAQUS 6.12 (cono-spherical indentation of multilayer sample).
 
 .. figure:: ./_pictures/download.png
