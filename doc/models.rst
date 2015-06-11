@@ -56,7 +56,7 @@ Load-Displacement curves
 -------------------------
 
 Parameters such as contact load :math:`F_\text{c}` and depth of penetration :math:`h_0` are recorded
-at a rapid rate (normally 10Hz) during loading and unloading steps of the indentation test. Usually, the depth resolution is around the :math:`\text{nm}`level and the load resolution is around :math:`\text{nN}`-level.
+at a rapid rate (normally 10Hz) during loading and unloading steps of the indentation test. Usually, the depth resolution is around the :math:`\text{nm}`-level and the load resolution is around :math:`\text{nN}`-level.
 
 Initial penetration
 +++++++++++++++++++++
