@@ -3,8 +3,9 @@
 
 .. include:: includes.rst
 
-The nanoindentation (or instrumented  or depth sensing indentation) is a variety
-of indentation hardness tests applied to small volumes. 
+The nanoindentation (or instrumented or depth sensing indentation) is a variety
+of indentation hardness tests applied to small volumes. During nanoindentation,
+an indenter is brought into contact with a sample and mechanically loaded.
 
 The following parts give a short overview of models existing in the
 literature used for the extraction of mechanical properties of homogeneous 
@@ -54,8 +55,8 @@ and similarity of the stress fields.
 Load-Displacement curves
 -------------------------
 
-Parameters such as contact load :math:`F_\text{c}` and depth of penetration  :math:`h_0` are recorded
-at a rapid rate (normally 10Hz) during loading and unloading steps of the indentation test.
+Parameters such as contact load :math:`F_\text{c}` and depth of penetration :math:`h_0` are recorded
+at a rapid rate (normally 10Hz) during loading and unloading steps of the indentation test. Usually, the depth resolution is around the :math:`\angstrom` level and the load resolution is around :math:`\text{nN}`-level.
 
 Initial penetration
 +++++++++++++++++++++
