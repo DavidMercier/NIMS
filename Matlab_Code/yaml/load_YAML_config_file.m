@@ -47,7 +47,8 @@ else
 end
 
 if flag_YAML
-   display('YAML configuration files correctly loaded...');
+    commandwindow;
+    display('YAML configuration files correctly loaded...');
 end
 
 end

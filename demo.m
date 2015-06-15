@@ -56,7 +56,7 @@ guidata(gcf, gui);
 indenters_properties_GUI;
 gui = guidata(gcf); guidata(gcf, gui);
 
-% Help menu
+% YAML and Help menus
 customized_menu(gcf);
 
 %% Set flags
