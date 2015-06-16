@@ -7,28 +7,19 @@ Links
 ######
 
 * `Matlab GUI. <http://www.mathworks.com/discovery/matlab-gui.html>`_
-
 * `Coding GUI behavior. <http://www.mathworks.fr/fr/help/matlab/code-to-run-the-gui.html?searchHighlight=gui>`_
-
 * `Visit the YAML website for more informations. <http://www.yaml.org/>`_
-
 * `Visit the YAML code for Matlab. <http://code.google.com/p/yamlmatlab/>`_
-
 * `Matlab Li's code to determine elastic modulus and hardness of an ultra-thin film on a substrate using nanoindentation. <http://www.imechanica.org/node/4050>`_
-
 * `ISO 14577 - 1 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 1: Test method", (2002). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=30104>`_
-
 * `ISO 14577 - 2 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 2: Verification and calibration of testing machines", (2002). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=30543>`_
-
 * `ISO 14577 - 3 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 3: Calibration of reference blocks", (2002). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=32193>`_
-
 * `ISO 14577 - 4 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 4: Test method for metallic and non-metallic coatings", (2007). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=39228>`_
 
 References
 ###########
 
 * `Mercier D. et al., "Young's modulus measurement of a thin film from experimental nanoindentation performed on multilayer systems" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
-
 * `Mercier D., "Behaviour laws of materials used in electrical contacts for « flip chip » technologies", PhD thesis (2013) <https://tel.archives-ouvertes.fr/tel-01127940>`_
 
 Material and indenters properties
@@ -101,6 +92,7 @@ Bilayer models to extract Young's modulus of a thin film on a substrate (with co
 * `Sakai M., "Substrate-affected indentation contact parameters of elastoplastic coating/substrate composites" (2009). <http://dx.doi.org/10.1557/jmr.2009.0102>`_
 * `Hay J. and Crawford B., "Measuring substrate-independent modulus of thin films" (2011). <http://dx.doi.org/10.1557/jmr.2011.8>`_
 * `Bull S.J., "A simple method for the assessment of the contact modulus for coated systems." (2014). <http://dx.doi.org/10.1080/14786435.2014.909612>`_
+* `Li Y. et al., "Models for nanoindentation of compliant films on stiff substrates" (2015).<http://dx.doi.org/10.1557/jmr.2015.126>`_
 
 Multilayer model to extract Young's moduli of thin films on a multilayer sample (with conical indenters)
 ----------------------------------------------------------------------------------------------------------
@@ -158,5 +150,6 @@ Finite Element Modelling of conical indentation of thin film(s) on a substrate
 * `Isselé H. et al., "Determination of the Young's modulus of a TiN Thin Film by nanoindentation: analytical models and numerical FEM simulation." (2012). <http://doi.org/10.1380/ejssnt.2012.624>`_
 * `Moćko W. et al., "Simulation of nanoindentation experiments of single-layer and double-layer thin films using finite element method." (2014). <http://doi.org/10.1002/sia.5473>`_
 * `Kibech S. et al., "Nanoindentation" (2014). <https://nanohub.org/resources/nanoindentation>`_
+* `Li Y. et al., "Models for nanoindentation of compliant films on stiff substrates" (2015).<http://dx.doi.org/10.1557/jmr.2015.126>`_
 * `Charleux L., "Abapy Documentation" <http://abapy.readthedocs.org/en/latest/index.html>`_
 * ABAQUS documentation
