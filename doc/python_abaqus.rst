@@ -50,7 +50,8 @@ A spherical part is defined at the apex of the conical indenter (see Figure 2).
    *Figure 2 : Scheme of a cono-spherical indenter.*
 
 The radius :math:`R` of the spherical part is calculated from the tip defect :math:`h_\text{tip}`
-and the cone angle :math:`\alpha`, using the following equation.
+and the cone angle :math:`\alpha`, using the following equation. For Berkovich, Vickers and Cube-Corner
+indenters, the equivalent cone angle is used to set the cone angle.
 
     .. math:: R = \frac{h_\text{tip}}{\frac{1}{sin(\alpha)} - 1}
             :label: tip_radius
