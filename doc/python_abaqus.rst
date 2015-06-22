@@ -83,7 +83,7 @@ from 0 (quadratic elements) to 1 (linear elements).
    :scale: 20 %
    :align: center
    
-   *Figure 3 : Screenshot in Abaqus of the a mesh example used in the FE model.*
+   *Figure 3 : Screenshot in Abaqus of the mesh example used in the FE model.*
 
 Material properties
 ---------------------------------

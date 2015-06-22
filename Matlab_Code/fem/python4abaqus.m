@@ -80,7 +80,7 @@ if ~isempty(scriptpath_multilayer_model)
     ind_disp = -200;
     
     py{1}     = sprintf('#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
-    py{end+1} = sprintf('# Python script for use with Abaqus 6.12');
+    py{end+1} = sprintf('# Python script for use with Abaqus');
     py{end+1} = sprintf('#====================================================================================================================');
     py{end+1} = sprintf('# AUTHOR: %s', username_str);
     py{end+1} = sprintf('# DATE: %s', datestr(datenum(clock),'mmm.dd,yyyy HH:MM'));
@@ -110,8 +110,8 @@ if ~isempty(scriptpath_multilayer_model)
     py{end+1} = sprintf('import interaction');
     py{end+1} = sprintf('import load');
     py{end+1} = sprintf('import mesh');
-    py{end+1} = sprintf('if (''12'' in version) == True:');
-    py{end+1} = sprintf('    import optimization # Not available in versions released before Abaqus 6.12');
+%     py{end+1} = sprintf('if (''12'' in version) == True:');
+%     py{end+1} = sprintf('    import optimization # Not available in versions released before Abaqus 6.12');
     py{end+1} = sprintf('import job');
     py{end+1} = sprintf('import sketch');
     py{end+1} = sprintf('import visualization');

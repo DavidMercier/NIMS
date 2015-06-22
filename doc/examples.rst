@@ -47,11 +47,22 @@ Examples
 * `3films_Au-Ti-SiO2-Si_CSM-1nm.xls <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/3films_Au-Ti-SiO2-Si_CSM-1nm.xls>`_
     - Data for a thin film of PVD Gold (500nm) deposited on thin film of PVD Titanium (500nm) on a bulk Silicon sample with a Silicon thermal oxide (500nm).
     - Data obtained by Berkovich indentation with CSM mode (amplitude 1nm).
+
+The last example (2 files for Au-Ti-SiO2-Si sample) is used to validate the elastic multilayer model of Mercier et al. [#Mercier_2010]_.
+A micrograph of this sample is given Figure 1.
+
+.. figure:: ./_pictures/multilayerSEM.png
+   :scale: 60 %
+   :align: center
+   
+   *Figure 1 : SEM cross-sectional observation of a multilayer sample.*
     
 References
 ###########
 
 .. [#Jennett_2001] `Jennett N. M. and Bushby A. J., "Adaptive Protocol for Robust Estimates of Coatings Properties by Nanoindentation" (2001). <http://dx.doi.org/10.1557/PROC-695-L3.1.1>`_
+
+.. [#Mercier_2010] `Mercier D. et al., "Young's modulus measurement of a thin film from experimental nanoindentation performed on multilayer systems" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
 
 - `ISO 14577 - 1 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 1: Test method", (2002). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=30104>`_
 
@@ -60,6 +71,3 @@ References
 - `ISO 14577 - 3 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 3: Calibration of reference blocks", (2002). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=32193>`_
 
 - `ISO 14577 - 4 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 4: Test method for metallic and non-metallic coatings", (2007). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=39228>`_
-
-
-

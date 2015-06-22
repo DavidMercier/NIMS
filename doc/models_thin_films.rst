@@ -32,7 +32,7 @@ and the properties and the geometry of the indenter.
    :scale: 60 %
    :align: center
    
-   *Figure 1 : SEM observation of a multilayer sample.*
+   *Figure 1 : SEM cross-sectional observation of a multilayer sample.*
 
 .. figure:: ./_pictures/evolution_EandH_thinfilm.png
    :scale: 60 %
@@ -372,7 +372,7 @@ and [#Xu_2006]_, which is already inspired by the Gao model [#Gao_1992]_.
             :label: hay_model
             
 Where :math:`\mu_\text{c}` is the composite shear modulus
-calculated from the composite Young’s modulus as :
+calculated from the composite Young's modulus as :
 
     .. math:: \mu_\text{c} = \frac{E}{2\left(1+\nu_\text{c}\right)}
             :label: hay_muc
@@ -401,7 +401,7 @@ With :math:`F = 0.0626`, a constant obtained from finite element simulations.
     .. math:: \mu_\text{s} = \frac{E_\text{s}}{2\left(1+\nu_\text{s}\right)}
             :label: hay_mus
             
-Finally, the Young’s modulus of the film is calculated from
+Finally, the Young's modulus of the film is calculated from
 the shear modulus and Poisson’s ratio of the film :
 
     .. math:: E_\text{f} = 2\mu_\text{f}\left(1 + \nu_\text{f}\right)
@@ -452,7 +452,7 @@ The elastic model of Mercier et al. for a multilayer sample on
             
 With :math:`a_{\text{c},0}` equal to :math:`a_{\text{c}}`.
 
-Thus, the Young’s modulus of the film can be calculated as :
+Thus, the Young's modulus of the film can be calculated as :
 
     .. math:: E^{'}_{\text{f},0} = \left[\frac{\pi a_{\text{c},0}^2 +
               2t_0a_{\text{c},0}}{t_0} \left[\frac{1}{2 a_{\text{c},0} E^{'}} -
