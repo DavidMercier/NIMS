@@ -85,10 +85,10 @@ How to use the GUI for indentation data analysis ?
    :scale: 40 %
    :align: center
    
-   *Plot of the evolution of the Young's modulus of the sample in function of the indentation depth.*
+   *Plot of the evolution of the Young's modulus of the sample with the multilayer elastic model in function of the indentation depth.*
    
 .. figure:: ./_pictures/GUI_Main_Window_Efilm_curve.png
    :scale: 40 %
    :align: center
    
-   *Plot of the evolution of the Young's modulus of the film in function of the indentation depth.*
+   *Plot of the evolution of the Young's modulus of the film with the multilayer elastic model in function of the indentation depth.*

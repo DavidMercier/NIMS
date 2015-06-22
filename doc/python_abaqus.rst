@@ -180,7 +180,7 @@ References
 * `Sun Y. et al., "Finite element analysis of the critical ratio of coating thickness to indentation depth for coating property measurements by nanoindentation." (1995). <http://dx.doi.org/10.1016/0040-6090(94)06357-5>`_
 * `Hubert N. et al. "Identification of elastic-plastic material parameters from pyramidal indentation of thin films." (2002). <http://dx.doi.org/10.1098/rspa.2001.0927>`_
 * `He J.L. and Veprek S., "Finite element modeling of indentation into superhard coatings." (2003). <http://dx.doi.org/10.1016/S0257-8972(02)00628-X>`_
-* `Cai X. and Bangert H., "Hardness measurements of thin films-determining the critical ratio of depth to thickness using FEM." (2005) <http://dx.doi.org/10.1016/0040-6090(95)06569-5>`_
+* `Cai X. and Bangert H., "Hardness measurements of thin films-determining the critical ratio of depth to thickness using FEM." (2005). <http://dx.doi.org/10.1016/0040-6090(95)06569-5>`_
 * `Bolshakov A. and Pharr G.M., "Influences of pile-up on the measurement of mechanical properties by load and depth sensing indentation techniques." (1998) <http://dx.doi.org/10.1557/JMR.1998.0146>`_
 * `Lichinchi M. et al., "Simulation of Berkovich nanoindentation experiments on thin films using finite element method." (1998). <http://dx.doi.org/10.1016/S0040-6090(97)00739-6>`_
 * `Chen X. and Vlassak J.J., "A Finite Element Study on the Nanoindentation of Thin Films." (2000). <http://dx.doi.org/10.1557/PROC-649-Q1.3>`_
@@ -203,11 +203,6 @@ References
 * `Phiciato's blog (2013) <https://phiciato.wordpress.com/2013/07/11/abaqus-simple-case-indentation-of-thin-coating/>`_
 * `Moćko W. et al., "Simulation of nanoindentation experiments of single-layer and double-layer thin films using finite element method." (2014). <http://doi.org/10.1002/sia.5473>`_
 * `Kibech S. et al., "Nanoindentation" (2014). <https://nanohub.org/resources/nanoindentation>`_
-* `Li Y. et al., "Models for nanoindentation of compliant films on stiff substrates" (2015).<http://dx.doi.org/10.1557/jmr.2015.126>`_
+* `Li Y. et al., "Models for nanoindentation of compliant films on stiff substrates" (2015). <http://dx.doi.org/10.1557/jmr.2015.126>`_
 * `Charleux L., "Abapy Documentation" <http://abapy.readthedocs.org/en/latest/index.html>`_
 * ABAQUS documentation
-
-
-
-
-
