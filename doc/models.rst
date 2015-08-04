@@ -110,7 +110,7 @@ into the studied material. This frame compliance :math:`C_\text{f}` contributes 
     .. math:: S = \left(\frac{dh}{dF_\text{c}} - C_\text{f}\right)^{-1}
             :label: corrected_stiffness
 
-To determine the frame compliance, it is required to plot :math:`\frac{dh}{dF_\text{c}}` vs. the corrected total depth :math:`(1/h_\text{t})` or the corrected plastic depth :math:`(1/{h_\text{c}})` (see the following part "Indentation contact topography" for the definition of the plastic depth) [#DoernerNix_1986]_ and [#Fischer-Cripps_2006]_. Then, a linear fit of this curve gives an intercept with the ordinate axis which is the frame compliance (see Figure 4).
+To determine the frame compliance, it is required to plot :math:`\frac{dh}{dF_\text{c}}` vs. the corrected total depth :math:`(1/h_\text{t})` or the corrected plastic depth :math:`(1/{h_\text{c}})` (see the following part `"Indentation contact topography" <http://nims.readthedocs.org/en/latest/models.html#indentation-contact-topography>`_ for the definition of the plastic depth) [#DoernerNix_1986]_ and [#Fischer-Cripps_2006]_. Then, a linear fit of this curve gives an intercept with the ordinate axis which is the frame compliance (see Figure 4).
 
 .. figure:: ./_pictures/frame_compliance.png
    :scale: 60 %
@@ -557,6 +557,7 @@ References
 ############
 
 .. [#Bec_2006] `Bec S. et al., "Improvements in the indentation method with a surface force apparatus" (2006). <http://dx.doi.org/10.1080/01418619608239707>`_
+.. [#Berkovich_1950] Berkovich E.S., "Three-Faceted Diamond Pyramid for Studying Microhardness by Indentation" Zavodskaya Laboratoria 13(345) (1950).
 .. [#Bulychev_1973] Bulychev S.I. et al., "Determining Young’s modulus from the indentor penetration diagram.", Zavod. Lab., 1973, 39, pp. 1137-1142.
 .. [#Bolshakov_1998] `Bolshakov A. and Pharr G.M., "Influences of pile-up on the measurement of mechanical properties by load and depth sensing indentation techniques." (1998) <http://dx.doi.org/10.1557/JMR.1998.0146>`_
 .. [#Cheng_1998] `Cheng Y.T. and Cheng C.M. ,"Effects of 'sinking in' and 'piling up' on estimating the contact area under load in indentation." (1998) <http://dx.doi.org/10.1080/095008398178093>`_

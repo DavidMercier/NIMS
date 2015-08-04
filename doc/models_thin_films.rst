@@ -413,7 +413,7 @@ Find here the |matlab| function for the Hay et al. model :
 Bull (2014)
 -------------------
 
-This model was proposed by Bull S.J. in a paper of 2011 about the mechanical characterization of ALD Alumina coatings [#Bull_2011]_. Then, this simple method to determine the elastic modulus
+This model was originally proposed by Bull S.J. in 2011, in a paper about the mechanical characterization of ALD Alumina coatings [#Bull_2011]_. Then, this simple method to determine the elastic modulus
 of a coating on a substrate using nanoindentation was developed in another paper in 2014 [#Bull_2014]_.
 This model is based on the load support of a truncated cone of material beneath the indenter.
 
@@ -428,12 +428,12 @@ This model is based on the load support of a truncated cone of material beneath 
 
 Where :math:`E_\text{f}` and :math:`E_\text{s}` are the Young's Modulus of the coating and
 substrate, :math:`t_\text{f}` and :math:`t_\text{s}` are the coating and substrate thickness,
-and :math:`\alpha` is the semi-angle of the cone material which supports the load (estimated to 32.48°from measurements on bulk materials). In fact, by assuming that the material thickness is very much greater than the contact radius, it is possible to replace in the previous equation :math:`tan\alpha` by :math:`2\pi = 32.48°`. Finally, by assuming that the substrate is very much thicker than the coating :math:`t_\text{s} >> t_\text{f}`, the equation :eq:`bull_contact_modulus` can be rewritten :
+and :math:`\alpha` is the semi-angle of the cone material which supports the load. In fact, by assuming that the material thickness is very much greater than the contact radius, it is possible to replace in the previous equation :math:`tan\alpha` by :math:`2\pi = 32.48°`. Finally, by assuming that the substrate is very much thicker than the coating :math:`(t_\text{s} >> t_\text{f})`, the equation :eq:`bull_contact_modulus` can be rewritten :
 
     .. math:: E^{'} = \frac{1}{\frac{1}{E_\text{f}} \left[\frac{2t_\text{f}}{\pi a_\text{c} + 2t_\text{f}} \right] + \frac{1}{E_\text{s}} \left[\frac{\pi a_\text{c}}{\pi a_\text{c} + 2t_\text{f}} \right]}
             :label: bec_bull_contact_modulus
 
-This last equation from Bull S.J. is exactly the same equation :eq:`bec_Eeq` as proposed by Bec et al. in 2006, with a unique difference which is the use of the non reduced form of the Young's moduli of the coating and substrate by Bull S.J..
+This last equation from Bull S.J. is exactly the same as equation :eq:`bec_Eeq`, proposed by Bec et al. in 2006, with a unique difference which is the use by Bull S.J. of the non reduced form of the Young's moduli of the coating and the substrate.
 
 Elastic properties of a thin film on a multilayer system
 ###############################################################
