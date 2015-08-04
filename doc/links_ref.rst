@@ -92,6 +92,7 @@ Bilayer models to extract Young's modulus of a thin film on a substrate (with co
 * `Li H. and Vlassak J.J., "Determining the elastic modulus and hardness of an ultra-thin film on a substrate using nanoindentation" (2009). <http://dx.doi.org/10.1557/jmr.2009.0144>`_
 * `Sakai M., "Substrate-affected indentation contact parameters of elastoplastic coating/substrate composites" (2009). <http://dx.doi.org/10.1557/jmr.2009.0102>`_
 * `Hay J. and Crawford B., "Measuring substrate-independent modulus of thin films" (2011). <http://dx.doi.org/10.1557/jmr.2011.8>`_
+* `Bull S.J., "Mechanical response of atomic layer deposition alumina coatings on stiff and compliant substrates" (2011). <http://dx.doi.org/10.1116/1.3670401>`_
 * `Bull S.J., "A simple method for the assessment of the contact modulus for coated systems." (2014). <http://dx.doi.org/10.1080/14786435.2014.909612>`_
 * `Li Y. et al., "Models for nanoindentation of compliant films on stiff substrates" (2015). <http://dx.doi.org/10.1557/jmr.2015.126>`_
 

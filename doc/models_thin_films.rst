@@ -410,31 +410,37 @@ the shear modulus and Poisson’s ratio of the film :
 Find here the |matlab| function for the Hay et al. model :
 `model_hay.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_hay.m>`_.
 
-Bull (2014) 
+Bull (2014)
 -------------------
-This model is a simple method to determine the elastic modulus
-of a coating on a substrate using nanoindentation based on the
-load support of a truncated cone of material beneath the indenter [#Bull_2014]_.
 
-    .. math:: E = \frac{F_\text{c}}{2a_0\left(h_\text{c} + h_\text{s} \right)}
+This model was proposed by Bull S.J. in a paper of 2011 about the mechanical characterization of ALD Alumina coatings [#Bull_2011]_. Then, this simple method to determine the elastic modulus
+of a coating on a substrate using nanoindentation was developed in another paper in 2014 [#Bull_2014]_.
+This model is based on the load support of a truncated cone of material beneath the indenter.
+
+    .. math:: E^{'} = \frac{F_\text{c}}{2a_\text{c}\left(h_\text{c} + h_\text{s} \right)}
             :label: bull_contact_modulus
             
-    .. math:: h_\text{c} = \frac{F_\text{c}}{\pi E_\text{f}} \left[ \frac{1}{a_0 tan\alpha} - \frac{1}{a_0 tan\alpha + t_\text{f} tan^2\alpha} \right]
+    .. math:: h_\text{c} = \frac{F_\text{c}}{\pi E_\text{f}} \left[ \frac{1}{a_\text{c} tan\alpha} - \frac{1}{a_\text{c} tan\alpha + t_\text{f} tan^2\alpha} \right]
             :label: bull_disp_coating
 
-    .. math:: h_\text{s} = \frac{F_\text{c}}{\pi E_\text{s}} \left[ \frac{1}{a_0 tan\alpha + t_\text{f} tan^2\alpha} - \frac{1}{a_0 tan\alpha + (t_\text{f} + t_\text{s}) tan^2\alpha} \right]
+    .. math:: h_\text{s} = \frac{F_\text{c}}{\pi E_\text{s}} \left[ \frac{1}{a_\text{c} tan\alpha + t_\text{f} tan^2\alpha} - \frac{1}{a_\text{c} tan\alpha + (t_\text{f} + t_\text{s}) tan^2\alpha} \right]
             :label: bull_disp_substrate
 
 Where :math:`E_\text{f}` and :math:`E_\text{s}` are the Young's Modulus of the coating and
 substrate, :math:`t_\text{f}` and :math:`t_\text{s}` are the coating and substrate thickness,
-and :math:`\alpha` is the semi-angle of the cone material which supports the load. 
+and :math:`\alpha` is the semi-angle of the cone material which supports the load (estimated to 32.48°from measurements on bulk materials). In fact, by assuming that the material thickness is very much greater than the contact radius, it is possible to replace in the previous equation :math:`tan\alpha` by :math:`2\pi = 32.48°`. Finally, by assuming that the substrate is very much thicker than the coating :math:`t_\text{s} >> t_\text{f}`, the equation :eq:`bull_contact_modulus` can be rewritten :
+
+    .. math:: E^{'} = \frac{1}{\frac{1}{E_\text{f}} \left[\frac{2t_\text{f}}{\pi a_\text{c} + 2t_\text{f}} \right] + \frac{1}{E_\text{s}} \left[\frac{\pi a_\text{c}}{\pi a_\text{c} + 2t_\text{f}} \right]}
+            :label: bec_bull_contact_modulus
+
+This last equation from Bull S.J. is exactly the same equation :eq:`bec_Eeq` as proposed by Bec et al. in 2006, with a unique difference which is the use of the non reduced form of the Young's moduli of the coating and substrate by Bull S.J..
 
 Elastic properties of a thin film on a multilayer system
 ###############################################################
 
 In 2008, Pailler-Mattei et al. proposed an extension of the Bec's model to a bilayer system deposited on a substrate [#PaillerMattei_2008]_.
 
-But more recently, Mercier et al. established a generalization of the Bec's mdoel to :math:`N+1` layers sample.
+But more recently, Mercier et al. established a generalization of the Bec's model to :math:`N+1` layers sample.
 
 Mercier et al. (2010) 
 ----------------------
@@ -600,6 +606,7 @@ References
 .. [#Arrazat_2010] `Arrazat B. et al., "Nano indentation de couches dures ultra minces de ruthénium sur or" (2010). <http://dx.doi.org/10.1051/mattech/2011031>`_
 .. [#Bec_2006] `Bec S. et al., "Improvements in the indentation method with a surface force apparatus" (2006). <http://dx.doi.org/10.1080/01418619608239707>`_
 .. [#Bückle_1961] Bückle H., "VDI Berichte" (1961).
+.. [#Bull_2011] `Bull S.J., "Mechanical response of atomic layer deposition alumina coatings on stiff and compliant substrates" (2011). <http://dx.doi.org/10.1116/1.3670401>`_
 .. [#Bull_2014] `Bull S.J., "A simple method for the assessment of the contact modulus for coated systems." (2014). <http://dx.doi.org/10.1080/14786435.2014.909612>`_
 .. [#Burnett1_1987] `Burnett P.J. and Rickerby D.S., "The mechanical properties of wear-resistant coatings: I: Modelling of hardness behaviour." (1987). <http://dx.doi.org/10.1016/0040-6090(87)90119-2>`_
 .. [#Burnett2_1987] `Burnett P.J. and Rickerby D.S., "The mechanical properties of wear-resistant coatings: II: Experimental studies and interpretation of hardness." (1987). <http://dx.doi.org/10.1016/0040-6090(87)90120-9>`_
@@ -624,7 +631,7 @@ References
 .. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <http://dx.doi.org/10.1016/0020-7683(87)90116-8>`_
 .. [#Korsunsky_1998] `Korsunsky A.M. et al. "On the hardness of coated system" (1998). <http://dx.doi.org/10.1016/S0257-8972(97)00522-7>`_
 .. [#Li_2010] `Li H. et al., "New methods of analyzing indentation experiments on very thin films" (2010). <http://dx.doi.org/10.1557/JMR.2010.0095>`_
-.. [#Li_2015] `Li Y. et al., "Models for nanoindentation of compliant films on stiff substrates" (2015).<http://dx.doi.org/10.1557/jmr.2015.126>`_
+.. [#Li_2015] `Li Y. et al., "Models for nanoindentation of compliant films on stiff substrates" (2015). <http://dx.doi.org/10.1557/jmr.2015.126>`_
 .. [#Mencík_1997] `Mencík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
 .. [#Mercier_2010] `Mercier D. et al., "Young's modulus measurement of a thin film from experimental nanoindentation performed on multilayer systems" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
 .. [#Mercier_2013] `Mercier D., "Behaviour laws of materials used in electrical contacts for « flip chip » technologies" (2013). <http://www.theses.fr/2013GRENI083>`_

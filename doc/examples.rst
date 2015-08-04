@@ -19,7 +19,9 @@ Format of data
     the toolbox is able to consider only the loading part of your results.
 
 ..  warning::
-    It is advised to use average results from at least 10 indentation tests to avoid artefacts.
+    It is advised to use average results from at least 10 indentation tests to avoid artefacts (e.g. pop-in, roughness, local impurities or dust on the sample's surface...). Please, check if the surface detection is well done, especially if the substrate is compliant [#Kaufman_2009]_ and [#Piccarolo_2010]_.
+
+To analyze pop-in distribution, the Matlab PopIn toolbox was developed. The `Matlab code <https://github.com/DavidMercier/PopIn>` is available on GitHub with `the documentation <http://popin.readthedocs.org/en/latest/>`.
 
 Examples
 #########
@@ -62,7 +64,11 @@ References
 
 .. [#Jennett_2001] `Jennett N. M. and Bushby A. J., "Adaptive Protocol for Robust Estimates of Coatings Properties by Nanoindentation" (2001). <http://dx.doi.org/10.1557/PROC-695-L3.1.1>`_
 
+.. [#Kaufman_2009] `Kaufman J. D. and Klapperich C. M., "Surface detection errors cause overestimation of the modulus in nanoindentation on soft materials" (2009). <http://dx.doi.org/10.1016/j.jmbbm.2008.08.004>`_
+
 .. [#Mercier_2010] `Mercier D. et al., "Young's modulus measurement of a thin film from experimental nanoindentation performed on multilayer systems" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
+
+.. [#Piccarolo_2010] `Piccarolo S. et al., "Improving surface detection on nanoindentation of compliant materials" (2010). <http://dx.doi.org/10.1088/0957-0233/21/6/065701>`_
 
 - `ISO 14577 - 1 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 1: Test method", (2002). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=30104>`_
 
