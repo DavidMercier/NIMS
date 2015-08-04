@@ -21,7 +21,7 @@ This Matlab toolbox has been developed to :
 
 - Young's modulus of a thin film on a substrate or on a multilayer sample (3 layers on a substrate));
 
-- Generate Python script for FEM simulation of indentation test on bulk or multilayer sample with ABAQUS 6.12.
+- Generate Python script for FEM simulation of indentation test on bulk or multilayer sample with ABAQUS 6.12 to ABAQUS 6.14.
 
 Author
 ------
