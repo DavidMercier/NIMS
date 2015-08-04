@@ -70,7 +70,9 @@ Correction factors and Correction of experimental data
 * `Fischer-Cripps A.C., "Critical review of analysis and interpretation of nanoindentation test data" (2006). <http://dx.doi.org/10.1016/j.surfcoat.2005.03.018>`_
 * `Jakes J.E. et al., "Experimental method to account for structural compliance in nanoindentation measurements" (2008). <http://dx.doi.org/10.1557/jmr.2008.0131>`_
 * `Pharr G.M. et al., "Critical issues in making small-depth mechanical property measurements by nanoindentation with continuous stiffness measurement" (2009). <http://dx.doi.org/10.1557/jmr.2009.0096>`_
+* `Kaufman J. D. and Klapperich C. M., "Surface detection errors cause overestimation of the modulus in nanoindentation on soft materials" (2009). <http://dx.doi.org/10.1016/j.jmbbm.2008.08.004>`_
 * `Li H. et al., "New methods of analyzing indentation experiments on very thin films" (2010). <http://dx.doi.org/10.1557/JMR.2010.0095>`_
+* `Piccarolo S. et al., "Improving surface detection on nanoindentation of compliant materials" (2010). <http://dx.doi.org/10.1088/0957-0233/21/6/065701>`_
 
 Bilayer models to extract Young's modulus of a thin film on a substrate (with conical indenters)
 --------------------------------------------------------------------------------------------------
