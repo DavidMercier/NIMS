@@ -19,12 +19,15 @@ Format of data
     the toolbox is able to consider only the loading part of your results.
 
 ..  warning::
-    It is advised to use average results from at least 10 indentation tests to avoid artefacts (e.g. pop-in, roughness, local impurities or dust on the sample's surface...).
-	
-..  warning::
-    Please, check if the surface detection is well done, especially if the substrate is compliant [#Kaufman_2009]_ and [#Piccarolo_2010]_. For more explanations about the surface detection, look into the `NIMS documentation <http://nims.readthedocs.org/en/latest/models.html>`_.
+    It is advised to use average results from at least 10 indentation tests to avoid artefacts
+    (e.g. pop-in, roughness, local impurities or dust on the sample's surface...).
 
-To analyze pop-in distribution, the Matlab PopIn toolbox was developed. The `Matlab code <https://github.com/DavidMercier/PopIn>`_ is available on GitHub with `the documentation <http://popin.readthedocs.org/en/latest/>`_.
+..  warning::
+    Please, check if the surface detection is well done, especially if the substrate is compliant [#Kaufman_2009]_ and [#Piccarolo_2010]_.
+    For more explanations about the surface detection, look into the `NIMS documentation <http://nims.readthedocs.org/en/latest/models.html>`_.
+
+To analyze pop-in distribution, the Matlab PopIn toolbox was developed. The `Matlab code <https://github.com/DavidMercier/PopIn>`_
+is available on GitHub with `the documentation <http://popin.readthedocs.org/en/latest/>`_.
 
 Examples
 #########
