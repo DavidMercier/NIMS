@@ -11,7 +11,7 @@ Format of data
 
 * Both .txt or .xls files are accepted.
 * 3 columns (Displacement / Load / Stiffness)
-* 6 columns (Disp. / SD(Disp.) / Load / SD (Load.) / Stiff. / SD(Stiff.)) (SD for Standard Deviation)
+* 6 columns (Disp. / SD (Disp.) / Load / SD (Load.) / Stiff. / SD (Stiff.)) (SD for Standard Deviation)
 
 ..  warning::
     You data must only have the loading part from the load-displacement curves of your (nano)indentation results.

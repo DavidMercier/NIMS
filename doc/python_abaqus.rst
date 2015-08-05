@@ -98,7 +98,7 @@ by default to be isotropic. The density is set by default to 1.0.
     Young's moduli are in GPa.
 
 Contact definition
----------------------------------
+----------------------
 
 The contact is defined by default frictionless for the tangential
 behavior and hard for the normal behavior.
@@ -106,8 +106,13 @@ behavior and hard for the normal behavior.
 The external surface of the indenter is defined as the "master"
 region and the top surface of the (multilayer) sample is defined as the "slave" region.
 
+..  note::
+    Usually, the effect of friction may be neglected when indenter tips with half-angle
+    larger than 60◦ are used (e.g.: Berkovich, Vickers) [#AtkinsTabor_1965]_, [#Johnson_1987]_, 
+    [#DiCarlo_2004]_, [#Harsono_2008]_.
+
 Boundaries conditions
----------------------------------
+------------------------
 
 Nodes are constrained along the rotation axis from moving in the radial direction (:math:`x`).
 The nodes on the bottom surface of the sample are constrained along the radial axis
@@ -176,6 +181,11 @@ The following pictures were obtained for a `multilayer Au/Ti/SiO2/Si <https://gi
 References
 ############
 
+.. [#AtkinsTabor_1965] `Atkins A.G. and Tabor D., "Plastic indentation in metals with cones" (1965). <http://dx.doi.org/10.1016/0022-5096(65)90018-9>`_
+.. [#DiCarlo_2004] `DiCarlo A. et al., "Prediction of stress–strain relation using cone indentation: effect of friction" (2004). <http://dx.doi.org/10.1002/nme.979>`_
+.. [#Harsono_2008] `Harsono E. et al., "The effect of friction on indentation test results" (2008). <http://dx.doi.org/10.1088/0965-0393/16/6/065001>`_
+.. [#Johnson_1987] Johnson K.L., "Contact Mechanics" (1987), ISBN - 9780521347969.
+
 * `Bhattacharya A.K. and Nix W.D., "Finite element analysis of cone indentation." (1991). <http://dx.doi.org/10.1016/0020-7683(91)90100-T>`_
 * `Madsen D.T. et al. "Finite Element Simulation of Indentation Behavior of thin Films." (1991). <http://dx.doi.org/10.1557/PROC-239-431>`_
 * `Sun Y. et al., "Finite element analysis of the critical ratio of coating thickness to indentation depth for coating property measurements by nanoindentation." (1995). <http://dx.doi.org/10.1016/0040-6090(94)06357-5>`_
@@ -192,7 +202,7 @@ References
 * `Bressan J.D. et al., "Modeling of nanoindentation of bulk and thin film by finite element method." (2005). <http://dx.doi.org/10.1016/j.wear.2004.05.021>`_
 * `Pelletier H. et al., "Characterization of mechanical properties of thin films using nanoindentation test." (2006) <http://dx.doi.org/10.1016/j.mechmat.2006.02.011>`_
 * `Xu H., "A Finite Element Study of the Contact Stiffness of Homogenous Materials and Thin Films." PhD thesis - University of Tennessee - Knoxville (2007) <http://etd.utk.edu/2007/XuHaitao.pdf>`_
-* `Antunes J.M. et al., "On the determination of the Young’s modulus of thin films using indentation tests" (2007). <http://dx.doi.org/10.1016/j.ijsolstr.2007.06.015>`_
+* `Antunes J.M. et al., "On the determination of the Young's modulus of thin films using indentation tests" (2007). <http://dx.doi.org/10.1016/j.ijsolstr.2007.06.015>`_
 * `Chen S.H. et al., "Small scale, grain size and substrate effects in nano-indentation experiment of film–substrate systems." (2007). <http://dx.doi.org/10.1016/j.ijsolstr.2006.11.033>`_
 * `Huang X. and Pelegri A.A., "Finite element analysis on nanoindentation with friction contact at the film/substrate interface." (2007). <http://dx.doi.org/10.1016/j.compscitech.2006.10.005>`_
 * `Pelegri A.A. and Huang X., "Nanoindentation on soft film/hard substrate and hard film/soft substrate material systems with finite element analysis." (2008). <http://dx.doi.org/10.1016/j.compscitech.2007.05.033>`_
