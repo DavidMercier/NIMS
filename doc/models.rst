@@ -9,7 +9,7 @@ an indenter is brought into contact with a sample and mechanically loaded.
 
 The following parts give a short overview of models existing in the
 literature used for the extraction of mechanical properties of homogeneous 
-bulk materials from indentation experiments with conical indenters.
+bulk materials from indentation experiments with conical (sharp) indenters.
 
 Please look at the ISO standard (ISO 14577 - 1 to 3), to perform nanoindentation tests on bulk material.
 
@@ -134,6 +134,13 @@ Loubet et al. founded a good fit to the loading part of the load-displacement cu
 
 With :math:`K` and :math:`n` constants for a given material for a fixed indenter geometry.
 
+It is possible to find in the litterature sometimes the following equation to fit the loading curve:
+
+        .. math:: F_\text{c} = K h_\text{t}^n + C
+                :label: generalized_Loubet_load_displacement
+
+With :math:`C` a constant which is used to account a small preload prior indentation testing [#Morash_2007]_.
+
 Using the load-displacement curves analysis performed by Loubet et al., 
 Hainsworth et al. proposed the following relationship to describe loading curves [#Hainsworth_1996]_ :
 
@@ -154,6 +161,8 @@ and Vickers indenter :eq:`Giannakopoulos_Vickers` [#Giannakopoulos_1994]_, by nu
                 :label: Giannakopoulos_Vickers
 
 With :math:`\nu` the Poisson's ratio and :math:`E` the Young's modulus of the indented material.
+
+Finally, it is first important to cite the work of Malzbender et al., who developped the relationship between the load and the indentation depth for elastoplastic materials, based on the knowledge of the Young's modulus and the hardness values of the material [#Malzbender_2002]_. Then, It is worth to mention the model of Oyen et al., who described sharp indentation behavior of time-dependent materials [#Oyen_2003]_.
 
 Unloading
 +++++++++++
@@ -225,7 +234,7 @@ a flat cylindrical punch). An expression of :math:`\epsilon` in function of the 
 exponent :math:`m` of the unloading curve fit has been proposed by Pharr et Bolshakov [#Pharr_2002]_ :
 
     .. math:: \epsilon = m \left( 1 - \frac{ 2 \Gamma \left( \frac{m}{2(m-1)} \right)}
-			  {\sqrt[]{\pi} \Gamma \left( \frac{1}{2(m-1)}(m-1) \right)} \right)
+    {\sqrt[]{\pi} \Gamma \left( \frac{1}{2(m-1)}(m-1) \right)} \right)
 
 With :math:`\Gamma` a |matlab| function which interpolates the factorial function : 
 `gamma <http://de.mathworks.com/help/matlab/ref/gamma.html?refresh=true>`_.
@@ -585,8 +594,11 @@ References
 .. [#Lucas_1996] `Lucas B.N. et al., "Time Dependent Deformation During Indentation Testing." (1996). <http://dx.doi.org/10.1557/PROC-436-233>`_
 .. [#Malzbender_2002] `Malzbender J. and de With G., "Indentation load–displacement curve, plastic deformation, and energy." (2002). <http://dx.doi.org/10.1557/JMR.2002.0070>`_
 .. [#Merle_2012] `Merle B. et al., "Experimental determination of the effective indenter shape and e-factor for nanoindentation by continuously measuring the unloading stiffness." (2012). <http://dx.doi.org/10.1557/jmr.2011.245>`_
+.. [#Morash_2007]_ `Morash K.R. and Bahr D.F., "An energy method to analyze through thickness
+thin film fracture during indentation." (2007). <http://dx.doi.org/10.1016/j.tsf.2006.01.043>`_
 .. [#OliverPharr_1992] `Oliver W.C. and Pharr G.M., "An improved technique for determining hardness and elastic modulus using load and displacement sensing indentation experiments" (1992). <http://dx.doi.org/10.1557/JMR.1992.1564>`_
 .. [#OliverPharr_2004] `Oliver W.C. and Pharr G.M., "Measurement of hardness and elastic modulus by instrumented indentation: Advances in understanding and refinements to methodology" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.1.3>`_
+.. [#Oyen_2003] `Oyen M.L. et al., "Load–displacement behavior during sharp indentation of viscous–elastic–plastic materials" (2003). <http://dx.doi.org/10.1557/JMR.2003.0020>`_
 .. [#Pharr_1992] `Pharr G.M. et al., "On the generality of the relationship among contact stiffness, contact area, and elastic modulus during indentation." (1992). <http://dx.doi.org/10.1557/JMR.1992.0613>`_
 .. [#Pharr_2002] `Pharr G.M. and Bolshakov A., "Understanding nanoindentation unloading curves." (2002). <http://dx.doi.org/10.1557/JMR.2002.0386>`_
 .. [#Pharr_2009] `Pharr G.M. et al., "Critical issues in making small-depth mechanical property measurements by nanoindentation with continuous stiffness measurement" (2009). <http://dx.doi.org/10.1557/jmr.2009.0096>`_
