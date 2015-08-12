@@ -217,12 +217,12 @@ over Young's modulus is less than 1% [#Bolshakov_1998]_, [#Cheng_1998]_ and [#Ch
 Three main models defining the depth of contact :math:`h_\text{c}` were developed
 to take into account this indentation contact topography.
 
-Model of Doerner and Nix [#DoernerNix_1986]_ :
+`Model of Doerner and Nix <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/function_area/contactDepth_Doerner.m>`_ [#DoernerNix_1986]_ :
    
     .. math:: h_\text{c} = h_\text{t} - \frac{F_\text{c}}{S}
             :label: doerner_nix_model
 
-Model of Oliver and Pharr [#OliverPharr_1992]_, [#Pharr_2002]_ and
+`Model of Oliver and Pharr <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/function_area/contactDepth_OliverPharr.m>`_ [#OliverPharr_1992]_, [#Pharr_2002]_ and
 [#OliverPharr_2004]_ in case of sink-in:
 
     .. math:: h_\text{c} = h_\text{t} - \epsilon \frac{F_\text{c}}{S}
@@ -255,7 +255,7 @@ More recently, Merle et al. have found experimentally with indentation test in f
 a value of 0.76 for :math:`\epsilon`, which is in a good agreement with the literature
 for a paraboloid of revolution [#Merle_2012]_.
 
-Model of Loubet et al. [#Hochstetter_1999]_, [#Bec_2006]_ in case of pile-up:
+`Model of Loubet et al. <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/function_area/contactDepth_Loubet.m>`_ [#Hochstetter_1999]_, [#Bec_2006]_ in case of pile-up:
 
     .. math:: h_\text{c} = \alpha \left(h_\text{t} - \frac{F_\text{c}}{S} + h_0\right)
             :label: loubet_model
@@ -263,7 +263,7 @@ Model of Loubet et al. [#Hochstetter_1999]_, [#Bec_2006]_ in case of pile-up:
 Where :math:`\alpha` is a constant function of the indented material
 (usually around 1.2) and the tip-defect :math:`h_0`.
 
-Knowing the depth of contact, it is possible to determine the area of contact
+Knowing the depth of contact, it is possible to determine the `area of contact <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/function_area/functionArea.m>`_
 :math:`A_\text{c}` for a perfect conical indenter (with a semi-angle from the apex :math:`\theta`):
 
     .. math:: A_\text{c} = \pi h_\text{c}^2 tan^2\left(\theta\right)
