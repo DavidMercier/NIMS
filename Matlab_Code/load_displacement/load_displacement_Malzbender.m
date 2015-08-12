@@ -1,8 +1,8 @@
 %% Copyright 2014 MERCIER David
-function load = load_displacement_Malzbender(h, Esample, Hsample, ...
+function P = load_displacement_Malzbender(h, Esample, Hsample, ...
     nu_sample, theta_eq, m, n, varargin)
-%% Function used plot the load-displacement curve using the expression proposed
-% by Malzbender et al. - http://dx.doi.org/10.1557/JMR.2002.0070
+%% Function used to calculate the indentation load using the expression proposed
+% by Malzbender et al. (2002) - http://dx.doi.org/10.1557/JMR.2002.0070
 
 % load: Indentation load in mN
 
@@ -38,13 +38,11 @@ epsilon = epsilon_oliver_pharr(m);
 
 beta = beta_hay(theta_eq, nu_sample);
 
-yieldStressValue = YieldStress(Hsample, 2.8);
-
 K = Esample / ((1/(tan(theta_eq) * pi^0.5)) * (Esample / Hsample)^0.5 + ...
     (epsilon/beta)*((pi*Hsample)/(4*Esample))^0.5)^2;
 
-fn =  (1.28 - 0.8*n)*(1 - 14.78 * (yieldStressValue / Esample));
+fn = strainHardening_functionMalzbender(Esample, Hsample, n);
 
-load = K .* (h .* fn).^2;
+P = K .* (h .* fn).^2;
 
 end
