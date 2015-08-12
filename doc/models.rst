@@ -593,8 +593,7 @@ References
 .. [#Lucas_1996] `Lucas B.N. et al., "Time Dependent Deformation During Indentation Testing." (1996). <http://dx.doi.org/10.1557/PROC-436-233>`_
 .. [#Malzbender_2002] `Malzbender J. and de With G., "Indentation load–displacement curve, plastic deformation, and energy." (2002). <http://dx.doi.org/10.1557/JMR.2002.0070>`_
 .. [#Merle_2012] `Merle B. et al., "Experimental determination of the effective indenter shape and e-factor for nanoindentation by continuously measuring the unloading stiffness." (2012). <http://dx.doi.org/10.1557/jmr.2011.245>`_
-.. [#Morash_2007] `Morash K.R. and Bahr D.F., "An energy method to analyze through thickness
-thin film fracture during indentation." (2007). <http://dx.doi.org/10.1016/j.tsf.2006.01.043>`_
+.. [#Morash_2007] `Morash K.R. and Bahr D.F., "An energy method to analyze through thickness thin film fracture during indentation." (2007). <http://dx.doi.org/10.1016/j.tsf.2006.01.043>`_
 .. [#OliverPharr_1992] `Oliver W.C. and Pharr G.M., "An improved technique for determining hardness and elastic modulus using load and displacement sensing indentation experiments" (1992). <http://dx.doi.org/10.1557/JMR.1992.1564>`_
 .. [#OliverPharr_2004] `Oliver W.C. and Pharr G.M., "Measurement of hardness and elastic modulus by instrumented indentation: Advances in understanding and refinements to methodology" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.1.3>`_
 .. [#Oyen_2003] `Oyen M.L. et al., "Load–displacement behavior during sharp indentation of viscous–elastic–plastic materials" (2003). <http://dx.doi.org/10.1557/JMR.2003.0020>`_
