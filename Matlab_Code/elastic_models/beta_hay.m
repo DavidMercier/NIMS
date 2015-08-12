@@ -5,6 +5,9 @@ function [beta, theta_eq, nu] = beta_hay(theta_eq, nu, varargin)
 % coefficient of the material indented.
 % See Hay J.C. (1999) - DOI: 10.1557/JMR.1999.0306
 
+% theta_eq: Half-angle of the indenter in degrees
+% nu: Poisson's coefficient of the sample
+
 if nargin  == 0
     % First plot in function of theta_eq
     nu = 0.3;
