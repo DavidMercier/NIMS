@@ -5,7 +5,7 @@ gui = guidata(gcf);
 
 %% Constants definition
 h_tip = str2double(gui.data.indenter_tip_defect); % Tip defect (in nm)
-aloubet = gui.config.numerics.alpha_Loubet;
+aLoubet = gui.config.numerics.alpha_Loubet;
 
 if gui.variables.val0 == 1 % Berkovich indenter
     epsilon = gui.config.numerics.epsilonParaboloidRevolution_OliverPharr;
@@ -20,14 +20,14 @@ end
 %% Calculation of hc (contact depth), Ac (contact area) and a (contact radius)
 % Contact depth calculation in nm
 if gui.variables.val1 == 1 % Doerner et al. (1986)
-    gui.results.hc = (gui.data.h + h_tip) - ...
-        (gui.data.P./gui.data.S);
+    gui.results.hc = contactDepth_Doerner(gui.data.h, h_tip, ...
+        gui.data.P, gui.data.S);
 elseif gui.variables.val1 == 2 % Oliver et al. (1992)
-    gui.results.hc = (gui.data.h + h_tip) - ...
-        (epsilon.*(gui.data.P./gui.data.S));
-elseif gui.variables.val1 == 3 % Loubet et al. (1992)
-    gui.results.hc = aloubet .* ...
-        (gui.data.h + h_tip - (gui.data.P./gui.data.S));
+    gui.results.hc = contactDepth_OliverPharr(gui.data.h, h_tip, ...
+        gui.data.P, gui.data.S, epsilon);
+elseif gui.variables.val1 == 3 % Hochstetter et al. (1998)
+    gui.results.hc = contactDepth_Loubet(gui.data.h, h_tip, ...
+        gui.data.P, gui.data.S, aLoubet);
 end
 
 % Check to avoid negative contact area introducing error in other
@@ -39,15 +39,9 @@ for ii = 1:length(gui.results.hc)
 end
 
 % Contact area calculation in nm2
-gui.results.Ac = gui.data.C0.*(gui.results.hc.^2) + ...
-    gui.data.C1.*(gui.results.hc.^1) + ...
-    gui.data.C2.*(gui.results.hc.^(1/2)) + ...
-    gui.data.C3.*(gui.results.hc.^(1/4)) + ...
-    gui.data.C4.*(gui.results.hc.^(1/8)) + ...
-    gui.data.C5.*(gui.results.hc.^(1/16)) + ...
-    gui.data.C6.*(gui.results.hc.^(1/32)) + ...
-    gui.data.C7.*(gui.results.hc.^(1/64)) + ...
-    gui.data.C8.*(gui.results.hc.^(1/128));
+coeffArea = [gui.data.C0, gui.data.C1, gui.data.C2, gui.data.C3, ...
+    gui.data.C4, gui.data.C5, gui.data.C6, gui.data.C7, gui.data.C8];
+gui.results.Ac = functionArea(gui.results.hc, coeffArea);
 
 % Check to avoid negative contact area introducing error in other
 % calculations of Young's modulus and hardness
