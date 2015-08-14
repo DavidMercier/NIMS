@@ -29,30 +29,30 @@ Format of data
 To analyze pop-in distribution, the Matlab PopIn toolbox was developed. The `Matlab code <https://github.com/DavidMercier/PopIn>`_
 is available on GitHub with `the documentation <http://popin.readthedocs.org/en/latest/>`_.
 
-Examples
-#########
+Agilent - MTS example files
+###############################
 
-* `0film_Si_CSM-2nm_noSD.txt <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/0film_Si_CSM-2nm_noSD.txt>`_
-    - Data for a bulk Silicon sample obtained by Berkovich indentation with no CSM mode (amplitude 2nm).
+* `MTS_0film_Si_CSM-2nm_noSD.txt <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/MTS_0film_Si_CSM-2nm_noSD.txt>`_
+    - Data for a bulk Silicon sample.
     - Data obtained by Berkovich indentation with CSM mode (amplitude 2nm) (no standard deviation).
 
-* `1film_SiO2_Si_CSM-2nm.xls <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/1film_SiO2_Si_CSM-2nm.xls>`_
+* `MTS_1film_SiO2_Si_CSM-2nm.xls <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/MTS_1film_SiO2_Si_CSM-2nm.xls>`_
     - Data for a thin film of Silicon thermal oxide (500nm) on a bulk Silicon sample.
     - Data obtained by Berkovich indentation with CSM mode (amplitude 2nm).
 
-* `1film_SiO2_Si_CSM-2nm_noSD.xls <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/1film_SiO2_Si_CSM-2nm_noSD.xls>`_
+* `MTS_1film_SiO2_Si_CSM-2nm_noSD.xls <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/MTS_1film_SiO2_Si_CSM-2nm_noSD.xls>`_
     - Data for a thin film of Silicon thermal oxide (500nm) on a bulk Silicon sample.
     - Data obtained by Berkovich indentation with CSM mode (amplitude 2nm) (no standard deviation).
 
-* `2films_Al_SiO2_Si_CSM-2nm.xls <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/2films_Al_SiO2_Si_CSM-2nm.xls>`_
+* `MTS_2films_Al_SiO2_Si_CSM-2nm.xls <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/MTS_2films_Al_SiO2_Si_CSM-2nm.xls>`_
     - Data for a thin film of PVD Aluminum (500nm) deposited on a bulk Silicon sample with a Silicon thermal oxide (500nm).
     - Data obtained by Berkovich indentation with CSM mode (amplitude 2nm).
 
-* `3films_Au-Ti-SiO2-Si_CSM-1nm.txt <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/3films_Au-Ti-SiO2-Si_CSM-1nm.txt>`_
+* `MTS_3films_Au-Ti-SiO2-Si_CSM-1nm.txt <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/MTS_3films_Au-Ti-SiO2-Si_CSM-1nm.txt>`_
     - Data for a thin film of PVD Gold (500nm) deposited on thin film of PVD Titanium (500nm) on a bulk Silicon sample with a Silicon thermal oxide (500nm).
     - Data obtained by Berkovich indentation with CSM mode (amplitude 1nm).
 
-* `3films_Au-Ti-SiO2-Si_CSM-1nm.xls <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/3films_Au-Ti-SiO2-Si_CSM-1nm.xls>`_
+* `MTS_3films_Au-Ti-SiO2-Si_CSM-1nm.xls <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/MTS_3films_Au-Ti-SiO2-Si_CSM-1nm.xls>`_
     - Data for a thin film of PVD Gold (500nm) deposited on thin film of PVD Titanium (500nm) on a bulk Silicon sample with a Silicon thermal oxide (500nm).
     - Data obtained by Berkovich indentation with CSM mode (amplitude 1nm).
 
@@ -64,6 +64,17 @@ A micrograph of this sample is given Figure 1.
    :align: center
    
    *Figure 1 : SEM cross-sectional observation of a multilayer sample.*
+   
+Hysitron example files
+############################
+
+* `Hysitron_TiAlloy_1plot.txt <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/Hysitron_TiAlloy_1plot.txt>`_
+    - Data for a Titanium alloy sample (1 indent).
+    - Data obtained by spherical indentation no CSM mode (no standard deviation).
+
+* `Hysitron_TiAlloy_multipleplot.txt <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/Hysitron_TiAlloy_multipleplot.txt>`_
+    - Data for a Titanium alloy sample (several indents).
+    - Data obtained by spherical indentation no CSM mode (no standard deviation).
     
 References
 ###########
@@ -83,3 +94,7 @@ References
 - `ISO 14577 - 3 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 3: Calibration of reference blocks", (2002). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=32193>`_
 
 - `ISO 14577 - 4 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 4: Test method for metallic and non-metallic coatings", (2007). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=39228>`_
+
+- `Agilent website <http://www.agilent.com/>`_
+
+- `Hysitron website <https://www.hysitron.com/>`_
