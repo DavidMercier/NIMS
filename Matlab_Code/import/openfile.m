@@ -18,8 +18,18 @@ gui.data.indenter_type_str = get_value_popupmenu(gui.handles.pm_set_indenter, ..
 title_importdata_Window = ...
     strcat('File Selector from', {' '}, char(gui.data.indenter_type_str));
 
+if strfind(char(gui.data.indenter_type_str), 'MTS') >= 1
+    extension_importdata_Window = '*.xls;*.txt;*.xlsx';
+    flagMTS = 1;
+    flagHys = 0;
+elseif strfind(char(gui.data.indenter_type_str), 'Hys') >= 1
+    extension_importdata_Window = '*.txt';
+    flagMTS = 0;
+    flagHys = 1;
+end
+
 [gui.data.filename_data, gui.data.pathname_data, filterindex_data] = ...
-    uigetfile([gui.config.data.data_path, '*.xls;*.txt;*.xlsx'], ...
+    uigetfile([gui.config.data.data_path, extension_importdata_Window], ...
     char(title_importdata_Window));
 
 %% Waitbar
@@ -64,24 +74,36 @@ if gui.flag.flag_data
         comma2point_overwrite(data2import); % Replace comma with a point
         data = importdata(gui.data.filename_data);
         
-        if size(data,2) == 3
-            gui.data.h_init       = data(:,1);
-            gui.data.delta_h_init = zeros(size(data,1),1);
-            gui.data.P_init       = data(:,2);
-            gui.data.delta_P_init = zeros(size(data,1),1);
-            gui.data.S_init       = data(:,3);
-            gui.data.delta_S_init = zeros(size(data,1),1);
-            gui.flag.flag_no_csm  = 1;
+        if flagMTS
+            if size(data,2) == 3
+                gui.data.h_init       = data(:,1);
+                gui.data.delta_h_init = zeros(size(data,1),1);
+                gui.data.P_init       = data(:,2);
+                gui.data.delta_P_init = zeros(size(data,1),1);
+                gui.data.S_init       = data(:,3);
+                gui.data.delta_S_init = zeros(size(data,1),1);
+                gui.flag.flag_no_csm  = 1;
+                
+            else
+                gui.data.h_init       = data(:,1);
+                gui.data.delta_h_init = data(:,2);
+                gui.data.P_init       = data(:,3);
+                gui.data.delta_P_init = data(:,4);
+                gui.data.S_init       = data(:,5);
+                gui.data.delta_S_init = data(:,6);
+                gui.flag.flag_no_csm  = 0;
+                
+            end
             
-        else
-            gui.data.h_init       = data(:,1);
-            gui.data.delta_h_init = data(:,2);
-            gui.data.P_init       = data(:,3);
-            gui.data.delta_P_init = data(:,4);
-            gui.data.S_init       = data(:,5);
-            gui.data.delta_S_init = data(:,6);
-            gui.flag.flag_no_csm  = 0;
-            
+        elseif flagHys
+                gui.data.h_init       = 0;
+                gui.data.delta_h_init = 0;
+                gui.data.P_init       = 0;
+                gui.data.delta_P_init = 0;
+                gui.data.S_init       = 0;
+                gui.data.delta_S_init = 0;
+                gui.flag.flag_no_csm  = 0;
+                
         end
         
         %% .xls file
@@ -212,7 +234,7 @@ if gui.flag.flag_data
     set(gui.handles.value_youngfilm1_GUI,        'String', 60);
     set(gui.handles.value_youngfilm2_GUI,        'String', 60);
     set(gui.handles.opendata_str_GUI,            'String', gui.data.filename_data);
-
+    
     refresh_indenters_GUI;
     gui = guidata(gcf); guidata(gcf, gui);
     
