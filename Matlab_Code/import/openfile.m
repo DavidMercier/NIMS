@@ -9,9 +9,18 @@ gui.handles.h_waitbar_load = waitbar(0, 'Import data in progress...');
 
 gui.flag.flag = 0;
 
+%% Get type on indenter used
+gui.data.indenter_type_val = get(gui.handles.pm_set_indenter, 'Value');
+gui.data.indenter_type_str = get_value_popupmenu(gui.handles.pm_set_indenter, ...
+    get(gui.handles.pm_set_indenter, 'String'));
+
 %% Open window to select file
+title_importdata_Window = ...
+    strcat('File Selector from', {' '}, char(gui.data.indenter_type_str));
+
 [gui.data.filename_data, gui.data.pathname_data, filterindex_data] = ...
-    uigetfile([gui.config.data.data_path, '*.xls;*.txt;*.xlsx'], 'File Selector');
+    uigetfile([gui.config.data.data_path, '*.xls;*.txt;*.xlsx'], ...
+    char(title_importdata_Window));
 
 %% Waitbar
 steps = 1000;
@@ -53,7 +62,7 @@ if gui.flag.flag_data
     if strcmp (ext, '.txt') == 1
         
         comma2point_overwrite(data2import); % Replace comma with a point
-        data = load(gui.data.filename_data); %importdata ??
+        data = importdata(gui.data.filename_data);
         
         if size(data,2) == 3
             gui.data.h_init       = data(:,1);
