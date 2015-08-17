@@ -23,7 +23,7 @@ if strfind(char(gui.data.indenter_type_str), 'MTS') >= 1
     flagMTS = 1;
     flagHys = 0;
 elseif strfind(char(gui.data.indenter_type_str), 'Hys') >= 1
-    extension_importdata_Window = '*.txt';
+    extension_importdata_Window = '*.txt;*.dat';
     flagMTS = 0;
     flagHys = 1;
 end

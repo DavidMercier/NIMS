@@ -6,31 +6,30 @@
 Please look at the experimental procedure proposed by Jennett N. M. and Bushby A. J. [#Jennett_2001]_,
 to perform nanoindentation tests on bulk, coatings or multilayer systems, and to the ISO standard (ISO 14577 - 1 to 4).
 
-Format of data
-###############
+Type of data - Pre-Requirements
+################################
+
+Only data continuously measured in function of the indentaton depth are accepted in the NIMS toolbox (e.g.:
+CSM mode for Agilent - MTS nanoindenter or DMA mode for Hysitron).
+
+You data must only have the loading part from the load-displacement curves of your (nano)indentation results. In the case of data saved in a 'Sample' sheet of a .xls file obtained with 'Analyst' (MTS software) containing a 'Hold Segment Type', the toolbox is able to consider only the loading part of your results.
+
+Please, check if the surface detection is well done, especially if the substrate is compliant [#Kaufman_2009]_ and [#Piccarolo_2010]_.
+For more explanations about the surface detection, look into the `NIMS documentation <http://nims.readthedocs.org/en/latest/models.html>`_.
+
+It is advised to use average results from at least 10 indentation tests to avoid artefacts
+(e.g. pop-in, roughness, local impurities or dust on the sample's surface...).
+
+.. note::
+    To analyze pop-in distribution, the Matlab PopIn toolbox was developed. The `Matlab code <https://github.com/DavidMercier/PopIn>`_
+    is available on GitHub with `the documentation <http://popin.readthedocs.org/en/latest/>`_.
+
+Agilent - MTS example files
+###############################
 
 * Both .txt or .xls files are accepted.
 * 3 columns (Displacement / Load / Stiffness)
 * 6 columns (Disp. / SD (Disp.) / Load / SD (Load.) / Stiff. / SD (Stiff.)) (SD for Standard Deviation)
-
-..  warning::
-    You data must only have the loading part from the load-displacement curves of your (nano)indentation results.
-    In the case of data saved in a 'Sample' sheet of a .xls file obtained from MTS software - Analyst with a 'Hold Segment Type',
-    the toolbox is able to consider only the loading part of your results.
-
-..  warning::
-    It is advised to use average results from at least 10 indentation tests to avoid artefacts
-    (e.g. pop-in, roughness, local impurities or dust on the sample's surface...).
-
-..  warning::
-    Please, check if the surface detection is well done, especially if the substrate is compliant [#Kaufman_2009]_ and [#Piccarolo_2010]_.
-    For more explanations about the surface detection, look into the `NIMS documentation <http://nims.readthedocs.org/en/latest/models.html>`_.
-
-To analyze pop-in distribution, the Matlab PopIn toolbox was developed. The `Matlab code <https://github.com/DavidMercier/PopIn>`_
-is available on GitHub with `the documentation <http://popin.readthedocs.org/en/latest/>`_.
-
-Agilent - MTS example files
-###############################
 
 * `MTS_0film_Si_CSM-2nm_noSD.txt <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/MTS_0film_Si_CSM-2nm_noSD.txt>`_
     - Data for a bulk Silicon sample.
@@ -67,6 +66,8 @@ A micrograph of this sample is given Figure 1.
    
 Hysitron example files
 ############################
+
+* Both .txt or .dat files are accepted.
 
 * `Hysitron_TiAlloy_1plot.txt <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/Hysitron_TiAlloy_1plot.txt>`_
     - Data for a Titanium alloy sample (1 indent).
