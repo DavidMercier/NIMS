@@ -7,10 +7,10 @@ Please look at the experimental procedure proposed by Jennett N. M. and Bushby A
 to perform nanoindentation tests on bulk, coatings or multilayer systems, and to the ISO standard (ISO 14577 - 1 to 4).
 
 Type of data - Pre-Requirements
-################################
+##################################
 
 Only data continuously measured in function of the indentaton depth are accepted in the NIMS toolbox (e.g.:
-CSM mode for Agilent - MTS nanoindenter or DMA mode for Hysitron).
+CSM mode for Agilent - MTS nanoindenter or CMX algorithm for Hysitron nanoindenter).
 
 You data must only have the loading part from the load-displacement curves of your (nano)indentation results. In the case of data saved in a 'Sample' sheet of a .xls file obtained with 'Analyst' (MTS software) containing a 'Hold Segment Type', the toolbox is able to consider only the loading part of your results.
 
@@ -30,6 +30,7 @@ Agilent - MTS example files
 * Both .txt or .xls files are accepted.
 * 3 columns (Displacement / Load / Stiffness)
 * 6 columns (Disp. / SD (Disp.) / Load / SD (Load.) / Stiff. / SD (Stiff.)) (SD for Standard Deviation)
+
 
 * `MTS_0film_Si_CSM-2nm_noSD.txt <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/MTS_0film_Si_CSM-2nm_noSD.txt>`_
     - Data for a bulk Silicon sample.
@@ -65,20 +66,21 @@ A micrograph of this sample is given Figure 1.
    *Figure 1 : SEM cross-sectional observation of a multilayer sample.*
    
 Hysitron example files
-############################
+##########################
 
 * Both .txt or .dat files are accepted.
 
-* `Hysitron_TiAlloy_1plot.txt <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/Hysitron_TiAlloy_1plot.txt>`_
+
+* `Hysitron_exa.txt <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/Hysitron_TiAlloy_1plot.txt>`_
     - Data for a Titanium alloy sample (1 indent).
     - Data obtained by spherical indentation no CSM mode (no standard deviation).
 
 * `Hysitron_TiAlloy_multipleplot.txt <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/Hysitron_TiAlloy_multipleplot.txt>`_
     - Data for a Titanium alloy sample (several indents).
     - Data obtained by spherical indentation no CSM mode (no standard deviation).
-    
+
 References
-###########
+############
 
 .. [#Jennett_2001] `Jennett N. M. and Bushby A. J., "Adaptive Protocol for Robust Estimates of Coatings Properties by Nanoindentation" (2001). <http://dx.doi.org/10.1557/PROC-695-L3.1.1>`_
 
