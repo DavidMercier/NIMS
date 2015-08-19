@@ -124,9 +124,8 @@ written by A.C. Fischer-Cripps [#FischerCripps_2004]_.
 Bückle (1961) 
 --------------
 
-Bückle proposed an empirical law to characterize thick coatings on a substrate [#Bückle_1961]_.
-It is possible to estimate the Young's modulus of the coating for indentation depth lower than 10% of the film thickness.
-But, because of the imperfections of the indenters, the roughness and the surface pollution,
+Bückle proposed an empirical law ("rule of thumb") to characterize thick coatings on a substrate [#Bückle_1961]_.
+It is possible to estimate the Young's modulus of the coating for indentation depth lower than ":math:`10\text{%}`" of the film thickness. But, because of the imperfections of the indenters, the roughness and the surface pollution,
 it is more meaningful to use this rule of the ":math:`10\text{%}`", for film thicker than :math:`500\text{nm}`.
 
 Doerner and Nix (1986) 
@@ -508,7 +507,8 @@ Plastic properties of a thin film on a substrate
 ###################################################
 
 It is possible to estimate empirically the hardness of the coating for indentation depth
-lower than ":math:`40\text{%}`" of the film thickness.
+lower than ":math:`40\text{%}`" of the film thickness. Like the rule of the ":math:`10\text{%}`"
+for the extraction of elastic properties, it is a "rule of thumb".
 But, because of the imperfections of the indenters, the roughness and the surface pollution,
 it is more meaningful to use this rule of the ":math:`40\text{%}`", for film thicker than :math:`500\text{nm}`.
 
@@ -546,7 +546,7 @@ With :math:`A_\text{f}` the area on which the mean pressure :math:`H_\text{f}` a
 
 With :math:`d` the diagonal of the indent, :math:`t` the film thickness
 and :math:`C` a constant equal to :math:`0.5` for hard coatings on very soft substrates
-(:math:`6.3 < \frac{H_\text{f}}{H_\text{s}} < 12.9`) or to 1 when the coatings and
+(:math:`6.3 < \frac{H_\text{f}}{H_\text{s}} < 12.9`) or to :math:`1` when the coatings and
 substrate hardnesses are more similar (:math:`1.8 < \frac{H_\text{f}}{H_\text{s}} < 2.3`).
 
 [#Iost_1996]_
