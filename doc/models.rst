@@ -72,9 +72,11 @@ Load-Displacement curves
 ---------------------------
 
 In this first part, only quasistatic nanoindentation is considered, when a load is applied and removed to a sample.
-Parameters such as contact load :math:`F_\text{c}` and depth of penetration (displacement) :math:`h_0` are continuously recorded
-at a rapid rate (normally 10Hz) during loading and unloading steps of the indentation test.
-Usually, the depth resolution is around the :math:`\text{nm}`-level and the load resolution is around :math:`\text{nN}`-level.
+Parameters such as contact load :math:`F_\text{c}` (in :math:`\text{N}`) and depth of penetration (displacement)
+:math:`h_0` (in :math:`\text{m}`) are continuously recorded at a rapid rate (normally :math:`10\text{Hz}`)
+during loading and unloading steps of the indentation test.
+Usually, the depth resolution is around the :math:`\text{nm}`-level
+and the load resolution is around :math:`\text{nN}`-level.
 
 Initial penetration
 +++++++++++++++++++++
@@ -90,7 +92,8 @@ of the initial contact point between the indenter and the sample [#Fischer-Cripp
 
 Usually, the point of contact is determined from the load-displacement curve,
 when a sharp rise in the force signal is observed.
-Then, initial penetration :math:`h_\text{i}` is estimated by extrapolating the recorded load–displacement data back to zero load.
+Then, initial penetration :math:`h_\text{i}` is estimated by extrapolating
+the recorded load–displacement data back to zero load.
 
     .. math:: h = h_0 + h_\text{i}
             :label: initial_disp
@@ -104,7 +107,7 @@ The evolution of this curve depends on material properties of
 the sample and the indenter, and of the indenter's geometry.
 
 The tangent (or the slope) of the part of the unloading curve at the maximum load
-gives access to the contact stiffness :math:`S`:
+gives access to the contact stiffness :math:`S` (in :math:`\text{N/m}`):
 
     .. math:: S = \frac{dF_\text{c}}{dh}
             :label: stiffness
@@ -115,7 +118,8 @@ gives access to the contact stiffness :math:`S`:
    
    *Figure 3 : Schematic of indentation load-displacement curve.*
 
-With :math:`h_\text{t}` the total penetration corrected of the frame compliance and :math:`h_\text{r}` the residual indentation depth after unloading.
+With :math:`h_\text{t}` the total penetration corrected of the frame compliance
+and :math:`h_\text{r}` the residual indentation depth after unloading.
 
 It is worth to mention that for quasistatic nanoindentation, the contact stiffness is a unique value
 obtained at the maximum load and at the maximum displacement. Nevertheless, it is possible to apply a multiple-point
@@ -133,7 +137,8 @@ Frame compliance
 
 Before any analysis, it is important to correct raw data of the effect of the frame compliance.
 The frame compliance is defined by the deflections of the load frame instead of displacement 
-into the studied material. This frame compliance :math:`C_\text{f}` contributes to the measured indentation depth and to the contact stiffness [#Fischer-Cripps_2006]_.
+into the studied material. This frame compliance :math:`C_\text{f}` (in :math:`\text{m/N}`) contributes to the measured
+indentation depth and to the contact stiffness [#Fischer-Cripps_2006]_.
 
     .. math:: h_\text{t} = h - F_\text{c}{C_\text{f}}
             :label: corrected_totaldisp
@@ -141,7 +146,11 @@ into the studied material. This frame compliance :math:`C_\text{f}` contributes 
     .. math:: S = \left(\frac{dh}{dF_\text{c}} - C_\text{f}\right)^{-1}
             :label: corrected_stiffness
 
-To determine the frame compliance, it is required to plot :math:`\frac{dh}{dF_\text{c}}` vs. the corrected total depth :math:`(1/h_\text{t})` or the corrected plastic depth :math:`(1/{h_\text{c}})` (see the following part "Indentation contact topography" for the definition of the plastic depth) [#DoernerNix_1986]_ and [#Fischer-Cripps_2006]_. Then, a linear fit of this curve gives an intercept with the ordinate axis which is the frame compliance (see Figure 5).
+To determine the frame compliance, it is required to plot :math:`\frac{dh}{dF_\text{c}}` vs. 
+the corrected total depth :math:`(1/h_\text{t})` or the corrected plastic depth :math:`(1/{h_\text{c}})`
+(see the following part "Indentation contact topography" for the definition of the plastic depth)
+[#DoernerNix_1986]_ and [#Fischer-Cripps_2006]_.
+Then, a linear fit of this curve gives an intercept with the ordinate axis which is the frame compliance (see Figure 5).
 
 .. figure:: ./_pictures/frame_compliance.png
    :scale: 60 %
@@ -149,16 +158,20 @@ To determine the frame compliance, it is required to plot :math:`\frac{dh}{dF_\t
    
    *Figure 5 : Schematic of the plot to determine the frame compliance.*
 
-It is advised to perform indentation tests on a variety of bulk standard specimens (fused silica, silicon and sapphire provide a very good range), in order to estimate better the frame compliance.
+It is advised to perform indentation tests on a variety of bulk standard specimens
+(fused silica, silicon and sapphire provide a very good range), in order to estimate better the frame compliance.
 
-Moreover, when the sample flexes or has heterogeneities (free edges, interfaces between regions of different properties...),
+Moreover, when the sample flexes or has heterogeneities
+(free edges, interfaces between regions of different properties...),
 nanoindentation measurements are affected by the structural compliance :math:`C_\text{s}`.
-Then, it is possible to correct experimental data of this artifact by following the experimental approach proposed by [#Jakes_2008]_.
+Then, it is possible to correct experimental data of this artifact
+by following the experimental approach proposed by [#Jakes_2008]_.
 
 Loading
 +++++++++
 
-Loubet et al. founded a good fit to the loading part of the load-displacement curve with a power-law relationship of the form [#Loubet_1986]_ :
+Loubet et al. founded a good fit to the loading part of the load-displacement
+curve with a power-law relationship of the form [#Loubet_1986]_ :
 
         .. math:: F_\text{c} = K h_\text{t}^n
                 :label: Loubet_load_displacement
@@ -193,7 +206,12 @@ and Vickers indenter :eq:`Giannakopoulos_Vickers` [#Giannakopoulos_1994]_, by nu
 
 With :math:`\nu` the Poisson's ratio and :math:`E` the Young's modulus of the indented material.
 
-Finally, it is first important to cite the work of Malzbender et al., who developped the relationship between the load and the indentation depth for elastoplastic materials, based on the knowledge of the Young's modulus and the hardness values of the material [#Malzbender_2002]_. Then, It is worth to mention the model of Oyen et al., who described sharp indentation behavior of time-dependent materials [#Oyen_2003]_.
+Finally, it is first important to cite the work of Malzbender et al.,
+who developped the relationship between the load and the indentation depth
+for elastoplastic materials, based on the knowledge of the Young's modulus
+and the hardness values of the material [#Malzbender_2002]_.
+Then, It is worth to mention the model of Oyen et al.,
+who described sharp indentation behavior of time-dependent materials [#Oyen_2003]_.
 
 Unloading
 +++++++++++
@@ -212,8 +230,8 @@ Loading rate
 ++++++++++++++
 
 The mechanical response of a material is function of the imposed indentation
-strain rate :math:`\dot{\epsilon}` [#Lucas_1996]_. Thus, it is meaningful to perform indentation
-tests with a constant indentation strain rate.
+strain rate :math:`\dot{\epsilon}` (in :math:`\text{s}^{-1}`) [#Lucas_1996]_.
+Thus, it is meaningful to perform indentation tests with a constant indentation strain rate.
 
     .. math:: \dot{\epsilon} = \frac{\dot{h}}{h} = \frac{1}{2} \frac{\dot{F_\text{c}}}{F_\text{c}}
             :label: strain_rate
@@ -295,7 +313,7 @@ Where :math:`\alpha` is a constant function of the indented material
 (usually around 1.2) and the tip-defect :math:`h_0`.
 
 Knowing the depth of contact, it is possible to determine the `area of contact <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/function_area/functionArea.m>`_
-:math:`A_\text{c}` for a perfect conical indenter (with a semi-angle from the apex :math:`\theta`):
+:math:`A_\text{c}` (in :math:`\text{m}^{2}`) for a perfect conical indenter (with a semi-angle from the apex :math:`\theta`):
 
     .. math:: A_\text{c} = \pi h_\text{c}^2 tan^2\left(\theta\right)
             :label: ConicalfunctionArea
@@ -321,7 +339,7 @@ A perfect sphere of radius :math:`R` is defined by the first two terms with
 a hyperboloid of revolution, a very reasonable shape for a tip-rounded cone
 or pyramid that approaches a fixed angle at large distances from the tip.
 
-An equivalent contact radius :math:`a_\text{c}` is also defined based on the area function.
+An equivalent contact radius :math:`a_\text{c}` (in :math:`\text{m}`) is also defined based on the area function.
 
     .. math:: a_\text{c} = \sqrt\frac{A_\text{c}}{\pi}
             :label: contact_radius
@@ -367,7 +385,7 @@ This technique is named **Continuous Stiffness Measurement** (CSM) for Agilent -
    :scale: 60 %
    :align: center
    
-   *Figure 9 : Schematic of the CSM loading cycle.*
+   *Figure 9 : Schematic of the dynamic loading cycle.*
 
     .. math:: S = \left[\frac{1}{\frac{F_\text{c}}{h_\text{t}}\cos\phi-\left(K_\text{s} - m\omega^2\right)} -
               \frac{1}{K_\text{f}}\right]^{-1}
@@ -377,7 +395,7 @@ This technique is named **Continuous Stiffness Measurement** (CSM) for Agilent -
             :label: CSM_contact_damping
             
 With :math:`m` the mass of the indenter column,
-:math:`C` the harmonic contact damping,
+:math:`C` the harmonic contact damping in N.s/m,
 :math:`C_\text{s}` the system damping coefficient,
 :math:`K_\text{s}` the stiffness of the indenter support springs and
 :math:`K_\text{f}` the stiffness of the load frame.
@@ -423,7 +441,7 @@ constant :math:`K`, using :eq:`csm_K_m`.
    
    *Figure 10 : Evolution of K in function of m.*
 
-Find here the |matlab| function to calculate the CSM corrections to apply on depth, load and stiffness:
+Find here the |matlab| function to calculate the corrections to apply on depth, load and stiffness during dynamic nanoindentation:
 `CSM_correction.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/CSM_correction.m>`_.
 
 Find here the |matlab| function to calculate the constant :math:`K` in function of :math:`m`:
@@ -440,7 +458,7 @@ were the first to determine the reduced Young's modulus of a material with the
 relationships established by Love [#Love_1939]_, Galin [#Galin_1946]_ and Sneddon [#Sneddon_1948]_,
 between the applied load and the displacement during an indentation test of an elastic material.
 
-They proposed to expressed the reduced Young's modulus in function
+They proposed to expressed the reduced Young's modulus :math:`E^{*}` (in :math:`\text{GPa}`) in function
 of the contact area and the contact stiffness :
 
     .. math:: E^{*} = \frac{1}{2} \sqrt\frac{\pi}{A} S
@@ -490,7 +508,7 @@ Find here the |matlab| function to plot the :math:`\beta` function of Hay et al.
    in function of the Poisson's ratio for a Berkovich indenter.*
 
 Knowing the material properties of the indenter, it is possible to calculate
-the reduced Young's modulus of the indented material (:math:`E^{'}`). 
+the reduced Young's modulus :math:`E^{'}` (in :math:`\text{GPa}`) of the indented material.
 
     .. math:: \frac{1}{E^{'}} = \frac{1}{E^{*}} - \frac{1}{E_\text{i}^{'}}
             :label: youngs_modulus
@@ -510,16 +528,20 @@ the Poisson's ratio of the material of the indenter.
     
 Find here the |matlab| function to calculate the Young's modulus:
 `model_elastic.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_elastic.m>`_.
-    
-A loss modulus can be defined by the following equation :
+
+If dynamic nanoindentation is performed, a loss modulus :math:`E^{'*}`
+(in :math:`\text{GPa}`) can be defined by the following equation :
 
     .. math:: E^{'*} = \frac{C\omega}{2} \sqrt\frac{\pi}{A}
             :label: loss_modulus
+            
+Find here the |matlab| function to calculate the loss modulus:
+`loss_modulus.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/loss_modulus.m>`_.
 
 Extraction of plastic properties 
 ##################################
 
-The hardness :math:`H` of the material is defined according to
+The hardness :math:`H` (in :math:`\text{GPa}`) of the material is defined according to
 Oliver and Pharr [#OliverPharr_1992]_, by the following expression :
 
     .. math:: H = \frac{F_\text{c,max}}{A_\text{c}}
@@ -531,8 +553,8 @@ Find here the |matlab| function to calculate the hardness:
 Energy approach
 #################
 
-Another way to access indentation data is the use of the energy
-dissipated during the indentation. The elastic and plastic energies
+Another way to access indentation data is the use of the energy :math:`W_\text{tot}` (in :math:`\text{J} = \text{N/m}`)
+dissipated during the indentation. The elastic :math:`W_\text{e}` and plastic :math:`W_\text{p}` energies
 are based on the integral of the loading and unloading curve
 (see Figure 12) [#ChengCheng_1998]_ and [#Malzbender_2002]_.
 
