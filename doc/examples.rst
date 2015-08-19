@@ -10,7 +10,7 @@ Type of data - Pre-Requirements
 ##################################
 
 Only data continuously measured in function of the indentaton depth are accepted in the NIMS toolbox (e.g.:
-CSM mode for Agilent - MTS nanoindenter or CMX algorithm for Hysitron nanoindenter).
+CSM mode for Agilent - MTS nanoindenter or DMA - CMX algorithm for Hysitron nanoindenter).
 
 You data must only have the loading part from the load-displacement curves of your (nano)indentation results. In the case of data saved in a 'Sample' sheet of a .xls file obtained with 'Analyst' (MTS software) containing a 'Hold Segment Type', the toolbox is able to consider only the loading part of your results.
 
