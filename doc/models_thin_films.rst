@@ -26,7 +26,7 @@ Composite reduced Young's modulus and composite hardness
 
 For indentation test on a coated specimen or on a multilayer sample (e.g.: thin films deposited on a substrate),
 the evolution of the Young's modulus or the hardness calculated with models used for bulk materials,
-is function of the material properties and the thickness :math:`t` (in :math:`\text{m}`) each underlying film (substrate included),
+is function of the material properties and the thickness :math:`t` (in :math:`\text{m}`) of each underlying film (substrate included),
 and the properties and the geometry of the indenter.
 
 .. figure:: ./_pictures/multilayerSEM.png
@@ -45,6 +45,7 @@ Thus, the composite reduced Young's modulus :math:`E^{'}` and the composite hard
 calculated with the models used for bulk materials, can generally be expressed as a combination of respectively
 the reduced Young's moduli :math:`(E^{'}_\text{f})` or the hardness :math:`(H_\text{f})` of each underlayer and
 respectively the reduced Young's modulus :math:`(E^{'}_\text{s})` or the hardness :math:`(H_\text{s})` of the substrate.
+The reduced Young's moduli and the hardness are in :math:`\text{GPa}`.
 
     .. math:: E^{'} = f(E^{'}_{\text{f},{i \rightarrow n}}, t_{i \rightarrow n}, E^{'}_\text{s})
             :label: youngs_modulus_evolution
@@ -63,11 +64,12 @@ For nanoindentation tests on thin films, the contact topography is function of b
    :scale: 60 %
    :align: center
    
-   *Figure 3 : Schematic depiction of a) "pile-up" and b) "sink-in" for thin films.*
+   *Figure 3 : Schematic depiction of a) "pile-up" and b) "sink-in" observed during thin film indentation.*
    
 The Figure 3-a ("pile-up") is typical of the case of a soft film on a hard substrate and the Figure 3-b ("sink-in")
 of a hard film on a soft substrate [#ChenVlassak2001]_. To determine the depth of contact,
-`the same models <http://nims.readthedocs.org/en/latest/models.html#indentation-contact-topography>`_ described for bulk material indentation are used.
+`the same models <http://nims.readthedocs.org/en/latest/models.html#indentation-contact-topography>`_
+described for bulk material indentation are used.
 
 Corrections to apply for thin film indentation 
 ------------------------------------------------
@@ -77,8 +79,9 @@ of the film beneath the indenter is smaller than its original value,
 because of plastic flow during loading. The use of the original film thickness
 :math:`t` in the regression model cause a systematic shift or distortion
 of the Young's modulus curve. A correction proposed by Mencík et al. can be
-applied, assuming a rigid substrate and determining the effective thickness :math:`t_\text{eff}`
-[#Mencík_1997]_, [#Saha_2002]_, [#Chen_2004]_, [#Bec_2006]_ and [#Li_2010]_.
+applied, assuming a rigid substrate and determining the effective thickness
+:math:`t_\text{eff}` (in :math:`\text{m}`) [#Mencík_1997]_, [#Saha_2002]_,
+[#Chen_2004]_, [#Bec_2006]_ and [#Li_2010]_.
 
     .. math:: \pi a^2 t_\text{eff} = \pi a^2 t - V
             :label: general_thickness_correction
@@ -110,11 +113,13 @@ be independent of indentation depth and that its value ranges from
 Elastic properties of a thin film on a substrate
 ##################################################
 
-Several models to analyse indentation tests on bilayer sample and multilayer sample and to extract intrinsic
-material properties of the upper film (or the top coating) are detailed in the following part.
+Several models to analyse indentation tests on bilayer sample and
+multilayer sample and to extract intrinsic material properties of
+the upper film (or the top coating) are detailed in the following part.
 
 Some of the following models developed are detailed in the chapter 8 
-("Nanoindentation of Thin Films") of the book "Nanoindentation" written by A.C. Fischer-Cripps [#FischerCripps_2004]_.
+("Nanoindentation of Thin Films") of the book "Nanoindentation"
+written by A.C. Fischer-Cripps [#FischerCripps_2004]_.
 
 Bückle (1961) 
 --------------
@@ -122,12 +127,13 @@ Bückle (1961)
 Bückle proposed an empirical law to characterize thick coatings on a substrate [#Bückle_1961]_.
 It is possible to estimate the Young's modulus of the coating for indentation depth lower than 10% of the film thickness.
 But, because of the imperfections of the indenters, the roughness and the surface pollution,
-it is more meaningful to use this rule of the "10%", for film thicker than 500nm.
+it is more meaningful to use this rule of the ":math:`10\text{%}`", for film thicker than :math:`500\text{nm}`.
 
 Doerner and Nix (1986) 
 -------------------------
 
-The model of Doerner and Nix is detailed in many papers [#DoernerNix_1986]_, [#King_1987]_, [#Pharr_1992]_ and [#Saha_2002]_, and is described by the following equation :
+The model of Doerner and Nix is detailed in many papers [#DoernerNix_1986]_,
+[#King_1987]_, [#Pharr_1992]_ and [#Saha_2002]_, and is described by the following equation :
 
     .. math:: \frac{1}{E^{'}} = \frac{1}{E_\text{f}^{'}} + \left(\frac{1}{E_\text{s}^{'}}
               - \frac{1}{E_\text{f}^{'}}\right) e^{-\alpha\left(x\right)}
@@ -320,7 +326,7 @@ Find here the |matlab| function for the sigmoidal function used in the Jung's mo
 `sigmoidal_jung.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/sigmoidal_jung.m>`_.
 
 Find here the |matlab| function for the Jung et al. model :
-`jung.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_jung.m>`_.
+`model_jung.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_jung.m>`_.
 
 Bec et al. (2006) 
 -------------------
@@ -502,8 +508,9 @@ Plastic properties of a thin film on a substrate
 ###################################################
 
 It is possible to estimate empirically the hardness of the coating for indentation depth
-lower than 40% of the film thickness. But, because of the imperfections of the indenters,
-the roughness and the surface pollution, it is more meaningful to use this rule of the "40%", for film thicker than :math:`500\text{nm}`.
+lower than ":math:`40\text{%}`" of the film thickness.
+But, because of the imperfections of the indenters, the roughness and the surface pollution,
+it is more meaningful to use this rule of the ":math:`40\text{%}`", for film thicker than :math:`500\text{nm}`.
 
 Bückle (1961)
 -----------------
