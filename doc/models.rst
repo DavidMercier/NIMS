@@ -224,7 +224,7 @@ by the following power-law relationship [#Pharr_2002]_ :
 
 Where :math:`h_\text{r}` is the final displacement after complete unloading, and
 :math:`\alpha_\text{u}` and :math:`m` are material constants. Many experiments performed by 
-Pharr and Bolshakov leaded to an average value for :math:`m` close to 1.5 for the Berkovich indenter.
+Pharr and Bolshakov leaded to an average value for :math:`m` close to :math:`1.5` for the Berkovich indenter.
 
 Loading rate
 ++++++++++++++
@@ -247,8 +247,8 @@ Two kind of topography can occur:
 
 The flow of material below the indenter is function of mechanical properties of the material.
 
-Pile-up occurs when work-hardening coefficient is low (< 0.3) or if the ratio yield stress
-over Young's modulus is less than 1% [#Bolshakov_1998]_, [#Cheng_1998]_ and [#Cheng_2004]_.
+Pile-up occurs when work-hardening coefficient is low (:math:`< 0.3`) or if the ratio yield stress
+over Young's modulus is less than :math:`1%` [#Bolshakov_1998]_, [#Cheng_1998]_ and [#Cheng_2004]_.
 
 .. figure:: ./_pictures/contact_topography.png
    :scale: 60 %
@@ -277,8 +277,8 @@ to take into account this indentation contact topography.
     .. math:: h_\text{c} = h_\text{t} - \epsilon \frac{F_\text{c}}{S}
             :label: oliver_pharr_model
               
-Where :math:`\epsilon` is a function of the indenter's geometry (0.72 for conical indenter,
-0.75 for `paraboloids of revolution <https://en.wikipedia.org/wiki/Paraboloid>`_ and 1 for
+Where :math:`\epsilon` is a function of the indenter's geometry (:math:`0.72` for conical indenter,
+:math:`0.75` for `paraboloids of revolution <https://en.wikipedia.org/wiki/Paraboloid>`_ and 1 for
 a flat cylindrical punch). An expression of :math:`\epsilon` in function of the power law
 exponent :math:`m` of the unloading curve fit has been proposed by Pharr et Bolshakov [#Pharr_2002]_ :
 
@@ -296,12 +296,12 @@ Find here the |matlab| function to plot the :math:`\epsilon` function :
 
    *Figure 8 : Evolution of epsilon in function of the power law exponent m of the unloading curve.*
 
-0.72 should be most applicable for a Berkovich indenter, which is more like
+:math:`0.72` should be most applicable for a Berkovich indenter, which is more like
 a cone than a paraboloid of revolution. But, Oliver and Pharr concluded after
-a large number of experiments that the best value for the Berkovich indenter is 0.75.
+a large number of experiments that the best value for the Berkovich indenter is :math:`0.75`.
 
 More recently, Merle et al. have found experimentally with indentation test in fused silica,
-a value of 0.76 for :math:`\epsilon`, which is in a good agreement with the literature
+a value of :math:`0.76` for :math:`\epsilon`, which is in a good agreement with the literature
 for a paraboloid of revolution [#Merle_2012]_.
 
 `Model of Loubet et al. <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/function_area/contactDepth_Loubet.m>`_ [#Hochstetter_1999]_, [#Bec_2006]_ in case of pile-up:
@@ -310,7 +310,7 @@ for a paraboloid of revolution [#Merle_2012]_.
             :label: loubet_model
 
 Where :math:`\alpha` is a constant function of the indented material
-(usually around 1.2) and the tip-defect :math:`h_0`.
+(usually around :math:`1.2`) and the tip-defect :math:`h_0`.
 
 Knowing the depth of contact, it is possible to determine the `area of contact <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/function_area/functionArea.m>`_
 :math:`A_\text{c}` (in :math:`\text{m}^{2}`) for a perfect conical indenter (with a semi-angle from the apex :math:`\theta`):
@@ -329,8 +329,8 @@ contact area has been established by Oliver and Pharr [#OliverPharr_1992]_,
 With the coefficients :math:`C_0` and :math:`C_\text{n}` obtained by curve fitting procedures,
 from nanoindentation experiments in fused silica (amorphous and isotropic material).
 
-For a perfect Berkovich indenter :math:`C_0` is equal to 24.56 and for a
-perfect Vickers indenter :math:`C_0` is equal to 24.504 (see Table 1).
+For a perfect Berkovich indenter :math:`C_0` is equal to :math:`24.56` and for a
+perfect Vickers indenter :math:`C_0` is equal to :math:`24.504` (see Table 1).
 
 The second term of the area function :math:`A_\text{c}` describes a paraboloid
 of revolution, which approximates to a sphere at small penetration depths.
@@ -368,12 +368,13 @@ Three preponderant deformation modes are distinguished :
 - :math:`\Delta > 0.83` implies pile-up formation.
 
 Giannakopoulos and Suresh founded a critical value for a similar
-criterion about 0.875 [#Giannakopoulos_1999]_.
+criterion about :math:`0.875` [#Giannakopoulos_1999]_.
 
 Dynamic nanoindentation
 -------------------------
 
-The dynamic indentation is when a small dynamic oscillation (usually 2nm of amplitude) with a given frequency (:math:`\omega`) (usually 45Hz)
+The dynamic indentation is when a small dynamic oscillation (usually :math:`2\text{nm}` of amplitude)
+with a given frequency (:math:`\omega`) (usually :math:`45\text{Hz}`)
 is imposed on the force (or displacement) signal. The amplitude of the displacement (or load)
 and the phase angle between the force and displacement signals (:math:`\phi`) are measured using a
 frequency-specific amplifier. This technique allows to calculate the elastic
@@ -431,8 +432,8 @@ These constants are related by the following equation :
     .. math:: K = \left(\frac{2}{{m\sqrt{\pi}}}\right)^m
             :label: csm_K_m
 
-Pharr and Bolshakov founded a value of 1.380 for :math:`m` after many Berkovich indentation
-tests on a variety of materials [#Pharr_2002]_. Thus, a value of 0.757 is used for the
+Pharr and Bolshakov founded a value of :math:`1.380` for :math:`m` after many Berkovich indentation
+tests on a variety of materials [#Pharr_2002]_. Thus, a value of :math:`0.757` is used for the
 constant :math:`K`, using :eq:`csm_K_m`.
 
 .. figure:: ./_pictures/K(m).png
@@ -458,7 +459,7 @@ were the first to determine the reduced Young's modulus of a material with the
 relationships established by Love [#Love_1939]_, Galin [#Galin_1946]_ and Sneddon [#Sneddon_1948]_,
 between the applied load and the displacement during an indentation test of an elastic material.
 
-They proposed to expressed the reduced Young's modulus :math:`E^{*}` (in :math:`\text{GPa}`) in function
+They proposed to expressed the reduced Young's modulus :math:`E^{*}` (in :math:`\text{GPa} = \text{N/m}^2`) in function
 of the contact area and the contact stiffness :
 
     .. math:: E^{*} = \frac{1}{2} \sqrt\frac{\pi}{A} S
@@ -472,12 +473,12 @@ after introducing a correction factor identified by King [#King_1987]_ :
 
 With :math:`\beta` a geometrical correction factor equal to :
 
-- 1 for circular indenters (e.g.: conical and spherical indenter);
-- 1.034 for three-sided pyramid indenters (e.g.: Berkovich indenter);
-- 1.012 for four-sided pyramid indenters (e.g.: Vickers indenter).
+- :math:`1` for circular indenters (e.g.: conical and spherical indenter);
+- :math:`1.034` for three-sided pyramid indenters (e.g.: Berkovich indenter);
+- :math:`1.012` for four-sided pyramid indenters (e.g.: Vickers indenter).
 
 Woirgard has demonstrated analytically that the exact value of :math:`\beta` 
-for the perfectly sharp Berkovich indenter should be 1.062 [#Troyon_2006]_.
+for the perfectly sharp Berkovich indenter should be :math:`1.062` [#Troyon_2006]_.
 
 Some authors proposed another correction factor function of the angle of the conical
 indenter and the Poisson's ratio of the indented material [#Hay_1999]_ and [#Strader_2006]_.
@@ -508,7 +509,7 @@ Find here the |matlab| function to plot the :math:`\beta` function of Hay et al.
    in function of the Poisson's ratio for a Berkovich indenter.*
 
 Knowing the material properties of the indenter, it is possible to calculate
-the reduced Young's modulus :math:`E^{'}` (in :math:`\text{GPa}`) of the indented material.
+the reduced Young's modulus :math:`E^{'}` (in :math:`\text{GPa} = \text{N/m}^2`) of the indented material.
 
     .. math:: \frac{1}{E^{'}} = \frac{1}{E^{*}} - \frac{1}{E_\text{i}^{'}}
             :label: youngs_modulus
@@ -530,7 +531,7 @@ Find here the |matlab| function to calculate the Young's modulus:
 `model_elastic.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_elastic.m>`_.
 
 If dynamic nanoindentation is performed, a loss modulus :math:`E^{'*}`
-(in :math:`\text{GPa}`) can be defined by the following equation :
+(in :math:`\text{GPa} = \text{N/m}^2`) can be defined by the following equation :
 
     .. math:: E^{'*} = \frac{C\omega}{2} \sqrt\frac{\pi}{A}
             :label: loss_modulus
@@ -541,7 +542,7 @@ Find here the |matlab| function to calculate the loss modulus:
 Extraction of plastic properties 
 ##################################
 
-The hardness :math:`H` (in :math:`\text{GPa}`) of the material is defined according to
+The hardness :math:`H` (in :math:`\text{GPa} = \text{N/m}^2`) of the material is defined according to
 Oliver and Pharr [#OliverPharr_1992]_, by the following expression :
 
     .. math:: H = \frac{F_\text{c,max}}{A_\text{c}}
@@ -612,7 +613,7 @@ More recently, Guillonneau et al. proposed a model to extract mechanical
 properties without using the indentation depth [#Guillonneau_2012_1]_
 and [#Guillonneau_2012_2]_. The method is based on the detection of the
 second harmonic for dynamic indentation testing. This model is interesting
-especially for penetration depths in the range of 25 to 100nm, where the
+especially for penetration depths in the range of :math:`25` to :math:`100\text{nm}`, where the
 uncertainties related to the displacement measurement disturb a lot.
 
 References

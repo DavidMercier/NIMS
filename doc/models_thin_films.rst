@@ -7,7 +7,8 @@ The following parts give a short overview of models existing in the
 literature used for the extraction of mechanical properties of thin films
 deposited on a substrate from indentation experiments with conical indenters.
 
-Before everything, it is is worth to mention the work performed by Jennett N. M. and Bushby A. J. [#Jennett_2001]_, about nanoindentation test on coatings, during the European project INDICOAT (SMT4-CT98-2249).
+Before everything, it is is worth to mention the work performed by Jennett N. M. and Bushby A. J. [#Jennett_2001]_,
+about nanoindentation test on coatings, during the European project INDICOAT (SMT4-CT98-2249).
 
 Progress from this project help in the development of the ISO standard (ISO 14577 - 1-4).
 The ISO 14577 - 4 is dedicated to nanoindentation on coatings.
@@ -25,7 +26,7 @@ Composite reduced Young's modulus and composite hardness
 
 For indentation test on a coated specimen or on a multilayer sample (e.g.: thin films deposited on a substrate),
 the evolution of the Young's modulus or the hardness calculated with models used for bulk materials,
-is function of the material properties and the thickness :math:`t` each underlying film (substrate included),
+is function of the material properties and the thickness :math:`t` (in :math:`\text{m}`) each underlying film (substrate included),
 and the properties and the geometry of the indenter.
 
 .. figure:: ./_pictures/multilayerSEM.png
@@ -64,7 +65,8 @@ For nanoindentation tests on thin films, the contact topography is function of b
    
    *Figure 3 : Schematic depiction of a) "pile-up" and b) "sink-in" for thin films.*
    
-The Figure 3-a ("pile-up") is typical of the case of a soft film on a hard substrate and the Figure 3-b ("sink-in") of a hard film on a soft substrate [#ChenVlassak2001]_. To determine the depth of contact,
+The Figure 3-a ("pile-up") is typical of the case of a soft film on a hard substrate and the Figure 3-b ("sink-in")
+of a hard film on a soft substrate [#ChenVlassak2001]_. To determine the depth of contact,
 `the same models <http://nims.readthedocs.org/en/latest/models.html#indentation-contact-topography>`_ described for bulk material indentation are used.
 
 Corrections to apply for thin film indentation 
@@ -103,7 +105,7 @@ With :math:`\eta` a parameter depending on the mechanical properties
 of the film and the substrate, and on the geometry of the indenter.
 Preliminary finite element calculations show that :math:`\eta` should
 be independent of indentation depth and that its value ranges from
-0.3 to 0.7 for materials that do not work harden.
+:math:`0.3` to :math:`0.7` for materials that do not work harden.
 
 Elastic properties of a thin film on a substrate
 ##################################################
@@ -134,7 +136,8 @@ The model of Doerner and Nix is detailed in many papers [#DoernerNix_1986]_, [#K
 With :math:`x=t/h_\text{c}` and :math:`\alpha` an empirically constant
 determined using the method of least squares.
 
-The equation was modified by King [#King_1987]_ with the replacement of :math:`t/h_\text{c}` by :math:`t/a_\text{c}`, and then by Saha and Nix [#Saha_2002]_ with the replacement of :math:`t/h_\text{c}` by :math:`(t-h_\text{c})/a_\text{c}`.
+The equation was modified by King [#King_1987]_ with the replacement of :math:`t/h_\text{c}` by :math:`t/a_\text{c}`,
+and then by Saha and Nix [#Saha_2002]_ with the replacement of :math:`t/h_\text{c}` by :math:`(t-h_\text{c})/a_\text{c}`.
 
 An empirical formulae based on the model of Doerner and Nix was proposed by Chen et al. in 2004 [#Chen_2004]_:
 
@@ -214,7 +217,7 @@ Mencík et al. proposed the following structures to express the combination of
 Where :math:`x` is the ratio of the contact radius (:math:`a_\text{c}`) or the
 contact depth (:math:`h_\text{c}`), to the film thickness (:math:`t`), and 
 :math:`\phi` and :math:`\psi` are weight functions of the relative penetration :math:`x`.
-:math:`\phi` is equal to 1 when :math:`x` is equal to 0 and 0 when :math:`x` is infinite.
+:math:`\phi` is equal to :math:`1` when :math:`x` is equal to :math:`0` and :math:`0` when :math:`x` is infinite.
            
 .. note::
     If the difference between Poisson's ratio of the thin film and substrate is small,
@@ -371,7 +374,7 @@ and [#Xu_2006]_, which is already inspired by the Gao model [#Gao_1992]_.
               \phi_{Gao_0}\frac{1}{\mu_\text{f}}
             :label: hay_model
             
-Where :math:`\mu_\text{c}` is the composite shear modulus
+Where :math:`\mu_\text{c}` (in :math:`\text{GPa} = \text{N/m}^2 `) is the composite shear modulus
 calculated from the composite Young's modulus as :
 
     .. math:: \mu_\text{c} = \frac{E}{2\left(1+\nu_\text{c}\right)}
@@ -428,17 +431,24 @@ This model is based on the load support of a truncated cone of material beneath 
 
 Where :math:`E_\text{f}` and :math:`E_\text{s}` are the Young's Modulus of the coating and
 substrate, :math:`t_\text{f}` and :math:`t_\text{s}` are the coating and substrate thickness,
-and :math:`\alpha` is the semi-angle of the cone material which supports the load. In fact, by assuming that the material thickness is very much greater than the contact radius, it is possible to replace in the previous equation :math:`tan\alpha` by :math:`2\pi = 32.48°`. Finally, by assuming that the substrate is very much thicker than the coating :math:`(t_\text{s} >> t_\text{f})`, the equation :eq:`bull_contact_modulus` can be rewritten :
+and :math:`\alpha` is the semi-angle of the cone material which supports the load.
+In fact, by assuming that the material thickness is very much greater than the contact radius,
+it is possible to replace in the previous equation :math:`tan\alpha` by :math:`2\pi = 32.48°`.
+Finally, by assuming that the substrate is very much thicker than the coating :math:`(t_\text{s} >> t_\text{f})`,
+the equation :eq:`bull_contact_modulus` can be rewritten :
 
     .. math:: E^{'} = \frac{1}{\frac{1}{E_\text{f}} \left[\frac{2t_\text{f}}{\pi a_\text{c} + 2t_\text{f}} \right] + \frac{1}{E_\text{s}} \left[\frac{\pi a_\text{c}}{\pi a_\text{c} + 2t_\text{f}} \right]}
             :label: bec_bull_contact_modulus
 
-This last equation from Bull S.J. is exactly the same as equation :eq:`bec_Eeq`, proposed by Bec et al. in 2006, with a unique difference which is the use by Bull S.J. of the non reduced form of the Young's moduli of the coating and the substrate.
+This last equation from Bull S.J. is exactly the same as equation :eq:`bec_Eeq`,
+proposed by Bec et al. in 2006, with a unique difference which is the use by Bull S.J.
+of the non reduced form of the Young's moduli of the coating and the substrate.
 
 Elastic properties of a thin film on a multilayer system
 ###############################################################
 
-In 2008, Pailler-Mattei et al. proposed an extension of the Bec's model to a bilayer system deposited on a substrate [#PaillerMattei_2008]_.
+In 2008, Pailler-Mattei et al. proposed an extension of the Bec's model
+to a bilayer system deposited on a substrate [#PaillerMattei_2008]_.
 
 But more recently, Mercier et al. established a generalization of the Bec's model to :math:`N+1` layers sample.
 
@@ -491,7 +501,9 @@ Find here the |matlab| function for the Mercier et al. model :
 Plastic properties of a thin film on a substrate
 ###################################################
 
-It is possible to estimate empirically the hardness of the coating for indentation depth lower than 40% of the film thickness. But, because of the imperfections of the indenters, the roughness and the surface pollution, it is more meaningful to use this rule of the "40%", for film thicker than 500nm.
+It is possible to estimate empirically the hardness of the coating for indentation depth
+lower than 40% of the film thickness. But, because of the imperfections of the indenters,
+the roughness and the surface pollution, it is more meaningful to use this rule of the "40%", for film thicker than :math:`500\text{nm}`.
 
 Bückle (1961)
 -----------------
@@ -502,8 +514,8 @@ with a weighted sum of the different layer hardnesses during indentation process
     .. math:: H = aH_\text{f} + bH_\text{s}
             :label: buckle_hardness
 
-With :math:`a + b = 1`. :math:`a` varies from 1 when the hardness is not affected by the substrate,
-to 0 when the indentation depth is approaching the film thickness.
+With :math:`a + b = 1`. :math:`a` varies from :math:`1` when the hardness is not affected by the substrate,
+to :math:`0` when the indentation depth is approaching the film thickness.
 
 Jönsson and Hogmark (1984)
 ---------------------------
@@ -526,7 +538,7 @@ With :math:`A_\text{f}` the area on which the mean pressure :math:`H_\text{f}` a
             :label: jonsson_area_ratio_2
 
 With :math:`d` the diagonal of the indent, :math:`t` the film thickness
-and :math:`C` a constant equal to 0.5 for hard coatings on very soft substrates
+and :math:`C` a constant equal to :math:`0.5` for hard coatings on very soft substrates
 (:math:`6.3 < \frac{H_\text{f}}{H_\text{s}} < 12.9`) or to 1 when the coatings and
 substrate hardnesses are more similar (:math:`1.8 < \frac{H_\text{f}}{H_\text{s}} < 2.3`).
 
@@ -536,7 +548,8 @@ Burnett and Rickerby (1984)
 ---------------------------
 
 Burnett and Rickerby proposed afterwards a model based on a “volume law of
-mixtures” similar to Jönsson's relation, considering the volumes of the plastic zones, :math:`V_\text{f}` and :math:`V_\text{s}` respectively in the film and in the substrate [#Burnett1_1987]_ [#Burnett2_1987]_.
+mixtures” similar to Jönsson's relation, considering the volumes of the plastic zones,
+:math:`V_\text{f}` and :math:`V_\text{s}` respectively in the film and in the substrate [#Burnett1_1987]_ [#Burnett2_1987]_.
 
     .. math:: H = \frac{V_\text{f}}{V}H_\text{f} + \frac{V_\text{s}}{V}H_\text{s}
             :label: burnett_hardness
