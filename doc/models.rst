@@ -19,6 +19,22 @@ Please look at the ISO standard (ISO 14577 - 1 to 3), to perform nanoindentation
 
 - `ISO 14577 - 3 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 3: Calibration of reference blocks", (2002). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=32193>`_
 
+Some authors reviewed already the nanoindentation technique :
+
+- `Li X. and Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications." (2002). <http://dx.doi.org/10.1016/S1044-5803(02)00192-4>`_
+
+- `VanLandingham M.R., "Review of Instrumented Indentation" (2003). <http://oai.dtic.mil/oai/oai?verb=getRecord&metadataPrefix=html&identifier=ADA512140>`_
+
+- `Fischer-Cripps A.C., "Nanoindentation" Springer 2nd ed. (2004). <http://dx.doi.org/10.1007/978-1-4419-9872-9>`_
+
+- `Oliver W.C. and Pharr G.M., "Measurement of hardness and elastic modulus by instrumented indentation: Advances in understanding and refinements to methodology" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.1.3>`_
+
+- `Fischer-Cripps A.C., "Critical review of analysis and interpretation of nanoindentation test data" (2006). <http://dx.doi.org/10.1016/j.surfcoat.2005.03.018>`_
+
+- `Lucca D.A. et al., "Nanoindentation: Measuring methods and applications" (2012). <http://dx.doi.org/10.1016/j.cirp.2010.05.009>`_
+
+- `Němeček J., "Nanoindentation in Material Science" (2012). <http://dx.doi.org/10.5772/2829>`_
+
 Nanoindentation tests on bulk material
 ########################################
 
@@ -590,6 +606,7 @@ References
 .. [#Loubet_1984] `Loubet J.L. et al., "Vickers Indentation Curves of Magnesium Oxide (MgO)." (1984). <http://dx.doi.org/10.1115/1.3260865>`_
 .. [#Loubet_1986] `Loubet J.L. et al., "Vickers indentation curves of elastoplastic materials." (1986). <http://dx.doi.org/10.1520/STP889-EB>`_
 .. [#Love_1939] `Love A.E.H., "Boussinesq's problem for a rigid cone." (1939). <http://dx.doi.org/10.1093/qmath/os-10.1.161>`_
+.. [#Lucca_2012]  `Lucca D.A. et al., "Nanoindentation: Measuring methods and applications" (2012). <http://dx.doi.org/10.1016/j.cirp.2010.05.009>`_
 .. [#Lucas_1996] `Lucas B.N. et al., "Time Dependent Deformation During Indentation Testing." (1996). <http://dx.doi.org/10.1557/PROC-436-233>`_
 .. [#Malzbender_2002] `Malzbender J. and de With G., "Indentation load–displacement curve, plastic deformation, and energy." (2002). <http://dx.doi.org/10.1557/JMR.2002.0070>`_
 .. [#Merle_2012] `Merle B. et al., "Experimental determination of the effective indenter shape and e-factor for nanoindentation by continuously measuring the unloading stiffness." (2012). <http://dx.doi.org/10.1557/jmr.2011.245>`_
@@ -604,4 +621,5 @@ References
 .. [#Shorshorov_1982] Shorshorov M.K. et al., Sov. Phys. Dokl., 1982, 26.
 .. [#Strader_2006] `Strader J.H. et al., "An experimental evaluation of the constant b relating the contact stiffness to the contact area in nanoindentation." (2006). <http://dx.doi.org/10.1080/14786430600567747>`_
 .. [#Troyon_2006] `Troyon M. and Lafaye S., "About the importance of introducing a correction factor in the Sneddon relationship for nanoindentation measurements" (2002). <http://dx.doi.org/10.1080/14786430600606834>`_
+.. [#VanLandingham_2003] `VanLandingham M.R., "Review of Instrumented Indentation" (2003). <http://oai.dtic.mil/oai/oai?verb=getRecord&metadataPrefix=html&identifier=ADA512140>`_
 .. [#YetnaNjock_2015] `Yetna N'jock M. et al., "A criterion to identify sinking-in and piling-up in indentation of materials." (2015). <http://dx.doi.org/10.1016/j.ijmecsci.2014.11.008>`_
