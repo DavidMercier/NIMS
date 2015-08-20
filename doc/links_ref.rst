@@ -141,9 +141,9 @@ Finite Element Modelling of conical indentation of thin film(s) on a substrate
 * `Xu Z.-H. and Rowcliffe D., "Finite element analysis of substrate effects on indentation behaviour of thin films." (2004). <http://dx.doi.org/10.1016/S0040-6090(03)01071-X>`_
 * `Panich N. and Sun Y. "Effect of penetration depth on indentation response of soft coatings on hard substrates: a finite element analysis" (2004) <http://dx.doi.org/10.1016/j.surfcoat.2003.07.002>`_
 * `Bressan J.D. et al., "Modeling of nanoindentation of bulk and thin film by finite element method." (2005). <http://dx.doi.org/10.1016/j.wear.2004.05.021>`_
-* `Pelletier H. et al., "Characterization of mechanical properties of thin films using nanoindentation test." (2006). <http://dx.doi.org/10.1016/j.mechmat.2006.02.011>`_
-* `Antunes J.M. et al., "On the determination of the Young’s modulus of thin films using indentation tests" (2007). <http://dx.doi.org/10.1016/j.ijsolstr.2007.06.015>`_
-* `Xu H., "A Finite Element Study of the Contact Stiffness of Homogenous Materials and Thin Films." PhD thesis - University of Tennessee - Knoxville (2007). <http://etd.utk.edu/2007/XuHaitao.pdf>`_
+* `Pelletier H. et al., "Characterization of mechanical properties of thin films using nanoindentation test." (2006) <http://dx.doi.org/10.1016/j.mechmat.2006.02.011>`_
+* `Xu H., "A Finite Element Study of the Contact Stiffness of Homogenous Materials and Thin Films." PhD thesis - University of Tennessee - Knoxville (2007) <http://etd.utk.edu/2007/XuHaitao.pdf>`_
+* `Antunes J.M. et al., "On the determination of the Young's modulus of thin films using indentation tests" (2007). <http://dx.doi.org/10.1016/j.ijsolstr.2007.06.015>`_
 * `Chen S.H. et al., "Small scale, grain size and substrate effects in nano-indentation experiment of film–substrate systems." (2007). <http://dx.doi.org/10.1016/j.ijsolstr.2006.11.033>`_
 * `Huang X. and Pelegri A.A., "Finite element analysis on nanoindentation with friction contact at the film/substrate interface." (2007). <http://dx.doi.org/10.1016/j.compscitech.2006.10.005>`_
 * `Pelegri A.A. and Huang X., "Nanoindentation on soft film/hard substrate and hard film/soft substrate material systems with finite element analysis." (2008). <http://dx.doi.org/10.1016/j.compscitech.2007.05.033>`_
@@ -151,9 +151,12 @@ Finite Element Modelling of conical indentation of thin film(s) on a substrate
 * `Sakharova N.A. et al., "Comparison between Berkovich, Vickers and conical indentation tests: A three-dimensional numerical simulation study." (2009). <http://dx.doi.org/10.1016/j.ijsolstr.2008.10.032>`_
 * `Chen C., "2-D Finite Element Modeling for Nanoindentation and Fracture Stress Analysis." PhD thesis - University of South Florida (2009). <http://scholarcommons.usf.edu/etd/1897/>`_
 * `Moore S.W. et al., "Nanoindentation in elastoplastic materials: insights from numerical simulations." (2010). <http://dx.doi.org/10.1080/19475411003589889>`_
+* `Dowhan L. et al., "Investigation of thin films by nanoindentation with doe and numerical methods." (2011). <http://doi.org/10.1109/ESIME.2011.5765768>`_
 * `Isselé H. et al., "Determination of the Young's modulus of a TiN Thin Film by nanoindentation: analytical models and numerical FEM simulation." (2012). <http://doi.org/10.1380/ejssnt.2012.624>`_
+* `Phiciato's blog (2013) <https://phiciato.wordpress.com/2013/07/11/abaqus-simple-case-indentation-of-thin-coating/>`_
 * `Moćko W. et al., "Simulation of nanoindentation experiments of single-layer and double-layer thin films using finite element method." (2014). <http://doi.org/10.1002/sia.5473>`_
 * `Kibech S. et al., "Nanoindentation" (2014). <https://nanohub.org/resources/nanoindentation>`_
+* `Kopernik M. and Milenin A., "Numerical modeling of substrate effect on determination of elastic and plastic properties of TiN nanocoating in nanoindentation test." (2014). <http://doi.org/10.1016/j.acme.2013.10.001>`_
 * `Li Y. et al., "Models for nanoindentation of compliant films on stiff substrates" (2015). <http://dx.doi.org/10.1557/jmr.2015.126>`_
 * `Charleux L., "Abapy Documentation" <http://abapy.readthedocs.org/en/latest/index.html>`_
 * ABAQUS documentation
@@ -162,8 +165,8 @@ Softwares
 ###########
 * `IndentAnalyser by ASMEC <http://www.asmec.de/products/analysis-software/indentanalyser/what-is-indentanalyser.html>`_
 
-Reviews
-###########
+Reviews / Overviews of nanoindentation technique
+##################################################################
 * `Li X. and Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications." (2002). <http://dx.doi.org/10.1016/S1044-5803(02)00192-4>`_
 * `VanLandingham M.R., "Review of Instrumented Indentation" (2003). <http://oai.dtic.mil/oai/oai?verb=getRecord&metadataPrefix=html&identifier=ADA512140>`_
 * `Fischer-Cripps A.C., "Nanoindentation" Springer 2nd ed. (2004). <http://dx.doi.org/10.1007/978-1-4419-9872-9>`_
@@ -171,3 +174,12 @@ Reviews
 * `Fischer-Cripps A.C., "Critical review of analysis and interpretation of nanoindentation test data" (2006). <http://dx.doi.org/10.1016/j.surfcoat.2005.03.018>`_
 * `Lucca D.A. et al., "Nanoindentation: Measuring methods and applications" (2012). <http://dx.doi.org/10.1016/j.cirp.2010.05.009>`_
 * `Němeček J., "Nanoindentation in Material Science" (2012). <http://dx.doi.org/10.5772/2829>`_
+
+Reviews / Overviews of nanoindentation technique applied to coatings
+################################################################################
+* `Pharr G.M. and Oliver W.C., "Measurement of Thin Film Mechanical Properties Using Nanoindentation" (1992). <http://dx.doi.org/10.1557/S0883769400041634>`_
+* `Mencík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
+* `Nix W.D., "Elastic and plastic properties of thin films on substrates: nanoindentation techniques" (1997). <http://dx.doi.org/10.1016/S0921-5093(97)00176-7>`_
+* `Van Vliet K.J. and Gouldstone A., "Mechanical Properties of Thin Films Quantified Via Instrumented Indentation" (2001). <http://dx.doi.org/10.1179/026708401101517737>`_
+* `Šimůnková Š., "Mechanical properties of thin film–substrate systems" (2003). <http://dx.doi.org/10.1016/S0924-0136(02)00231-5>`_
+* `Bull S.J., "Nanoindentation of coatings" (2005). <http://dx.doi.org/10.1088/0022-3727/38/24/R01>`_

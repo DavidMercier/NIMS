@@ -19,7 +19,7 @@ Please look at the ISO standard (ISO 14577 - 1 to 3), to perform nanoindentation
 
 - `ISO 14577 - 3 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 3: Calibration of reference blocks", (2002). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=32193>`_
 
-Some authors reviewed already the nanoindentation technique :
+Some authors overviewed/reviewed already the nanoindentation technique :
 
 - `Li X. and Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications." (2002). <http://dx.doi.org/10.1016/S1044-5803(02)00192-4>`_
 
@@ -278,7 +278,7 @@ to take into account this indentation contact topography.
             :label: oliver_pharr_model
               
 Where :math:`\epsilon` is a function of the indenter's geometry (:math:`0.72` for conical indenter,
-:math:`0.75` for `paraboloids of revolution <https://en.wikipedia.org/wiki/Paraboloid>`_ and 1 for
+:math:`0.75` for `paraboloids of revolution <https://en.wikipedia.org/wiki/Paraboloid>`_ and :math:`1` for
 a flat cylindrical punch). An expression of :math:`\epsilon` in function of the power law
 exponent :math:`m` of the unloading curve fit has been proposed by Pharr et Bolshakov [#Pharr_2002]_ :
 
@@ -396,10 +396,10 @@ This technique is named **Continuous Stiffness Measurement** (CSM) for Agilent -
             :label: CSM_contact_damping
             
 With :math:`m` the mass of the indenter column,
-:math:`C` the harmonic contact damping in N.s/m,
-:math:`C_\text{s}` the system damping coefficient,
-:math:`K_\text{s}` the stiffness of the indenter support springs and
-:math:`K_\text{f}` the stiffness of the load frame.
+:math:`C` the harmonic contact damping in :math:`\text{N.s/m}`,
+:math:`C_\text{s}` the system damping coefficient in :math:`\text{N.s/m}`,
+:math:`K_\text{s}` the stiffness of the indenter support springs in :math:`\text{N/m}` and
+:math:`K_\text{f}` the stiffness of the load frame in :math:`\text{N/m}`.
 
 Values :math:`m`, :math:`C_\text{s}`, :math:`K_\text{s}` and :math:`K_\text{f}`
 are function of the equipment used and are determined during calibration process.

@@ -18,6 +18,20 @@ The ISO 14577 - 4 is dedicated to nanoindentation on coatings.
     * `ISO 14577 - 3 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 3: Calibration of reference blocks", (2002). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=32193>`_
     * `ISO 14577 - 4 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 4: Test method for metallic and non-metallic coatings", (2007). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=39228>`_
 
+Some authors overviewed/reviewed already the nanoindentation technique applied to coatings :
+
+- `Pharr G.M. and Oliver W.C., "Measurement of Thin Film Mechanical Properties Using Nanoindentation" (1992). <http://dx.doi.org/10.1557/S0883769400041634>`_
+
+- `Mencík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
+
+- `Nix W.D., "Elastic and plastic properties of thin films on substrates: nanoindentation techniques" (1997). <http://dx.doi.org/10.1016/S0921-5093(97)00176-7>`_
+
+- `Van Vliet K.J. and Gouldstone A., "Mechanical Properties of Thin Films Quantified Via Instrumented Indentation" (2001). <http://dx.doi.org/10.1179/026708401101517737>`_
+
+- `Šimůnková Š., "Mechanical properties of thin film–substrate systems" (2003). <http://dx.doi.org/10.1016/S0924-0136(02)00231-5>`_
+
+- `Bull S.J., "Nanoindentation of coatings" (2005). <http://dx.doi.org/10.1088/0022-3727/38/24/R01>`_
+
 Nanoindentation tests on thin films
 ######################################
 
@@ -378,8 +392,8 @@ and [#Xu_2006]_, which is already inspired by the Gao model [#Gao_1992]_.
               \frac{1}{\mu_\text{s} + F\phi_{Gao_0}\mu_\text{f}} +
               \phi_{Gao_0}\frac{1}{\mu_\text{f}}
             :label: hay_model
-            
-Where :math:`\mu_\text{c}` (in :math:`\text{GPa} = \text{N/m}^2 `) is the composite shear modulus
+
+Where :math:`\mu_\text{c}` (in :math:`\text{GPa} = \text{N/m}^2`) is the composite shear modulus
 calculated from the composite Young's modulus as :
 
     .. math:: \mu_\text{c} = \frac{E}{2\left(1+\nu_\text{c}\right)}
@@ -626,6 +640,7 @@ References
 .. [#Arrazat_2010] `Arrazat B. et al., "Nano indentation de couches dures ultra minces de ruthénium sur or" (2010). <http://dx.doi.org/10.1051/mattech/2011031>`_
 .. [#Bec_2006] `Bec S. et al., "Improvements in the indentation method with a surface force apparatus" (2006). <http://dx.doi.org/10.1080/01418619608239707>`_
 .. [#Bückle_1961] Bückle H., "VDI Berichte" (1961).
+.. [#Bull_2005] `Bull S.J., "Nanoindentation of coatings" (2005). <http://dx.doi.org/10.1088/0022-3727/38/24/R01>`_
 .. [#Bull_2011] `Bull S.J., "Mechanical response of atomic layer deposition alumina coatings on stiff and compliant substrates" (2011). <http://dx.doi.org/10.1116/1.3670401>`_
 .. [#Bull_2014] `Bull S.J., "A simple method for the assessment of the contact modulus for coated systems." (2014). <http://dx.doi.org/10.1080/14786435.2014.909612>`_
 .. [#Burnett1_1987] `Burnett P.J. and Rickerby D.S., "The mechanical properties of wear-resistant coatings: I: Modelling of hardness behaviour." (1987). <http://dx.doi.org/10.1016/0040-6090(87)90119-2>`_
@@ -655,6 +670,7 @@ References
 .. [#Mencík_1997] `Mencík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
 .. [#Mercier_2010] `Mercier D. et al., "Young's modulus measurement of a thin film from experimental nanoindentation performed on multilayer systems" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
 .. [#Mercier_2013] `Mercier D., "Behaviour laws of materials used in electrical contacts for « flip chip » technologies" (2013). <http://www.theses.fr/2013GRENI083>`_
+.. [#Nix_1997] `Nix W.D., "Elastic and plastic properties of thin films on substrates: nanoindentation techniques" (1997). <http://dx.doi.org/10.1016/S0921-5093(97)00176-7>`_
 .. [#Page_1998] `Page T.F. et al., "Nanoindentation Characterisation of Coated Systems: P:S2 - A New Approach Using the Continuous Stiffness Technique" (1998). <http://dx.doi.org/10.1557/PROC-522-53>`_
 .. [#PaillerMattei_2008] `Pailler-Mattei C. et al., "In vivo measurements of the elastic mechanical properties of human skin by indentation tests" (2008). <http://dx.doi.org/10.1016/j.medengphy.2007.06.011>`_
 .. [#Perriot_2004] `Perriot A. and Barthel E., "Elastic contact to a coated half-space: Effective elastic modulus and real penetration" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.2.600>`_
@@ -663,4 +679,6 @@ References
 .. [#Rahmoun_2009] `Rahmoun K. et al., "A multilayer model for describing hardness variations of aged porous silicon low-dielectric-constant thin films" (2009). <http://dx.doi.org/10.1016/j.tsf.2009.07.040>`_
 .. [#Rar_2002] `Rar A. et al., "Assessment of new relation for the elastic compliance of a film–substrate system." (2002). <http://dx.doi.org/10.1557/PROC-695-L10.10.1>`_ 
 .. [#Saha_2002] `Saha R. and Nix W.D., "Effects of the substrate on the determination of thin film mechanical properties by nanoindentation" (2002). <http://dx.doi.org/10.1016/S1359-6454(01)00328-7>`_
+.. [#Simunkova_2003] `Šimůnková Š., "Mechanical properties of thin film–substrate systems" (2003). <http://dx.doi.org/10.1016/S0924-0136(02)00231-5>`_
+.. [#VanVliet_2001] `Van Vliet K.J. and Gouldstone A., "Mechanical Properties of Thin Films Quantified Via Instrumented Indentation" (2001). <http://dx.doi.org/10.1179/026708401101517737>`_
 .. [#Xu_2006] `Xu H. and Pharr G.M., "An improved relation for the effective elastic compliance of a film/substrate system during indentation by a flat cylindrical punch." (2006). <http://dx.doi.org/10.1016/j.scriptamat.2006.04.037>`_
