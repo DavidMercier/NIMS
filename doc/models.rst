@@ -629,7 +629,7 @@ References
 .. [#ChengCheng_1998] `Cheng Y.T. and Cheng C.M. ,"Relationships between hardness, elastic modulus, and the work of indentation." (1998) <http://dx.doi.org/10.1063/1.121873>`_
 .. [#Cheng_2004] `Cheng Y.T. and Cheng C.M., "Scaling, dimensional analysis, and indentation measurements." (2004) <http://dx.doi.org/10.1016/j.mser.2004.05.001>`_
 .. [#DoernerNix_1986] `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
-.. [#Fischer-Cripps_2004] `Fischer-Cripps A.C., "Nanoindentation" Springer 2nd ed. (2004). <http://dx.doi.org/10.1007/978-1-4419-9872-9>`_
+.. [#Fischer-Cripps_2004] `Fischer-Cripps A.C., "Nanoindentation" Springer 3rd Ed. (2011). <http://dx.doi.org/10.1007/978-1-4419-9872-9>`_
 .. [#Fischer-Cripps_2006] `Fischer-Cripps A.C., "Critical review of analysis and interpretation of nanoindentation test data" (2006). <http://dx.doi.org/10.1016/j.surfcoat.2005.03.018>`_
 .. [#Galin_1946] Galin L.A., "Spatial contact problems of the theory of elasticity for punches of circular shape in planar projection.", J. Appl. Math. Mech. (PMM) (1946), 10, pp. 425-448.
 .. [#Giannakopoulos_1994] `Giannakopoulos A.E. et al., "Analysis of Vickers indentation" (1994). <http://dx.doi.org/10.1016/0020-7683(94)90225-9>`_
