@@ -35,6 +35,8 @@ Some authors overviewed/reviewed already the nanoindentation technique :
 
 - `Němeček J., "Nanoindentation in Material Science" (2012). <http://dx.doi.org/10.5772/2829>`_
 
+- `Michailidis N. et al., "Nanoindentation" (2014). <http://dx.doi.org/10.1007/978-3-642-35950-7_16730-1>`_
+
 Nanoindentation tests on bulk material
 ########################################
 

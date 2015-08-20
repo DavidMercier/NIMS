@@ -16,6 +16,8 @@ To have more details about the use of the toolbox, please have a look to :
 How to use the GUI for indentation data analysis ?
 ####################################################
 
+First of all a GUI is a Graphical User Interface.
+
 * Create or update your personal YAML config. file stored in the
   `YAML folder <https://github.com/DavidMercier/nanoind-data-analysis/tree/master/YAML_config_files>`_
 

@@ -30,6 +30,8 @@ Some authors overviewed/reviewed already the nanoindentation technique applied t
 
 - `Šimůnková Š., "Mechanical properties of thin film–substrate systems" (2003). <http://dx.doi.org/10.1016/S0924-0136(02)00231-5>`_
 
+- `Fischer-Cripps, A.C., "Nanoindentation 2nd ed." (2004) <http://link.springer.com/book/10.1007%2F978-1-4419-9872-9>`_
+
 - `Bull S.J., "Nanoindentation of coatings" (2005). <http://dx.doi.org/10.1088/0022-3727/38/24/R01>`_
 
 Nanoindentation tests on thin films
@@ -523,7 +525,7 @@ Plastic properties of a thin film on a substrate
 It is possible to estimate empirically the hardness of the coating for indentation depth
 lower than ":math:`40\text{%}`" of the film thickness. Like the rule of the ":math:`10\text{%}`"
 for the extraction of elastic properties, it is a "rule of thumb".
-But, because of the imperfections of the indenters, the roughness and the surface pollution,
+Because of the imperfections of the indenters, the roughness and the surface pollution,
 it is more meaningful to use this rule of the ":math:`40\text{%}`", for film thicker than :math:`500\text{nm}`.
 
 Bückle (1961)
