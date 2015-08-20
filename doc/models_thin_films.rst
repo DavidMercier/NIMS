@@ -652,7 +652,7 @@ References
 .. [#ChicotLesage_1995] `Chicot D. and Lesage J., "Absolute hardness of films and coatings" (1995). <http://dx.doi.org/10.1016/j.mechmat.2007.07.002>`_
 .. [#DoernerNix_1986] `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
 .. [#Fernandes_2000] `Fernandes J.V. et al., "A model for coated surface hardness" (2000). <http://dx.doi.org/10.1016/S0257-8972(00)00839-2>`_
-.. [#FischerCripps_2004] `Fischer-Cripps, A.C., "Nanoindentation 2nd ed." (2004) <http://link.springer.com/book/10.1007%2F978-1-4419-9872-9>`_
+.. [#FischerCripps_2004] `Fischer-Cripps, A.C., "Nanoindentation 3rd Ed." (2011) <http://link.springer.com/book/10.1007%2F978-1-4419-9872-9>`_
 .. [#Gao_1992] `Gao H. et al., "Elastic contact versus indentation modeling of multi-layered materials" (1992). <http://dx.doi.org/10.1016/0020-7683(92)90004-D>`_
 .. [#Han_2005] `Han S.M. et al., "Combinatorial studies of mechanical properties of Ti–Al thin films using nanoindentation" (2005). <http://dx.doi.org/10.1016/j.actamat.2005.01.017>`_
 .. [#Han_2006] `Han S.M. et al., "Determining hardness of thin films in elastically mismatched film-on-substrate systems using nanoindentation" (2006). <http://dx.doi.org/10.1016/j.actamat.2005.11.026>`_
