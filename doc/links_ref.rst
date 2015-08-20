@@ -23,10 +23,6 @@ References
 * `Mercier D., "Behaviour laws of materials used in electrical contacts for « flip chip » technologies.", PhD thesis (2013) <https://tel.archives-ouvertes.fr/tel-01127940>`_
 * `Mercier D., "Behaviour laws of materials used in electrical contacts for « flip chip » technologies." PhD defense (2013). <http://dx.doi.org/10.5281/zenodo.11753>`_
 
-Material and indenters properties
------------------------------------
-
-* `Fischer-Cripps, A.C., "Nanoindentation 2nd ed." (2004) <http://link.springer.com/book/10.1007%2F978-1-4419-9872-9>`_
 
 (Nano)Indentation models (conical indenters)
 ---------------------------------------------
