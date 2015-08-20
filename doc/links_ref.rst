@@ -169,7 +169,7 @@ Reviews / Overviews of nanoindentation technique
 ##################################################################
 * `Li X. and Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications." (2002). <http://dx.doi.org/10.1016/S1044-5803(02)00192-4>`_
 * `VanLandingham M.R., "Review of Instrumented Indentation" (2003). <http://oai.dtic.mil/oai/oai?verb=getRecord&metadataPrefix=html&identifier=ADA512140>`_
-* `Fischer-Cripps A.C., "Nanoindentation" Springer 3rd ed. (2011). <http://dx.doi.org/10.1007/978-1-4419-9872-9>`_
+* `Fischer-Cripps A.C., "Nanoindentation" Springer 3rd Ed. (2011). <http://dx.doi.org/10.1007/978-1-4419-9872-9>`_
 * `Oliver W.C. and Pharr G.M., "Measurement of hardness and elastic modulus by instrumented indentation: Advances in understanding and refinements to methodology" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.1.3>`_
 * `Fischer-Cripps A.C., "Critical review of analysis and interpretation of nanoindentation test data" (2006). <http://dx.doi.org/10.1016/j.surfcoat.2005.03.018>`_
 * `Lucca D.A. et al., "Nanoindentation: Measuring methods and applications" (2012). <http://dx.doi.org/10.1016/j.cirp.2010.05.009>`_
@@ -190,9 +190,9 @@ Books
 ###########
 * Johnson K.L., "Contact Mechanics" (1987), ISBN - 9780521347969.
 * `Bhushan B., "Micro/Nanotribology and Its Applications" (1997). <http://dx.doi.org/10.1007/978-94-011-5646-2>`_
-* `Fischer-Cripps A.C., "Introduction to Contact Mechanics" Springer 1st ed. (2000). <http://dx.doi.org/10.1007/b97709>`_
-* `Fischer-Cripps A.C., "Nanoindentation" Springer 1st ed. (2002). <http://dx.doi.org/10.1007/978-0-387-22462-6>`_
-* `Fischer-Cripps A.C., "Nanoindentation" Springer 2nd ed. (2004). <http://dx.doi.org/10.1007/978-1-4419-9872-9>`_
-* `Fischer-Cripps A.C., "Introduction to Contact Mechanics" Springer 2nd ed. (2007). <http://dx.doi.org/10.1007/978-0-387-68188-7>`_
-* `Fischer-Cripps A.C., "Nanoindentation" Springer 3rd ed. (2011). <http://dx.doi.org/10.1007/978-1-4419-9872-9>`_
+* `Fischer-Cripps A.C., "Introduction to Contact Mechanics" Springer 1st Ed. (2000). <http://dx.doi.org/10.1007/b97709>`_
+* `Fischer-Cripps A.C., "Nanoindentation" Springer 1st Ed. (2002). <http://dx.doi.org/10.1007/978-0-387-22462-6>`_
+* `Fischer-Cripps A.C., "Nanoindentation" Springer 2nd Ed. (2004). <http://dx.doi.org/10.1007/978-1-4419-9872-9>`_
+* `Fischer-Cripps A.C., "Introduction to Contact Mechanics" Springer 2nd Ed. (2007). <http://dx.doi.org/10.1007/978-0-387-68188-7>`_
+* `Fischer-Cripps A.C., "Nanoindentation" Springer 3rd Ed. (2011). <http://dx.doi.org/10.1007/978-1-4419-9872-9>`_
 * `Tiwari A., "Nanomechanical Analysis of High Performance Materials" Springer Vol. 203 (2014). <http://dx.doi.org/10.1007/978-94-007-6919-9>`_
