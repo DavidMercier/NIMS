@@ -25,11 +25,11 @@ Some authors overviewed/reviewed already the nanoindentation technique :
 
 - `VanLandingham M.R., "Review of Instrumented Indentation" (2003). <http://oai.dtic.mil/oai/oai?verb=getRecord&metadataPrefix=html&identifier=ADA512140>`_
 
-- `Fischer-Cripps A.C., "Nanoindentation" Springer 2nd ed. (2004). <http://dx.doi.org/10.1007/978-1-4419-9872-9>`_
-
 - `Oliver W.C. and Pharr G.M., "Measurement of hardness and elastic modulus by instrumented indentation: Advances in understanding and refinements to methodology" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.1.3>`_
 
 - `Fischer-Cripps A.C., "Critical review of analysis and interpretation of nanoindentation test data" (2006). <http://dx.doi.org/10.1016/j.surfcoat.2005.03.018>`_
+
+- `Fischer-Cripps A.C., "Nanoindentation" Springer 3rd Ed. (2011). <http://dx.doi.org/10.1007/978-1-4419-9872-9>`_
 
 - `Lucca D.A. et al., "Nanoindentation: Measuring methods and applications" (2012). <http://dx.doi.org/10.1016/j.cirp.2010.05.009>`_
 

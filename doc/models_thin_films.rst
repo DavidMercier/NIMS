@@ -30,9 +30,9 @@ Some authors overviewed/reviewed already the nanoindentation technique applied t
 
 - `Šimůnková Š., "Mechanical properties of thin film–substrate systems" (2003). <http://dx.doi.org/10.1016/S0924-0136(02)00231-5>`_
 
-- `Fischer-Cripps, A.C., "Nanoindentation 2nd ed." (2004) <http://link.springer.com/book/10.1007%2F978-1-4419-9872-9>`_
-
 - `Bull S.J., "Nanoindentation of coatings" (2005). <http://dx.doi.org/10.1088/0022-3727/38/24/R01>`_
+
+- `Fischer-Cripps, A.C., "Nanoindentation 3rd Ed." (2011) <http://link.springer.com/book/10.1007%2F978-1-4419-9872-9>`_
 
 Nanoindentation tests on thin films
 ######################################
