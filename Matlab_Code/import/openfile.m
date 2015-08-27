@@ -29,8 +29,10 @@ elseif strfind(char(gui.data.indenter_type_str), 'Hys') >= 1
 end
 
 [gui.data.filename_data, gui.data.pathname_data, filterindex_data] = ...
-    uigetfile([gui.config.data.data_path, extension_importdata_Window], ...
-    char(title_importdata_Window));
+    uigetfile(extension_importdata_Window, ...
+    char(title_importdata_Window), gui.config.data.data_path);
+
+gui.config.data.data_path = gui.data.pathname_data;
 
 %% Waitbar
 steps = 1000;
