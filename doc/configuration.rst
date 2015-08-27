@@ -57,3 +57,7 @@ can be used to change the numerical parameters used by the toolbox from their st
     * Use # in the beginning of the line to add comments.
 
 It is also possible to edit and to load the different YAML configuration files, via the customized menu of the GUI.
+
+.. note::
+    To open and to modify these YAML files, you can directly use Matlab or any code editor
+    (e.g. : `Notepad++ <https://notepad-plus-plus.org/>`_).

@@ -7,7 +7,7 @@ The following parts give a short overview of models existing in the
 literature used for the extraction of mechanical properties of thin films
 deposited on a substrate from indentation experiments with conical indenters.
 
-Before everything, it is is worth to mention the work performed by Jennett N. M. and Bushby A. J. [#Jennett_2001]_,
+Before everything, it is is worth to mention the work performed by Jennett N.M. and Bushby A.J. [#Jennett_2001]_,
 about nanoindentation test on coatings, during the European project INDICOAT (SMT4-CT98-2249).
 
 Progress from this project help in the development of the ISO standard (ISO 14577 - 1-4).

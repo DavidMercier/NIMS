@@ -3,4 +3,4 @@
 #################################################################################
 # Absolute path to your nanoindentation results (optional)
 # Uncomment to activate...
-#data_path: C:\Users\d.mercier\Desktop\
+data_path: ./Data_indentation

@@ -71,7 +71,7 @@ Hysitron example files
 * Both .txt or .dat files are accepted.
 
 
-* `Hysitron_exa.txt <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/Hysitron_TiAlloy_1plot.txt>`_
+* `Hysitron_TiAlloy_1plot.txt <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/Hysitron_TiAlloy_1plot.txt>`_
     - Data for a Titanium alloy sample (1 indent).
     - Data obtained by spherical indentation no CSM mode (no standard deviation).
 

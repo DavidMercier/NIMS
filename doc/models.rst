@@ -73,7 +73,7 @@ and similarity of the stress fields.
 Load-Displacement curves
 ---------------------------
 
-In this first part, only quasistatic nanoindentation is considered, when a load is applied and removed to a sample.
+In this first part, only quasistatic (or monotonic) nanoindentation is considered, when a load is applied and removed to a sample.
 Parameters such as contact load :math:`F_\text{c}` (in :math:`\text{N}`) and depth of penetration (displacement)
 :math:`h_0` (in :math:`\text{m}`) are continuously recorded at a rapid rate (normally :math:`10\text{Hz}`)
 during loading and unloading steps of the indentation test.
