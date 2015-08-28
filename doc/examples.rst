@@ -71,7 +71,7 @@ Hysitron example files
 * Both .txt or .dat files are accepted.
 
 * `Hysitron_dma.txt <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/Hysitron_dma.txt>`_
-    - Data obtained with DMA mode (205Hz / amplitude 0.65nm).
+    - Data obtained by Berkovich indentation with DMA mode (205Hz / amplitude 0.65nm).
     - Courtesy of `Dr. Igor Zlotnikov <https://www.researchgate.net/profile/Igor_Zlotnikov>`_ (`Max Planck Institute of Colloids and Interfaces <http://www.mpikg.mpg.de/>`_, Germany (Potsdam)).
 
 References
