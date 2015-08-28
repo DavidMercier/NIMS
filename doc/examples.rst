@@ -34,27 +34,27 @@ Agilent - MTS example files
 
 * `MTS_0film_Si_CSM-2nm_noSD.txt <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/MTS_0film_Si_CSM-2nm_noSD.txt>`_
     - Data for a bulk Silicon sample.
-    - Data obtained by Berkovich indentation with CSM mode (amplitude 2nm) (no standard deviation).
+    - Data obtained by Berkovich indentation with CSM mode (75Hz / amplitude 2nm) (no standard deviation).
 
 * `MTS_1film_SiO2_Si_CSM-2nm.xls <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/MTS_1film_SiO2_Si_CSM-2nm.xls>`_
     - Data for a thin film of Silicon thermal oxide (500nm) on a bulk Silicon sample.
-    - Data obtained by Berkovich indentation with CSM mode (amplitude 2nm).
+    - Data obtained by Berkovich indentation with CSM mode (75Hz / amplitude 2nm).
 
 * `MTS_1film_SiO2_Si_CSM-2nm_noSD.xls <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/MTS_1film_SiO2_Si_CSM-2nm_noSD.xls>`_
     - Data for a thin film of Silicon thermal oxide (500nm) on a bulk Silicon sample.
-    - Data obtained by Berkovich indentation with CSM mode (amplitude 2nm) (no standard deviation).
+    - Data obtained by Berkovich indentation with CSM mode (75Hz / amplitude 2nm) (no standard deviation).
 
 * `MTS_2films_Al_SiO2_Si_CSM-2nm.xls <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/MTS_2films_Al_SiO2_Si_CSM-2nm.xls>`_
     - Data for a thin film of PVD Aluminum (500nm) deposited on a bulk Silicon sample with a Silicon thermal oxide (500nm).
-    - Data obtained by Berkovich indentation with CSM mode (amplitude 2nm).
+    - Data obtained by Berkovich indentation with CSM mode (75Hz / amplitude 2nm).
 
 * `MTS_3films_Au-Ti-SiO2-Si_CSM-1nm.txt <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/MTS_3films_Au-Ti-SiO2-Si_CSM-1nm.txt>`_
     - Data for a thin film of PVD Gold (500nm) deposited on thin film of PVD Titanium (500nm) on a bulk Silicon sample with a Silicon thermal oxide (500nm).
-    - Data obtained by Berkovich indentation with CSM mode (amplitude 1nm).
+    - Data obtained by Berkovich indentation with CSM mode (75Hz / amplitude 1nm).
 
 * `MTS_3films_Au-Ti-SiO2-Si_CSM-1nm.xls <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/MTS_3films_Au-Ti-SiO2-Si_CSM-1nm.xls>`_
     - Data for a thin film of PVD Gold (500nm) deposited on thin film of PVD Titanium (500nm) on a bulk Silicon sample with a Silicon thermal oxide (500nm).
-    - Data obtained by Berkovich indentation with CSM mode (amplitude 1nm).
+    - Data obtained by Berkovich indentation with CSM mode (75Hz / amplitude 1nm).
 
 The last example (2 files for Au-Ti-SiO2-Si sample) is used to validate the elastic multilayer model of Mercier et al. [#Mercier_2010]_.
 A micrograph of this sample is given Figure 1.
@@ -70,14 +70,11 @@ Hysitron example files
 
 * Both .txt or .dat files are accepted.
 
-
-* `Hysitron_TiAlloy_1plot.txt <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/Hysitron_TiAlloy_1plot.txt>`_
-    - Data for a Titanium alloy sample (1 indent).
-    - Data obtained by spherical indentation no CSM mode (no standard deviation).
-
-* `Hysitron_TiAlloy_multipleplot.txt <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/Hysitron_TiAlloy_multipleplot.txt>`_
-    - Data for a Titanium alloy sample (several indents).
-    - Data obtained by spherical indentation no CSM mode (no standard deviation).
+* `Hysitron_dma.txt
+<https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/Hysitron_dma.txt>`_
+    - Data obtained with DMA mode (205Hz / amplitude 0.65nm).
+    - Courtesy of `Dr. Igor Zlotnikov <https://www.researchgate.net/profile/Igor_Zlotnikov>`_ 
+    (`Max Planck Institute of Colloids and Interfaces <http://www.mpikg.mpg.de/>`_, Germany (Potsdam)).
 
 References
 ############
