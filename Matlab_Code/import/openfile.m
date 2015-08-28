@@ -32,8 +32,9 @@ end
     uigetfile(extension_importdata_Window, ...
     char(title_importdata_Window), gui.config.data.data_path);
 
-gui.config.data.data_path = gui.data.pathname_data;
-
+if gui.data.pathname_data ~= 0
+    gui.config.data.data_path = gui.data.pathname_data;
+end
 %% Waitbar
 steps = 1000;
 for step = 1:steps
@@ -74,7 +75,12 @@ if gui.flag.flag_data
     if strcmp (ext, '.txt') == 1
         
         comma2point_overwrite(data2import); % Replace comma with a point
-        data = importdata(gui.data.filename_data);
+        dataAll = importdata(gui.data.filename_data);
+        if isfield(dataAll, 'textdata')
+            data = dataAll.data;
+        else
+            data = textdata;
+        end
         
         if flagMTS
             if size(data,2) == 3
@@ -98,14 +104,14 @@ if gui.flag.flag_data
             end
             
         elseif flagHys
-                gui.data.h_init       = 0;
-                gui.data.delta_h_init = 0;
-                gui.data.P_init       = 0;
-                gui.data.delta_P_init = 0;
-                gui.data.S_init       = 0;
-                gui.data.delta_S_init = 0;
-                gui.flag.flag_no_csm  = 0;
-                
+            gui.data.h_init       = data(:,2);
+            gui.data.delta_h_init = zeros(size(data,1),1);
+            gui.data.P_init       = data(:,4);
+            gui.data.delta_P_init = zeros(size(data,1),1);
+            gui.data.S_init       = 1./data(:,12); %Dynamic Comp. (nm/µN)
+            gui.data.delta_S_init = zeros(size(data,1),1);
+            gui.flag.flag_no_csm  = 0;
+            
         end
         
         %% .xls file
