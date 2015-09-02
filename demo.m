@@ -10,9 +10,6 @@ gui.config.indenter = struct();
 gui.config.data = struct();
 gui.config.numerics = struct();
 
-[gui.config.indenter, gui.config.data, ...
-    gui.config.numerics, flag_YAML] = load_YAML_config_file;
-
 %% Paths Management
 % Don't move before definition of 'gui' as a struct()
 try
@@ -23,6 +20,9 @@ catch
     commandwindow;
     path_management;
 end
+
+[gui.config.indenter, gui.config.data, ...
+    gui.config.numerics, flag_YAML] = load_YAML_config_file;
 
 %% Set Toolbox version and help paths
 gui.config.name_toolbox = 'NIMS';
