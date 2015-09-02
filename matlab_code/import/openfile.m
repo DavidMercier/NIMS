@@ -76,10 +76,10 @@ if gui.flag.flag_data
         
         comma2point_overwrite(data2import); % Replace comma with a point
         dataAll = importdata(gui.data.filename_data);
-        if isfield(dataAll, 'textdata')
+        if isfield(dataAll, 'data')
             data = dataAll.data;
         else
-            data = textdata;
+            data = dataAll;
         end
         
         if flagMTS
