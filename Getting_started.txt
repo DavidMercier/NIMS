@@ -9,7 +9,7 @@ the properties of your indenters. Update the default search path in "data_config
 in order to add the above folder with subfolders to the matlab search path.
 
 4) The main Window of the GUI is now opened. Import your data (.txt or .xls).
-See examples files given in the folder "Data_indentation" for the accepted format.
+See examples files given in the folder "data_indentation" for the accepted format.
 Only the loading part of your (nano)indentation results !
 
 Files must contain :

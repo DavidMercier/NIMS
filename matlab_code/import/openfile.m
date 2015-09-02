@@ -51,7 +51,7 @@ else
     gui.config.data_path = gui.data.pathname_data;
     %     config.data_path = pathname_data;
     %     WriteYaml(datapath_config_filename,config);
-    %     movefile(datapath_config_filename,'./YAML_config_files');
+    %     movefile(datapath_config_filename,'./yaml_config_files');
 end
 
 if isequal(gui.data.filename_data,'')

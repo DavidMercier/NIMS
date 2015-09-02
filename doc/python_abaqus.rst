@@ -10,7 +10,7 @@ The present model is a simulation of the conical nanoindentation process,
 using the FEM software ABAQUS.
 
 The |matlab| function used to generate a Python script for ABAQUS is :
-`python_abaqus <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/fem/python4abaqus.m>`_
+`python_abaqus <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/fem/python4abaqus.m>`_
 
 The model is axisymmetric with a geometry dependent mesh
 and restricted boundaries conditions.
@@ -71,7 +71,7 @@ and axisymmetric deformation element CAX8R is adopted.
 It is possible to divide the sample into solid elements with four nodes
 and with axisymmetric deformation element CAX4R, by changing the value of the
 variable "linear_elements" in the |matlab| function
-`python4abaqus <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/fem/python4abaqus.m>`_
+`python4abaqus <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/fem/python4abaqus.m>`_
 from 0 (quadratic elements) to 1 (linear elements).
 
 ..  note::
@@ -158,7 +158,7 @@ To generate the FEM model in ABAQUS, apply the following procedure:
 Results of the FEM simulation
 ###############################
 
-The following pictures were obtained for a `multilayer Au/Ti/SiO2/Si <https://github.com/DavidMercier/NIMS/blob/master/Data_indentation/3films_Au-Ti-SiO2-Si_CSM-1nm.xls>`_.
+The following pictures were obtained for a `multilayer Au/Ti/SiO2/Si <https://github.com/DavidMercier/NIMS/blob/master/data_indentation/3films_Au-Ti-SiO2-Si_CSM-1nm.xls>`_.
 
 .. figure:: ./_pictures/fem_result_S_Mises.png
    :scale: 20 %

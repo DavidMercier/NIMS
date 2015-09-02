@@ -170,16 +170,16 @@ With :math:`x=t/h_\text{c}` and :math:`\alpha` an empirically constant
 determined using the method of least squares.
 
 Find here the |matlab| function for the Doerner and Nix model [#DoernerNix_1986]_:
-`model_doerner_nix.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_doerner_nix.m>`_.
+`model_doerner_nix.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_doerner_nix.m>`_.
 
 Find here the |matlab| function for the Doerner and Nix model modified by King [#King_1987]_:
-`model_doerner_nix_king.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_doerner_nix_king.m>`_.
+`model_doerner_nix_king.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_doerner_nix_king.m>`_.
 
 Find here the |matlab| function for the Doerner and Nix model modified by Saha [#Saha_2002]_:
-`model_doerner_nix_saha.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_doerner_nix_saha.m>`_.
+`model_doerner_nix_saha.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_doerner_nix_saha.m>`_.
 
 Find here the |matlab| function function for the Doerner and Nix model modified by Chen [#Chen_2004]_:
-`model_chen.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_doerner_nix_chen.m>`_.
+`model_chen.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_doerner_nix_chen.m>`_.
 
 Gao et al. (1992) 
 ------------------
@@ -212,16 +212,16 @@ ratio of the substrate and :math:`\nu_{f}` the Poisson's ratio of the thin film.
 With :math:`x=a_\text{c}/t`.
 
 Find here the |matlab| function for the weighting function :math:`\phi_{Gao_0}` :
-`phi_gao_0.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/phi_gao_0.m>`_.
+`phi_gao_0.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/phi_gao_0.m>`_.
 
 Find here the |matlab| function for the weighting function :math:`\phi_{Gao_1}` :
-`phi_gao_1.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/phi_gao_1.m>`_.
+`phi_gao_1.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/phi_gao_1.m>`_.
 
 Find here the |matlab| function for :math:`\nu_{c}` the composite Poisson's ratio :
-`composite_poissons_ratio.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/composite_poissons_ratio.m>`_.
+`composite_poissons_ratio.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/composite_poissons_ratio.m>`_.
 
 Find here the |matlab| function for the Gao et al. model :
-`model_gao.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_gao.m>`_.
+`model_gao.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_gao.m>`_.
 
 Mencík et al. (1997) 
 -----------------------
@@ -257,7 +257,7 @@ Mencík described too the linear model by the following expression [#Mencík_199
 With :math:`x=a_\text{c}/t`.
 
 Find here the |matlab| function for the Mencík et al. linear function :
-`model_menick_linear.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_mencik_linear.m>`_.
+`model_menick_linear.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_mencik_linear.m>`_.
 
 Mencík et al. (exponential model) (1997) 
 -------------------------------------------
@@ -272,7 +272,7 @@ With :math:`x=a_\text{c}/t` and :math:`\alpha` is an empirically
 constant determined using the method of least squares.
 
 Find here the |matlab| function for the Mencík et al. exponential function :
-`model_menick_exponential.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_mencik_exponential.m>`_.
+`model_menick_exponential.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_mencik_exponential.m>`_.
 
 Mencík et al. (reciprocal exponential model) (1997) 
 -----------------------------------------------------
@@ -288,7 +288,7 @@ With :math:`x=a_\text{c}/t` and :math:`\alpha` is an empirically
 constant determined using the method of least squares.
 
 Find here the |matlab| function for the Mencík et al. reciprocal exponential function :
-`model_menick_reciprocal_exponential.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_mencik_reciprocal_exponential.m>`_.
+`model_menick_reciprocal_exponential.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_mencik_reciprocal_exponential.m>`_.
 
 Perriot et al. (2003) 
 -----------------------
@@ -308,7 +308,7 @@ With :math:`x=a_\text{c}/t`, and :math:`k_0` and :math:`n` are
 adjustable constants determined using the method of least squares.
 
 Find here the |matlab| function for the Perriot et al. model :
-`model_perriot_barthel.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_perriot_barthel.m>`_.
+`model_perriot_barthel.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_perriot_barthel.m>`_.
 
 Jung et al. (2004) 
 ---------------------
@@ -338,10 +338,10 @@ Finally, to be more consistent with other analytical models implemented in this 
             :label: jung_reduced
 
 Find here the |matlab| function for the sigmoidal function used in the Jung's model :
-`sigmoidal_jung.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/sigmoidal_jung.m>`_.
+`sigmoidal_jung.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/sigmoidal_jung.m>`_.
 
 Find here the |matlab| function for the Jung et al. model :
-`model_jung.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_jung.m>`_.
+`model_jung.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_jung.m>`_.
 
 Bec et al. (2006) 
 -------------------
@@ -382,7 +382,7 @@ This system is modelled by two springs connected in series :
             :label: bec_Eeq
 
 Find here the |matlab| function for the Bec et al. model :
-`model_bec.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_bec.m>`_.
+`model_bec.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_bec.m>`_.
             
 Hay et al. (2011) 
 -------------------
@@ -432,7 +432,7 @@ the shear modulus and Poisson’s ratio of the film :
             :label: hay_Ef
 
 Find here the |matlab| function for the Hay et al. model :
-`model_hay.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_hay.m>`_.
+`model_hay.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_hay.m>`_.
 
 Bull (2014)
 -------------------
@@ -517,7 +517,7 @@ from the contact stiffness.
    *Figure 7 : Experimental process to apply for elastic multilayer model.*
 
 Find here the |matlab| function for the Mercier et al. model :
-`model_multilayer_elastic.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_multilayer_elastic.m>`_.
+`model_multilayer_elastic.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_multilayer_elastic.m>`_.
 
 Puchi-Cabrera et al. (2015) 
 -----------------------------

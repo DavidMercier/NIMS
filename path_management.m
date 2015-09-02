@@ -15,7 +15,7 @@ path_to_add = genpath(folder);
 
 % Add path for 'util' folder to use 'cells_filter', 'cell2path' and
 % 'path2cell' functions
-util_path = fullfile(folder, 'Matlab_Code/util');
+util_path = fullfile(folder, 'matlab_code/util');
 addpath(util_path);
 
 path_cell = path2cell(path_to_add);

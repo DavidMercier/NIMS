@@ -19,7 +19,7 @@ How to use the GUI for indentation data analysis ?
 First of all a GUI is a Graphical User Interface.
 
 * Create or update your personal YAML config. file stored in the
-  `YAML folder <https://github.com/DavidMercier/nanoind-data-analysis/tree/master/YAML_config_files>`_
+  `YAML folder <https://github.com/DavidMercier/nanoind-data-analysis/tree/master/yaml_config_files>`_
 
 `See here how to create / modify your YAML file... 
 <http://nims.readthedocs.org/en/latest/configuration.html>`_
@@ -77,10 +77,10 @@ First of all a GUI is a Graphical User Interface.
   of the reduced Young's modulus (modeled) of the sample and/or of the thin film.
 * Select the analytical bilayer or the multilayer model to use for the modelling of the reduced Young's modulus of the top thin film.
 * Press the button 'SAVE' and a `YAML results file
-  <https://github.com/DavidMercier/nanoind-data-analysis/blob/master/Data_indentation/3films_Au-Ti-SiO2-Si_CSM-1nm.xls_Mercier%26al..yaml>`_
-  and a `picture of the figure (.png format) <https://github.com/DavidMercier/nanoind-data-analysis/blob/master/Data_indentation/3films_Au-Ti-SiO2-Si_CSM-1nm.xls_Mercier%26al..yaml.png>`_
-  are created and stored in the `following folder <https://github.com/DavidMercier/nanoind-data-analysis/tree/master/Data_indentation>`_.
-* Press the button 'FEM' and generate a `Python script <https://github.com/DavidMercier/nanoind-data-analysis/blob/master/Data_indentation/3films_Au-Ti-SiO2-Si_CSM-1nm.py>`_
+  <https://github.com/DavidMercier/nanoind-data-analysis/blob/master/data_indentation/3films_Au-Ti-SiO2-Si_CSM-1nm.xls_Mercier%26al..yaml>`_
+  and a `picture of the figure (.png format) <https://github.com/DavidMercier/nanoind-data-analysis/blob/master/data_indentation/3films_Au-Ti-SiO2-Si_CSM-1nm.xls_Mercier%26al..yaml.png>`_
+  are created and stored in the `following folder <https://github.com/DavidMercier/nanoind-data-analysis/tree/master/data_indentation>`_.
+* Press the button 'FEM' and generate a `Python script <https://github.com/DavidMercier/nanoind-data-analysis/blob/master/data_indentation/3films_Au-Ti-SiO2-Si_CSM-1nm.py>`_
   to model nanoindentation of multilayer sample based on parameters used in the GUI for ABAQUS.
 
 .. figure:: ./_pictures/GUI_Main_Window_Esample_curve.png

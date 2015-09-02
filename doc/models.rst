@@ -268,12 +268,12 @@ over Young's modulus is less than :math:`1%` [#Bolshakov_1998]_, [#Cheng_1998]_ 
 Three main models defining the depth of contact :math:`h_\text{c}` were developed
 to take into account this indentation contact topography.
 
-`Model of Doerner and Nix <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/function_area/contactDepth_Doerner.m>`_ [#DoernerNix_1986]_ :
+`Model of Doerner and Nix <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/function_area/contactDepth_Doerner.m>`_ [#DoernerNix_1986]_ :
    
     .. math:: h_\text{c} = h_\text{t} - \frac{F_\text{c}}{S}
             :label: doerner_nix_model
 
-`Model of Oliver and Pharr <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/function_area/contactDepth_OliverPharr.m>`_ [#OliverPharr_1992]_, [#Pharr_2002]_ and
+`Model of Oliver and Pharr <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/function_area/contactDepth_OliverPharr.m>`_ [#OliverPharr_1992]_, [#Pharr_2002]_ and
 [#OliverPharr_2004]_ in case of sink-in:
 
     .. math:: h_\text{c} = h_\text{t} - \epsilon \frac{F_\text{c}}{S}
@@ -290,7 +290,7 @@ With :math:`\Gamma` a |matlab| function which interpolates the factorial functio
 `gamma <http://de.mathworks.com/help/matlab/ref/gamma.html?refresh=true>`_.
 
 Find here the |matlab| function to plot the :math:`\epsilon` function :
-`epsilon_oliver_pharr.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/load_displacement/epsilon_oliver_pharr.m>`_.
+`epsilon_oliver_pharr.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/load_displacement/epsilon_oliver_pharr.m>`_.
 
 .. figure:: ./_pictures/epsilonOliverPharr.png
    :scale: 45 %
@@ -306,7 +306,7 @@ More recently, Merle et al. have found experimentally with indentation test in f
 a value of :math:`0.76` for :math:`\epsilon`, which is in a good agreement with the literature
 for a paraboloid of revolution [#Merle_2012]_.
 
-`Model of Loubet et al. <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/function_area/contactDepth_Loubet.m>`_ [#Hochstetter_1999]_, [#Bec_2006]_ in case of pile-up:
+`Model of Loubet et al. <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/function_area/contactDepth_Loubet.m>`_ [#Hochstetter_1999]_, [#Bec_2006]_ in case of pile-up:
 
     .. math:: h_\text{c} = \alpha \left(h_\text{t} - \frac{F_\text{c}}{S} + h_0\right)
             :label: loubet_model
@@ -314,7 +314,7 @@ for a paraboloid of revolution [#Merle_2012]_.
 Where :math:`\alpha` is a constant function of the indented material
 (usually around :math:`1.2`) and the tip-defect :math:`h_0`.
 
-Knowing the depth of contact, it is possible to determine the `area of contact <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/function_area/functionArea.m>`_
+Knowing the depth of contact, it is possible to determine the `area of contact <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/function_area/functionArea.m>`_
 :math:`A_\text{c}` (in :math:`\text{m}^{2}`) for a perfect conical indenter (with a semi-angle from the apex :math:`\theta`):
 
     .. math:: A_\text{c} = \pi h_\text{c}^2 tan^2\left(\theta\right)
@@ -351,7 +351,7 @@ which describes a pyramid with a small flat region on its tip, the so-called tip
 This geometry is described by the addition of a constant to the first two terms in :eq:`functionArea`.
 
 Find here the |matlab| function to calculate the contact depth, the function area and the contact radius:
-`model_function_area.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/model_function_area.m>`_.
+`model_function_area.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/model_function_area.m>`_.
 
 Recently, in the paper of Yetna N'jock M. et al. [#YetnaNjock_2015]_, a criterion was proposed
 to forecast the behaviour during indentation experiments, following Giannakopoulos and Suresh
@@ -445,10 +445,10 @@ constant :math:`K`, using :eq:`csm_K_m`.
    *Figure 10 : Evolution of K in function of m.*
 
 Find here the |matlab| function to calculate the corrections to apply on depth, load and stiffness during dynamic nanoindentation:
-`CSM_correction.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/CSM_correction.m>`_.
+`CSM_correction.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/CSM_correction.m>`_.
 
 Find here the |matlab| function to calculate the constant :math:`K` in function of :math:`m`:
-`unload_k_m.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/load_displacement/unload_k_m.m>`_.
+`unload_k_m.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/load_displacement/unload_k_m.m>`_.
  
 Extraction of elastic properties
 ##################################################
@@ -500,7 +500,7 @@ the analytical approximation is :
 With :math:`\nu` the Poisson's ratio of the indented material.
 
 Find here the |matlab| function to plot the :math:`\beta` function of Hay et al.:
-`beta_hay.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/beta_hay.m>`_.
+`beta_hay.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/beta_hay.m>`_.
 
 .. figure:: ./_pictures/betaHay.png
    :scale: 35 %
@@ -530,7 +530,7 @@ the Poisson's ratio of the material of the indenter.
     isotropic homogeneous elastic solids.
     
 Find here the |matlab| function to calculate the Young's modulus:
-`model_elastic.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/model_elastic.m>`_.
+`model_elastic.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_elastic.m>`_.
 
 If dynamic nanoindentation is performed, a loss modulus :math:`E^{'*}`
 (in :math:`\text{GPa} = \text{N/m}^2`) can be defined by the following equation :
@@ -539,7 +539,7 @@ If dynamic nanoindentation is performed, a loss modulus :math:`E^{'*}`
             :label: loss_modulus
             
 Find here the |matlab| function to calculate the loss modulus:
-`loss_modulus.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/elastic_models/loss_modulus.m>`_.
+`loss_modulus.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/loss_modulus.m>`_.
 
 Extraction of plastic properties 
 ##################################
@@ -551,7 +551,7 @@ Oliver and Pharr [#OliverPharr_1992]_, by the following expression :
             :label: hardness
 
 Find here the |matlab| function to calculate the hardness:
-`model_hardness.m <https://github.com/DavidMercier/NIMS/blob/master/Matlab_Code/plastic_models/model_hardness.m>`_.
+`model_hardness.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/plastic_models/model_hardness.m>`_.
 
 Energy approach
 #################

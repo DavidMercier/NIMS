@@ -433,7 +433,7 @@ Ef_sol: 89.91067401898155
 username: David
 date: 2014-07-10_22h-09min-23s
 data_filename: 3films_Au-Ti-SiO2-Si_CSM-1nm.xls
-data_pathname: C:\Users\David\Documents\Boulot\Google Code\nanoind-data-analysis\nanoind-data-analysis\Data_indentation\
+data_pathname: C:\Users\David\Documents\Boulot\Google Code\nanoind-data-analysis\nanoind-data-analysis\data_indentation\
 indenter: Berkovich
 min_max_depth_nm: [60.0, 360.0]
 model_elastic: 'Loubet      '
