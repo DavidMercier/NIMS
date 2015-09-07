@@ -393,7 +393,7 @@ Korsunsky and Constantinescu proposed a simple model response function to the an
             :label: korsunsky_model
 
 Here :math:`E_\text{1}^{'}`, :math:`E_\text{2}^{'}`, :math:`\eta` and :math:`\beta_{0}` are positive constants to be determined from fitting. It may be expected that for very shallow indentation
-(:math:`\beta_{0} << 1`), the corresponding parameter :math:`E_\text{1}^{'}` ought to approach the Young's modulus of the coating :math:`E_\text{f}^{'}`. Similarly, one might also expect that for very deep indentation (:math:`\beta_{0} >> 1`), the corresponding parameter :math:`E_\text{2}^{'}` ought to approach the Young's modulus of the substrate :math:`E_\text{s}^{'}`.
+(:math:`\beta_{0} \ll 1`), the corresponding parameter :math:`E_\text{1}^{'}` ought to approach the Young's modulus of the coating :math:`E_\text{f}^{'}`. Similarly, one might also expect that for very deep indentation (:math:`\beta_{0} \gg 1`), the corresponding parameter :math:`E_\text{2}^{'}` ought to approach the Young's modulus of the substrate :math:`E_\text{s}^{'}`.
 
 Hay et al. (2011) 
 -------------------
@@ -536,7 +536,7 @@ Puchi-Cabrera et al. (2015)
 Puchi-Cabrera et al. proposed in 2015, a description of the composite elastic modulus of multilayer
 coated systems [#PuchiCabrera_2015]_, based on the physically-based concept advanced by Rahmoun et al. [#Rahmoun_2009]_ :
 
-    .. math:: \frac{1}{E} = \sum_{i=1}^{N} {\frac{x^\text{i}_\text{v}}{E^\text{{i}_\text{f}} + \frac{x^\text{s}_\text{v}}{E_\text{s}}}}
+    .. math:: \frac{1}{E} = \sum_{i=1}^{N} {\frac{x^\text{i}_\text{v}}{E^\text{i}_\text{f}} + \frac{x^\text{s}_\text{v}}{E_\text{s}}}}
             :label: PuchiCabrera_model
 
 With :math:`x^\text{i}_\text{v}` and :math:`x^\text{s}_\text{v}`, respectively the volume fraction of each layer and the corresponding volume fraction of the substrate material. In his paper, Puchi-Cabrera modified and extended from the bilayer to the multilayer specimen, the models of Doerner and Nix, Gao, Bec, Menčík, Perriot and Barthel, Antunes, Korsunsky and Constantinescu and Bull.
