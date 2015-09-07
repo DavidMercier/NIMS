@@ -5,11 +5,15 @@
 
 Links
 ######
-
+* `Guidata on Matlab website. <http://www.mathworks.fr/fr/help/matlab/ref/guidata.html>`_   
 * `Matlab GUI. <http://www.mathworks.com/discovery/matlab-gui.html>`_
 * `Coding GUI behavior. <http://www.mathworks.fr/fr/help/matlab/code-to-run-the-gui.html?searchHighlight=gui>`_
 * `Visit the YAML website for more informations. <http://www.yaml.org/>`_
 * `Visit the YAML code for Matlab. <http://code.google.com/p/yamlmatlab/>`_
+
+Links about (nano)indentation
+###############################
+
 * `Matlab Li's code to determine elastic modulus and hardness of an ultra-thin film on a substrate using nanoindentation. <http://www.imechanica.org/node/4050>`_
 * `ISO 14577 - 1 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 1: Test method", (2002). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=30104>`_
 * `ISO 14577 - 2 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 2: Verification and calibration of testing machines", (2002). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=30543>`_
@@ -22,7 +26,6 @@ References
 * `Mercier D. et al., "Young's modulus measurement of a thin film from experimental nanoindentation performed on multilayer systems" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
 * `Mercier D., "Behaviour laws of materials used in electrical contacts for « flip chip » technologies.", PhD thesis (2013) <https://tel.archives-ouvertes.fr/tel-01127940>`_
 * `Mercier D., "Behaviour laws of materials used in electrical contacts for « flip chip » technologies." PhD defense (2013). <http://dx.doi.org/10.5281/zenodo.11753>`_
-
 
 (Nano)Indentation models (conical indenters)
 ---------------------------------------------
