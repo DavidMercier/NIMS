@@ -14,6 +14,7 @@ Links
 Links about (nano)indentation
 ###############################
 
+* `SF2M - Groupe Indentation. <http://www.sf2m.asso.fr/CommissionsThematiques/Indentation.htm>`_
 * `Matlab Li's code to determine elastic modulus and hardness of an ultra-thin film on a substrate using nanoindentation. <http://www.imechanica.org/node/4050>`_
 * `ISO 14577 - 1 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 1: Test method", (2002). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=30104>`_
 * `ISO 14577 - 2 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 2: Verification and calibration of testing machines", (2002). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=30543>`_
@@ -90,6 +91,7 @@ Bilayer models to extract Young's modulus of a thin film on a substrate (with co
 * `Perriot A. and Barthel E., "Elastic contact to a coated half-space: Effective elastic modulus and real penetration" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.2.600>`_
 * `Bec S. et al., "A simple guide to determine elastic properties of films on substrate from nanoindentation experiments" (2006). <http://dx.doi.org/10.1080/14786430600660856>`_
 * `Xu H. and Pharr G.M., "An improved relation for the effective elastic compliance of a film/substrate system during indentation by a flat cylindrical punch." (2006). <http://dx.doi.org/10.1016/j.scriptamat.2006.04.037>`_
+* `Korsunsky A.M. and Constantinescu A., "The influence of indenter bluntness on the apparent contact stiffness of thin coatings" (2009). <http://dx.doi.org/10.1016/j.tsf.2009.03.018>`_
 * `Li H. and Vlassak J.J., "Determining the elastic modulus and hardness of an ultra-thin film on a substrate using nanoindentation" (2009). <http://dx.doi.org/10.1557/jmr.2009.0144>`_
 * `Sakai M., "Substrate-affected indentation contact parameters of elastoplastic coating/substrate composites" (2009). <http://dx.doi.org/10.1557/jmr.2009.0102>`_
 * `Hay J. and Crawford B., "Measuring substrate-independent modulus of thin films" (2011). <http://dx.doi.org/10.1557/jmr.2011.8>`_

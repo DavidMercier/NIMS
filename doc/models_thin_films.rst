@@ -22,7 +22,7 @@ Some authors overviewed/reviewed already the nanoindentation technique applied t
 
 - `Pharr G.M. and Oliver W.C., "Measurement of Thin Film Mechanical Properties Using Nanoindentation" (1992). <http://dx.doi.org/10.1557/S0883769400041634>`_
 
-- `Mencík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
+- `Menčík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
 
 - `Nix W.D., "Elastic and plastic properties of thin films on substrates: nanoindentation techniques" (1997). <http://dx.doi.org/10.1016/S0921-5093(97)00176-7>`_
 
@@ -94,9 +94,9 @@ During nanoindentation tests of thin film on substrate, the thickness
 of the film beneath the indenter is smaller than its original value,
 because of plastic flow during loading. The use of the original film thickness
 :math:`t` in the regression model cause a systematic shift or distortion
-of the Young's modulus curve. A correction proposed by Mencík et al. can be
+of the Young's modulus curve. A correction proposed by Menčík et al. can be
 applied, assuming a rigid substrate and determining the effective thickness
-:math:`t_\text{eff}` (in :math:`\text{m}`) [#Mencík_1997]_, [#Saha_2002]_,
+:math:`t_\text{eff}` (in :math:`\text{m}`) [#Menčík_1997]_, [#Saha_2002]_,
 [#Chen_2004]_, [#Bec_2006]_ and [#Li_2010]_.
 
     .. math:: \pi a^2 t_\text{eff} = \pi a^2 t - V
@@ -223,11 +223,11 @@ Find here the |matlab| function for :math:`\nu_{c}` the composite Poisson's rati
 Find here the |matlab| function for the Gao et al. model :
 `model_gao.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_gao.m>`_.
 
-Mencík et al. (1997) 
+Menčík et al. (1997) 
 -----------------------
 
-Mencík et al. proposed the following structures to express the combination of
-:math:`E^{'}_\text{f}` and :math:`E^{'}_\text{s}` [#Mencík_1997]_.
+Menčík et al. proposed the following structures to express the combination of
+:math:`E^{'}_\text{f}` and :math:`E^{'}_\text{s}` [#Menčík_1997]_.
          
     .. math:: E^{'} = E^{'}_\text{s} + \left(E^{'}_\text{f} - E^{'}_\text{s}\right) \phi\left(x\right)
             :label: youngs_modulus_evolution_phi
@@ -245,10 +245,10 @@ contact depth (:math:`h_\text{c}`), to the film thickness (:math:`t`), and
     the values for uniaxial loading Young's moduli, :math:`E`, :math:`E_\text{f}`,
     :math:`E_\text{s}` can be used in previous equation.
     
-Mencík et al. (linear model) (1997) 
+Menčík et al. (linear model) (1997) 
 ------------------------------------
 
-Mencík described too the linear model by the following expression [#Mencík_1997]_ :
+Menčík described too the linear model by the following expression [#Menčík_1997]_ :
 
     .. math:: E^{'} = E^{'}_\text{f} + \left(E^{'}_\text{s} -
               E^{'}_\text{f}\right)\left(x\right)
@@ -256,13 +256,13 @@ Mencík described too the linear model by the following expression [#Mencík_199
 
 With :math:`x=a_\text{c}/t`.
 
-Find here the |matlab| function for the Mencík et al. linear function :
+Find here the |matlab| function for the Menčík et al. linear function :
 `model_menick_linear.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_mencik_linear.m>`_.
 
-Mencík et al. (exponential model) (1997) 
+Menčík et al. (exponential model) (1997) 
 -------------------------------------------
 
-Mencík described the exponential model by the following expression [#Mencík_1997]_ :
+Menčík described the exponential model by the following expression [#Menčík_1997]_ :
 
     .. math:: E^{'} = E^{'}_\text{s} + \left(E^{'}_\text{f} - 
               E^{'}_\text{s}\right) e^{-\alpha\left(x\right)}
@@ -271,13 +271,13 @@ Mencík described the exponential model by the following expression [#Mencík_19
 With :math:`x=a_\text{c}/t` and :math:`\alpha` is an empirically
 constant determined using the method of least squares.
 
-Find here the |matlab| function for the Mencík et al. exponential function :
+Find here the |matlab| function for the Menčík et al. exponential function :
 `model_menick_exponential.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_mencik_exponential.m>`_.
 
-Mencík et al. (reciprocal exponential model) (1997) 
+Menčík et al. (reciprocal exponential model) (1997) 
 -----------------------------------------------------
 
-Mencík described the reciprocal exponential model by the following expression [#Mencík_1997]_ :
+Menčík described the reciprocal exponential model by the following expression [#Menčík_1997]_ :
 
     .. math:: \frac{1}{E^{'}} = \frac{1}{E_\text{s}^{'}} + 
               \left(\frac{1}{E_\text{f}^{'}} - 
@@ -287,7 +287,7 @@ Mencík described the reciprocal exponential model by the following expression [
 With :math:`x=a_\text{c}/t` and :math:`\alpha` is an empirically
 constant determined using the method of least squares.
 
-Find here the |matlab| function for the Mencík et al. reciprocal exponential function :
+Find here the |matlab| function for the Menčík et al. reciprocal exponential function :
 `model_menick_reciprocal_exponential.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_mencik_reciprocal_exponential.m>`_.
 
 Perriot et al. (2003) 
@@ -383,7 +383,18 @@ This system is modelled by two springs connected in series :
 
 Find here the |matlab| function for the Bec et al. model :
 `model_bec.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_bec.m>`_.
-            
+
+Korsunsky A.M. and Constantinescu A. (2009) 
+----------------------------------------------
+
+Korsunsky and Constantinescu proposed a simple model response function to the analysis of indentation of elastic coated systems [#Korsunsky_1998]_ and [#Korsunsky_2009]_. They expressed the reduced Young's modulus in terms of a linear law of mixtures of the form:
+
+    .. math:: E^{'} = E_\text{1}^{'} + \frac{E_\text{2}^{'} - E_\text{1}^{'}}{1 + \left(\frac{h_\text{t}}{\beta_{0}t}\rifgt)^{\eta}}
+            :label: korsunsky_model
+
+Here :math:`E_\text{1}^{'}`, :math:`E_\text{2}^{'}`, :math:`\eta` and :math:`\beta_{0}` are positive constants to be determined from fitting. It may be expected that for very shallow indentation
+(:math:`\beta_{0} << 1`), the corresponding parameter :math:`E_\text{1}^{'}` ought to approach the Young's modulus of the coating :math:`E_\text{f}^{'}`. Similarly, one might also expect that for very deep indentation (:math:`\beta_{0} >> 1`), the corresponding parameter :math:`E_\text{2}^{'}` ought to approach the Young's modulus of the substrate :math:`E_\text{s}^{'}`.
+
 Hay et al. (2011) 
 -------------------
 
@@ -523,7 +534,12 @@ Puchi-Cabrera et al. (2015)
 -----------------------------
 
 Puchi-Cabrera et al. proposed in 2015, a description of the composite elastic modulus of multilayer
-coated systems [#PuchiCabrera_2015]_.
+coated systems [#PuchiCabrera_2015]_, based on the physically-based concept advanced by Rahmoun et al. [#Rahmoun_2009]_ :
+
+    .. math:: \frac{1}{E} = \sum_{i=1}^{N} {\frac{x^\text{i}_\text{v}}{E^\text{{i}_\text{f}} + \frac{x^\text{s}_\text{v}}{E_\text{s}}}
+            :label: PuchiCabrera_model
+
+With :math:`x^\text{i}_\text{v}` and :math:`x^\text{s}_\text{v}`, respectively the volume fraction of each layer and the corresponding volume fraction of the substrate material. In his paper, Puchi-Cabrera modified and extended from the bilayer to the multilayer specimen, the models of Doerner and Nix, Gao, Bec, Menčík, Perriot and Barthel, Antunes, Korsunsky and Constantinescu and Bull.
 
 Plastic properties of a thin film on a substrate
 ###################################################
@@ -673,9 +689,10 @@ References
 .. [#Jung_2004] `Jung Y.-G. et al. "Evaluation of elastic modulus and hardness of thin films by nanoindentation" (2004). <http://dx.doi.org/10.1557/JMR.2004.0380>`_
 .. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <http://dx.doi.org/10.1016/0020-7683(87)90116-8>`_
 .. [#Korsunsky_1998] `Korsunsky A.M. et al. "On the hardness of coated system" (1998). <http://dx.doi.org/10.1016/S0257-8972(97)00522-7>`_
+.. [#Korsunsky_2009] `Korsunsky A.M. and Constantinescu A., "The influence of indenter bluntness on the apparent contact stiffness of thin coatings" (2009). <http://dx.doi.org/10.1016/j.tsf.2009.03.018>`_
 .. [#Li_2010] `Li H. et al., "New methods of analyzing indentation experiments on very thin films" (2010). <http://dx.doi.org/10.1557/JMR.2010.0095>`_
 .. [#Li_2015] `Li Y. et al., "Models for nanoindentation of compliant films on stiff substrates" (2015). <http://dx.doi.org/10.1557/jmr.2015.126>`_
-.. [#Mencík_1997] `Mencík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
+.. [#Menčík_1997] `Menčík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <http://dx.doi.org/10.1557/JMR.1997.0327>`_
 .. [#Mercier_2010] `Mercier D. et al., "Young's modulus measurement of a thin film from experimental nanoindentation performed on multilayer systems" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
 .. [#Mercier_2013] `Mercier D., "Behaviour laws of materials used in electrical contacts for « flip chip » technologies" (2013). <http://www.theses.fr/2013GRENI083>`_
 .. [#Nix_1997] `Nix W.D., "Elastic and plastic properties of thin films on substrates: nanoindentation techniques" (1997). <http://dx.doi.org/10.1016/S0921-5093(97)00176-7>`_
