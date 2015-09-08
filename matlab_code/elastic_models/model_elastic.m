@@ -35,7 +35,7 @@ Eeff_red = ((pi^0.5)/(2*beta_Val)).* ...
     10^6.*stiffness.*(1./sqrt(contact_area));
 
 % Reduced Young's modulus of the sample in GPa (no indenter's contribution)
-Esample_red = ((1./Eeff_red) - (1/(1e-9*Eind_red))).^-1;
+Esample_red = reducedValue(Eeff_red, (1e-9*Eind_red));
 
 % Young's modulus of the sample in GPa
 Esample = non_reduced_YM(Esample_red, nu_sample); 
