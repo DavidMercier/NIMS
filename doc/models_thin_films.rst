@@ -63,16 +63,16 @@ the reduced Young's moduli :math:`(E^{'}_\text{f})` or the hardness :math:`(H_\t
 respectively the reduced Young's modulus :math:`(E^{'}_\text{s})` or the hardness :math:`(H_\text{s})` of the substrate.
 The reduced Young's moduli and the hardness are in :math:`\text{GPa}`.
 
-    .. math:: E^{'} = f(E^{'}_{\text{f},{i \rightarrow n}}, t_{i \rightarrow n}, E^{'}_\text{s})
+    .. math:: E^{'} = f(E^{'}_{\text{f},{i \rightarrow N}}, t_{i \rightarrow N}, E^{'}_\text{s})
             :label: youngs_modulus_evolution
 
-    .. math:: H = f(H_{\text{f},{i \rightarrow n}}, t_{i \rightarrow n}, H_\text{s})
+    .. math:: H = f(H_{\text{f},{i \rightarrow N}}, t_{i \rightarrow N}, H_\text{s})
             :label: hardness_evolution
 
-With :math:`i` the indice of the layer and :math:`n` the total number of layers.
+With :math:`i` the indice of the layer and :math:`N` the total number of layers.
 
 Indentation contact topography
--------------------------------
+---------------------------------
 
 For nanoindentation tests on thin films, the contact topography is function of both thin film and substrate properties.
 
@@ -352,7 +352,7 @@ of a homogeneous film deposited on a semi-infinite half space [#Bec_2006]_.
 This system is modelled by two springs connected in series :
 
 .. figure:: ./_pictures/Bec_bilayer_model.png
-   :scale: 40 %
+   :scale: 60 %
    :align: center
    
    *Figure 5 : Schematic description of the bilayer model of Bec et al.*
@@ -384,7 +384,7 @@ This system is modelled by two springs connected in series :
 Find here the |matlab| function for the Bec et al. model :
 `model_bec.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_bec.m>`_.
 
-Korsunsky A.M. and Constantinescu A. (2009) 
+Korsunsky and Constantinescu (2009) 
 ----------------------------------------------
 
 Korsunsky and Constantinescu proposed a simple model response function to the analysis of indentation of elastic coated systems [#Korsunsky_1998]_ and [#Korsunsky_2009]_. They expressed the reduced Young's modulus in terms of a linear law of mixtures of the form:
