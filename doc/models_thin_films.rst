@@ -393,7 +393,7 @@ Korsunsky and Constantinescu proposed a simple model response function to the an
             :label: korsunsky_model
 
 Here :math:`E_\text{1}^{'}`, :math:`E_\text{2}^{'}`, :math:`\eta` and :math:`\beta_{0}` are positive constants to be determined from fitting. It may be expected that for very shallow indentation
-(:math:`\beta_{0} \ll 1`), the corresponding parameter :math:`E_\text{1}^{'}` ought to approach the Young's modulus of the coating :math:`E_\text{f}^{'}`. Similarly, one might also expect that for very deep indentation (:math:`\beta_{0} \gg 1`), the corresponding parameter :math:`E_\text{2}^{'}` ought to approach the Young's modulus of the substrate :math:`E_\text{s}^{'}`.
+(:math:`\beta_{0} \ll 1`), the corresponding parameter :math:`E_\text{1}^{'}` ought to approach the Young's modulus of the coating :math:`E_\text{f}^{'}`. Similarly, one might also expect that for very deep indentation (:math:`\beta_{0} \gg 1`), the corresponding parameter :math:`E_\text{2}^{'}` ought to approach the Young's modulus of the substrate :math:`E_\text{s}^{'}`. Values of :math:`\eta` and :math:`\beta_{0}` depend on the indentation boundary condition, if the coating is a defined as a freely sliding layer or as a perfectly bonded layer.
 
 Hay et al. (2011) 
 -------------------
@@ -553,14 +553,24 @@ it is more meaningful to use this rule of the ":math:`40\text{%}`", for film thi
 Bückle (1961)
 -----------------
 
-Bückle proposed an expression of the composite hardness in the case of a two-layer material
+Bückle proposed an expression of the composite hardness :math:`H` in the case of a two-layer material
 with a weighted sum of the different layer hardnesses during indentation process [#Bückle_1961]_.
 
     .. math:: H = aH_\text{f} + bH_\text{s}
             :label: buckle_hardness
 
-With :math:`a + b = 1`. :math:`a` varies from :math:`1` when the hardness is not affected by the substrate,
+With :math:`H_\text{f}` the hardness of the film, :math:`H_\text{s}` the hardness of the substrate and :math:`a + b = 1`. :math:`a` varies from :math:`1` when the hardness is not affected by the substrate,
 to :math:`0` when the indentation depth is approaching the film thickness.
+
+Kao and Byrne (1981)
+---------------------------
+
+Kao and Byrne proposed the following model to describe the evolution of the composite hardness in function of the reciprocal indentation depth [#Kao_1981]_, based on Bückle's model [#Bückle_1961]_ :
+
+    .. math:: H \simeq H_\text{s} + 2 k_1 t_\text{f}\left(H_\text{f} - H_\text{s} \right)\frac{1}{h}
+            :label: kao_hardness
+
+With :math:`k_1` a weighting factor of about 9%, independent of material characteristics.
 
 Jönsson and Hogmark (1984)
 ---------------------------
@@ -604,11 +614,9 @@ With :math:`V = V_\text{f} + V_\text{s}`.
 Chicot and Lesage (1995)
 ---------------------------
 
-“volume law of
-mixtures”
+“volume law of mixtures”
 
 [#ChicotLesage_1995]_
-
 
 [#He_1996]_
 
@@ -625,7 +633,7 @@ extended to the coated system by Page et al. [#Page_1998]_, Saha and Nix propose
 to use the following equation, giving the evolution of the hardness in function
 of indentation depth, even when pile-up occurs [#Saha_2002]_:
 
-    .. math:: H = {\beta}^2 \frac{4}{\pi} \frac{F_\text{c,max}}{S^2} E^{*2}
+    .. math:: H = {\beta}^2 \frac{4}{\pi} \frac{F_\text{c,max}}{S^2} (E*)^{2}
             :label: hardness_saha
             
     .. math:: \frac{1}{E^{*}} = \frac{1}{E_\text{i}^{'}} + \frac{1}{E_\text{f}^{'}} + \left(\frac{1}{E_\text{s}^{'}} - \frac{1}{E_\text{f}^{'}}\right) e^{-\alpha\left(x\right)}
@@ -653,7 +661,38 @@ Iost (2005)
 Plastic properties of a thin film on a multilayer system
 ##########################################################
 
+Engel et al. (1992)
+---------------------------
+
+Engel et al. proposed a simple method of interpreting the superficial (Vickers) hardness of multilayered specimen [#Engel1992]_, by expanding the concept of Jönsson and Hogmark [#Jönsson_1984]_ :
+
+    .. math:: H = \frac{A_\text{s}}{A}H_\text{s} + \sum_{i=1}^{N}\frac{A_\text{f,i}}{A}H_\text{f,i}
+            :label: engel_model
+            
+    .. math:: A = A_\text{s} + \sum_{i=1}^{N} A_\text{f,i}
+            :label: engel_model_area
+
+With :math:`N` the number of layers deposited on the substrate, :math:`A_\text{f,i}` and :math:`H_\text{f,i}` respectively the flow pressure area and the hardness of an intermediate layer. According to the author, this model is applicable as long as the ratio of the film thickness :math:`t_\text{f}` over the indentation imprint size (i.e. the diagonal :math:`d` of square imprint in case of Vickers indentation) is less than 0.2, resulting in a parallel displacement of indenter, layers, and substrate.
+
+Rahmoun et al. (2009)
+---------------------------
+
 [#Rahmoun_2009]_
+
+    .. math:: H = \frac{A_\text{f}}{A}H_\text{f} + \frac{A_\text{i}}{A}H_\text{i} + \frac{A_\text{s}}{A}H_\text{s}
+            :label: rahmoun_model
+            
+    .. math:: \frac{A_\text{f}}{A} = \frac{2t_\text{f}}{h} - \frac{t_\text{f}^2}{h^2}
+            :label: rahmoun_model_area_film
+            
+    .. math:: \frac{A_\text{i}}{A} = \frac{2t_\text{f}}{h} - \frac{t_\text{i}^2}{h^2} - 2\frac{t_\text{i}t_\text{f}}{h^2}
+            :label: rahmoun_model_area_intermediate
+            
+    .. math:: \frac{A_\text{s}}{A} = 1 - \frac{2(t_\text{f}+t_\text{i})}{h} + \frac{(t_\text{f}+t_\text{i})^2}{h^2}
+            :label: rahmoun_model_area_substrate
+
+Arrazat et al. (2010)
+---------------------------
 
 [#Arrazat_2010]_
 
@@ -673,6 +712,7 @@ References
 .. [#Chen_2004] `Chen S. et al., "Nanoindentation of thin-film-substrate system: Determination of film hardness and Young's modulus" (2004). <http://dx.doi.org/10.1007/BF02489376>`_
 .. [#ChicotLesage_1995] `Chicot D. and Lesage J., "Absolute hardness of films and coatings" (1995). <http://dx.doi.org/10.1016/j.mechmat.2007.07.002>`_
 .. [#DoernerNix_1986] `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <http://dx.doi.org/10.1557/JMR.1986.0601>`_
+.. [#Engel1992] `Engel P.A. et al., "Interpretation of superficial hardness for multilayer platings*" (1992). <http://dx.doi.org/10.1016/0040-6090(92)90115-R>`_
 .. [#Fernandes_2000] `Fernandes J.V. et al., "A model for coated surface hardness" (2000). <http://dx.doi.org/10.1016/S0257-8972(00)00839-2>`_
 .. [#FischerCripps_2004] `Fischer-Cripps, A.C., "Nanoindentation 3rd Ed." (2011) <http://link.springer.com/book/10.1007%2F978-1-4419-9872-9>`_
 .. [#Gao_1992] `Gao H. et al., "Elastic contact versus indentation modeling of multi-layered materials" (1992). <http://dx.doi.org/10.1016/0020-7683(92)90004-D>`_
@@ -687,6 +727,7 @@ References
 .. [#Jönsson_1984] `Jönsson B. and Hogmark S., "Hardness measurements of thin films" (1984). <http://dx.doi.org/10.1016/0040-6090(84)90123-8>`_
 .. [#Joslin_1990] `Joslin D.L. and Oliver W.C., "A new method for analyzing data from continuous depth-sensing microindentation tests" (1990). <http://dx.doi.org/10.1557/JMR.1990.0123>`_
 .. [#Jung_2004] `Jung Y.-G. et al. "Evaluation of elastic modulus and hardness of thin films by nanoindentation" (2004). <http://dx.doi.org/10.1557/JMR.2004.0380>`_
+.. [#Kao_1981] `Kao P.-W. and Byrne J. G., "Ion Implantation Effects on Fatigue and Surface Hardness" (1981). <http://dx.doi.org/10.1111/j.1460-2695.1980.tb01367.x>`_
 .. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <http://dx.doi.org/10.1016/0020-7683(87)90116-8>`_
 .. [#Korsunsky_1998] `Korsunsky A.M. et al. "On the hardness of coated system" (1998). <http://dx.doi.org/10.1016/S0257-8972(97)00522-7>`_
 .. [#Korsunsky_2009] `Korsunsky A.M. and Constantinescu A., "The influence of indenter bluntness on the apparent contact stiffness of thin coatings" (2009). <http://dx.doi.org/10.1016/j.tsf.2009.03.018>`_

@@ -111,6 +111,7 @@ Multilayer model to extract Young's moduli of thin films on a multilayer sample 
 Bilayer models to extract hardness of a thin film on a substrate (with conical indenters)
 --------------------------------------------------------------------------------------------------
 * Bückle H., "VDI Berichte" (1961).
+* `Kao P.-W. and Byrne J. G., "Ion Implantation Effects on Fatigue and Surface Hardness" (1981). <http://dx.doi.org/10.1111/j.1460-2695.1980.tb01367.x>`_
 * `Jönsson B. and Hogmark S., "Hardness measurements of thin films" (1984). <http://dx.doi.org/10.1016/0040-6090(84)90123-8>`_
 * `Doerner M.F. et al., "Plastic properties of thin films on substrates as measured by submicron indentation hardness and substrate curvature techniques" (1986). <http://dx.doi.org/10.1557/JMR.1986.0845>`_
 * `Burnett P.J. and Rickerby D.S., "The mechanical properties of wear-resistant coatings: I: Modelling of hardness behaviour." (1987). <http://dx.doi.org/10.1016/0040-6090(87)90119-2>`_
@@ -122,11 +123,15 @@ Bilayer models to extract hardness of a thin film on a substrate (with conical i
 
 Multilayer model to extract hardness of thin films on a multilayer sample (with conical indenters)
 ----------------------------------------------------------------------------------------------------------
+* `Engel P.A. et al., "Interpretation of superficial hardness for multilayer platings*" (1992). <http://dx.doi.org/10.1016/0040-6090(92)90115-R>`_
 * `Rahmoun K. et al., "A multilayer model for describing hardness variations of aged porous silicon low-dielectric-constant thin films" (2009). <http://dx.doi.org/10.1016/j.tsf.2009.07.040>`_
 * `Arrazat B. et al., "Nano indentation de couches dures ultra minces de ruthénium sur or" (2010). <http://dx.doi.org/10.1051/mattech/2011031>`_
 
 Finite Element Modelling of conical indentation of thin film(s) on a substrate
 ---------------------------------------------------------------------------------
+
+* `Charleux L., "Abapy Documentation" <http://abapy.readthedocs.org/en/latest/index.html>`_
+* ABAQUS documentation
 
 * `Bhattacharya A.K. and Nix W.D., "Finite element analysis of cone indentation." (1991). <http://dx.doi.org/10.1016/0020-7683(91)90100-T>`_
 * `Madsen D.T. et al. "Finite Element Simulation of Indentation Behavior of thin Films." (1991). <http://dx.doi.org/10.1557/PROC-239-431>`_
@@ -159,8 +164,7 @@ Finite Element Modelling of conical indentation of thin film(s) on a substrate
 * `Kibech S. et al., "Nanoindentation" (2014). <https://nanohub.org/resources/nanoindentation>`_
 * `Kopernik M. and Milenin A., "Numerical modeling of substrate effect on determination of elastic and plastic properties of TiN nanocoating in nanoindentation test." (2014). <http://doi.org/10.1016/j.acme.2013.10.001>`_
 * `Li Y. et al., "Models for nanoindentation of compliant films on stiff substrates" (2015). <http://dx.doi.org/10.1557/jmr.2015.126>`_
-* `Charleux L., "Abapy Documentation" <http://abapy.readthedocs.org/en/latest/index.html>`_
-* ABAQUS documentation
+* `Gupta A. K. et al., "Evaluation of elasto-plastic properties of ITO film using combined nanoindentation and finite element approach" (2015). <http://dx.doi.org/10.1016/j.ceramint.2015.09.054>`_
 
 Softwares
 ###########
