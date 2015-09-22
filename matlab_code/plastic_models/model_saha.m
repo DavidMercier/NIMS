@@ -1,6 +1,7 @@
 %% Copyright 2014 MERCIER David
 function Hf = model_saha(stiffness, load, Em_red, gcfValue)
-%% Function used to calculate hardness of a thin film with Saha's method (2002)
+%% Function used to calculate hardness of a thin film with Saha's method (2002),
+% using Young's modulus value obtained from Saha's model.
 % S: Stiffness in mN/nm
 % P: Applied load during indentation test mN
 % Ef_red: Reduced Young's modulus of the thin film obtained with a elastic

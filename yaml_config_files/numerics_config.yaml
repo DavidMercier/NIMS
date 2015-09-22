@@ -59,6 +59,10 @@ A_Jung: 3.76
 B_Jung: 1.38
 
 ###########################################################################################
+# Constant in the plastic model of Kao and Byrne (1981) - DOI: 10.1111/j.1460-2695.1980.tb01367.x
+k_Kao: 0.09
+
+###########################################################################################
 # Options for the least square method of Matlab used to fit experimental curves
 TolFun_value: 1e-20
 TolX_value: 1e-20
