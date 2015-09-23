@@ -7,17 +7,17 @@ check_param_GUI;
 
 %% Getting parameters from the GUI
 % Film 0
-gui.data.t0   = str2double(get(gui.handles.value_thinfilm0_GUI,  'String'));       % nm
+gui.data.t0   = str2double(get(gui.handles.value_thickfilm0_GUI,  'String'));       % nm
 gui.data.E0   = str2double(get(gui.handles.value_youngfilm0_GUI, 'String')) * 1e9; % GPa
 gui.data.nuf0 = str2double(get(gui.handles.value_poissfilm0_GUI, 'String'));
 
 % Film 1
-gui.data.t1   = str2double(get(gui.handles.value_thinfilm1_GUI,  'String'));       % nm
+gui.data.t1   = str2double(get(gui.handles.value_thickfilm1_GUI,  'String'));       % nm
 gui.data.E1   = str2double(get(gui.handles.value_youngfilm1_GUI, 'String')) * 1e9; % GPa
 gui.data.nuf1 = str2double(get(gui.handles.value_poissfilm1_GUI, 'String'));
 
 % Film 2
-gui.data.t2   = str2double(get(gui.handles.value_thinfilm2_GUI,  'String'));       % nm
+gui.data.t2   = str2double(get(gui.handles.value_thickfilm2_GUI,  'String'));       % nm
 gui.data.E2   = str2double(get(gui.handles.value_youngfilm2_GUI, 'String')) * 1e9; % GPa
 gui.data.nuf2 = str2double(get(gui.handles.value_poissfilm2_GUI, 'String'));
 
@@ -119,17 +119,17 @@ end
 
 % Film thickness
 if gui.data.t0 < 0
-    set(gui.handles.value_thinfilm0_GUI, 'String', 500); % in nm
+    set(gui.handles.value_thickfilm0_GUI, 'String', 500); % in nm
     warning('Wrong input for film''s thickness !');
 end
 
 if gui.data.t1 < 0
-    set(gui.handles.value_thinfilm1_GUI, 'String', 500); % in nm
+    set(gui.handles.value_thickfilm1_GUI, 'String', 500); % in nm
     warning('Wrong input for film''s thickness !');
 end 
     
 if gui.data.t2 < 0
-    set(gui.handles.value_thinfilm2_GUI, 'String', 500); % in nm
+    set(gui.handles.value_thickfilm2_GUI, 'String', 500); % in nm
     warning('Wrong input for film''s thickness !');
 end
 
