@@ -14,8 +14,8 @@ if nargin < 1
     V1 = 50;
 end
 
-if V1 ~= 0 && V2 ~= 0
-    Vred = ((1/V1)+(1/V2))^(-1);
+if V1 ~= 0 & V2 ~= 0
+    Vred = ((1./V1)+(1./V2)).^(-1);
 elseif V1 == 0
     Vred = V2;
 elseif V2 == 0
