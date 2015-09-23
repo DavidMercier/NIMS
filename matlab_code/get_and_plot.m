@@ -43,13 +43,11 @@ if ~gui.flag.wrong_inputs
         gui = guidata(gcf); guidata(gcf, gui);
         gui.results.S_fit = gui.results.S_fit/gui.data.stifFact;
         guidata(gcf, gui);
-    end 
+    end
     
     %% Calculations of function area
-    if gui.variables.y_axis > 3
-        model_function_area;
-        gui = guidata(gcf); guidata(gcf, gui);
-    end
+    model_function_area;
+    gui = guidata(gcf); guidata(gcf, gui);
     
     %% Calculations of Young's modulus
     if gui.variables.y_axis == 4 || gui.variables.y_axis == 5
@@ -72,7 +70,7 @@ if ~gui.flag.wrong_inputs
             model_multilayer_plastic(gui.variables.val2);
         end
     end
-
+    
     % Be careful of the order of the 3 following lines, because gcf is
     % the waitbar during calculations !!!
     gui = guidata(gcf);
