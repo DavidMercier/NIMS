@@ -22,7 +22,7 @@ catch
 end
 
 [gui.config.indenter, gui.config.data, ...
-    gui.config.numerics, flag_YAML] = load_YAML_config_file;
+    gui.config.numerics, flag_YAML] = load_YAMLconfigFile;
 
 %% Set Toolbox version and help paths
 gui.config.name_toolbox = 'NIMS';
