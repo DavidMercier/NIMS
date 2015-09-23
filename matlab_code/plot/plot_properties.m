@@ -19,8 +19,10 @@ if gui.axis.ymin < gui.axis.ymax
 else
     ylim([gui.axis.ymax gui.axis.ymin]);
 end
+
 set(gui.handles.AxisPlot_GUI, 'FontSize', 14);
 set(gui.handles.plot_data, 'MarkerSize', 10);
+
 for ii = 1:length(gui.handles.plot_data)
     gui.handles.plot_data(ii).LineWidth = 2;
 end

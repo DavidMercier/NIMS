@@ -4,8 +4,7 @@ function refresh_param_GUI
 gui = guidata(gcf);
 
 % Residuals
-if get(gui.handles.value_param2plotinyaxis_GUI, 'Value') == 1 || ...
-        get(gui.handles.value_param2plotinyaxis_GUI, 'Value') > 4
+if get(gui.handles.value_param2plotinyaxis_GUI, 'Value') ~= 3
     if get(gui.handles.value_model_GUI, 'Value') > 1
         set(gui.handles.pb_residual_plot_GUI, 'Visible', 'on');
     end

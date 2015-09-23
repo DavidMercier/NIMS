@@ -17,6 +17,11 @@ if gui.variables.y_axis == 1
     gui.axis.legend_str = 'Residuals / Load';
     gui.axis.title_str = 'Residuals / Load';
     gui.axis.ylabelstr = 'Residuals / Load (%)';
+elseif gui.variables.y_axis == 2
+    residual_norm = gui.results.residual./gui.data.S;
+    gui.axis.legend_str = 'Residuals / Stiffness';
+    gui.axis.title_str = 'Residuals / Stiffness';
+    gui.axis.ylabelstr = 'Residuals / Stiffness (%)';
 elseif gui.variables.y_axis > 3
     residual_norm = gui.results.residual./gui.results.Esample_red;
     gui.axis.legend_str = 'Residuals / Young''s modulus of the sample';
