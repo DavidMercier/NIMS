@@ -6,8 +6,9 @@ gui = guidata(gcf);
 %% Initialization
 set(gui.MainWindows, 'CurrentAxes', gui.handles.AxisPlot_GUI);
 
-xlabel(gui.axis.xlabelstr, 'Color', [0,0,0], 'FontSize', 14);
-ylabel(gui.axis.ylabelstr, 'Color', [0,0,0], 'FontSize', 14);
+hXLabel = xlabel(gui.axis.xlabelstr, 'Color', [0,0,0], 'FontSize', 14);
+hYLabel = ylabel(gui.axis.ylabelstr, 'Color', [0,0,0], 'FontSize', 14);
+
 if gui.axis.xmin < gui.axis.xmax
     xlim([gui.axis.xmin gui.axis.xmax]);
 else
@@ -24,8 +25,10 @@ for ii = 1:length(gui.handles.plot_data)
     gui.handles.plot_data(ii).LineWidth = 2;
 end
 
-legend(gui.axis.legend_str, 'Location', 'NorthWest');
-title(gui.axis.title_str, 'FontSize', 18);
+hLeg = legend(gui.axis.legend_str, 'Location', 'NorthWest');
+hTitle = title(gui.axis.title_str, 'FontSize', 18);
+
+set([hXLabel, hYLabel, hLeg, hTitle], 'Interpreter', 'Latex');
 
 if get(gui.handles.cb_grid_plot_GUI, 'Value') == 1
     grid on;

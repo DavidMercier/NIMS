@@ -43,12 +43,12 @@ else
     %% Setting of the plot - Defintion of variables
     if gui.variables.x_axis == 1
         gui.axis.x2plot = gui.data.h;
-        gui.axis.xlabelstr = ['Displacement (h) (', char(gui.data.dispUnit),')'];
+        gui.axis.xlabelstr = ['Displacement ($h$) (', char(gui.data.dispUnit),')'];
         gui.axis.xmax = round(max(gui.data.h));
         gui.axis.xmin = 0;
     elseif gui.variables.x_axis == 2
         gui.axis.x2plot = gui.results.ac./gui.data.t;
-        gui.axis.xlabelstr = 'Contact Radius / Film Thickness (t)';
+        gui.axis.xlabelstr = 'Contact Radius ($a_c$) / Film Thickness ($t$)';
         if max(gui.results.ac./gui.data.t) < 1
             gui.axis.xmax = 1;
         else
@@ -57,7 +57,7 @@ else
         gui.axis.xmin = round(min(gui.results.ac./gui.data.t));
     elseif gui.variables.x_axis == 3
         gui.axis.x2plot = gui.data.h/gui.data.t;
-        gui.axis.xlabelstr = 'Displ. (h) / Film Thickness (t)';
+        gui.axis.xlabelstr = 'Displ. ($h$) / Film Thickness ($t$)';
         if max(gui.data.h/gui.data.t) < 1
             gui.axis.xmax = 1;
         else
@@ -72,11 +72,11 @@ else
         gui.axis.y2plot_2 = gui.results.P_fit;
         gui.axis.ylabelstr = ['Load (', char(gui.data.loadUnit),')'];
         gui.axis.ymax = max(gui.data.P);
-        gui.axis.title_str = strcat('Loading work (W) = ', ...
-            num2str(gui.results.W_microJ), 'µJ', ...
-            sprintf(' k(fit)= %.2e', gui.results.fac_fit), ...
-            '/ n(fit)= ', num2str(round(100*gui.results.exp_fit)/100), ...
-            '/ R2= ', num2str(gui.results.rSquare));
+        gui.axis.title_str = strcat('Loading work ($W$) = ', ...
+            num2str(gui.results.W_microJ), '$\mu$J / $k$(fit) = ', ...
+            sprintf('%.2e', gui.results.fac_fit), ...
+            ' / $n$(fit) = ', num2str(round(100*gui.results.exp_fit)/100), ...
+            ' / $R^2$ = ', num2str(gui.results.rSquare));
     elseif gui.variables.y_axis == 2
         gui.axis.y2plot = gui.data.S;
         gui.axis.delta_y2plot = gui.data.delta_S;
@@ -84,16 +84,16 @@ else
         gui.axis.ylabelstr = ['Stiffness (', char(gui.data.stifUnit),')'];
         gui.axis.ymax = max(gui.data.S);
         if gui.variables.val2 == 2
-            gui.axis.title_str = strcat('S = (', ...
-                num2str(gui.results.linear_fit(1)), ')h + (', ...
+            gui.axis.title_str = strcat('$S$ = (', ...
+                num2str(gui.results.linear_fit(1)), ')$h$ + (', ...
                 num2str(gui.results.linear_fit(2)), ')', ...
-                '/ R2= ', num2str(gui.results.rSquare));
+                '/ $R^2 =$ ', num2str(gui.results.rSquare));
         elseif gui.variables.val2 == 3
             gui.axis.title_str = strcat('S = (', ...
-                num2str(gui.results.linear_fit(1)), ')h^2 + (', ...
-                num2str(gui.results.linear_fit(2)), ')h + (', ...
+                num2str(gui.results.linear_fit(1)), ')$h^2$ + (', ...
+                num2str(gui.results.linear_fit(2)), ')$h$ + (', ...
                 num2str(gui.results.linear_fit(3)), ')', ...
-                '/ R2= ', num2str(gui.results.rSquare));
+                '/ $R^2 =$ ', num2str(gui.results.rSquare));
         end
     elseif gui.variables.y_axis == 3
         gui.axis.y2plot = gui.data.P ./ (gui.data.S.^2);
