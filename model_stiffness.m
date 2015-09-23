@@ -8,7 +8,7 @@ if gui.variables.val2 == 2
     % See also 'fitlm' function in Matlab for linear regression
     polyCoeff = 1;
     [Pfit Sfit] = polyfit(gui.data.h, gui.data.S, polyCoeff);
-    gui.results.S_fit = Pfit(1).*(gui.data.h + Pfit(2)); % in mN/nm
+    gui.results.S_fit = Pfit(1).*gui.data.h + Pfit(2); % in mN/nm
     gui.results.linear_fit = Pfit;
     gui.results.rSquare = r_square(gui.data.S, gui.results.S_fit);
 elseif gui.variables.val2 == 3
