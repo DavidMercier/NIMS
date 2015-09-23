@@ -31,8 +31,7 @@ beta_Val = beta_selection;
 
 %% Young's modulus calculation - See in Pharr et al. (1992)
 % Effective reduced Young's modulus (sample+indenter) in GPa
-Eeff_red = ((pi^0.5)/(2*beta_Val)).* ...
-    10^6.*stiffness.*(1./sqrt(contact_area));
+Eeff_red = ((pi^0.5)/(2*beta_Val)).* stiffness.*(1./sqrt(contact_area));
 
 % Reduced Young's modulus of the sample in GPa (no indenter's contribution)
 Esample_red = reducedValue(Eeff_red, (1e-9*Eind_red));
