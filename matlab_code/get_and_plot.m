@@ -45,7 +45,7 @@ if ~gui.flag.wrong_inputs
         guidata(gcf, gui);
     end
     
-    %% Calculations of function area
+    %% Calculations of function area (for all cases, needed of contact radius estimation)
     model_function_area;
     gui = guidata(gcf); guidata(gcf, gui);
     
