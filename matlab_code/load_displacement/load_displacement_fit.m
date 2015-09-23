@@ -35,10 +35,12 @@ if model ~= 1
     end
     
     results.P_fit = k_fit(1) .* h.^k_fit(2);
+    results.rSquare = r_square(P, results.P_fit);
 else
     k_fit = [0, 0];
     results.P_fit = 0;
     results.residual = 0;
+    results.rSquare = 0;
 end
 
 end

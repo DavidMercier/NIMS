@@ -52,26 +52,17 @@ end
 
 %% Definiton of the plot
 if gui.variables.log_plot_value == 0
-    if gui.variables.y_axis == 1 || gui.variables.y_axis > 3
-        if gui.variables.val2 == 1
-            gui.handles.plot_data = plot(...
-                gui.axis.x2plot, gui.axis.y2plot, 'rx', ...
-                gui.axis.xline, gui.axis.yline,  '--ko');
-            gui.axis.legend_str = 'Initial data';
-        else
-            gui.handles.plot_data = plot(...
-                gui.axis.x2plot, gui.axis.y2plot, 'rx', ...
-                gui.axis.x2plot, gui.axis.y2plot_2, 'b-', ...
-                gui.axis.xline, gui.axis.yline,  '--ko');
-            gui.axis.legend_str = {'Initial data', gui.axis.legend2};
-        end
-        
-    elseif gui.variables.y_axis == 2 || gui.variables.y_axis == 3 || ...
-            gui.variables.y_axis == 6
+    if gui.variables.val2 == 1
         gui.handles.plot_data = plot(...
             gui.axis.x2plot, gui.axis.y2plot, 'rx', ...
-            gui.axis.xline, gui.axis.yline, '--ko');
-        gui.axis.legend_str = {'Initial data'};
+            gui.axis.xline, gui.axis.yline,  '--ko');
+        gui.axis.legend_str = 'Initial data';
+    else
+        gui.handles.plot_data = plot(...
+            gui.axis.x2plot, gui.axis.y2plot, 'rx', ...
+            gui.axis.x2plot, gui.axis.y2plot_2, 'b-', ...
+            gui.axis.xline, gui.axis.yline,  '--ko');
+        gui.axis.legend_str = {'Initial data', gui.axis.legend2};
     end
     
 elseif gui.variables.log_plot_value == 1
@@ -196,7 +187,6 @@ elseif gui.variables.num_thinfilm == 3
                 ['Mean hardness of the film (when h < t)= ', ...
                 num2str(round(mean(gui.results.Hf.*1000)./10)./100), 'GPa'];
         end
-        
     end
     
 elseif gui.variables.num_thinfilm == 4
@@ -225,9 +215,7 @@ elseif gui.variables.num_thinfilm == 4
                 ['Mean hardness of the film (when h < t)= ', ...
                 num2str(round(mean(gui.results.Hf.*1000)./10)./100), 'GPa'];
         end
-        
     end
-    
 end
 
 %% Plot properties
