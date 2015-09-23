@@ -33,7 +33,17 @@ if ~gui.flag.wrong_inputs
     if gui.variables.y_axis == 1
         model_load_disp;
         gui = guidata(gcf); guidata(gcf, gui);
+        gui.results.P_fit = gui.results.P_fit/gui.data.loadFact;
+        guidata(gcf, gui);
     end
+    
+    %% Stiffness analysis
+    if gui.variables.y_axis == 2
+        model_stiffness;
+        gui = guidata(gcf); guidata(gcf, gui);
+        gui.results.S_fit = gui.results.S_fit/gui.data.stifFact;
+        guidata(gcf, gui);
+    end 
     
     %% Calculations of function area
     if gui.variables.y_axis > 3
@@ -76,6 +86,7 @@ if ~gui.flag.wrong_inputs
     gui.data.delta_P = gui.data.delta_P/gui.data.loadFact;
     gui.data.S = gui.data.S/gui.data.stifFact;
     gui.data.delta_S = gui.data.delta_S/gui.data.stifFact;
+    
     guidata(gcf, gui);
     
     %% Plot data

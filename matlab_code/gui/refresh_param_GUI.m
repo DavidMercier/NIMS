@@ -41,20 +41,16 @@ if (get(gui.handles.value_param2plotinyaxis_GUI , 'Value') == 6 && ...
     set(gui.handles.popup_corr_King_GUI,       'Visible', 'off');
 end
 
-if get(gui.handles.value_param2plotinyaxis_GUI , 'Value') == 1 || ...
-        get(gui.handles.value_param2plotinyaxis_GUI , 'Value') > 3
-    set(gui.handles.title_model_GUI, 'Visible', 'on');
-    set(gui.handles.value_model_GUI, 'Visible', 'on');
-else
-    set(gui.handles.title_model_GUI, 'Visible', 'off');
-    set(gui.handles.value_model_GUI, 'Visible', 'off');
-end
-
 if get(gui.handles.value_param2plotinyaxis_GUI , 'Value') == 1
     set(gui.handles.title_model_GUI, ...
         'String', gui.handles.title_load_disp_model);
     set(gui.handles.value_model_GUI, ...
         'String', gui.handles.list_load_disp_model);
+elseif get(gui.handles.value_param2plotinyaxis_GUI , 'Value') == 2
+    set(gui.handles.title_model_GUI, ...
+        'String', gui.handles.title_stiffness_model);
+    set(gui.handles.value_model_GUI, ...
+        'String', gui.handles.list_stiffness_model);
 elseif get(gui.handles.value_param2plotinyaxis_GUI , 'Value') == 4 || ...
         get(gui.handles.value_param2plotinyaxis_GUI , 'Value') == 5
     if get(gui.handles.value_numthinfilm_GUI, 'Value') == 2

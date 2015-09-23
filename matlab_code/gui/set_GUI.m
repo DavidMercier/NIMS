@@ -356,6 +356,13 @@ handles.list_load_disp_model = {'No_load_Disp_model',...
 set(handles.title_model_GUI, 'String', handles.title_load_disp_model);
 set(handles.value_model_GUI, 'String', handles.list_load_disp_model);
 
+% List for stiffness models
+handles.title_stiffness_model = 'Stiffness Model';
+
+handles.list_stiffness_model = {'No_stiffness_model',...
+    'Linear', ...
+    '2nd degree polynomial'};
+
 % Titles popup menus
 handles.title_bilayermodel = 'Bilayer Model';
 handles.title_multilayermodel = 'Multilayer Model';
