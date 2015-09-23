@@ -169,6 +169,15 @@ Finite Element Modelling of conical indentation of thin film(s) on a substrate
 Softwares
 ###########
 * `IndentAnalyser by ASMEC <http://www.asmec.de/products/analysis-software/indentanalyser/what-is-indentanalyser.html>`_
+* `Elastica by ASMEC <http://www.asmec.de/analysis-software/elastica/what-can-i-do-with-elastica.html>`_
+* `Softwares from SIOMEC <http://www.siomec.de/en/004/Software>`_
+* `Softwares from Keyisght <http://www.keysight.com/de/pc-1678717/nanoindenter-software?nid=-33997.0&cc=DE&lc=ger>`_
+* `Piuma dataviewer <http://optics11.com/news/55-optics11-launches-piuma-nanoindentation-dataviewer>`_
+* `Punias <http://punias.voila.net/punias0.html?q=pages/starting_page>`_
+* `Gwyddion <http://gwyddion.net/>`_
+* `Softwares from Nanovea <http://nanovea.com/nano-indentation-tester>`_
+* `Virtual nanoindenter <http://www.ibisonline.com.au/Virtual_Nanoindenter.html>`_
+* `Nanoindentation from Kibech S. et al. <https://nanohub.org/tools/nanoindentation>`_
 
 Reviews / Overviews of nanoindentation technique
 ##################################################################
