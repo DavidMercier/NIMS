@@ -33,7 +33,7 @@ if ~gui.flag.wrong_inputs
     if gui.variables.y_axis == 1
         model_load_disp;
         gui = guidata(gcf); guidata(gcf, gui);
-        gui.results.P_fit = gui.results.P_fit/gui.data.loadFact;
+        gui.results.P_fit = gui.results.P_fit./gui.data.loadFact;
         guidata(gcf, gui);
     end
     
@@ -41,7 +41,16 @@ if ~gui.flag.wrong_inputs
     if gui.variables.y_axis == 2
         model_stiffness;
         gui = guidata(gcf); guidata(gcf, gui);
-        gui.results.S_fit = gui.results.S_fit/gui.data.stifFact;
+        gui.results.S_fit = gui.results.S_fit./gui.data.stifFact;
+        guidata(gcf, gui);
+    end
+    
+    %% Load over stiffness squared analysis
+    if gui.variables.y_axis == 3
+        model_loadOverstiffnessSquared;
+        gui = guidata(gcf); guidata(gcf, gui);
+        gui.results.LS2_fit = gui.results.LS2_fit .* (gui.data.stifFact.^2) ./ ...
+            gui.data.loadFact;
         guidata(gcf, gui);
     end
     

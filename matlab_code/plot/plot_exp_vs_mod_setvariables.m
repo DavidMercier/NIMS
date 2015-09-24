@@ -98,8 +98,15 @@ else
     elseif gui.variables.y_axis == 3
         gui.axis.y2plot = gui.data.P ./ (gui.data.S.^2);
         gui.axis.delta_y2plot = gui.data.delta_P - 2*(gui.data.delta_S);
+        gui.axis.y2plot_2 = gui.results.LS2_fit;
         gui.axis.ylabelstr = 'Load oved Stiffness squared (1/GPa)';
         gui.axis.ymax = max(gui.axis.y2plot);
+        if gui.variables.val2 == 2
+            gui.axis.title_str = strcat('$L/S^2$ = (', ...
+                num2str(gui.results.linear_fit(1)), ')$h$ + (', ...
+                num2str(gui.results.linear_fit(2)), ')', ...
+                '/ $R^2 =$ ', num2str(gui.results.rSquare));
+        end
     elseif gui.variables.y_axis == 4
         gui.axis.y2plot = gui.results.Esample_red;
         gui.axis.delta_y2plot = 0;
