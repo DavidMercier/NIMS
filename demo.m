@@ -26,7 +26,7 @@ end
 
 %% Set Toolbox version and help paths
 gui.config.name_toolbox = 'NIMS';
-gui.config.version_toolbox = '3.0';
+gui.config.version_toolbox = '3.1';
 gui.config.url_help = 'http://nims.readthedocs.org/en/latest/';
 gui.config.pdf_help = 'https://media.readthedocs.org/pdf/nims/latest/nims.pdf';
 
