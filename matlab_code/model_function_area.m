@@ -7,14 +7,16 @@ gui = guidata(gcf);
 h_tip = str2double(gui.data.indenter_tip_defect); % Tip defect (in nm)
 aLoubet = gui.config.numerics.alpha_Loubet;
 
-if gui.variables.val0 == 1 % Berkovich indenter
-    epsilon = gui.config.numerics.epsilonParaboloidRevolution_OliverPharr;
-elseif gui.variables.val0 == 2; % Vickers indenter
-    epsilon = gui.config.numerics.epsilonParaboloidRevolution_OliverPharr;
-elseif gui.variables.val0 == 3  % Cube-Corner indenter
-    epsilon = gui.config.numerics.epsilonParaboloidRevolution_OliverPharr;
-elseif gui.variables.val0 == 4  % Conical indenter
-    epsilon = gui.config.numerics.epsilonConical_OliverPharr;
+if gui.variables.val1 == 2 % Oliver et al. (1992)
+    if gui.variables.val0 == 1 % Berkovich indenter
+        epsilon = gui.config.numerics.epsilonParaboloidRevolution_OliverPharr;
+    elseif gui.variables.val0 == 2; % Vickers indenter
+        epsilon = gui.config.numerics.epsilonParaboloidRevolution_OliverPharr;
+    elseif gui.variables.val0 == 3  % Cube-Corner indenter
+        epsilon = gui.config.numerics.epsilonParaboloidRevolution_OliverPharr;
+    elseif gui.variables.val0 == 4  % Conical indenter
+        epsilon = gui.config.numerics.epsilonConical_OliverPharr;
+    end
 end
 
 %% Calculation of hc (contact depth), Ac (contact area) and a (contact radius)
