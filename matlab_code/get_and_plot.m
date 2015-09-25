@@ -106,6 +106,11 @@ else
     warndlg(gui.flag.warnText, 'Input Error');
     delete(gui.handles.h_waitbar);
 end
+
+% Update date and clock
+set(gui.handles.date_GUI, ...
+'String', datestr(datenum(clock),'mmm.dd,yyyy HH:MM'));
+
 guidata(gcf, gui);
 
 end
