@@ -117,24 +117,26 @@ if get(gui.handles.value_numthinfilm_GUI, 'Value') == 1
     set(gui.handles.bg_film0_properties_GUI,   'Visible', 'off');
     set(gui.handles.cb_corr_thickness_GUI,     'Visible', 'off');
     set(gui.handles.cb_corr_thickness_GUI,     'Value',0);
-    set(gui.handles.title_model_GUI, 'Visible', 'off');
-    set(gui.handles.value_model_GUI, 'Visible', 'off');
-    
 elseif get(gui.handles.value_numthinfilm_GUI, 'Value') == 2
     set(gui.handles.bg_film0_properties_GUI,   'Visible', 'on');
     set(gui.handles.bg_film1_properties_GUI,   'Visible', 'off');
     set(gui.handles.bg_film2_properties_GUI,   'Visible', 'off');
-    
 elseif get(gui.handles.value_numthinfilm_GUI, 'Value') == 3
     set(gui.handles.bg_film0_properties_GUI, 'Visible', 'on');
     set(gui.handles.bg_film1_properties_GUI, 'Visible', 'on');
     set(gui.handles.bg_film2_properties_GUI, 'Visible', 'off');
-    
 elseif get(gui.handles.value_numthinfilm_GUI, 'Value') == 4
     set(gui.handles.bg_film0_properties_GUI, 'Visible', 'on');
     set(gui.handles.bg_film1_properties_GUI, 'Visible', 'on');
     set(gui.handles.bg_film2_properties_GUI, 'Visible', 'on');
-    
+end
+
+if get(gui.handles.value_numthinfilm_GUI, 'Value') == 1
+    set(gui.handles.title_model_GUI, 'Visible', 'off');
+    set(gui.handles.value_model_GUI, 'Visible', 'off');
+else
+    set(gui.handles.title_model_GUI, 'Visible', 'on');
+    set(gui.handles.value_model_GUI, 'Visible', 'on');
 end
 
 guidata(gcf, gui);
