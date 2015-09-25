@@ -3,7 +3,18 @@ function model_bilayer_plastic(val2)
 %% Function used to set the bilayer plastic model
 gui = guidata(gcf);
 
+%% Setting variables & parameters
+gui.results.Hf_fit = 0;
+gui.results.t_corr = 0;
 gui.results.Hf = 0;
+
+% Thickness correction
+if get(gui.handles.cb_corr_thickness_GUI, 'Value') == 1
+    gui.results.t_corr = gui.data.t - ...
+        (gui.variables.thickness_correctionFactor .* gui.results.hc);
+else
+    gui.results.t_corr = gui.data.t;
+end
 
 gui.axis.legend2 = 'Results with the bilayer model';
 guidata(gcf, gui);
@@ -20,10 +31,18 @@ gui = guidata(gcf); guidata(gcf, gui);
 if val2 ~= 1
     if gui.variables.y_axis == 6
         
-        if val2 == 2 %Saha (2002)
+        OPTIONS = optimset('lsqcurvefit');
+        OPTIONS = optimset(OPTIONS, 'TolFun',  gui.config.numerics.TolFun_value);
+        OPTIONS = optimset(OPTIONS, 'TolX',    gui.config.numerics.TolX_value);
+        OPTIONS = optimset(OPTIONS, 'MaxIter', gui.config.numerics.MaxIter_value);
+        
+        if val2 == 2 %KaoByrne (1981)
+            model_kao(OPTIONS);
+            gui = guidata(gcf); guidata(gcf, gui);
+        elseif val2 == 3 %Saha (2002)
             gui.results.Hf = model_saha(gui.data.S, gui.data.P, ...
                 gui.results.Em_red, gcf);
-        elseif val2 == 3 %Mercier (2010)
+        elseif val2 == 4 %Mercier (2010)
             gui.results.Hf = model_mercier(gui.data.S, gui.data.P, ...
                 gui.results.Ef_red, gcf);
         end

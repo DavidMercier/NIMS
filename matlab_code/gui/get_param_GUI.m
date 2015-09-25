@@ -6,24 +6,28 @@ gui = guidata(gcf);
 check_param_GUI;
 
 %% Getting parameters from the GUI
+% Substrat
+gui.data.Es  = str2double(get(gui.handles.value_youngsub_GUI, 'String')) * 1e9;    %GPa
+gui.data.nus = str2double(get(gui.handles.value_poisssub_GUI, 'String'));
+gui.data.Hs  = str2double(get(gui.handles.value_hardsub_GUI, 'String'));
+
 % Film 0
 gui.data.t0   = str2double(get(gui.handles.value_thickfilm0_GUI,  'String'));       % nm
 gui.data.E0   = str2double(get(gui.handles.value_youngfilm0_GUI, 'String')) * 1e9; % GPa
 gui.data.nuf0 = str2double(get(gui.handles.value_poissfilm0_GUI, 'String'));
+gui.data.Hf0  = str2double(get(gui.handles.value_hardfilm0_GUI, 'String'));
 
 % Film 1
 gui.data.t1   = str2double(get(gui.handles.value_thickfilm1_GUI,  'String'));       % nm
 gui.data.E1   = str2double(get(gui.handles.value_youngfilm1_GUI, 'String')) * 1e9; % GPa
 gui.data.nuf1 = str2double(get(gui.handles.value_poissfilm1_GUI, 'String'));
+gui.data.Hf1  = str2double(get(gui.handles.value_hardfilm1_GUI, 'String'));
 
 % Film 2
 gui.data.t2   = str2double(get(gui.handles.value_thickfilm2_GUI,  'String'));       % nm
 gui.data.E2   = str2double(get(gui.handles.value_youngfilm2_GUI, 'String')) * 1e9; % GPa
 gui.data.nuf2 = str2double(get(gui.handles.value_poissfilm2_GUI, 'String'));
-
-% Substrat
-gui.data.Es  = str2double(get(gui.handles.value_youngsub_GUI, 'String')) * 1e9;    %GPa
-gui.data.nus = str2double(get(gui.handles.value_poisssub_GUI, 'String'));
+gui.data.Hf2  = str2double(get(gui.handles.value_hardfilm2_GUI, 'String'));
 
 % Indenter properties
 list_indenters = get(gui.handles.value_indentertype_GUI, 'String');
@@ -97,6 +101,11 @@ if gui.data.nus < -1 || gui.data.nus > 0.5
 end
 
 % Young's modulus
+if gui.data.Es < 0
+    set(gui.handles.value_youngsub_GUI, 'String', 165); % in GPa
+    warning('Wrong input for Young''s modulus !');
+end
+
 if gui.data.E0 < 0
     set(gui.handles.value_youngfilm0_GUI, 'String', 100); % in GPa
     warning('Wrong input for Young''s modulus !');
@@ -111,11 +120,27 @@ if gui.data.E2 < 0
     set(gui.handles.value_youngfilm2_GUI, 'String', 100); % in GPa
     warning('Wrong input for Young''s modulus !');
 end
-    
-if gui.data.Es < 0
-    set(gui.handles.value_youngsub_GUI, 'String', 165); % in GPa
-    warning('Wrong input for Young''s modulus !');
+
+% Hardness
+if gui.data.Hs < 0
+    set(gui.handles.value_youngsub_GUI, 'String', 10); % in GPa
+    warning('Wrong input for Hardness !');
 end 
+
+if gui.data.Hf0 < 0
+    set(gui.handles.value_youngfilm0_GUI, 'String', 10); % in GPa
+    warning('Wrong input for Hardness !');
+end
+
+if gui.data.Hf1 < 0
+    set(gui.handles.value_youngfilm1_GUI, 'String', 10); % in GPa
+    warning('Wrong input for Hardness !');
+end 
+    
+if gui.data.Hf2 < 0
+    set(gui.handles.value_youngfilm2_GUI, 'String', 10); % in GPa
+    warning('Wrong input for Hardness !');
+end
 
 % Film thickness
 if gui.data.t0 < 0

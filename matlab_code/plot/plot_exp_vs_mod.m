@@ -151,6 +151,9 @@ elseif gui.variables.num_thinfilm == 2
         if gui.variables.val2 == 1
             gui.axis.title_str = strcat('Mean Hardness of the film = ', ...
                 num2str(round(mean(gui.results.H.*1000)./10)./100), 'GPa');
+        elseif gui.variables.val2 == 2
+            set(gui.handles.value_hardfilm0_GUI, ...
+                'String', round(gui.results.Hf_fit));
         else
             set(gui.handles.value_youngfilm0_GUI, ...
                 'String', round(gui.results.Ef_sol_fit(1)));

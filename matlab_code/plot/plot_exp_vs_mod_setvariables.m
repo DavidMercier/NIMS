@@ -70,7 +70,7 @@ else
         gui.axis.y2plot = gui.data.P;
         gui.axis.delta_y2plot = gui.data.delta_P;
         gui.axis.y2plot_2 = gui.results.P_fit;
-        gui.axis.ylabelstr = ['Load (', char(gui.data.loadUnit),')'];
+        gui.axis.ylabelstr = ['Load ($L$) (', char(gui.data.loadUnit),')'];
         gui.axis.ymax = max(gui.data.P);
         gui.axis.title_str = strcat('Loading work ($W$) = ', ...
             num2str(gui.results.W_microJ), '$\mu$J / $k$(fit) = ', ...
@@ -81,7 +81,7 @@ else
         gui.axis.y2plot = gui.data.S;
         gui.axis.delta_y2plot = gui.data.delta_S;
         gui.axis.y2plot_2 = gui.results.S_fit;
-        gui.axis.ylabelstr = ['Stiffness (', char(gui.data.stifUnit),')'];
+        gui.axis.ylabelstr = ['Stiffness ($S$) (', char(gui.data.stifUnit),')'];
         gui.axis.ymax = max(gui.data.S);
         if gui.variables.val2 == 2
             gui.axis.title_str = strcat('$S$ = (', ...
@@ -99,7 +99,7 @@ else
         gui.axis.y2plot = gui.data.P ./ (gui.data.S.^2);
         gui.axis.delta_y2plot = gui.data.delta_P - 2*(gui.data.delta_S);
         gui.axis.y2plot_2 = gui.results.LS2_fit;
-        gui.axis.ylabelstr = 'Load oved Stiffness squared (1/GPa)';
+        gui.axis.ylabelstr = 'Load oved Stiffness squared ($L/S^2$) (1/GPa)';
         gui.axis.ymax = max(gui.axis.y2plot);
         if gui.variables.val2 == 2
             gui.axis.title_str = strcat('$L/S^2$ = (', ...
@@ -111,7 +111,7 @@ else
         gui.axis.y2plot = gui.results.Esample_red;
         gui.axis.delta_y2plot = 0;
         gui.axis.y2plot_2 = gui.results.Em_red;
-        gui.axis.ylabelstr = 'Reduced Young''s modulus (GPa)';
+        gui.axis.ylabelstr = 'Reduced Young''s modulus ($E^*$) (GPa)';
         cleaned_Esample_red = gui.results.Esample_red;
         cleaned_Esample_red(isinf(cleaned_Esample_red)) = [];
         cleaned_Esample_red(isnan(cleaned_Esample_red)) = [];
@@ -123,7 +123,7 @@ else
         gui.axis.y2plot = gui.results.Esample_red;
         gui.axis.delta_y2plot = 0;
         gui.axis.y2plot_2 = gui.results.Ef_red;
-        gui.axis.ylabelstr = ['Reduced Young''s modulus (GPa)'];
+        gui.axis.ylabelstr = ['Reduced Young''s modulus ($E^*$) (GPa)'];
         cleaned_Esample_red = gui.results.Esample_red;
         cleaned_Esample_red(isinf(cleaned_Esample_red)) = [];
         cleaned_Esample_red(isnan(cleaned_Esample_red)) = [];
@@ -135,7 +135,7 @@ else
         gui.axis.y2plot = gui.results.H;
         gui.axis.delta_y2plot = 0;
         gui.axis.y2plot_2 = gui.results.Hf;
-        gui.axis.ylabelstr = 'Hardness (GPa)';
+        gui.axis.ylabelstr = 'Hardness film ($H_f$) (GPa)';
         cleaned_H = gui.results.H;
         cleaned_H(isinf(cleaned_H)) = [];
         cleaned_H(isnan(cleaned_H)) = [];

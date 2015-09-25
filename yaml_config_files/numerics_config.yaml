@@ -69,3 +69,5 @@ TolX_value: 1e-20
 MaxIter_value: 10000
 Min_YoungModulus: 0 #in GPa
 Max_YoungModulus: 1000 #in GPa
+Min_Hardness: 0 #in GPa
+Max_Hardness: 100 #in GPa
