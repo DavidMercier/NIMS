@@ -16,23 +16,23 @@ if gui.variables.y_axis == 1
     residual_norm = gui.results.residual./gui.data.P;
     gui.axis.legend_str = 'Residuals / Load';
     gui.axis.title_str = 'Residuals / Load';
-    gui.axis.ylabelstr = 'Residuals / Load (%)';
+    gui.axis.ylabelstr = 'Residuals / Load (\%)';
 elseif gui.variables.y_axis == 2
     residual_norm = gui.results.residual./gui.data.S;
     gui.axis.legend_str = 'Residuals / Stiffness';
     gui.axis.title_str = 'Residuals / Stiffness';
-    gui.axis.ylabelstr = 'Residuals / Stiffness (%)';
+    gui.axis.ylabelstr = 'Residuals / Stiffness (\%)';
 elseif gui.variables.y_axis > 3
     residual_norm = gui.results.residual./gui.results.Esample_red;
     gui.axis.legend_str = 'Residuals / Young''s modulus of the sample';
     gui.axis.title_str = 'Residuals / Young''s modulus of the sample';
-    gui.axis.ylabelstr = 'Residuals / Young''s modulus of the sample (%)';
+    gui.axis.ylabelstr = 'Residuals / Young''s modulus of the sample (\%)';
 end
 
 %% Setting of the plot
 if gui.variables.x_axis == 1
     gui.axis.x2plot = gui.data.h;
-    gui.axis.xlabelstr = ['Displacement (h) (', char(gui.data.dispUnit), ')'];
+    gui.axis.xlabelstr = ['Displacement ($h$) (', char(gui.data.dispUnit), ')'];
     gui.axis.xmax = round(max(gui.data.h));
     gui.axis.xmin = 0;
     
