@@ -20,7 +20,7 @@ else
     ylim([gui.axis.ymax gui.axis.ymin]);
 end
 
-set(gui.handles.AxisPlot_GUI, 'FontSize', 14);
+set(gui.handles.AxisPlot_GUI, 'FontSize', 14); %'TickLabelInterpreter', 'tex'
 set(gui.handles.plot_data, 'MarkerSize', 10);
 
 for ii = 1:length(gui.handles.plot_data)
@@ -29,7 +29,6 @@ end
 
 hLeg = legend(gui.axis.legend_str, 'Location', 'NorthWest');
 hTitle = title(gui.axis.title_str, 'FontSize', 18);
-
 set([hXLabel, hYLabel, hLeg, hTitle], 'Interpreter', 'Latex');
 
 if get(gui.handles.cb_grid_plot_GUI, 'Value') == 1
