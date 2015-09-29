@@ -27,7 +27,10 @@ for ii = 1:length(gui.handles.plot_data)
     gui.handles.plot_data(ii).LineWidth = 2;
 end
 
-hLeg = legend(gui.axis.legend_str, 'Location', 'NorthWest');
+list_Location = listLocationLegend;
+LocationNumber = get(gui.handles.value_legend_location, 'Value');
+
+hLeg = legend(gui.axis.legend_str, 'Location', char(list_Location(LocationNumber)));
 hTitle = title(gui.axis.title_str, 'FontSize', 18);
 set([hXLabel, hYLabel, hLeg, hTitle], 'Interpreter', 'Latex');
 
