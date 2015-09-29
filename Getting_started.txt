@@ -22,9 +22,9 @@ from MTS software - Analyst (with a 'Hold Segment Type')
 
 6) Choose the appropriate indenter and set if needed the function area.
 
-7) Set the number of thin films (1 to 3) deposited on your substrate (bulk material).
+7) Set the number of thin films (0 to 3) deposited on your substrate (bulk material).
 
-8) Then, set thin films properties (thickness, Poisson's ratio, Young's modulus...)
+8) Then, set thin films properties (thickness,  Young's modulus, Poisson's ratio, hardness...)
 
 9) Select corrections to apply to your data and the model to use for contact displacement calculation.
 
@@ -46,7 +46,7 @@ are given for the plot of load vs. displacement.
 (in same the folder as the folder where the indentation data are stored),
 by pressing the button 'Save', when Young's modulus calculation is performed.
 
-15) Finally, press the button 'FEM' to generate a Python script to model indentation of multilayer sample with ABAQUS 6.12. 
+15) Finally, press the button 'FEM' to generate a Python script to model indentation of multilayer sample with ABAQUS. 
 
 Format of the name of the YAML file : 'data_name / multi- or bilayer model / .yaml'
 
