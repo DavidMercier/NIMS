@@ -35,19 +35,20 @@ No delamination is allowed between thin films or between thin film and substrate
    :scale: 20 %
    :align: center
    
-   *Figure 1 : Geometry of the sample in the FEM model.*
+   *Geometry of the sample in the FEM model.*
 
 Geometry of the indenter
 ---------------------------------
 
 The indenter is defined as a rigid cono-spherical indenter.
-A spherical part is defined at the apex of the conical indenter (see Figure 2).
+A spherical part is defined at the apex of the conical indenter (see :numref:`conospherical_indenter`).
 
 .. figure:: ./_pictures/conospherical_indenter.png
+   :name: conospherical_indenter
    :scale: 50 %
    :align: center
    
-   *Figure 2 : Scheme of a cono-spherical indenter.*
+   *Scheme of a cono-spherical indenter.*
 
 The radius :math:`R` of the spherical part is calculated from the tip defect :math:`h_\text{tip}`
 and the cone angle :math:`\alpha`, using the following equation. For Berkovich, Vickers and Cube-Corner
@@ -84,7 +85,7 @@ from 0 (quadratic elements) to 1 (linear elements).
    :scale: 20 %
    :align: center
    
-   *Figure 3 : Screenshot in Abaqus of the mesh example used in the FE model.*
+   *Screenshot in Abaqus of the mesh example used in the FE model.*
 
 Material properties
 ---------------------------------
@@ -116,23 +117,25 @@ Boundaries conditions
 
 Nodes are constrained along the rotation axis from moving in the radial direction (:math:`x`).
 The nodes on the bottom surface of the sample are constrained along the radial axis
-from moving in the radial (:math:`x`) and vertical (:math:`z`) directions (see Figure 4 and 5).
+from moving in the radial (:math:`x`) and vertical (:math:`z`) directions (see :numref:`fem_model_bc` and :numref:`fem_model_parts_bc`).
 
 Indentation process is simulated by imposing a vertical displacement
-to the rigid indenter along the (:math:`z`) axis (see Figures 4 and 5).
+to the rigid indenter along the (:math:`z`) axis (see :numref:`fem_model_bc` and :numref:`fem_model_parts_bc`).
 A value of 200nm for the indentation depth is set by default.
 
 .. figure:: ./_pictures/fem_model_bc.png
+   :name: fem_model_bc
    :scale: 50 %
    :align: center
    
-   *Figure 4 : Schematic of boundaries conditions used in the FE model.*
+   *Schematic of boundaries conditions used in the FE model.*
     
 .. figure:: ./_pictures/fem_model_parts_bc.png
+   :name: fem_model_parts_bc
    :scale: 20 %
    :align: center
    
-   *Figure 5 : Screenshot of the FE model with BCs in Abaqus.*
+   *Screenshot of the FE model with BCs in Abaqus.*
    
 ..  warning::
     Indentation displacement is given in nanometers and is negative.
@@ -164,19 +167,19 @@ The following pictures were obtained for a `multilayer Au/Ti/SiO2/Si <https://gi
    :scale: 20 %
    :align: center
    
-   *Figure 6 : Screenshot of the Von Mises stress distribution at maximum load.*
+   *Screenshot of the Von Mises stress distribution at maximum load.*
 
 .. figure:: ./_pictures/fem_result_S_Mises_zoom.png
    :scale: 20 %
    :align: center
    
-   *Figure 7 : Screenshot (with a zoom in on the contact area) of the Von Mises stress distribution at maximum load.*
+   *Screenshot (with a zoom in on the contact area) of the Von Mises stress distribution at maximum load.*
    
 .. figure:: ./_pictures/fem_result_U_magnitude.png
    :scale: 20 %
    :align: center
    
-   *Figure 8 : Screenshot (with a zoom in on the contact area) of the magnitude of the displacement at maximum load.*
+   *Screenshot (with a zoom in on the contact area) of the magnitude of the displacement at maximum load.*
     
 References
 ############

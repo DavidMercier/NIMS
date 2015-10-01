@@ -57,13 +57,14 @@ Agilent - MTS example files
     - Data obtained by Berkovich indentation with CSM mode (75Hz / amplitude 1nm).
 
 The last example (2 files for Au-Ti-SiO2-Si sample) is used to validate the elastic multilayer model of Mercier et al. [#Mercier_2010]_.
-A micrograph of this sample is given Figure 1.
+A micrograph of this sample is given :numref:`multilayer_sem`.
 
 .. figure:: ./_pictures/multilayerSEM.png
+   :name: multilayer_sem
    :scale: 60 %
    :align: center
    
-   *Figure 1 : SEM cross-sectional observation of a multilayer sample.*
+   *SEM cross-sectional observation of a multilayer sample.*
    
 Hysitron example files
 ##########################

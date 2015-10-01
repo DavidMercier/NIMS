@@ -8,7 +8,7 @@
 NIMS |matlab| toolbox
 =======================
 
-.. figure:: ./_pictures/nanoind-data-analysis.png
+.. figure:: ./_pictures/icon_nims.png
     :scale: 50 %
     :align: right
 

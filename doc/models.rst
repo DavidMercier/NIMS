@@ -61,7 +61,7 @@ The geometric properties of conical indenters are well described in [#Fischer-Cr
    :scale: 60 %
    :align: center
 
-   *Figure 1 : a) Conical indenter (45°) and b) Berkovich indenter.*
+   *a) Conical indenter (45°) and b) Berkovich indenter.*
 
 These indenters have self-similar geometries which implies a constant strain
 and similarity of the stress fields.
@@ -90,7 +90,7 @@ of the initial contact point between the indenter and the sample [#Fischer-Cripp
    :scale: 60 %
    :align: center
    
-   *Figure 2 : Schematic of the estimation of initial point.*
+   *Schematic of the estimation of initial point.*
 
 Usually, the point of contact is determined from the load-displacement curve,
 when a sharp rise in the force signal is observed.
@@ -103,7 +103,7 @@ the recorded load–displacement data back to zero load.
 With :math:`h` the corrected penetration and :math:`h_0` the recorded penetration.
 
 A schematic of the load-displacement curve obtained from
-nanoindentation experiment after this first correction is given Figure 3.
+nanoindentation experiment after this first correction is given :numref:`load_disp_curve`.
 
 The evolution of this curve depends on material properties of
 the sample and the indenter, and of the indenter's geometry.
@@ -115,10 +115,11 @@ gives access to the contact stiffness :math:`S` (in :math:`\text{N/m}`):
             :label: stiffness
 
 .. figure:: ./_pictures/load-disp_curve.png
+   :name: load_disp_curve
    :scale: 60 %
    :align: center
    
-   *Figure 3 : Schematic of indentation load-displacement curve.*
+   *Schematic of indentation load-displacement curve.*
 
 With :math:`h_\text{t}` the total penetration corrected of the frame compliance
 and :math:`h_\text{r}` the residual indentation depth after unloading.
@@ -126,13 +127,14 @@ and :math:`h_\text{r}` the residual indentation depth after unloading.
 It is worth to mention that for quasistatic nanoindentation, the contact stiffness is a unique value
 obtained at the maximum load and at the maximum displacement. Nevertheless, it is possible to apply a multiple-point
 unload method, and then determine the contact stiffness for many indentation depths, in function of the number of points
-defined by the user (see Figure 4) [#Fischer-Cripps_2004]_.
+defined by the user (see :numref:`load_disp_curve_multiplepoints`) [#Fischer-Cripps_2004]_.
 
 .. figure:: ./_pictures/load-disp_curve_multiplepoints.png
+   :name: load_disp_curve_multiplepoints
    :scale: 60 %
    :align: center
    
-   *Figure 4 : Schematic of indentation load-displacement curve with the multiple point unload method (here n points).*
+   *Schematic of indentation load-displacement curve with the multiple point unload method (here n points).*
 
 Frame compliance
 +++++++++++++++++++
@@ -152,13 +154,14 @@ To determine the frame compliance, it is required to plot :math:`\frac{dh}{dF_\t
 the corrected total depth :math:`(1/h_\text{t})` or the corrected plastic depth :math:`(1/{h_\text{c}})`
 (see the following part "Indentation contact topography" for the definition of the plastic depth)
 [#DoernerNix_1986]_ and [#Fischer-Cripps_2006]_.
-Then, a linear fit of this curve gives an intercept with the ordinate axis which is the frame compliance (see Figure 5).
+Then, a linear fit of this curve gives an intercept with the ordinate axis which is the frame compliance (see :numref:`frame_compliance`).
 
 .. figure:: ./_pictures/frame_compliance.png
+   :name: frame_compliance
    :scale: 60 %
    :align: center
    
-   *Figure 5 : Schematic of the plot to determine the frame compliance.*
+   *Schematic of the plot to determine the frame compliance.*
 
 It is advised to perform indentation tests on a variety of bulk standard specimens
 (fused silica, silicon and sapphire provide a very good range), in order to estimate better the frame compliance.
@@ -244,8 +247,8 @@ Indentation contact topography
 The indentation total depth is rarely equal to the indentation contact depth.
 Two kind of topography can occur:
 
-- the pile-up (indentation contact depth > indentation total depth) (see Figure 6-a and Figure 7);
-- the sink-in (indentation contact depth < indentation total depth) (see Figure 6-b).
+- the pile-up (indentation contact depth > indentation total depth) (see :numref:`contact_topography`-a and :numref:`pile_up`);
+- the sink-in (indentation contact depth < indentation total depth) (see :numref:`contact_topography`-b).
 
 The flow of material below the indenter is function of mechanical properties of the material.
 
@@ -253,16 +256,18 @@ Pile-up occurs when work-hardening coefficient is low (:math:`< 0.3`) or if the 
 over Young's modulus is less than :math:`1%` [#Bolshakov_1998]_, [#Cheng_1998]_ and [#Cheng_2004]_.
 
 .. figure:: ./_pictures/contact_topography.png
+   :name: contact_topography
    :scale: 60 %
    :align: center
    
-   *Figure 6 : Schematic of indentation contact topography : a) "pile-up" and b) "sink-in".*
+   *Schematic of indentation contact topography : a) "pile-up" and b) "sink-in".*
    
 .. figure:: ./_pictures/pile_up.png
+   :name: pile_up
    :scale: 35 %
    :align: center
 
-   *Figure 7 : Residual topography of a Berkovich indent in PVD Gold thin film (500nm thick)
+   *Residual topography of a Berkovich indent in PVD Gold thin film (500nm thick)
    with "pile-up" surrounding the indent, measured by atomic force microscopy.*
    
 Three main models defining the depth of contact :math:`h_\text{c}` were developed
@@ -296,7 +301,7 @@ Find here the |matlab| function to plot the :math:`\epsilon` function :
    :scale: 45 %
    :align: center
 
-   *Figure 8 : Evolution of epsilon in function of the power law exponent m of the unloading curve.*
+   *Evolution of epsilon in function of the power law exponent m of the unloading curve.*
 
 :math:`0.72` should be most applicable for a Berkovich indenter, which is more like
 a cone than a paraboloid of revolution. But, Oliver and Pharr concluded after
@@ -388,7 +393,7 @@ This technique is named **Continuous Stiffness Measurement** (CSM) for Agilent -
    :scale: 60 %
    :align: center
    
-   *Figure 9 : Schematic of the dynamic loading cycle.*
+   *Schematic of the dynamic loading cycle.*
 
     .. math:: S = \left[\frac{1}{\frac{F_\text{c}}{h_\text{t}}\cos\phi-\left(K_\text{s} - m\omega^2\right)} -
               \frac{1}{K_\text{f}}\right]^{-1}
@@ -442,7 +447,7 @@ constant :math:`K`, using :eq:`csm_K_m`.
    :scale: 45 %
    :align: center
    
-   *Figure 10 : Evolution of K in function of m.*
+   *Evolution of K in function of m.*
 
 Find here the |matlab| function to calculate the corrections to apply on depth, load and stiffness during dynamic nanoindentation:
 `CSM_correction.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/CSM_correction.m>`_.
@@ -506,7 +511,7 @@ Find here the |matlab| function to plot the :math:`\beta` function of Hay et al.
    :scale: 35 %
    :align: center
    
-   *Figure 11 : Plots of beta Hay : a) in function of the half-angle
+   *Plots of beta Hay : a) in function of the half-angle
    of the conical indenter (for a Poisson's ratio of 0.3), and b)
    in function of the Poisson's ratio for a Berkovich indenter.*
 
@@ -559,13 +564,14 @@ Energy approach
 Another way to access indentation data is the use of the energy :math:`W_\text{tot}` (in :math:`\text{J} = \text{N/m}`)
 dissipated during the indentation. The elastic :math:`W_\text{e}` and plastic :math:`W_\text{p}` energies
 are based on the integral of the loading and unloading curve
-(see Figure 12) [#ChengCheng_1998]_ and [#Malzbender_2002]_.
+(see :numref:`load_disp_curve_energy`) [#ChengCheng_1998]_ and [#Malzbender_2002]_.
 
 .. figure:: ./_pictures/load-disp_curve_energy.png
+   :name: load_disp_curve_energy
    :scale: 60 %
    :align: center
 
-   *Figure 12 : Schematic representation of indentation load–displacement
+   *Schematic representation of indentation load–displacement
    curves with definition of different works of indentation.*
 
     .. math:: W_\text{tot} = \int_{0}^{h_\text{t}} {F_\text{c}\left(dh\right)}
