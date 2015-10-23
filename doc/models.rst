@@ -247,8 +247,8 @@ Indentation contact topography
 The indentation total depth is rarely equal to the indentation contact depth.
 Two kind of topography can occur:
 
-- the pile-up (indentation contact depth > indentation total depth) (see :numref:`contact_topography`-a and :numref:`pile_up`);
-- the sink-in (indentation contact depth < indentation total depth) (see :numref:`contact_topography`-b).
+- the pile-up (indentation contact depth > indentation total depth) (see :numref:`contact_topography`a and :numref:`pile_up`);
+- the sink-in (indentation contact depth < indentation total depth) (see :numref:`contact_topography`b).
 
 The flow of material below the indenter is function of mechanical properties of the material.
 
