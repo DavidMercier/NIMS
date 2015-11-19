@@ -46,7 +46,7 @@ Reference papers
 Acknowledgements
 ----------------
 The author is grateful to `Dr. V. Mandrillon <https://www.researchgate.net/profile/Vincent_Mandrillon>`_ from (`CEA <http://www.cea.fr/le-cea/les-centres-cea/grenoble>`_, France (Grenoble))
-and to Dr. M. Verdier from (`SIMaP <http://simap.grenoble-inp.fr>`_, France (Grenoble)), for long discussions and many advices about nanoindentation.
+and to `Dr. M. Verdier <Marc.Verdier@simap.grenoble-inp.fr> from (`SIMaP <http://simap.grenoble-inp.fr>`_ from France (Grenoble)), for long discussions and many advices about nanoindentation.
 
 The author is grateful to `Dr. Igor Zlotnikov <https://www.researchgate.net/profile/Igor_Zlotnikov>`_ 
 (`Max Planck Institute of Colloids and Interfaces <http://www.mpikg.mpg.de/>`_, Germany (Potsdam)), for providing example files.
