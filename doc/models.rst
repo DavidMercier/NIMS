@@ -563,7 +563,7 @@ Energy approach
 
 Another way to access indentation data is the use of the energy :math:`W_\text{tot}` (in :math:`\text{J} = \text{N/m}`)
 dissipated during the indentation. The elastic :math:`W_\text{e}` and plastic :math:`W_\text{p}` energies
-are based on the integral of the loading and unloading curve
+are respectively based on the integrals of the loading and unloading curves
 (see :numref:`load_disp_curve_energy`) [#ChengCheng_1998]_ and [#Malzbender_2002]_.
 
 .. figure:: ./_pictures/load-disp_curve_energy.png
