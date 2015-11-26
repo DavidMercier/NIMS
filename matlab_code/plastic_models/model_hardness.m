@@ -12,6 +12,6 @@ if nargin == 0
     display(contact_area);
 end
 
-hardness = 1e-6 * (max_load./contact_area);
+hardness = 1e6 * (max_load./contact_area);
 
 end
