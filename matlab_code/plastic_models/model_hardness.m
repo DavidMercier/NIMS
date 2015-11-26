@@ -1,9 +1,9 @@
 %% Copyright 2014 MERCIER David
 function hardness = model_hardness(max_load, contact_area, varargin)
 %% Function used to calculate the hardness of the sample. See in Oliver et al. (1992).
-% max_load = Maximum of load (in GPa)
-% contact area = Contact area (in µm2)
-% hardness = Hardness in GPa
+% max_load = Maximum of load (in mN)
+% contact area = Contact area (in nm2)
+% hardness = Hardness (in GPa)
 
 if nargin == 0
     max_load = randi(30) / 10;
@@ -12,6 +12,6 @@ if nargin == 0
     display(contact_area);
 end
 
-hardness = 1e6 * (max_load./contact_area);
+hardness = 1e-6 * (max_load./contact_area);
 
 end
