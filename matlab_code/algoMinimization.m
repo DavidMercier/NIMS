@@ -13,10 +13,8 @@ if resultToolbox
     OPTIONS = optimset(OPTIONS, 'MaxIter', gui.config.numerics.MaxIter_value);
 else
     % http://nl.mathworks.com/help/matlab/ref/optimset.html
-    OPTIONS = optimset('fzero');
-    OPTIONS = optimset(OPTIONS, 'TolFun',  gui.config.numerics.TolFun_value);
-    OPTIONS = optimset(OPTIONS, 'TolX',    gui.config.numerics.TolX_value);
-    OPTIONS = optimset(OPTIONS, 'MaxIter', gui.config.numerics.MaxIter_value);
+    % http://nl.mathworks.com/help/matlab/optimization.html
+    OPTIONS = 0;
 end
 
 end
