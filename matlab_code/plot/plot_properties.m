@@ -24,7 +24,12 @@ set(gui.handles.AxisPlot_GUI, 'FontSize', 14); %'TickLabelInterpreter', 'tex'
 set(gui.handles.plot_data, 'MarkerSize', 10);
 
 for ii = 1:length(gui.handles.plot_data)
-    gui.handles.plot_data(ii).LineWidth = 2;
+    try
+        % Doesn't work for Matlab 2014.a !
+        gui.handles.plot_data(ii).LineWidth = 2;
+    catch
+        set(gui.handles.plot_data(ii), 'LineWidth', 2);
+    end
 end
 
 list_Location = listLocationLegend;
