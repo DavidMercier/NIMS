@@ -38,7 +38,7 @@ if resultToolbox
 else
     model = @LMS;
     gui.results.Ef_red_sol_fit = fminsearch(model, gui.results.A0);
-    warning('No Optimization toolbox availble !');
+    warning('No Optimization toolbox available !');
 end
 
     function [sse, FittedCurve] = LMS(params)
