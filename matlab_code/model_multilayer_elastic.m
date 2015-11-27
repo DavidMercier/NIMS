@@ -41,10 +41,8 @@ guidata(gcf, gui);
 %% Optimization of Young's modulus of the thin film
 if val2 ~= 1
     if gui.variables.y_axis > 3
-        OPTIONS = optimset('lsqcurvefit');
-        OPTIONS = optimset(OPTIONS, 'TolFun',  gui.config.numerics.TolFun_value);
-        OPTIONS = optimset(OPTIONS, 'TolX',    gui.config.numerics.TolX_value);
-        OPTIONS = optimset(OPTIONS, 'MaxIter', gui.config.numerics.MaxIter_value);
+        
+        OPTIONS = algoMinimization;
         
         % 2 Films + Substrat
         if gui.variables.num_thinfilm == 3 && val2 == 2 % Mercier et al. (2010)

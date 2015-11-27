@@ -31,10 +31,7 @@ gui = guidata(gcf); guidata(gcf, gui);
 if val2 ~= 1
     if gui.variables.y_axis == 6
         
-        OPTIONS = optimset('lsqcurvefit');
-        OPTIONS = optimset(OPTIONS, 'TolFun',  gui.config.numerics.TolFun_value);
-        OPTIONS = optimset(OPTIONS, 'TolX',    gui.config.numerics.TolX_value);
-        OPTIONS = optimset(OPTIONS, 'MaxIter', gui.config.numerics.MaxIter_value);
+        OPTIONS = algoMinimization;
         
         if val2 == 2 %KaoByrne (1981)
             model_kao(OPTIONS);
@@ -52,7 +49,7 @@ if val2 ~= 1
 elseif val2 == 1 % No Bilayer Model
     emptyVariables;
     gui = guidata(gcf); guidata(gcf, gui);
-
+    
 end
 
 set(gui.MainWindows, 'CurrentAxes', gui.handles.AxisPlot_GUI);

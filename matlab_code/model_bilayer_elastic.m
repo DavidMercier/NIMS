@@ -30,10 +30,7 @@ guidata(gcf, gui);
 if val2 ~= 1
     if gui.variables.y_axis > 3
         
-        OPTIONS = optimset('lsqcurvefit');
-        OPTIONS = optimset(OPTIONS, 'TolFun',  gui.config.numerics.TolFun_value);
-        OPTIONS = optimset(OPTIONS, 'TolX',    gui.config.numerics.TolX_value);
-        OPTIONS = optimset(OPTIONS, 'MaxIter', gui.config.numerics.MaxIter_value);
+        OPTIONS = algoMinimization;
         
         if val2 == 2 %Doerner & Nix (1986)
             model_doerner_nix(OPTIONS);
