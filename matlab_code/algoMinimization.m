@@ -3,9 +3,7 @@ function OPTIONS = algoMinimization
 %% Function used to set the algorithm of minimization
 gui = guidata(gcf);
 
-resultToolbox = isToolboxAvailable('Optimization Toolbox');
-
-if resultToolbox
+if gui.config.licenceFlag
     % http://nl.mathworks.com/help/optim/ug/optimization-options-reference.html
     OPTIONS = optimset('lsqcurvefit');
     OPTIONS = optimset(OPTIONS, 'TolFun',  gui.config.numerics.TolFun_value);

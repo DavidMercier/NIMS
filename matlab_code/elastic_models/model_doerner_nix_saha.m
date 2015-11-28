@@ -41,9 +41,7 @@ max_alpha = gui.config.numerics.alpha_max_DoernerNix;
 % Make a starting guess
 gui.results.A0 = [gui.data.Ef_red; (min_alpha + max_alpha)/2];
 
-resultToolbox = isToolboxAvailable('Optimization Toolbox');
-
-if resultToolbox
+if gui.config.licenceFlag
     [gui.results.Ef_red_sol_fit, ...
         gui.results.resnorm, ...
         gui.results.residual, ...

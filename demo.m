@@ -3,6 +3,16 @@ function gui_handle = demo
 %% Function to run the Matlab GUI for the calculations of elastic-plastic properties
 % of a multilayer system from indentation experiments with a conical indenter
 
+%% Check License of Optimization Toolbox
+license_msg = ['Sorry, no license found for the Matlab ', ...
+    'Optimization Toolbox™ !'];
+if  license('checkout', 'Optimization_Toolbox') == 0
+    warning(license_msg);
+    licenceFlag = 0;
+else
+    licenceFlag = 1;
+end
+
 %% Import data from YAML config files
 gui = struct();
 gui.config = struct();
@@ -30,6 +40,7 @@ gui.config.name_toolbox = 'NIMS';
 gui.config.version_toolbox = '3.1';
 gui.config.url_help = 'http://nims.readthedocs.org/en/latest/';
 gui.config.pdf_help = 'https://media.readthedocs.org/pdf/nims/latest/nims.pdf';
+gui.config.licenceFlag = licenceFlag;
 
 %% Main Window Coordinates Configuration
 scrsize = get(0, 'ScreenSize'); % Get screen size

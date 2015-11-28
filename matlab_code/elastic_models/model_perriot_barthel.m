@@ -19,9 +19,7 @@ max_n = gui.config.numerics.n_max_Perriot;
 % Make a starting guess at the solution (Ef in GPa)
 gui.results.A0 = [gui.data.Ef_red; (min_n + max_n)/2];
 
-resultToolbox = isToolboxAvailable('Optimization Toolbox');
-
-if resultToolbox
+if gui.config.licenceFlag
     [gui.results.Ef_red_sol_fit, ...
         gui.results.resnorm, ...
         gui.results.residual, ...
