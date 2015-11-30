@@ -116,14 +116,38 @@ if gui.flag.flag_data
         
         %% .xls file
     elseif strcmp (ext, '.xls') == 1 || strcmp (ext, '.xlsx') == 1
-        [data,txt] = xlsread(data2import);
+        
+        [STATUS, SHEETS] = xlsfinfo(data2import);
+        
+        if sum(strcmp(SHEETS, 'Sample')) == 1
+            sheetName = 'Sample';
+            NoSampleFlag = 0;
+        elseif sum(strcmp(SHEETS, 'Analyst Project')) == 1
+            [dataAP,txtAP] = xlsread(data2import, 'Analyst Project');
+            [pathstr,sheetName,ext] = fileparts(char(txtAP(3,1)));
+            sheetName = [sheetName, ext];
+            NoSampleFlag = 0;
+        else
+            NoSampleFlag = 1;
+        end
+        
+        if ~NoSampleFlag
+            [data,txt] = xlsread(data2import, sheetName);
+        else
+            [data,txt] = xlsread(data2import);
+        end
+        
         L = txt(:,1); %limite
         TF_segm = strcmp(L, 'Hold Segment Type');
         y_index = find(TF_segm == 1);
         
         if isempty(y_index)
-            clear TF; clear z;
             TF_segm = strcmp(L, 'Unload From Peak Segment Type');
+            y_index = find(TF_segm == 1);
+        end
+        
+        if isempty(y_index)
+            TF_segm = strcmp(L, 'END');
             y_index = find(TF_segm == 1);
             
             if isempty(y_index)
@@ -140,14 +164,11 @@ if gui.flag.flag_data
         
         if gui.flag.flag_xls_data == 2
             
-            data_index = sprintf('%c%d:%c%d', 'B', 1, 'I', y_index);
-            
-            try
-                [data,txt]        = xlsread(data2import, 'Sample', data_index);
-                NoSampleFlag = 0;
-            catch
-                [data,txt]        = xlsread(data2import);
-                NoSampleFlag = 1;
+            data_index = sprintf('%c%d:%c%d', 'B', 1, 'M', y_index);
+            if ~NoSampleFlag
+                [data,txt] = xlsread(data2import, sheetName, data_index);
+            else
+                [data,txt] = xlsread(data2import);
             end
             
             L                 = txt(1,:); %limite
