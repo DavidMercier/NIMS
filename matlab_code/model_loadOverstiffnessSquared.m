@@ -3,6 +3,8 @@ function model_loadOverstiffnessSquared
 %% Function used to analyze load over stiffness squared
 gui = guidata(gcf);
 
+gui.results.LS2 = gui.data.P ./ (gui.data.S.^2);
+
 %% Fit of the (load over stiffness squared)-displacement curve
 if gui.variables.val2 == 2
     % See also 'fitlm' function in Matlab for linear regression
