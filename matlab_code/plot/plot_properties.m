@@ -21,15 +21,11 @@ else
 end
 
 set(gui.handles.AxisPlot_GUI, 'FontSize', 14); %'TickLabelInterpreter', 'tex'
-set(gui.handles.plot_data, 'MarkerSize', 10);
+set([gui.handles.plot_data, gui.handles.plot_line], ...
+    'MarkerSize', 10, 'LineWidth', 2);
 
-for ii = 1:length(gui.handles.plot_data)
-    try
-        % Doesn't work for Matlab 2014.a !
-        gui.handles.plot_data(ii).LineWidth = 2;
-    catch
-        set(gui.handles.plot_data(ii), 'LineWidth', 2);
-    end
+if gui.variables.val2 ~= 1
+    set(gui.handles.plot_model, 'MarkerSize', 10, 'LineWidth', 2);
 end
 
 list_Location = listLocationLegend;
@@ -39,10 +35,19 @@ hLeg = legend(gui.axis.legend_str, 'Location', char(list_Location(LocationNumber
 hTitle = title(gui.axis.title_str, 'FontSize', 18);
 set([hXLabel, hYLabel, hLeg, hTitle], 'Interpreter', 'Latex');
 
+% Grid
 if get(gui.handles.cb_grid_plot_GUI, 'Value') == 1
     grid on;
 else
     grid off;
+end
+
+% LogLog plot
+ax = get(gcf,'CurrentAxes');
+if gui.variables.log_plot_value == 0
+    set(ax,'XScale','linear','YScale','linear');
+elseif gui.variables.log_plot_value == 1
+    set(ax,'XScale','log','YScale','log');
 end
 
 guidata(gcf, gui);

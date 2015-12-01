@@ -51,6 +51,9 @@ if ~gui.flag.wrong_inputs
         gui = guidata(gcf); guidata(gcf, gui);
         gui.results.LS2_fit = gui.results.LS2_fit .* (gui.data.stifFact.^2) ./ ...
             gui.data.loadFact;
+        gui.results.delta_LS2 = ...
+            ls2_incertitude(gui.data.P, gui.data.S, gui.results.LS2,...
+            gui.data.delta_P, gui.data.delta_S);
         guidata(gcf, gui);
     end
     
@@ -62,6 +65,10 @@ if ~gui.flag.wrong_inputs
     if gui.variables.y_axis == 4 || gui.variables.y_axis == 5
         [gui.results.Eeff_red,gui.results.Esample_red, gui.results.Esample] = ...
             model_elastic(gui.data.S, gui.results.Ac, gui.data.nuf, gcf);
+        gui.results.delta_E = ...
+            elasticModulus_incertitude(gui.data.P, gui.data.h, gui.data.S, ...
+            gui.results.hc, gui.results.Eeff_red, ...
+            gui.data.delta_P, gui.data.delta_h, gui.data.delta_S);
         guidata(gcf, gui);
         %% Set model to use for calculations
         if get(gui.handles.value_numthinfilm_GUI, 'Value') == 2
@@ -71,6 +78,10 @@ if ~gui.flag.wrong_inputs
         end
     elseif gui.variables.y_axis == 6
         gui.results.H = model_hardness(gui.data.P, gui.results.Ac);
+        gui.results.delta_H = ...
+            hardness_incertitude(gui.data.P, gui.data.h, gui.data.S, ...
+            gui.results.hc, gui.results.H, ...
+            gui.data.delta_P, gui.data.delta_h, gui.data.delta_S);
         guidata(gcf, gui);
         %% Set model to use for calculations
         if get(gui.handles.value_numthinfilm_GUI, 'Value') == 2
@@ -109,7 +120,7 @@ end
 
 % Update date and clock
 set(gui.handles.date_GUI, ...
-'String', datestr(datenum(clock),'mmm.dd,yyyy HH:MM'));
+    'String', datestr(datenum(clock),'mmm.dd,yyyy HH:MM'));
 
 guidata(gcf, gui);
 

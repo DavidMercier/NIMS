@@ -51,32 +51,39 @@ elseif gui.variables.log_plot_value == 1
 end
 
 %% Definiton of the plot
-if gui.variables.log_plot_value == 0
+if get(gui.handles.cb_SD_plot_GUI, 'Value') == 1
     if gui.variables.val2 == 1
-        gui.handles.plot_data = plot(...
-            gui.axis.x2plot, gui.axis.y2plot, 'rx', ...
-            gui.axis.xline, gui.axis.yline,  '--ko');
+        gui.handles.plot_data = errorbar(gui.axis.x2plot,gui.axis.y2plot, gui.axis.delta_y2plot, 'rx');
+        hold on;
+        gui.handles.plot_line = plot(gui.axis.xline, gui.axis.yline, '--ko');
         gui.axis.legend_str = 'Initial data';
+        hold off;
     else
-        gui.handles.plot_data = plot(...
-            gui.axis.x2plot, gui.axis.y2plot, 'rx', ...
-            gui.axis.x2plot, gui.axis.y2plot_2, 'b-', ...
-            gui.axis.xline, gui.axis.yline,  '--ko');
+        gui.handles.plot_data = errorbar(...
+            gui.axis.x2plot,gui.axis.y2plot, gui.axis.delta_y2plot, 'rx');
+        hold on;
+        gui.handles.plot_model = plot(gui.axis.x2plot, gui.axis.y2plot_2, 'b-');
+        hold on;
+        gui.handles.plot_line = plot(gui.axis.xline, gui.axis.yline, '--ko');
         gui.axis.legend_str = {'Initial data', gui.axis.legend2};
+        hold off;
     end
     
-elseif gui.variables.log_plot_value == 1
+else
     if gui.variables.val2 == 1
-        gui.handles.plot_data = loglog(...
-            gui.axis.x2plot, gui.axis.y2plot, 'rx', ...
-            gui.axis.xline, gui.axis.yline,  '--ko');
+        gui.handles.plot_data = plot(gui.axis.x2plot,gui.axis.y2plot, 'rx');
+        hold on;
+        gui.handles.plot_line = plot(gui.axis.xline, gui.axis.yline, '--ko');
         gui.axis.legend_str = 'Initial data';
+        hold off;
     else
-        gui.handles.plot_data = loglog(...
-            gui.axis.x2plot, gui.axis.y2plot, 'rx', ...
-            gui.axis.x2plot, gui.axis.y2plot_2, 'b-', ...
-            gui.axis.xline, gui.axis.yline,  '--ko');
+        gui.handles.plot_data = plot(gui.axis.x2plot,gui.axis.y2plot, 'rx');
+        hold on;
+        gui.handles.plot_model = plot(gui.axis.x2plot, gui.axis.y2plot_2, 'b-');
+        hold on;
+        gui.handles.plot_line = plot(gui.axis.xline, gui.axis.yline, '--ko');
         gui.axis.legend_str = {'Initial data', gui.axis.legend2};
+        hold off;
     end
 end
 

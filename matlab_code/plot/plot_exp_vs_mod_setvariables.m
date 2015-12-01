@@ -96,8 +96,8 @@ else
                 '/ $R^2 =$ ', num2str(gui.results.rSquare));
         end
     elseif gui.variables.y_axis == 3
-        gui.axis.y2plot = gui.data.P ./ (gui.data.S.^2);
-        gui.axis.delta_y2plot = gui.data.delta_P - 2*(gui.data.delta_S);
+        gui.axis.y2plot = gui.results.LS2;
+        gui.axis.delta_y2plot = gui.results.delta_LS2;
         gui.axis.y2plot_2 = gui.results.LS2_fit;
         gui.axis.ylabelstr = 'Load oved Stiffness squared ($L/S^2$) (1/GPa)';
         gui.axis.ymax = max(gui.axis.y2plot);
@@ -109,7 +109,7 @@ else
         end
     elseif gui.variables.y_axis == 4
         gui.axis.y2plot = gui.results.Esample_red;
-        gui.axis.delta_y2plot = 0;
+        gui.axis.delta_y2plot = gui.results.delta_E;
         gui.axis.y2plot_2 = gui.results.Em_red;
         gui.axis.ylabelstr = 'Reduced Young''s modulus ($E^*$) (GPa)';
         cleaned_Esample_red = gui.results.Esample_red;
@@ -121,7 +121,7 @@ else
             0.5*mean(cleaned_Esample_red);
     elseif gui.variables.y_axis == 5
         gui.axis.y2plot = gui.results.Esample_red;
-        gui.axis.delta_y2plot = 0;
+        gui.axis.delta_y2plot = gui.results.delta_E;
         gui.axis.y2plot_2 = gui.results.Ef_red;
         gui.axis.ylabelstr = ['Reduced Young''s modulus ($E^*$) (GPa)'];
         cleaned_Esample_red = gui.results.Esample_red;
@@ -133,7 +133,7 @@ else
         gui.results.cleaned_Esample_red = cleaned_Esample_red;
     elseif gui.variables.y_axis == 6
         gui.axis.y2plot = gui.results.H;
-        gui.axis.delta_y2plot = 0;
+        gui.axis.delta_y2plot = gui.results.delta_H;
         gui.axis.y2plot_2 = gui.results.Hf;
         gui.axis.ylabelstr = 'Hardness film ($H_f$) (GPa)';
         cleaned_H = gui.results.H;

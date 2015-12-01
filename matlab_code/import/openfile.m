@@ -91,6 +91,7 @@ if gui.flag.flag_data
                 gui.data.S_init       = data(:,3);
                 gui.data.delta_S_init = zeros(size(data,1),1);
                 gui.flag.flag_no_csm  = 1;
+                set(gui.handles.cb_SD_plot_GUI, 'Value', 0, 'Visible', 'off');
                 
             else
                 gui.data.h_init       = data(:,1);
@@ -100,6 +101,7 @@ if gui.flag.flag_data
                 gui.data.S_init       = data(:,5);
                 gui.data.delta_S_init = data(:,6);
                 gui.flag.flag_no_csm  = 0;
+                set(gui.handles.cb_SD_plot_GUI, 'Value', 1, 'Visible', 'on');
                 
             end
             
@@ -111,6 +113,7 @@ if gui.flag.flag_data
             gui.data.S_init       = 1./data(:,12); %Dynamic Comp. (nm/µN)
             gui.data.delta_S_init = zeros(size(data,1),1);
             gui.flag.flag_no_csm  = 0;
+            set(gui.handles.cb_SD_plot_GUI, 'Value', 0, 'Visible', 'off');
             
         end
         
@@ -123,8 +126,8 @@ if gui.flag.flag_data
             sheetName = 'Sample';
             NoSampleFlag = 0;
         elseif sum(strcmp(SHEETS, 'Analyst Project')) == 1
-            [dataAP,txtAP] = xlsread(data2import, 'Analyst Project');
-            [pathstr,sheetName,ext] = fileparts(char(txtAP(3,1)));
+            [dataAP, txtAP] = xlsread(data2import, 'Analyst Project');
+            [pathstr, sheetName,ext] = fileparts(char(txtAP(3,1)));
             sheetName = [sheetName, ext];
             NoSampleFlag = 0;
         else
@@ -190,17 +193,26 @@ if gui.flag.flag_data
                     data_clean(:,1) = data(:,x_index_disp-1);
                     data_clean(:,2) = data(:,x_index_load-1);
                     data_clean(:,3) = data(:,x_index_stiff-1);
+                    unit_clean(:,1) = txt(2,x_index_disp-1);
+                    unit_clean(:,2) = txt(2,x_index_load-1);
+                    unit_clean(:,3) = txt(2,x_index_stiff-1);
                 else
                     data_clean(:,1) = data(:,x_index_disp);
                     data_clean(:,2) = data(:,x_index_load);
                     data_clean(:,3) = data(:,x_index_stiff);
+                    unit_clean(:,1) = txt(2,x_index_disp);
+                    unit_clean(:,2) = txt(2,x_index_load);
+                    unit_clean(:,3) = txt(2,x_index_stiff);
                 end
                 clear data;
                 
                 data(:,1) = data_clean(:,1);
                 data(:,2) = data_clean(:,2);
                 data(:,3) = data_clean(:,3);
-                
+                unit(:,1) = unit_clean(:,1);
+                unit(:,2) = unit_clean(:,2);
+                unit(:,3) = unit_clean(:,3);
+                set_unit(gui.MainWindows, unit);
             elseif length(x_index_disp_dev) == 1 && length(x_index_load_dev) == 1  && length(x_index_stiff_dev) == 1
                 data_clean(:,1) = data(:,x_index_disp);
                 data_clean(:,2) = data(:,x_index_disp_dev);
@@ -208,6 +220,9 @@ if gui.flag.flag_data
                 data_clean(:,4) = data(:,x_index_load_dev);
                 data_clean(:,5) = data(:,x_index_stiff);
                 data_clean(:,6) = data(:,x_index_stiff_dev);
+                unit_clean(:,1) = txt(2,x_index_disp);
+                unit_clean(:,2) = txt(2,x_index_load);
+                unit_clean(:,3) = txt(2,x_index_stiff);
                 clear data;
                 
                 data(:,1) = data_clean(:,1);
@@ -216,7 +231,10 @@ if gui.flag.flag_data
                 data(:,4) = data_clean(:,4);
                 data(:,5) = data_clean(:,5);
                 data(:,6) = data_clean(:,6);
-                
+                unit(:,1) = unit_clean(:,1);
+                unit(:,2) = unit_clean(:,2);
+                unit(:,3) = unit_clean(:,3);
+                set_unit(gui.MainWindows, unit);
             else
                 gui.flag.flag_xls_data = 3;
             end
@@ -231,7 +249,7 @@ if gui.flag.flag_data
                 gui.data.S_init       = data(:,3);
                 gui.data.delta_S_init = zeros(size(data,1),1);
                 gui.flag.flag_no_csm  = 1;
-                
+                set(gui.handles.cb_SD_plot_GUI, 'Value', 0, 'Visible', 'off');
             else
                 gui.data.h_init       = data(:,1);
                 gui.data.delta_h_init = data(:,2);
@@ -240,7 +258,7 @@ if gui.flag.flag_data
                 gui.data.S_init       = data(:,5);
                 gui.data.delta_S_init = data(:,6);
                 gui.flag.flag_no_csm  = 0;
-                
+                set(gui.handles.cb_SD_plot_GUI, 'Value', 1, 'Visible', 'on');
             end
         else
             helpdlg('Format of data in . xls file is not correct ! --> Please, see given examples...','!!!');
