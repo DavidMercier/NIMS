@@ -69,7 +69,15 @@ First of all a GUI is a Graphical User Interface.
 * Choose and set (if needed) the indenter used to obtain (nano)indentation data.
 * Select the lowest and the highest depth values (optional).
 * Set the CSM correction (Berkovich indenter only !) (optional).
-* Set the number of layers of your sample (0 = only bulk material, 1/2/3 = 1 to 3 thin layers on a substrate).
+* Set the number of layers of your sample (0 = only bulk material, 1/2/3 = 1 to 3 thin layers on a substrate) (see :numref:`convention_multilayer`).
+
+.. figure:: ./_pictures/convention_multilayer.png
+	:name: convention_multilayer
+   :scale: 40 %
+   :align: center
+   
+   *Convention use to define multilayer specimen.*
+
 * Set the thickness, the Poisson's coefficient and the Young's modulus to each layer.
 * Select the model to use for the contact displacement calculation and select the correction to apply.
 * Select 'Red. Young's modulus(film+sub)' or 'Red. Young's modulus(film)' in order to plot
