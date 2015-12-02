@@ -26,7 +26,7 @@ bilayer_model = @(A, x) (A(1) + A(2)*x);
 gui.results.A0 = [log(abs(gui.data.Ef_red - (gui.data.Es_red*1e-9))); ...
     (min_alpha + max_alpha)/2];
 
-if gui.config.licenceFlag
+if gui.config.licenceOpt_Flag
     [gui.results.A, ...
         gui.results.resnorm, ...
         gui.results.residual, ...
@@ -49,9 +49,9 @@ end
         A(1) = params(1);
         A(2) = params(2);
         FittedCurve = (A(1) + A(2)*x);
-        ErrorVector = FittedCurve - ...
+        gui.results.residual = FittedCurve - ...
             log(abs(gui.results.Esample_red - gui.data.Es_red*1e-9));
-        sse = sum(ErrorVector .^ 2);
+        sse = sum(gui.results.residual .^ 2);
     end
 
 if sum(gui.results.Esample_red - (gui.data.Es_red*1e-9)) > 0

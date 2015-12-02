@@ -18,7 +18,7 @@ bilayer_model = @(Hf, x) ...
 % Make a starting guess
 gui.results.A0 = gui.data.Hf0;
 
-if gui.config.licenceFlag
+if gui.config.licenceOpt_Flag
     [gui.results.Hf_fit, ...
         gui.results.resnorm, ...
         gui.results.residual, ...
@@ -41,8 +41,8 @@ end
         Hf(1) = params(1);
         FittedCurve = 1e-9*(1e9.*gui.data.Hs + (2 .* gui.config.numerics.k_Kao .* t .* ...
             (1e9.*Hf - 1e9.*gui.data.Hs)) .* x);
-        ErrorVector = FittedCurve - gui.results.Esample_red;
-        sse = sum(ErrorVector .^ 2);
+        gui.results.residual = FittedCurve - gui.results.Esample_red;
+        sse = sum(gui.results.residual .^ 2);
     end
 
 % gui.results.Hm = 1e-9*(...

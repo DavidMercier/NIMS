@@ -7,6 +7,8 @@ gui = guidata(gcf);
 set(gui.MainWindows, 'CurrentAxes', gui.handles.AxisPlot_GUI);
 cla;
 
+gui.flag.residuals = 1;
+
 if ~isfield(gui.results, 'residual')
     gui.results.residual = 0;
 end
@@ -22,11 +24,21 @@ elseif gui.variables.y_axis == 2
     gui.axis.legend_str = 'Residuals / Stiffness';
     gui.axis.title_str = 'Residuals / Stiffness';
     gui.axis.ylabelstr = 'Residuals / Stiffness (\%)';
-elseif gui.variables.y_axis > 3
+elseif gui.variables.y_axis == 3
+    residual_norm = gui.results.residual./gui.data.LS2;
+    gui.axis.legend_str = 'Residuals / Load over stiffness squared';
+    gui.axis.title_str = 'Residuals / Load over stiffness squared';
+    gui.axis.ylabelstr = 'Residuals / Load over stiffness squared (\%)';
+elseif gui.variables.y_axis == 4 || gui.variables.y_axis == 5
     residual_norm = gui.results.residual./gui.results.Esample_red;
     gui.axis.legend_str = 'Residuals / Young''s modulus of the sample';
     gui.axis.title_str = 'Residuals / Young''s modulus of the sample';
     gui.axis.ylabelstr = 'Residuals / Young''s modulus of the sample (\%)';
+elseif gui.variables.y_axis == 6
+    residual_norm = gui.results.residual./gui.results.H;
+    gui.axis.legend_str = 'Residuals / Hardness of the sample';
+    gui.axis.title_str = 'Residuals / Hardness of the sample';
+    gui.axis.ylabelstr = 'Residuals / Hardness of the sample (\%)';
 end
 
 %% Setting of the plot
@@ -51,13 +63,9 @@ elseif gui.variables.x_axis == 3
 end
 
 %% Definiton of the plot
-if gui.variables.log_plot_value == 0
-    gui.handles.plot_data = ...
-        plot(gui.axis.x2plot, residual_norm, 'rx', 'LineWidth', 2);
-elseif gui.variables.log_plot_value == 1
-    gui.handles.plot_data = ...
-        loglog(gui.axis.x2plot, residual_norm, 'rx', 'LineWidth', 2);
-end
+gui.handles.plot_data = ...
+    plot(gui.axis.x2plot, residual_norm, 'rx', 'LineWidth', 2);
+
 %% Plot properties
 gui.axis.ymin = min(residual_norm);
 gui.axis.ymax = max(residual_norm);

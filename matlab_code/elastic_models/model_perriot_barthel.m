@@ -19,7 +19,7 @@ max_n = gui.config.numerics.n_max_Perriot;
 % Make a starting guess at the solution (Ef in GPa)
 gui.results.A0 = [gui.data.Ef_red; (min_n + max_n)/2];
 
-if gui.config.licenceFlag
+if gui.config.licenceOpt_Flag
     [gui.results.Ef_red_sol_fit, ...
         gui.results.resnorm, ...
         gui.results.residual, ...
@@ -45,8 +45,8 @@ end
             ((gui.data.Es_red-(1e9*Ef_red_sol(1)))./ ...
             (1+(x.*(10.^(-0.093+0.792.*log10(gui.data.Es_red./(1e9*Ef_red_sol(1))) + ...
             0.05.*(log10(gui.data.Es_red./(1e9*Ef_red_sol(1))).^2))).^Ef_red_sol(2))))));
-        ErrorVector = FittedCurve - gui.results.Esample_red;
-        sse = sum(ErrorVector .^ 2);
+        gui.results.residual = FittedCurve - gui.results.Esample_red;
+        sse = sum(gui.results.residual .^ 2);
     end
 
 gui.results.Em_red = 1e-9*((1e9*gui.results.Ef_red_sol_fit(1))+...

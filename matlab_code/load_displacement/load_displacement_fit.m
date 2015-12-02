@@ -17,7 +17,7 @@ if modelFit ~= 1
         lb = [0, 1];
         ub = [1000, 3];
         % Make a starting guess
-        if gui.config.licenceFlag
+        if gui.config.licenceOpt_Flag
             OPTIONS = optimset('lsqcurvefit');
             OPTIONS = optimset(OPTIONS, 'TolFun',  1e-20);
             OPTIONS = optimset(OPTIONS, 'TolX',    1e-20);
@@ -36,7 +36,7 @@ if modelFit ~= 1
         lb = 0;
         ub = 1;
         % Make a starting guess
-        if gui.config.licenceFlag
+        if gui.config.licenceOpt_Flag
             OPTIONS = optimset('lsqcurvefit');
             OPTIONS = optimset(OPTIONS, 'TolFun',  1e-20);
             OPTIONS = optimset(OPTIONS, 'TolX',    1e-20);
@@ -67,15 +67,15 @@ end
         A(1) = params(1);
         A(2) = params(2);
         FittedCurve = A(1) .* h.^A(2);
-        ErrorVector = FittedCurve - P;
-        sse = sum(ErrorVector .^ 2);
+        gui.results.residual = FittedCurve - P;
+        sse = sum(gui.results.residual .^ 2);
     end
 
     function [sse, FittedCurve] = LMS2(params)
         A(1) = params(1);
         FittedCurve = A(1) .* h.^2;
-        ErrorVector = FittedCurve - P;
-        sse = sum(ErrorVector .^ 2);
+        gui.results.residual = FittedCurve - P;
+        sse = sum(gui.results.residual .^ 2);
     end
 
 end

@@ -20,7 +20,7 @@ max_alpha = gui.config.numerics.alpha_max_DoernerNix;
 % Make a starting guess
 gui.results.A0 = [gui.data.Ef_red; (min_alpha + max_alpha)/2];
 
-if gui.config.licenceFlag
+if gui.config.licenceOpt_Flag
     [gui.results.Ef_red_sol_fit, ...
         gui.results.resnorm, ...
         gui.results.residual, ...
@@ -44,8 +44,8 @@ end
         A(2) = params(2);
         FittedCurve = (1e-9*(((1./(1e9*A(1)))*(1-exp(-A(2)*x.^(2/3)))) + ...
             ((1./gui.data.Es_red)*(exp(-A(2)*x.^(2/3))))).^-1);
-        ErrorVector = FittedCurve - gui.results.Esample_red;
-        sse = sum(ErrorVector .^ 2);
+        gui.results.residual = FittedCurve - gui.results.Esample_red;
+        sse = sum(gui.results.residual .^ 2);
     end
 
 gui.results.Em_red = ...

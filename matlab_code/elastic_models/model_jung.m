@@ -21,7 +21,7 @@ bilayer_model = @(A, x) ...
 % Make a starting guess
 gui.results.A0 = gui.data.Ef_red;
 
-if gui.config.licenceFlag
+if gui.config.licenceOpt_Flag
     [gui.results.Ef_red_sol_fit, ...
         gui.results.resnorm, ...
         gui.results.residual, ...
@@ -44,8 +44,8 @@ end
         A(1) = params(1);
         FittedCurve = (1e-9*(gui.data.Es_red * ...
             (1e9*A(1) ./ gui.data.Es_red).^L_Jung));
-        ErrorVector = FittedCurve - gui.results.Esample_red;
-        sse = sum(ErrorVector .^ 2);
+        gui.results.residual = FittedCurve - gui.results.Esample_red;
+        sse = sum(gui.results.residual .^ 2);
     end
 
 gui.results.Em_red = ...

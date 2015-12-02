@@ -99,7 +99,7 @@ else
         gui.axis.y2plot = gui.results.LS2;
         gui.axis.delta_y2plot = gui.results.delta_LS2;
         gui.axis.y2plot_2 = gui.results.LS2_fit;
-        gui.axis.ylabelstr = 'Load oved Stiffness squared ($L/S^2$) (1/GPa)';
+        gui.axis.ylabelstr = 'Load over Stiffness squared ($L/S^2$) (1/GPa)';
         gui.axis.ymax = max(gui.axis.y2plot);
         if gui.variables.val2 == 2
             gui.axis.title_str = strcat('$L/S^2$ = (', ...
