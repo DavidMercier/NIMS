@@ -72,7 +72,7 @@ First of all a GUI is a Graphical User Interface.
 * Set the number of layers of your sample (0 = only bulk material, 1/2/3 = 1 to 3 thin layers on a substrate) (see :numref:`convention_multilayer`).
 
 .. figure:: ./_pictures/convention_multilayer.png
-	:name: convention_multilayer
+   :name: convention_multilayer
    :scale: 40 %
    :align: center
    
