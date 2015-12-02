@@ -3,15 +3,6 @@ function refresh_param_GUI
 %% Function used to refresh the GUI in function of the number of thin films
 gui = guidata(gcf);
 
-% Residuals
-if get(gui.handles.value_param2plotinyaxis_GUI, 'Value') ~= 3
-    if get(gui.handles.value_model_GUI, 'Value') > 1
-        set(gui.handles.pb_residual_plot_GUI, 'Visible', 'on');
-    end
-else
-    set(gui.handles.pb_residual_plot_GUI, 'Visible', 'off');
-end
-
 % Young's modulus and Hardness models
 if get(gui.handles.value_param2plotinyaxis_GUI , 'Value') < 4
     set(gui.handles.title_modeldisp_GUI,       'Visible', 'off');
@@ -136,6 +127,13 @@ if get(gui.handles.value_numthinfilm_GUI, 'Value') == 1
 else
     set(gui.handles.title_model_GUI, 'Visible', 'on');
     set(gui.handles.value_model_GUI, 'Visible', 'on');
+end
+
+% Residuals
+if get(gui.handles.value_model_GUI, 'Value') > 1
+    set(gui.handles.pb_residual_plot_GUI, 'Visible', 'on');
+elseif get(gui.handles.value_model_GUI, 'Value') == 1
+    set(gui.handles.pb_residual_plot_GUI, 'Visible', 'off');
 end
 
 guidata(gcf, gui);

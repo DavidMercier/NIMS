@@ -16,14 +16,14 @@ guidata(gcf, gui);
 clean_data;
 gui = guidata(gcf); guidata(gcf, gui);
 
+%% Refreshing the GUI and getting parameters and
+refresh_param_GUI;
+get_param_GUI;
+
 if ~gui.flag.wrong_inputs
     if gui.flag.flag_no_csm ~= 1
         CSM_correction;
     end
-    
-    %% Refreshing the GUI and getting parameters and
-    refresh_param_GUI;
-    get_param_GUI;
     
     %% Get parameters
     model_set_parameters;
