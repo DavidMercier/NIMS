@@ -8,9 +8,19 @@ license_msg = ['Sorry, no license found for the Matlab ', ...
     'Optimization Toolbox™ !'];
 if  license('checkout', 'Optimization_Toolbox') == 0
     warning(license_msg);
-    licenceFlag = 0;
+    licenceFlag_1 = 0;
 else
-    licenceFlag = 1;
+    licenceFlag_1 = 1;
+end
+
+%% Check License of Image Toolbox
+license_msg = ['Sorry, no license found for the Matlab ', ...
+    'Image Processing Toolbox™ !'];
+if  license('checkout', 'Image_Toolbox') == 0
+    warning(license_msg);
+    licenceFlag_2 = 0;
+else
+    licenceFlag_2 = 1;
 end
 
 %% Import data from YAML config files
@@ -40,7 +50,8 @@ gui.config.name_toolbox = 'NIMS';
 gui.config.version_toolbox = '3.1';
 gui.config.url_help = 'http://nims.readthedocs.org/en/latest/';
 gui.config.pdf_help = 'https://media.readthedocs.org/pdf/nims/latest/nims.pdf';
-gui.config.licenceFlag = licenceFlag;
+gui.config.licenceOpt_Flag = licenceFlag_1;
+gui.config.licenceIma_Flag = licenceFlag_2;
 
 %% Main Window Coordinates Configuration
 scrsize = get(0, 'ScreenSize'); % Get screen size
