@@ -24,10 +24,6 @@ set(gui.handles.AxisPlot_GUI, 'FontSize', 14); %'TickLabelInterpreter', 'tex'
 set(gui.handles.plot_data, 'MarkerSize', 10, 'LineWidth', 2);
 
 if gui.flag.residuals == 0
-    set(gui.handles.plot_line, 'MarkerSize', 10, 'LineWidth', 2);
-end
-
-if gui.flag.residuals == 0
     if gui.variables.val2 ~= 1
         set(gui.handles.plot_model, 'MarkerSize', 10, 'LineWidth', 2);
     end

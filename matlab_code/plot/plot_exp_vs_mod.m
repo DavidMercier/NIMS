@@ -13,42 +13,73 @@ gui.flag.residuals = 0;
 
 gui.variables.log_plot_value = get(gui.handles.cb_log_plot_GUI, 'Value');
 
-if gui.variables.log_plot_value == 0
-    
-    if gui.variables.x_axis == 1
-        gui.axis.xline = [gui.data.t, gui.data.t];
-        gui.axis.yline = [0, gui.axis.ymax];
-    elseif gui.variables.x_axis == 3
-        gui.axis.xline = [1, 1];
-        gui.axis.yline = [0, gui.axis.ymax];
-    else
-        gui.axis.xline = 0;
-        gui.axis.yline = 0;
+if get(gui.handles.cb_lines_plot_GUI, 'value') == 1
+    if gui.variables.log_plot_value == 0
+        if gui.variables.x_axis == 1
+            if get(gui.handles.value_numthinfilm_GUI, 'Value') == 2
+                gui.axis.xline1 = [gui.data.t0, gui.data.t0];
+                gui.axis.yline1 = [0, gui.axis.ymax];
+            elseif get(gui.handles.value_numthinfilm_GUI, 'Value') == 3
+                gui.axis.xline1 = [gui.data.t0+gui.data.t1, gui.data.t0+gui.data.t1];
+                gui.axis.yline1 = [0, gui.axis.ymax];
+                gui.axis.xline2 = [gui.data.t1, gui.data.t1];
+                gui.axis.yline2 = [0, gui.axis.ymax];
+            elseif get(gui.handles.value_numthinfilm_GUI, 'Value') == 4
+                gui.axis.xline1 = [gui.data.t0+gui.data.t1+gui.data.t2, gui.data.t0+gui.data.t1+gui.data.t2];
+                gui.axis.yline1 = [0, gui.axis.ymax];
+                gui.axis.xline2 = [gui.data.t1+gui.data.t2, gui.data.t1+gui.data.t2];
+                gui.axis.yline2 = [0, gui.axis.ymax];
+                gui.axis.xline3 = [gui.data.t2, gui.data.t2];
+                gui.axis.yline3 = [0, gui.axis.ymax];
+            end
+        elseif gui.variables.x_axis == 3
+            if get(gui.handles.value_numthinfilm_GUI, 'Value') == 2
+                gui.axis.xline1 = [1, 1];
+                gui.axis.yline1 = [0, gui.axis.ymax];
+            elseif get(gui.handles.value_numthinfilm_GUI, 'Value') == 3
+                gui.axis.xline1 = [(gui.data.t1+gui.data.t0)/gui.data.t, (gui.data.t1+gui.data.t0)/gui.data.t];
+                gui.axis.yline1 = [0, gui.axis.ymax];
+                gui.axis.xline2 = [1, 1];
+                gui.axis.yline2 = [0, gui.axis.ymax];
+            elseif get(gui.handles.value_numthinfilm_GUI, 'Value') == 4
+                gui.axis.xline1 = [(gui.data.t0+gui.data.t1+gui.data.t2)/gui.data.t, (gui.data.t0+gui.data.t1+gui.data.t2)/gui.data.t];
+                gui.axis.yline1 = [0, gui.axis.ymax];
+                gui.axis.xline2 = [(gui.data.t1+gui.data.t2)/gui.data.t, (gui.data.t1+gui.data.t2)/gui.data.t];
+                gui.axis.yline2 = [0, gui.axis.ymax];
+                gui.axis.xline3 = [1, 1];
+                gui.axis.yline3 = [0, gui.axis.ymax];
+            end
+        else
+            gui.axis.xline1 = 0; gui.axis.yline1 = 0;
+            gui.axis.xline2 = 0; gui.axis.yline2 = 0;
+            gui.axis.xline3 = 0; gui.axis.yline3 = 0;
+        end
     end
     
-elseif gui.variables.log_plot_value == 1
-    
-    if gui.variables.x_axis == 1
-        gui.axis.xline = [gui.data.t, gui.data.t];
-        
-        if (min(gui.axis.y2plot) < min(gui.axis.y2plot_2))
-            gui.axis.yline = [min(gui.axis.y2plot), gui.axis.ymax];
-        else
-            gui.axis.yline = [min(gui.axis.y2plot_2), gui.axis.ymax];
+    if gui.variables.log_plot_value == 1
+        if gui.variables.x_axis == 1 || gui.variables.x_axis == 3
+            if get(gui.handles.value_numthinfilm_GUI, 'Value') > 1
+                if (min(gui.axis.y2plot) < min(gui.axis.y2plot_2))
+                    gui.axis.yline1 = [min(gui.axis.y2plot), gui.axis.ymax];
+                else
+                    gui.axis.yline1 = [min(gui.axis.y2plot_2), gui.axis.ymax];
+                end
+            end
+            if get(gui.handles.value_numthinfilm_GUI, 'Value') > 2
+                if (min(gui.axis.y2plot) < min(gui.axis.y2plot_2))
+                    gui.axis.yline2 = [min(gui.axis.y2plot), gui.axis.ymax];
+                else
+                    gui.axis.yline2 = [min(gui.axis.y2plot_2), gui.axis.ymax];
+                end
+            end
+            if get(gui.handles.value_numthinfilm_GUI, 'Value') > 3
+                if (min(gui.axis.y2plot) < min(gui.axis.y2plot_2))
+                    gui.axis.yline3 = [min(gui.axis.y2plot), gui.axis.ymax];
+                else
+                    gui.axis.yline3 = [min(gui.axis.y2plot_2), gui.axis.ymax];
+                end
+            end
         end
-        
-    elseif gui.variables.x_axis == 3
-        gui.axis.xline = [1, 1];
-        
-        if min(gui.axis.y2plot) < min(gui.axis.y2plot_2)
-            gui.axis.yline = [min(gui.axis.y2plot), gui.axis.ymax];
-        else
-            gui.axis.yline = [min(gui.axis.y2plot_2), gui.axis.ymax];
-        end
-        
-    else
-        gui.axis.xline = 0;
-        gui.axis.yline = 0;
     end
 end
 
@@ -80,23 +111,37 @@ else
         gui.axis.legend_str = {'Initial data', gui.axis.legend2};
     end
 end
-
 hold on;
-gui.handles.plot_line = plot(gui.axis.xline, gui.axis.yline, '--ko');
 
 %% Plot properties
-if get(gui.handles.value_numthinfilm_GUI, 'Value') > 2
-    text(gui.axis.xline(1), ...
-        gui.axis.ymax-0.05*gui.axis.ymax, ...
-        [' \leftarrow Interface Film ', num2str(gui.variables.num_thinfilm-2), ...
-        '/Film ', num2str(gui.variables.num_thinfilm-3)], ...
-        'FontSize', 12);
-elseif get(gui.handles.value_numthinfilm_GUI, 'Value') == 2
-    text(gui.axis.xline(1), ...
-        gui.axis.ymax-0.05*gui.axis.ymax, ...
-        [' \leftarrow Interface Film ', num2str(gui.variables.num_thinfilm-2), ...
-        '/Substrate'], ...
-        'FontSize', 12);
+if get(gui.handles.cb_lines_plot_GUI, 'value') == 1
+    if get(gui.handles.value_numthinfilm_GUI, 'Value') > 1
+        gui.handles.plot_line1 = plot(gui.axis.xline1, gui.axis.yline1, '--ko');
+        set(gui.handles.plot_line1, 'MarkerSize', 10, 'LineWidth', 2);
+        hold on;
+        text(gui.axis.xline1(1), ...
+            gui.axis.ymax-0.05*gui.axis.ymax, ...
+            [' \leftarrow Interface Film0/Substrate'], ...
+            'FontSize', 12);
+    end
+    if get(gui.handles.value_numthinfilm_GUI, 'Value') > 2
+        gui.handles.plot_line2 = plot(gui.axis.xline2, gui.axis.yline2, '--ko');
+        set(gui.handles.plot_line2, 'MarkerSize', 10, 'LineWidth', 2);
+        hold on;
+        text(gui.axis.xline2(1), ...
+            gui.axis.ymax-0.10*gui.axis.ymax, ...
+            [' \leftarrow Interface Film1/Film0'], ...
+            'FontSize', 12);
+    end
+    if get(gui.handles.value_numthinfilm_GUI, 'Value') == 4
+        gui.handles.plot_line3 = plot(gui.axis.xline3, gui.axis.yline3, '--ko');
+        set(gui.handles.plot_line3, 'MarkerSize', 10, 'LineWidth', 2);
+        hold on;
+        text(gui.axis.xline3(1), ...
+            gui.axis.ymax-0.15*gui.axis.ymax, ...
+            [' \leftarrow Interface Film2/Film1'], ...
+            'FontSize', 12);
+    end
 end
 
 if gui.variables.num_thinfilm == 1
