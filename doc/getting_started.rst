@@ -42,7 +42,7 @@ First of all a GUI is a Graphical User Interface.
    :scale: 40 %
    :align: center
    
-   *: Screenshot of the main window of the NIMS toolbox.*
+   *Screenshot of the main window of the NIMS toolbox.*
 
 * Import your (nano)indentation results, by clicking on the button 'Select file'.
   `Click here to have more details about valid format of data.
@@ -64,7 +64,7 @@ First of all a GUI is a Graphical User Interface.
    :scale: 40 %
    :align: center
    
-   *: Plot of the load-displacement curve after loading of data.*
+   *Plot of the load-displacement curve after loading of data.*
 
 * Choose and set (if needed) the indenter used to obtain (nano)indentation data.
 * Select the lowest and the highest depth values (optional).
@@ -76,7 +76,7 @@ First of all a GUI is a Graphical User Interface.
    :scale: 40 %
    :align: center
    
-   *: Convention use to define multilayer specimen.*
+   *Convention use to define multilayer specimen.*
 
 * Set the thickness, the Poisson's coefficient and the Young's modulus to each layer.
 * Select the model to use for the contact displacement calculation and select the correction to apply.
@@ -95,13 +95,13 @@ First of all a GUI is a Graphical User Interface.
    :scale: 40 %
    :align: center
    
-   *: Plot of the evolution of the Young's modulus of the sample with the elastic multilayer model in function of the indentation depth.*
+   *Plot of the evolution of the Young's modulus of the sample with the elastic multilayer model in function of the indentation depth.*
    
 .. figure:: ./_pictures/GUI_Main_Window_Efilm_curve.png
    :scale: 40 %
    :align: center
    
-   *: Plot of the evolution of the Young's modulus of the film with the elastic multilayer model in function of the indentation depth.*
+   *Plot of the evolution of the Young's modulus of the film with the elastic multilayer model in function of the indentation depth.*
    
 Links
 #######

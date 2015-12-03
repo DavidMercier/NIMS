@@ -49,13 +49,13 @@ and the properties and the geometry of the indenter.
    :scale: 60 %
    :align: center
    
-   *: SEM cross-sectional observation of a multilayer sample.*
+   *SEM cross-sectional observation of a multilayer sample.*
 
 .. figure:: ./_pictures/evolution_EandH_thinfilm.png
    :scale: 60 %
    :align: center
    
-   *: Typical evolution of Young's modulus and hardness for a coated specimen in function of the normalized indentation depth.*
+   *Typical evolution of Young's modulus and hardness for a coated specimen in function of the normalized indentation depth.*
 
 Thus, the composite reduced Young's modulus :math:`E^{'}` and the composite hardness :math:`H`
 calculated with the models used for bulk materials, can generally be expressed as a combination of respectively
@@ -81,7 +81,7 @@ For nanoindentation tests on thin films, the contact topography is function of b
    :scale: 60 %
    :align: center
    
-   *: Schematic depiction of a) "pile-up" and b) "sink-in" observed during thin film indentation.*
+   *Schematic depiction of a) "pile-up" and b) "sink-in" observed during thin film indentation.*
    
 The :numref:`contact_topography_thinfilm` a ("pile-up") is typical of the case of a soft film on a hard substrate and the :numref:`contact_topography_thinfilm` b ("sink-in")
 of a hard film on a soft substrate [#ChenVlassak2001]_. The pile-up can be emphasized in case ot thin films, because of the material confinement by the substrate. To determine the depth of contact,
@@ -114,7 +114,7 @@ depths :math:`h_\text{c}` smaller than the film thickness.
    :scale: 60 %
    :align: center
    
-   *: Indentation penetration of a thin film on a sample.*
+   *Indentation penetration of a thin film on a sample.*
    
 Recently, Li et al. proposed to express the local thinning effect as [#Li_2010]_:
 
@@ -356,7 +356,7 @@ This system is modelled by two springs connected in series :
    :scale: 60 %
    :align: center
    
-   *: Schematic description of the bilayer model of Bec et al.*
+   *Schematic description of the bilayer model of Bec et al.*
 
     .. math:: K_\text{f} = \pi a_\text{c}^2 \frac{E^{'}_\text{f}}{t}
             :label: bec_kf
@@ -515,7 +515,7 @@ Thus, the Young's modulus of the film can be calculated as :
    :scale: 30 %
    :align: center
    
-   *: Schematic of elastic multilayer model.*
+   *Schematic of elastic multilayer model.*
 
 It is advised to perform nanoindentation tests on each layer of the multilayer sample,
 from the substrate up to the final stack of layers (see :numref:`multilayer_sample_methodology`). By successive iterations using
@@ -527,7 +527,7 @@ from the contact stiffness.
    :scale: 30 %
    :align: center
    
-   *: Experimental process to apply for elastic multilayer model.*
+   *Experimental process to apply for elastic multilayer model.*
 
 Find here the |matlab| function for the Mercier et al. model :
 `model_multilayer_elastic.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_multilayer_elastic.m>`_.
