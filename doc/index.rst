@@ -48,7 +48,7 @@ With this Matlab toolbox, it is possible to :
    :scale: 50 %
    :align: center
    
-   * - Screenshot of the main window of the NIMS toolbox.*
+   *: Screenshot of the main window of the NIMS toolbox.*
 
 Contents
 ==========

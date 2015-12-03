@@ -66,7 +66,7 @@ A micrograph of this sample is given :numref:`multilayer_sem`.
    :scale: 60 %
    :align: center
    
-   * - SEM cross-sectional observation of a multilayer sample.*
+   *: SEM cross-sectional observation of a multilayer sample.*
    
 Hysitron example files
 ##########################

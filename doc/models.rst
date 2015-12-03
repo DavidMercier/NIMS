@@ -90,7 +90,7 @@ of the initial contact point between the indenter and the sample [#Fischer-Cripp
    :scale: 60 %
    :align: center
    
-   * - Schematic of the estimation of initial point.*
+   *: Schematic of the estimation of initial point.*
 
 Usually, the point of contact is determined from the load-displacement curve,
 when a sharp rise in the force signal is observed.
@@ -119,7 +119,7 @@ gives access to the contact stiffness :math:`S` (in :math:`\text{N/m}`):
    :scale: 60 %
    :align: center
    
-   * - Schematic of indentation load-displacement curve.*
+   *: Schematic of indentation load-displacement curve.*
 
 With :math:`h_\text{t}` the total penetration corrected of the frame compliance
 and :math:`h_\text{r}` the residual indentation depth after unloading.
@@ -134,7 +134,7 @@ defined by the user (see :numref:`load_disp_curve_multiplepoints`) [#Fischer-Cri
    :scale: 60 %
    :align: center
    
-   * - Schematic of indentation load-displacement curve with the multiple point unload method (here n points).*
+   *: Schematic of indentation load-displacement curve with the multiple point unload method (here n points).*
 
 Frame compliance
 +++++++++++++++++++
@@ -161,7 +161,7 @@ Then, a linear fit of this curve gives an intercept with the ordinate axis which
    :scale: 60 %
    :align: center
    
-   * - Schematic of the plot to determine the frame compliance.*
+   *: Schematic of the plot to determine the frame compliance.*
 
 It is advised to perform indentation tests on a variety of bulk standard specimens
 (fused silica, silicon and sapphire provide a very good range), in order to estimate better the frame compliance.
@@ -260,14 +260,14 @@ over Young's modulus is less than :math:`1%` [#Bolshakov_1998]_, [#Cheng_1998]_ 
    :scale: 60 %
    :align: center
    
-   * - Schematic of indentation contact topography : a) "pile-up" and b) "sink-in".*
+   *: Schematic of indentation contact topography : a) "pile-up" and b) "sink-in".*
    
 .. figure:: ./_pictures/pile_up.png
    :name: pile_up
    :scale: 35 %
    :align: center
 
-   * - Residual topography of a Berkovich indent in PVD Gold thin film (500nm thick)
+   *: Residual topography of a Berkovich indent in PVD Gold thin film (500nm thick)
    with "pile-up" surrounding the indent, measured by atomic force microscopy.*
    
 Three main models defining the depth of contact :math:`h_\text{c}` were developed
@@ -301,7 +301,7 @@ Find here the |matlab| function to plot the :math:`\epsilon` function :
    :scale: 45 %
    :align: center
 
-   * - Evolution of epsilon in function of the power law exponent m of the unloading curve.*
+   *: Evolution of epsilon in function of the power law exponent m of the unloading curve.*
 
 :math:`0.72` should be most applicable for a Berkovich indenter, which is more like
 a cone than a paraboloid of revolution. But, Oliver and Pharr concluded after
@@ -393,7 +393,7 @@ This technique is named **Continuous Stiffness Measurement** (CSM) for Agilent -
    :scale: 60 %
    :align: center
    
-   * - Schematic of the dynamic loading cycle.*
+   *: Schematic of the dynamic loading cycle.*
 
     .. math:: S = \left[\frac{1}{\frac{F_\text{c}}{h_\text{t}}\cos\phi-\left(K_\text{s} - m\omega^2\right)} -
               \frac{1}{K_\text{f}}\right]^{-1}
@@ -447,7 +447,7 @@ constant :math:`K`, using :eq:`csm_K_m`.
    :scale: 45 %
    :align: center
    
-   * - Evolution of K in function of m.*
+   *: Evolution of K in function of m.*
 
 Find here the |matlab| function to calculate the corrections to apply on depth, load and stiffness during dynamic nanoindentation:
 `CSM_correction.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/CSM_correction.m>`_.
@@ -511,7 +511,7 @@ Find here the |matlab| function to plot the :math:`\beta` function of Hay et al.
    :scale: 35 %
    :align: center
    
-   * - Plots of beta Hay : a) in function of the half-angle
+   *: Plots of beta Hay : a) in function of the half-angle
    of the conical indenter (for a Poisson's ratio of 0.3), and b)
    in function of the Poisson's ratio for a Berkovich indenter.*
 
@@ -571,7 +571,7 @@ are respectively based on the integrals of the loading and unloading curves
    :scale: 60 %
    :align: center
 
-   * - Schematic representation of indentation load–displacement
+   *: Schematic representation of indentation load–displacement
    curves with definition of different works of indentation.*
 
     .. math:: W_\text{tot} = \int_{0}^{h_\text{t}} {F_\text{c}\left(dh\right)}

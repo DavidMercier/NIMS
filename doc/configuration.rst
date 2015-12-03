@@ -35,7 +35,7 @@ Please find the 3 YAML configuration files in the
    :scale: 50 %
    :align: center
 
-   * - Screenshot of the YAML configuration file used for indenter's properties.*
+   *: Screenshot of the YAML configuration file used for indenter's properties.*
 
 `indenters_config.yaml <https://github.com/DavidMercier/NIMS/blob/master/yaml_config_files/indenters_config.yaml>`_ 
 can be used to change indenter's properties :
