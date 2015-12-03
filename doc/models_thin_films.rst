@@ -84,7 +84,7 @@ For nanoindentation tests on thin films, the contact topography is function of b
    *Schematic depiction of a) "pile-up" and b) "sink-in" observed during thin film indentation.*
    
 The :numref:`contact_topography_thinfilm` a ("pile-up") is typical of the case of a soft film on a hard substrate and the :numref:`contact_topography_thinfilm` b ("sink-in")
-of a hard film on a soft substrate [#ChenVlassak2001]_. To determine the depth of contact,
+of a hard film on a soft substrate [#ChenVlassak2001]_. The pile-up can be emphasized in case ot thin films, because of the material confinement by the substrate. To determine the depth of contact,
 `the same models <http://nims.readthedocs.org/en/latest/models.html#indentation-contact-topography>`_
 described for bulk material indentation are used.
 
