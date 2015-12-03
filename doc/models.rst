@@ -61,7 +61,7 @@ The geometric properties of conical indenters are well described in [#Fischer-Cr
    :scale: 60 %
    :align: center
    
-   * - a) Conical indenter (45°) and b) Berkovich indenter.*
+   *: a) Conical indenter (45°) and b) Berkovich indenter.*
 
 These indenters have self-similar geometries which implies a constant strain
 and similarity of the stress fields.
