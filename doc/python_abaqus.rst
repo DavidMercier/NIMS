@@ -35,7 +35,7 @@ No delamination is allowed between thin films or between thin film and substrate
    :scale: 20 %
    :align: center
    
-   *Geometry of the sample in the FEM model.*
+   * - Geometry of the sample in the FEM model.*
 
 Geometry of the indenter
 ---------------------------------
@@ -48,7 +48,7 @@ A spherical part is defined at the apex of the conical indenter (see :numref:`co
    :scale: 50 %
    :align: center
    
-   *Scheme of a cono-spherical indenter.*
+   * - Scheme of a cono-spherical indenter.*
 
 The radius :math:`R` of the spherical part is calculated from the tip defect :math:`h_\text{tip}`
 and the cone angle :math:`\alpha`, using the following equation. For Berkovich, Vickers and Cube-Corner
@@ -85,7 +85,7 @@ from 0 (quadratic elements) to 1 (linear elements).
    :scale: 20 %
    :align: center
    
-   *Screenshot in Abaqus of the mesh example used in the FE model.*
+   * - Screenshot in Abaqus of the mesh example used in the FE model.*
 
 Material properties
 ---------------------------------
@@ -128,7 +128,7 @@ A value of 200nm for the indentation depth is set by default.
    :scale: 50 %
    :align: center
    
-   *Schematic of boundaries conditions used in the FE model.*
+   * - Schematic of boundaries conditions used in the FE model.*
     
 .. figure:: ./_pictures/fem_model_parts_bc.png
    :name: fem_model_parts_bc
@@ -167,19 +167,19 @@ The following pictures were obtained for a `multilayer Au/Ti/SiO2/Si <https://gi
    :scale: 20 %
    :align: center
    
-   *Screenshot of the Von Mises stress distribution at maximum load.*
+   * - Screenshot of the Von Mises stress distribution at maximum load.*
 
 .. figure:: ./_pictures/fem_result_S_Mises_zoom.png
    :scale: 20 %
    :align: center
    
-   *Screenshot (with a zoom in on the contact area) of the Von Mises stress distribution at maximum load.*
+   * - Screenshot (with a zoom in on the contact area) of the Von Mises stress distribution at maximum load.*
    
 .. figure:: ./_pictures/fem_result_U_magnitude.png
    :scale: 20 %
    :align: center
    
-   *Screenshot (with a zoom in on the contact area) of the magnitude of the displacement at maximum load.*
+   * - Screenshot (with a zoom in on the contact area) of the magnitude of the displacement at maximum load.*
     
 References
 ############
