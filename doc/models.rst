@@ -46,6 +46,7 @@ Conical indenters
 The geometric properties of conical indenters are well described in [#Fischer-Cripps_2004]_.
 
 .. csv-table:: **Geometric properties of conical indenters.**
+   :name: geom_prop_indenters
    :header: "Indenter", "Berkovich", "Vickers", "Cube-Corner", "Conical"
    :widths: 20,20,20,20,20
 
@@ -337,7 +338,7 @@ With the coefficients :math:`C_0` and :math:`C_\text{n}` obtained by curve fitti
 from nanoindentation experiments in fused silica (amorphous and isotropic material).
 
 For a perfect Berkovich indenter :math:`C_0` is equal to :math:`24.56` and for a
-perfect Vickers indenter :math:`C_0` is equal to :math:`24.504` (see Table 1).
+perfect Vickers indenter :math:`C_0` is equal to :math:`24.504` (see :numref:`geom_prop_indenters`).
 
 The second term of the area function :math:`A_\text{c}` describes a paraboloid
 of revolution, which approximates to a sphere at small penetration depths.
