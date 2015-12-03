@@ -45,7 +45,7 @@ Conical indenters
 
 The geometric properties of conical indenters are well described in [#Fischer-Cripps_2004]_.
 
-.. csv-table:: Table 1 : **Geometric properties of conical indenters.**
+.. csv-table:: **Geometric properties of conical indenters.**
    :header: "Indenter", "Berkovich", "Vickers", "Cube-Corner", "Conical"
    :widths: 20,20,20,20,20
 
@@ -60,7 +60,7 @@ The geometric properties of conical indenters are well described in [#Fischer-Cr
 .. figure:: ./_pictures/indenters.png
    :scale: 60 %
    :align: center
-
+   
    * - a) Conical indenter (45°) and b) Berkovich indenter.*
 
 These indenters have self-similar geometries which implies a constant strain
