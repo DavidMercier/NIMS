@@ -5,7 +5,7 @@ function gui_handle = demo
 
 %% Check License of Optimization Toolbox
 license_msg = ['Sorry, no license found for the Matlab ', ...
-    'Optimization Toolbox™ !'];
+    'Optimization Toolboxâ„¢ !'];
 if  license('checkout', 'Optimization_Toolbox') == 0
     warning(license_msg);
     licenceFlag_1 = 0;
@@ -15,7 +15,7 @@ end
 
 %% Check License of Image Toolbox
 license_msg = ['Sorry, no license found for the Matlab ', ...
-    'Image Processing Toolbox™ !'];
+    'Image Processing Toolboxâ„¢ !'];
 if  license('checkout', 'Image_Toolbox') == 0
     warning(license_msg);
     licenceFlag_2 = 0;
@@ -47,7 +47,7 @@ end
 
 %% Set Toolbox version and help paths
 gui.config.name_toolbox = 'NIMS';
-gui.config.version_toolbox = '3.1';
+gui.config.version_toolbox = '3.2';
 gui.config.url_help = 'http://nims.readthedocs.org/en/latest/';
 gui.config.pdf_help = 'https://media.readthedocs.org/pdf/nims/latest/nims.pdf';
 gui.config.licenceOpt_Flag = licenceFlag_1;
