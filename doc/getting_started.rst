@@ -58,7 +58,7 @@ First of all a GUI is a Graphical User Interface.
    :scale: 40 %
    :align: center
    
-   *F - ile selector.*
+   *File selector.*
 
 .. figure:: ./_pictures/GUI_Main_Window_Lh_curve.png
    :scale: 40 %

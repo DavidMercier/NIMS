@@ -11,17 +11,17 @@ Features
 --------
 This Matlab toolbox has been developed to :
 
-- Plot and Analyze nanoindentation dataset with standard deviation;
+- Plot and Analyze nanoindentation dataset with standard deviation ;
 
-- Coefficient of the power law fit of the load-displacement curve;
+- Coefficient of the power law fit of the load-displacement curve ;
 
-- Energy of the loading (area below the load-displacement curve);
+- Energy of the loading (area below the load-displacement curve) ;
 
-- Plot of the Stiffness and the Load/Stiffness² evolution;
+- Plot of the Stiffness and the Load/Stiffness² evolution ;
 
-- Young's modulus and Hardness of bulk materials;
+- Young's modulus and Hardness of bulk materials ;
 
-- Young's modulus and Hardness of a thin film on a substrate or on a multilayer sample (3 layers on a substrate);
+- Young's modulus and Hardness of a thin film on a substrate or on a multilayer sample (3 layers on a substrate) ;
 
 - Generation of a Python script for FEM simulation of indentation test on bulk or multilayer sample with ABAQUS 6.12 to ABAQUS 6.14.
 
