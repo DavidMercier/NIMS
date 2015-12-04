@@ -19,7 +19,7 @@ With this Matlab toolbox, it is possible to :
     * plot and correct nanoindentation dataset with standard deviation ;
     * calculate the coefficient of the power law fit of the load-displacement curve ;
     * calculate the energy of the loading (area below the load-displacement curve) ;
-	* plot of the stiffness and the load/stiffness² evolution;
+    * plot of the stiffness and the load/stiffness² evolution ;
     * calculate the Young's modulus and hardness of bulk materials ;
     * calculate the Young's modulus and hardness of thin films on a substrate (for a bilayer or a multilayer sample (until 3 layers on a substrate)) ;
     * generate Python script of axisymmetrical FEM model for use in ABAQUS (cono-spherical indentation of multilayer sample).
