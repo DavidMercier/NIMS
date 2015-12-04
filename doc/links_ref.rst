@@ -99,7 +99,7 @@ Bilayer models to extract Young's modulus of a thin film on a substrate (with co
 * `Bull S.J., "A simple method for the assessment of the contact modulus for coated systems." (2014). <http://dx.doi.org/10.1080/14786435.2014.909612>`_
 * `Li Y. et al., "Models for nanoindentation of compliant films on stiff substrates" (2015). <http://dx.doi.org/10.1557/jmr.2015.126>`_
 
-Multilayer model to extract Young's moduli of thin films on a multilayer sample (with conical indenters)
+Multilayer models to extract Young's moduli of thin films on a multilayer sample (with conical indenters)
 ----------------------------------------------------------------------------------------------------------
 
 * `Pailler-Mattei C. et al., "In vivo measurements of the elastic mechanical properties of human skin by indentation tests" (2008). <http://dx.doi.org/10.1016/j.medengphy.2007.06.011>`_
@@ -121,7 +121,7 @@ Bilayer models to extract hardness of a thin film on a substrate (with conical i
 * `Han S.M. et al., "Combinatorial studies of mechanical properties of Ti–Al thin films using nanoindentation" (2005). <http://dx.doi.org/10.1016/j.actamat.2005.01.017>`_
 * `Han S.M. et al., "Determining hardness of thin films in elastically mismatched film-on-substrate systems using nanoindentation" (2006). <http://dx.doi.org/10.1016/j.actamat.2005.11.026>`_
 
-Multilayer model to extract hardness of thin films on a multilayer sample (with conical indenters)
+Multilayer models to extract hardness of thin films on a multilayer sample (with conical indenters)
 ----------------------------------------------------------------------------------------------------------
 * `Engel P.A. et al., "Interpretation of superficial hardness for multilayer platings*" (1992). <http://dx.doi.org/10.1016/0040-6090(92)90115-R>`_
 * `Rahmoun K. et al., "A multilayer model for describing hardness variations of aged porous silicon low-dielectric-constant thin films" (2009). <http://dx.doi.org/10.1016/j.tsf.2009.07.040>`_
@@ -132,7 +132,6 @@ Finite Element Modelling of conical indentation of thin film(s) on a substrate
 
 * `Charleux L., "Abapy Documentation" <http://abapy.readthedocs.org/en/latest/index.html>`_
 * ABAQUS documentation
-
 * `Bhattacharya A.K. and Nix W.D., "Finite element analysis of cone indentation." (1991). <http://dx.doi.org/10.1016/0020-7683(91)90100-T>`_
 * `Madsen D.T. et al. "Finite Element Simulation of Indentation Behavior of thin Films." (1991). <http://dx.doi.org/10.1557/PROC-239-431>`_
 * `Sun Y. et al., "Finite element analysis of the critical ratio of coating thickness to indentation depth for coating property measurements by nanoindentation." (1995). <http://dx.doi.org/10.1016/0040-6090(94)06357-5>`_
@@ -171,7 +170,7 @@ Softwares
 * `IndentAnalyser by ASMEC <http://www.asmec.de/products/analysis-software/indentanalyser/what-is-indentanalyser.html>`_
 * `Elastica by ASMEC <http://www.asmec.de/analysis-software/elastica/what-can-i-do-with-elastica.html>`_
 * `Softwares from SIOMEC <http://www.siomec.de/en/004/Software>`_
-* `Softwares from Keyisght <http://www.keysight.com/de/pc-1678717/nanoindenter-software?nid=-33997.0&cc=DE&lc=ger>`_
+* `Softwares from Keysight <http://www.keysight.com/de/pc-1678717/nanoindenter-software?nid=-33997.0&cc=DE&lc=ger>`_
 * `Piuma dataviewer <http://optics11.com/news/55-optics11-launches-piuma-nanoindentation-dataviewer>`_
 * `Punias <http://punias.voila.net/punias0.html?q=pages/starting_page>`_
 * `Gwyddion <http://gwyddion.net/>`_
