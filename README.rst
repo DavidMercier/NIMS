@@ -51,7 +51,7 @@ The author is grateful to `Dr. V. Mandrillon <https://www.researchgate.net/profi
 and to `Dr. M. Verdier <Marc.Verdier@simap.grenoble-inp.fr>`_ from (`SIMaP <http://simap.grenoble-inp.fr>`_, France (Grenoble)), for long discussions and many advices about nanoindentation.
 
 The author is grateful to `Dr. Igor Zlotnikov <https://www.researchgate.net/profile/Igor_Zlotnikov>`_ 
-(`Max Planck Institute of Colloids and Interfaces <http://www.mpikg.mpg.de/>`_, Germany (Potsdam)), for providing example files.
+(`Max Planck Institute of Colloids and Interfaces <http://www.mpikg.mpg.de/>`_, Germany (Potsdam)), for providing Hysitron example files.
 
 Keywords
 --------
