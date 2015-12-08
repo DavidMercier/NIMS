@@ -23,7 +23,7 @@ With given input data :math:`xdata` and the observed output :math:`ydata`.
 
 - `Curve fitting. <https://en.wikipedia.org/wiki/Curve_fitting>`_
 
-- `Mathematical optimization." (2002). <https://en.wikipedia.org/wiki/Mathematical_optimization>`_
+- `Mathematical optimization. <https://en.wikipedia.org/wiki/Mathematical_optimization>`_
 
 Residuals
 ###########
@@ -34,7 +34,7 @@ Mathematically, the definition of the residual for the ith observation in the da
     .. math:: r_\text{i} = y_\text{i} − \hat{y}_\text{i}
             :label: residuals
 
-With :math:`y_\text{i}` denoting the ith response value and :math:`\hat{y}_\text{i}` the predicted response value.
+With :math:`y_\text{i}` denoting the ith response value and :math:`\hat{y}_\text{i}` the ith predicted response value.
 
 If the model fits the data correctly, the residuals approximate the random errors.
 
