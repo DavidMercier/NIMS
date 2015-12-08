@@ -61,6 +61,7 @@ Contents
    configuration
    models
    models_thin_films
+   minimization
    examples
    python_abaqus
    links_ref
