@@ -23,7 +23,7 @@ else
     licenceFlag_2 = 1;
 end
 
-%% Import data from YAML config files
+%% Define gui structure variable
 gui = struct();
 gui.config = struct();
 gui.config.indenter = struct();
