@@ -564,6 +564,8 @@ with a weighted sum of the different layer hardnesses during indentation process
 With :math:`H_\text{f}` the hardness of the film, :math:`H_\text{s}` the hardness of the substrate and :math:`a + b = 1`. :math:`a` varies from :math:`1` when the hardness is not affected by the substrate,
 to :math:`0` when the indentation depth is approaching the film thickness.
 
+According to Veprek-Heijman M.G.J. and Veprek S., the Bückle's rule is not valid in the case of superhard coatings the deformation of a softer substrate, such as steel [#Veprek_2016]_. To obtain correct measurements of the hardness of superhard coatings (H ≥ 40 GPa) their thickness must be sufficiently large (typically 5–7 μm or more on steel and about 3 μm on Si or cemented carbide). In the case of ultrahard coatings (H ≥ 80 GPa), the thickness should be even larger.
+
 Kao and Byrne (1981)
 ---------------------------
 
@@ -749,4 +751,5 @@ References
 .. [#Saha_2002] `Saha R. and Nix W.D., "Effects of the substrate on the determination of thin film mechanical properties by nanoindentation" (2002). <http://dx.doi.org/10.1016/S1359-6454(01)00328-7>`_
 .. [#Simunkova_2003] `Šimůnková Š., "Mechanical properties of thin film–substrate systems" (2003). <http://dx.doi.org/10.1016/S0924-0136(02)00231-5>`_
 .. [#VanVliet_2001] `Van Vliet K.J. and Gouldstone A., "Mechanical Properties of Thin Films Quantified Via Instrumented Indentation" (2001). <http://dx.doi.org/10.1179/026708401101517737>`_
+.. [#Veprek_2016]  `Veprek-Heijman M.G.J. and Veprek S., "The deformation of the substrate during indentation into superhard coatings: Bückle's rule revised" (2016). <http://dx.doi.org/10.1016/j.surfcoat.2015.10.064>`_
 .. [#Xu_2006] `Xu H. and Pharr G.M., "An improved relation for the effective elastic compliance of a film/substrate system during indentation by a flat cylindrical punch." (2006). <http://dx.doi.org/10.1016/j.scriptamat.2006.04.037>`_
