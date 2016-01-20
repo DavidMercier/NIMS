@@ -1,12 +1,17 @@
 %% Copyright 2014 MERCIER David
 function Ac = functionArea(hc, coeffArea, varargin)
-%% Function used to calculate the contact area from
-% Oliver et al. (1992) - http://dx.doi.org/10.1557/JMR.1992.1564
+%% Function used to calculate the contact area during an indentation test
+% from Oliver et al. (1992) - http://dx.doi.org/10.1557/JMR.1992.1564
 
-% Ac: Contact area calculation in nm2
+% Ac: Indentation contact area in nm2
+% hc: Indentation contact depth in nm
+% coeffArea: Area coefficients
 
 if nargin < 2
-    coeffArea = [24.56 0 0 0 0 0 0 0 0]; % Coefficients of the function area
+    hc = 1;
+    pyrAngle = 65.3; % Face angle of the Berkovich indenter in degrees
+    C1 = projectedArea_3sidePyramid(hc, pyrAngle);
+    coeffArea = [C1 0 0 0 0 0 0 0 0]; % Coefficients of the function area
 end
 
 if nargin < 1

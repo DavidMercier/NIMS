@@ -70,6 +70,12 @@ and similarity of the stress fields.
 .. note::
     Indenters are mainly in diamond. Diamond has a Young's modulus of 1070GPa
     and a Poisson's ratio of 0.07 [#Fischer-Cripps_2004]_.
+	
+Find here the |matlab| function to plot the projected ared of 3-sided pyramidal indenter in function of indentation depth :
+`projectedArea_3sidePyramid.m <"N:\Matlab_GitHub\NIMS\matlab_code\function_area\projectedArea_3sidePyramid.m">`_.
+
+Find here the |matlab| function to plot the :math:`\epsilon` function :
+`projectedArea_4sidePyramid.m <"N:\Matlab_GitHub\NIMS\matlab_code\function_area\projectedArea_4sidePyramid.m">`_.
    
 Load-Displacement curves
 ---------------------------
