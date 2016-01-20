@@ -196,6 +196,7 @@ References
 * `Madsen D.T. et al. "Finite Element Simulation of Indentation Behavior of thin Films." (1991). <http://dx.doi.org/10.1557/PROC-239-431>`_
 * `Sun Y. et al., "Finite element analysis of the critical ratio of coating thickness to indentation depth for coating property measurements by nanoindentation." (1995). <http://dx.doi.org/10.1016/0040-6090(94)06357-5>`_
 * `Hubert N. et al. "Identification of elastic-plastic material parameters from pyramidal indentation of thin films." (2002). <http://dx.doi.org/10.1098/rspa.2001.0927>`_
+* `Shan Z. and Sitaraman S.K., "Elastic–plastic characterization of thin films using nanoindentation technique." (2003). <http://dx.doi.org/10.1016/S0040-6090(03)00663-1>`_
 * `He J.L. and Veprek S., "Finite element modeling of indentation into superhard coatings." (2003). <http://dx.doi.org/10.1016/S0257-8972(02)00628-X>`_
 * `Cai X. and Bangert H., "Hardness measurements of thin films-determining the critical ratio of depth to thickness using FEM." (2005). <http://dx.doi.org/10.1016/0040-6090(95)06569-5>`_
 * `Bolshakov A. and Pharr G.M., "Influences of pile-up on the measurement of mechanical properties by load and depth sensing indentation techniques." (1998) <http://dx.doi.org/10.1557/JMR.1998.0146>`_
