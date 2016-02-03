@@ -72,10 +72,10 @@ and similarity of the stress fields.
     and a Poisson's ratio of 0.07 [#Fischer-Cripps_2004]_.
 	
 Find here the |matlab| function to plot the projected ared of 3-sided pyramidal indenter in function of indentation depth :
-`projectedArea_3sidePyramid.m <"N:\Matlab_GitHub\NIMS\matlab_code\function_area\projectedArea_3sidePyramid.m">`_.
+`projectedArea_3sidePyramid.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/function_area/projectedArea_3sidePyramid.m>`_.
 
-Find here the |matlab| function to plot the :math:`\epsilon` function :
-`projectedArea_4sidePyramid.m <"N:\Matlab_GitHub\NIMS\matlab_code\function_area\projectedArea_4sidePyramid.m">`_.
+Find here the |matlab| function to plot the the projected ared of 4-sided pyramidal indenter in function of indentation depth :
+`projectedArea_4sidePyramid.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/function_area/projectedArea_4sidePyramid.m>`_.
    
 Load-Displacement curves
 ---------------------------
