@@ -127,7 +127,10 @@ Preliminary finite element calculations show that :math:`\eta` should
 be independent of indentation depth and that its value ranges from
 :math:`0.3` to :math:`0.7` for materials that do not work harden.
 
-First of all, the easiest way to assess approximately the Young's modulus of the film is to use the tangential model. If one plots a tangent from the diagram's zero point to the curves, then the tangential point is the Young's modulus of the film (see :numref:`tangente-method`).
+Method of the tangent
+-----------------------
+
+First of all, the easiest way to assess approximately the mechanical properties of the film is to use the tangential model. If one plots a tangent from the diagram's zero point to the curves, then the tangential point is the Young's modulus or the hardness of the film (see :numref:`tangente-method`).
 
 .. figure:: ./_pictures/tangente-method.png
    :name: tangente-method
