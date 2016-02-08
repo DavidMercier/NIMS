@@ -588,6 +588,10 @@ Kao and Byrne proposed the following model to describe the evolution of the comp
 
 With :math:`k_1` a weighting factor of about 9%, independent of material characteristics.
 
+Find here the |matlab| functions for the  model of Kao :
+- `model_kao.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/plastic_models/model_kao.m>`_.
+- `model_kao_film.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/plastic_models/model_kao_film.m>`_.
+
 Jönsson and Hogmark (1984)
 ---------------------------
 
@@ -625,7 +629,22 @@ mixtures” similar to Jönsson's relation, considering the volumes of the plast
     .. math:: H = \frac{V_\text{f}}{V}H_\text{f} + \frac{V_\text{s}}{V}H_\text{s}
             :label: burnett_hardness
 
-With :math:`V = V_\text{f} + V_\text{s}`. 
+With :math:`V = V_\text{f} + V_\text{s}`.
+
+Bhattacharya and Nix (1988)
+---------------------------
+
+Bhattacharya and Nix proposed the following model to extract the hardness of a coating [#Bhattacharya_1988]_.
+
+    .. math:: H = H_\text{s} + \left(H_\text{f} - H_\text{s} \right) e^{-\alpha\left(x\right)^n}
+            :label: bhattacharya_hardness
+
+With :math:`x=h/t` and :math:`\alpha` and is an adjustable constants determined using the method of least squares.
+The variable :math:`n` is equal to 1 when the coating is harder
+than the substrate and to 2 when the substrate is harder than the coating.
+
+Find here the |matlab| functions for the  model of Bhattacharya and Nix :
+- `model_bhattacharya.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/plastic_models/model_bhattacharya.m>`_.
 
 Chicot and Lesage (1995)
 ---------------------------
@@ -717,6 +736,7 @@ References
 #############
 
 .. [#Arrazat_2010] `Arrazat B. et al., "Nano indentation de couches dures ultra minces de ruthénium sur or" (2010). <http://dx.doi.org/10.1051/mattech/2011031>`_
+.. [#Bhattacharya_1988] `Bhattacharya A.K. and Nix W.D., "Analysis of elastic and plastic deformation associated with indentation testing of thin films on substrates" (1988). <http://dx.doi.org/10.1016/0020-7683(88)90091-1>`_
 .. [#Bec_2006] `Bec S. et al., "Improvements in the indentation method with a surface force apparatus" (2006). <http://dx.doi.org/10.1080/01418619608239707>`_
 .. [#Bückle_1961] Bückle H., "VDI Berichte" (1961).
 .. [#Bull_2005] `Bull S.J., "Nanoindentation of coatings" (2005). <http://dx.doi.org/10.1088/0022-3727/38/24/R01>`_
