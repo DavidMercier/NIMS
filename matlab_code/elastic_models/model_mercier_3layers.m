@@ -44,7 +44,7 @@ if gui.config.licenceOpt_Flag
         OPTIONS);
 else
     model = @LMS;
-    gui.results.Ef_red_sol_fit = fminsearch(model, gui.results.A0);
+    gui.results.Ef_red_sol_fit = fminsearch(model, gui.results.A0, OPTIONS);
     warning('No Optimization toolbox available !');
 end
 
