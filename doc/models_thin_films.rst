@@ -588,6 +588,10 @@ Kao and Byrne proposed the following model to describe the evolution of the comp
 
 With :math:`k_1` a weighting factor of about 9%, independent of material characteristics.
 
+Find here the |matlab| functions for the  model of Kao :
+- `model_kao.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/plastic_models/model_kao.m>`_.
+- `model_kao_film.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/plastic_models/model_kao_film.m>`_.
+
 Jönsson and Hogmark (1984)
 ---------------------------
 
@@ -638,6 +642,9 @@ Bhattacharya and Nix proposed the following model to extract the hardness of a c
 With :math:`x=h/t` and :math:`\alpha` and is an adjustable constants determined using the method of least squares.
 The variable :math:`n` is equal to 1 when the coating is harder
 than the substrate and to 2 when the substrate is harder than the coating.
+
+Find here the |matlab| functions for the  model of Bhattacharya and Nix :
+- `model_bhattacharya.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/plastic_models/model_bhattacharya.m>`_.
 
 Chicot and Lesage (1995)
 ---------------------------
