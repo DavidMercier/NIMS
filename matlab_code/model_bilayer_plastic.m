@@ -35,13 +35,23 @@ if val2 ~= 1
         
         if val2 == 2 %KaoByrne (1981)
             model_kao(OPTIONS);
-            gui = guidata(gcf); guidata(gcf, gui);
-        elseif val2 == 3 %Saha (2002)
+            gui = guidata(gcf);
+        elseif val2 == 3 %BhattacharyaNix (with n=1) (1988)
+            n_BN = gui.config.numerics.n_BN_HCSS;
+            model_bhattacharya(OPTIONS, n_BN);
+            gui = guidata(gcf);
+        elseif val2 == 4 %BhattacharyaNix (with n=2) (1988)
+            n_BN = gui.config.numerics.n_BN_SCHS;
+            model_bhattacharya(OPTIONS, n_BN);
+            gui = guidata(gcf);
+        elseif val2 == 5 %Saha (2002)
             gui.results.Hf = model_saha(gui.data.S, gui.data.P, ...
                 gui.results.Em_red, gcf);
-        elseif val2 == 4 %Mercier (2010)
+            gui.results.Hf_fit = mean(gui.results.Hf);
+        elseif val2 == 6 %Mercier (2010)
             gui.results.Hf = model_mercier(gui.data.S, gui.data.P, ...
                 gui.results.Ef_red, gcf);
+            gui.results.Hf_fit = mean(gui.results.Hf);
         end
         guidata(gcf, gui);
     end

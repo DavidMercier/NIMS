@@ -61,7 +61,7 @@ if ~gui.flag.wrong_inputs
     model_function_area;
     gui = guidata(gcf); guidata(gcf, gui);
     
-    %% Calculations of Young's modulus
+    %% Calculations of Young's modulus or Hardness
     if gui.variables.y_axis == 4 || gui.variables.y_axis == 5
         [gui.results.Eeff_red,gui.results.Esample_red, gui.results.Esample] = ...
             model_elastic(gui.data.S, gui.results.Ac, gui.data.nuf, gcf);

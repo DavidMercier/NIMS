@@ -33,25 +33,22 @@ if gui.config.licenceOpt_Flag
         OPTIONS);
 else
     model = @LMS;
-    gui.results.Hf_fit = fminsearch(model, gui.results.A0);
-    warning('No Optimization toolbox availble !');
+    gui.results.Hf_fit = fminsearch(model, gui.results.A0, OPTIONS);
+    warning('No Optimization toolbox available !');
 end
 
     function [sse, FittedCurve] = LMS(params)
         Hf(1) = params(1);
-        FittedCurve = 1e-9*(1e9.*gui.data.Hs + (2 .* gui.config.numerics.k_Kao .* t .* ...
+        FittedCurve = 1e-9*(1e9.*gui.data.Hs + ...
+            (2 .* gui.config.numerics.k_Kao .* t .* ...
             (1e9.*Hf - 1e9.*gui.data.Hs)) .* x);
-        gui.results.residual = FittedCurve - gui.results.Esample_red;
+        gui.results.residual = FittedCurve - gui.results.H;
         sse = sum(gui.results.residual .^ 2);
     end
 
-% gui.results.Hm = 1e-9*(...
-%     1e9.*gui.data.Hs + (2 .* gui.config.numerics.k_Kao .* t .* ...
-%     (1e9.*gui.results.Hf_fit - 1e9.*gui.data.Hs)) .* x);
-
 gui.results.Hf = 1e-9*(...
-    1e9.*gui.data.Hs + (1./x .* (1e9.*gui.results.Hf_fit - 1e9.*gui.data.Hs) ./ ...
-    (2 .* gui.config.numerics.k_Kao .* t)));
+    1e9.*gui.data.Hs + (2 .* gui.config.numerics.k_Kao .* t .* ...
+    (1e9.*gui.results.Hf_fit - 1e9.*gui.data.Hs)) .* x);
 
 guidata(gcf, gui);
 

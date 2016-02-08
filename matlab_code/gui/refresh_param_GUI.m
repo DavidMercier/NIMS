@@ -78,7 +78,7 @@ elseif get(gui.handles.value_param2plotinyaxis_GUI , 'Value') == 6
 end
 
 if get(gui.handles.value_param2plotinyaxis_GUI , 'Value') == 6
-    if get(gui.handles.value_model_GUI, 'Value') > 2
+    if get(gui.handles.value_model_GUI, 'Value') > 3
         set(gui.handles.title_models_Saha_GUI, 'Visible', 'on');
         set(gui.handles.value_models_Saha_GUI, 'Visible', 'on');
         if get(gui.handles.value_models_Saha_GUI, 'Value') == 1

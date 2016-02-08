@@ -19,7 +19,7 @@ else
             gui.results.Ef_red     = gui.results.Ef_red.';
             gui.results.Em_red(ii) = 0;
             gui.results.Em_red     = gui.results.Em_red.';
-            gui.results.Hf(ii) = 0;
+            gui.results.Hm(ii) = 0;
         end
         gui.data.t = max(gui.data.h)+1;
         gui.results.Ef_sol_fit = 0;
@@ -117,8 +117,11 @@ else
         cleaned_Esample_red(isnan(cleaned_Esample_red)) = [];
         cleaned_Esample_red(cleaned_Esample_red < 0) = [];
         gui.results.cleaned_Esample_red = cleaned_Esample_red;
-        gui.axis.ymax = mean(cleaned_Esample_red) + ...
-            0.5*mean(cleaned_Esample_red);
+        if round(cleaned_Esample_red) == 0
+            gui.axis.ymax = round(2*mean(10*cleaned_Esample_red))/10;
+        else
+            gui.axis.ymax = round(2*mean(cleaned_Esample_red));
+        end
     elseif gui.variables.y_axis == 5
         gui.axis.y2plot = gui.results.Esample_red;
         gui.axis.delta_y2plot = gui.results.delta_E;
@@ -128,22 +131,28 @@ else
         cleaned_Esample_red(isinf(cleaned_Esample_red)) = [];
         cleaned_Esample_red(isnan(cleaned_Esample_red)) = [];
         cleaned_Esample_red(cleaned_Esample_red < 0) = [];
-        gui.axis.ymax = mean(cleaned_Esample_red) + ...
-            0.5*mean(cleaned_Esample_red);
+        if round(cleaned_Esample_red) == 0
+            gui.axis.ymax = round(2*mean(10*cleaned_Esample_red))/10;
+        else
+            gui.axis.ymax = round(2*mean(cleaned_Esample_red));
+        end
         gui.results.cleaned_Esample_red = cleaned_Esample_red;
     elseif gui.variables.y_axis == 6
         gui.axis.y2plot = gui.results.H;
         gui.axis.delta_y2plot = gui.results.delta_H;
         gui.axis.y2plot_2 = gui.results.Hf;
-        gui.axis.ylabelstr = 'Hardness film ($H_f$) (GPa)';
+        gui.axis.ylabelstr = 'Hardness ($H$) (GPa)';
         cleaned_H = gui.results.H;
         cleaned_H(isinf(cleaned_H)) = [];
         cleaned_H(isnan(cleaned_H)) = [];
         cleaned_H(cleaned_H < 0) = [];
-        gui.axis.ymax = mean(cleaned_H)+0.5*mean(cleaned_H);
+        if round(cleaned_H) == 0
+            gui.axis.ymax = round(2*mean(10*cleaned_H))/10;
+        else
+            gui.axis.ymax = round(2*mean(cleaned_H));
+        end
         gui.results.cleaned_H = cleaned_H;
     end
-    
 end
 
 guidata(gcf, gui);

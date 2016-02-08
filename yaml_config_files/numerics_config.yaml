@@ -63,6 +63,13 @@ B_Jung: 1.38
 k_Kao: 0.09
 
 ###########################################################################################
+# Constants in the plastic model of Bhattacharya and Nix (1988) - DOI: 10.1016/0020-7683(88)90091-1
+n_BN_HCSS: 1
+n_BN_SCHS: 2
+alpha_min_BN: 0
+alpha_max_BN: 0.5
+
+###########################################################################################
 # Options for the least square method of Matlab used to fit experimental curves
 TolFun_value: 1e-20
 TolX_value: 1e-20
