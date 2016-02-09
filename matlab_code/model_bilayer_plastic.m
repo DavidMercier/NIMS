@@ -36,11 +36,11 @@ if val2 ~= 1
         if val2 == 2 %KaoByrne (1981)
             model_kao(OPTIONS);
             gui = guidata(gcf);
-        elseif val2 == 3 %BhattacharyaNix (with n=1) (1988)
+        elseif val2 == 3 %BhattacharyaNix (with n=2) (1988)
             n_BN = gui.config.numerics.n_BN_HCSS;
             model_bhattacharya(OPTIONS, n_BN);
             gui = guidata(gcf);
-        elseif val2 == 4 %BhattacharyaNix (with n=2) (1988)
+        elseif val2 == 4 %BhattacharyaNix (with n=1) (1988)
             n_BN = gui.config.numerics.n_BN_SCHS;
             model_bhattacharya(OPTIONS, n_BN);
             gui = guidata(gcf);

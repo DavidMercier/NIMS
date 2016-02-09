@@ -64,8 +64,8 @@ k_Kao: 0.09
 
 ###########################################################################################
 # Constants in the plastic model of Bhattacharya and Nix (1988) - DOI: 10.1016/0020-7683(88)90091-1
-n_BN_HCSS: 1
-n_BN_SCHS: 2
+n_BN_HCSS: 2
+n_BN_SCHS: 1
 alpha_min_BN: 0
 alpha_max_BN: 0.5
 
