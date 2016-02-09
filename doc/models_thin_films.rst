@@ -646,8 +646,7 @@ than the substrate and to 1 when the substrate is harder than the coating.
 
 In the original paper, :math:`\alpha` is equal to :math:`\frac{H_\text{f}/H_\text{s}}{\sigma_\text{f}/\sigma_\text{s}\sqrt{E_\text{f}/E_\text{s}}}`, when the coating is harder than the substrate and to :math:`\frac{\sigma_\text{f}/\sigma_\text{s}}{E_\text{f}/E_\text{s}}`, when the substrate is harder than the coating.
 
-Find here the |matlab| functions for the  model of Bhattacharya and Nix :
-- `model_bhattacharya.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/plastic_models/model_bhattacharya.m>`_.
+Find here the |matlab| functions for the  model of Bhattacharya and Nix : `model_bhattacharya.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/plastic_models/model_bhattacharya.m>`_.
 
 Chicot and Lesage (1995)
 ---------------------------
