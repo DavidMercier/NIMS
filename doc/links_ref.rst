@@ -134,6 +134,7 @@ Finite Element Modelling of conical indentation of thin film(s) on a substrate
 
 * `Charleux L., "Abapy Documentation" <http://abapy.readthedocs.org/en/latest/index.html>`_
 * ABAQUS documentation
+* `Bhattacharya A.K. and Nix W.D., "Analysis of elastic and plastic deformation associated with indentation testing of thin films on substrates" (1988). <http://dx.doi.org/10.1016/0020-7683(88)90091-1>`_
 * `Bhattacharya A.K. and Nix W.D., "Finite element analysis of cone indentation." (1991). <http://dx.doi.org/10.1016/0020-7683(91)90100-T>`_
 * `Madsen D.T. et al. "Finite Element Simulation of Indentation Behavior of thin Films." (1991). <http://dx.doi.org/10.1557/PROC-239-431>`_
 * `Sun Y. et al., "Finite element analysis of the critical ratio of coating thickness to indentation depth for coating property measurements by nanoindentation." (1995). <http://dx.doi.org/10.1016/0040-6090(94)06357-5>`_
