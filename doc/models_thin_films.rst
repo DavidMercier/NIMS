@@ -489,6 +489,11 @@ This last equation from Bull S.J. is exactly the same as equation :eq:`bec_Eeq`,
 proposed by Bec et al. in 2006, with a unique difference which is the use by Bull S.J.
 of the non reduced form of the Young's moduli of the coating and the substrate.
 
+Argatov I.I. and Sabina F.J. (2016) 
+-------------------------------------
+
+Argatov I.I. and Sabina F.J. proposed an analytical model, based on the first-order asymptotic solution to the unilateral frictionless indentation problem. This model takes into account the effect of a compliant substrate in the small-scale indentation of thin coatings [#Argatov_2016]_.
+
 Elastic properties of a thin film on a multilayer system
 ###############################################################
 
@@ -737,6 +742,7 @@ Arrazat et al. (2010)
 References
 #############
 
+.. [#Argatov_2016] `Argatov I.I. and Sabina F.J., "Small-scale indentation of an elastic coated half-space: The effect of compliant substrate" (2016). <http://dx.doi.org/10.1016/j.ijengsci.2016.04.008>`_
 .. [#Arrazat_2010] `Arrazat B. et al., "Nano indentation de couches dures ultra minces de ruthénium sur or" (2010). <http://dx.doi.org/10.1051/mattech/2011031>`_
 .. [#Bhattacharya_1988] `Bhattacharya A.K. and Nix W.D., "Analysis of elastic and plastic deformation associated with indentation testing of thin films on substrates" (1988). <http://dx.doi.org/10.1016/0020-7683(88)90091-1>`_
 .. [#Bec_2006] `Bec S. et al., "Improvements in the indentation method with a surface force apparatus" (2006). <http://dx.doi.org/10.1080/01418619608239707>`_
