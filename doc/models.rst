@@ -385,7 +385,7 @@ Giannakopoulos and Suresh founded a critical value for a similar
 criterion about :math:`0.875` [#Giannakopoulos_1999]_.
 
 Dynamic nanoindentation
--------------------------
+###########################
 
 The dynamic indentation is when a small dynamic oscillation (usually :math:`2\text{nm}` of amplitude)
 with a given frequency (:math:`\omega`) (usually :math:`45\text{Hz}`)
@@ -465,12 +465,9 @@ Find here the |matlab| function to calculate the constant :math:`K` in function 
 Extraction of elastic properties
 ##################################################
 
-Elastic properties of bulk material
----------------------------------------
-
 Bulychev et al. [#Bulychev_1973]_ and Shorshorov M. K. et al. [#Shorshorov_1982]_
-were the first to determine the reduced Young's modulus of a material with the
-relationships established by Love [#Love_1939]_, Galin [#Galin_1946]_ and Sneddon [#Sneddon_1948]_,
+were the first to determine the reduced Young's modulus (or elastic modulus or storage modulus)
+of a material with the relationships established by Love [#Love_1939]_, Galin [#Galin_1946]_ and Sneddon [#Sneddon_1948]_,
 between the applied load and the displacement during an indentation test of an elastic material.
 
 They proposed to expressed the reduced Young's modulus :math:`E^{*}` (in :math:`\text{GPa} = \text{N/m}^2`) in function
@@ -497,7 +494,7 @@ for the perfectly sharp Berkovich indenter should be :math:`1.062` [#Troyon_2006
 Some authors proposed another correction factor function of the angle of the conical
 indenter and the Poisson's ratio of the indented material [#Hay_1999]_ and [#Strader_2006]_.
 For a conical indenter with an half-angle of :math:`\gamma \leq 60^{\circ}`
-(e.g.: Cube-Corner indenter), the analytical approximation is :
+(e.g.: Cube-Corner indenter), the analytical approximation is:
 
     .. math:: \beta = 1 + \frac{{\left(1-2\nu\right)}}{{4\left(1-\nu\right)tan\gamma}}
             :label: gamma_low_angle
@@ -544,20 +541,34 @@ the Poisson's ratio of the material of the indenter.
 Find here the |matlab| function to calculate the Young's modulus:
 `model_elastic.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_elastic.m>`_.
 
-If dynamic nanoindentation is performed, a loss modulus :math:`E^{'*}`
-(in :math:`\text{GPa} = \text{N/m}^2`) can be defined by the following equation :
+Extraction of viscoelastic properties
+##################################################
+
+If dynamic nanoindentation is performed, a sinusoidal input is applied and the output signal is monitored.
+But, in case of a linear viscoelastic material, the output signal, which is still sinusoidal, can lag the input signal [#VanLandingham_2001]_. Thus, the out-of-phase components are related to the loss modulus :math:`E^{'*}`
+(in :math:`\text{GPa} = \text{N/m}^2`), defined by the following equation:
 
     .. math:: E^{'*} = \frac{C\omega}{2} \sqrt\frac{\pi}{A}
             :label: loss_modulus
-            
+
+with :math:`C\omega` the contact damping, given by :eq:`CSM_contact_damping`.
+
+Some authors like to calculate also the loss tangent :math:`tan \delta`, which is defined by:
+
+    .. math:: tan{\delta} = \frac{E^{'}}{E} = \frac{C\omega}{S}
+            :label: loss_modulus
+
 Find here the |matlab| function to calculate the loss modulus:
-`loss_modulus.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/loss_modulus.m>`_.
+`loss_modulus.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/visco_elastic_models/loss_modulus.m>`_.
+
+Find here the |matlab| function to calculate the loss factor:
+`loss_tangent.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/visco_elastic_models/loss_tangent.m>`_.
 
 Extraction of plastic properties 
 ##################################
 
 The hardness :math:`H` (in :math:`\text{GPa} = \text{N/m}^2`) of the material is defined according to
-Oliver and Pharr [#OliverPharr_1992]_, by the following expression :
+Oliver and Pharr [#OliverPharr_1992]_, by the following expression:
 
     .. math:: H = \frac{F_\text{c,max}}{A_\text{c}}
             :label: hardness
@@ -675,5 +686,6 @@ References
 .. [#Shorshorov_1982] Shorshorov M.K. et al., Sov. Phys. Dokl., 1982, 26.
 .. [#Strader_2006] `Strader J.H. et al., "An experimental evaluation of the constant b relating the contact stiffness to the contact area in nanoindentation." (2006). <http://dx.doi.org/10.1080/14786430600567747>`_
 .. [#Troyon_2006] `Troyon M. and Lafaye S., "About the importance of introducing a correction factor in the Sneddon relationship for nanoindentation measurements" (2002). <http://dx.doi.org/10.1080/14786430600606834>`_
+.. [#VanLandingham_2001] `VanLandingham M.R., Nanoindentation of Polymers: An Overview" (2001). <http://dx.doi.org/10.1002/1521-3900(200103)167:1<15::AID-MASY15>3.0.CO;2-T>`_
 .. [#VanLandingham_2003] `VanLandingham M.R., "Review of Instrumented Indentation" (2003). <http://oai.dtic.mil/oai/oai?verb=getRecord&metadataPrefix=html&identifier=ADA512140>`_
 .. [#YetnaNjock_2015] `Yetna N'jock M. et al., "A criterion to identify sinking-in and piling-up in indentation of materials." (2015). <http://dx.doi.org/10.1016/j.ijmecsci.2014.11.008>`_
