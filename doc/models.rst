@@ -497,7 +497,7 @@ for the perfectly sharp Berkovich indenter should be :math:`1.062` [#Troyon_2006
 Some authors proposed another correction factor function of the angle of the conical
 indenter and the Poisson's ratio of the indented material [#Hay_1999]_ and [#Strader_2006]_.
 For a conical indenter with an half-angle of :math:`\gamma \leq 60^{\circ}`
-(e.g.: Cube-Corner indenter), the analytical approximation is :
+(e.g.: Cube-Corner indenter), the analytical approximation is:
 
     .. math:: \beta = 1 + \frac{{\left(1-2\nu\right)}}{{4\left(1-\nu\right)tan\gamma}}
             :label: gamma_low_angle
@@ -545,19 +545,27 @@ Find here the |matlab| function to calculate the Young's modulus:
 `model_elastic.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_elastic.m>`_.
 
 If dynamic nanoindentation is performed, a loss modulus :math:`E^{'*}`
-(in :math:`\text{GPa} = \text{N/m}^2`) can be defined by the following equation :
+(in :math:`\text{GPa} = \text{N/m}^2`) can be defined by the following equation:
 
     .. math:: E^{'*} = \frac{C\omega}{2} \sqrt\frac{\pi}{A}
             :label: loss_modulus
             
+Some authors like to calculate the loss factor :math:`tan \delta`, which is defined by:
+
+    .. math:: tan \delta = \frac{E^{'}}{E}} = \frac{C\omega}{S}}
+            :label: loss_modulus
+
 Find here the |matlab| function to calculate the loss modulus:
 `loss_modulus.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/loss_modulus.m>`_.
+
+Find here the |matlab| function to calculate the loss factor:
+`loss_factor.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/loss_factor.m>`_.
 
 Extraction of plastic properties 
 ##################################
 
 The hardness :math:`H` (in :math:`\text{GPa} = \text{N/m}^2`) of the material is defined according to
-Oliver and Pharr [#OliverPharr_1992]_, by the following expression :
+Oliver and Pharr [#OliverPharr_1992]_, by the following expression:
 
     .. math:: H = \frac{F_\text{c,max}}{A_\text{c}}
             :label: hardness
