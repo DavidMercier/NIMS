@@ -555,7 +555,7 @@ with :math:`C\omega` the contact damping, given by :eq:`CSM_contact_damping`.
 
 Some authors like to calculate also the loss tangent :math:`tan \delta`, which is defined by:
 
-    .. math:: tan \delta = \frac{E^{'}}{E}} = \frac{C\omega}{S}}
+    .. math:: tan{\delta} = \frac{E^{'}}{E} = \frac{C\omega}{S}
             :label: loss_modulus
 
 Find here the |matlab| function to calculate the loss modulus:
