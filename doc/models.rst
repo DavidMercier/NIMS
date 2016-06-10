@@ -559,10 +559,10 @@ Some authors like to calculate also the loss tangent :math:`tan \delta`, which i
             :label: loss_modulus
 
 Find here the |matlab| function to calculate the loss modulus:
-`loss_modulus.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/loss_modulus.m>`_.
+`loss_modulus.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/visco_elastic_models/loss_modulus.m>`_.
 
 Find here the |matlab| function to calculate the loss factor:
-`loss_factor.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/loss_factor.m>`_.
+`loss_tangent.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/visco_elastic_models/loss_tangent.m>`_.
 
 Extraction of plastic properties 
 ##################################
