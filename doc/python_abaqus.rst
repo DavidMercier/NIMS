@@ -217,6 +217,7 @@ References
 * `Pelegri A.A. and Huang X., "Nanoindentation on soft film/hard substrate and hard film/soft substrate material systems with finite element analysis." (2008). <http://dx.doi.org/10.1016/j.compscitech.2007.05.033>`_
 * `Wittler O. et al., "Mechanical characterisation of thin metal layers by modelling of the nanoindentation experiment." (2008). <http://dx.doi.org/10.1109/ESTC.2008.4684488>`_
 * `Sakharova N.A. et al., "Comparison between Berkovich, Vickers and conical indentation tests: A three-dimensional numerical simulation study." (2009). <http://dx.doi.org/10.1016/j.ijsolstr.2008.10.032>`_
+* `Gonzalez M. et al., "Modeling the substrate effects on nanoindentation mechanical property measurement." (2009). <http://dx.doi.org/10.1109/ESIME.2009.4938456>`_
 * `Chen C., "2-D Finite Element Modeling for Nanoindentation and Fracture Stress Analysis." PhD thesis - University of South Florida (2009). <http://scholarcommons.usf.edu/etd/1897/>`_
 * `Moore S.W. et al., "Nanoindentation in elastoplastic materials: insights from numerical simulations." (2010). <http://dx.doi.org/10.1080/19475411003589889>`_
 * `Dowhan L. et al., "Investigation of thin films by nanoindentation with doe and numerical methods." (2011). <http://doi.org/10.1109/ESIME.2011.5765768>`_
