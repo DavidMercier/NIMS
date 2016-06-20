@@ -125,7 +125,7 @@ Bilayer models to extract hardness of a thin film on a substrate (with conical i
 
 Multilayer models to extract hardness of thin films on a multilayer sample (with conical indenters)
 ----------------------------------------------------------------------------------------------------------
-* `Engel P.A. et al., "Interpretation of superficial hardness for multilayer platings*" (1992). <http://dx.doi.org/10.1016/0040-6090(92)90115-R>`_
+* `Engel P.A. et al., "Interpretation of superficial hardness for multilayer platings" (1992). <http://dx.doi.org/10.1016/0040-6090(92)90115-R>`_
 * `Rahmoun K. et al., "A multilayer model for describing hardness variations of aged porous silicon low-dielectric-constant thin films" (2009). <http://dx.doi.org/10.1016/j.tsf.2009.07.040>`_
 * `Arrazat B. et al., "Nano indentation de couches dures ultra minces de ruthénium sur or" (2010). <http://dx.doi.org/10.1051/mattech/2011031>`_
 
@@ -138,26 +138,29 @@ Finite Element Modelling of conical indentation of thin film(s) on a substrate
 * `Bhattacharya A.K. and Nix W.D., "Finite element analysis of cone indentation." (1991). <http://dx.doi.org/10.1016/0020-7683(91)90100-T>`_
 * `Madsen D.T. et al. "Finite Element Simulation of Indentation Behavior of thin Films." (1991). <http://dx.doi.org/10.1557/PROC-239-431>`_
 * `Sun Y. et al., "Finite element analysis of the critical ratio of coating thickness to indentation depth for coating property measurements by nanoindentation." (1995). <http://dx.doi.org/10.1016/0040-6090(94)06357-5>`_
-* `Hubert N. et al. "Identification of elastic-plastic material parameters from pyramidal indentation of thin films." (2002). <http://dx.doi.org/10.1098/rspa.2001.0927>`_
-* `He J.L. and Veprek S., "Finite element modeling of indentation into superhard coatings." (2003). <http://dx.doi.org/10.1016/S0257-8972(02)00628-X>`_
-* `Cai X. and Bangert H., "Hardness measurements of thin films-determining the critical ratio of depth to thickness using FEM." (2005). <http://dx.doi.org/10.1016/0040-6090(95)06569-5>`_
 * `Bolshakov A. and Pharr G.M., "Influences of pile-up on the measurement of mechanical properties by load and depth sensing indentation techniques." (1998) <http://dx.doi.org/10.1557/JMR.1998.0146>`_
 * `Lichinchi M. et al., "Simulation of Berkovich nanoindentation experiments on thin films using finite element method." (1998). <http://dx.doi.org/10.1016/S0040-6090(97)00739-6>`_
 * `Chen X. and Vlassak J.J., "A Finite Element Study on the Nanoindentation of Thin Films." (2000). <http://dx.doi.org/10.1557/PROC-649-Q1.3>`_
 * `Chen X. and Vlassak J.J., "Numerical study on the measurement of thin film mechanical properties by means of nanoindentation." (2001). <http://dx.doi.org/10.1557/JMR.2001.0408>`_
 * `Bouzakis K.-D. et al., "Thin hard coatings stress–strain curve determination through a FEM supported evaluation of nanoindentation test results.", (2001). <http://dx.doi.org/10.1016/S0257-8972(01)01275-0>`_
+* `Hubert N. et al. "Identification of elastic-plastic material parameters from pyramidal indentation of thin films." (2002). <http://dx.doi.org/10.1098/rspa.2001.0927>`_
+* `Shan Z. and Sitaraman S.K., "Elastic–plastic characterization of thin films using nanoindentation technique." (2003). <http://dx.doi.org/10.1016/S0040-6090(03)00663-1>`_
+* `He J.L. and Veprek S., "Finite element modeling of indentation into superhard coatings." (2003). <http://dx.doi.org/10.1016/S0257-8972(02)00628-X>`_
 * `Xu Z.-H. and Rowcliffe D., "Finite element analysis of substrate effects on indentation behaviour of thin films." (2004). <http://dx.doi.org/10.1016/S0040-6090(03)01071-X>`_
 * `Panich N. and Sun Y. "Effect of penetration depth on indentation response of soft coatings on hard substrates: a finite element analysis" (2004) <http://dx.doi.org/10.1016/j.surfcoat.2003.07.002>`_
+* `Cai X. and Bangert H., "Hardness measurements of thin films-determining the critical ratio of depth to thickness using FEM." (2005). <http://dx.doi.org/10.1016/0040-6090(95)06569-5>`_
 * `Bressan J.D. et al., "Modeling of nanoindentation of bulk and thin film by finite element method." (2005). <http://dx.doi.org/10.1016/j.wear.2004.05.021>`_
 * `Pelletier H. et al., "Characterization of mechanical properties of thin films using nanoindentation test." (2006) <http://dx.doi.org/10.1016/j.mechmat.2006.02.011>`_
 * `Xu H., "A Finite Element Study of the Contact Stiffness of Homogenous Materials and Thin Films." PhD thesis - University of Tennessee - Knoxville (2007) <http://etd.utk.edu/2007/XuHaitao.pdf>`_
 * `Antunes J.M. et al., "On the determination of the Young's modulus of thin films using indentation tests" (2007). <http://dx.doi.org/10.1016/j.ijsolstr.2007.06.015>`_
 * `Chen S.H. et al., "Small scale, grain size and substrate effects in nano-indentation experiment of film–substrate systems." (2007). <http://dx.doi.org/10.1016/j.ijsolstr.2006.11.033>`_
 * `Huang X. and Pelegri A.A., "Finite element analysis on nanoindentation with friction contact at the film/substrate interface." (2007). <http://dx.doi.org/10.1016/j.compscitech.2006.10.005>`_
+* Kopernik M. and Pietrzyk M., "2d numerical simulation of elasto-plastic deformation of thin hard coating systems in deep nanoindentation test with sharp indenter." (2007).
 * `Pelegri A.A. and Huang X., "Nanoindentation on soft film/hard substrate and hard film/soft substrate material systems with finite element analysis." (2008). <http://dx.doi.org/10.1016/j.compscitech.2007.05.033>`_
 * `Wittler O. et al., "Mechanical characterisation of thin metal layers by modelling of the nanoindentation experiment." (2008). <http://dx.doi.org/10.1109/ESTC.2008.4684488>`_
 * `Sakharova N.A. et al., "Comparison between Berkovich, Vickers and conical indentation tests: A three-dimensional numerical simulation study." (2009). <http://dx.doi.org/10.1016/j.ijsolstr.2008.10.032>`_
-* `Chen C., "2-D Finite Element Modeling for Nanoindentation and Fracture Stress Analysis." PhD thesis - University of South Florida (2009). <http://scholarcommons.usf.edu/etd/1897/>`_
+* `Gonzalez M. et al., "Modeling the substrate effects on nanoindentation mechanical property measurement." (2009). <http://dx.doi.org/10.1109/ESIME.2009.4938456>`_
+* `Chen C., "2-D Finite Element Modeling for Nanoindentation and Fracture Stress Analysis.", PhD thesis - University of South Florida (2009). <http://scholarcommons.usf.edu/etd/1897/>`_
 * `Moore S.W. et al., "Nanoindentation in elastoplastic materials: insights from numerical simulations." (2010). <http://dx.doi.org/10.1080/19475411003589889>`_
 * `Dowhan L. et al., "Investigation of thin films by nanoindentation with doe and numerical methods." (2011). <http://doi.org/10.1109/ESIME.2011.5765768>`_
 * `Isselé H. et al., "Determination of the Young's modulus of a TiN Thin Film by nanoindentation: analytical models and numerical FEM simulation." (2012). <http://doi.org/10.1380/ejssnt.2012.624>`_
