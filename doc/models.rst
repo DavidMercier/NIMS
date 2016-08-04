@@ -9,7 +9,7 @@ an indenter is brought into contact with a sample and mechanically loaded.
 
 The following parts give a short overview of models existing in the
 literature used for the extraction of mechanical properties of homogeneous 
-bulk materials from indentation experiments with conical (sharp) indenters.
+bulk materials from indentation experiments with geometrically self-similar indenters (conical or sharp).
 
 Please look at the ISO standard (ISO 14577 - 1 to 3), to perform nanoindentation tests on bulk material.
 
