@@ -112,6 +112,12 @@ if ~gui.flag.wrong_inputs
     gui = guidata(gcf); guidata(gcf, gui);
     
     plot_exp_vs_mod;
+    if gui.variables.val2 > 1
+        rSquare = r_square(gui.axis.y2plot, gui.axis.y2plot_2);
+        xl = xlim;
+        yl = ylim;
+        text(xl(2)-0.1*xl(2), yl(2)-0.05*yl(2), ['R²=',num2str(rSquare)]);
+    end
     gui = guidata(gcf);
 else
     warndlg(gui.flag.warnText, 'Input Error');

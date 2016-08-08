@@ -26,18 +26,21 @@ end
 
 meanRawData = mean(rawData);
 
+% Calculation of total sum of squares
 SStot1 = zeros(1,length(rawData));
 for ii = 1:length(rawData)
     SStot1(ii) = (rawData(ii) - meanRawData).^2;
 end
 SStot2 = sum(SStot1);
 
+% Calculation of residual sum of squares
 SSres1 = zeros(1,length(rawData));
 for ii = 1:length(rawData)
     SSres1(ii) = (rawData(ii) - fitData(ii)).^2;
 end
 SSres2 = sum(SSres1);
 
+% Calculation of the coefficient of determination
 rSquare = round(1e4*(1 - (SSres2/ SStot2)))/1e4;
 
 end
