@@ -110,7 +110,7 @@ region and the top surface of the (multilayer) sample is defined as the "slave" 
 ..  note::
     Usually, the effect of friction may be neglected when indenter tips with half-angle
     larger than 60◦ are used (e.g.: Berkovich, Vickers) [#AtkinsTabor_1965]_, [#Johnson_1987]_, 
-    [#DiCarlo_2004]_, [#Harsono_2008]_.
+    [#DiCarlo_2004]_, [#Harsono_2008]_ and [#Wang_2016]_.
 
 Boundaries conditions
 ------------------------
@@ -188,6 +188,7 @@ References
 .. [#DiCarlo_2004] `DiCarlo A. et al., "Prediction of stress–strain relation using cone indentation: effect of friction" (2004). <http://dx.doi.org/10.1002/nme.979>`_
 .. [#Harsono_2008] `Harsono E. et al., "The effect of friction on indentation test results" (2008). <http://dx.doi.org/10.1088/0965-0393/16/6/065001>`_
 .. [#Johnson_1987] Johnson K.L., "Contact Mechanics" (1987), ISBN - 9780521347969.
+.. [#Wang_2016] Wang. Y.,, "Effects of indenter angle and friction on the mechanical properties of film materials" (2016). <http://dx.doi.org/10.1016/j.rinp.2016.08.008>`_
 
 * ABAQUS documentation
 * `Charleux L., "Abapy Documentation" <http://abapy.readthedocs.org/en/latest/index.html>`_
