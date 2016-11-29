@@ -222,6 +222,7 @@ References
 * `Chen C., "2-D Finite Element Modeling for Nanoindentation and Fracture Stress Analysis.", PhD thesis - University of South Florida (2009). <http://scholarcommons.usf.edu/etd/1897/>`_
 * `Moore S.W. et al., "Nanoindentation in elastoplastic materials: insights from numerical simulations." (2010). <http://dx.doi.org/10.1080/19475411003589889>`_
 * `Wang J.S. et al., "Identification of elastic parameters of transversely isotropic thin films by combining nanoindentation and FEM analysis." (2010). <http://dx.doi.org/10.1016/j.commatsci.2010.05.025>`_
+* `Miller D.C. et al., "Thermo-mechanical properties of alumina films created using the atomic layer deposition technique." (2010). <http://dx.doi.org/10.1016/j.sna.2010.09.018>`_
 * `Dowhan L. et al., "Investigation of thin films by nanoindentation with doe and numerical methods." (2011). <http://doi.org/10.1109/ESIME.2011.5765768>`_
 * `Isselé H. et al., "Determination of the Young's modulus of a TiN Thin Film by nanoindentation: analytical models and numerical FEM simulation." (2012). <http://doi.org/10.1380/ejssnt.2012.624>`_
 * `Phiciato's blog (2013) <https://phiciato.wordpress.com/2013/07/11/abaqus-simple-case-indentation-of-thin-coating/>`_
