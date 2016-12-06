@@ -63,7 +63,7 @@ if ~gui.flag.wrong_inputs
     
     %% Calculations of Young's modulus or Hardness
     if gui.variables.y_axis == 4 || gui.variables.y_axis == 5
-        [gui.results.Eeff_red,gui.results.Esample_red, gui.results.Esample] = ...
+        [gui.results.Eeff_red, gui.results.Esample_red, gui.results.Esample] = ...
             model_elastic(gui.data.S, gui.results.Ac, gui.data.nuf, gcf);
         gui.results.delta_E = ...
             elasticModulus_incertitude(gui.data.P, gui.data.h, gui.data.S, ...
@@ -89,6 +89,32 @@ if ~gui.flag.wrong_inputs
         elseif get(gui.handles.value_numthinfilm_GUI, 'Value') > 2
             model_multilayer_plastic(gui.variables.val2);
         end
+        
+    end
+    
+    if gui.variables.y_axis == 7 || gui.variables.y_axis == 8
+        gui.data.hr = plasticDepth(gui.data.h, gui.data.P, gui.data.S);
+        P = polyfit(gui.data.h,gui.data.hr,1);
+        % y_linFit = P(1)*gui.data.h+P(2); % to plot the fit...
+        gui.data.results.slopeDepth = P(1);
+        [gui.results.Eeff_red, gui.results.Esample_red, gui.results.Esample] = ...
+            model_elasticModulus_Guillonneau(gui.variables.val1, gui.data.P, ...
+            gui.data.S, gui.data.results.slopeDepth, gui.data.indenter_tip_angle, ...
+            1.5, gui.data.nuf, gcf, gui.config.numerics.alpha_Loubet);
+        for ii = 1:1:length(gui.data.h)
+            gui.results.Em_red(ii) = 0;
+            gui.results.Hf(ii) = 0;
+            gui.results.delta_E(ii) = 0;
+            gui.results.delta_H(ii) = 0;
+        end
+    end
+    
+    if gui.variables.y_axis == 7
+        guidata(gcf, gui);
+    elseif gui.variables.y_axis == 8
+        gui.results.H = model_hardness_Guillonneau(gui.data.P, gui.data.S, ...
+            gui.results.Esample_red);
+        guidata(gcf, gui);
     end
     
     % Be careful of the order of the 3 following lines, because gcf is

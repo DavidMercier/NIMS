@@ -4,6 +4,7 @@
 # Constant given by Hochstetter et al. (1999) - DOI: 10.1080/00222349908248131 
 # and Bec et al. (2006) - DOI: 10.1080/01418619608239707
 alpha_Loubet: 1.24
+#alpha_Loubet: 1.2
 
 ###########################################################################################
 # Constants given by Oliver et al. (1992) - DOI: 10.1557/JMR.1992.1564

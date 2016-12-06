@@ -11,13 +11,19 @@ hYLabel = ylabel(gui.axis.ylabelstr, 'Color', [0,0,0], 'FontSize', 14);
 
 if gui.axis.xmin < gui.axis.xmax
     xlim([gui.axis.xmin gui.axis.xmax]);
-else
+elseif gui.axis.xmin > gui.axis.xmax
     xlim([gui.axis.xmax gui.axis.xmin]);
 end
 if gui.axis.ymin < gui.axis.ymax
     ylim([gui.axis.ymin gui.axis.ymax]);
-else
+elseif gui.axis.ymin > gui.axis.ymax
     ylim([gui.axis.ymax gui.axis.ymin]);
+end
+if gui.axis.xmax == 0
+    xlim auto;
+end
+if gui.axis.ymax == 0
+    ylim auto;
 end
 
 set(gui.handles.AxisPlot_GUI, 'FontSize', 14); %'TickLabelInterpreter', 'tex'

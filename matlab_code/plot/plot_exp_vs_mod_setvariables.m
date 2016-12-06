@@ -19,7 +19,8 @@ else
             gui.results.Ef_red     = gui.results.Ef_red.';
             gui.results.Em_red(ii) = 0;
             gui.results.Em_red     = gui.results.Em_red.';
-            gui.results.Hm(ii) = 0;
+            gui.results.Hm(ii)     = 0;
+            gui.results.Hf         = 0;
         end
         gui.data.t = max(gui.data.h)+1;
         gui.results.Ef_sol_fit = 0;
@@ -107,7 +108,7 @@ else
                 num2str(gui.results.linear_fit(2)), ')', ...
                 '/ $R^2 =$ ', num2str(gui.results.rSquare));
         end
-    elseif gui.variables.y_axis == 4
+    elseif gui.variables.y_axis == 4 || gui.variables.y_axis == 7
         gui.axis.y2plot = gui.results.Esample_red;
         gui.axis.delta_y2plot = gui.results.delta_E;
         gui.axis.y2plot_2 = gui.results.Em_red;
@@ -138,6 +139,21 @@ else
         end
         gui.results.cleaned_Esample_red = cleaned_Esample_red;
     elseif gui.variables.y_axis == 6
+        gui.axis.y2plot = gui.results.H;
+        gui.axis.delta_y2plot = gui.results.delta_H;
+        gui.axis.y2plot_2 = gui.results.Hf;
+        gui.axis.ylabelstr = 'Hardness ($H$) (GPa)';
+        cleaned_H = gui.results.H;
+        cleaned_H(isinf(cleaned_H)) = [];
+        cleaned_H(isnan(cleaned_H)) = [];
+        cleaned_H(cleaned_H < 0) = [];
+        if round(cleaned_H) == 0
+            gui.axis.ymax = round(2*mean(10*cleaned_H))/10;
+        else
+            gui.axis.ymax = round(2*mean(cleaned_H));
+        end
+        gui.results.cleaned_H = cleaned_H;
+    elseif gui.variables.y_axis == 8
         gui.axis.y2plot = gui.results.H;
         gui.axis.delta_y2plot = gui.results.delta_H;
         gui.axis.y2plot_2 = gui.results.Hf;
