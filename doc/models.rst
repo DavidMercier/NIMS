@@ -109,6 +109,8 @@ the recorded load–displacement data back to zero load.
 
 With :math:`h` the corrected penetration and :math:`h_0` the recorded penetration.
 
+See also : * :ref:`methodologyGuillonneau`
+
 A schematic of the load-displacement curve obtained from
 nanoindentation experiment after this first correction is given :numref:`load_disp_curve`.
 
@@ -129,7 +131,10 @@ gives access to the contact stiffness :math:`S` (in :math:`\text{N/m}`):
    *Schematic of indentation load-displacement curve.*
 
 With :math:`h_\text{t}` the total penetration corrected of the frame compliance
-and :math:`h_\text{r}` the residual indentation depth after unloading.
+and :math:`h_\text{r}` the residual indentation or the plastic depth after unloading [#Guillonneau_2014]_.
+
+    .. math:: h_\text{r} = h - F_\text{c}{S}
+            :label: residual_plastic_depth
 
 It is worth to mention that for quasistatic nanoindentation, the contact stiffness is a unique value
 obtained at the maximum load and at the maximum displacement. Nevertheless, it is possible to apply a multiple-point
@@ -158,9 +163,7 @@ indentation depth and to the contact stiffness [#Fischer-Cripps_2006]_.
             :label: corrected_stiffness
 
 To determine the frame compliance, it is required to plot :math:`\frac{dh}{dF_\text{c}}` vs. 
-the corrected total depth :math:`(1/h_\text{t})` or the corrected plastic depth :math:`(1/{h_\text{c}})`
-(see the following part "Indentation contact topography" for the definition of the plastic depth)
-[#DoernerNix_1986]_ and [#Fischer-Cripps_2006]_.
+the corrected total depth :math:`(1/h_\text{t})` or the corrected plastic depth :math:`(1/{h_\text{c}})` (see the following part “Indentation contact topography” for the definition of the plastic depth) [#DoernerNix_1986]_ and [#Fischer-Cripps_2006]_.
 Then, a linear fit of this curve gives an intercept with the ordinate axis which is the frame compliance (see :numref:`frame_compliance`).
 
 .. figure:: ./_pictures/frame_compliance.png
@@ -635,13 +638,57 @@ test in fused silica (isotropic material), the evolution of the ratio
 :math:`\frac{F_\text{c,max}}{S^2}` should stay constant as well in
 function of the indentation depth.
 
-More recently, Guillonneau et al. proposed a model to extract mechanical
+In 2012, Guillonneau et al. proposed a model to extract mechanical
 properties without using the indentation depth [#Guillonneau_2012_1]_
 and [#Guillonneau_2012_2]_. The method is based on the detection of the
 second harmonic for dynamic indentation testing. This model is interesting
 especially for penetration depths in the range of :math:`25` to :math:`100\text{nm}`, where the
 uncertainties related to the displacement measurement disturb a lot.
 
+.. _methodologyGuillonneau:
+
+Methodology to minimize displacement measurement uncertainties using dynamic nanoindentation testing
+#####################################################################################################
+
+Guillonneau et al. proposed a methodology to minimize displacement measurement uncertainties 
+using dynamic nanoindentation [#Guillonneau_2014]_.
+The following equations are developped using respectively Loubet's (:eq:`loubet_model`) and Oliver and Pharr's models (:eq:`oliver_pharr_model`).
+Hardness and elastic modulus can be calculated independently of the indentation depth and the tip defect.
+
+Using Loubet's model
++++++++++++++++++++++
+
+    .. math:: h_\text{c} = \alpha\left(h-\frac{H\pi tan(\theta)}{2E^{'*}}h_\text{c}+h_0\right)
+            :label: contact_depth_Loubet
+	    
+    .. math:: \frac{dh_\text{c}}{dh} = \frac{\alpha}{1+\frac{\alpha H\pi tan(\theta)}{2E^{'*}}}
+            :label: derivative_contact_depth_Loubet
+	    
+In this expression, :math:`\frac{dh_\text{c}}{dh}` can be determined by a simple linear fit of the plot :math:`h_\text{c} = f(h)`.
+Thus, :math:`\frac{H}{E^{'*}}` can be computed as :
+
+    .. math:: \frac{H}{E^{'*}} = \frac{2}{\pi tan(\theta)} \left(\frac{1}{\frac{dh_\text{c}}{dh}}-\frac{1}{\alpha} \right)
+            :label: derivative_contact_depth_Loubet_HE
+	    
+Then, :math:`E^{'*}` can be calculated using :eq:`P_squareS` and :math:`H` knowing :math:`E^{'*}`   
+	    
+    .. math:: \frac{H}{E^{'*}} = \frac{{S}^2}{2 F_\text{c} tan(\theta)} \left(\frac{1}{\frac{dh_\text{c}}{dh}}-\frac{1}{\alpha} \right)
+            :label: derivative_contact_depth_Loubet_E
+
+    .. math:: \frac{H}{E^{'*}} = \frac{4 F_\text{c} {E^{'*}}^2}{\pi {S}^2}
+            :label: derivative_contact_depth_Loubet_H
+	    
+Using Oliver and Pharr's model
++++++++++++++++++++++++++++++++++
+  
+:eq:`derivative_contact_depth_Loubet_E` and :eq:`derivative_contact_depth_Loubet_H` can be extended to the Oliver and Pharr's contact model (:eq:`oliver_pharr_model`). 
+	    
+    .. math:: \frac{H}{E^{'*}} = \frac{{S}^2}{2 \epsilon F_\text{c} tan(\theta)} \left(\frac{1}{\frac{dh_\text{c}}{dh}}-\frac{1}{\alpha} \right)
+            :label: derivative_contact_depth_OP_E
+
+    .. math:: \frac{H}{E^{'*}} = \frac{4 F_\text{c} {E^{'*}}^2}{\pi {S}^2}
+            :label: derivative_contact_depth_OP_H
+	    
 References
 ############
 
@@ -660,6 +707,7 @@ References
 .. [#Giannakopoulos_1999] `Giannakopoulos A.E. and Suresh S., "Determination of elastoplastic properties by instrumented sharp indentation." (1999). <http://dx.doi.org/10.1016/S1359-6462(99)00011-1>`_
 .. [#Guillonneau_2012_1] `Guillonneau G. et al.,"Extraction of mechanical properties with second harmonic detection for dynamic nanoindentation testing." (2012). <http://dx.doi.org/10.1007/s11340-011-9561-5>`_
 .. [#Guillonneau_2012_2] `Guillonneau G. et al.,"Determination of mechanical properties by nanoindentation independently of indentation depth measurement." (2012). <http://dx.doi.org/10.1557/jmr.2012.261>`_
+.. [#Guillonneau_2014] `Guillonneau G. et al.,"A simple method to minimize displacement measurement uncertainties using dynamic nanoindentation testing." (2014). <http://dx.doi.org/10.1016/j.triboint.2013.10.013>`_
 .. [#Hainsworth_1996] `Hainsworth S.V. et al., "Analysis of nanoindentation load-displacement loading curves." (1996). <http://dx.doi.org/10.1557/JMR.1996.0250>`_
 .. [#Hay_1999] `Hay J.C. et al., "A critical examination of the fundamental relations used in the analysis of nanoindentation data." (1999). <http://dx.doi.org/10.1557/JMR.1999.0306>`_
 .. [#Hochstetter_1999] `Hochstetter G. et al., "Strain-rate effects on hardness of glassy polymers in the nanoscale range. Comparison between quasi-static and continuous stiffness measurements" (1999). <http://dx.doi.org/10.1080/00222349908248131>`_
