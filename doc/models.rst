@@ -677,7 +677,7 @@ Then, :math:`E^{'*}` can be calculated using :eq:`P_squareS` and :math:`H` knowi
 
     .. math:: H = \frac{4 F_\text{c} {E^{'*}}^2}{\pi {S}^2}
             :label: derivative_contact_depth_Loubet_H
-	    
+
 Using Oliver and Pharr's model
 +++++++++++++++++++++++++++++++++
   
@@ -688,6 +688,12 @@ Using Oliver and Pharr's model
 
     .. math:: H = \frac{4 F_\text{c} {E^{'*}}^2}{\pi {S}^2}
             :label: derivative_contact_depth_OP_H
+	    
+Find here the |matlab| function to calculate elastic modulus using Guillonneau's methodology:
+`model_elasticModulus_Guillonneau.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_elasticModulus_Guillonneau.m>`_.
+
+Find here the |matlab| function to calculate hardness using Guillonneau's methodology :
+`model_hardness_Guillonneau.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/plastic_models/model_hardness_Guillonneau.m>`_.
 	    
 References
 ############
