@@ -110,7 +110,7 @@ region and the top surface of the (multilayer) sample is defined as the "slave" 
 ..  note::
     Usually, the effect of friction may be neglected when indenter tips with half-angle
     larger than 60◦ are used (e.g.: Berkovich, Vickers) [#AtkinsTabor_1965]_, [#Johnson_1987]_, 
-    [#DiCarlo_2004]_, [#Harsono_2008]_.
+    [#DiCarlo_2004]_, [#Harsono_2008]_ and [#Wang_2016]_.
 
 Boundaries conditions
 ------------------------
@@ -188,6 +188,7 @@ References
 .. [#DiCarlo_2004] `DiCarlo A. et al., "Prediction of stress–strain relation using cone indentation: effect of friction" (2004). <http://dx.doi.org/10.1002/nme.979>`_
 .. [#Harsono_2008] `Harsono E. et al., "The effect of friction on indentation test results" (2008). <http://dx.doi.org/10.1088/0965-0393/16/6/065001>`_
 .. [#Johnson_1987] Johnson K.L., "Contact Mechanics" (1987), ISBN - 9780521347969.
+.. [#Wang_2016] Wang. Y.,, "Effects of indenter angle and friction on the mechanical properties of film materials" (2016). <http://dx.doi.org/10.1016/j.rinp.2016.08.008>`_
 
 * ABAQUS documentation
 * `Charleux L., "Abapy Documentation" <http://abapy.readthedocs.org/en/latest/index.html>`_
@@ -220,12 +221,17 @@ References
 * `Gonzalez M. et al., "Modeling the substrate effects on nanoindentation mechanical property measurement." (2009). <http://dx.doi.org/10.1109/ESIME.2009.4938456>`_
 * `Chen C., "2-D Finite Element Modeling for Nanoindentation and Fracture Stress Analysis.", PhD thesis - University of South Florida (2009). <http://scholarcommons.usf.edu/etd/1897/>`_
 * `Moore S.W. et al., "Nanoindentation in elastoplastic materials: insights from numerical simulations." (2010). <http://dx.doi.org/10.1080/19475411003589889>`_
+* `Wang J.S. et al., "Identification of elastic parameters of transversely isotropic thin films by combining nanoindentation and FEM analysis." (2010). <http://dx.doi.org/10.1016/j.commatsci.2010.05.025>`_
+* `Jiang L.M. et al., "Elastic-plastic properties of thin film on elastic-plastic substrates characterized by nanoindentation test." (2010). <http://dx.doi.org/10.1016/S1003-6326(10)60653-X>`_
+* `Miller D.C. et al., "Thermo-mechanical properties of alumina films created using the atomic layer deposition technique." (2010). <http://dx.doi.org/10.1016/j.sna.2010.09.018>`_
 * `Dowhan L. et al., "Investigation of thin films by nanoindentation with doe and numerical methods." (2011). <http://doi.org/10.1109/ESIME.2011.5765768>`_
 * `Isselé H. et al., "Determination of the Young's modulus of a TiN Thin Film by nanoindentation: analytical models and numerical FEM simulation." (2012). <http://doi.org/10.1380/ejssnt.2012.624>`_
 * `Phiciato's blog (2013) <https://phiciato.wordpress.com/2013/07/11/abaqus-simple-case-indentation-of-thin-coating/>`_
+* `Karimpour M. et al., "An inverse method for extracting the mechanical properties of the constituent materials of a multilayer from nanoindentation data." (2013). <http://doi.org/10.1016/j.commatsci.2012.11.007>`_
 * `Moćko W. et al., "Simulation of nanoindentation experiments of single-layer and double-layer thin films using finite element method." (2014). <http://doi.org/10.1002/sia.5473>`_
 * `Kibech S. et al., "Nanoindentation" (2014). <https://nanohub.org/resources/nanoindentation>`_
 * `Kopernik M. and Milenin A., "Numerical modeling of substrate effect on determination of elastic and plastic properties of TiN nanocoating in nanoindentation test." (2014). <http://doi.org/10.1016/j.acme.2013.10.001>`_
 * `Li Y. et al., "Models for nanoindentation of compliant films on stiff substrates" (2015). <http://dx.doi.org/10.1557/jmr.2015.126>`_
+* `Moreau S. et al., "Application of Design of Computer Experiments (DoCE) method for the extraction of the elasto-plastic behavior law of ECD copper through nano-indentation tests" (2015). <http://dx.doi.org/10.1109/EuroSimE.2015.7103084>`_
 * `Gupta A. K. et al., "Evaluation of elasto-plastic properties of ITO film using combined nanoindentation and finite element approach" (2015). <http://dx.doi.org/10.1016/j.ceramint.2015.09.054>`_
 * `Veprek-Heijman M.G.J. and Veprek S., "The deformation of the substrate during indentation into superhard coatings: Bückle's rule revised" (2016). <http://dx.doi.org/10.1016/j.surfcoat.2015.10.064>`_
