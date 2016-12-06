@@ -672,10 +672,10 @@ Thus, :math:`\frac{H}{E^{'*}}` can be computed as :
 	    
 Then, :math:`E^{'*}` can be calculated using :eq:`P_squareS` and :math:`H` knowing :math:`E^{'*}`   
 	    
-    .. math:: \frac{H}{E^{'*}} = \frac{{S}^2}{2 F_\text{c} tan(\theta)} \left(\frac{1}{\frac{dh_\text{c}}{dh}}-\frac{1}{\alpha} \right)
+    .. math:: E^{'*} = \frac{{S}^2}{2 F_\text{c} tan(\theta)} \left(\frac{1}{\frac{dh_\text{c}}{dh}}-\frac{1}{\alpha} \right)
             :label: derivative_contact_depth_Loubet_E
 
-    .. math:: \frac{H}{E^{'*}} = \frac{4 F_\text{c} {E^{'*}}^2}{\pi {S}^2}
+    .. math:: H = \frac{4 F_\text{c} {E^{'*}}^2}{\pi {S}^2}
             :label: derivative_contact_depth_Loubet_H
 	    
 Using Oliver and Pharr's model
@@ -683,10 +683,10 @@ Using Oliver and Pharr's model
   
 :eq:`derivative_contact_depth_Loubet_E` and :eq:`derivative_contact_depth_Loubet_H` can be extended to the Oliver and Pharr's contact model (:eq:`oliver_pharr_model`). 
 	    
-    .. math:: \frac{H}{E^{'*}} = \frac{{S}^2}{2 \epsilon F_\text{c} tan(\theta)} \left(\frac{1}{\frac{dh_\text{c}}{dh}}-\frac{1}{\alpha} \right)
+    .. math:: E^{'*} = \frac{{S}^2}{2 \epsilon F_\text{c} tan(\theta)} \left(\frac{1}{\frac{dh_\text{c}}{dh}}-\frac{1}{\alpha} \right)
             :label: derivative_contact_depth_OP_E
 
-    .. math:: \frac{H}{E^{'*}} = \frac{4 F_\text{c} {E^{'*}}^2}{\pi {S}^2}
+    .. math:: H = \frac{4 F_\text{c} {E^{'*}}^2}{\pi {S}^2}
             :label: derivative_contact_depth_OP_H
 	    
 References
