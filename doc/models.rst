@@ -652,7 +652,7 @@ Methodology to minimize displacement measurement uncertainties using dynamic nan
 
 Guillonneau et al. proposed a methodology to minimize displacement measurement uncertainties 
 using dynamic nanoindentation [#Guillonneau_2014]_.
-The following equations are developped using respectively Loubet's (:eq:`loubet_model`) and Oliver and Pharr's models (:eq:`oliver_pharr_model`).
+The following equations are developped using respectively Loubet's :eq:`loubet_model` and Oliver and Pharr's models :eq:`oliver_pharr_model`.
 Hardness and elastic modulus can be calculated independently of the indentation depth and the tip defect.
 
 Using Loubet's model
@@ -681,7 +681,7 @@ Then, :math:`E^{'*}` can be calculated using :eq:`P_squareS` and :math:`H` knowi
 Using Oliver and Pharr's model
 +++++++++++++++++++++++++++++++++
   
-:eq:`derivative_contact_depth_Loubet_E` and :eq:`derivative_contact_depth_Loubet_H` can be extended to the Oliver and Pharr's contact model (:eq:`oliver_pharr_model`). 
+:eq:`derivative_contact_depth_Loubet_E` and :eq:`derivative_contact_depth_Loubet_H` can be extended to the Oliver and Pharr's contact model :eq:`oliver_pharr_model`. 
 	    
     .. math:: E^{'*} = \frac{{S}^2}{2 \epsilon F_\text{c} tan(\theta)} \left(\frac{1}{\frac{dh_\text{c}}{dh}}-\frac{1}{\alpha} \right)
             :label: derivative_contact_depth_OP_E
