@@ -57,11 +57,8 @@ indenters, the equivalent cone angle is used to set the cone angle.
     .. math:: R = \frac{h_\text{tip}}{\frac{1}{sin(\alpha)} - 1}
             :label: tip_radius
 
-In case, a perfect conical indenter is set in the GUI (:math:`h_\text{tip} = 0\text{nm}`),
-the radius is calculated using a tip defect of 0.1nm by default, which gives a radius of :math:`R = 1.6\text{nm}`.
-
-Defining a spherical tip avoids the geometrical singularity at the apex of the
-perfect conical indenter, which would imply an infinite stress at the contact interface.
+In case of a perfect conical indenter (:math:`h_\text{tip} = 0\text{nm}`), a tip defect of 1nm giving a radius of :math:`R = 1.6\text{nm}` is set into the Python file. Defining a cono-spherical tip avoids the geometrical singularity at the apex of the
+perfect conical indenter, which would imply an infinite stress at the contact interface. But, any non-zero positive value for the tip radius can be set into the GUI. 
 
 Mesh
 ---------------------------------
