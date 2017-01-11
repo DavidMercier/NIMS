@@ -112,7 +112,7 @@ Find here the |matlab| function to calculate the transition depth:
 Find here the |matlab| function to calculate the tip defect:
 `tipDefect.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/function_area/tipDefect.m>`_.
    
-   Load-Displacement curves
+Load-Displacement curves
 ---------------------------
 
 In this first part, only quasistatic (or monotonic) nanoindentation is considered, when a load is applied and removed to a sample.
