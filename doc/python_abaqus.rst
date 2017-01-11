@@ -57,11 +57,8 @@ indenters, the equivalent cone angle is used to set the cone angle.
     .. math:: R = \frac{h_\text{tip}}{\frac{1}{sin(\alpha)} - 1}
             :label: tip_radius
 
-In case, a perfect conical indenter is set in the GUI (:math:`h_\text{tip} = 0\text{nm}`),
-the radius is calculated using a tip defect of 0.1nm by default, which gives a radius of :math:`R = 1.6\text{nm}`.
-
-Defining a spherical tip avoids the geometrical singularity at the apex of the
-perfect conical indenter, which would imply an infinite stress at the contact interface.
+In case of a perfect conical indenter (:math:`h_\text{tip} = 0\text{nm}`), a tip defect of 1nm giving a radius of :math:`R = 1.6\text{nm}` is set into the Python file. Defining a cono-spherical tip avoids the geometrical singularity at the apex of the
+perfect conical indenter, which would imply an infinite stress at the contact interface. But, any non-zero positive value for the tip radius can be set into the GUI. 
 
 Mesh
 ---------------------------------
@@ -210,6 +207,7 @@ References
 * `Cai X. and Bangert H., "Hardness measurements of thin films-determining the critical ratio of depth to thickness using FEM." (2005). <http://dx.doi.org/10.1016/0040-6090(95)06569-5>`_
 * `Bressan J.D. et al., "Modeling of nanoindentation of bulk and thin film by finite element method." (2005). <http://dx.doi.org/10.1016/j.wear.2004.05.021>`_
 * `Pelletier H. et al., "Characterization of mechanical properties of thin films using nanoindentation test." (2006) <http://dx.doi.org/10.1016/j.mechmat.2006.02.011>`_
+* Charleux L., "Micromécanique de l'essai d'indentation : expériences et simulations.", PhD thesis, Institut National Polytechnique de Grenoble (2006).
 * `Xu H., "A Finite Element Study of the Contact Stiffness of Homogenous Materials and Thin Films." PhD thesis - University of Tennessee - Knoxville (2007) <http://etd.utk.edu/2007/XuHaitao.pdf>`_
 * `Antunes J.M. et al., "On the determination of the Young's modulus of thin films using indentation tests" (2007). <http://dx.doi.org/10.1016/j.ijsolstr.2007.06.015>`_
 * `Chen S.H. et al., "Small scale, grain size and substrate effects in nano-indentation experiment of film–substrate systems." (2007). <http://dx.doi.org/10.1016/j.ijsolstr.2006.11.033>`_
@@ -221,6 +219,7 @@ References
 * `Gonzalez M. et al., "Modeling the substrate effects on nanoindentation mechanical property measurement." (2009). <http://dx.doi.org/10.1109/ESIME.2009.4938456>`_
 * `Chen C., "2-D Finite Element Modeling for Nanoindentation and Fracture Stress Analysis.", PhD thesis - University of South Florida (2009). <http://scholarcommons.usf.edu/etd/1897/>`_
 * `Moore S.W. et al., "Nanoindentation in elastoplastic materials: insights from numerical simulations." (2010). <http://dx.doi.org/10.1080/19475411003589889>`_
+* Guo W., "On the influence of indenter tip geometry on the identification of material parameters in indentation testing.", PhD thesis, University of Liège (2010).
 * `Wang J.S. et al., "Identification of elastic parameters of transversely isotropic thin films by combining nanoindentation and FEM analysis." (2010). <http://dx.doi.org/10.1016/j.commatsci.2010.05.025>`_
 * `Jiang L.M. et al., "Elastic-plastic properties of thin film on elastic-plastic substrates characterized by nanoindentation test." (2010). <http://dx.doi.org/10.1016/S1003-6326(10)60653-X>`_
 * `Miller D.C. et al., "Thermo-mechanical properties of alumina films created using the atomic layer deposition technique." (2010). <http://dx.doi.org/10.1016/j.sna.2010.09.018>`_
@@ -228,6 +227,7 @@ References
 * `Isselé H. et al., "Determination of the Young's modulus of a TiN Thin Film by nanoindentation: analytical models and numerical FEM simulation." (2012). <http://doi.org/10.1380/ejssnt.2012.624>`_
 * `Phiciato's blog (2013) <https://phiciato.wordpress.com/2013/07/11/abaqus-simple-case-indentation-of-thin-coating/>`_
 * `Karimpour M. et al., "An inverse method for extracting the mechanical properties of the constituent materials of a multilayer from nanoindentation data." (2013). <http://doi.org/10.1016/j.commatsci.2012.11.007>`_
+* Fourcade T., "Études des propriétés mécaniques de matériaux métalliques en couches minces", PhD thesis - Université de Toulouse (2013).
 * `Moćko W. et al., "Simulation of nanoindentation experiments of single-layer and double-layer thin films using finite element method." (2014). <http://doi.org/10.1002/sia.5473>`_
 * `Kibech S. et al., "Nanoindentation" (2014). <https://nanohub.org/resources/nanoindentation>`_
 * `Kopernik M. and Milenin A., "Numerical modeling of substrate effect on determination of elastic and plastic properties of TiN nanocoating in nanoindentation test." (2014). <http://doi.org/10.1016/j.acme.2013.10.001>`_
