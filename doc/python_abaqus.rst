@@ -60,6 +60,21 @@ indenters, the equivalent cone angle is used to set the cone angle.
 In case of a perfect conical indenter (:math:`h_\text{tip} = 0\text{nm}`), a tip defect of 1nm giving a radius of :math:`R = 1.6\text{nm}` is set into the Python file. Defining a cono-spherical tip avoids the geometrical singularity at the apex of the
 perfect conical indenter, which would imply an infinite stress at the contact interface. But, any non-zero positive value for the tip radius can be set into the GUI. 
 
+The transition depth :math:`h_\text{trans}` between the spherical and the conical parts of a cono-spherical indenter,
+is calculated from the followig equation:
+
+    .. math:: h_\text{trans} = R(1-sin(\alpha))
+            :label: transition_depth
+			
+Find here the |matlab| function to calculate the tip radius:
+`tipRadius.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/fem/tipRadius.m>`_.
+
+Find here the |matlab| function to calculate the transition depth:
+`transitionDepth.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/function_area/transitionDepth.m>`_.
+
+Find here the |matlab| function to calculate the tip defect:
+`tipDefect.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/function_area/tipDefect.m>`_.
+
 Mesh
 ---------------------------------
 

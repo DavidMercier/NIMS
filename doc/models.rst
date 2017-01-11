@@ -77,7 +77,42 @@ Find here the |matlab| function to plot the projected ared of 3-sided pyramidal 
 Find here the |matlab| function to plot the the projected ared of 4-sided pyramidal indenter in function of indentation depth :
 `projectedArea_4sidePyramid.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/function_area/projectedArea_4sidePyramid.m>`_.
    
-Load-Displacement curves
+Practically, perfect conical indenters (no tip defect) don't really exist and 
+they are usually defined as cono-spherical indenters with a tip defect :math:`h_\text{tip}` (see following scheme).
+
+.. figure:: ./_pictures/conospherical_indenter.png
+   :name: conospherical_indenter
+   :scale: 50 %
+   :align: center
+   
+   *Scheme of a cono-spherical indenter.*
+
+The radius :math:`R` of the spherical part is calculated from the tip defect :math:`h_\text{tip}`
+and the cone angle :math:`\alpha`, using the following equation. For Berkovich, Vickers and Cube-Corner
+indenters, the equivalent cone angle is used to set the cone angle.
+
+    .. math:: R = \frac{h_\text{tip}}{\frac{1}{sin(\alpha)} - 1}
+            :label: tip_radius
+
+In case of a perfect conical indenter (:math:`h_\text{tip} = 0\text{nm}`), a tip defect of 1nm giving a radius of :math:`R = 1.6\text{nm}` is set into the Python file. Defining a cono-spherical tip avoids the geometrical singularity at the apex of the
+perfect conical indenter, which would imply an infinite stress at the contact interface. But, any non-zero positive value for the tip radius can be set into the GUI. 
+
+The transition depth :math:`h_\text{trans}` between the spherical and the conical parts of a cono-spherical indenter,
+is calculated from the followig equation:
+
+    .. math:: h_\text{trans} = R(1-sin(\alpha))
+            :label: transition_depth
+			
+Find here the |matlab| function to calculate the tip radius:
+`tipRadius.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/fem/tipRadius.m>`_.
+
+Find here the |matlab| function to calculate the transition depth:
+`transitionDepth.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/function_area/transitionDepth.m>`_.
+
+Find here the |matlab| function to calculate the tip defect:
+`tipDefect.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/function_area/tipDefect.m>`_.
+   
+   Load-Displacement curves
 ---------------------------
 
 In this first part, only quasistatic (or monotonic) nanoindentation is considered, when a load is applied and removed to a sample.
