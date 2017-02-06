@@ -40,10 +40,10 @@ Some authors overviewed/reviewed already the nanoindentation technique :
 Nanoindentation tests on bulk material
 ########################################
 
-Conical indenters 
-------------------
+Conical and geometrically similar indenters 
+----------------------------------------------
 
-The geometric properties of conical indenters are well described in [#Fischer-Cripps_2004]_.
+The geometric properties of conical and geometrically similar (Berkovich, vickers, ...) indenters are well described in [#Fischer-Cripps_2004]_.
 
 .. csv-table:: **Geometric properties of conical indenters.**
    :name: geom_prop_indenters
@@ -94,8 +94,7 @@ indenters, the equivalent cone angle is used to set the cone angle.
     .. math:: R = \frac{h_\text{tip}}{\frac{1}{sin(\alpha)} - 1}
             :label: tip_radius
 
-In case of a perfect conical indenter (:math:`h_\text{tip} = 0\text{nm}`), a tip defect of 1nm giving a radius of :math:`R = 1.6\text{nm}` is set into the Python file. Defining a cono-spherical tip avoids the geometrical singularity at the apex of the
-perfect conical indenter, which would imply an infinite stress at the contact interface. But, any non-zero positive value for the tip radius can be set into the GUI. 
+In case of a tip defect of 5nm for a Berkovich indenter, a tip radius of :math:`R = 148\text{nm}` is calculated.
 
 The transition depth :math:`h_\text{trans}` between the spherical and the conical parts of a cono-spherical indenter,
 is calculated from the followig equation:
