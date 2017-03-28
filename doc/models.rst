@@ -78,7 +78,7 @@ Find here the |matlab| function to plot the the projected ared of 4-sided pyrami
 `projectedArea_4sidePyramid.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/function_area/projectedArea_4sidePyramid.m>`_.
    
 Practically, perfect conical indenters (no tip defect) don't really exist and 
-they are usually defined as cono-spherical indenters with a tip defect :math:`h_\text{tip}` (see following scheme).
+they are usually defined as cono-spherical indenters with a tip defect :math:`h_\text{tip}` (see following scheme) [#Zong_2017]_.
 
 .. figure:: ./_pictures/conospherical_indenter.png
    :name: conospherical_indenter
@@ -777,3 +777,4 @@ References
 .. [#VanLandingham_2001] `VanLandingham M.R., Nanoindentation of Polymers: An Overview" (2001). <http://dx.doi.org/10.1002/1521-3900(200103)167:1<15::AID-MASY15>3.0.CO;2-T>`_
 .. [#VanLandingham_2003] `VanLandingham M.R., "Review of Instrumented Indentation" (2003). <http://oai.dtic.mil/oai/oai?verb=getRecord&metadataPrefix=html&identifier=ADA512140>`_
 .. [#YetnaNjock_2015] `Yetna N'jock M. et al., "A criterion to identify sinking-in and piling-up in indentation of materials." (2015). <http://dx.doi.org/10.1016/j.ijmecsci.2014.11.008>`_
+.. [#Zong_2017] `Yetna N'jock M. et al., "Radius and angle determination of diamond Berkovich indenter." (2017). <http://dx.doi.org/10.1016/j.measurement.2017.03.035>`_
