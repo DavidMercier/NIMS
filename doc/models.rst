@@ -777,4 +777,4 @@ References
 .. [#VanLandingham_2001] `VanLandingham M.R., Nanoindentation of Polymers: An Overview" (2001). <http://dx.doi.org/10.1002/1521-3900(200103)167:1<15::AID-MASY15>3.0.CO;2-T>`_
 .. [#VanLandingham_2003] `VanLandingham M.R., "Review of Instrumented Indentation" (2003). <http://oai.dtic.mil/oai/oai?verb=getRecord&metadataPrefix=html&identifier=ADA512140>`_
 .. [#YetnaNjock_2015] `Yetna N'jock M. et al., "A criterion to identify sinking-in and piling-up in indentation of materials." (2015). <http://dx.doi.org/10.1016/j.ijmecsci.2014.11.008>`_
-.. [#Zong_2017] `Yetna N'jock M. et al., "Radius and angle determination of diamond Berkovich indenter." (2017). <http://dx.doi.org/10.1016/j.measurement.2017.03.035>`_
+.. [#Zong_2017] `Zong W. J. et al., "Radius and angle determination of diamond Berkovich indenter." (2017). <http://dx.doi.org/10.1016/j.measurement.2017.03.035>`_
