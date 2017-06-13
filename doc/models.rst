@@ -37,6 +37,8 @@ Some authors overviewed/reviewed already the nanoindentation technique :
 
 - `Michailidis N. et al., "Nanoindentation" (2014). <http://dx.doi.org/10.1007/978-3-642-35950-7_16730-1>`_
 
+- `Bhushan B., "Depth-sensing nanoindentation measurement techniques and applications" (2017). <http://dx.doi.org/10.1007/s00542-017-3372-2>`_
+
 Nanoindentation tests on bulk material
 ########################################
 
@@ -78,7 +80,7 @@ Find here the |matlab| function to plot the the projected ared of 4-sided pyrami
 `projectedArea_4sidePyramid.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/function_area/projectedArea_4sidePyramid.m>`_.
    
 Practically, perfect conical indenters (no tip defect) don't really exist and 
-they are usually defined as cono-spherical indenters with a tip defect :math:`h_\text{tip}` (see following scheme).
+they are usually defined as cono-spherical indenters with a tip defect :math:`h_\text{tip}` (see following scheme) [#Zong_2017]_.
 
 .. figure:: ./_pictures/conospherical_indenter.png
    :name: conospherical_indenter
@@ -774,6 +776,7 @@ References
 .. [#Shorshorov_1982] Shorshorov M.K. et al., Sov. Phys. Dokl., 1982, 26.
 .. [#Strader_2006] `Strader J.H. et al., "An experimental evaluation of the constant b relating the contact stiffness to the contact area in nanoindentation." (2006). <http://dx.doi.org/10.1080/14786430600567747>`_
 .. [#Troyon_2006] `Troyon M. and Lafaye S., "About the importance of introducing a correction factor in the Sneddon relationship for nanoindentation measurements" (2002). <http://dx.doi.org/10.1080/14786430600606834>`_
-.. [#VanLandingham_2001] `VanLandingham M.R., Nanoindentation of Polymers: An Overview" (2001). <http://dx.doi.org/10.1002/1521-3900(200103)167:1<15::AID-MASY15>3.0.CO;2-T>`_
+.. [#VanLandingham_2001] `VanLandingham M.R., "Nanoindentation of Polymers: An Overview" (2001). <http://dx.doi.org/10.1002/1521-3900(200103)167:1<15::AID-MASY15>3.0.CO;2-T>`_
 .. [#VanLandingham_2003] `VanLandingham M.R., "Review of Instrumented Indentation" (2003). <http://oai.dtic.mil/oai/oai?verb=getRecord&metadataPrefix=html&identifier=ADA512140>`_
 .. [#YetnaNjock_2015] `Yetna N'jock M. et al., "A criterion to identify sinking-in and piling-up in indentation of materials." (2015). <http://dx.doi.org/10.1016/j.ijmecsci.2014.11.008>`_
+.. [#Zong_2017] `Zong W. J. et al., "Radius and angle determination of diamond Berkovich indenter." (2017). <http://dx.doi.org/10.1016/j.measurement.2017.03.035>`_
