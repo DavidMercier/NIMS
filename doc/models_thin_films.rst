@@ -34,6 +34,8 @@ Some authors overviewed/reviewed already the nanoindentation technique applied t
 
 - `Fischer-Cripps, A.C., "Nanoindentation 3rd Ed." (2011) <http://link.springer.com/book/10.1007%2F978-1-4419-9872-9>`_
 
+- `Wen, W. et al., "Determination of material properties of thin films and coatings using indentation tests: a review" (2017) <http://dx.doi.org/10.1007/s10853-017-1348-3>`_
+
 Nanoindentation tests on thin films
 ######################################
 
