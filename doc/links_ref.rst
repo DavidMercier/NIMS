@@ -181,6 +181,7 @@ Finite Element Modelling of conical indentation of thin film(s) on a substrate
 * `Gupta A. K. et al., "Evaluation of elasto-plastic properties of ITO film using combined nanoindentation and finite element approach" (2015). <http://dx.doi.org/10.1016/j.ceramint.2015.09.054>`_
 * `Veprek-Heijman M.G.J. and Veprek S., "The deformation of the substrate during indentation into superhard coatings: Bückle's rule revised" (2016). <http://dx.doi.org/10.1016/j.surfcoat.2015.10.064>`_
 * `Du Y. et al., "A novel tri-layer nanoindentation method to measure the mechanical properties of a porous brittle ultra-low-k dielectric thin film" (2017). <http://dx.doi.org/10.1016/j.eml.2017.02.005>`_
+* `Lofaj F. and Németh D., "The effects of tip sharpness and coating thickness on nanoindentation measurements in hard coatings on softer substrates by FEM" (2017). <http://dx.doi.org/10.1016/j.tsf.2017.09.051>`_
 
 Softwares
 ###########
