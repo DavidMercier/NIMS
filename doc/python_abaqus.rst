@@ -231,6 +231,7 @@ References
 * `Pelegri A.A. and Huang X., "Nanoindentation on soft film/hard substrate and hard film/soft substrate material systems with finite element analysis." (2008). <http://dx.doi.org/10.1016/j.compscitech.2007.05.033>`_
 * `Wittler O. et al., "Mechanical characterisation of thin metal layers by modelling of the nanoindentation experiment." (2008). <http://dx.doi.org/10.1109/ESTC.2008.4684488>`_
 * `Sakharova N.A. et al., "Comparison between Berkovich, Vickers and conical indentation tests: A three-dimensional numerical simulation study." (2009). <http://dx.doi.org/10.1016/j.ijsolstr.2008.10.032>`_
+* `Rao C.S. and Reddy C.E., "Finite element modeling of nanoindentation to extract load-displacement characteristics of bulk materials and thin films." (2009). <http://nopr.niscair.res.in/handle/123456789/3133>`_
 * `Gonzalez M. et al., "Modeling the substrate effects on nanoindentation mechanical property measurement." (2009). <http://dx.doi.org/10.1109/ESIME.2009.4938456>`_
 * `Chen C., "2-D Finite Element Modeling for Nanoindentation and Fracture Stress Analysis.", PhD thesis - University of South Florida (2009). <http://scholarcommons.usf.edu/etd/1897/>`_
 * `Moore S.W. et al., "Nanoindentation in elastoplastic materials: insights from numerical simulations." (2010). <http://dx.doi.org/10.1080/19475411003589889>`_
@@ -251,3 +252,5 @@ References
 * `Gupta A. K. et al., "Evaluation of elasto-plastic properties of ITO film using combined nanoindentation and finite element approach" (2015). <http://dx.doi.org/10.1016/j.ceramint.2015.09.054>`_
 * `Veprek-Heijman M.G.J. and Veprek S., "The deformation of the substrate during indentation into superhard coatings: Bückle's rule revised" (2016). <http://dx.doi.org/10.1016/j.surfcoat.2015.10.064>`_
 * `Du Y. et al., "A novel tri-layer nanoindentation method to measure the mechanical properties of a porous brittle ultra-low-k dielectric thin film" (2017). <http://dx.doi.org/10.1016/j.eml.2017.02.005>`_
+* `Lofaj F. and Németh D., "The effects of tip sharpness and coating thickness on nanoindentation measurements in hard coatings on softer substrates by FEM" (2017). <http://dx.doi.org/10.1016/j.tsf.2017.09.051>`_
+* `Chakroun N. et al., "A new inverse analysis method for identifying the elastic properties of thin films considering thickness and substrate effects simultaneously" (2017). <http://dx.doi.org/10.1142/S175882511750096X>`_
