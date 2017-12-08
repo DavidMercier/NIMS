@@ -39,6 +39,8 @@ Some authors overviewed/reviewed already the nanoindentation technique :
 
 - `Bhushan B., "Depth-sensing nanoindentation measurement techniques and applications" (2017). <http://dx.doi.org/10.1007/s00542-017-3372-2>`_
 
+- `Tiwari A. and Natarajan S., "Applied Nanoindentation in Advanced Materials" Wiley (2017). <http://dx.doi.org/10.1002/9781119084501>`_
+
 Nanoindentation tests on bulk material
 ########################################
 
@@ -643,6 +645,23 @@ are respectively based on the integrals of the loading and unloading curves
 The "trapz" |matlab| function is used to calculate the area below the load-displacement curve:
 `trapz.m <http://de.mathworks.com/help/matlab/ref/trapz.html?refresh=true>`_.
 
+Indentation recovery index
+#############################################################
+
+From the load-displacement curve, it is possible to define a parameter known as
+indentation recovery index (:math:`eta_\text{i}`) [#Chatterjee_2015]_.
+This index is defined by the ratio between recoverable or elastic
+deformation energy and the total deformation energy:
+
+    .. math:: eta_\text{i} = \frac{W_\text{e}}{W_\text{tot}} = \frac{W_\text{tot}-W_\text{p}}{W_\text{tot}} = \frac{h_\text{t}-h_\text{r}}{h_\text{t}}
+            :label: recovery_index
+			
+Higher value of the indentation recovery index indicates greater
+capability to accommodate deformation during indentation test.
+
+Find here the |matlab| function to calculate the indentation recovery index :
+`recovery_index.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/load_displacement/recovery_index.m>`_.
+
 Methodology to extract properties without the function area 
 #############################################################
 
@@ -658,10 +677,11 @@ Then, combining the expression of the reduced Young's modulus
 :eq:`experimental_youngs_modulus_OP` with the expression of the
 hardness :eq:`hardness`, leads to the following equation [#Joslin_1990]_ and [#OliverPharr_2004]_:
 
-    .. math:: \beta \frac{4}{\pi} \frac{F_\text{c,max}}{S^2} = \frac{H}{E^{*}}
+    .. math:: {\beta}^2 \frac{4}{\pi} \frac{F_\text{c,max}}{S^2} = \frac{H}{{E^{*}}^2}
             :label: P_squareS
 
-The :math:`\beta` is initially not present in the equation given by [#Joslin_1990]_.
+The :math:`\beta` is initially not present in the equation given by [#Joslin_1990]_
+or assumed to be equal to 1 in [#OliverPharr_2004]_.
 
 These two last equations represent two independent relations that can
 be solved for :math:`H` and :math:`E^{*}` in a manner that does not
@@ -738,6 +758,7 @@ References
 .. [#Berkovich_1950] Berkovich E.S., "Three-Faceted Diamond Pyramid for Studying Microhardness by Indentation" Zavodskaya Laboratoria 13(345) (1950).
 .. [#Bulychev_1973] Bulychev S.I. et al., "Determining Young’s modulus from the indentor penetration diagram.", Zavod. Lab., 1973, 39, pp. 1137-1142.
 .. [#Bolshakov_1998] `Bolshakov A. and Pharr G.M., "Influences of pile-up on the measurement of mechanical properties by load and depth sensing indentation techniques." (1998) <http://dx.doi.org/10.1557/JMR.1998.0146>`_
+.. [#Chatterjee_2015]`Chatterjee S. et al., "Micromechanical and Nanoscratch Behavior of SiCp Dispersed Metal Matrix Composites." (2015) <http://dx.doi.org/10.1007/s11665-015-1633-8>`_
 .. [#Cheng_1998] `Cheng Y.T. and Cheng C.M. ,"Effects of 'sinking in' and 'piling up' on estimating the contact area under load in indentation." (1998) <http://dx.doi.org/10.1080/095008398178093>`_
 .. [#ChengCheng_1998] `Cheng Y.T. and Cheng C.M. ,"Relationships between hardness, elastic modulus, and the work of indentation." (1998) <http://dx.doi.org/10.1063/1.121873>`_
 .. [#Cheng_2004] `Cheng Y.T. and Cheng C.M., "Scaling, dimensional analysis, and indentation measurements." (2004) <http://dx.doi.org/10.1016/j.mser.2004.05.001>`_
