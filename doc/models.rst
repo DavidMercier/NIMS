@@ -649,11 +649,11 @@ Indentation recovery index
 #############################################################
 
 From the load-displacement curve, it is possible to define a parameter known as
-indentation recovery index (:math:`eta_\text{i}`) [#Chatterjee_2015]_.
+indentation recovery index (:math:`\eta_\text{i}`) [#Chatterjee_2015]_.
 This index is defined by the ratio between recoverable or elastic
 deformation energy and the total deformation energy:
 
-    .. math:: eta_\text{i} = \frac{W_\text{e}}{W_\text{tot}} = \frac{W_\text{tot}-W_\text{p}}{W_\text{tot}} = \frac{h_\text{t}-h_\text{r}}{h_\text{t}}
+    .. math:: \eta_\text{i} = \frac{W_\text{e}}{W_\text{tot}} = \frac{W_\text{tot}-W_\text{p}}{W_\text{tot}} = \frac{h_\text{t}-h_\text{r}}{h_\text{t}}
             :label: recovery_index
 			
 Higher value of the indentation recovery index indicates greater
@@ -758,7 +758,7 @@ References
 .. [#Berkovich_1950] Berkovich E.S., "Three-Faceted Diamond Pyramid for Studying Microhardness by Indentation" Zavodskaya Laboratoria 13(345) (1950).
 .. [#Bulychev_1973] Bulychev S.I. et al., "Determining Young’s modulus from the indentor penetration diagram.", Zavod. Lab., 1973, 39, pp. 1137-1142.
 .. [#Bolshakov_1998] `Bolshakov A. and Pharr G.M., "Influences of pile-up on the measurement of mechanical properties by load and depth sensing indentation techniques." (1998) <http://dx.doi.org/10.1557/JMR.1998.0146>`_
-.. [#Chatterjee_2015]`Chatterjee S. et al., "Micromechanical and Nanoscratch Behavior of SiCp Dispersed Metal Matrix Composites." (2015) <http://dx.doi.org/10.1007/s11665-015-1633-8>`_
+.. [#Chatterjee_2015] `Chatterjee S. et al., "Micromechanical and Nanoscratch Behavior of SiCp Dispersed Metal Matrix Composites." (2015) <http://dx.doi.org/10.1007/s11665-015-1633-8>`_
 .. [#Cheng_1998] `Cheng Y.T. and Cheng C.M. ,"Effects of 'sinking in' and 'piling up' on estimating the contact area under load in indentation." (1998) <http://dx.doi.org/10.1080/095008398178093>`_
 .. [#ChengCheng_1998] `Cheng Y.T. and Cheng C.M. ,"Relationships between hardness, elastic modulus, and the work of indentation." (1998) <http://dx.doi.org/10.1063/1.121873>`_
 .. [#Cheng_2004] `Cheng Y.T. and Cheng C.M., "Scaling, dimensional analysis, and indentation measurements." (2004) <http://dx.doi.org/10.1016/j.mser.2004.05.001>`_
