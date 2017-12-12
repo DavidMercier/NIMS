@@ -233,10 +233,10 @@ With :math:`K` and :math:`n` constants for a given material for a fixed indenter
 
 It is possible to find in the litterature sometimes the following equation to fit the loading curve:
 
-        .. math:: F_\text{c} = K h_\text{t}^n + C
+        .. math:: F_\text{c} = K h_\text{t}^n + C_\text{preload}
                 :label: generalized_Loubet_load_displacement
 
-With :math:`C` a constant which is used to account a small preload prior indentation testing [#Morash_2007]_.
+With :math:`C_\text{preload}` a constant which is used to account a small preload prior indentation testing [#Morash_2007]_.
 
 Using the load-displacement curves analysis performed by Loubet et al., 
 Hainsworth et al. proposed the following relationship to describe loading curves [#Hainsworth_1996]_ :
@@ -585,24 +585,38 @@ Find here the |matlab| function to calculate the Young's modulus:
 Extraction of viscoelastic properties
 ##################################################
 
-If dynamic nanoindentation is performed, a sinusoidal input is applied and the output signal is monitored.
-But, in case of a linear viscoelastic material, the output signal, which is still sinusoidal, can lag the input signal [#VanLandingham_2001]_. Thus, the out-of-phase components are related to the loss modulus :math:`E^{'*}`
-(in :math:`\text{GPa} = \text{N/m}^2`), defined by the following equation:
+Viscoelasticity of a material, can be characterized locally by nanoindentation using Dynamic Mechanical Analysis (DMA) technique 
+[#VanLandingham_2001]_, [#Odegard_2005]_ and [#White_2005]_.
+This technique also called nano-DMA is a suitable technique for mechanical characterization of polymers and 
+is complementary to traditional macroscale DMA and ThermoMechanical Analysis (TMA).
 
-    .. math:: E^{'*} = \frac{C\omega}{2} \sqrt\frac{\pi}{A}
+If dynamic nanoindentation is performed, a sinusoidal input is applied and the output signal is monitored.
+But, in case of a linear viscoelastic material, the output signal, which is still sinusoidal, can lag the input signal,
+and it is convenient to express the overall constitutive behavior in terms of the complex modulus given by:
+
+    .. math:: E^{*} = E^{'*} + iE^{''*}
+            :label: loss_and_storage_modulus
+
+with :math:`E^{'*}` the reduced storage modulus and :math:`E^{''*}` the reduced loss modulus (both in :math:`\text{GPa} = \text{N/m}^2`).
+The storage modulus is in phase with the deformation and related to the elastic behavior.
+The storage modulus is defined using :eq:`experimental_youngs_modulus_OP`.
+Thus, the reduced loss modulus :math:`E^{''*}` is the out-of-phase component and related to the viscous behavior.
+:math:`E^{''*}` is characteristic of internal damping (equal to a loss of energy due to internal friction) and defined by the following equation:
+
+    .. math:: E^{''*} = \frac{C\omega}{2} \sqrt\frac{\pi}{A}
             :label: loss_modulus
 
 with :math:`C\omega` the contact damping, given by :eq:`CSM_contact_damping`.
 
-Some authors like to calculate also the loss tangent :math:`tan \delta`, which is defined by:
+It is convinient to calculate the loss tangent (:math:`tan{\delta}`) also called the loss factor (:math:`\eta`) or phase angle, which is defined by:
 
-    .. math:: tan{\delta} = \frac{E^{'}}{E} = \frac{C\omega}{S}
-            :label: loss_modulus
+    .. math:: tan{\delta} = \eta = \frac{E^{'}}{E''} = \frac{C\omega}{S}
+            :label: loss_tangent
 
 Find here the |matlab| function to calculate the loss modulus:
 `loss_modulus.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/visco_elastic_models/loss_modulus.m>`_.
 
-Find here the |matlab| function to calculate the loss factor:
+Find here the |matlab| function to calculate the loss tangent or loss factor:
 `loss_tangent.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/visco_elastic_models/loss_tangent.m>`_.
 
 Extraction of plastic properties 
@@ -787,6 +801,7 @@ References
 .. [#Malzbender_2002] `Malzbender J. and de With G., "Indentation load–displacement curve, plastic deformation, and energy." (2002). <http://dx.doi.org/10.1557/JMR.2002.0070>`_
 .. [#Merle_2012] `Merle B. et al., "Experimental determination of the effective indenter shape and e-factor for nanoindentation by continuously measuring the unloading stiffness." (2012). <http://dx.doi.org/10.1557/jmr.2011.245>`_
 .. [#Morash_2007] `Morash K.R. and Bahr D.F., "An energy method to analyze through thickness thin film fracture during indentation." (2007). <http://dx.doi.org/10.1016/j.tsf.2006.01.043>`_
+.. [#Odegard_2005] `Odegard G.M. et al., "Characterization of viscoelastic properties of polymeric materials through nanoindentation." (2005). <http://dx.doi.org/10.1007/BF02428185>`_
 .. [#OliverPharr_1992] `Oliver W.C. and Pharr G.M., "An improved technique for determining hardness and elastic modulus using load and displacement sensing indentation experiments" (1992). <http://dx.doi.org/10.1557/JMR.1992.1564>`_
 .. [#OliverPharr_2004] `Oliver W.C. and Pharr G.M., "Measurement of hardness and elastic modulus by instrumented indentation: Advances in understanding and refinements to methodology" (2004). <http://dx.doi.org/10.1557/jmr.2004.19.1.3>`_
 .. [#Oyen_2003] `Oyen M.L. et al., "Load–displacement behavior during sharp indentation of viscous–elastic–plastic materials" (2003). <http://dx.doi.org/10.1557/JMR.2003.0020>`_
@@ -799,5 +814,6 @@ References
 .. [#Troyon_2006] `Troyon M. and Lafaye S., "About the importance of introducing a correction factor in the Sneddon relationship for nanoindentation measurements" (2002). <http://dx.doi.org/10.1080/14786430600606834>`_
 .. [#VanLandingham_2001] `VanLandingham M.R., "Nanoindentation of Polymers: An Overview" (2001). <http://dx.doi.org/10.1002/1521-3900(200103)167:1<15::AID-MASY15>3.0.CO;2-T>`_
 .. [#VanLandingham_2003] `VanLandingham M.R., "Review of Instrumented Indentation" (2003). <http://oai.dtic.mil/oai/oai?verb=getRecord&metadataPrefix=html&identifier=ADA512140>`_
+.. [#White_2005]`White C.C. et al., "Viscoelastic characterization of polymers using instrumented indentation. II. Dynamic testing" (2005). <http://dx.doi.org/10.1002/polb.20455>`_
 .. [#YetnaNjock_2015] `Yetna N'jock M. et al., "A criterion to identify sinking-in and piling-up in indentation of materials." (2015). <http://dx.doi.org/10.1016/j.ijmecsci.2014.11.008>`_
 .. [#Zong_2017] `Zong W. J. et al., "Radius and angle determination of diamond Berkovich indenter." (2017). <http://dx.doi.org/10.1016/j.measurement.2017.03.035>`_
