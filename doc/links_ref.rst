@@ -27,6 +27,7 @@ References
 * `Mercier D. et al., "Young's modulus measurement of a thin film from experimental nanoindentation performed on multilayer systems" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
 * `Mercier D., "Behaviour laws of materials used in electrical contacts for « flip chip » technologies.", PhD thesis (2013) <https://tel.archives-ouvertes.fr/tel-01127940>`_
 * `Mercier D., "Behaviour laws of materials used in electrical contacts for « flip chip » technologies." PhD defense (2013). <http://dx.doi.org/10.5281/zenodo.11753>`_
+* `Mercier D. et al., "Investigation of the fracture of very thin amorphous alumina film during spherical nanoindentation" (2017). <http://dx.doi.org/10.1016/j.tsf.2017.07.040>`_
 
 (Nano)Indentation models (conical indenters)
 ---------------------------------------------
@@ -226,6 +227,7 @@ Books
 * `Fischer-Cripps A.C., "Nanoindentation" Springer 1st Ed. (2002). <http://dx.doi.org/10.1007/978-0-387-22462-6>`_
 * `Fischer-Cripps A.C., "Nanoindentation" Springer 2nd Ed. (2004). <http://dx.doi.org/10.1007/978-1-4419-9872-9>`_
 * `Fischer-Cripps A.C., "Introduction to Contact Mechanics" Springer 2nd Ed. (2007). <http://dx.doi.org/10.1007/978-0-387-68188-7>`_
+* `Feng Z.-Q. et al., "Theory of nanoindentation" Handbook of Nanophysics - Chapter 26 (2010). <https://www.crcpress.com/Handbook-of-Nanophysics-Functional-Nanomaterials/Sattler/p/book/9781420075526>`_
 * `Fischer-Cripps A.C., "Nanoindentation" Springer 3rd Ed. (2011). <http://dx.doi.org/10.1007/978-1-4419-9872-9>`_
 * `Tiwari A., "Nanomechanical Analysis of High Performance Materials" Springer Vol. 203 (2014). <http://dx.doi.org/10.1007/978-94-007-6919-9>`_
-* `Feng Z.-Q. et al., "Theory of nanoindentation" Handbook of Nanophysics - Chapter 26 (2010). <https://www.crcpress.com/Handbook-of-Nanophysics-Functional-Nanomaterials/Sattler/p/book/9781420075526>`_
+* `Tiwari A. and Natarajan S., "Applied Nanoindentation in Advanced Materials" Wiley (2017). <http://dx.doi.org/10.1002/9781119084501>`_

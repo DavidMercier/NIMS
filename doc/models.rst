@@ -455,6 +455,8 @@ With :math:`m` the mass of the indenter column,
 :math:`C_\text{s}` the system damping coefficient in :math:`\text{N.s/m}`,
 :math:`K_\text{s}` the stiffness of the indenter support springs in :math:`\text{N/m}` and
 :math:`K_\text{f}` the stiffness of the load frame in :math:`\text{N/m}`.
+:math:`C\omega` and C_\text{s}\omega represent respectively the tip–sample damping factor
+and the system damping coefficient. 
 
 Values :math:`m`, :math:`C_\text{s}`, :math:`K_\text{s}` and :math:`K_\text{f}`
 are function of the equipment used and are determined during calibration process.
@@ -585,7 +587,7 @@ Find here the |matlab| function to calculate the Young's modulus:
 Extraction of viscoelastic properties
 ##################################################
 
-Viscoelasticity of a material, can be characterized locally by nanoindentation using Dynamic Mechanical Analysis (DMA) technique 
+Viscoelasticity of a material, can be characterized locally by nanoindentation using CSM or DMA techniques
 [#VanLandingham_2001]_, [#Odegard_2005]_ and [#White_2005]_.
 This technique also called nano-DMA is a suitable technique for mechanical characterization of polymers and 
 is complementary to traditional macroscale DMA and ThermoMechanical Analysis (TMA).
@@ -597,7 +599,8 @@ and it is convenient to express the overall constitutive behavior in terms of th
     .. math:: E^{*} = E^{'*} + iE^{''*}
             :label: loss_and_storage_modulus
 
-with :math:`E^{'*}` the reduced storage modulus and :math:`E^{''*}` the reduced loss modulus (both in :math:`\text{GPa} = \text{N/m}^2`).
+with :math:`E^{'*}` the reduced storage modulus and :math:`E^{''*}` the reduced loss modulus (both in :math:`\text{GPa} = \text{N/m}^2`),
+and with :math:`i^{2} = -1`.
 The storage modulus is in phase with the deformation and related to the elastic behavior.
 The storage modulus is defined using :eq:`experimental_youngs_modulus_OP`.
 Thus, the reduced loss modulus :math:`E^{''*}` is the out-of-phase component and related to the viscous behavior.
@@ -610,7 +613,7 @@ with :math:`C\omega` the contact damping, given by :eq:`CSM_contact_damping`.
 
 It is convinient to calculate the loss tangent (:math:`tan{\delta}`) also called the loss factor (:math:`\eta`) or phase angle, which is defined by:
 
-    .. math:: tan{\delta} = \eta = \frac{E^{'}}{E''} = \frac{C\omega}{S}
+    .. math:: tan{\delta} = \eta = \frac{E^{'*}}{E''*} = \frac{C\omega}{S}
             :label: loss_tangent
 
 Find here the |matlab| function to calculate the loss modulus:
@@ -814,6 +817,6 @@ References
 .. [#Troyon_2006] `Troyon M. and Lafaye S., "About the importance of introducing a correction factor in the Sneddon relationship for nanoindentation measurements" (2002). <http://dx.doi.org/10.1080/14786430600606834>`_
 .. [#VanLandingham_2001] `VanLandingham M.R., "Nanoindentation of Polymers: An Overview" (2001). <http://dx.doi.org/10.1002/1521-3900(200103)167:1<15::AID-MASY15>3.0.CO;2-T>`_
 .. [#VanLandingham_2003] `VanLandingham M.R., "Review of Instrumented Indentation" (2003). <http://oai.dtic.mil/oai/oai?verb=getRecord&metadataPrefix=html&identifier=ADA512140>`_
-.. [#White_2005]`White C.C. et al., "Viscoelastic characterization of polymers using instrumented indentation. II. Dynamic testing" (2005). <http://dx.doi.org/10.1002/polb.20455>`_
+.. [#White_2005] `White C.C. et al., "Viscoelastic characterization of polymers using instrumented indentation. II. Dynamic testing" (2005). <http://dx.doi.org/10.1002/polb.20455>`_
 .. [#YetnaNjock_2015] `Yetna N'jock M. et al., "A criterion to identify sinking-in and piling-up in indentation of materials." (2015). <http://dx.doi.org/10.1016/j.ijmecsci.2014.11.008>`_
 .. [#Zong_2017] `Zong W. J. et al., "Radius and angle determination of diamond Berkovich indenter." (2017). <http://dx.doi.org/10.1016/j.measurement.2017.03.035>`_
