@@ -9,7 +9,7 @@ to perform nanoindentation tests on bulk, coatings or multilayer systems, and to
 Type of data - Pre-Requirements
 ##################################
 
-Only data continuously measured in function of the indentaton depth are accepted in the NIMS toolbox (e.g.:
+Only data continuously measured as a function of the indentaton depth are accepted in the NIMS toolbox (e.g.:
 CSM mode for Agilent - MTS nanoindenter or DMA - CMX algorithm for Hysitron nanoindenter).
 
 You data must only have the loading part from the load-displacement curves of your (nano)indentation results.

@@ -57,7 +57,7 @@ and the properties and the geometry of the indenter.
    :scale: 60 %
    :align: center
    
-   *Typical evolution of Young's modulus and hardness for a coated specimen in function of the normalized indentation depth.*
+   *Typical evolution of Young's modulus and hardness for a coated specimen as a function of the normalized indentation depth.*
 
 Thus, the composite reduced Young's modulus :math:`E^{'}` and the composite hardness :math:`H`
 calculated with the models used for bulk materials, can generally be expressed as a combination of respectively
@@ -588,7 +588,7 @@ According to Veprek-Heijman M.G.J. and Veprek S., the Bückle's rule is not vali
 Kao and Byrne (1981)
 ---------------------------
 
-Kao and Byrne proposed the following model to describe the evolution of the composite hardness in function of the reciprocal indentation depth [#Kao_1981]_, based on Bückle's model [#Bückle_1961]_ :
+Kao and Byrne proposed the following model to describe the evolution of the composite hardness as a function of the reciprocal indentation depth [#Kao_1981]_, based on Bückle's model [#Bückle_1961]_ :
 
     .. math:: H \simeq H_\text{s} + 2 k_1 t_\text{f}\left(H_\text{f} - H_\text{s} \right)\frac{1}{h}
             :label: kao_hardness
@@ -674,7 +674,7 @@ Saha and Nix (2002)
 
 Based on the methodology proposed by Joslin and Oliver (1990) [#Joslin_1990]_ for a bulk material,
 extended to the coated system by Page et al. [#Page_1998]_, Saha and Nix proposed
-to use the following equation, giving the evolution of the hardness in function
+to use the following equation, giving the evolution of the hardness as a function
 of indentation depth, even when pile-up occurs [#Saha_2002]_:
 
     .. math:: H = {\beta}^2 \frac{4}{\pi} \frac{F_\text{c,max}}{S^2} (E*)^{2}

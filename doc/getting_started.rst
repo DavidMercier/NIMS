@@ -95,13 +95,13 @@ First of all a GUI is a Graphical User Interface.
    :scale: 40 %
    :align: center
    
-   *Plot of the evolution of the Young's modulus of the sample with the elastic multilayer model in function of the indentation depth.*
+   *Plot of the evolution of the Young's modulus of the sample with the elastic multilayer model as a function of the indentation depth.*
    
 .. figure:: ./_pictures/GUI_Main_Window_Efilm_curve.png
    :scale: 40 %
    :align: center
    
-   *Plot of the evolution of the Young's modulus of the film with the elastic multilayer model in function of the indentation depth.*
+   *Plot of the evolution of the Young's modulus of the film with the elastic multilayer model as a function of the indentation depth.*
    
 Links
 #######

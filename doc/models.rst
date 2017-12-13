@@ -75,10 +75,10 @@ and similarity of the stress fields.
     Indenters are mainly in diamond. Diamond has a Young's modulus of 1070GPa
     and a Poisson's ratio of 0.07 [#Fischer-Cripps_2004]_.
 	
-Find here the |matlab| function to plot the projected ared of 3-sided pyramidal indenter in function of indentation depth :
+Find here the |matlab| function to plot the projected ared of 3-sided pyramidal indenter as a function of indentation depth :
 `projectedArea_3sidePyramid.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/function_area/projectedArea_3sidePyramid.m>`_.
 
-Find here the |matlab| function to plot the the projected ared of 4-sided pyramidal indenter in function of indentation depth :
+Find here the |matlab| function to plot the the projected ared of 4-sided pyramidal indenter as a function of indentation depth :
 `projectedArea_4sidePyramid.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/function_area/projectedArea_4sidePyramid.m>`_.
    
 Practically, perfect conical indenters (no tip defect) don't really exist and 
@@ -176,7 +176,7 @@ and :math:`h_\text{r}` the residual indentation or the plastic depth after unloa
 
 It is worth to mention that for quasistatic nanoindentation, the contact stiffness is a unique value
 obtained at the maximum load and at the maximum displacement. Nevertheless, it is possible to apply a multiple-point
-unload method, and then determine the contact stiffness for many indentation depths, in function of the number of points
+unload method, and then determine the contact stiffness for many indentation depths, as a function of the number of points
 defined by the user (see :numref:`load_disp_curve_multiplepoints`) [#Fischer-Cripps_2004]_.
 
 .. figure:: ./_pictures/load-disp_curve_multiplepoints.png
@@ -334,7 +334,7 @@ to take into account this indentation contact topography.
               
 Where :math:`\epsilon` is a function of the indenter's geometry (:math:`0.72` for conical indenter,
 :math:`0.75` for `paraboloids of revolution <https://en.wikipedia.org/wiki/Paraboloid>`_ and :math:`1` for
-a flat cylindrical punch). An expression of :math:`\epsilon` in function of the power law
+a flat cylindrical punch). An expression of :math:`\epsilon` as a function of the power law
 exponent :math:`m` of the unloading curve fit has been proposed by Pharr et Bolshakov [#Pharr_2002]_ :
 
     .. math:: \epsilon = m \left( 1 - \frac{ 2 \Gamma \left( \frac{m}{2(m-1)} \right)} {\sqrt[]{\pi} \Gamma \left( \frac{1}{2(m-1)}(m-1) \right)} \right)
@@ -349,7 +349,7 @@ Find here the |matlab| function to plot the :math:`\epsilon` function :
    :scale: 45 %
    :align: center
 
-   *Evolution of epsilon in function of the power law exponent m of the unloading curve.*
+   *Evolution of epsilon as a function of the power law exponent m of the unloading curve.*
 
 :math:`0.72` should be most applicable for a Berkovich indenter, which is more like
 a cone than a paraboloid of revolution. But, Oliver and Pharr concluded after
@@ -432,7 +432,7 @@ The dynamic indentation is when a small dynamic oscillation (usually :math:`2\te
 with a given frequency (:math:`\omega`) (usually :math:`45\text{Hz}`)
 is imposed on the force (or displacement) signal. The amplitude of the displacement (or load)
 and the phase angle between the force and displacement signals (:math:`\phi`) are measured using a
-frequency-specific amplifier. This technique allows to calculate the elastic
+frequency-specific amplifier [#VanLandingham_2001]_, [#Odegard_2005]_ and [#White_2005]_. This technique allows to calculate the elastic
 stiffness and so the elastic properties continuously during the loading of the indenter [#OliverPharr_1992]_, [#Li_2002]_.
 This technique is named **Continuous Stiffness Measurement** (CSM) for Agilent - MTS nanoindenter and **Dynamic Mechanical Analysis** (DMA)
 (using the CMX control algorithms) for Hysitron nanoindenter.
@@ -497,12 +497,12 @@ constant :math:`K`, using :eq:`csm_K_m`.
    :scale: 45 %
    :align: center
    
-   *Evolution of K in function of m.*
+   *Evolution of K as a function of m.*
 
 Find here the |matlab| function to calculate the corrections to apply on depth, load and stiffness during dynamic nanoindentation:
 `CSM_correction.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/CSM_correction.m>`_.
 
-Find here the |matlab| function to calculate the constant :math:`K` in function of :math:`m`:
+Find here the |matlab| function to calculate the constant :math:`K` as a function of :math:`m`:
 `unload_k_m.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/load_displacement/unload_k_m.m>`_.
  
 Extraction of elastic properties
@@ -513,7 +513,7 @@ were the first to determine the reduced Young's modulus (or elastic modulus or s
 of a material with the relationships established by Love [#Love_1939]_, Galin [#Galin_1946]_ and Sneddon [#Sneddon_1948]_,
 between the applied load and the displacement during an indentation test of an elastic material.
 
-They proposed to expressed the reduced Young's modulus :math:`E^{*}` (in :math:`\text{GPa} = \text{N/m}^2`) in function
+They proposed to expressed the reduced Young's modulus :math:`E^{*}` (in :math:`\text{GPa} = \text{N/m}^2`) as a function
 of the contact area and the contact stiffness :
 
     .. math:: E^{*} = \frac{1}{2} \sqrt\frac{\pi}{A} S
@@ -558,9 +558,9 @@ Find here the |matlab| function to plot the :math:`\beta` function of Hay et al.
    :scale: 35 %
    :align: center
    
-   *Plots of beta Hay : a) in function of the half-angle
+   *Plots of beta Hay : a) as a function of the half-angle
    of the conical indenter (for a Poisson's ratio of 0.3), and b)
-   in function of the Poisson's ratio for a Berkovich indenter.*
+   as a function of the Poisson's ratio for a Berkovich indenter.*
 
 Knowing the material properties of the indenter, it is possible to calculate
 the reduced Young's modulus :math:`E^{'}` (in :math:`\text{GPa} = \text{N/m}^2`) of the indented material.

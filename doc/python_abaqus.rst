@@ -23,7 +23,7 @@ Each layer of the sample is characterized by its thickness (:math:`t_\text{i}`).
 The thickness of the substrate (:math:`t_\text{sub}`) is set as
 2 times the highest thin film thickness.
 
-The width (:math:`w`) of the sample is calculated in function of
+The width (:math:`w`) of the sample is calculated as a function of
 the substrate thickness or the indenter tip defect.
 
 No delamination is allowed between thin films or between thin film and substrate.
