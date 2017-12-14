@@ -27,7 +27,7 @@ With given input data :math:`xdata` and the observed output :math:`ydata`.
 
 Fischer-Cripps A.C. wrote a detailed section about the non-linear least squares fitting in his book "Nanoindentation" (pp. 253-256) [#Fischer-Cripps_2011]_.
 
-.. [#Fischer-Cripps_2011] `Fischer-Cripps A.C., "Nanoindentation" Springer 3rd Ed. (2011). <http://dx.doi.org/10.1007/978-1-4419-9872-9>`_
+.. [#Fischer-Cripps_2011] `Fischer-Cripps A.C., "Nanoindentation" Springer 3rd Ed. (2011). <https://www.doi.org/10.1007/978-1-4419-9872-9>`_
 
 Residuals
 ###########
