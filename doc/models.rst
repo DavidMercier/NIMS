@@ -47,11 +47,11 @@ Nanoindentation tests on bulk material
 Conical and geometrically similar indenters 
 ----------------------------------------------
 
-The geometric properties of conical and geometrically similar (Berkovich, vickers, ...) indenters are well described in [#Fischer-Cripps_2004]_.
+The geometric properties of conical and geometrically similar (Berkovich, Vickers, ...) indenters are well described in [#Fischer-Cripps_2004]_.
 
 .. csv-table:: **Geometric properties of conical indenters.**
    :name: geom_prop_indenters
-   :header: "Indenter", "Berkovich", "Vickers", "Cube-Corner", "Conical"
+   :header: "Indenter", "Berkovich", "Vickers", "Cube-corner", "Conical"
    :widths: 20,20,20,20,20
 
    "Shape",                    "3-sided pyramid",   "4-sided pyramid",   "3-sided pyramid",   "Conical (angle :math:`\psi`)"
@@ -92,7 +92,7 @@ they are usually defined as cono-spherical indenters with a tip defect :math:`h_
    *Scheme of a cono-spherical indenter.*
 
 The radius :math:`R` of the spherical part is calculated from the tip defect :math:`h_\text{tip}`
-and the cone angle :math:`\alpha`, using the following equation. For Berkovich, Vickers and Cube-Corner
+and the cone angle :math:`\alpha`, using the following equation. For Berkovich, Vickers and cube-corner
 indenters, the equivalent cone angle is used to set the cone angle.
 
     .. math:: R = \frac{h_\text{tip}}{\frac{1}{sin(\alpha)} - 1}
@@ -484,7 +484,7 @@ to determine the actual load (:math:`F_\text{c,act}`), the actual displacement
             :label: csm_correction_stiffness
 
 With :math:`K` and :math:`m` constants determined from unloading curves.
-These constants are related by the following equation :
+These constants are related by the following equation:
 
     .. math:: K = \left(\frac{2}{{m\sqrt{\pi}}}\right)^m
             :label: csm_K_m
@@ -514,13 +514,13 @@ of a material with the relationships established by Love [#Love_1939]_, Galin [#
 between the applied load and the displacement during an indentation test of an elastic material.
 
 They proposed to expressed the reduced Young's modulus :math:`E^{*}` (in :math:`\text{GPa} = \text{N/m}^2`) as a function
-of the contact area and the contact stiffness :
+of the contact area and the contact stiffness:
 
     .. math:: E^{*} = \frac{1}{2} \sqrt\frac{\pi}{A} S
             :label: experimental_youngs_modulus
 
 Then, Oliver and Pharr [#Pharr_1992]_, [#OliverPharr_1992]_ democratized this formulae
-after introducing a correction factor identified by King [#King_1987]_ :
+after introducing a correction factor identified by King [#King_1987]_:
 
     .. math:: E^{*} = \frac{1}{{2\beta}} \sqrt\frac{\pi}{A} S
             :label: experimental_youngs_modulus_OP
@@ -543,7 +543,7 @@ For a conical indenter with an half-angle of :math:`\gamma \leq 60^{\circ}`
             :label: gamma_low_angle
 
 For a conical indenter with larger half-angle (e.g.: Berkovich indenter),
-the analytical approximation is :
+the analytical approximation is:
             
     .. math:: \beta = \pi{ \frac{\pi/4 + 0.1548cot\gamma{\frac{1-2\nu}{4\left(1-\nu\right)}}} 
               {\left[\pi/2-0.8311cot\gamma{\frac{1-2\nu}{4\left(1-\nu\right)}}\right]^2}}
@@ -613,7 +613,7 @@ with :math:`C\omega` the contact damping, given by :eq:`CSM_contact_damping`.
 
 It is convinient to calculate the loss tangent (:math:`tan{\delta}`) also called the loss factor (:math:`\eta`) or phase angle, which is defined by:
 
-    .. math:: tan{\delta} = \eta = \frac{E^{'*}}{E''*} = \frac{C\omega}{S}
+    .. math:: tan{\delta} = \eta = \frac{E^{'*}}{E^{''*}} = \frac{C\omega}{S}
             :label: loss_tangent
 
 Find here the |matlab| function to calculate the loss modulus:
