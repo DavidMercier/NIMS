@@ -13,9 +13,9 @@ thetaeq_CubeCorner: 42.286
 # List of indenters
 # For user_defined indenters, make the name of the indenter begins with the 4th first letters of the indenters
 # e.g. : Berk_TB10161_091208 or Coni_120812 or Vick120512_oldtip or CubeCornerXXXFFF
-Indenter_IDs: [Berkovich, Vickers, CubeCorner, Conical, Berk_TB10161_091208, Berk_TB10161_110210]
+Indenter_IDs: [Berkovich, Vickers, CubeCorner, Conical, Berk_TB10161_091208, Berk_TB10161_110210, Berk_C6202_10082015, Berk_C6202_29012016, BerkoCaen]
 # Set the indenter you want to use by default
-Indenter_ID: Berkovich
+Indenter_ID: BerkoCaen
 
 #################################################################################
 # List of indenter's material - !!! Do not remove !!!
@@ -37,3 +37,6 @@ CubeCorner: [2.598, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 Conical: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 45]
 Berk_TB10161_091208: [22.233, 437.603, 127.765, -417.878, -84.0989, 0, 0, 0, 0, 2, 0]
 Berk_TB10161_110210: [23.9198, 1217.67, -12231, 41727.1, -32286.3, 0, 0, 0, 0, 5, 0]
+Berk_C6202_10082015: [27.4080, 1566.58, -5505.78, 502.088, 3044, 0, 0, 0, 0, 0, 0]
+Berk_C6202_29012016: [26.1825, 1602.63, -5950.6, 449.334, 4165.41, 0, 0, 0, 0, 0, 0]
+BerkoCaen: [23.5, 1173.55, -4230.85, 2172.3, 0, 0, 0, 0, 0, 0, 0]

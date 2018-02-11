@@ -21,25 +21,25 @@ Please look at the ISO standard (ISO 14577 - 1 to 3), to perform nanoindentation
 
 Some authors overviewed/reviewed already the nanoindentation technique :
 
-- `Li X. and Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications." (2002). <https://www.doi.org/10.1016/S1044-5803(02)00192-4>`_
+- `Li X. and Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications." (2002). <https://doi.org/10.1016/S1044-5803(02)00192-4>`_
 
 - `VanLandingham M.R., "Review of Instrumented Indentation" (2003). <http://oai.dtic.mil/oai/oai?verb=getRecord&metadataPrefix=html&identifier=ADA512140>`_
 
-- `Oliver W.C. and Pharr G.M., "Measurement of hardness and elastic modulus by instrumented indentation: Advances in understanding and refinements to methodology" (2004). <https://www.doi.org/10.1557/jmr.2004.19.1.3>`_
+- `Oliver W.C. and Pharr G.M., "Measurement of hardness and elastic modulus by instrumented indentation: Advances in understanding and refinements to methodology" (2004). <https://doi.org/10.1557/jmr.2004.19.1.3>`_
 
-- `Fischer-Cripps A.C., "Critical review of analysis and interpretation of nanoindentation test data" (2006). <https://www.doi.org/10.1016/j.surfcoat.2005.03.018>`_
+- `Fischer-Cripps A.C., "Critical review of analysis and interpretation of nanoindentation test data" (2006). <https://doi.org/10.1016/j.surfcoat.2005.03.018>`_
 
-- `Fischer-Cripps A.C., "Nanoindentation" Springer 3rd Ed. (2011). <https://www.doi.org/10.1007/978-1-4419-9872-9>`_
+- `Fischer-Cripps A.C., "Nanoindentation" Springer 3rd Ed. (2011). <https://doi.org/10.1007/978-1-4419-9872-9>`_
 
-- `Lucca D.A. et al., "Nanoindentation: Measuring methods and applications" (2012). <https://www.doi.org/10.1016/j.cirp.2010.05.009>`_
+- `Lucca D.A. et al., "Nanoindentation: Measuring methods and applications" (2012). <https://doi.org/10.1016/j.cirp.2010.05.009>`_
 
-- `Němeček J., "Nanoindentation in Material Science" (2012). <https://www.doi.org/10.5772/2829>`_
+- `Němeček J., "Nanoindentation in Material Science" (2012). <https://doi.org/10.5772/2829>`_
 
-- `Michailidis N. et al., "Nanoindentation" (2014). <https://www.doi.org/10.1007/978-3-642-35950-7_16730-1>`_
+- `Michailidis N. et al., "Nanoindentation" (2014). <https://doi.org/10.1007/978-3-642-35950-7_16730-1>`_
 
-- `Bhushan B., "Depth-sensing nanoindentation measurement techniques and applications" (2017). <https://www.doi.org/10.1007/s00542-017-3372-2>`_
+- `Bhushan B., "Depth-sensing nanoindentation measurement techniques and applications" (2017). <https://doi.org/10.1007/s00542-017-3372-2>`_
 
-- `Tiwari A. and Natarajan S., "Applied Nanoindentation in Advanced Materials" Wiley (2017). <https://www.doi.org/10.1002/9781119084501>`_
+- `Tiwari A. and Natarajan S., "Applied Nanoindentation in Advanced Materials" Wiley (2017). <https://doi.org/10.1002/9781119084501>`_
 
 Nanoindentation tests on bulk material
 ########################################
@@ -771,52 +771,52 @@ Find here the |matlab| function to calculate hardness using Guillonneau's method
 References
 ############
 
-.. [#Bec_2006] `Bec S. et al., "Improvements in the indentation method with a surface force apparatus" (2006). <https://www.doi.org/10.1080/01418619608239707>`_
+.. [#Bec_2006] `Bec S. et al., "Improvements in the indentation method with a surface force apparatus" (2006). <https://doi.org/10.1080/01418619608239707>`_
 .. [#Berkovich_1950] Berkovich E.S., "Three-Faceted Diamond Pyramid for Studying Microhardness by Indentation" Zavodskaya Laboratoria 13(345) (1950).
 .. [#Bulychev_1973] Bulychev S.I. et al., "Determining Young’s modulus from the indentor penetration diagram.", Zavod. Lab., 1973, 39, pp. 1137-1142.
-.. [#Bolshakov_1998] `Bolshakov A. and Pharr G.M., "Influences of pile-up on the measurement of mechanical properties by load and depth sensing indentation techniques." (1998) <https://www.doi.org/10.1557/JMR.1998.0146>`_
-.. [#Chatterjee_2015] `Chatterjee S. et al., "Micromechanical and Nanoscratch Behavior of SiCp Dispersed Metal Matrix Composites." (2015) <https://www.doi.org/10.1007/s11665-015-1633-8>`_
-.. [#Cheng_1998] `Cheng Y.T. and Cheng C.M. ,"Effects of 'sinking in' and 'piling up' on estimating the contact area under load in indentation." (1998) <https://www.doi.org/10.1080/095008398178093>`_
-.. [#ChengCheng_1998] `Cheng Y.T. and Cheng C.M. ,"Relationships between hardness, elastic modulus, and the work of indentation." (1998) <https://www.doi.org/10.1063/1.121873>`_
-.. [#Cheng_2004] `Cheng Y.T. and Cheng C.M., "Scaling, dimensional analysis, and indentation measurements." (2004) <https://www.doi.org/10.1016/j.mser.2004.05.001>`_
-.. [#DoernerNix_1986] `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <https://www.doi.org/10.1557/JMR.1986.0601>`_
-.. [#Fischer-Cripps_2004] `Fischer-Cripps A.C., "Nanoindentation" Springer 3rd Ed. (2011). <https://www.doi.org/10.1007/978-1-4419-9872-9>`_
-.. [#Fischer-Cripps_2006] `Fischer-Cripps A.C., "Critical review of analysis and interpretation of nanoindentation test data" (2006). <https://www.doi.org/10.1016/j.surfcoat.2005.03.018>`_
+.. [#Bolshakov_1998] `Bolshakov A. and Pharr G.M., "Influences of pile-up on the measurement of mechanical properties by load and depth sensing indentation techniques." (1998) <https://doi.org/10.1557/JMR.1998.0146>`_
+.. [#Chatterjee_2015] `Chatterjee S. et al., "Micromechanical and Nanoscratch Behavior of SiCp Dispersed Metal Matrix Composites." (2015) <https://doi.org/10.1007/s11665-015-1633-8>`_
+.. [#Cheng_1998] `Cheng Y.T. and Cheng C.M. ,"Effects of 'sinking in' and 'piling up' on estimating the contact area under load in indentation." (1998) <https://doi.org/10.1080/095008398178093>`_
+.. [#ChengCheng_1998] `Cheng Y.T. and Cheng C.M. ,"Relationships between hardness, elastic modulus, and the work of indentation." (1998) <https://doi.org/10.1063/1.121873>`_
+.. [#Cheng_2004] `Cheng Y.T. and Cheng C.M., "Scaling, dimensional analysis, and indentation measurements." (2004) <https://doi.org/10.1016/j.mser.2004.05.001>`_
+.. [#DoernerNix_1986] `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <https://doi.org/10.1557/JMR.1986.0601>`_
+.. [#Fischer-Cripps_2004] `Fischer-Cripps A.C., "Nanoindentation" Springer 3rd Ed. (2011). <https://doi.org/10.1007/978-1-4419-9872-9>`_
+.. [#Fischer-Cripps_2006] `Fischer-Cripps A.C., "Critical review of analysis and interpretation of nanoindentation test data" (2006). <https://doi.org/10.1016/j.surfcoat.2005.03.018>`_
 .. [#Galin_1946] Galin L.A., "Spatial contact problems of the theory of elasticity for punches of circular shape in planar projection.", J. Appl. Math. Mech. (PMM) (1946), 10, pp. 425-448.
-.. [#Giannakopoulos_1994] `Giannakopoulos A.E. et al., "Analysis of Vickers indentation" (1994). <https://www.doi.org/10.1016/0020-7683(94)90225-9>`_
-.. [#Giannakopoulos_1999] `Giannakopoulos A.E. and Suresh S., "Determination of elastoplastic properties by instrumented sharp indentation." (1999). <https://www.doi.org/10.1016/S1359-6462(99)00011-1>`_
-.. [#Guillonneau_2012_1] `Guillonneau G. et al.,"Extraction of mechanical properties with second harmonic detection for dynamic nanoindentation testing." (2012). <https://www.doi.org/10.1007/s11340-011-9561-5>`_
-.. [#Guillonneau_2012_2] `Guillonneau G. et al.,"Determination of mechanical properties by nanoindentation independently of indentation depth measurement." (2012). <https://www.doi.org/10.1557/jmr.2012.261>`_
-.. [#Guillonneau_2014] `Guillonneau G. et al.,"A simple method to minimize displacement measurement uncertainties using dynamic nanoindentation testing." (2014). <https://www.doi.org/10.1016/j.triboint.2013.10.013>`_
-.. [#Hainsworth_1996] `Hainsworth S.V. et al., "Analysis of nanoindentation load-displacement loading curves." (1996). <https://www.doi.org/10.1557/JMR.1996.0250>`_
-.. [#Hay_1999] `Hay J.C. et al., "A critical examination of the fundamental relations used in the analysis of nanoindentation data." (1999). <https://www.doi.org/10.1557/JMR.1999.0306>`_
-.. [#Hochstetter_1999] `Hochstetter G. et al., "Strain-rate effects on hardness of glassy polymers in the nanoscale range. Comparison between quasi-static and continuous stiffness measurements" (1999). <https://www.doi.org/10.1080/00222349908248131>`_
-.. [#Jakes_2008] `Jakes J.E. et al., "Experimental method to account for structural compliance in nanoindentation measurements" (2008). <https://www.doi.org/10.1557/jmr.2008.0131>`_
-.. [#Joslin_1990] `Joslin D.L. and Oliver W.C., "A new method for analyzing data from continuous depth-sensing microindentation tests" (1990). <https://www.doi.org/10.1557/JMR.1990.0123>`_
-.. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <https://www.doi.org/10.1016/0020-7683(87)90116-8>`_
-.. [#Larsson_1996] `Larsson P.-L. et al., "Analysis of Berkovich indentation" (1996). <https://www.doi.org/10.1016/0020-7683(95)00033-7>`_
-.. [#Li_2002] `Li X. and Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications." (2002). <https://www.doi.org/10.1016/S1044-5803(02)00192-4>`_
-.. [#Loubet_1984] `Loubet J.L. et al., "Vickers Indentation Curves of Magnesium Oxide (MgO)." (1984). <https://www.doi.org/10.1115/1.3260865>`_
-.. [#Loubet_1986] `Loubet J.L. et al., "Vickers indentation curves of elastoplastic materials." (1986). <https://www.doi.org/10.1520/STP889-EB>`_
-.. [#Love_1939] `Love A.E.H., "Boussinesq's problem for a rigid cone." (1939). <https://www.doi.org/10.1093/qmath/os-10.1.161>`_
-.. [#Lucca_2012]  `Lucca D.A. et al., "Nanoindentation: Measuring methods and applications" (2012). <https://www.doi.org/10.1016/j.cirp.2010.05.009>`_
-.. [#Lucas_1996] `Lucas B.N. et al., "Time Dependent Deformation During Indentation Testing." (1996). <https://www.doi.org/10.1557/PROC-436-233>`_
-.. [#Malzbender_2002] `Malzbender J. and de With G., "Indentation load–displacement curve, plastic deformation, and energy." (2002). <https://www.doi.org/10.1557/JMR.2002.0070>`_
-.. [#Merle_2012] `Merle B. et al., "Experimental determination of the effective indenter shape and e-factor for nanoindentation by continuously measuring the unloading stiffness." (2012). <https://www.doi.org/10.1557/jmr.2011.245>`_
-.. [#Morash_2007] `Morash K.R. and Bahr D.F., "An energy method to analyze through thickness thin film fracture during indentation." (2007). <https://www.doi.org/10.1016/j.tsf.2006.01.043>`_
-.. [#Odegard_2005] `Odegard G.M. et al., "Characterization of viscoelastic properties of polymeric materials through nanoindentation." (2005). <https://www.doi.org/10.1007/BF02428185>`_
-.. [#OliverPharr_1992] `Oliver W.C. and Pharr G.M., "An improved technique for determining hardness and elastic modulus using load and displacement sensing indentation experiments" (1992). <https://www.doi.org/10.1557/JMR.1992.1564>`_
-.. [#OliverPharr_2004] `Oliver W.C. and Pharr G.M., "Measurement of hardness and elastic modulus by instrumented indentation: Advances in understanding and refinements to methodology" (2004). <https://www.doi.org/10.1557/jmr.2004.19.1.3>`_
-.. [#Oyen_2003] `Oyen M.L. et al., "Load–displacement behavior during sharp indentation of viscous–elastic–plastic materials" (2003). <https://www.doi.org/10.1557/JMR.2003.0020>`_
-.. [#Pharr_1992] `Pharr G.M. et al., "On the generality of the relationship among contact stiffness, contact area, and elastic modulus during indentation." (1992). <https://www.doi.org/10.1557/JMR.1992.0613>`_
-.. [#Pharr_2002] `Pharr G.M. and Bolshakov A., "Understanding nanoindentation unloading curves." (2002). <https://www.doi.org/10.1557/JMR.2002.0386>`_
-.. [#Pharr_2009] `Pharr G.M. et al., "Critical issues in making small-depth mechanical property measurements by nanoindentation with continuous stiffness measurement" (2009). <https://www.doi.org/10.1557/jmr.2009.0096>`_
-.. [#Sneddon_1948] `Sneddon I.N., "Boussinesqs problem for a rigid cone." (1948). <https://www.doi.org/10.1017/S0305004100024518>`_
+.. [#Giannakopoulos_1994] `Giannakopoulos A.E. et al., "Analysis of Vickers indentation" (1994). <https://doi.org/10.1016/0020-7683(94)90225-9>`_
+.. [#Giannakopoulos_1999] `Giannakopoulos A.E. and Suresh S., "Determination of elastoplastic properties by instrumented sharp indentation." (1999). <https://doi.org/10.1016/S1359-6462(99)00011-1>`_
+.. [#Guillonneau_2012_1] `Guillonneau G. et al.,"Extraction of mechanical properties with second harmonic detection for dynamic nanoindentation testing." (2012). <https://doi.org/10.1007/s11340-011-9561-5>`_
+.. [#Guillonneau_2012_2] `Guillonneau G. et al.,"Determination of mechanical properties by nanoindentation independently of indentation depth measurement." (2012). <https://doi.org/10.1557/jmr.2012.261>`_
+.. [#Guillonneau_2014] `Guillonneau G. et al.,"A simple method to minimize displacement measurement uncertainties using dynamic nanoindentation testing." (2014). <https://doi.org/10.1016/j.triboint.2013.10.013>`_
+.. [#Hainsworth_1996] `Hainsworth S.V. et al., "Analysis of nanoindentation load-displacement loading curves." (1996). <https://doi.org/10.1557/JMR.1996.0250>`_
+.. [#Hay_1999] `Hay J.C. et al., "A critical examination of the fundamental relations used in the analysis of nanoindentation data." (1999). <https://doi.org/10.1557/JMR.1999.0306>`_
+.. [#Hochstetter_1999] `Hochstetter G. et al., "Strain-rate effects on hardness of glassy polymers in the nanoscale range. Comparison between quasi-static and continuous stiffness measurements" (1999). <https://doi.org/10.1080/00222349908248131>`_
+.. [#Jakes_2008] `Jakes J.E. et al., "Experimental method to account for structural compliance in nanoindentation measurements" (2008). <https://doi.org/10.1557/jmr.2008.0131>`_
+.. [#Joslin_1990] `Joslin D.L. and Oliver W.C., "A new method for analyzing data from continuous depth-sensing microindentation tests" (1990). <https://doi.org/10.1557/JMR.1990.0123>`_
+.. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <https://doi.org/10.1016/0020-7683(87)90116-8>`_
+.. [#Larsson_1996] `Larsson P.-L. et al., "Analysis of Berkovich indentation" (1996). <https://doi.org/10.1016/0020-7683(95)00033-7>`_
+.. [#Li_2002] `Li X. and Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications." (2002). <https://doi.org/10.1016/S1044-5803(02)00192-4>`_
+.. [#Loubet_1984] `Loubet J.L. et al., "Vickers Indentation Curves of Magnesium Oxide (MgO)." (1984). <https://doi.org/10.1115/1.3260865>`_
+.. [#Loubet_1986] `Loubet J.L. et al., "Vickers indentation curves of elastoplastic materials." (1986). <https://doi.org/10.1520/STP889-EB>`_
+.. [#Love_1939] `Love A.E.H., "Boussinesq's problem for a rigid cone." (1939). <https://doi.org/10.1093/qmath/os-10.1.161>`_
+.. [#Lucca_2012]  `Lucca D.A. et al., "Nanoindentation: Measuring methods and applications" (2012). <https://doi.org/10.1016/j.cirp.2010.05.009>`_
+.. [#Lucas_1996] `Lucas B.N. et al., "Time Dependent Deformation During Indentation Testing." (1996). <https://doi.org/10.1557/PROC-436-233>`_
+.. [#Malzbender_2002] `Malzbender J. and de With G., "Indentation load–displacement curve, plastic deformation, and energy." (2002). <https://doi.org/10.1557/JMR.2002.0070>`_
+.. [#Merle_2012] `Merle B. et al., "Experimental determination of the effective indenter shape and e-factor for nanoindentation by continuously measuring the unloading stiffness." (2012). <https://doi.org/10.1557/jmr.2011.245>`_
+.. [#Morash_2007] `Morash K.R. and Bahr D.F., "An energy method to analyze through thickness thin film fracture during indentation." (2007). <https://doi.org/10.1016/j.tsf.2006.01.043>`_
+.. [#Odegard_2005] `Odegard G.M. et al., "Characterization of viscoelastic properties of polymeric materials through nanoindentation." (2005). <https://doi.org/10.1007/BF02428185>`_
+.. [#OliverPharr_1992] `Oliver W.C. and Pharr G.M., "An improved technique for determining hardness and elastic modulus using load and displacement sensing indentation experiments" (1992). <https://doi.org/10.1557/JMR.1992.1564>`_
+.. [#OliverPharr_2004] `Oliver W.C. and Pharr G.M., "Measurement of hardness and elastic modulus by instrumented indentation: Advances in understanding and refinements to methodology" (2004). <https://doi.org/10.1557/jmr.2004.19.1.3>`_
+.. [#Oyen_2003] `Oyen M.L. et al., "Load–displacement behavior during sharp indentation of viscous–elastic–plastic materials" (2003). <https://doi.org/10.1557/JMR.2003.0020>`_
+.. [#Pharr_1992] `Pharr G.M. et al., "On the generality of the relationship among contact stiffness, contact area, and elastic modulus during indentation." (1992). <https://doi.org/10.1557/JMR.1992.0613>`_
+.. [#Pharr_2002] `Pharr G.M. and Bolshakov A., "Understanding nanoindentation unloading curves." (2002). <https://doi.org/10.1557/JMR.2002.0386>`_
+.. [#Pharr_2009] `Pharr G.M. et al., "Critical issues in making small-depth mechanical property measurements by nanoindentation with continuous stiffness measurement" (2009). <https://doi.org/10.1557/jmr.2009.0096>`_
+.. [#Sneddon_1948] `Sneddon I.N., "Boussinesqs problem for a rigid cone." (1948). <https://doi.org/10.1017/S0305004100024518>`_
 .. [#Shorshorov_1982] Shorshorov M.K. et al., Sov. Phys. Dokl., 1982, 26.
-.. [#Strader_2006] `Strader J.H. et al., "An experimental evaluation of the constant b relating the contact stiffness to the contact area in nanoindentation." (2006). <https://www.doi.org/10.1080/14786430600567747>`_
-.. [#Troyon_2006] `Troyon M. and Lafaye S., "About the importance of introducing a correction factor in the Sneddon relationship for nanoindentation measurements" (2002). <https://www.doi.org/10.1080/14786430600606834>`_
-.. [#VanLandingham_2001] `VanLandingham M.R., "Nanoindentation of Polymers: An Overview" (2001). <https://www.doi.org/10.1002/1521-3900(200103)167:1<15::AID-MASY15>3.0.CO;2-T>`_
+.. [#Strader_2006] `Strader J.H. et al., "An experimental evaluation of the constant b relating the contact stiffness to the contact area in nanoindentation." (2006). <https://doi.org/10.1080/14786430600567747>`_
+.. [#Troyon_2006] `Troyon M. and Lafaye S., "About the importance of introducing a correction factor in the Sneddon relationship for nanoindentation measurements" (2002). <https://doi.org/10.1080/14786430600606834>`_
+.. [#VanLandingham_2001] `VanLandingham M.R., "Nanoindentation of Polymers: An Overview" (2001). <https://doi.org/10.1002/1521-3900(200103)167:1<15::AID-MASY15>3.0.CO;2-T>`_
 .. [#VanLandingham_2003] `VanLandingham M.R., "Review of Instrumented Indentation" (2003). <http://oai.dtic.mil/oai/oai?verb=getRecord&metadataPrefix=html&identifier=ADA512140>`_
-.. [#White_2005] `White C.C. et al., "Viscoelastic characterization of polymers using instrumented indentation. II. Dynamic testing" (2005). <https://www.doi.org/10.1002/polb.20455>`_
-.. [#YetnaNjock_2015] `Yetna N'jock M. et al., "A criterion to identify sinking-in and piling-up in indentation of materials." (2015). <https://www.doi.org/10.1016/j.ijmecsci.2014.11.008>`_
-.. [#Zong_2017] `Zong W. J. et al., "Radius and angle determination of diamond Berkovich indenter." (2017). <https://www.doi.org/10.1016/j.measurement.2017.03.035>`_
+.. [#White_2005] `White C.C. et al., "Viscoelastic characterization of polymers using instrumented indentation. II. Dynamic testing" (2005). <https://doi.org/10.1002/polb.20455>`_
+.. [#YetnaNjock_2015] `Yetna N'jock M. et al., "A criterion to identify sinking-in and piling-up in indentation of materials." (2015). <https://doi.org/10.1016/j.ijmecsci.2014.11.008>`_
+.. [#Zong_2017] `Zong W. J. et al., "Radius and angle determination of diamond Berkovich indenter." (2017). <https://doi.org/10.1016/j.measurement.2017.03.035>`_
