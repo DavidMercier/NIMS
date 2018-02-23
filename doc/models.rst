@@ -51,16 +51,16 @@ The geometric properties of conical and geometrically similar (Berkovich, Vicker
 
 .. csv-table:: **Geometric properties of conical indenters.**
    :name: geom_prop_indenters
-   :header: "Indenter", "Berkovich", "Vickers", "Cube-corner", "Conical"
+   :header: "Indenter", "Berkovich", "Vickers", "Cube-corner", "Knoop", "Conical"
    :widths: 20,20,20,20,20
 
-   "Shape",                    "3-sided pyramid",   "4-sided pyramid",   "3-sided pyramid",   "Conical (angle :math:`\psi`)"
-   "Semi-angle from the apex", "65.3°",             "68°",               "35.2644°",          "--"
-   "Equivalent cone angle",    "70.32°",            "70.2996°",          "42.28°",            ":math:`\psi`"  
-   "Projected Area",           ":math:`24.56h^2`",  ":math:`24.504h^2`", ":math:`2.5981h^2`", ":math:`\pi{a_\text{c}}^2`"
-   "Volume-depth relation",    ":math:`8.1873h^3`", ":math:`8.1681h^3`", ":math:`0.8657h^3`", "--"
-   "Projected area/face area", ":math:`0.908`",     ":math:`0.927`",     ":math:`0.5774`",    "--"
-   "Contact radius",           "--",                "--",                "--",                ":math:`htan\psi`"
+   "Shape",                    "3-sided pyramid",            "4-sided pyramid",            "3-sided pyramid",            "4-sided pyramid",            "Conical (angle :math:`\psi`)"
+   "Semi-angle from the apex", "65.3°",                      "68°",                        "35.2644°",                   "86.25° / 65°",               "--"
+   "Equivalent cone angle",    "70.32°",                     "70.2996°",                   "42.28°",                     "77.64°",                     ":math:`\psi`"  
+   "Projected Area",           ":math:`24.56h_\text{c}^2`",  ":math:`24.504h_\text{c}^2`", ":math:`2.5981h_\text{c}^2`", ":math:`108.21h_\text{c}^2`", ":math:`\pi{a_\text{c}}^2`"
+   "Volume-depth relation",    ":math:`8.1873h^3`",          ":math:`8.1681h^3`",          ":math:`0.8657h^3`",          "--",                         "--"
+   "Projected area/face area", ":math:`0.908`",              ":math:`0.927`",              ":math:`0.5774`",             "--",                         "--"
+   "Contact radius",           "--",                         "--",                         "--",                         "--",                         ":math:`htan\psi`"
 
 .. figure:: ./_pictures/indenters.png
    :scale: 60 %
@@ -68,7 +68,9 @@ The geometric properties of conical and geometrically similar (Berkovich, Vicker
    
    *a) Conical indenter (45°) and b) Berkovich indenter.*
 
-These indenters have self-similar geometries which implies a constant strain
+With :math:`h_\text{c}` the contact depth.
+
+These indenters have self-similar geometries which implies a constant strain during indentation
 and similarity of the stress fields.
 
 .. note::
