@@ -52,7 +52,7 @@ The geometric properties of conical and geometrically similar (Berkovich, Vicker
 .. csv-table:: **Geometric properties of conical indenters.**
    :name: geom_prop_indenters
    :header: "Indenter", "Berkovich", "Vickers", "Cube-corner", "Knoop", "Conical"
-   :widths: 20,20,20,20,20
+   :widths: 17,17,17,17,17,17
 
    "Shape",                    "3-sided pyramid",            "4-sided pyramid",            "3-sided pyramid",            "4-sided pyramid",            "Conical (angle :math:`\psi`)"
    "Semi-angle from the apex", "65.3°",                      "68°",                        "35.2644°",                   "86.25° / 65°",               "--"
