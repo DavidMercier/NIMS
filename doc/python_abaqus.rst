@@ -254,3 +254,4 @@ References
 * `Du Y. et al., "A novel tri-layer nanoindentation method to measure the mechanical properties of a porous brittle ultra-low-k dielectric thin film" (2017). <https://doi.org/10.1016/j.eml.2017.02.005>`_
 * `Lofaj F. and Németh D., "The effects of tip sharpness and coating thickness on nanoindentation measurements in hard coatings on softer substrates by FEM" (2017). <https://doi.org/10.1016/j.tsf.2017.09.051>`_
 * `Chakroun N. et al., "A new inverse analysis method for identifying the elastic properties of thin films considering thickness and substrate effects simultaneously" (2017). <https://doi.org/10.1142/S175882511750096X>`_
+* `Chakroun N. et al., "Measuring elastic properties of the constituent multilayer coatings for different modulation periods" (2018). <https://doi.org/10.1142/S1758825118500461>`_
