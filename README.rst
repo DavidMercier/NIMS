@@ -41,9 +41,13 @@ How to cite NIMS in your papers ?
 Reference papers
 ------------------
 
-* `Mercier D. et al., "Young's modulus measurement of a thin film from experimental nanoindentation performed on multilayer systems" (2010). <http://dx.doi.org/10.1051/mattech/2011029>`_
+* `Mercier D. et al., "Young's modulus measurement of a thin film from experimental nanoindentation performed on multilayer systems" (2010). <https://doi.org/10.1051/mattech/2011029>`_
 
-* `Mercier D., "Behaviour laws of materials used in electrical contacts for « flip chip » technologies" (2013). <http://www.theses.fr/2013GRENI083>`_
+* `Mercier D., "Behaviour laws of materials used in electrical contacts for « flip chip » technologies.", PhD thesis (2013) <https://tel.archives-ouvertes.fr/tel-01127940>`_
+
+* `Mercier D., "Behaviour laws of materials used in electrical contacts for « flip chip » technologies." PhD defense (2013). <https://doi.org/10.5281/zenodo.11753>`_
+
+* `Mercier D. et al., "Investigation of the fracture of very thin amorphous alumina film during spherical nanoindentation" (2017). <https://doi.org/10.1016/j.tsf.2017.07.040>`_
 
 Acknowledgements
 ----------------
