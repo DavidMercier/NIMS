@@ -3,32 +3,16 @@ function gui_handle = demo
 %% Function to run the Matlab GUI for the calculations of elastic-plastic properties
 % of a multilayer system from indentation experiments with a conical indenter
 
-%% Check License of Optimization Toolbox
-license_msg = ['Sorry, no license found for the Matlab ', ...
-    'Optimization Toolbox™ !'];
-if  license('checkout', 'Optimization_Toolbox') == 0
-    warning(license_msg);
-    licenceFlag_1 = 0;
-else
-    licenceFlag_1 = 1;
-end
-
-%% Check License of Image Toolbox
-license_msg = ['Sorry, no license found for the Matlab ', ...
-    'Image Processing Toolbox™ !'];
-if  license('checkout', 'Image_Toolbox') == 0
-    warning(license_msg);
-    licenceFlag_2 = 0;
-else
-    licenceFlag_2 = 1;
-end
-
 %% Define gui structure variable
 gui = struct();
 gui.config = struct();
 gui.config.indenter = struct();
 gui.config.data = struct();
 gui.config.numerics = struct();
+
+%% Check Matlab version and year
+gui.config.matlab_version = version('-release');
+gui.config.matlab_year = strread(gui.config.matlab_version);
 
 %% Paths Management
 % Don't move before definition of 'gui' as a struct()
@@ -50,8 +34,26 @@ gui.config.name_toolbox = 'NIMS';
 gui.config.version_toolbox = '3.2';
 gui.config.url_help = 'http://nims.readthedocs.org/en/latest/';
 gui.config.pdf_help = 'https://media.readthedocs.org/pdf/nims/latest/nims.pdf';
-gui.config.licenceOpt_Flag = licenceFlag_1;
-gui.config.licenceIma_Flag = licenceFlag_2;
+
+%% Check License of Optimization Toolbox
+license_msg = ['Sorry, no license found for the Matlab ', ...
+    'Optimization Toolbox™ !'];
+if  license('checkout', 'Optimization_Toolbox') == 0
+    warning(license_msg);
+    gui.config.licenceOpt_Flag = 0;
+else
+    gui.config.licenceOpt_Flag = 1;
+end
+
+%% Check License of Image Toolbox
+license_msg = ['Sorry, no license found for the Matlab ', ...
+    'Image Processing Toolbox™ !'];
+if  license('checkout', 'Image_Toolbox') == 0
+    warning(license_msg);
+    gui.config.licenceIma_Flag = 0;
+else
+    gui.config.licenceIma_Flag = 1;
+end
 
 %% Main Window Coordinates Configuration
 scrsize = get(0, 'ScreenSize'); % Get screen size
