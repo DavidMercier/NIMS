@@ -32,6 +32,7 @@ Agilent - MTS example files
 * Both .txt or .xls files are accepted.
 * 3 columns (Displacement / Load / Stiffness)
 * 6 columns (Disp. / SD (Disp.) / Load / SD (Load.) / Stiff. / SD (Stiff.)) (SD for Standard Deviation)
+* It is possible to get directly these type of average sheet in your .xls file, using the 'Analyst' Excel macro provided by MTS.
 
 
 * `MTS_0film_Si_CSM-2nm_noSD.txt <https://github.com/DavidMercier/NIMS/blob/master/data_indentation/MTS_0film_Si_CSM-2nm_noSD.txt>`_
