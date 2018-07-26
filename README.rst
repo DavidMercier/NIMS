@@ -27,9 +27,8 @@ This Matlab toolbox has been developed to :
 
 Author
 ------
-Written by D. Mercier [1] (david.mercier@crmgroup.be / david9684@gmail.com).
+Written by D. Mercier (david9684@gmail.com).
 
-[1] CRM Group, 4000 Liège, Belgium (`www.crmgroup.be <www.crmgroup.be>`_)
 
 How to cite NIMS in your papers ?
 ------------------------------------
