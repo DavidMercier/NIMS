@@ -693,7 +693,7 @@ Several authors developed composite hardness model to calculate hardness of a co
 
 - Chicot and Lesage (1995) [#ChicotLesage_1995]_
 
-- He et al. (1996) ([#He_1996]_
+- He et al. (1996) [#He_1996]_
 
 - Korsunsky et al. (1996) [#Korsunsky_1998]_
 
