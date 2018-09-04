@@ -653,8 +653,6 @@ and :math:`C` a constant equal to :math:`0.5` for hard coatings on very soft sub
 (:math:`6.3 < \frac{H_\text{f}}{H_\text{s}} < 12.9`) or to :math:`1` when the coatings and
 substrate hardnesses are more similar (:math:`1.8 < \frac{H_\text{f}}{H_\text{s}} < 2.3`).
 
-[#Iost_1996]_
-
 Burnett and Rickerby (1984)
 ---------------------------
 
@@ -666,6 +664,8 @@ mixtures” similar to Jönsson's relation, considering the volumes of the plast
             :label: burnett_hardness
 
 With :math:`V = V_\text{f} + V_\text{s}`.
+
+Later, Iost and Bigot proposed to compare the predictions obtained using Jönsson-Hogmark and Burnett-Rickerby models and to understand why it is often reported that the Jönsson and Hogmark model does not hold for indentation prints less than the coating thickness. Methods were reviewed for calculating the composite hardness, and it was found that the simplifications made by the authors are not always valid. By taking in account all the terms of the equations of Jönsson and Hogmark, it was found that the relation between the hardness and the reciprocal length of the indentation print is not linear and depends on the ratio between the film thickness and the indentation print, as well as the variation of the hardness of the substrate and the film with the applied load. Comparison of the Burnett and Rickerby experimental data with the modified model led to very good agreement [#Iost_1996]_.
 
 Bhattacharya and Nix (1988)
 ---------------------------
@@ -684,19 +684,20 @@ In the original paper, :math:`\alpha` is equal to :math:`\frac{H_\text{f}/H_\tex
 
 Find here the |matlab| functions for the  model of Bhattacharya and Nix : `model_bhattacharya.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/plastic_models/model_bhattacharya.m>`_.
 
-Chicot and Lesage (1995)
+“Volume law of mixtures”
 ---------------------------
 
-“volume law of mixtures”
+Several authors developed composite hardness model to calculate hardness of a coating using a volume law of mixture:
 
-[#ChicotLesage_1995]_
+- Sargent P.M. (1986) [#Sargent_1986]_
 
-[#He_1996]_
+- Chicot and Lesage (1995) [#ChicotLesage_1995]_
 
-[#Korsunsky_1998]_
+- He et al. (1996) ([#He_1996]_
 
-[#Fernandes_2000]_
+- Korsunsky et al. (1996) [#Korsunsky_1998]_
 
+- Fernandes et al. (2000) [#Fernandes_2000]_
 
 Saha and Nix (2002)
 ---------------------------
@@ -722,14 +723,12 @@ This model was reused later by Han et al. [#Han_2005]_ and [#Han_2006]_.
 Chen (2004)
 ---------------------------
 
-[#Chen_2004]_
-
+In this paper, Chen et al. proposed a modified volume fraction (CZ) model, in which a conical deformation volume shape is assumed, but the conical tip angle is undetermined. The conical tip angle contains the influences of pile-up or sink-in since the total depth is used in the modified CZ model. Due to the introduction of the conical angle, the modified CZ model could describe both a soft film on a hard substrate system and a hard film on a soft substrate system [#Chen_2004]_.
 
 Iost (2005)
 ---------------------------
 
-[#Iost_2005]_
-
+More recently, Iost et al. compared 8 different models in term of robustness, taking into account the indentation size effect on film and substrate proposed in the literature to estimate the hardness of coatings from indentations where both coating and substrate interact [#Iost_2005]_.
 
 Plastic properties of a thin film on a multilayer system
 ##########################################################
@@ -750,7 +749,7 @@ With :math:`N` the number of layers deposited on the substrate, :math:`A_\text{f
 Rahmoun et al. (2009)
 ---------------------------
 
-[#Rahmoun_2009]_
+The paper written by Ramhoun et al. is about the description of a multilayer model, developed to estimate coating hardness evolution in case of a multilayer specimen [#Rahmoun_2009]_. After some simplifcation, the following equations are established to take into account the hardness variation to the applied load and the crumbling of the coating. This model, based on the Jönsson and Hogmark's area law of mixtures, makes it possible to calculate the minimum in hardness value which depends on the hardness of the different phases, the thickness of the coatings and the compaction of the layers under the load transmitted by the Vickers indenter. From this model (which has some features in common with the Kao and Byrne approach [#Kao_1981]_), it can be shown that the substrate begins to influence the coating hardness at a critical penetration depth equal to the sum of interlayer and top coating thickness.
 
     .. math:: H = \frac{A_\text{f}}{A}H_\text{f} + \frac{A_\text{i}}{A}H_\text{i} + \frac{A_\text{s}}{A}H_\text{s}
             :label: rahmoun_model
@@ -764,11 +763,12 @@ Rahmoun et al. (2009)
     .. math:: \frac{A_\text{s}}{A} = 1 - \frac{2(t_\text{f}+t_\text{i})}{h} + \frac{(t_\text{f}+t_\text{i})^2}{h^2}
             :label: rahmoun_model_area_substrate
 
+With :math:`t_\text{f}` the coating thickness, :math:`t_\text{i}` the interlayer thickness, :math:`h` the indentation depth, :math:`A` the total contact area, :math:`A_\text{f}`, :math:`A_\text{i}` and :math:`A_\text{s}` respectively the coating, the interlayer and substrate area transmitting the mean contact pressure, and :math:`H_\text{f}`, :math:`H_\text{i}` and :math:`H\text{s}` respectively the coating, the interlayer and substrate hardness.
+
 Arrazat et al. (2010)
 ---------------------------
 
-[#Arrazat_2010]_
-
+For complex multilayer samples, Arrazat et al. proposed a model based on the volume law of mixture proposed by Sargent et al. [#Sargent_1986]_. In principle, the composite hardness is equal to the sum of intrinsic hardness of all materials plastically deformed, weighted by plastically deformed volume in the different layers [#Arrazat_2010]_.
 
 References
 #############
@@ -785,7 +785,7 @@ References
 .. [#Burnett2_1987] `Burnett P.J. and Rickerby D.S., "The mechanical properties of wear-resistant coatings: II: Experimental studies and interpretation of hardness." (1987). <https://doi.org/10.1016/0040-6090(87)90120-9>`_
 .. [#ChenVlassak2001] `Chen X. and Vlassak J.J., "Numerical study on the measurement of thin film mechanical properties by means of nanoindentation." (2001). <https://doi.org/10.1557/JMR.2001.0408>`_
 .. [#Chen_2004] `Chen S. et al., "Nanoindentation of thin-film-substrate system: Determination of film hardness and Young's modulus" (2004). <https://doi.org/10.1007/BF02489376>`_
-.. [#ChicotLesage_1995] `Chicot D. and Lesage J., "Absolute hardness of films and coatings" (1995). <https://doi.org/10.1016/j.mechmat.2007.07.002>`_
+.. [#ChicotLesage_1995] `Chicot D. and Lesage J., "Absolute hardness of films and coatings" (1995). <https://doi.org/10.1016/0040-6090(94)06239-H>`_
 .. [#DoernerNix_1986] `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <https://doi.org/10.1557/JMR.1986.0601>`_
 .. [#Engel1992] `Engel P.A. et al., "Interpretation of superficial hardness for multilayer platings*" (1992). <https://doi.org/10.1016/0040-6090(92)90115-R>`_
 .. [#Fernandes_2000] `Fernandes J.V. et al., "A model for coated surface hardness" (2000). <https://doi.org/10.1016/S0257-8972(00)00839-2>`_
@@ -821,6 +821,7 @@ References
 .. [#Rar_2002] `Rar A. et al., "Assessment of new relation for the elastic compliance of a film–substrate system." (2002). <https://doi.org/10.1557/PROC-695-L10.10.1>`_ 
 .. [#Rother_1996] `Rother B. and Jehn H.A., "Effects of the substrate on the determination of thin film mechanical properties by coating and interface characterization by depth-sensing indentation experiments" (1996). <https://doi.org/10.1016/0257-8972(96)02859-9>`_
 .. [#Saha_2002] `Saha R. and Nix W.D., "Effects of the substrate on the determination of thin film mechanical properties by nanoindentation" (2002). <https://doi.org/10.1016/S1359-6454(01)00328-7>`_
+.. [#Sargent_1986] `Sargent P.M., "Use of the Indentation Size Effect on Microhardness for Materials Characterization" (2002). <https://doi.org/10.1520/STP32956S>`_
 .. [#Simunkova_2003] `Šimůnková Š., "Mechanical properties of thin film–substrate systems" (2003). <https://doi.org/10.1016/S0924-0136(02)00231-5>`_
 .. [#VanVliet_2001] `Van Vliet K.J. and Gouldstone A., "Mechanical Properties of Thin Films Quantified Via Instrumented Indentation" (2001). <https://doi.org/10.1179/026708401101517737>`_
 .. [#Veprek_2016]  `Veprek-Heijman M.G.J. and Veprek S., "The deformation of the substrate during indentation into superhard coatings: Bückle's rule revised" (2016). <https://doi.org/10.1016/j.surfcoat.2015.10.064>`_
