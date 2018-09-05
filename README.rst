@@ -1,7 +1,7 @@
 NIMS
 =====
 This Matlab toolbox has been developed to plot and to analyze (nano)indentation data (with conical indenters).
-Please, have a look to the full documentation here: http://nims.readthedocs.org/en/latest/
+Please, have a look at the full online documentation here: http://nims.readthedocs.org/en/latest/
 
 To get started with the NIMS toolbox, clone the repository, then run Matlab, and cd into the folder containing this README file.
 
