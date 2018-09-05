@@ -825,7 +825,7 @@ References
 .. [#Saha_2002] `Saha R. and Nix W.D., "Effects of the substrate on the determination of thin film mechanical properties by nanoindentation" (2002). <https://doi.org/10.1016/S1359-6454(01)00328-7>`_
 .. [#Sargent_1986] `Sargent P.M., "Use of the Indentation Size Effect on Microhardness for Materials Characterization" (2002). <https://doi.org/10.1520/STP32956S>`_
 .. [#Simunkova_2003] `Šimůnková Š., "Mechanical properties of thin film–substrate systems" (2003). <https://doi.org/10.1016/S0924-0136(02)00231-5>`_
-.. [#STsui_2003] `Tsui T.Y. et al., "A method for making substrate-independent hardness measurements of soft metallic films on hard substrates by nanoindentation" (2003). <https://doi.org/10.1557/JMR.2003.0190>`_
+.. [#Tsui_2003] `Tsui T.Y. et al., "A method for making substrate-independent hardness measurements of soft metallic films on hard substrates by nanoindentation" (2003). <https://doi.org/10.1557/JMR.2003.0190>`_
 .. [#VanVliet_2001] `Van Vliet K.J. and Gouldstone A., "Mechanical Properties of Thin Films Quantified Via Instrumented Indentation" (2001). <https://doi.org/10.1179/026708401101517737>`_
 .. [#Veprek_2016]  `Veprek-Heijman M.G.J. and Veprek S., "The deformation of the substrate during indentation into superhard coatings: Bückle's rule revised" (2016). <https://doi.org/10.1016/j.surfcoat.2015.10.064>`_
 .. [#Xu_2006] `Xu H. and Pharr G.M., "An improved relation for the effective elastic compliance of a film/substrate system during indentation by a flat cylindrical punch." (2006). <https://doi.org/10.1016/j.scriptamat.2006.04.037>`_
