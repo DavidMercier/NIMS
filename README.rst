@@ -27,7 +27,11 @@ This Matlab toolbox has been developed to :
 
 Author
 ------
-Written by D. Mercier (david9684@gmail.com).
+:Author: `David Mercier <david9684@gmail.com>`_ [1,2]
+
+[1] `CEA, 17 Avenue des Martyrs, 38000 Grenoble, France <http://www.cea.fr/Pages/le-cea/les-centres-cea/grenoble.aspx>`_
+
+[2] `CRM Group, Avenue du Bois Saint-Jean 21, B27 – Quartier Polytech 4, 4000 Liège, Belgium <http://www.crmgroup.be/>`_
 
 
 How to cite NIMS in your papers ?
