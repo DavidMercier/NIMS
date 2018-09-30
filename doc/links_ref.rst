@@ -4,10 +4,8 @@
 .. include:: includes.rst
 
 Links
-######
-* `Guidata on Matlab website. <http://www.mathworks.fr/fr/help/matlab/ref/guidata.html>`_   
+###### 
 * `Matlab GUI. <http://www.mathworks.com/discovery/matlab-gui.html>`_
-* `Coding GUI behavior. <http://www.mathworks.fr/fr/help/matlab/code-to-run-the-gui.html?searchHighlight=gui>`_
 * `Visit the YAML website for more informations. <http://www.yaml.org/>`_
 * `Visit the YAML code for Matlab. <http://code.google.com/p/yamlmatlab/>`_
 
@@ -190,12 +188,11 @@ Softwares
 * `IndentAnalyser by ASMEC <http://www.asmec.de/products/analysis-software/indentanalyser/what-is-indentanalyser.html>`_
 * `Elastica by ASMEC <http://www.asmec.de/analysis-software/elastica/what-can-i-do-with-elastica.html>`_
 * `Softwares from SIOMEC <http://www.siomec.de/en/004/Software>`_
-* `Softwares from Keysight <http://www.keysight.com/de/pc-1678717/nanoindenter-software?nid=-33997.0&cc=DE&lc=ger>`_
-* `Piuma dataviewer <http://optics11.com/news/55-optics11-launches-piuma-nanoindentation-dataviewer>`_
+* `Piuma dataviewer from Optics 11 <https://optics11.com/products/software/>`_
 * `Punias <http://punias.voila.net/punias0.html?q=pages/starting_page>`_
 * `Gwyddion <http://gwyddion.net/>`_
 * `Softwares from Nanovea <http://nanovea.com/nano-indentation-tester>`_
-* `Virtual nanoindenter <http://www.ibisonline.com.au/Virtual_Nanoindenter.html>`_
+* `Virtual nanoindenter <http://fclabs.com.au/#xl_VIRTUAL:32NANOINDENTER>`_
 * `Nanoindentation from Kibech S. et al. <https://nanohub.org/tools/nanoindentation>`_
 
 Reviews / Overviews of nanoindentation technique

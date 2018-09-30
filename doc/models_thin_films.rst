@@ -563,7 +563,7 @@ values of Young's modulus of each layer are extracted from the contact stiffness
    *Experimental process to apply for elastic multilayer model.*
 
 Find here the |matlab| function for the Mercier et al. model :
-`model_multilayer_elastic.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_multilayer_elastic.m>`_.
+`model_multilayer_elastic.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/model_multilayer_elastic.m>`_.
 
 Puchi-Cabrera et al. (2015) 
 -----------------------------
