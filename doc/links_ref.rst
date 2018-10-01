@@ -9,6 +9,12 @@ Links
 * `Visit the YAML website for more informations. <http://www.yaml.org/>`_
 * `Visit the YAML code for Matlab. <http://code.google.com/p/yamlmatlab/>`_
 
+Other interesting Matlab toolboxes about indentation
+##############################################################
+* `STABiX <https://github.com/stabix/stabix>`_ / `STABiX Documentation <https://stabix.readthedocs.io/en/latest/>`_
+* `PopIn <https://github.com/DavidMercier/PopIn>`_ / `PopIn Documentation <https://popin.readthedocs.io/en/latest/>`_
+* `TriDiMap <https://github.com/DavidMercier/TriDiMap>`_ / `TriDiMap Documentation <https://tridimap.readthedocs.io/en/latest/index.html>`_
+
 Links about (nano)indentation
 ###############################
 
