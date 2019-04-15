@@ -255,3 +255,4 @@ References
 * `Lofaj F. and Németh D., "The effects of tip sharpness and coating thickness on nanoindentation measurements in hard coatings on softer substrates by FEM" (2017). <https://doi.org/10.1016/j.tsf.2017.09.051>`_
 * `Chakroun N. et al., "A new inverse analysis method for identifying the elastic properties of thin films considering thickness and substrate effects simultaneously" (2017). <https://doi.org/10.1142/S175882511750096X>`_
 * `Chakroun N. et al., "Measuring elastic properties of the constituent multilayer coatings for different modulation periods" (2018). <https://doi.org/10.1142/S1758825118500461>`_
+* `Pöhl F., "Determination of unique plastic properties from sharp indentation" (2019). <https://doi.org/10.1016/j.ijsolstr.2019.04.008>`_
