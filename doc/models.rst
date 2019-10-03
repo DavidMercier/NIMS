@@ -596,7 +596,7 @@ is complementary to traditional macroscale DMA and ThermoMechanical Analysis (TM
 
 If dynamic nanoindentation is performed, a sinusoidal input is applied and the output signal is monitored.
 But, in case of a linear viscoelastic material, the output signal, which is still sinusoidal, can lag the input signal,
-and it is convenient to express the overall constitutive behavior in terms of the complex (shear) modulus (:math:`E^{*}` in :math:`\text{GPa} = \text{N/m}^2`)) given by:
+and it is convenient to express the overall constitutive behavior in terms of the complex (shear) modulus (:math:`E^{*}` in :math:`\text{GPa} = \text{N/m}^2`) given by:
 
     .. math:: E^{*} = \frac{{\tau}_A}{{\gamma}_A} = E^{'*} + iE^{''*}
             :label: loss_and_storage_modulus
@@ -614,15 +614,15 @@ Thus, the reduced loss modulus :math:`E^{''*}` is the out-of-phase component and
 
 with :math:`C\omega` the contact damping, given by :eq:`CSM_contact_damping`.
 
-It is convenient to calculate the loss tangent (:math:`tan {\delta}`) also called the loss factor (:math:`\eta`) or phase angle (dimensionless), which is defined by:
+It is convenient to calculate the loss tangent (:math:`tan({\delta})`) also called the loss factor (:math:`\eta`) or phase angle (dimensionless), which is defined by:
 
-    .. math:: tan {\delta} = \eta = \frac{E^{'*}}{E^{''*}} = \frac{C\omega}{S}
+    .. math:: tan({\delta}) = \eta = \frac{E^{'*}}{E^{''*}} = \frac{C\omega}{S}
             :label: loss_tangent
 
 with :math:`\delta` the phase-shift angle.
 
 .. figure:: ./_pictures/complexModulus.png
-   :scale: 35 %
+   :scale: 60 %
    :align: center
    
    *Vector diagram illustrating the relationship between complex shear modulus,
