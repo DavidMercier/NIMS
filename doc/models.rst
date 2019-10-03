@@ -262,7 +262,7 @@ and Vickers indenter :eq:`Giannakopoulos_Vickers` [#Giannakopoulos_1994]_, by nu
 With :math:`\nu` the Poisson's ratio and :math:`E` the Young's modulus of the indented material.
 
 Finally, it is first important to cite the work of Malzbender et al.,
-who developped the relationship between the load and the indentation depth
+who developed the relationship between the load and the indentation depth
 for elastoplastic materials, based on the knowledge of the Young's modulus
 and the hardness values of the material [#Malzbender_2002]_.
 Then, It is worth to mention the model of Oyen et al.,
@@ -596,11 +596,12 @@ is complementary to traditional macroscale DMA and ThermoMechanical Analysis (TM
 
 If dynamic nanoindentation is performed, a sinusoidal input is applied and the output signal is monitored.
 But, in case of a linear viscoelastic material, the output signal, which is still sinusoidal, can lag the input signal,
-and it is convenient to express the overall constitutive behavior in terms of the complex modulus given by:
+and it is convenient to express the overall constitutive behavior in terms of the complex (shear) modulus (:math:`E^{*}` in :math:`\text{GPa} = \text{N/m}^2`)) given by:
 
-    .. math:: E^{*} = E^{'*} + iE^{''*}
+    .. math:: E^{*} = \frac{{\tau}_A}{{\gamma}_A} = E^{'*} + iE^{''*}
             :label: loss_and_storage_modulus
 
+with :math:`{\tau}_A` and :math:`{\gamma}_A`, respectively the shear-stress amplitude (in :math:`\text{GPa} = \text{N/m}^2`) and strain amplitude (dimensionless),
 with :math:`E^{'*}` the reduced storage modulus and :math:`E^{''*}` the reduced loss modulus (both in :math:`\text{GPa} = \text{N/m}^2`),
 and with :math:`i^{2} = -1`.
 The storage modulus is in phase with the deformation and related to the elastic behavior.
@@ -613,11 +614,22 @@ Thus, the reduced loss modulus :math:`E^{''*}` is the out-of-phase component and
 
 with :math:`C\omega` the contact damping, given by :eq:`CSM_contact_damping`.
 
-It is convinient to calculate the loss tangent (:math:`tan{\delta}`) also called the loss factor (:math:`\eta`) or phase angle, which is defined by:
+It is convenient to calculate the loss tangent (:math:`tan {\delta}`) also called the loss factor (:math:`\eta`) or phase angle (dimensionless), which is defined by:
 
-    .. math:: tan{\delta} = \eta = \frac{E^{'*}}{E^{''*}} = \frac{C\omega}{S}
+    .. math:: tan {\delta} = \eta = \frac{E^{'*}}{E^{''*}} = \frac{C\omega}{S}
             :label: loss_tangent
 
+with :math:`\delta` the phase-shift angle.
+
+.. figure:: ./_pictures/complexModulus.png
+   :scale: 35 %
+   :align: center
+   
+   *Vector diagram illustrating the relationship between complex shear modulus,
+   storage modulus and loss modulus using the phase-shift angle.
+   The elastic portion of the viscoelastic behavior is presented
+   on the x-axis and the viscous portion on the y-axis.*
+   
 Find here the |matlab| function to calculate the loss modulus:
 `loss_modulus.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/visco_elastic_models/loss_modulus.m>`_.
 
