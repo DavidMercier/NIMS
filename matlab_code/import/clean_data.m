@@ -60,42 +60,14 @@ else
     end
     
     if ~gui.flag.wrong_inputs
-        
-%         % Remove data for negative displacement
-%         h_set_min_0 = (gui.data.h_init_f > 0);
-%         
-%         for ii = 1:length(h_set_min_0)
-%             [row, col] = find(h_set_min_0 >= 1);
-%         end
-%         
-%         % Preallocation
-%         h_int0       = NaN(max(col), 1);
-%         delta_h_int0 = NaN(max(col), 1);
-%         P_int0       = NaN(max(col), 1);
-%         delta_P_int0 = NaN(max(col), 1);
-%         S_int0       = NaN(max(col), 1);
-%         delta_S_int0 = NaN(max(col), 1);
-%         
-%         for ii = row(1):(max(row))
-%             h_int0(ii-row(1)+1)       = gui.data.h_init_f(ii);
-%             delta_h_int0(ii-row(1)+1) = gui.data.delta_h_init_f(ii);
-%             
-%             P_int0(ii-row(1)+1)       = gui.data.P_init_f(ii);
-%             delta_P_int0(ii-row(1)+1) = gui.data.delta_P_init_f(ii);
-%             
-%             S_int0(ii-row(1)+1)       = gui.data.S_init_f(ii);
-%             delta_S_int0(ii-row(1)+1) = gui.data.delta_S_init_f(ii);
-%         end
-%         
-%         h_int0 = h_int0.';
-%         delta_h_int0 = delta_h_int0.';
-%         P_int0 = P_int0.';
-%         delta_P_int0 = delta_P_int0.';
-%         S_int0 = S_int0.';
-%         delta_S_int0 = delta_S_int0.';
-        
-        % Remove data below a minimum displacement
+        %Remove data below a minimum displacement
         h_set_min = (gui.data.h_init_f > (gui.data.min_depth*gui.data.dispFact));
+        gui.data.h_init_f(h_set_min==0) = 0;
+        gui.data.delta_h_init_f(h_set_min==0) = 0;
+        gui.data.P_init_f(h_set_min==0) = 0;
+        gui.data.delta_P_init_f(h_set_min==0) = 0;
+        gui.data.S_init_f(h_set_min==0) = 0;
+        gui.data.delta_S_init_f(h_set_min==0) = 0;
         
         for ii = 1:length(h_set_min)
             [row, col] = find(h_set_min >= 1);
@@ -164,9 +136,13 @@ else
                 gui.data.S_final(ii) = ((1/S_int(ii))-frameComp)^-1;
                 gui.data.delta_S_final(ii) = delta_S_int(ii);
             else
-                gui.flag.warnText = ...
-                    ('Wrong input for the frame compliance !');
-                gui.flag.wrong_inputs = 1;
+                gui.data.h_final(ii) = 0;
+                gui.data.delta_h_final(ii) = 0;
+                gui.data.P_final(ii) = 0;
+                gui.data.delta_P_final(ii) = 0;
+                gui.data.S_final(ii) = 0;
+                gui.data.delta_S_final(ii) = 0;
+                disp('Wrong input for the frame compliance or negative load / displacement values!');
             end
             
             if ~gui.flag.wrong_inputs
