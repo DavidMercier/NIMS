@@ -294,6 +294,16 @@ Thus, it is meaningful to perform indentation tests with a constant indentation 
 Indentation contact topography
 -------------------------------
 
+Indentation contact area is not usually estimated by experiments, 
+given the fact that many possible errors can be induced during the post-mortem topography measurement (small size of residual indent, elastic or plastic recovery...), 
+by atomic force microscopy (AFM) or scanning electron microscopy (SEM) for example.
+To extract contact area from AFM or SEM measurements, it is advised to use softwares with dedicated tools (e.g.: http://gwyddion.net/) [#Mercier_2018]_.
+
+The best should be to estimate the contact area during the indentation test, 
+by optical observation through a transparent indenter [#Feng_2007]_ or a microscope in situ indentation test [#Guillonneau_2019]_.
+
+For those reasons, contact area is most of the time estimated using contact depth evolution, given a geometrical relationship.
+
 The indentation total depth is rarely equal to the indentation contact depth.
 Two kind of topography can occur:
 
@@ -794,6 +804,7 @@ References
 .. [#ChengCheng_1998] `Cheng Y.T. and Cheng C.M. ,"Relationships between hardness, elastic modulus, and the work of indentation." (1998) <https://doi.org/10.1063/1.121873>`_
 .. [#Cheng_2004] `Cheng Y.T. and Cheng C.M., "Scaling, dimensional analysis, and indentation measurements." (2004) <https://doi.org/10.1016/j.mser.2004.05.001>`_
 .. [#DoernerNix_1986] `Doerner M.F. and Nix W.D., "A method for interpreting the data from depth-sensing indentation instruments" (1986). <https://doi.org/10.1557/JMR.1986.0601>`_
+.. [#Feng_2007] `Feng C. and Kang B.S., "Young's Modulus Measurement Using a Simplified Transparent Indenter Measurement Technique" (2007). <https://doi.org/10.1007/s11340-007-9074-4>`_
 .. [#Fischer-Cripps_2004] `Fischer-Cripps A.C., "Nanoindentation" Springer 3rd Ed. (2011). <https://doi.org/10.1007/978-1-4419-9872-9>`_
 .. [#Fischer-Cripps_2006] `Fischer-Cripps A.C., "Critical review of analysis and interpretation of nanoindentation test data" (2006). <https://doi.org/10.1016/j.surfcoat.2005.03.018>`_
 .. [#Galin_1946] Galin L.A., "Spatial contact problems of the theory of elasticity for punches of circular shape in planar projection.", J. Appl. Math. Mech. (PMM) (1946), 10, pp. 425-448.
@@ -802,6 +813,7 @@ References
 .. [#Guillonneau_2012_1] `Guillonneau G. et al.,"Extraction of mechanical properties with second harmonic detection for dynamic nanoindentation testing." (2012). <https://doi.org/10.1007/s11340-011-9561-5>`_
 .. [#Guillonneau_2012_2] `Guillonneau G. et al.,"Determination of mechanical properties by nanoindentation independently of indentation depth measurement." (2012). <https://doi.org/10.1557/jmr.2012.261>`_
 .. [#Guillonneau_2014] `Guillonneau G. et al.,"A simple method to minimize displacement measurement uncertainties using dynamic nanoindentation testing." (2014). <https://doi.org/10.1016/j.triboint.2013.10.013>`_
+.. [#Guillonneau_2019] `Guillonneau G. et al.,"Determination of the true projected contact area by in situ indentation testing." (2019). <https://doi.org/10.1557/jmr.2019.236>`_
 .. [#Hainsworth_1996] `Hainsworth S.V. et al., "Analysis of nanoindentation load-displacement loading curves." (1996). <https://doi.org/10.1557/JMR.1996.0250>`_
 .. [#Hay_1999] `Hay J.C. et al., "A critical examination of the fundamental relations used in the analysis of nanoindentation data." (1999). <https://doi.org/10.1557/JMR.1999.0306>`_
 .. [#Hochstetter_1999] `Hochstetter G. et al., "Strain-rate effects on hardness of glassy polymers in the nanoscale range. Comparison between quasi-static and continuous stiffness measurements" (1999). <https://doi.org/10.1080/00222349908248131>`_
@@ -816,6 +828,7 @@ References
 .. [#Lucca_2012]  `Lucca D.A. et al., "Nanoindentation: Measuring methods and applications" (2012). <https://doi.org/10.1016/j.cirp.2010.05.009>`_
 .. [#Lucas_1996] `Lucas B.N. et al., "Time Dependent Deformation During Indentation Testing." (1996). <https://doi.org/10.1557/PROC-436-233>`_
 .. [#Malzbender_2002] `Malzbender J. and de With G., "Indentation load–displacement curve, plastic deformation, and energy." (2002). <https://doi.org/10.1557/JMR.2002.0070>`_
+.. [#Mercier_2018] `Mercier D., "AFM data analysis using Gwyddion software" (2018). <https://www.researchgate.net/publication/328531055_AFM_data_analysis_using_Gwyddion_software>`_
 .. [#Merle_2012] `Merle B. et al., "Experimental determination of the effective indenter shape and e-factor for nanoindentation by continuously measuring the unloading stiffness." (2012). <https://doi.org/10.1557/jmr.2011.245>`_
 .. [#Morash_2007] `Morash K.R. and Bahr D.F., "An energy method to analyze through thickness thin film fracture during indentation." (2007). <https://doi.org/10.1016/j.tsf.2006.01.043>`_
 .. [#Odegard_2005] `Odegard G.M. et al., "Characterization of viscoelastic properties of polymeric materials through nanoindentation." (2005). <https://doi.org/10.1007/BF02428185>`_
