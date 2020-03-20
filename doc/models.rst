@@ -297,7 +297,15 @@ Indentation contact topography
 Indentation contact area is not usually estimated by experiments, 
 given the fact that many possible errors can be induced during the post-mortem topography measurement (small size of residual indent, elastic or plastic recovery...), 
 by atomic force microscopy (AFM) or scanning electron microscopy (SEM) for example.
-To extract contact area from AFM or SEM measurements, it is advised to use softwares with dedicated tools (e.g.: http://gwyddion.net/) [#Mercier_2018]_.
+To extract contact area from AFM or SEM measurements, it is advised to use softwares with dedicated tools (e.g.: http://gwyddion.net/).
+Some tips are given in the following procedure [#Mercier_2018]_.
+
+.. figure:: ./_pictures/imprint_analysis.jpg
+   :name: afm_imprint
+   :scale: 20 %
+   :align: center
+
+   *Residual topography of a Berkovich indent measured by AFM and analyzed using Gwyddion software.*
 
 The best should be to estimate the contact area during the indentation test, 
 by optical observation through a transparent indenter [#Feng_2007]_ or a microscope in situ indentation test [#Guillonneau_2019]_.
@@ -305,7 +313,7 @@ by optical observation through a transparent indenter [#Feng_2007]_ or a microsc
 For those reasons, contact area is most of the time estimated using contact depth evolution, given a geometrical relationship.
 
 The indentation total depth is rarely equal to the indentation contact depth.
-Two kind of topography can occur:
+Two kind of topographies can occur:
 
 - the pile-up (indentation contact depth > indentation total depth) (see :numref:`contact_topography` a and :numref:`pile_up`);
 - the sink-in (indentation contact depth < indentation total depth) (see :numref:`contact_topography` b).
@@ -367,7 +375,7 @@ Find here the |matlab| function to plot the :math:`\epsilon` function :
 a cone than a paraboloid of revolution. But, Oliver and Pharr concluded after
 a large number of experiments that the best value for the Berkovich indenter is :math:`0.75`.
 
-More recently, Merle et al. have found experimentally with indentation test in fused silica,
+More recently, Merle et al. have found experimentally with indentation tests in fused silica,
 a value of :math:`0.76` for :math:`\epsilon`, which is in a good agreement with the literature
 for a paraboloid of revolution [#Merle_2012]_.
 
@@ -388,7 +396,7 @@ Knowing the depth of contact, it is possible to determine the `area of contact <
 But, because conical indenters present imperfections and Berkovich or
 Vickers indenters are not perfectly conical, a general formulae of the
 contact area has been established by Oliver and Pharr [#OliverPharr_1992]_,
-[#OliverPharr_2004]_ :
+[#OliverPharr_2004]_:
 
     .. math:: A_\text{c} = C_0 h_\text{c}^2 + \sum_{n=1}^8{C_\text{n} h_\text{c}^{1/2^{n-1}}}
             :label: functionArea
@@ -421,7 +429,7 @@ Find here the |matlab| function to calculate the contact depth, the function are
 Recently, in the paper of Yetna N'jock M. et al. [#YetnaNjock_2015]_, a criterion was proposed
 to forecast the behaviour during indentation experiments, following Giannakopoulos and Suresh
 methodology [#Giannakopoulos_1999]_. After analyzing either Vickers or Berkovich indentation
-tests on a wide range of materials, the following criterion is established :math:`\Delta` :
+tests on a wide range of materials, the following criterion is established :math:`\Delta`:
 
     .. math:: \Delta = \frac{h_\text{r}^{'}}{h_\text{t}^{'}}
             :label: Yetna_Njock_model
