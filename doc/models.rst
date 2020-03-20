@@ -302,7 +302,7 @@ Some tips are given in the following procedure [#Mercier_2018]_.
 
 .. figure:: ./_pictures/imprint_analysis.jpg
    :name: afm_imprint
-   :scale: 20 %
+   :scale: 50 %
    :align: center
 
    *Residual topography of a Berkovich indent measured by AFM and analyzed using Gwyddion software.*
@@ -545,7 +545,7 @@ after introducing a correction factor identified by King [#King_1987]_:
     .. math:: E^{*} = \frac{1}{{2\beta}} \sqrt\frac{\pi}{A} S
             :label: experimental_youngs_modulus_OP
 
-With :math:`\beta` a geometrical correction factor equal to :
+With :math:`\beta` a geometrical correction factor equal to:
 
 - :math:`1` for circular indenters (e.g.: conical and spherical indenter);
 - :math:`1.034` for three-sided pyramid indenters (e.g.: Berkovich indenter);
@@ -797,7 +797,7 @@ Using Oliver and Pharr's model
 Find here the |matlab| function to calculate elastic modulus using Guillonneau's methodology:
 `model_elasticModulus_Guillonneau.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_elasticModulus_Guillonneau.m>`_.
 
-Find here the |matlab| function to calculate hardness using Guillonneau's methodology :
+Find here the |matlab| function to calculate hardness using Guillonneau's methodology:
 `model_hardness_Guillonneau.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/plastic_models/model_hardness_Guillonneau.m>`_.
 	    
 References
