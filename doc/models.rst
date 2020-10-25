@@ -300,7 +300,7 @@ by atomic force microscopy (AFM) or scanning electron microscopy (SEM) for examp
 To extract contact area from AFM or SEM measurements, it is advised to use softwares with dedicated tools (e.g.: http://gwyddion.net/).
 Some tips are given in the following procedure [#Mercier_2018]_. A usual method is to calculate the angle between normal to the indent surface with the horizontal sample surface.
 When this angle is equal to the semi-angle of the apex of the indenter, the corresponding pixel can be used for the residual contact area.
-The total residual contact area is the sum of all pixels validating this angle condition (see :numref:`AngleEstimationTopo`).
+The total residual contact area is the sum of all pixels validating this angle condition. Here an example using an indenter with a full apex angle of 140° (see :numref:`AngleEstimationTopo`).
 
 .. figure:: ./_pictures/AngleEstimationTopo.png
    :name: AngleEstimationTopo
