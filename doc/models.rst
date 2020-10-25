@@ -298,7 +298,16 @@ Indentation contact area is not usually estimated by experiments,
 given the fact that many possible errors can be induced during the post-mortem topography measurement (small size of residual indent, elastic or plastic recovery...), 
 by atomic force microscopy (AFM) or scanning electron microscopy (SEM) for example.
 To extract contact area from AFM or SEM measurements, it is advised to use softwares with dedicated tools (e.g.: http://gwyddion.net/).
-Some tips are given in the following procedure [#Mercier_2018]_.
+Some tips are given in the following procedure [#Mercier_2018]_. A usual method is to calculate the angle between normal to the indent surface with the horizontal sample surface.
+When this angle is equal to the semi-angle of the apex of the indenter, the corresponding pixel can be used for the residual contact area.
+The total residual contact area is the sum of all pixels validating this angle condition (see :numref:`AngleEstimationTopo`).
+
+.. figure:: ./_pictures/AngleEstimationTopo.png
+   :name: AngleEstimationTopo
+   :scale: 50 %
+   :align: center
+
+   *Schematic of residual cross sectionnal indentation contact topography : a) "pile-up" and b) "sink-in".*
 
 .. figure:: ./_pictures/imprint_analysis.jpg
    :name: afm_imprint
@@ -328,7 +337,7 @@ over Young's modulus is less than :math:`1%` [#Bolshakov_1998]_, [#Cheng_1998]_ 
    :scale: 60 %
    :align: center
    
-   *Schematic of indentation contact topography : a) "pile-up" and b) "sink-in".*
+   *Schematic of cross-sectionnal indentation contact topography : a) "pile-up" and b) "sink-in".*
    
 .. figure:: ./_pictures/pile_up.png
    :name: pile_up
