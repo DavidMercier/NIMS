@@ -317,7 +317,7 @@ The total residual contact area is the sum of all pixels validating this angle c
    *Residual topography of a Berkovich indent measured by AFM and analyzed using Gwyddion software.*
 
 The best should be to estimate the contact area during the indentation test, 
-by optical observation through a transparent indenter [#Feng_2007]_ or a microscope in situ indentation test [#Guillonneau_2019]_.
+by optical observation through a transparent indenter [#Feng_2007]_, [#Maslenikov_2019]_ or a microscope in situ indentation test [#Guillonneau_2019]_.
 
 For those reasons, contact area is most of the time estimated using contact depth evolution, given a geometrical relationship.
 
@@ -844,6 +844,7 @@ References
 .. [#Love_1939] `Love A.E.H., "Boussinesq's problem for a rigid cone." (1939). <https://doi.org/10.1093/qmath/os-10.1.161>`_
 .. [#Lucca_2012]  `Lucca D.A. et al., "Nanoindentation: Measuring methods and applications" (2012). <https://doi.org/10.1016/j.cirp.2010.05.009>`_
 .. [#Lucas_1996] `Lucas B.N. et al., "Time Dependent Deformation During Indentation Testing." (1996). <https://doi.org/10.1557/PROC-436-233>`_
+.. [#Maslenikov_2019] `Maslenikov I. and Useinov A., "Combined opto-mechanical measurements with the transparent indenter’s tip." (2019). <https://doi.org/:10.1088/1757-899X/758/1/012056>`_
 .. [#Malzbender_2002] `Malzbender J. and de With G., "Indentation load–displacement curve, plastic deformation, and energy." (2002). <https://doi.org/10.1557/JMR.2002.0070>`_
 .. [#Mercier_2018] `Mercier D., "AFM data analysis using Gwyddion software" (2018). <https://www.researchgate.net/publication/328531055_AFM_data_analysis_using_Gwyddion_software>`_
 .. [#Merle_2012] `Merle B. et al., "Experimental determination of the effective indenter shape and e-factor for nanoindentation by continuously measuring the unloading stiffness." (2012). <https://doi.org/10.1557/jmr.2011.245>`_
