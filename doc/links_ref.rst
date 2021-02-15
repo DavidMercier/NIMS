@@ -78,6 +78,7 @@ Correction factors and Correction of experimental data
 * `Kaufman J. D. and Klapperich C. M., "Surface detection errors cause overestimation of the modulus in nanoindentation on soft materials" (2009). <https://doi.org/10.1016/j.jmbbm.2008.08.004>`_
 * `Li H. et al., "New methods of analyzing indentation experiments on very thin films" (2010). <https://doi.org/10.1557/JMR.2010.0095>`_
 * `Piccarolo S. et al., "Improving surface detection on nanoindentation of compliant materials" (2010). <https://doi.org/10.1088/0957-0233/21/6/065701>`_
+* `Jakes J.E. and Stauffer D., "Contact area correction for surface tilt in pyramidal nanoindentation" (2021). <https://link.springer.com/article/10.1557/s43578-021-00119-3
 
 Bilayer models to extract Young's modulus of a thin film on a substrate (with conical indenters)
 --------------------------------------------------------------------------------------------------
