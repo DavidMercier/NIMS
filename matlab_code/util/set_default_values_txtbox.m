@@ -8,8 +8,13 @@ if nargin < 2
     def_str = '1';
 end
 
-if isempty(get(ui_txtbox, 'String')) == 1
-    set(ui_txtbox, 'String', def_str);
+try
+    if isempty(get(ui_txtbox, 'String')) == 1
+        set(ui_txtbox, 'String', def_str);
+    end
+catch err
+    warning(err.message);
+    warning('Don''t forget to press "Enter" once you changed a numerical value in your inputs');
 end
 
 end

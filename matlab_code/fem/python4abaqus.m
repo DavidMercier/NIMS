@@ -35,7 +35,15 @@ if ~isempty(scriptpath_multilayer_model)
     E = [gui.data.Es, gui.data.E0, gui.data.E1, gui.data.E2];
     nu = [gui.data.nus, gui.data.nuf0, gui.data.nuf1, gui.data.nuf2];
     t_sub = 2 * max([gui.data.t0, gui.data.t1, gui.data.t2]);
-    t_f = [gui.data.t2, gui.data.t1, gui.data.t0, t_sub];
+    if gui.variables.num_thinfilm == 4
+        t_f = [gui.data.t2, gui.data.t1, gui.data.t0, t_sub];
+    elseif gui.variables.num_thinfilm == 3
+        t_f = [gui.data.t1, gui.data.t0, t_sub];
+    elseif gui.variables.num_thinfilm == 2
+        t_f = [gui.data.t0, t_sub];
+    elseif gui.variables.num_thinfilm == 1
+        t_f = [t_sub];
+    end
     
     if str2num(gui.data.indenter_tip_defect) == 0
         indenter_tip_defect = 0.1;
@@ -110,8 +118,8 @@ if ~isempty(scriptpath_multilayer_model)
     py{end+1} = sprintf('import interaction');
     py{end+1} = sprintf('import load');
     py{end+1} = sprintf('import mesh');
-%     py{end+1} = sprintf('if (''12'' in version) == True:');
-%     py{end+1} = sprintf('    import optimization # Not available in versions released before Abaqus 6.12');
+    %     py{end+1} = sprintf('if (''12'' in version) == True:');
+    %     py{end+1} = sprintf('    import optimization # Not available in versions released before Abaqus 6.12');
     py{end+1} = sprintf('import job');
     py{end+1} = sprintf('import sketch');
     py{end+1} = sprintf('import visualization');
@@ -320,7 +328,7 @@ if ~isempty(scriptpath_multilayer_model)
         py{end+1} = sprintf('myModel.SurfaceToSurfaceContactStd(name=''%s'', createStepName=step_Load, master=region1, slave=region2, sliding=FINITE, thickness=ON, interactionProperty=''Film-Film'', adjustMethod=NONE, initialClearance=OMIT, datumAxis=None, clearanceRegion=None)',...
             strcat('Interaction_Film',num2str(num_film),'-Film', num2str(num_film-1)));
         num_film = num_film - 1;
-    end   
+    end
     py{end+1} = sprintf('#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
     py{end+1} = sprintf('# BOUNDARIES CONDITIONS');
     py{end+1} = sprintf('#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
