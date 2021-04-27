@@ -317,7 +317,7 @@ The total residual contact area is the sum of all pixels validating this angle c
    *Residual topography of a Berkovich indent measured by AFM and analyzed using Gwyddion software.*
 
 The best should be to estimate the contact area during the indentation test, 
-by optical observation through a transparent indenter [#Feng_2007]_ or a microscope in situ indentation test [#Guillonneau_2019]_.
+by optical observation through a transparent indenter [#Feng_2007]_, [#Maslenikov_2019]_ or a microscope in situ indentation test [#Guillonneau_2019]_.
 
 For those reasons, contact area is most of the time estimated using contact depth evolution, given a geometrical relationship.
 
@@ -422,6 +422,8 @@ A perfect sphere of radius :math:`R` is defined by the first two terms with
 :math:`C_0 = -\pi` and :math:`C_1 = 2 \pi R`. The first two terms also describe
 a hyperboloid of revolution, a very reasonable shape for a tip-rounded cone
 or pyramid that approaches a fixed angle at large distances from the tip.
+
+In case of surface tilt, the area function can be corrected following differents methods [#Kashani_2007]_ and [#Jakes_2021]_.
 
 An equivalent contact radius :math:`a_\text{c}` (in :math:`\text{m}`) is also defined based on the area function.
 
@@ -835,7 +837,9 @@ References
 .. [#Hay_1999] `Hay J.C. et al., "A critical examination of the fundamental relations used in the analysis of nanoindentation data." (1999). <https://doi.org/10.1557/JMR.1999.0306>`_
 .. [#Hochstetter_1999] `Hochstetter G. et al., "Strain-rate effects on hardness of glassy polymers in the nanoscale range. Comparison between quasi-static and continuous stiffness measurements" (1999). <https://doi.org/10.1080/00222349908248131>`_
 .. [#Jakes_2008] `Jakes J.E. et al., "Experimental method to account for structural compliance in nanoindentation measurements" (2008). <https://doi.org/10.1557/jmr.2008.0131>`_
+.. [#Jakes_2021] `Jakes J.E. and Stauffer D., "Contact area correction for surface tilt in pyramidal nanoindentation" (2021). <https://doi.org/10.1557/s43578-021-00119-3>`_
 .. [#Joslin_1990] `Joslin D.L. and Oliver W.C., "A new method for analyzing data from continuous depth-sensing microindentation tests" (1990). <https://doi.org/10.1557/JMR.1990.0123>`_
+.. [#Kashani_2007] `Kashani M.S. and Madhavan V., "The Effect of Surface Tilt on Nanoindentation Results" (2007). <https://doi.org/10.1115/IMECE2007-42296>`_
 .. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <https://doi.org/10.1016/0020-7683(87)90116-8>`_
 .. [#Larsson_1996] `Larsson P.-L. et al., "Analysis of Berkovich indentation" (1996). <https://doi.org/10.1016/0020-7683(95)00033-7>`_
 .. [#Li_2002] `Li X. and Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications." (2002). <https://doi.org/10.1016/S1044-5803(02)00192-4>`_
@@ -844,6 +848,7 @@ References
 .. [#Love_1939] `Love A.E.H., "Boussinesq's problem for a rigid cone." (1939). <https://doi.org/10.1093/qmath/os-10.1.161>`_
 .. [#Lucca_2012]  `Lucca D.A. et al., "Nanoindentation: Measuring methods and applications" (2012). <https://doi.org/10.1016/j.cirp.2010.05.009>`_
 .. [#Lucas_1996] `Lucas B.N. et al., "Time Dependent Deformation During Indentation Testing." (1996). <https://doi.org/10.1557/PROC-436-233>`_
+.. [#Maslenikov_2019] `Maslenikov I. and Useinov A., "Combined opto-mechanical measurements with the transparent indenter’s tip." (2019). <https://doi.org/:10.1088/1757-899X/758/1/012056>`_
 .. [#Malzbender_2002] `Malzbender J. and de With G., "Indentation load–displacement curve, plastic deformation, and energy." (2002). <https://doi.org/10.1557/JMR.2002.0070>`_
 .. [#Mercier_2018] `Mercier D., "AFM data analysis using Gwyddion software" (2018). <https://www.researchgate.net/publication/328531055_AFM_data_analysis_using_Gwyddion_software>`_
 .. [#Merle_2012] `Merle B. et al., "Experimental determination of the effective indenter shape and e-factor for nanoindentation by continuously measuring the unloading stiffness." (2012). <https://doi.org/10.1557/jmr.2011.245>`_

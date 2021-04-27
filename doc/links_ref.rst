@@ -73,11 +73,13 @@ Correction factors and Correction of experimental data
 * `Troyon M. and Lafaye S., "About the importance of introducing a correction factor in the Sneddon relationship for nanoindentation measurements" (2002). <https://doi.org/10.1080/14786430600606834>`_
 * `Strader J.H. et al., "An experimental evaluation of the constant b relating the contact stiffness to the contact area in nanoindentation." (2006). <https://doi.org/10.1080/14786430600567747>`_
 * `Fischer-Cripps A.C., "Critical review of analysis and interpretation of nanoindentation test data" (2006). <https://doi.org/10.1016/j.surfcoat.2005.03.018>`_
+* `Kashani M.S. and Madhavan V., "The Effect of Surface Tilt on Nanoindentation Results" (2007). <https://doi.org/10.1115/IMECE2007-42296>`_
 * `Jakes J.E. et al., "Experimental method to account for structural compliance in nanoindentation measurements" (2008). <https://doi.org/10.1557/jmr.2008.0131>`_
 * `Pharr G.M. et al., "Critical issues in making small-depth mechanical property measurements by nanoindentation with continuous stiffness measurement" (2009). <https://doi.org/10.1557/jmr.2009.0096>`_
 * `Kaufman J. D. and Klapperich C. M., "Surface detection errors cause overestimation of the modulus in nanoindentation on soft materials" (2009). <https://doi.org/10.1016/j.jmbbm.2008.08.004>`_
 * `Li H. et al., "New methods of analyzing indentation experiments on very thin films" (2010). <https://doi.org/10.1557/JMR.2010.0095>`_
 * `Piccarolo S. et al., "Improving surface detection on nanoindentation of compliant materials" (2010). <https://doi.org/10.1088/0957-0233/21/6/065701>`_
+* `Jakes J.E. and Stauffer D., "Contact area correction for surface tilt in pyramidal nanoindentation" (2021). <https://doi.org/10.1557/s43578-021-00119-3>`_
 
 Bilayer models to extract Young's modulus of a thin film on a substrate (with conical indenters)
 --------------------------------------------------------------------------------------------------
