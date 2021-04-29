@@ -5,6 +5,13 @@ function python4abaqus
 get_param_GUI;
 gui = guidata(gcf); guidata(gcf);
 
+% Definition of indentation displacement
+prompt = {'Enter indentation depth in nm:'};
+dlgtitle = 'Input';
+dims = [1 35];
+definput = {'200','hsv'};
+ind_disp = str2num(char(inputdlg(prompt,dlgtitle,dims,definput)));
+
 if gui.flag.flag_data ~= 0
     FILENAME = gui.data.filename_data;
     PATHNAME = gui.data.pathname_data;
@@ -83,9 +90,6 @@ if ~isempty(scriptpath_multilayer_model)
     
     % Definition of elements type
     linear_elements = 0; % 0 for quadratic elements and 1 for linear elements
-    
-    % Definition of indentation displacement
-    ind_disp = -200;
     
     py{1}     = sprintf('#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
     py{end+1} = sprintf('# Python script for use with Abaqus');
