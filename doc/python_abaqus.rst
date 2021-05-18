@@ -257,3 +257,4 @@ References
 * `Chakroun N. et al., "Measuring elastic properties of the constituent multilayer coatings for different modulation periods" (2018). <https://doi.org/10.1142/S1758825118500461>`_
 * `Pöhl F., "Determination of unique plastic properties from sharp indentation" (2019). <https://doi.org/10.1016/j.ijsolstr.2019.04.008>`_
 * `Lodh A., "Orientation-dependent solid solution strengthening in zirconium: a nanoindentation study" (2019). <https://doi.org/10.1007/s10853-019-04280-3>`_
+* `Xiao H., "Theoretical model for determining elastic modulus of ceramic materials by nanoindentation" (2021). <https://doi.org/10.1016/j.mtla.2021.101121>`_
