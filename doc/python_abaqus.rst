@@ -258,3 +258,4 @@ References
 * `Pöhl F., "Determination of unique plastic properties from sharp indentation" (2019). <https://doi.org/10.1016/j.ijsolstr.2019.04.008>`_
 * `Lodh A., "Orientation-dependent solid solution strengthening in zirconium: a nanoindentation study" (2019). <https://doi.org/10.1007/s10853-019-04280-3>`_
 * `Xiao H., "Theoretical model for determining elastic modulus of ceramic materials by nanoindentation" (2021). <https://doi.org/10.1016/j.mtla.2021.101121>`_
+* `Sivaram S. et al., "Qualitative Study on Pile-up Effect on Hardness Test by Nano-Indentation" (2021). <http://doi.org/10.4038/engineer.v54i1.7434>`_
