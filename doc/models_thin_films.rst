@@ -88,7 +88,7 @@ For nanoindentation tests on thin films, the contact topography is function of b
 The :numref:`contact_topography_thinfilm` a ("pile-up") is typical of the case of a soft film on a hard substrate and the :numref:`contact_topography_thinfilm` b ("sink-in")
 of a hard film on a soft substrate [#ChenVlassak2001]_. The pile-up can be emphasized in case ot thin films, because of the material confinement by the substrate. To determine the depth of contact,
 `the same models <http://nims.readthedocs.org/en/latest/models.html#indentation-contact-topography>`_
-described for bulk material indentation are used.
+described for bulk material indentation are used. But, some quantitative approaches are proposed in the literature to take into account both pile up and substrate effects in the material properties estimation of the coating [#Zhou2008]_.
 
 Corrections to apply for thin film indentation 
 ------------------------------------------------
@@ -829,3 +829,4 @@ References
 .. [#VanVliet_2001] `Van Vliet K.J. and Gouldstone A., "Mechanical Properties of Thin Films Quantified Via Instrumented Indentation" (2001). <https://doi.org/10.1179/026708401101517737>`_
 .. [#Veprek_2016]  `Veprek-Heijman M.G.J. and Veprek S., "The deformation of the substrate during indentation into superhard coatings: Bückle's rule revised" (2016). <https://doi.org/10.1016/j.surfcoat.2015.10.064>`_
 .. [#Xu_2006] `Xu H. and Pharr G.M., "An improved relation for the effective elastic compliance of a film/substrate system during indentation by a flat cylindrical punch." (2006). <https://doi.org/10.1016/j.scriptamat.2006.04.037>`_
+.. [#Zhou2008] `Zhou X. et al., "Investigation on methods for dealing with pile-up errors in evaluating the mechanical properties of thin metal films at sub-micron scale on hard substrates by nanoindentation technique." (2008). <https://doi.org/10.1016/j.msea.2008.01.020>`_
