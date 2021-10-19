@@ -824,7 +824,7 @@ materials will actually be harder at the small scale,  than at the macro-scale.
 At macro-scale, materials hardness depends mainly on the level of statistically stored dislocations (SSD) which are created by homogeneous strain and
 are dependent upon the material and processing conditions. At micro-scale, hardness measurement is disturbed by the creation of
 geometrically necessary dislocations (GND), in addition to the dislocations statistically present, to maintain continuity within the material.
-As a conclusion, small indents have higher strain gradients relative to the size of the plastic zone and therefore have a higher measured hardness [#Sargent_1985]_, [#Pharr_2010]_ and [#Nix_1997]_.
+As a conclusion, small indents have higher strain gradients relative to the size of the plastic zone and therefore have a higher measured hardness [#Sargent_1985]_, [#Nix_1997]_, [#Manika_2006]_ and [#Pharr_2010]_.
 
 .. figure:: ./_pictures/ISE.png
    :name: indentation_size_effect
@@ -872,6 +872,7 @@ References
 .. [#Lucas_1996] `Lucas B.N. et al., "Time Dependent Deformation During Indentation Testing." (1996). <https://doi.org/10.1557/PROC-436-233>`_
 .. [#Maslenikov_2019] `Maslenikov I. and Useinov A., "Combined opto-mechanical measurements with the transparent indenter’s tip." (2019). <https://doi.org/:10.1088/1757-899X/758/1/012056>`_
 .. [#Malzbender_2002] `Malzbender J. and de With G., "Indentation load–displacement curve, plastic deformation, and energy." (2002). <https://doi.org/10.1557/JMR.2002.0070>`_
+.. [#Manika_2006] `Manika I. and Maniks J., "Size effects in micro- and nanoscale indentation?" (2006). <https://doi.org/10.1016/j.actamat.2005.12.031>`_
 .. [#Mercier_2018] `Mercier D., "AFM data analysis using Gwyddion software" (2018). <https://www.researchgate.net/publication/328531055_AFM_data_analysis_using_Gwyddion_software>`_
 .. [#Merle_2012] `Merle B. et al., "Experimental determination of the effective indenter shape and e-factor for nanoindentation by continuously measuring the unloading stiffness." (2012). <https://doi.org/10.1557/jmr.2011.245>`_
 .. [#Morash_2007] `Morash K.R. and Bahr D.F., "An energy method to analyze through thickness thin film fracture during indentation." (2007). <https://doi.org/10.1016/j.tsf.2006.01.043>`_
