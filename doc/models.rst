@@ -189,7 +189,7 @@ defined by the user (see :numref:`load_disp_curve_multiplepoints`) [#Fischer-Cri
    *Schematic of indentation load-displacement curve with the multiple point unload method (here n points).*
 
 Finally, concerning the surface detection and initial penetration measurement, roughness surface sample and tilt
-angle between indenter and sample can have a great influence on indentation measurement [Jiang_2008]_, [#Xia_2014]_ and [Laurent-Brocq_2015]_.
+angle between indenter and sample can have a great influence on indentation measurement [#Jiang_2008]_, [#Xia_2014]_ and [#Laurent-Brocq_2015]_.
 More information about the roughness effect can be found in the 'Indentation Length Scales' section of the `TriDiMap documentation <https://tridimap.readthedocs.io/en/latest/mapping.html#indentation-length-scales>`_.
 
 Frame compliance
@@ -828,7 +828,7 @@ As a conclusion, small indents have higher strain gradients relative to the size
 
 .. figure:: ./_pictures/ISE.png
    :name: indentation_size_effect
-   :scale: 60 %
+   :scale: 30 %
    :align: center
 
 References
@@ -858,12 +858,12 @@ References
 .. [#Hochstetter_1999] `Hochstetter G. et al., "Strain-rate effects on hardness of glassy polymers in the nanoscale range. Comparison between quasi-static and continuous stiffness measurements" (1999). <https://doi.org/10.1080/00222349908248131>`_
 .. [#Jakes_2008] `Jakes J.E. et al., "Experimental method to account for structural compliance in nanoindentation measurements" (2008). <https://doi.org/10.1557/jmr.2008.0131>`_
 .. [#Jakes_2021] `Jakes J.E. and Stauffer D., "Contact area correction for surface tilt in pyramidal nanoindentation" (2021). <https://doi.org/10.1557/s43578-021-00119-3>`_
-.. [Jiang_2008] `Jiang W.G. et al., "Effect of surface roughness on nanoindentation test of thin films" (2008). <https://doi.org/10.1016/j.engfracmech.2008.06.016>`_
+.. [#Jiang_2008] `Jiang W.G. et al., "Effect of surface roughness on nanoindentation test of thin films" (2008). <https://doi.org/10.1016/j.engfracmech.2008.06.016>`_
 .. [#Joslin_1990] `Joslin D.L. and Oliver W.C., "A new method for analyzing data from continuous depth-sensing microindentation tests" (1990). <https://doi.org/10.1557/JMR.1990.0123>`_
 .. [#Kashani_2007] `Kashani M.S. and Madhavan V., "The Effect of Surface Tilt on Nanoindentation Results" (2007). <https://doi.org/10.1115/IMECE2007-42296>`_
 .. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <https://doi.org/10.1016/0020-7683(87)90116-8>`_
 .. [#Larsson_1996] `Larsson P.-L. et al., "Analysis of Berkovich indentation" (1996). <https://doi.org/10.1016/0020-7683(95)00033-7>`_
-.. [Laurent-Brocq_2015] `Laurent-Brocq_2015 M. et al., "Influence of roughness and tilt on nanoindentation measurements: A quantitative model" (2015). <https://doi.org/10.1002/sca.21220>`_
+.. [#Laurent-Brocq_2015] `Laurent-Brocq_2015 M. et al., "Influence of roughness and tilt on nanoindentation measurements: A quantitative model" (2015). <https://doi.org/10.1002/sca.21220>`_
 .. [#Li_2002] `Li X. and Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications." (2002). <https://doi.org/10.1016/S1044-5803(02)00192-4>`_
 .. [#Loubet_1984] `Loubet J.L. et al., "Vickers Indentation Curves of Magnesium Oxide (MgO)." (1984). <https://doi.org/10.1115/1.3260865>`_
 .. [#Loubet_1986] `Loubet J.L. et al., "Vickers indentation curves of elastoplastic materials." (1986). <https://doi.org/10.1520/STP889-EB>`_
