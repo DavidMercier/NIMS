@@ -188,6 +188,10 @@ defined by the user (see :numref:`load_disp_curve_multiplepoints`) [#Fischer-Cri
    
    *Schematic of indentation load-displacement curve with the multiple point unload method (here n points).*
 
+Finally, concerning the surface detection and initial penetration measurement, roughness surface sample and tilt
+angle between indenter and sample can have a great influence on indentation measurement [Jiang_2008]_, [#Xia_2014]_ and [Laurent-Brocq_2015]_.
+More information about the roughness effect can be found in the 'Indentation Length Scales' section of the `TriDiMap documentation <https://tridimap.readthedocs.io/en/latest/mapping.html#indentation-length-scales>`_.
+
 Frame compliance
 +++++++++++++++++++
 
@@ -203,7 +207,8 @@ indentation depth and to the contact stiffness [#Fischer-Cripps_2006]_.
             :label: corrected_stiffness
 
 To determine the frame compliance, it is required to plot :math:`\frac{dh}{dF_\text{c}}` vs. 
-the corrected total depth :math:`(1/h_\text{t})` or the corrected plastic depth :math:`(1/{h_\text{c}})` (see the following part “Indentation contact topography” for the definition of the plastic depth) [#DoernerNix_1986]_ and [#Fischer-Cripps_2006]_.
+the corrected total depth :math:`(1/h_\text{t})` or the corrected plastic depth :math:`(1/{h_\text{c}})` 
+(see the following part “Indentation contact topography” for the definition of the plastic depth) [#DoernerNix_1986]_ and [#Fischer-Cripps_2006]_.
 Then, a linear fit of this curve gives an intercept with the ordinate axis which is the frame compliance (see :numref:`frame_compliance`).
 
 .. figure:: ./_pictures/frame_compliance.png
@@ -810,7 +815,22 @@ Find here the |matlab| function to calculate elastic modulus using Guillonneau's
 
 Find here the |matlab| function to calculate hardness using Guillonneau's methodology:
 `model_hardness_Guillonneau.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/plastic_models/model_hardness_Guillonneau.m>`_.
-	    
+
+Indentation Size Effect
+#########################
+
+The indentation size effect (ISE) is an hardness increase observed at small scales during nanoindentation tests, in other words 
+materials will actually be harder at the small scale,  than at the macro-scale.
+At macro-scale, materials hardness depends mainly on the level of statistically stored dislocations (SSD) which are created by homogeneous strain and
+are dependent upon the material and processing conditions. At micro-scale, hardness measurement is disturbed by the creation of
+geometrically necessary dislocations (GND), in addition to the dislocations statistically present, to maintain continuity within the material.
+As a conclusion, small indents have higher strain gradients relative to the size of the plastic zone and therefore have a higher measured hardness [#Sargent_1985]_, [#Pharr_2010]_ and [#Nix_1997]_.
+
+.. figure:: ./_pictures/ISE.png
+   :name: indentation_size_effect
+   :scale: 60 %
+   :align: center
+
 References
 ############
 
@@ -838,21 +858,24 @@ References
 .. [#Hochstetter_1999] `Hochstetter G. et al., "Strain-rate effects on hardness of glassy polymers in the nanoscale range. Comparison between quasi-static and continuous stiffness measurements" (1999). <https://doi.org/10.1080/00222349908248131>`_
 .. [#Jakes_2008] `Jakes J.E. et al., "Experimental method to account for structural compliance in nanoindentation measurements" (2008). <https://doi.org/10.1557/jmr.2008.0131>`_
 .. [#Jakes_2021] `Jakes J.E. and Stauffer D., "Contact area correction for surface tilt in pyramidal nanoindentation" (2021). <https://doi.org/10.1557/s43578-021-00119-3>`_
+.. [Jiang_2008] `Jiang W.G. et al., "Effect of surface roughness on nanoindentation test of thin films" (2008). <https://doi.org/10.1016/j.engfracmech.2008.06.016>`_
 .. [#Joslin_1990] `Joslin D.L. and Oliver W.C., "A new method for analyzing data from continuous depth-sensing microindentation tests" (1990). <https://doi.org/10.1557/JMR.1990.0123>`_
 .. [#Kashani_2007] `Kashani M.S. and Madhavan V., "The Effect of Surface Tilt on Nanoindentation Results" (2007). <https://doi.org/10.1115/IMECE2007-42296>`_
 .. [#King_1987] `King R.B., "Elastic analysis of some punch problems for a layered medium" (1987). <https://doi.org/10.1016/0020-7683(87)90116-8>`_
 .. [#Larsson_1996] `Larsson P.-L. et al., "Analysis of Berkovich indentation" (1996). <https://doi.org/10.1016/0020-7683(95)00033-7>`_
+.. [Laurent-Brocq_2015] `Laurent-Brocq_2015 M. et al., "Influence of roughness and tilt on nanoindentation measurements: A quantitative model" (2015). <https://doi.org/10.1002/sca.21220>`_
 .. [#Li_2002] `Li X. and Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications." (2002). <https://doi.org/10.1016/S1044-5803(02)00192-4>`_
 .. [#Loubet_1984] `Loubet J.L. et al., "Vickers Indentation Curves of Magnesium Oxide (MgO)." (1984). <https://doi.org/10.1115/1.3260865>`_
 .. [#Loubet_1986] `Loubet J.L. et al., "Vickers indentation curves of elastoplastic materials." (1986). <https://doi.org/10.1520/STP889-EB>`_
 .. [#Love_1939] `Love A.E.H., "Boussinesq's problem for a rigid cone." (1939). <https://doi.org/10.1093/qmath/os-10.1.161>`_
-.. [#Lucca_2012]  `Lucca D.A. et al., "Nanoindentation: Measuring methods and applications" (2012). <https://doi.org/10.1016/j.cirp.2010.05.009>`_
+.. [#Lucca_2012] `Lucca D.A. et al., "Nanoindentation: Measuring methods and applications" (2012). <https://doi.org/10.1016/j.cirp.2010.05.009>`_
 .. [#Lucas_1996] `Lucas B.N. et al., "Time Dependent Deformation During Indentation Testing." (1996). <https://doi.org/10.1557/PROC-436-233>`_
 .. [#Maslenikov_2019] `Maslenikov I. and Useinov A., "Combined opto-mechanical measurements with the transparent indenter’s tip." (2019). <https://doi.org/:10.1088/1757-899X/758/1/012056>`_
 .. [#Malzbender_2002] `Malzbender J. and de With G., "Indentation load–displacement curve, plastic deformation, and energy." (2002). <https://doi.org/10.1557/JMR.2002.0070>`_
 .. [#Mercier_2018] `Mercier D., "AFM data analysis using Gwyddion software" (2018). <https://www.researchgate.net/publication/328531055_AFM_data_analysis_using_Gwyddion_software>`_
 .. [#Merle_2012] `Merle B. et al., "Experimental determination of the effective indenter shape and e-factor for nanoindentation by continuously measuring the unloading stiffness." (2012). <https://doi.org/10.1557/jmr.2011.245>`_
 .. [#Morash_2007] `Morash K.R. and Bahr D.F., "An energy method to analyze through thickness thin film fracture during indentation." (2007). <https://doi.org/10.1016/j.tsf.2006.01.043>`_
+.. [#Nix_1997] `Nix W.D. and Gao H., "Indentation size effects in crystalline materials: A law for strain gradient plasticity" (1997). <https://doi.org/10.1016/s0022-5096(97)00086-0>`_
 .. [#Odegard_2005] `Odegard G.M. et al., "Characterization of viscoelastic properties of polymeric materials through nanoindentation." (2005). <https://doi.org/10.1007/BF02428185>`_
 .. [#OliverPharr_1992] `Oliver W.C. and Pharr G.M., "An improved technique for determining hardness and elastic modulus using load and displacement sensing indentation experiments" (1992). <https://doi.org/10.1557/JMR.1992.1564>`_
 .. [#OliverPharr_2004] `Oliver W.C. and Pharr G.M., "Measurement of hardness and elastic modulus by instrumented indentation: Advances in understanding and refinements to methodology" (2004). <https://doi.org/10.1557/jmr.2004.19.1.3>`_
@@ -860,6 +883,8 @@ References
 .. [#Pharr_1992] `Pharr G.M. et al., "On the generality of the relationship among contact stiffness, contact area, and elastic modulus during indentation." (1992). <https://doi.org/10.1557/JMR.1992.0613>`_
 .. [#Pharr_2002] `Pharr G.M. and Bolshakov A., "Understanding nanoindentation unloading curves." (2002). <https://doi.org/10.1557/JMR.2002.0386>`_
 .. [#Pharr_2009] `Pharr G.M. et al., "Critical issues in making small-depth mechanical property measurements by nanoindentation with continuous stiffness measurement" (2009). <https://doi.org/10.1557/jmr.2009.0096>`_
+.. [#Pharr_2010] `Pharr G.M. et al., "The Indentation Size Effect: A Critical Examination of Experimental Observations and Mechanistic Interpretations" (2010). <https://doi.org/10.1146/annurev-matsci-070909-104456>`_
+.. [#Sargent_1985] `Sargent P.M., "Use of the Indentation Size Effect on Microhardness for Materials Characterization" (1985). <https://doi.org/10.1520/stp32956s>`_
 .. [#Sneddon_1948] `Sneddon I.N., "Boussinesqs problem for a rigid cone." (1948). <https://doi.org/10.1017/S0305004100024518>`_
 .. [#Shorshorov_1982] Shorshorov M.K. et al., Sov. Phys. Dokl., 1982, 26.
 .. [#Strader_2006] `Strader J.H. et al., "An experimental evaluation of the constant b relating the contact stiffness to the contact area in nanoindentation." (2006). <https://doi.org/10.1080/14786430600567747>`_
@@ -867,5 +892,6 @@ References
 .. [#VanLandingham_2001] `VanLandingham M.R., "Nanoindentation of Polymers: An Overview" (2001). <https://doi.org/10.1002/1521-3900(200103)167:1<15::AID-MASY15>3.0.CO;2-T>`_
 .. [#VanLandingham_2003] `VanLandingham M.R., "Review of Instrumented Indentation" (2003). <https://doi.org/10.6028/jres.108.024>`_
 .. [#White_2005] `White C.C. et al., "Viscoelastic characterization of polymers using instrumented indentation. II. Dynamic testing" (2005). <https://doi.org/10.1002/polb.20455>`_
+.. [#Xia_2014] `Xia Y. et al., "Effect of surface roughness in the determination of the mechanical properties of material using nanoindentation test" (2014). <https://doi.org/10.1002/sca.21111>`_
 .. [#YetnaNjock_2015] `Yetna N'jock M. et al., "A criterion to identify sinking-in and piling-up in indentation of materials." (2015). <https://doi.org/10.1016/j.ijmecsci.2014.11.008>`_
 .. [#Zong_2017] `Zong W. J. et al., "Radius and angle determination of diamond Berkovich indenter." (2017). <https://doi.org/10.1016/j.measurement.2017.03.035>`_
