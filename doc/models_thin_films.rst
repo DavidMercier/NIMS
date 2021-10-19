@@ -73,6 +73,9 @@ The reduced Young's moduli and the hardness are in :math:`\text{GPa}`.
 
 With :math:`i` the indice of the layer and :math:`N` the total number of layers.
 
+Finally, it is important to avoid confusion between `indentation size effect <https://nims.readthedocs.io/en/latest/models.html#indentation-size-effect>`_.
+and a decrease of hardness as a function of indentation depth observed in the case of a hard thin film deposited on a soft substrate. It might happen that both effects occur during indentation experiment, which complicates the analysis [#Zhang2007]_.
+
 Indentation contact topography
 ---------------------------------
 
@@ -829,4 +832,5 @@ References
 .. [#VanVliet_2001] `Van Vliet K.J. and Gouldstone A., "Mechanical Properties of Thin Films Quantified Via Instrumented Indentation" (2001). <https://doi.org/10.1179/026708401101517737>`_
 .. [#Veprek_2016]  `Veprek-Heijman M.G.J. and Veprek S., "The deformation of the substrate during indentation into superhard coatings: Bückle's rule revised" (2016). <https://doi.org/10.1016/j.surfcoat.2015.10.064>`_
 .. [#Xu_2006] `Xu H. and Pharr G.M., "An improved relation for the effective elastic compliance of a film/substrate system during indentation by a flat cylindrical punch." (2006). <https://doi.org/10.1016/j.scriptamat.2006.04.037>`_
+.. [#Zhang2007] `Zhang F. et al., "Indentation of a hard film on a soft substrate: Strain gradient hardening effects" (2007). <https://doi.org/10.1016/j.ijplas.2006.02.011>`_
 .. [#Zhou2008] `Zhou X. et al., "Investigation on methods for dealing with pile-up errors in evaluating the mechanical properties of thin metal films at sub-micron scale on hard substrates by nanoindentation technique." (2008). <https://doi.org/10.1016/j.msea.2008.01.020>`_
