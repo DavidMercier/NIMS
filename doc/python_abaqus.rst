@@ -192,6 +192,11 @@ The following pictures were obtained for a `multilayer Au/Ti/SiO2/Si <https://gi
    :align: center
    
    *Screenshot (with a zoom in on the contact area) of the magnitude of the displacement at maximum load.*
+   
+Outlooks
+###############################
+
+More recently in 2022, evaluation of thin film material properties a performed using FEM analysis coupled with artificial neural network (ANN) method [#Han_2022]_.
     
 References
 ############
@@ -201,6 +206,10 @@ References
 .. [#Harsono_2008] `Harsono E. et al., "The effect of friction on indentation test results" (2008). <https://doi.org/10.1088/0965-0393/16/6/065001>`_
 .. [#Johnson_1987] Johnson K.L., "Contact Mechanics" (1987), ISBN - 9780521347969.
 .. [#Wang_2016] `Wang. Y., "Effects of indenter angle and friction on the mechanical properties of film materials" (2016). <https://doi.org/10.1016/j.rinp.2016.08.008>`_
+.. [#Han_2022] `Han G., "Evaluation of thin film material properties using a deep nanoindentation and ANN" (2022). <https://doi.org/10.1016/j.matdes.2022.111000>`_
+
+Other links / References
+########################
 
 * ABAQUS documentation
 * `Charleux L., "Abapy Documentation" <http://abapy.readthedocs.org/en/latest/index.html>`_
