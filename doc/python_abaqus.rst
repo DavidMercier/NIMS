@@ -196,7 +196,7 @@ The following pictures were obtained for a `multilayer Au/Ti/SiO2/Si <https://gi
 Outlooks
 ###############################
 
-More recently in 2022, evaluation of thin film material properties a performed using FEM analysis coupled with artificial neural network (ANN) method [#Han_2022]_.
+More recently in 2022, evaluation of thin film material properties are performed using FEM analysis coupled with artificial neural network (ANN) method [#Han_2022]_.
     
 References
 ############
