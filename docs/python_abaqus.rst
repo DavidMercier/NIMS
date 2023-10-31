@@ -227,6 +227,7 @@ Other links / References
 * `Shan Z. and Sitaraman S.K., "Elastic–plastic characterization of thin films using nanoindentation technique." (2003). <https://doi.org/10.1016/S0040-6090(03)00663-1>`_
 * `He J.L. and Veprek S., "Finite element modeling of indentation into superhard coatings." (2003). <https://doi.org/10.1016/S0257-8972(02)00628-X>`_
 * `Xu Z.-H. and Rowcliffe D., "Finite element analysis of substrate effects on indentation behaviour of thin films." (2004). <https://doi.org/10.1016/S0040-6090(03)01071-X>`_
+* `Gamonpilas C. and Busso E.P., "On the effect of substrate properties on the indentation behaviour of coated systems." (2004). <https://doi.org/10.1016/j.msea.2004.04.038>`_
 * `Panich N. and Sun Y. "Effect of penetration depth on indentation response of soft coatings on hard substrates: a finite element analysis" (2004) <https://doi.org/10.1016/j.surfcoat.2003.07.002>`_
 * `Cai X. and Bangert H., "Hardness measurements of thin films-determining the critical ratio of depth to thickness using FEM." (2005). <https://doi.org/10.1016/0040-6090(95)06569-5>`_
 * `Bressan J.D. et al., "Modeling of nanoindentation of bulk and thin film by finite element method." (2005). <https://doi.org/10.1016/j.wear.2004.05.021>`_
