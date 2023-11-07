@@ -269,3 +269,4 @@ Other links / References
 * `Lodh A., "Orientation-dependent solid solution strengthening in zirconium: a nanoindentation study" (2019). <https://doi.org/10.1007/s10853-019-04280-3>`_
 * `Xiao H., "Theoretical model for determining elastic modulus of ceramic materials by nanoindentation" (2021). <https://doi.org/10.1016/j.mtla.2021.101121>`_
 * `Sivaram S. et al., "Qualitative Study on Pile-up Effect on Hardness Test by Nano-Indentation" (2021). <http://doi.org/10.4038/engineer.v54i1.7434>`_
+* `Vajire S.L. et al., "Novel machine learning-based prediction approach for nanoindentation load-deformation in a thin film: Applications to electronic industries" (2022). <https://doi.org/10.1016/j.cie.2022.108824>`_
