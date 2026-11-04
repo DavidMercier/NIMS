@@ -3,17 +3,17 @@
 
 .. include:: includes.rst
 
-Least mean squares
+Least squares
 ###############################
 
-Experimental curves are fitted with models using the least mean squares method.
-The method of least squares is a standard approach in regression analysis band is
-based on the resolution of the following problem, by finding the coefficients :math:`x` :
+Experimental curves are fitted with models using the least-squares method.
+The method of least squares is a standard approach in regression analysis and is
+based on solving the following problem for the coefficients :math:`x`:
 
     .. math:: \underset{x}{\mathrm{min}} \| F(x,xdata)−ydata \|_2^2 = \underset{x}{\mathrm{min}} \sum_{\substack{i}} (F(x,xdata_\text{i})−ydata_\text{i})^2
             :label: lsqcurvefit
             
-With given input data :math:`xdata` and the observed output :math:`ydata`.
+Here, :math:`xdata` are the input data and :math:`ydata` is the observed output.
 
 - `Matlab Optimization toolbox. <http://nl.mathworks.com/help/optim/index.html>`_
 
@@ -32,13 +32,13 @@ Fischer-Cripps A.C. wrote a detailed section about the non-linear least squares 
 Residuals
 ###########
 
-The residuals from a fitted model are the differences between the response data and the corresponding prediction of the response computed using the regression function.
-Mathematically, the definition of the residual for the ith observation in the data set is written :
+The residuals from a fitted model are the differences between the response data and the corresponding predictions computed using the regression function.
+For the ith observation in the dataset, the residual is defined as:
 
     .. math:: r_\text{i} = y_\text{i} − \hat{y}_\text{i}
             :label: residuals
 
-With :math:`y_\text{i}` denoting the ith response value and :math:`\hat{y}_\text{i}` the ith predicted response value.
+Here, :math:`y_\text{i}` is the ith response value and :math:`\hat{y}_\text{i}` is the ith predicted response value.
 
 If the model fits the data correctly, the residuals approximate the random errors.
 

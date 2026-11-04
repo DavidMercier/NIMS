@@ -3,23 +3,22 @@
 
 .. include:: includes.rst
 
-Please look at the experimental procedure proposed by Jennett N. M. and Bushby A. J. [#Jennett_2001]_,
-to perform nanoindentation tests on bulk, coatings or multilayer systems, and to the ISO standard (ISO 14577 - 1 to 4).
+See the experimental procedure proposed by Jennett N. M. and Bushby A. J. [#Jennett_2001]_
+for performing nanoindentation tests on bulk materials, coatings, and multilayer systems, as well as the ISO 14577 (Parts 1-4) standard.
 
-Type of data - Pre-Requirements
+Data requirements
 ##################################
 
-Only data from Continuous Stiffness Measurement (CSM), given as a function of the indentation depth are accepted in the NIMS toolbox (e.g.:
-CSM mode for Agilent - MTS nanoindenter or DMA - CMX algorithm for Hysitron nanoindenter).
+The NIMS toolbox accepts only Continuous Stiffness Measurement (CSM) data given as a function of indentation depth (e.g., CSM mode for Agilent-MTS nanoindenters or the DMA-CMX algorithm for Hysitron nanoindenters).
 
-You data must only have the loading part from the load-displacement curves of your (nano)indentation results.
-In the case of data saved in a 'Sample' or 'Analyst Project' sheet of a .xls file obtained with 'Analyst' (MTS software)
-(containing at least a 'Hold Segment Type' or a 'END' segment), the toolbox is able to consider only the loading part of your results.
+Your data must contain only the loading portion of the load-displacement curves from your (nano)indentation results.
+If the data are saved in a 'Sample' or 'Analyst Project' sheet of an .xls file created with 'Analyst' (MTS software)
+and contain at least a 'Hold Segment Type' or an 'END' segment, the toolbox can isolate the loading portion of the results.
 
-Please, check if the surface detection is well done, especially if the substrate is compliant [#Kaufman_2009]_ and [#Piccarolo_2010]_.
-For more explanations about the surface detection, look into the `NIMS documentation <http://nims.readthedocs.org/en/latest/models.html>`_.
+Please check that surface detection is accurate, especially when the substrate is compliant [#Kaufman_2009]_ and [#Piccarolo_2010]_.
+For more information about surface detection, see the `NIMS documentation <http://nims.readthedocs.org/en/latest/models.html>`_.
 
-It is advised to use average results from at least 10 indentation tests to avoid artefacts
+It is advisable to average results from at least 10 indentation tests to reduce artifacts
 (e.g. pop-in, roughness, local impurities or dust on the sample's surface...).
 
 .. note::
@@ -29,10 +28,10 @@ It is advised to use average results from at least 10 indentation tests to avoid
 Agilent - MTS example files
 ###############################
 
-* Both .txt or .xls files are accepted.
+* Both .txt and .xls files are accepted.
 * 3 columns (Displacement / Load / Stiffness)
 * 6 columns (Disp. / SD (Disp.) / Load / SD (Load.) / Stiff. / SD (Stiff.)) (SD for Standard Deviation)
-* It is possible to get directly these type of average sheet in your .xls file, using the 'Analyst' Excel macro provided by MTS.
+* These types of averaged sheets can be generated directly in your .xls file using the 'Analyst' Excel macro provided by MTS.
 
 
 * `MTS_0film_Si_CSM-2nm_noSD.txt <https://github.com/DavidMercier/NIMS/blob/master/data_indentation/MTS_0film_Si_CSM-2nm_noSD.txt>`_

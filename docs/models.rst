@@ -3,15 +3,15 @@
 
 .. include:: includes.rst
 
-The nanoindentation (or instrumented or depth sensing indentation) is a variety
-of indentation hardness tests applied to small volumes. During nanoindentation,
+Nanoindentation (also called instrumented or depth-sensing indentation) is a type
+of indentation hardness testing applied to small volumes. During nanoindentation,
 an indenter is brought into contact with a sample and mechanically loaded.
 
-The following parts give a short overview of models existing in the
-literature used for the extraction of mechanical properties of homogeneous 
-bulk materials from indentation experiments with geometrically self-similar indenters (conical or sharp).
+The following sections provide a brief overview of models from the literature
+used to extract the mechanical properties of homogeneous bulk materials from
+indentation experiments with geometrically self-similar indenters (conical or sharp).
 
-Please look at the ISO standard (ISO 14577 - 1 to 3), to perform nanoindentation tests on bulk material.
+See the ISO 14577 (Parts 1-3) standard for guidance on nanoindentation testing of bulk materials.
 
 - `ISO 14577 - 1 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 1: Test method", (2002). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=30104>`_
 
@@ -19,11 +19,11 @@ Please look at the ISO standard (ISO 14577 - 1 to 3), to perform nanoindentation
 
 - `ISO 14577 - 3 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 3: Calibration of reference blocks", (2002). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=32193>`_
 
-Some authors overviewed/reviewed already the nanoindentation technique :
+Several authors have reviewed the nanoindentation technique:
 
 - `Li X. and Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications." (2002). <https://doi.org/10.1016/S1044-5803(02)00192-4>`_
 
-- `VanLandingham M.R., "Review of Instrumented Indentation" (2003). <http://oai.dtic.mil/oai/oai?verb=getRecord&metadataPrefix=html&identifier=ADA512140>`_
+- `VanLandingham M.R., "Review of Instrumented Indentation" (2003). <http://oai.dtic.mil/oai/oai?verb=getRecord&metadataPrefix=html&identifier=ADA512140>`__
 
 - `Oliver W.C. and Pharr G.M., "Measurement of hardness and elastic modulus by instrumented indentation: Advances in understanding and refinements to methodology" (2004). <https://doi.org/10.1557/jmr.2004.19.1.3>`_
 
@@ -77,10 +77,10 @@ and similarity of the stress fields.
     Indenters are mainly in diamond. Diamond has a Young's modulus of 1070GPa
     and a Poisson's ratio of 0.07 [#Fischer-Cripps_2004]_.
 	
-Find here the |matlab| function to plot the projected ared of 3-sided pyramidal indenter as a function of indentation depth :
+See the |matlab| function for plotting the projected area of a three-sided pyramidal indenter as a function of indentation depth:
 `projectedArea_3sidePyramid.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/function_area/projectedArea_3sidePyramid.m>`_.
 
-Find here the |matlab| function to plot the the projected ared of 4-sided pyramidal indenter as a function of indentation depth :
+See the |matlab| function for plotting the projected area of a four-sided pyramidal indenter as a function of indentation depth:
 `projectedArea_4sidePyramid.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/function_area/projectedArea_4sidePyramid.m>`_.
    
 Practically, perfect conical indenters (no tip defect) don't really exist and 
@@ -103,18 +103,18 @@ indenters, the equivalent cone angle is used to set the cone angle.
 In case of a tip defect of 5nm for a Berkovich indenter, a tip radius of :math:`R = 148\text{nm}` is calculated.
 
 The transition depth :math:`h_\text{trans}` between the spherical and the conical parts of a cono-spherical indenter,
-is calculated from the followig equation:
+is calculated from the following equation:
 
     .. math:: h_\text{trans} = R(1-sin(\alpha))
             :label: transition_depth
 			
-Find here the |matlab| function to calculate the tip radius:
+See the |matlab| function for calculating the tip radius:
 `tipRadius.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/fem/tipRadius.m>`_.
 
-Find here the |matlab| function to calculate the transition depth:
+See the |matlab| function for calculating the transition depth:
 `transitionDepth.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/function_area/transitionDepth.m>`_.
 
-Find here the |matlab| function to calculate the tip defect:
+See the |matlab| function for calculating the tip defect:
 `tipDefect.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/function_area/tipDefect.m>`_.
    
 Load-Displacement curves
@@ -149,7 +149,7 @@ the recorded load–displacement data back to zero load.
 
 With :math:`h` the corrected penetration and :math:`h_0` the recorded penetration.
 
-See also : * :ref:`methodologyGuillonneau`
+See also :ref:`methodologyGuillonneau`.
 
 A schematic of the load-displacement curve obtained from
 nanoindentation experiment after this first correction is given :numref:`load_disp_curve`.
@@ -230,15 +230,15 @@ by following the experimental approach proposed by [#Jakes_2008]_.
 Loading
 +++++++++
 
-Loubet et al. founded a good fit to the loading part of the load-displacement
-curve with a power-law relationship of the form [#Loubet_1986]_ :
+Loubet et al. found that the loading part of the load-displacement curve is well fit
+by a power-law relationship of the form [#Loubet_1986]_:
 
         .. math:: F_\text{c} = K h_\text{t}^n
                 :label: Loubet_load_displacement
 
 With :math:`K` and :math:`n` constants for a given material for a fixed indenter geometry.
 
-It is possible to find in the litterature sometimes the following equation to fit the loading curve:
+The following equation is also sometimes used to fit the loading curve:
 
         .. math:: F_\text{c} = K h_\text{t}^n + C_\text{preload}
                 :label: generalized_Loubet_load_displacement
@@ -254,7 +254,7 @@ Hainsworth et al. proposed the following relationship to describe loading curves
 With :math:`K` a constant function of material properties
 (Young's modulus and hardness) and the indenter.
 
-In the same time, Giannakopoulos and Larsson established parabolic relationships between the load and the indentation depth,
+At the same time, Giannakopoulos and Larsson established parabolic relationships between load and indentation depth,
 for purely elastic indentation of bulk materials with ideally Berkovich indenter :eq:`Larsson_Berkovich` [#Larsson_1996]_
 and Vickers indenter :eq:`Giannakopoulos_Vickers` [#Giannakopoulos_1994]_, by numerical studies.
 
@@ -276,7 +276,7 @@ who described sharp indentation behavior of time-dependent materials [#Oyen_2003
 Unloading
 +++++++++++
 
-Pharr and Bolshakov founded that unloading curves were well described
+Pharr and Bolshakov found that unloading curves were well described
 by the following power-law relationship [#Pharr_2002]_ :
 
     .. math:: F_\text{c} = \alpha_\text{u} \left(h_\text{t} - h_\text{r}\right)^m
@@ -289,7 +289,7 @@ Pharr and Bolshakov leaded to an average value for :math:`m` close to :math:`1.5
 Loading rate
 ++++++++++++++
 
-The mechanical response of a material is function of the imposed indentation
+The mechanical response of a material is a function of the imposed indentation
 strain rate :math:`\dot{\epsilon}` (in :math:`\text{s}^{-1}`) [#Lucas_1996]_.
 Thus, it is meaningful to perform indentation tests with a constant indentation strain rate.
 
@@ -302,17 +302,15 @@ Indentation contact topography
 Indentation contact area is not usually estimated by experiments, 
 given the fact that many possible errors can be induced during the post-mortem topography measurement (small size of residual indent, elastic or plastic recovery...), 
 by atomic force microscopy (AFM) or scanning electron microscopy (SEM) for example.
-To extract contact area from AFM or SEM measurements, it is advised to use softwares with dedicated tools (e.g.: http://gwyddion.net/).
-Some tips are given in the following procedure [#Mercier_2018]_. A usual method is to calculate the angle between normal to the indent surface with the horizontal sample surface.
+To extract contact area from AFM or SEM measurements, use software with dedicated tools (e.g., http://gwyddion.net/).
+The following procedure offers additional guidance [#Mercier_2018]_. One common method calculates the angle between the normal to the indent surface and the horizontal sample surface.
 When this angle is equal to the semi-angle of the apex of the indenter, the corresponding pixel can be used for the residual contact area.
-The total residual contact area is the sum of all pixels validating this angle condition. Here an example using an indenter with a full apex angle of 140° (see :numref:`AngleEstimationTopo`).
+The total residual contact area is the sum of all pixels that satisfy this angle condition. The following figure shows an indenter with a full apex angle of 140° and illustrates a) pile-up and b) sink-in.
 
 .. figure:: ./_pictures/AngleEstimationTopo.png
    :name: AngleEstimationTopo
    :scale: 50 %
    :align: center
-
-   *Schematic of residual cross sectionnal indentation contact topography : a) "pile-up" and b) "sink-in".*
 
 .. figure:: ./_pictures/imprint_analysis.jpg
    :name: afm_imprint
@@ -321,8 +319,8 @@ The total residual contact area is the sum of all pixels validating this angle c
 
    *Residual topography of a Berkovich indent measured by AFM and analyzed using Gwyddion software.*
 
-The best should be to estimate the contact area during the indentation test, 
-by optical observation through a transparent indenter [#Feng_2007]_, [#Maslenikov_2019]_ or a microscope in situ indentation test [#Guillonneau_2019]_.
+Ideally, estimate the contact area during the indentation test using optical observation through a transparent indenter [#Feng_2007]_, [#Maslenikov_2019]_
+or an in situ indentation microscope [#Guillonneau_2019]_.
 
 For those reasons, contact area is most of the time estimated using contact depth evolution, given a geometrical relationship.
 
@@ -332,7 +330,7 @@ Two kind of topographies can occur:
 - the pile-up (indentation contact depth > indentation total depth) (see :numref:`contact_topography` a and :numref:`pile_up`);
 - the sink-in (indentation contact depth < indentation total depth) (see :numref:`contact_topography` b).
 
-The flow of material below the indenter is function of mechanical properties of the material.
+The flow of material below the indenter depends on the material's mechanical properties.
 
 Pile-up occurs when work-hardening coefficient is low (:math:`< 0.3`) or if the ratio yield stress
 over Young's modulus is less than :math:`1%` [#Bolshakov_1998]_, [#Cheng_1998]_ and [#Cheng_2004]_.
@@ -376,7 +374,7 @@ exponent :math:`m` of the unloading curve fit has been proposed by Pharr et Bols
 With :math:`\Gamma` a |matlab| function which interpolates the factorial function : 
 `gamma <http://de.mathworks.com/help/matlab/ref/gamma.html?refresh=true>`_.
 
-Find here the |matlab| function to plot the :math:`\epsilon` function :
+See the |matlab| function for plotting the :math:`\epsilon` function:
 `epsilon_oliver_pharr.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/load_displacement/epsilon_oliver_pharr.m>`_.
 
 .. figure:: ./_pictures/epsilonOliverPharr.png
@@ -439,7 +437,7 @@ One other way to express the function area is that suggested by Loubet et al. [#
 which describes a pyramid with a small flat region on its tip, the so-called tip defect (:math:`h_0`).
 This geometry is described by the addition of a constant to the first two terms in :eq:`functionArea`.
 
-Find here the |matlab| function to calculate the contact depth, the function area and the contact radius:
+See the |matlab| function for calculating the contact depth, area function, and contact radius:
 `model_function_area.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/model_function_area.m>`_.
 
 Recently, in the paper of Yetna N'jock M. et al. [#YetnaNjock_2015]_, a criterion was proposed
@@ -458,8 +456,8 @@ Three preponderant deformation modes are distinguished :
 - :math:`\Delta < 0.83` implies sink-in formation;
 - :math:`\Delta > 0.83` implies pile-up formation.
 
-Giannakopoulos and Suresh founded a critical value for a similar
-criterion about :math:`0.875` [#Giannakopoulos_1999]_.
+Giannakopoulos and Suresh found a critical value of about
+:math:`0.875` for a similar criterion [#Giannakopoulos_1999]_.
 
 Dynamic nanoindentation
 ###########################
@@ -491,11 +489,11 @@ With :math:`m` the mass of the indenter column,
 :math:`C_\text{s}` the system damping coefficient in :math:`\text{N.s/m}`,
 :math:`K_\text{s}` the stiffness of the indenter support springs in :math:`\text{N/m}` and
 :math:`K_\text{f}` the stiffness of the load frame in :math:`\text{N/m}`.
-:math:`C\omega` and C_\text{s}\omega represent respectively the tip–sample damping factor
+:math:`C\omega` and :math:`C_\text{s}\omega` represent, respectively, the tip-sample damping factor
 and the system damping coefficient. 
 
-Values :math:`m`, :math:`C_\text{s}`, :math:`K_\text{s}` and :math:`K_\text{f}`
-are function of the equipment used and are determined during calibration process.
+Values :math:`m`, :math:`C_\text{s}`, :math:`K_\text{s}`, and :math:`K_\text{f}`
+depend on the equipment and are determined during calibration.
 
 This solution allows to determine the material properties as a continuous function
 of the indentation depth, but Pharr et al. have highlighted the influence of displacement
@@ -525,7 +523,7 @@ These constants are related by the following equation:
     .. math:: K = \left(\frac{2}{{m\sqrt{\pi}}}\right)^m
             :label: csm_K_m
 
-Pharr and Bolshakov founded a value of :math:`1.380` for :math:`m` after many Berkovich indentation
+Pharr and Bolshakov found a value of :math:`1.380` for :math:`m` after many Berkovich indentation
 tests on a variety of materials [#Pharr_2002]_. Thus, a value of :math:`0.757` is used for the
 constant :math:`K`, using :eq:`csm_K_m`.
 
@@ -535,10 +533,10 @@ constant :math:`K`, using :eq:`csm_K_m`.
    
    *Evolution of K as a function of m.*
 
-Find here the |matlab| function to calculate the corrections to apply on depth, load and stiffness during dynamic nanoindentation:
+See the |matlab| function for calculating the corrections to depth, load, and stiffness during dynamic nanoindentation:
 `CSM_correction.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/CSM_correction.m>`_.
 
-Find here the |matlab| function to calculate the constant :math:`K` as a function of :math:`m`:
+See the |matlab| function for calculating the constant :math:`K` as a function of :math:`m`:
 `unload_k_m.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/load_displacement/unload_k_m.m>`_.
  
 Extraction of elastic properties
@@ -587,7 +585,7 @@ the analytical approximation is:
 
 With :math:`\nu` the Poisson's ratio of the indented material.
 
-Find here the |matlab| function to plot the :math:`\beta` function of Hay et al.:
+See the |matlab| function for plotting the :math:`\beta` function of Hay et al.:
 `beta_hay.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/beta_hay.m>`_.
 
 .. figure:: ./_pictures/betaHay.png
@@ -617,7 +615,7 @@ the Poisson's ratio of the material of the indenter.
     This method used to analyze indentation data is based on equations valid for
     isotropic homogeneous elastic solids.
     
-Find here the |matlab| function to calculate the Young's modulus:
+See the |matlab| function for calculating Young's modulus:
 `model_elastic.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_elastic.m>`_.
 
 Extraction of viscoelastic properties
@@ -664,10 +662,10 @@ with :math:`\delta` the phase-shift angle.
    The elastic portion of the viscoelastic behavior is presented
    on the x-axis and the viscous portion on the y-axis.*
    
-Find here the |matlab| function to calculate the loss modulus:
+See the |matlab| function for calculating the loss modulus:
 `loss_modulus.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/visco_elastic_models/loss_modulus.m>`_.
 
-Find here the |matlab| function to calculate the loss tangent or loss factor:
+See the |matlab| function for calculating the loss tangent or loss factor:
 `loss_tangent.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/visco_elastic_models/loss_tangent.m>`_.
 
 Extraction of plastic properties 
@@ -679,7 +677,7 @@ Oliver and Pharr [#OliverPharr_1992]_, by the following expression:
     .. math:: H = \frac{F_\text{c,max}}{A_\text{c}}
             :label: hardness
 
-Find here the |matlab| function to calculate the hardness:
+See the |matlab| function for calculating hardness:
 `model_hardness.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/plastic_models/model_hardness.m>`_.
 
 Energy approach
@@ -724,7 +722,7 @@ deformation energy and the total deformation energy:
 Higher value of the indentation recovery index indicates greater
 capability to accommodate deformation during indentation test.
 
-Find here the |matlab| function to calculate the indentation recovery index :
+See the |matlab| function for calculating the indentation recovery index:
 `recovery_index.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/load_displacement/recovery_index.m>`_.
 
 Methodology to extract properties without the function area 
@@ -773,11 +771,11 @@ Methodology to minimize displacement measurement uncertainties using dynamic nan
 
 Guillonneau et al. proposed a methodology to minimize displacement measurement uncertainties 
 using dynamic nanoindentation [#Guillonneau_2014]_.
-The following equations are developped using respectively Loubet's :eq:`loubet_model` and Oliver and Pharr's models :eq:`oliver_pharr_model`.
+The following equations are developed using Loubet's model :eq:`loubet_model` and Oliver and Pharr's model :eq:`oliver_pharr_model`, respectively.
 Hardness and elastic modulus can be calculated independently of the indentation depth and the tip defect.
 
 Using Loubet's model
-+++++++++++++++++++++
+--------------------
 
     .. math:: h_\text{c} = \alpha\left(h-\frac{H\pi tan(\theta)}{2E^{'*}}h_\text{c}+h_0\right)
             :label: contact_depth_Loubet
@@ -800,7 +798,7 @@ Then, :math:`E^{'*}` can be calculated using :eq:`P_squareS` and :math:`H` knowi
             :label: derivative_contact_depth_Loubet_H
 
 Using Oliver and Pharr's model
-+++++++++++++++++++++++++++++++++
+------------------------------
   
 :eq:`derivative_contact_depth_Loubet_E` and :eq:`derivative_contact_depth_Loubet_H` can be extended to the Oliver and Pharr's contact model :eq:`oliver_pharr_model`. 
 	    
@@ -810,10 +808,10 @@ Using Oliver and Pharr's model
     .. math:: H = \frac{4 F_\text{c} {E^{'*}}^2}{\pi {S}^2}
             :label: derivative_contact_depth_OP_H
 	    
-Find here the |matlab| function to calculate elastic modulus using Guillonneau's methodology:
+See the |matlab| function for calculating elastic modulus using Guillonneau's methodology:
 `model_elasticModulus_Guillonneau.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_elasticModulus_Guillonneau.m>`_.
 
-Find here the |matlab| function to calculate hardness using Guillonneau's methodology:
+See the |matlab| function for calculating hardness using Guillonneau's methodology:
 `model_hardness_Guillonneau.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/plastic_models/model_hardness_Guillonneau.m>`_.
 
 Indentation Size Effect
@@ -890,7 +888,7 @@ References
 .. [#Shorshorov_1982] Shorshorov M.K. et al., Sov. Phys. Dokl., 1982, 26.
 .. [#Strader_2006] `Strader J.H. et al., "An experimental evaluation of the constant b relating the contact stiffness to the contact area in nanoindentation." (2006). <https://doi.org/10.1080/14786430600567747>`_
 .. [#Troyon_2006] `Troyon M. and Lafaye S., "About the importance of introducing a correction factor in the Sneddon relationship for nanoindentation measurements" (2002). <https://doi.org/10.1080/14786430600606834>`_
-.. [#VanLandingham_2001] `VanLandingham M.R., "Nanoindentation of Polymers: An Overview" (2001). <https://doi.org/10.1002/1521-3900(200103)167:1<15::AID-MASY15>3.0.CO;2-T>`_
+.. [#VanLandingham_2001] `VanLandingham M.R., "Nanoindentation of Polymers: An Overview" (2001). <https://doi.org/10.1002/1521-3900(200103)167:1%3C15::AID-MASY15%3E3.0.CO;2-T>`_
 .. [#VanLandingham_2003] `VanLandingham M.R., "Review of Instrumented Indentation" (2003). <https://doi.org/10.6028/jres.108.024>`_
 .. [#White_2005] `White C.C. et al., "Viscoelastic characterization of polymers using instrumented indentation. II. Dynamic testing" (2005). <https://doi.org/10.1002/polb.20455>`_
 .. [#Xia_2014] `Xia Y. et al., "Effect of surface roughness in the determination of the mechanical properties of material using nanoindentation test" (2014). <https://doi.org/10.1002/sca.21111>`_

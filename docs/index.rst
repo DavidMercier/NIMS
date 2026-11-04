@@ -12,38 +12,39 @@ NIMS |matlab| toolbox
     :scale: 50 %
     :align: right
 
-The NIMS toolbox has been developed to plot and to analyze (nano)indentation
-data (obtained with conical indenters) for bulk material or multilayer sample.
+The NIMS toolbox has been developed to plot and analyze (nano)indentation
+data obtained with conical indenters for bulk materials and multilayer samples.
 
-With this Matlab toolbox, it is possible to :
-    * plot and correct nanoindentation dataset with standard deviation ;
-    * calculate the coefficient of the power law fit of the load-displacement curve ;
-    * calculate the energy of the loading (area below the load-displacement curve) ;
-    * plot of the stiffness and the load/stiffness² evolution ;
-    * calculate the Young's modulus and hardness of bulk materials ;
-    * calculate the Young's modulus and hardness of thin films on a substrate (for a bilayer or a multilayer sample (until 3 layers on a substrate)) ;
-    * generate Python script of axisymmetrical FEM model for use in ABAQUS (cono-spherical indentation of multilayer sample).
+With this Matlab toolbox, it is possible to:
+
+* plot and correct nanoindentation datasets with standard deviations;
+* calculate the coefficient of the power-law fit to the load-displacement curve;
+* calculate the loading energy (the area under the load-displacement curve);
+* plot the evolution of stiffness and load/stiffness squared;
+* calculate the Young's modulus and hardness of bulk materials;
+* calculate the Young's modulus and hardness of thin films on a substrate, for bilayer or multilayer samples (up to three layers on a substrate);
+* generate a Python script for an axisymmetric FEM model in ABAQUS (conical-spherical indentation of a multilayer sample).
 
 .. figure:: ./_pictures/download.png
    :scale: 20 %
    :align: left
    :target: https://github.com/DavidMercier/NIMS
 
-`Source code is hosted at Github <https://github.com/DavidMercier/NIMS>`_.
+`Source code is hosted on GitHub <https://github.com/DavidMercier/NIMS>`_.
 
 .. figure:: ./_pictures/normal_folder.png
    :scale: 4 %
    :align: left
    :target: https://github.com/DavidMercier/NIMS/archive/master.zip
    
-`Download source code as a .zip file <https://github.com/DavidMercier/NIMS/archive/master.zip>`_.
+`Download the source code as a ZIP file <https://github.com/DavidMercier/NIMS/archive/master.zip>`_.
 
 .. figure:: ./_pictures/normal_folder.png
    :scale: 4 %
    :align: left
    :target: https://media.readthedocs.org/pdf/nims/latest/nims.pdf
    
-`Download the documentation as a pdf file <https://media.readthedocs.org/pdf/nims/latest/nims.pdf>`_.
+`Download the documentation as a PDF file <https://media.readthedocs.org/pdf/nims/latest/nims.pdf>`_.
    
 .. figure:: ./_pictures/GUI_Main_Window_Esample_curve.png
    :scale: 50 %
@@ -80,13 +81,13 @@ Acknowledgements
 ==================
 
 The author is grateful to `Dr. V. Mandrillon <https://www.researchgate.net/profile/Vincent_Mandrillon>`_ from (`CEA <http://www.cea.fr/le-cea/les-centres-cea/grenoble>`_, France (Grenoble))
-and to Dr. M. Verdier from (`SIMaP <http://simap.grenoble-inp.fr>`_, France (Grenoble)), for long discussions and many advices about nanoindentation.
+and Dr. M. Verdier from (`SIMaP <http://simap.grenoble-inp.fr>`_, France (Grenoble)) for many fruitful discussions about nanoindentation.
 
 The author is grateful to `Dr. Igor Zlotnikov <https://www.researchgate.net/profile/Igor_Zlotnikov>`_ 
 (`Max Planck Institute of Colloids and Interfaces <http://www.mpikg.mpg.de/>`_, Germany (Potsdam)), for providing example files.
 
 Keywords
-==========
+========
 
 |matlab| toolbox ; nanoindentation ; conical indenter ; Young's modulus ; hardness ; 
 thin film ; multilayer system ; analytical model ; python script ; finite element modelling.

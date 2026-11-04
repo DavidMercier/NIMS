@@ -7,18 +7,18 @@ The following parts give a short overview of models existing in the
 literature used for the extraction of mechanical properties of thin films
 deposited on a substrate from indentation experiments with conical indenters.
 
-Before everything, it is is worth to mention the work performed by Jennett N.M. and Bushby A.J. [#Jennett_2001]_,
-about nanoindentation test on coatings, during the European project INDICOAT (SMT4-CT98-2249).
+First, it is worth mentioning the work by Jennett N. M. and Bushby A. J. [#Jennett_2001]_
+on nanoindentation testing of coatings during the European project INDICOAT (SMT4-CT98-2249).
 
-Progress from this project help in the development of the ISO standard (ISO 14577 - 1-4).
-The ISO 14577 - 4 is dedicated to nanoindentation on coatings.
+The project helped inform the development of the ISO 14577 standard (Parts 1-4).
+Part 4 covers nanoindentation of coatings.
 
     * `ISO 14577 - 1 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 1: Test method", (2002). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=30104>`_
     * `ISO 14577 - 2 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 2: Verification and calibration of testing machines", (2002). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=30543>`_
     * `ISO 14577 - 3 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 3: Calibration of reference blocks", (2002). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=32193>`_
     * `ISO 14577 - 4 , "Metallic materials -- Instrumented indentation test for hardness and materials parameters -- Part 4: Test method for metallic and non-metallic coatings", (2007). <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=39228>`_
 
-Some authors overviewed/reviewed already the nanoindentation technique applied to coatings :
+Several authors have reviewed the application of nanoindentation to coatings:
 
 - `Pharr G.M. and Oliver W.C., "Measurement of Thin Film Mechanical Properties Using Nanoindentation" (1992). <https://doi.org/10.1557/S0883769400041634>`_
 
@@ -42,9 +42,9 @@ Nanoindentation tests on thin films
 Composite reduced Young's modulus and composite hardness
 ----------------------------------------------------------
 
-For indentation test on a coated specimen or on a multilayer sample (e.g.: thin films deposited on a substrate),
+For indentation testing of a coated specimen or multilayer sample (e.g., thin films deposited on a substrate),
 the evolution of the Young's modulus or the hardness calculated with models used for bulk materials,
-is function of the material properties and the thickness :math:`t` (in :math:`\text{m}`) of each underlying film (substrate included),
+depends on the material properties and the thickness :math:`t` (in :math:`\text{m}`) of each underlying film, including the substrate,
 and the properties and the geometry of the indenter.
 
 .. figure:: ./_pictures/multilayerSEM.png
@@ -59,10 +59,10 @@ and the properties and the geometry of the indenter.
    
    *Typical evolution of Young's modulus and hardness for a coated specimen as a function of the normalized indentation depth.*
 
-Thus, the composite reduced Young's modulus :math:`E^{'}` and the composite hardness :math:`H`
-calculated with the models used for bulk materials, can generally be expressed as a combination of respectively
-the reduced Young's moduli :math:`(E^{'}_\text{f})` or the hardness :math:`(H_\text{f})` of each underlayer and
-respectively the reduced Young's modulus :math:`(E^{'}_\text{s})` or the hardness :math:`(H_\text{s})` of the substrate.
+Thus, the composite reduced Young's modulus :math:`E^{'}` and composite hardness :math:`H`,
+calculated using models for bulk materials, can generally be expressed as combinations of the
+reduced Young's moduli :math:`(E^{'}_\text{f})` or hardness values :math:`(H_\text{f})` of the underlying layers,
+and the reduced Young's modulus :math:`(E^{'}_\text{s})` or hardness :math:`(H_\text{s})` of the substrate.
 The reduced Young's moduli and the hardness are in :math:`\text{GPa}`.
 
     .. math:: E^{'} = f(E^{'}_{\text{f},{i \rightarrow N}}, t_{i \rightarrow N}, E^{'}_\text{s})
@@ -71,15 +71,15 @@ The reduced Young's moduli and the hardness are in :math:`\text{GPa}`.
     .. math:: H = f(H_{\text{f},{i \rightarrow N}}, t_{i \rightarrow N}, H_\text{s})
             :label: hardness_evolution
 
-With :math:`i` the indice of the layer and :math:`N` the total number of layers.
+Here, :math:`i` is the layer index and :math:`N` is the total number of layers.
 
-Finally, it is important to avoid confusion between `indentation size effect <https://nims.readthedocs.io/en/latest/models.html#indentation-size-effect>`_.
-and a decrease of hardness as a function of indentation depth observed in the case of a hard thin film deposited on a soft substrate. It might happen that both effects occur during indentation experiment, which complicates the analysis [#Zhang2007]_.
+Finally, do not confuse the `indentation size effect <https://nims.readthedocs.io/en/latest/models.html#indentation-size-effect>`_
+with the decrease in hardness with indentation depth observed for a hard thin film deposited on a soft substrate. Both effects can occur during an indentation experiment, complicating the analysis [#Zhang2007]_.
 
 Indentation contact topography
 ---------------------------------
 
-For nanoindentation tests on thin films, the contact topography is function of both thin film and substrate properties.
+For nanoindentation tests on thin films, the contact topography depends on both film and substrate properties.
 
 .. figure:: ./_pictures/contact_topography_thinfilm.png
    :name: contact_topography_thinfilm
@@ -89,9 +89,9 @@ For nanoindentation tests on thin films, the contact topography is function of b
    *Schematic depiction of a) "pile-up" and b) "sink-in" observed during thin film indentation.*
    
 The :numref:`contact_topography_thinfilm` a ("pile-up") is typical of the case of a soft film on a hard substrate and the :numref:`contact_topography_thinfilm` b ("sink-in")
-of a hard film on a soft substrate [#ChenVlassak2001]_. The pile-up can be emphasized in case ot thin films, because of the material confinement by the substrate. To determine the depth of contact,
+of a hard film on a soft substrate [#ChenVlassak2001]_. Pile-up can be more pronounced in thin films because the substrate confines the material. To determine the contact depth,
 `the same models <http://nims.readthedocs.org/en/latest/models.html#indentation-contact-topography>`_
-described for bulk material indentation are used, especially when the ratio of the indentation depth over the coating thickness remains low (<10%, see the rule proposed by `Bückle <https://nims.readthedocs.io/en/latest/models_thin_films.html#buckle-1961>`_). But, some quantitative approaches are proposed in the literature to take into account both pile up and substrate effects in the material properties estimation of the coating [#Zhou2008]_.
+described for bulk material indentation are used, especially when the indentation-depth-to-coating-thickness ratio remains low (<10%; see the rule proposed by `Bückle <https://nims.readthedocs.io/en/latest/models_thin_films.html#buckle-1961>`_). However, quantitative approaches have also been proposed to account for both pile-up and substrate effects when estimating coating properties [#Zhou2008]_.
 
 Corrections to apply for thin film indentation 
 ------------------------------------------------
@@ -135,8 +135,8 @@ be independent of indentation depth and that its value ranges from
 Method of the tangent
 -----------------------
 
-First of all, the easiest way to assess approximately the mechanical properties of the film is to use the tangential model.
-If one plots a tangent from the diagram's zero point to the curves, then the tangential point is the Young's modulus or the hardness of the film (see :numref:`tangente-method`).
+The tangent method provides a simple way to estimate the film's mechanical properties.
+Plot a tangent from the origin to the curves; the point of tangency indicates the film's Young's modulus or hardness (see :numref:`tangente-method`).
 
 .. figure:: ./_pictures/tangente-method.png
    :name: tangente-method
@@ -148,56 +148,55 @@ If one plots a tangent from the diagram's zero point to the curves, then the tan
 Elastic properties of a thin film on a substrate
 ##################################################
 
-Several models to analyse indentation tests on bilayer sample and
-multilayer sample and to extract intrinsic material properties of
-the upper film (or the top coating) are detailed in the following part.
+Several models for analyzing indentation tests on bilayer and multilayer samples,
+and for extracting the intrinsic material properties of the upper film (or top coating),
+are described below.
 
-Some of the following models developed are detailed in the chapter 8 
-("Nanoindentation of Thin Films") of the book "Nanoindentation"
-written by A.C. Fischer-Cripps [#FischerCripps_2004]_.
+Some of the following models are described in Chapter 8,
+"Nanoindentation of Thin Films," in A. C. Fischer-Cripps's book *Nanoindentation* [#FischerCripps_2004]_.
 
 Bückle (1961) 
 --------------
 
 Bückle proposed an empirical law ("rule of thumb") to characterize thick coatings on a substrate [#Bückle_1961]_.
-It is possible to estimate the Young's modulus of the coating for indentation depth lower than ":math:`10\text{%}`" of the film thickness. But, because of the imperfections of the indenters, the roughness and the surface pollution,
-it is more meaningful to use this rule of the ":math:`10\text{%}`", for film thicker than :math:`500\text{nm}`.
+The coating's Young's modulus can be estimated when the indentation depth is less than :math:`10\text{%}` of the film thickness. However, because of indenter imperfections, surface roughness, and contamination,
+this rule is more meaningful for films thicker than :math:`500\text{nm}`.
 
 Doerner and Nix (1986) 
 -------------------------
 
-The model of Doerner and Nix is detailed in many papers [#DoernerNix_1986]_,
-[#King_1987]_, [#Pharr_1992]_ and [#Saha_2002]_, and is described by the following equation :
+The Doerner and Nix model is described in several papers [#DoernerNix_1986]_,
+[#King_1987]_, [#Pharr_1992]_, and [#Saha_2002]_, and is given by the following equation:
 
     .. math:: \frac{1}{E^{'}} = \frac{1}{E_\text{f}^{'}} + \left(\frac{1}{E_\text{s}^{'}}
               - \frac{1}{E_\text{f}^{'}}\right) e^{-\alpha\left(x\right)}
             :label: doerner_nix
 
-With :math:`x=t/h_\text{c}` and :math:`\alpha` an empirically constant
+Here, :math:`x=t/h_\text{c}` and :math:`\alpha` is an empirical constant
 determined using the method of least squares.
 
 The equation was modified by King [#King_1987]_ with the replacement of :math:`t/h_\text{c}` by :math:`t/a_\text{c}`,
 and then by Saha and Nix [#Saha_2002]_ with the replacement of :math:`t/h_\text{c}` by :math:`(t-h_\text{c})/a_\text{c}`.
 
-An empirical formulae based on the model of Doerner and Nix was proposed by Chen et al. in 2004 [#Chen_2004]_:
+An empirical formula based on the Doerner and Nix model was proposed by Chen et al. in 2004 [#Chen_2004]_:
 
     .. math:: \frac{1}{E^{'}} = \frac{1}{E_\text{f}^{'}}\left[1-e^{-\alpha\left(x\right)^{(2/3)}}\right] + 
               \frac{1}{E_\text{s}^{'}}e^{-\alpha\left(x\right)^{(2/3)}}
             :label: chen
 
-With :math:`x=t/h_\text{c}` and :math:`\alpha` an empirically constant
+Here, :math:`x=t/h_\text{c}` and :math:`\alpha` is an empirical constant
 determined using the method of least squares.
 
-Find here the |matlab| function for the Doerner and Nix model [#DoernerNix_1986]_:
+See the |matlab| function for the Doerner and Nix model [#DoernerNix_1986]_:
 `model_doerner_nix.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_doerner_nix.m>`_.
 
-Find here the |matlab| function for the Doerner and Nix model modified by King [#King_1987]_:
+See the |matlab| function for the Doerner and Nix model modified by King [#King_1987]_:
 `model_doerner_nix_king.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_doerner_nix_king.m>`_.
 
-Find here the |matlab| function for the Doerner and Nix model modified by Saha [#Saha_2002]_:
+See the |matlab| function for the Doerner and Nix model modified by Saha [#Saha_2002]_:
 `model_doerner_nix_saha.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_doerner_nix_saha.m>`_.
 
-Find here the |matlab| function function for the Doerner and Nix model modified by Chen [#Chen_2004]_:
+See the |matlab| function for the Doerner and Nix model modified by Chen [#Chen_2004]_:
 `model_chen.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_doerner_nix_chen.m>`_.
 
 Gao et al. (1992) 
@@ -230,16 +229,16 @@ ratio of the substrate and :math:`\nu_{f}` the Poisson's ratio of the thin film.
 
 With :math:`x=a_\text{c}/t`.
 
-Find here the |matlab| function for the weighting function :math:`\phi_{Gao_0}` :
+See the |matlab| function for the weighting function :math:`\phi_{Gao_0}`:
 `phi_gao_0.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/phi_gao_0.m>`_.
 
-Find here the |matlab| function for the weighting function :math:`\phi_{Gao_1}` :
+See the |matlab| function for the weighting function :math:`\phi_{Gao_1}`:
 `phi_gao_1.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/phi_gao_1.m>`_.
 
-Find here the |matlab| function for :math:`\nu_{c}` the composite Poisson's ratio :
+See the |matlab| function for calculating :math:`\nu_{c}`, the composite Poisson's ratio:
 `composite_poissons_ratio.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/composite_poissons_ratio.m>`_.
 
-Find here the |matlab| function for the Gao et al. model :
+See the |matlab| function for the Gao et al. model:
 `model_gao.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_gao.m>`_.
 
 Menčík et al. (1997) 
@@ -275,7 +274,7 @@ Menčík described too the linear model by the following expression [#Menčík_1
 
 With :math:`x=a_\text{c}/t`.
 
-Find here the |matlab| function for the Menčík et al. linear function :
+See the |matlab| function for the Menčík et al. linear model:
 `model_menick_linear.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_mencik_linear.m>`_.
 
 Menčík et al. (exponential model) (1997) 
@@ -290,7 +289,7 @@ Menčík described the exponential model by the following expression [#Menčík_
 With :math:`x=a_\text{c}/t` and :math:`\alpha` is an empirically
 constant determined using the method of least squares.
 
-Find here the |matlab| function for the Menčík et al. exponential function :
+See the |matlab| function for the Menčík et al. exponential model:
 `model_menick_exponential.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_mencik_exponential.m>`_.
 
 Menčík et al. (reciprocal exponential model) (1997) 
@@ -306,7 +305,7 @@ Menčík described the reciprocal exponential model by the following expression 
 With :math:`x=a_\text{c}/t` and :math:`\alpha` is an empirically
 constant determined using the method of least squares.
 
-Find here the |matlab| function for the Menčík et al. reciprocal exponential function :
+See the |matlab| function for the Menčík et al. reciprocal exponential model:
 `model_menick_reciprocal_exponential.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_mencik_reciprocal_exponential.m>`_.
 
 Perriot et al. (2003) 
@@ -326,7 +325,7 @@ The following system of equation describes the model developed by Perriot et al.
 With :math:`x=a_\text{c}/t`, and :math:`k_0` and :math:`n` are 
 adjustable constants determined using the method of least squares.
 
-Find here the |matlab| function for the Perriot et al. model :
+See the |matlab| function for the Perriot et al. model:
 `model_perriot_barthel.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_perriot_barthel.m>`_.
 
 Jung et al. (2004) 
@@ -348,7 +347,7 @@ with :math:`L` is the exponent term described by a dimensionless function :
 
 With :math:`x=h_\text{c}/t` and where :math:`A` and :math:`B` are adjustable coefficients.
 
-Jung et al. founded :math:`A=3.76` and :math:`B=1.38` after regression fits of :eq:`jung` to different data sets.
+Jung et al. found :math:`A=3.76` and :math:`B=1.38` by fitting :eq:`jung` to different datasets.
 These coefficients are not universal and need to be "calibrated" with experimental data
 or with finite element data for specified material systems.
 
@@ -358,10 +357,10 @@ the model of Jung is modified by using the reduced form of the Young's moduli :
      .. math:: E^{'} = E^{'}_\text{s} {\left(\frac{E^{'}_\text{f}}{E^{'}_\text{s}}\right)}^L
             :label: jung_reduced
 
-Find here the |matlab| function for the sigmoidal function used in the Jung's model :
+See the |matlab| function for the sigmoidal function used in Jung's model:
 `sigmoidal_jung.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/sigmoidal_jung.m>`_.
 
-Find here the |matlab| function for the Jung et al. model :
+See the |matlab| function for the Jung et al. model:
 `model_jung.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_jung.m>`_.
 
 Bec et al. (2006) 
@@ -402,7 +401,7 @@ This system is modelled by two springs connected in series :
               \frac{2t}{\pi}\right)E^{'}_\text{s}}
             :label: bec_Eeq
 
-Find here the |matlab| function for the Bec et al. model :
+See the |matlab| function for the Bec et al. model:
 `model_bec.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_bec.m>`_.
 
 Korsunsky and Constantinescu (2009) 
@@ -469,7 +468,7 @@ the shear modulus and Poisson’s ratio of the film :
     .. math:: E_\text{f} = 2\mu_\text{f}\left(1 + \nu_\text{f}\right)
             :label: hay_Ef
 
-Find here the |matlab| function for the Hay et al. model :
+See the |matlab| function for the Hay et al. model:
 `model_hay.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_hay.m>`_.
 
 Bull (2014)
@@ -565,7 +564,7 @@ values of Young's modulus of each layer are extracted from the contact stiffness
    
    *Experimental process to apply for elastic multilayer model.*
 
-Find here the |matlab| function for the Mercier et al. model :
+See the |matlab| function for the Mercier et al. model:
 `model_multilayer_elastic.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/model_multilayer_elastic.m>`_.
 
 Puchi-Cabrera et al. (2015) 
@@ -601,40 +600,39 @@ it is more meaningful to use this rule of the ":math:`40\text{%}`", for film thi
 In the paper of Rother and Jehn [#Rother_1996]_, a good agreement with Bückle's "rule of thumb" is found
 for a range of indentation depths over coating thickness ratios between 1/10 (10%) and 1/7 (14.3%).
 
-According to Veprek-Heijman M.G.J. and Veprek S., the Bückle's rule is not valid in the case of superhard coatings
-the deformation of a softer substrate, such as steel [#Veprek_2016]_.
+According to Veprek-Heijman M. G. J. and Veprek S., Bückle's rule is not valid for superhard coatings when a softer substrate, such as steel, deforms [#Veprek_2016]_.
 To obtain correct measurements of the hardness of superhard coatings (H ≥ 40 GPa)
 their thickness must be sufficiently large (typically 5–7 μm or more on steel and about 3 μm
 on Si or cemented carbide). In the case of ultrahard coatings (H ≥ 80 GPa), the thickness should be even larger.
 
-In parallel, Bückle proposed an expression of the composite hardness :math:`H` in the case of a two-layer material
-with a weighted sum of the different layer hardnesses during indentation process [#Bückle_1961]_.
+In addition, Bückle proposed an expression for composite hardness :math:`H` in a two-layer material,
+using a weighted sum of the layer hardnesses during indentation [#Bückle_1961]_.
 
     .. math:: H = aH_\text{f} + bH_\text{s}
             :label: buckle_hardness
 
-With :math:`H_\text{f}` the hardness of the film, :math:`H_\text{s}` the hardness of the substrate and :math:`a + b = 1`.
+Here, :math:`H_\text{f}` and :math:`H_\text{s}` are the hardnesses of the film and substrate, respectively, and :math:`a + b = 1`.
 :math:`a` varies from :math:`1` when the hardness is not affected by the substrate,
 to :math:`0` when the indentation depth is approaching the film thickness.
 
 Kao and Byrne (1981)
 ---------------------------
 
-Kao and Byrne proposed the following model to describe the evolution of the composite hardness as a function of the reciprocal indentation depth [#Kao_1981]_, based on Bückle's model [#Bückle_1961]_ :
+Based on Bückle's model [#Bückle_1961]_, Kao and Byrne proposed the following model for the evolution of composite hardness with reciprocal indentation depth [#Kao_1981]_:
 
     .. math:: H \simeq H_\text{s} + 2 k_1 t_\text{f}\left(H_\text{f} - H_\text{s} \right)\frac{1}{h}
             :label: kao_hardness
 
-With :math:`k_1` a weighting factor of about 9%, independent of material characteristics.
+Here, :math:`k_1` is a weighting factor of about 9%, independent of material properties.
 
-Find here the |matlab| functions for the  model of Kao :
+See the |matlab| functions for the Kao model:
 - `model_kao.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/plastic_models/model_kao.m>`_.
 - `model_kao_film.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/plastic_models/model_kao_film.m>`_.
 
 Jönsson and Hogmark (1984)
 ---------------------------
 
-Jönsson and Hogmark used a simple geometrical approach based on a area
+Jönsson and Hogmark used a simple geometrical approach based on an area
 "law of mixtures" to separate the substrate and film contributions
 to the measured hardness from Vickers indentation [#Jönsson_1984]_.
 
@@ -685,7 +683,7 @@ than the substrate and to 1 when the substrate is harder than the coating.
 
 In the original paper, :math:`\alpha` is equal to :math:`\frac{H_\text{f}/H_\text{s}}{\sigma_\text{f}/\sigma_\text{s}\sqrt{E_\text{f}/E_\text{s}}}`, when the coating is harder than the substrate and to :math:`\frac{\sigma_\text{f}/\sigma_\text{s}}{E_\text{f}/E_\text{s}}`, when the substrate is harder than the coating.
 
-Find here the |matlab| functions for the  model of Bhattacharya and Nix : `model_bhattacharya.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/plastic_models/model_bhattacharya.m>`_.
+See the |matlab| function for the Bhattacharya and Nix model: `model_bhattacharya.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/plastic_models/model_bhattacharya.m>`_.
 
 “Volume law of mixtures”
 ---------------------------
@@ -733,7 +731,7 @@ In this paper, Chen et al. proposed a modified volume fraction (CZ) model, in wh
 Iost (2005)
 ---------------------------
 
-More recently, Iost et al. compared 8 different models in term of robustness, taking into account the indentation size effect on film and substrate proposed in the literature to estimate the hardness of coatings from indentations where both coating and substrate interact [#Iost_2005]_.
+More recently, Iost et al. compared eight models in terms of robustness, accounting for the indentation size effects of the film and substrate described in the literature. These models estimate coating hardness from indentations in which both coating and substrate interact [#Iost_2005]_.
 
 Plastic properties of a thin film on a multilayer system
 ##########################################################
@@ -754,7 +752,7 @@ With :math:`N` the number of layers deposited on the substrate, :math:`A_\text{f
 Rahmoun et al. (2009)
 ---------------------------
 
-The paper written by Ramhoun et al. is about the description of a multilayer model, developed to estimate coating hardness evolution in case of a multilayer specimen [#Rahmoun_2009]_. After some simplifcation, the following equations are established to take into account the hardness variation to the applied load and the crumbling of the coating. This model, based on the Jönsson and Hogmark's area law of mixtures, makes it possible to calculate the minimum in hardness value which depends on the hardness of the different phases, the thickness of the coatings and the compaction of the layers under the load transmitted by the Vickers indenter. From this model (which has some features in common with the Kao and Byrne approach [#Kao_1981]_), it can be shown that the substrate begins to influence the coating hardness at a critical penetration depth equal to the sum of interlayer and top coating thickness.
+Rahmoun et al. developed a multilayer model to describe coating-hardness evolution in multilayer specimens [#Rahmoun_2009]_. After simplification, the equations account for changes in hardness with applied load and coating compaction. Based on Jönsson and Hogmark's area law of mixtures, the model predicts a minimum hardness determined by the hardness of each phase, the coating thicknesses, and compaction of the layers under the Vickers indenter. As in the Kao and Byrne approach [#Kao_1981]_, the substrate begins to influence coating hardness at a critical penetration depth equal to the combined thickness of the interlayer and top coating.
 
     .. math:: H = \frac{A_\text{f}}{A}H_\text{f} + \frac{A_\text{i}}{A}H_\text{i} + \frac{A_\text{s}}{A}H_\text{s}
             :label: rahmoun_model

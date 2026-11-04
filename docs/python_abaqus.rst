@@ -3,7 +3,7 @@
 
 .. include:: includes.rst
 
-Finite Element Modelling (FEM) of conical indentation
+Finite element modeling (FEM) of conical indentation
 #######################################################
 
 The present model is a simulation of the conical nanoindentation process,
@@ -12,8 +12,8 @@ using the FEM software ABAQUS.
 The |matlab| function used to generate a Python script for ABAQUS is :
 `python_abaqus <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/fem/python4abaqus.m>`_
 
-The model is axisymmetric with a geometry dependent mesh
-and restricted boundaries conditions.
+The model is axisymmetric, with a geometry-dependent mesh
+and restricted boundary conditions.
 
 Geometry of the (multilayer) sample
 -------------------------------------
@@ -41,38 +41,38 @@ Geometry of the indenter
 ---------------------------------
 
 The indenter is defined as a rigid cono-spherical indenter.
-A spherical part is defined at the apex of the conical indenter (see :numref:`conospherical_indenter`).
+A spherical part is defined at the apex of the conical indenter, as shown below.
 
 .. figure:: ./_pictures/conospherical_indenter.png
-   :name: conospherical_indenter
+   :name: conospherical_indenter_fem
    :scale: 50 %
    :align: center
    
    *Scheme of a cono-spherical indenter.*
 
 The radius :math:`R` of the spherical part is calculated from the tip defect :math:`h_\text{tip}`
-and the cone angle :math:`\alpha`, using the following equation. For Berkovich, Vickers and Cube-Corner
+and the cone angle :math:`\alpha`, using the following equation. For Berkovich, Vickers, and cube-corner
 indenters, the equivalent cone angle is used to set the cone angle.
 
-    .. math:: R = \frac{h_\text{tip}}{\frac{1}{sin(\alpha)} - 1}
-            :label: tip_radius
+       .. math:: R = \frac{h_\text{tip}}{\frac{1}{sin(\alpha)} - 1}
+          :label: tip_radius_fem
 
-In case of a perfect conical indenter (:math:`h_\text{tip} = 0\text{nm}`), a tip defect of 1nm giving a radius of :math:`R = 1.6\text{nm}` is set into the Python file. Defining a cono-spherical tip avoids the geometrical singularity at the apex of the
+In the case of a perfect conical indenter (:math:`h_\text{tip} = 0\text{nm}`), a tip defect of 1 nm, corresponding to a radius of :math:`R = 1.6\text{nm}`, is set in the Python file. Defining a cono-spherical tip avoids the geometrical singularity at the apex of the
 perfect conical indenter, which would imply an infinite stress at the contact interface. But, any non-zero positive value for the tip radius can be set into the GUI. 
 
-The transition depth :math:`h_\text{trans}` between the spherical and the conical parts of a cono-spherical indenter,
-is calculated from the followig equation:
+The transition depth :math:`h_\text{trans}` between the spherical and conical parts of a cono-spherical indenter
+is calculated from the following equation:
 
-    .. math:: h_\text{trans} = R(1-sin(\alpha))
-            :label: transition_depth
+       .. math:: h_\text{trans} = R(1-sin(\alpha))
+          :label: transition_depth_fem
 			
-Find here the |matlab| function to calculate the tip radius:
+See the |matlab| function for calculating the tip radius:
 `tipRadius.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/fem/tipRadius.m>`_.
 
-Find here the |matlab| function to calculate the transition depth:
+See the |matlab| function for calculating the transition depth:
 `transitionDepth.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/function_area/transitionDepth.m>`_.
 
-Find here the |matlab| function to calculate the tip defect:
+See the |matlab| function for calculating the tip defect:
 `tipDefect.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/function_area/tipDefect.m>`_.
 
 Mesh
@@ -102,7 +102,7 @@ from 0 (quadratic elements) to 1 (linear elements).
 Material properties
 ---------------------------------
 
-For each layers of the multilayer sample, the material properties
+For each layer of the multilayer sample, the material properties
 (Young's modulus and Poisson's ratio) are defined using the inputs
 given by the user from the GUI. Material properties are considered
 by default to be isotropic. The density is set by default to 1.0.
@@ -113,7 +113,7 @@ by default to be isotropic. The density is set by default to 1.0.
 Contact definition
 ----------------------
 
-The contact is defined by default frictionless for the tangential
+By default, the contact is defined as frictionless in the tangential
 behavior and hard for the normal behavior.
 
 The external surface of the indenter is defined as the "master"
@@ -124,7 +124,7 @@ region and the top surface of the (multilayer) sample is defined as the "slave" 
     larger than 60◦ are used (e.g.: Berkovich, Vickers) [#AtkinsTabor_1965]_, [#Johnson_1987]_, 
     [#DiCarlo_2004]_, [#Harsono_2008]_ and [#Wang_2016]_.
 
-Boundaries conditions
+Boundary conditions
 ------------------------
 
 Nodes are constrained along the rotation axis from moving in the radial direction (:math:`x`).
@@ -140,7 +140,7 @@ A value of 200nm for the indentation depth is set by default.
    :scale: 50 %
    :align: center
    
-   *Schematic of boundaries conditions used in the FE model.*
+   *Schematic of the boundary conditions used in the FE model.*
     
 .. figure:: ./_pictures/fem_model_parts_bc.png
    :name: fem_model_parts_bc
@@ -155,17 +155,17 @@ A value of 200nm for the indentation depth is set by default.
 Generation of the Python script for ABAQUS
 #################################################
 
-After material properties are configured (Young's moduli and Poisson's ratios)
-and the model geometry is given (thickness for each thin films), 
-a Python script for ABAQUS can be generated by pressing the 'FEM' button.
+After configuring the material properties (Young's moduli and Poisson's ratios)
+and specifying the model geometry (the thickness of each thin film),
+generate a Python script for ABAQUS by pressing the 'FEM' button.
 
-The python script is saved in the folder where your nanoindentation results are stored.
+The Python script is saved in the folder containing your nanoindentation results.
 
 To generate the FEM model in ABAQUS, apply the following procedure:
 
 - start ABAQUS
-- select the folder containing input files : 'File' ==> 'Set Work Directory...'
-- select and run the Python file containing the FEM model (\*.py) : File' ==> 'Run Script'
+- Select the folder containing the input files: 'File' ==> 'Set Work Directory...'
+- Select and run the Python file containing the FEM model (\*.py): 'File' ==> 'Run Script'
 
 ..  note::
     Dimensions are in nm and Young's moduli are in GPa, implying that load is in nN.
@@ -193,10 +193,10 @@ The following pictures were obtained for a `multilayer Au/Ti/SiO2/Si <https://gi
    
    *Screenshot (with a zoom in on the contact area) of the magnitude of the displacement at maximum load.*
    
-Outlooks
+Future developments
 ###############################
 
-More recently in 2022, evaluation of thin film material properties are performed using FEM analysis coupled with artificial neural network (ANN) method [#Han_2022]_.
+More recently, thin-film material properties have been evaluated using FEM analysis coupled with an artificial neural network (ANN) [#Han_2022]_.
     
 References
 ############

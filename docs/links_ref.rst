@@ -6,10 +6,10 @@
 Links
 ###### 
 * `Matlab GUI. <http://www.mathworks.com/discovery/matlab-gui.html>`_
-* `Visit the YAML website for more informations. <http://www.yaml.org/>`_
+* `Visit the YAML website for more information. <http://www.yaml.org/>`_
 * `Visit the YAML code for Matlab. <http://code.google.com/p/yamlmatlab/>`_
 
-Other interesting Matlab toolboxes about indentation
+Other Matlab toolboxes for indentation
 ##############################################################
 * `STABiX <https://github.com/stabix/stabix>`_ / `STABiX Documentation <https://stabix.readthedocs.io/en/latest/>`_
 * `PopIn <https://github.com/DavidMercier/PopIn>`_ / `PopIn Documentation <https://popin.readthedocs.io/en/latest/>`_
@@ -197,19 +197,19 @@ Finite Element Modelling of conical indentation of thin film(s) on a substrate
 * `Sivaram S. et al., "Qualitative Study on Pile-up Effect on Hardness Test by Nano-Indentation" (2021). <http://doi.org/10.4038/engineer.v54i1.7434>`_
 * `Vajire S.L. et al., "Novel machine learning-based prediction approach for nanoindentation load-deformation in a thin film: Applications to electronic industries" (2022). <https://doi.org/10.1016/j.cie.2022.108824>`_
 
-Softwares
+Software
 ###########
 * `IndentAnalyser by ASMEC <http://www.asmec.de/products/analysis-software/indentanalyser/what-is-indentanalyser.html>`_
 * `Elastica by ASMEC <http://www.asmec.de/analysis-software/elastica/what-can-i-do-with-elastica.html>`_
-* `Softwares from SIOMEC <http://www.siomec.de/en/004/Software>`_
+* `Software from SIOMEC <http://www.siomec.de/en/004/Software>`_
 * `Piuma dataviewer from Optics 11 <https://optics11.com/products/software/>`_
 * `Punias <http://punias.voila.net/punias0.html?q=pages/starting_page>`_
 * `Gwyddion <http://gwyddion.net/>`_
-* `Softwares from Nanovea <http://nanovea.com/nano-indentation-tester>`_
+* `Software from Nanovea <http://nanovea.com/nano-indentation-tester>`_
 * `Virtual nanoindenter <http://fclabs.com.au/#xl_VIRTUAL:32NANOINDENTER>`_
 * `Nanoindentation from Kibech S. et al. <https://nanohub.org/tools/nanoindentation>`_
 
-Reviews / Overviews of nanoindentation technique
+Reviews and overviews of nanoindentation techniques
 ##################################################################
 * `Li X. and Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications." (2002). <https://doi.org/10.1016/S1044-5803(02)00192-4>`_
 * `VanLandingham M.R., "Review of Instrumented Indentation" (2003). <http://oai.dtic.mil/oai/oai?verb=getRecord&metadataPrefix=html&identifier=ADA512140>`_
@@ -220,13 +220,13 @@ Reviews / Overviews of nanoindentation technique
 * `Němeček J., "Nanoindentation in Material Science" (2012). <https://doi.org/10.5772/2829>`_
 * `Michailidis N. et al., "Nanoindentation" (2014). <https://doi.org/10.1007/978-3-642-35950-7_16730-1>`_
 
-Reviews / Overviews of nanoindentation technique applied to coatings
+Reviews and overviews of nanoindentation applied to coatings
 ################################################################################
 * `Pharr G.M. and Oliver W.C., "Measurement of Thin Film Mechanical Properties Using Nanoindentation" (1992). <https://doi.org/10.1557/S0883769400041634>`_
 * `Mencík J. et al., "Determination of elastic modulus of thin layers using nanoindentation" (1997). <https://doi.org/10.1557/JMR.1997.0327>`_
 * `Nix W.D., "Elastic and plastic properties of thin films on substrates: nanoindentation techniques" (1997). <https://doi.org/10.1016/S0921-5093(97)00176-7>`_
 * `Van Vliet K.J. and Gouldstone A., "Mechanical Properties of Thin Films Quantified Via Instrumented Indentation" (2001). <https://doi.org/10.1179/026708401101517737>`_
-* `Fischer-Cripps A.C., "Nanoindentation" Springer 3rd Ed. (2011). <http://dx.doi.org./10.1007/978-1-4419-9872-9>`_
+* `Fischer-Cripps A.C., "Nanoindentation" (3rd edition, 2011). <https://doi.org/10.1007/978-1-4419-9872-9>`_
 * `Šimůnková Š., "Mechanical properties of thin film–substrate systems" (2003). <https://doi.org/10.1016/S0924-0136(02)00231-5>`_
 * `Bull S.J., "Nanoindentation of coatings" (2005). <https://doi.org/10.1088/0022-3727/38/24/R01>`_
 
@@ -239,6 +239,6 @@ Books
 * `Fischer-Cripps A.C., "Nanoindentation" Springer 2nd Ed. (2004). <https://doi.org/10.1007/978-1-4419-9872-9>`_
 * `Fischer-Cripps A.C., "Introduction to Contact Mechanics" Springer 2nd Ed. (2007). <https://doi.org/10.1007/978-0-387-68188-7>`_
 * `Feng Z.-Q. et al., "Theory of nanoindentation" Handbook of Nanophysics - Chapter 26 (2010). <https://www.crcpress.com/Handbook-of-Nanophysics-Functional-Nanomaterials/Sattler/p/book/9781420075526>`_
-* `Fischer-Cripps A.C., "Nanoindentation" Springer 3rd Ed. (2011). <https://doi.org/10.1007/978-1-4419-9872-9>`_
+* `Fischer-Cripps A.C., "Nanoindentation" (Springer, 3rd edition, 2011). <https://doi.org/10.1007/978-1-4419-9872-9>`_
 * `Tiwari A., "Nanomechanical Analysis of High Performance Materials" Springer Vol. 203 (2014). <https://doi.org/10.1007/978-94-007-6919-9>`_
 * `Tiwari A. and Natarajan S., "Applied Nanoindentation in Advanced Materials" Wiley (2017). <https://doi.org/10.1002/9781119084501>`_

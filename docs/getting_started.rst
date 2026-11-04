@@ -3,22 +3,22 @@
 
 .. include:: includes.rst
 
-First of all, download the source code of the |matlab| toolbox.
+First, download the source code for the |matlab| toolbox.
 
-`Source code is hosted at Github. <https://github.com/DavidMercier/NIMS>`_
+`Source code is hosted on GitHub. <https://github.com/DavidMercier/NIMS>`_
 
-To have more details about the use of the toolbox, please have a look to :
+For more details about using the toolbox, see:
 
 .. code-block:: matlab
 
    Getting_started.txt
   
-How to use the GUI for indentation data analysis ?
+How to use the GUI for indentation data analysis?
 ####################################################
 
-First of all a GUI is a Graphical User Interface.
+GUI stands for Graphical User Interface.
 
-* Create or update your personal YAML config. file stored in the
+* Create or update your personal YAML configuration file in the
   `YAML folder <https://github.com/DavidMercier/nanoind-data-analysis/tree/master/yaml_config_files>`_
 
 `See here how to create / modify your YAML file... 
@@ -30,7 +30,7 @@ First of all a GUI is a Graphical User Interface.
 
    demo.m
    
-* Answer 'y' or 'yes' (or press 'Enter') to add path to the |matlab| search paths, using this script:
+* Answer 'y' or 'yes' (or press 'Enter') to add the toolbox to the |matlab| search path using this script:
 
 .. code-block:: matlab
 
@@ -44,7 +44,7 @@ First of all a GUI is a Graphical User Interface.
    
    *Screenshot of the main window of the NIMS toolbox.*
 
-* Import your (nano)indentation results, by clicking on the button 'Select file'.
+* Import your (nano)indentation results by clicking the 'Select file' button.
   `Click here to have more details about valid format of data.
   <http://nims.readthedocs.org/en/latest/examples.html>`_
 
@@ -68,7 +68,7 @@ First of all a GUI is a Graphical User Interface.
 
 * Choose and set (if needed) the indenter used to obtain (nano)indentation data.
 * Select the lowest and the highest depth values (optional).
-* Set the CSM correction (Berkovich indenter only !) (optional).
+* Set the CSM correction (Berkovich indenter only; optional).
 * Set the number of layers of your sample (0 = only bulk material, 1/2/3 = 1 to 3 thin layers on a substrate) (see :numref:`convention_multilayer`).
 
 .. figure:: ./_pictures/convention_multilayer.png
@@ -76,7 +76,7 @@ First of all a GUI is a Graphical User Interface.
    :scale: 40 %
    :align: center
    
-   *Convention use to define multilayer specimen.*
+   *Convention used to define a multilayer specimen.*
 
 * Set the thickness, the Poisson's coefficient and the Young's modulus to each layer.
 * Select the model to use for the contact displacement calculation and select the correction to apply.
