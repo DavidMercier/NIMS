@@ -14,10 +14,19 @@ if nargin < 1
     gui_handle = gcf;
 end
 
+try
+    jframe = get(gui_handle, 'JavaFrame');
+catch exception
+    if ~isempty(strfind(exception.message, ...
+            'The JavaFrame property has been removed'))
+        return;
+    end
+    rethrow(exception);
+end
+
 wrn = warning;
 wrn_txt = wrn.identifier;
 warning('off', wrn_txt);
-jframe = get(gui_handle,'JavaFrame');
 jIcon = javax.swing.ImageIcon(logo);
 jframe.setFigureIcon(jIcon);
 warning(wrn);

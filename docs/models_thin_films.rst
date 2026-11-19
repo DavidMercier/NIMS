@@ -305,6 +305,10 @@ Menčík described the reciprocal exponential model by the following expression 
 With :math:`x=a_\text{c}/t` and :math:`\alpha` is an empirically
 constant determined using the method of least squares.
 
+For the logarithmic fit, the sign of the measured compliance contrast is
+restored when calculating the film modulus. This supports both stiffer and
+softer films than the substrate.
+
 See the |matlab| function for the Menčík et al. reciprocal exponential model:
 `model_menick_reciprocal_exponential.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/elastic_models/model_mencik_reciprocal_exponential.m>`_.
 

@@ -6,7 +6,7 @@ from setuptools import setup
 
 setup(
     name='NIMS_doc-build',
-    version='3.2',
+    version='4',
     author='David Mercier',
     author_email='david9684@gmail.com',
     url='https://nims.readthedocs.io',

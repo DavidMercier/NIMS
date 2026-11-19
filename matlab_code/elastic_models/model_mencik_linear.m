@@ -20,7 +20,7 @@ bilayer_model = @(Ef_red_sol, x) (Ef_red_sol(1) + ...
     (Ef_red_sol(2) - Ef_red_sol(1))*(x));
 
 % Make a starting guess (Ef and Es in GPa)
-gui.results.A0 = [gui.data.Ef_red, gui.data.Es_red];
+gui.results.A0 = [gui.data.Ef_red, gui.data.Es_red * 1e-9];
 
 if gui.config.licenceOpt_Flag
     [gui.results.Ef_red_sol_fit, ...

@@ -8,6 +8,8 @@ gui.data = struct;
 gui.handles.h_waitbar_load = waitbar(0, 'Import data in progress...');
 
 gui.flag.flag = 0;
+loading_segment_marked = false;
+unloading = struct('h', [], 'P', [], 'delta_P', []);
 
 %% Get type on indenter used
 gui.data.indenter_type_val = get(gui.handles.pm_set_indenter, 'Value');
@@ -135,19 +137,19 @@ if gui.flag.flag_data
         end
         
         if ~NoSampleFlag
-            [data,txt] = xlsread(data2import, sheetName);
+            [data,~,raw] = xlsread(data2import, sheetName);
         else
-            [data,txt] = xlsread(data2import);
+            [data,~,raw] = xlsread(data2import);
         end
-        
-        L = txt(:,1); %limite
-        TF_segm = strcmp(L, 'Hold Segment Type');
-        y_index = find(TF_segm == 1);
-        
-        if isempty(y_index)
-            TF_segm = strcmp(L, 'Unload From Peak Segment Type');
-            y_index = find(TF_segm == 1);
+
+        if isempty(raw)
+            error('NIMS:LoadingSegment:InvalidSpreadsheet', ...
+                'The spreadsheet contains no data.');
         end
+        L = raw(:,1);
+        y_index = find(strcmp(L, 'Hold Segment Type') | ...
+            strcmp(L, 'Unload From Peak Segment Type'), 1);
+        loading_segment_marked = ~isempty(y_index);
         
         if isempty(y_index)
             TF_segm = strcmp(L, 'END');
@@ -166,78 +168,21 @@ if gui.flag.flag_data
         end
         
         if gui.flag.flag_xls_data == 2
-            
-            data_index = sprintf('%c%d:%c%d', 'B', 1, 'M', y_index);
-            if ~NoSampleFlag
-                [data,txt] = xlsread(data2import, sheetName, data_index);
-            else
-                [data,txt] = xlsread(data2import);
-            end
-            
-            L                 = txt(1,:); %limite
-            TF_disp           = strcmp(L, 'Displacement Into Surface');
-            x_index_disp      = find(TF_disp==1);
-            TF_dev            = strcmp(L, 'STANDARD DEVIATION (Displacement Into Surface)');
-            x_index_disp_dev  = find(TF_dev == 1);
-            TF_load           = strcmp(L, 'Load On Sample');
-            x_index_load      = find(TF_load==1);
-            TF_dev            = strcmp(L, 'STANDARD DEVIATION (Load On Sample)');
-            x_index_load_dev  = find(TF_dev == 1);
-            TF_stiff          = strcmp(L, 'Harmonic Contact Stiffness');
-            x_index_stiff     = find(TF_stiff==1);
-            TF_dev            = strcmp(L, 'STANDARD DEVIATION (Harmonic Contact Stiffness)');
-            x_index_stiff_dev = find(TF_dev == 1);
-            
-            if isempty(x_index_disp_dev) && isempty(x_index_load_dev) && isempty(x_index_stiff_dev)
-                if NoSampleFlag
-                    data_clean(:,1) = data(:,x_index_disp-1);
-                    data_clean(:,2) = data(:,x_index_load-1);
-                    data_clean(:,3) = data(:,x_index_stiff-1);
-                    unit_clean(:,1) = txt(2,x_index_disp-1);
-                    unit_clean(:,2) = txt(2,x_index_load-1);
-                    unit_clean(:,3) = txt(2,x_index_stiff-1);
-                else
-                    data_clean(:,1) = data(:,x_index_disp);
-                    data_clean(:,2) = data(:,x_index_load);
-                    data_clean(:,3) = data(:,x_index_stiff);
-                    unit_clean(:,1) = txt(2,x_index_disp);
-                    unit_clean(:,2) = txt(2,x_index_load);
-                    unit_clean(:,3) = txt(2,x_index_stiff);
+
+            if loading_segment_marked
+                try
+                    unloading = mts_unloading_segment(raw);
+                catch exception
+                    if ~strcmp(exception.identifier, 'NIMS:LoadingSegment:InvalidSpreadsheet')
+                        rethrow(exception);
+                    end
+                    unloading.message = exception.message;
+                    warning('NIMS:UnloadingSegment:Unavailable', ...
+                        'Unloading data could not be imported: %s', exception.message);
                 end
-                clear data;
-                
-                data(:,1) = data_clean(:,1);
-                data(:,2) = data_clean(:,2);
-                data(:,3) = data_clean(:,3);
-                unit(:,1) = unit_clean(:,1);
-                unit(:,2) = unit_clean(:,2);
-                unit(:,3) = unit_clean(:,3);
-                set_unit(gui.MainWindows, unit);
-            elseif length(x_index_disp_dev) == 1 && length(x_index_load_dev) == 1  && length(x_index_stiff_dev) == 1
-                data_clean(:,1) = data(:,x_index_disp);
-                data_clean(:,2) = data(:,x_index_disp_dev);
-                data_clean(:,3) = data(:,x_index_load);
-                data_clean(:,4) = data(:,x_index_load_dev);
-                data_clean(:,5) = data(:,x_index_stiff);
-                data_clean(:,6) = data(:,x_index_stiff_dev);
-                unit_clean(:,1) = txt(2,x_index_disp);
-                unit_clean(:,2) = txt(2,x_index_load);
-                unit_clean(:,3) = txt(2,x_index_stiff);
-                clear data;
-                
-                data(:,1) = data_clean(:,1);
-                data(:,2) = data_clean(:,2);
-                data(:,3) = data_clean(:,3);
-                data(:,4) = data_clean(:,4);
-                data(:,5) = data_clean(:,5);
-                data(:,6) = data_clean(:,6);
-                unit(:,1) = unit_clean(:,1);
-                unit(:,2) = unit_clean(:,2);
-                unit(:,3) = unit_clean(:,3);
-                set_unit(gui.MainWindows, unit);
-            else
-                gui.flag.flag_xls_data = 3;
             end
+            [data, unit] = mts_segment_data(raw, y_index - 1);
+            set_unit(gui.MainWindows, unit);
         end
         
         if gui.flag.flag_xls_data == 1 || gui.flag.flag_xls_data == 2
@@ -266,6 +211,14 @@ if gui.flag.flag_data
         
     end
     delete(gui.handles.h_waitbar_load);
+
+    if ~loading_segment_marked
+        [gui.data, discarded, unloading] = extract_loading_segment(gui.data);
+        if discarded > 0
+            fprintf('Loading segment: discarded %d points after peak load.\n', discarded);
+        end
+    end
+    gui.data.unloading = unloading;
     
     guidata(gcf, gui);
     
@@ -286,6 +239,8 @@ if gui.flag.flag_data
     gui = guidata(gcf); guidata(gcf, gui);
     
     get_and_plot;
+    set(gui.MainWindows, 'Name', [gui.config.name_toolbox, ' - Version_', ...
+        gui.config.version_toolbox, ' - ', name]);
     gui = guidata(gcf); guidata(gcf, gui);
     
 end

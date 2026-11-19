@@ -23,7 +23,7 @@ Several authors have reviewed the nanoindentation technique:
 
 - `Li X. and Bhushan B., "A review of nanoindentation continuous stiffness measurement technique and its applications." (2002). <https://doi.org/10.1016/S1044-5803(02)00192-4>`_
 
-- `VanLandingham M.R., "Review of Instrumented Indentation" (2003). <http://oai.dtic.mil/oai/oai?verb=getRecord&metadataPrefix=html&identifier=ADA512140>`__
+- `VanLandingham M.R., "Review of Instrumented Indentation" (2003). <https://doi.org/10.6028/jres.108.024>`__
 
 - `Oliver W.C. and Pharr G.M., "Measurement of hardness and elastic modulus by instrumented indentation: Advances in understanding and refinements to methodology" (2004). <https://doi.org/10.1557/jmr.2004.19.1.3>`_
 

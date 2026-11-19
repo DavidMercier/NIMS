@@ -47,6 +47,8 @@ GUI stands for Graphical User Interface.
 * Import your (nano)indentation results by clicking the 'Select file' button.
   `Click here to have more details about valid format of data.
   <http://nims.readthedocs.org/en/latest/examples.html>`_
+  The GUI window title identifies the specimen using the selected filename
+  without its extension.
 
 * A load-displacement curve is plotted (with a power law fit).
   The loading work is also given in the title of the plot.

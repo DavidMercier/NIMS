@@ -11,9 +11,26 @@ Data requirements
 
 The NIMS toolbox accepts only Continuous Stiffness Measurement (CSM) data given as a function of indentation depth (e.g., CSM mode for Agilent-MTS nanoindenters or the DMA-CMX algorithm for Hysitron nanoindenters).
 
-Your data must contain only the loading portion of the load-displacement curves from your (nano)indentation results.
-If the data are saved in a 'Sample' or 'Analyst Project' sheet of an .xls file created with 'Analyst' (MTS software)
-and contain at least a 'Hold Segment Type' or an 'END' segment, the toolbox can isolate the loading portion of the results.
+The toolbox analyzes the loading portion of the load-displacement curve.
+For MTS Analyst spreadsheets with hold or unload segment markers,
+it uses the rows before the first such marker. Otherwise, it retains samples through
+the first maximum load and discards subsequent samples. All measurement and
+standard-deviation columns are trimmed together.
+
+The peak-load fallback assumes a single indentation cycle in acquisition
+order. It cannot reliably identify noisy holds or distinguish multiple
+loading cycles; inspect or prepare such data before importing. Loading-only
+data should end at their maximum load. Extraction does not trim the source
+file, although the existing text importer replaces commas with decimal points
+in that file.
+
+Select **Unloading load** on the Y axis to view the measured unloading load
+against displacement. The plot uses the first explicitly marked unloading
+segment, or the samples from the first peak onward when markers are absent.
+The unmarked fallback may include a hold or later cycles; a loading-only file
+has no unloading plot. This view shows raw measurements, without frame
+compliance correction, depth filtering, or model fitting. Loading analysis
+continues to use only the loading segment.
 
 Please check that surface detection is accurate, especially when the substrate is compliant [#Kaufman_2009]_ and [#Piccarolo_2010]_.
 For more information about surface detection, see the `NIMS documentation <http://nims.readthedocs.org/en/latest/models.html>`_.

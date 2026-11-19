@@ -3,6 +3,14 @@ function get_and_plot
 %% Function used to get and plot data
 gui = guidata(gcf);
 
+if get(gui.handles.value_param2plotinyaxis_GUI, 'Value') == 9
+    plot_unloading;
+    return;
+end
+set(gui.handles.value_param2plotinxaxis_GUI, 'Enable', 'on');
+set(gui.handles.cb_lines_plot_GUI, 'Enable', 'on');
+set(gui.handles.value_model_GUI, 'Enable', 'on');
+
 gui.handles.h_waitbar = waitbar(0, 'Calculations in progress...');
 steps = 100;
 for step = 1:steps
