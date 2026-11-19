@@ -69,6 +69,12 @@ gui.variables.num_thinfilm_old = gui.variables.num_thinfilm;
 gui.variables.King_correction = get(gui.handles.popup_corr_King_GUI, 'Value');
 gui.variables.val1 = get(gui.handles.value_modeldisp_GUI, 'Value');
 gui.variables.val2 = get(gui.handles.value_model_GUI, 'Value');
+gui.variables.elastic_models = gui.variables.val2;
+if ismember(get(gui.handles.value_param2plotinyaxis_GUI, 'Value'), [4 5]) && ...
+        gui.variables.num_thinfilm == 2
+    gui.variables.elastic_models = get(gui.handles.value_elastic_models_GUI, 'Value');
+    gui.variables.val2 = gui.variables.elastic_models(1);
+end
 gui.variables.val3 = get(gui.handles.value_models_Saha_GUI, 'Value');
 gui.variables.thickness_correctionFactor = ...
     str2double(get(gui.handles.value_neta_corr_thickness_GUI, 'String'));

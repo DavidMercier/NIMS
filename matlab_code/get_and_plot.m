@@ -10,6 +10,7 @@ end
 set(gui.handles.value_param2plotinxaxis_GUI, 'Enable', 'on');
 set(gui.handles.cb_lines_plot_GUI, 'Enable', 'on');
 set(gui.handles.value_model_GUI, 'Enable', 'on');
+set(gui.handles.value_elastic_models_GUI, 'Enable', 'on');
 
 gui.handles.h_waitbar = waitbar(0, 'Calculations in progress...');
 steps = 100;
@@ -80,7 +81,16 @@ if ~gui.flag.wrong_inputs
         guidata(gcf, gui);
         %% Set model to use for calculations
         if get(gui.handles.value_numthinfilm_GUI, 'Value') == 2
-            model_bilayer_elastic(gui.variables.val2);
+            if numel(gui.variables.elastic_models) > 1
+                try
+                    model_compare_elastic(gui.variables.elastic_models);
+                catch exception
+                    delete(gui.handles.h_waitbar);
+                    rethrow(exception);
+                end
+            else
+                model_bilayer_elastic(gui.variables.val2);
+            end
         elseif get(gui.handles.value_numthinfilm_GUI, 'Value') > 2
             model_multilayer_elastic(gui.variables.val2);
         end
@@ -146,7 +156,7 @@ if ~gui.flag.wrong_inputs
     gui = guidata(gcf); guidata(gcf, gui);
     
     plot_exp_vs_mod;
-    if gui.variables.val2 > 1
+    if gui.variables.val2 > 1 && numel(gui.variables.elastic_models) == 1
         rSquare = r_square(gui.axis.y2plot, gui.axis.y2plot_2);
         xl = xlim;
         yl = ylim;

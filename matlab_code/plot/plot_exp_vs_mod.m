@@ -113,6 +113,39 @@ else
 end
 hold on;
 
+comparison = isfield(gui.results, 'elastic_comparison');
+if comparison
+    models = gui.results.elastic_comparison;
+    colors = lines(numel(models));
+    set(gui.handles.plot_model, 'Color', colors(1,:));
+    gui.axis.legend_str = cell(1, numel(models) + 1);
+    gui.axis.legend_str{1} = 'Initial data';
+    for ii = 1:numel(models)
+        if gui.variables.y_axis == 4
+            values = models{ii}.Em_red;
+        else
+            values = models{ii}.Ef_red;
+        end
+        gui.axis.legend_str{ii+1} = sprintf('%s (Ef = %.3g GPa)', ...
+            models{ii}.name, models{ii}.Ef_sol_fit(1));
+        if models{ii}.exitflag <= 0
+            gui.axis.legend_str{ii+1} = [gui.axis.legend_str{ii+1}, ' - fit did not converge'];
+        end
+        if get(gui.handles.cb_corr_thickness_GUI, 'Value') == 1 && ...
+                ~models{ii}.thickness_corrected
+            gui.axis.legend_str{ii+1} = [gui.axis.legend_str{ii+1}, ' - no thickness correction'];
+        end
+        if ii > 1
+            plot(gui.axis.x2plot, values, '-', 'Color', colors(ii,:), ...
+                'LineWidth', 2);
+        end
+        finite_values = values(isfinite(values));
+        if ~isempty(finite_values)
+            gui.axis.ymax = max(gui.axis.ymax, max(finite_values));
+        end
+    end
+end
+
 %% Plot properties
 if get(gui.handles.cb_lines_plot_GUI, 'value') == 1
     if get(gui.handles.value_numthinfilm_GUI, 'Value') > 1
@@ -144,7 +177,9 @@ if get(gui.handles.cb_lines_plot_GUI, 'value') == 1
     end
 end
 
-if gui.variables.num_thinfilm == 1
+if comparison
+    gui.axis.title_str = 'Elastic model comparison';
+elseif gui.variables.num_thinfilm == 1
     if gui.variables.y_axis == 4 || gui.variables.y_axis == 5
         set(gui.handles.value_youngsub_GUI, ...
             'String', round(mean(gui.results.Esample)));

@@ -2,6 +2,10 @@
 function refresh_param_GUI
 %% Function used to refresh the GUI in function of the number of thin films
 gui = guidata(gcf);
+elastic_list = ismember(get(gui.handles.value_param2plotinyaxis_GUI, 'Value'), [4 5]) && ...
+    get(gui.handles.value_numthinfilm_GUI, 'Value') == 2;
+old_elastic_list = ismember(gui.variables.y_axis_old, [4 5]) && ...
+    gui.variables.num_thinfilm_old == 2;
 
 % Young's modulus and Hardness models
 if get(gui.handles.value_param2plotinyaxis_GUI , 'Value') < 4
@@ -98,6 +102,22 @@ if gui.variables.y_axis_old ~= ...
         gui.variables.num_thinfilm_old ~= ...
         get(gui.handles.value_numthinfilm_GUI, 'Value');
     set(gui.handles.value_model_GUI, 'Value', 1);
+    if ~elastic_list || ~old_elastic_list
+        set(gui.handles.value_elastic_models_GUI, 'Value', 1);
+    end
+end
+
+if elastic_list
+    set(gui.handles.value_elastic_models_GUI, ...
+        'String', gui.handles.list_bilayermodel);
+    selected = get(gui.handles.value_elastic_models_GUI, 'Value');
+    selected = selected(selected > 1);
+    if isempty(selected)
+        selected = 1;
+    end
+    set(gui.handles.value_elastic_models_GUI, 'Value', selected);
+    set(gui.handles.value_model_GUI, 'Value', selected(1));
+    set(gui.handles.title_model_GUI, 'String', 'Elastic models (Ctrl-click)');
 end
 
 % Thin films properties
@@ -126,11 +146,22 @@ if get(gui.handles.value_numthinfilm_GUI, 'Value') == 1
     set(gui.handles.value_model_GUI, 'Visible', 'off');
 else
     set(gui.handles.title_model_GUI, 'Visible', 'on');
-    set(gui.handles.value_model_GUI, 'Visible', 'on');
+    if elastic_list
+        set(gui.handles.value_model_GUI, 'Visible', 'off');
+    else
+        set(gui.handles.value_model_GUI, 'Visible', 'on');
+    end
+end
+if elastic_list
+    set(gui.handles.value_elastic_models_GUI, 'Visible', 'on');
+else
+    set(gui.handles.value_elastic_models_GUI, 'Visible', 'off');
 end
 
 % Residuals
-if get(gui.handles.value_model_GUI, 'Value') > 1
+if elastic_list && numel(selected) > 1
+    set(gui.handles.pb_residual_plot_GUI, 'Visible', 'off');
+elseif get(gui.handles.value_model_GUI, 'Value') > 1
     set(gui.handles.pb_residual_plot_GUI, 'Visible', 'on');
 elseif get(gui.handles.value_model_GUI, 'Value') == 1
     set(gui.handles.pb_residual_plot_GUI, 'Visible', 'off');

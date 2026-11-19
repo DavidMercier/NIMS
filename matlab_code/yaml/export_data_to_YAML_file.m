@@ -113,6 +113,12 @@ else
     list_val2 = get(gui.handles.value_model_GUI, 'String');
     num_val2  = get(gui.handles.value_model_GUI, 'Value');
     val2_str  = list_val2(num_val2,  :);
+    if isfield(gui.results, 'elastic_comparison')
+        gui.results.multi_bilayer_model_elastic = ...
+            cellfun(@(model) model.name, gui.results.elastic_comparison, ...
+            'UniformOutput', false);
+        val2_str = {'multiple_elastic_models'};
+    end
     yaml_result_title = strcat(gui.results.data_filename, '_', val2_str, '.yaml');
     
     WriteYaml(char(yaml_result_title), gui.results);

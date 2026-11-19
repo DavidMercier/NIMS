@@ -32,6 +32,14 @@ has no unloading plot. This view shows raw measurements, without frame
 compliance correction, depth filtering, or model fitting. Loading analysis
 continues to use only the loading segment.
 
+For one film on a substrate, select a reduced Young's modulus Y axis to
+show the elastic model list. Use Ctrl-click (Command-click on macOS) to
+select multiple models and compare their curves; each legend entry reports
+the fitted film modulus. Each fit starts from the same input properties.
+Residuals are available for a single model only. The Mencik linear model
+does not use the optional thickness correction; this is noted in the legend.
+Fits that do not converge are also identified in the legend.
+
 Please check that surface detection is accurate, especially when the substrate is compliant [#Kaufman_2009]_ and [#Piccarolo_2010]_.
 For more information about surface detection, see the `NIMS documentation <http://nims.readthedocs.org/en/latest/models.html>`_.
 

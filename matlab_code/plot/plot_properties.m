@@ -41,6 +41,9 @@ LocationNumber = get(gui.handles.value_legend_location, 'Value');
 hLeg = legend(gui.axis.legend_str, 'Location', char(list_Location(LocationNumber)));
 hTitle = title(gui.axis.title_str, 'FontSize', 18);
 set([hXLabel, hYLabel, hLeg, hTitle], 'Interpreter', 'Latex');
+if isfield(gui.results, 'elastic_comparison')
+    set(hLeg, 'Interpreter', 'none');
+end
 
 % Grid
 if get(gui.handles.cb_grid_plot_GUI, 'Value') == 1

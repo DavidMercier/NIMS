@@ -4,6 +4,7 @@ gui = guidata(gcf);
 set(gui.handles.value_param2plotinxaxis_GUI, 'Value', 1, 'Enable', 'off');
 set(gui.handles.cb_lines_plot_GUI, 'Enable', 'off');
 set(gui.handles.value_model_GUI, 'Enable', 'off');
+set(gui.handles.value_elastic_models_GUI, 'Enable', 'off');
 set(gui.handles.pb_residual_plot_GUI, 'Visible', 'off');
 ax = gui.handles.AxisPlot_GUI;
 cla(ax, 'reset');
