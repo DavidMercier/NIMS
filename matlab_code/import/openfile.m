@@ -74,10 +74,10 @@ data2import = [gui.data.pathname_data, gui.data.filename_data];
 
 if gui.flag.flag_data
     %% .txt file
-    if strcmp (ext, '.txt') == 1
+    if strcmp (ext, '.txt') == 1 || strcmp (ext, '.dat') == 1
         
         comma2point_overwrite(data2import); % Replace comma with a point
-        dataAll = importdata(gui.data.filename_data);
+        dataAll = importdata(data2import);
         if isfield(dataAll, 'data')
             data = dataAll.data;
         else
@@ -108,6 +108,7 @@ if gui.flag.flag_data
             end
             
         elseif flagHys
+            set_unit(gui.MainWindows, {'nm', 'uN', 'N/m'});
             gui.data.h_init       = data(:,2);
             gui.data.delta_h_init = zeros(size(data,1),1);
             gui.data.P_init       = data(:,4);
@@ -116,6 +117,24 @@ if gui.flag.flag_data
             gui.data.delta_S_init = zeros(size(data,1),1);
             gui.flag.flag_no_csm  = 0;
             set(gui.handles.cb_SD_plot_GUI, 'Value', 0, 'Visible', 'off');
+            try
+                [storageStiffness, lossStiffness] = ...
+                    hysitron_viscoelastic_stiffness(data2import, data);
+            catch exception
+                if strcmp(exception.identifier, 'NIMS:Viscoelastic:InvalidColumns') || ...
+                        strcmp(exception.identifier, 'NIMS:Viscoelastic:InvalidUnits')
+                    warning(exception.identifier, '%s', exception.message);
+                    storageStiffness = [];
+                    lossStiffness = [];
+                else
+                    delete(gui.handles.h_waitbar_load);
+                    rethrow(exception);
+                end
+            end
+            if ~isempty(storageStiffness)
+                gui.data.storage_stiffness_init = storageStiffness;
+                gui.data.loss_stiffness_init = lossStiffness;
+            end
             
         end
         

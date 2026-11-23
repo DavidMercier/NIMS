@@ -413,17 +413,29 @@ Korsunsky and Constantinescu (2009)
 
 Korsunsky and Constantinescu proposed a simple model response function to the analysis of indentation of elastic coated systems [#Korsunsky_1998]_ and [#Korsunsky_2009]_. They expressed the reduced Young's modulus in terms of a linear law of mixtures of the form:
 
-    .. math:: E^{'} = E_\text{1}^{'} + \frac{E_\text{2}^{'} - E_\text{1}^{'}}{1 + \left(\frac{h_\text{t}}{\beta_{0}t}\right)^{\eta}}
+    .. math:: E^{'} = e_\text{2}^{'} + \frac{e_\text{1}^{'} - e_\text{2}^{'}}{1 + \left(\frac{h_\text{t}}{\beta_{0}t}\right)^{\eta}}
             :label: korsunsky_model
 
-Here :math:`E_\text{1}^{'}`, :math:`E_\text{2}^{'}`, :math:`\eta` and :math:`\beta_{0}`
-are positive constants to be determined from fitting. It may be expected that for very shallow indentation
-(:math:`\beta_{0} \ll 1`), the corresponding parameter :math:`E_\text{1}^{'}`
-ought to approach the Young's modulus of the coating :math:`E_\text{f}^{'}`.
-Similarly, one might also expect that for very deep indentation (:math:`\beta_{0} \gg 1`),
-the corresponding parameter :math:`E_\text{2}^{'}` ought to approach the Young's modulus of the substrate
-:math:`E_\text{s}^{'}`. Values of :math:`\eta` and :math:`\beta_{0}` depend on the indentation boundary condition,
-if the coating is a defined as a freely sliding layer or as a perfectly bonded layer.
+Here :math:`e_\text{1}^{'}`, :math:`e_\text{2}^{'}`, :math:`\eta` and :math:`\beta_{0}`
+are positive fitted parameters. The shallow and deep limits are respectively
+:math:`e_\text{1}^{'}` and :math:`e_\text{2}^{'}`; neither is guaranteed to equal
+the actual film or substrate modulus. Their identification and the shape parameters
+depend on the indenter, interface conditions and available depth range.
+When the measured depth range does not span the transition, the fitted
+asymptotes and shape parameters can be poorly constrained.
+
+Select ``Korsunsky_Constantinescu_2009`` in the elastic bilayer model list to fit
+all four parameters. NIMS fits its stiffness-derived reduced modulus rather than
+the loading-based apparent modulus defined in the paper, so this is an empirical
+adaptation. The film curve displays the fitted shallow asymptote; it is not an
+independent measurement of film modulus. The optional NIMS thickness correction
+is an additional approximation, not part of the original constant-thickness model.
+The four reduced fit parameters are stored in ``gui.results.korsunsky_params``
+in the order :math:`e_1^{'}`, :math:`e_2^{'}`, :math:`\beta_0`, :math:`\eta`.
+Nonfinite or nonpositive measured moduli are excluded from the fit with a
+warning; ``gui.results.korsunsky_fit_mask`` identifies the samples used.
+At least four distinct valid depth ratios are required. Corrected film
+thickness must remain positive throughout the selected depth range.
 
 Hay et al. (2011) 
 -------------------

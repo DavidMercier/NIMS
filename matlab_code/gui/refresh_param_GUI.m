@@ -2,6 +2,7 @@
 function refresh_param_GUI
 %% Function used to refresh the GUI in function of the number of thin films
 gui = guidata(gcf);
+viscoelastic = get(gui.handles.value_param2plotinyaxis_GUI, 'Value') >= 10;
 elastic_list = ismember(get(gui.handles.value_param2plotinyaxis_GUI, 'Value'), [4 5]) && ...
     get(gui.handles.value_numthinfilm_GUI, 'Value') == 2;
 old_elastic_list = ismember(gui.variables.y_axis_old, [4 5]) && ...
@@ -141,7 +142,7 @@ elseif get(gui.handles.value_numthinfilm_GUI, 'Value') == 4
     set(gui.handles.bg_film2_properties_GUI, 'Visible', 'on');
 end
 
-if get(gui.handles.value_numthinfilm_GUI, 'Value') == 1
+if get(gui.handles.value_numthinfilm_GUI, 'Value') == 1 || viscoelastic
     set(gui.handles.title_model_GUI, 'Visible', 'off');
     set(gui.handles.value_model_GUI, 'Visible', 'off');
 else
@@ -159,7 +160,12 @@ else
 end
 
 % Residuals
-if elastic_list && numel(selected) > 1
+if viscoelastic
+    set(gui.handles.cb_corr_thickness_GUI, 'Visible', 'off');
+    set(gui.handles.title_neta_corr_thickness_GUI, 'Visible', 'off');
+    set(gui.handles.value_neta_corr_thickness_GUI, 'Visible', 'off');
+    set(gui.handles.pb_residual_plot_GUI, 'Visible', 'off');
+elseif elastic_list && numel(selected) > 1
     set(gui.handles.pb_residual_plot_GUI, 'Visible', 'off');
 elseif get(gui.handles.value_model_GUI, 'Value') > 1
     set(gui.handles.pb_residual_plot_GUI, 'Visible', 'on');

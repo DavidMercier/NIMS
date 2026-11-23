@@ -27,7 +27,7 @@ else
         gui.results.Ef_sol = 0;
     end
     
-    if gui.variables.y_axis == 5
+    if gui.variables.y_axis == 5 && ~isfield(gui.results, 'korsunsky_params')
         for ii = 1:1:length(gui.data.h)
             if gui.data.h(ii) < gui.data.t && ...
                     gui.variables.num_thinfilm == 1
@@ -153,6 +153,21 @@ else
             gui.axis.ymax = round(2*mean(cleaned_H));
         end
         gui.results.cleaned_H = cleaned_H;
+    elseif gui.variables.y_axis >= 10
+        if gui.variables.y_axis == 10
+            gui.axis.y2plot = gui.results.storage_modulus;
+            gui.axis.ylabelstr = 'Reduced storage modulus (GPa)';
+        elseif gui.variables.y_axis == 11
+            gui.axis.y2plot = gui.results.loss_modulus;
+            gui.axis.ylabelstr = 'Reduced loss modulus (GPa)';
+        else
+            gui.axis.y2plot = gui.results.loss_tangent;
+            gui.axis.ylabelstr = 'Loss tangent';
+        end
+        gui.axis.delta_y2plot = zeros(size(gui.axis.y2plot));
+        gui.axis.y2plot_2 = gui.axis.y2plot;
+        finiteValues = gui.axis.y2plot(isfinite(gui.axis.y2plot));
+        gui.axis.ymax = max(finiteValues);
     elseif gui.variables.y_axis == 8
         gui.axis.y2plot = gui.results.H;
         gui.axis.delta_y2plot = gui.results.delta_H;

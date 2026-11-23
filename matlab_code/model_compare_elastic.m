@@ -20,6 +20,9 @@ for ii = 1:numel(selected)
         'Em_red', fitted.results.Em_red, 'Ef_red', fitted.results.Ef_red, ...
         'Ef_sol_fit', fitted.results.Ef_sol_fit, 'exitflag', exitflag, ...
         'thickness_corrected', thickness_correction == 1 && selected(ii) ~= 11);
+    if selected(ii) == 14
+        models{ii}.korsunsky_params = fitted.results.korsunsky_params;
+    end
     if ii == 1
         primary = fitted;
     end

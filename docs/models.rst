@@ -641,14 +641,16 @@ The storage modulus is defined using :eq:`experimental_youngs_modulus_OP`.
 Thus, the reduced loss modulus :math:`E^{''*}` is the out-of-phase component and related to the viscous behavior.
 :math:`E^{''*}` is characteristic of internal damping (equal to a loss of energy due to internal friction) and defined by the following equation:
 
-    .. math:: E^{''*} = \frac{C\omega}{2} \sqrt\frac{\pi}{A}
+    .. math:: E^{''*} = \frac{C\omega}{2\beta} \sqrt\frac{\pi}{A}
             :label: loss_modulus
 
 with :math:`C\omega` the contact damping, given by :eq:`CSM_contact_damping`.
+The same geometrical factor :math:`\beta` is applied to both moduli; setting
+:math:`\beta=1` gives the uncorrected loss-modulus expression.
 
 It is convenient to calculate the loss tangent (:math:`tan({\delta})`) also called the loss factor (:math:`\eta`) or phase angle (dimensionless), which is defined by:
 
-    .. math:: tan({\delta}) = \eta = \frac{E^{'*}}{E^{''*}} = \frac{C\omega}{S}
+    .. math:: tan({\delta}) = \eta = \frac{E^{''*}}{E^{'*}} = \frac{C\omega}{S}
             :label: loss_tangent
 
 with :math:`\delta` the phase-shift angle.
@@ -667,6 +669,22 @@ See the |matlab| function for calculating the loss modulus:
 
 See the |matlab| function for calculating the loss tangent or loss factor:
 `loss_tangent.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/visco_elastic_models/loss_tangent.m>`_.
+
+The three reduced viscoelastic quantities can also be calculated together with
+`viscoelastic_properties.m <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/visco_elastic_models/viscoelastic_properties.m>`_.
+It takes contact stiffness :math:`S` and contact damping :math:`C\omega` in :math:`\text{N/m}`,
+contact area :math:`A` in :math:`\text{m}^2`, and the geometrical correction factor :math:`\beta`;
+the two moduli are returned in GPa. If the measured damping is :math:`C`, calculate
+:math:`C\omega` using :math:`\omega=2\pi f` with frequency :math:`f` in Hz.
+In the GUI, select **Hysitron** and import a nanoDMA file containing
+``Storage Stiff.`` and ``Loss Stiff.`` columns in :math:`\mu\text{N/nm}`.
+Select **Reduced storage modulus**, **Reduced loss modulus**, or **Loss tangent**
+in the Y-axis menu. The stiffness columns are used with the selected contact-depth
+model and geometrical factor; the moduli are effective reduced values including
+the indenter contribution, not a film-only modulus. Invalid samples are excluded
+with a warning. Frame compliance must be zero and CSM correction disabled because
+the existing scalar corrections do not correct complex stiffness. These results
+do not apply a thin-film model or thickness correction.
 
 Extraction of plastic properties 
 ##################################

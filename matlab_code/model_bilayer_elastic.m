@@ -56,6 +56,8 @@ if val2 ~= 1
             model_mencik_exponential(OPTIONS);
         elseif val2 == 13 % Mencik et al. (reciprocal exponential model) (1997)
             model_mencik_reciprocal_exponential(OPTIONS);
+        elseif val2 == 14 % Korsunsky and Constantinescu (2009)
+            model_korsunsky(OPTIONS);
         end
         
         gui = guidata(gcf); guidata(gcf, gui);

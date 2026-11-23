@@ -126,8 +126,13 @@ if comparison
         else
             values = models{ii}.Ef_red;
         end
-        gui.axis.legend_str{ii+1} = sprintf('%s (Ef = %.3g GPa)', ...
-            models{ii}.name, models{ii}.Ef_sol_fit(1));
+        if isfield(models{ii}, 'korsunsky_params')
+            gui.axis.legend_str{ii+1} = sprintf('%s (shallow asymptote = %.3g GPa reduced)', ...
+                models{ii}.name, models{ii}.korsunsky_params(1));
+        else
+            gui.axis.legend_str{ii+1} = sprintf('%s (Ef = %.3g GPa)', ...
+                models{ii}.name, models{ii}.Ef_sol_fit(1));
+        end
         if models{ii}.exitflag <= 0
             gui.axis.legend_str{ii+1} = [gui.axis.legend_str{ii+1}, ' - fit did not converge'];
         end
@@ -193,7 +198,15 @@ elseif gui.variables.num_thinfilm == 1
     
 elseif gui.variables.num_thinfilm == 2
     if gui.variables.y_axis == 4 || gui.variables.y_axis == 5
-        if gui.variables.val2 > 5 && gui.variables.val2 < 10
+        if gui.variables.val2 == 14
+            p = gui.results.korsunsky_params;
+            gui.axis.title_str = sprintf( ...
+                'Korsunsky fit: $e_1^\\prime$=%.3g, $e_2^\\prime$=%.3g GPa, $\\beta_0$=%.3g, $\\eta$=%.3g', ...
+                p(1), p(2), p(3), p(4));
+            if gui.results.exitflag <= 0
+                gui.axis.title_str = [gui.axis.title_str, ' (fit did not converge)'];
+            end
+        elseif gui.variables.val2 > 5 && gui.variables.val2 < 10
             set(gui.handles.value_youngfilm0_GUI, ...
                 'String', round(gui.results.Ef_sol_fit(1)));
             gui.axis.title_str = ...

@@ -100,6 +100,10 @@ Hysitron example files
 
 * `Hysitron_dma.txt <https://github.com/DavidMercier/NIMS/blob/master/data_indentation/Hysitron_dma.txt>`_
     - Data obtained by Berkovich indentation with DMA mode (205Hz / amplitude 0.65nm) - Courtesy of `Dr. Igor Zlotnikov <https://www.researchgate.net/profile/Igor_Zlotnikov>`_ from `Max Planck Institute of Colloids and Interfaces <http://www.mpikg.mpg.de/>`_ in Potsdam, Germany.
+    - Select Hysitron and import this file, then choose reduced storage modulus,
+      reduced loss modulus, or loss tangent in the Y-axis menu. See
+      :eq:`loss_modulus` for the input
+      requirements and correction limitations.
 
 References
 ############

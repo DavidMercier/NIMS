@@ -33,6 +33,31 @@ figure(fig);
 get_and_plot;
 end
 
+function testKorsunskyModelSelection(testCase)
+fig = testCase.TestData.fig;
+figure(fig);
+gui = guidata(fig);
+set(gui.handles.value_numthinfilm_GUI, 'Value', 2);
+set(gui.handles.value_param2plotinyaxis_GUI, 'Value', 4);
+set(gui.handles.cb_corr_thickness_GUI, 'Value', 0);
+set(gui.handles.value_youngfilm0_GUI, 'String', '60');
+set(gui.handles.value_elastic_models_GUI, 'Value', 14);
+get_and_plot;
+gui = guidata(fig);
+verifyEqual(testCase, numel(gui.results.korsunsky_params), 4);
+verifyEqual(testCase, gui.axis.y2plot_2, gui.results.Em_red);
+verifyEqual(testCase, get(gui.handles.value_youngfilm0_GUI, 'String'), '60');
+verifyNotEmpty(testCase, strfind(gui.axis.title_str, 'Korsunsky fit'));
+
+set(gui.handles.value_elastic_models_GUI, 'Value', [6 14]);
+get_and_plot;
+gui = guidata(fig);
+verifyEqual(testCase, gui.results.elastic_comparison{2}.name, ...
+    'Korsunsky_Constantinescu_2009');
+verifyEqual(testCase, numel(gui.results.elastic_comparison{2}.korsunsky_params), 4);
+verifyNotEmpty(testCase, strfind(gui.axis.legend_str{3}, 'shallow asymptote'));
+end
+
 function teardownOnce(testCase)
 if isgraphics(testCase.TestData.fig)
     delete(testCase.TestData.fig);

@@ -4,6 +4,8 @@ end
 
 function testLoadingAndUnloadingStayAligned(testCase)
 data = fixture([1; 3; 5; 5; 4; 1]);
+data.storage_stiffness_init = (51:56)';
+data.loss_stiffness_init = (61:66)';
 [result, discarded, unloading] = extract_loading_segment(data);
 verifyEqual(testCase, discarded, 3);
 verifyEqual(testCase, unloading.h, data.h_init(3:6));

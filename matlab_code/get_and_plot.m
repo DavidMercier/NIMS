@@ -3,6 +3,23 @@ function get_and_plot
 %% Function used to get and plot data
 gui = guidata(gcf);
 
+viscoelastic = get(gui.handles.value_param2plotinyaxis_GUI, 'Value') >= 10;
+if viscoelastic
+    if ~gui.flag.flag_data || ~isfield(gui.data, 'storage_stiffness_init') || ...
+            ~isfield(gui.data, 'loss_stiffness_init')
+        warndlg('Import a Hysitron DMA file with storage and loss stiffness columns first.', ...
+            'Viscoelastic data unavailable');
+        return;
+    end
+    frameCompliance = str2double(get(gui.handles.value_frame_compliance_GUI, 'String'));
+    if ~isfinite(frameCompliance) || frameCompliance ~= 0 || ...
+            get(gui.handles.cb_CSM_corr_GUI, 'Value') ~= 0
+        warndlg('Viscoelastic results require zero frame compliance and CSM correction disabled.', ...
+            'Unsupported correction');
+        return;
+    end
+end
+
 if get(gui.handles.value_param2plotinyaxis_GUI, 'Value') == 9
     plot_unloading;
     return;
@@ -30,13 +47,36 @@ refresh_param_GUI;
 get_param_GUI;
 
 if ~gui.flag.wrong_inputs
-    if gui.flag.flag_no_csm ~= 1
+    if gui.flag.flag_no_csm ~= 1 && ~viscoelastic
         CSM_correction;
     end
     
     %% Get parameters
     model_set_parameters;
     gui = guidata(gcf); guidata(gcf, gui);
+    if viscoelastic
+        gui.variables.val2 = 1;
+        selected = find(gui.data.h_init > gui.data.min_depth & ...
+            gui.data.h_init < gui.data.max_depth);
+        gui.data.h = reshape(gui.data.h_init_f(selected), 1, []);
+        gui.data.delta_h = reshape(gui.data.delta_h_init_f(selected), 1, []);
+        gui.data.P = reshape(gui.data.P_init_f(selected), 1, []);
+        gui.data.delta_P = reshape(gui.data.delta_P_init_f(selected), 1, []);
+        gui.data.delta_S = reshape(gui.data.delta_S_init_f(selected), 1, []);
+        storage = reshape(gui.data.storage_stiffness_init(selected), 1, []);
+        loss = reshape(gui.data.loss_stiffness_init(selected), 1, []);
+        valid = isfinite(storage) & storage > 0 & isfinite(loss) & loss >= 0 & ...
+            isfinite(gui.data.h) & gui.data.h > 0;
+        if ~any(valid(:))
+            delete(gui.handles.h_waitbar);
+            warndlg('No valid storage and loss stiffness measurements in the selected depth range.', ...
+                'Viscoelastic data unavailable');
+            return;
+        end
+        gui.data.S = storage .* 1e-6;
+        gui.data.S(~valid) = NaN;
+        guidata(gcf, gui);
+    end
     
     %% Load-Displacement curve analysis
     if gui.variables.y_axis == 1
@@ -69,6 +109,29 @@ if ~gui.flag.wrong_inputs
     %% Calculations of function area (for all cases, needed of contact radius estimation)
     model_function_area;
     gui = guidata(gcf); guidata(gcf, gui);
+    if viscoelastic
+        valid = valid & isfinite(gui.results.Ac) & gui.results.Ac > 1e-9 & ...
+            isfinite(gui.results.hc) & gui.results.hc > 1e-9;
+        if ~any(valid(:))
+            delete(gui.handles.h_waitbar);
+            warndlg('No valid contact areas in the selected depth range.', ...
+                'Viscoelastic data unavailable');
+            return;
+        end
+        beta = beta_selection;
+        gui = guidata(gcf);
+        gui.results.storage_modulus = NaN(size(storage));
+        gui.results.loss_modulus = NaN(size(storage));
+        gui.results.loss_tangent = NaN(size(storage));
+        [gui.results.storage_modulus(valid), gui.results.loss_modulus(valid), ...
+            gui.results.loss_tangent(valid)] = viscoelastic_properties( ...
+            storage(valid), loss(valid), gui.results.Ac(valid) .* 1e-18, beta);
+        if any(~valid(:))
+            warning('NIMS:Viscoelastic:InvalidSamples', ...
+                'Excluded %d samples with invalid stiffness or contact area.', sum(~valid(:)));
+        end
+        guidata(gcf, gui);
+    end
     
     %% Calculations of Young's modulus or Hardness
     if gui.variables.y_axis == 4 || gui.variables.y_axis == 5
@@ -81,15 +144,15 @@ if ~gui.flag.wrong_inputs
         guidata(gcf, gui);
         %% Set model to use for calculations
         if get(gui.handles.value_numthinfilm_GUI, 'Value') == 2
-            if numel(gui.variables.elastic_models) > 1
-                try
+            try
+                if numel(gui.variables.elastic_models) > 1
                     model_compare_elastic(gui.variables.elastic_models);
-                catch exception
-                    delete(gui.handles.h_waitbar);
-                    rethrow(exception);
+                else
+                    model_bilayer_elastic(gui.variables.val2);
                 end
-            else
-                model_bilayer_elastic(gui.variables.val2);
+            catch exception
+                delete(gui.handles.h_waitbar);
+                rethrow(exception);
             end
         elseif get(gui.handles.value_numthinfilm_GUI, 'Value') > 2
             model_multilayer_elastic(gui.variables.val2);

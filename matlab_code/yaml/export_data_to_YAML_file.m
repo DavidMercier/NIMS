@@ -81,8 +81,15 @@ else
         gui.results.Poisson_coeff_substrat       = gui.data.nus;
         
     elseif gui.variables.num_thinfilm == 2
-        gui.results.mean_Young_modulus_film0_GPa = gui.results.Ef_sol_fit;
-        gui.results.fit_Young_modulus_film0_GPa  = gui.results.Ef_sol;
+        if isfield(gui.results, 'korsunsky_params')
+            gui.results.mean_Young_modulus_film0_GPa = ...
+                'Not calculated: fitted asymptotes are not film moduli';
+            gui.results.fit_Young_modulus_film0_GPa = ...
+                'Not calculated: fitted asymptotes are not film moduli';
+        else
+            gui.results.mean_Young_modulus_film0_GPa = gui.results.Ef_sol_fit;
+            gui.results.fit_Young_modulus_film0_GPa  = gui.results.Ef_sol;
+        end
         gui.results.Poisson_coeff_film0          = gui.data.nuf0;
         gui.results.thickness_film0_nm           = gui.data.t0;
         
