@@ -7,6 +7,11 @@ To get started with the NIMS toolbox, clone the repository, then run Matlab, and
 
 You can start the launcher by typing "demo" at the Matlab command prompt.
 
+The `multilayer Python notebook <notebooks/multilayer_indentation.ipynb>`_
+analyzes the bundled Au/Ti/SiO2/Si example and links to the existing Abaqus
+script. It requires Jupyter, NumPy, SciPy, Matplotlib, and PyYAML. Its Abaqus
+example is not generated from the notebook inputs or run by the notebook.
+
 Features
 --------
 This Matlab toolbox has been developed to :

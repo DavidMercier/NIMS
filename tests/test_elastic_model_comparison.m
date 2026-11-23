@@ -114,3 +114,57 @@ verifyEqual(testCase, char(get(gui.handles.value_elastic_models_GUI, 'Visible'))
 verifyEqual(testCase, char(get(gui.handles.value_model_GUI, 'Visible')), 'on');
 verifyEqual(testCase, get(gui.handles.value_model_GUI, 'Value'), 1);
 end
+
+function testDirectHardnessPlot(testCase)
+fig = testCase.TestData.fig;
+figure(fig);
+gui = guidata(fig);
+set(gui.handles.value_numthinfilm_GUI, 'Value', 2);
+set(gui.handles.value_param2plotinyaxis_GUI, 'Value', 6);
+set(gui.handles.value_param2plotinxaxis_GUI, 'Value', 1);
+get_and_plot;
+gui = guidata(fig);
+set(gui.handles.value_param2plotinxaxis_GUI, 'Value', 4);
+get_and_plot;
+gui = guidata(fig);
+verifyEqual(testCase, gui.axis.title_str, 'Select a film and a hardness model');
+verifyEqual(testCase, get(gui.handles.cb_SD_plot_GUI, 'Enable'), 'off');
+verifyEqual(testCase, get(gui.handles.cb_lines_plot_GUI, 'Enable'), 'off');
+verifyEqual(testCase, get(gui.handles.pb_residual_plot_GUI, 'Visible'), 'off');
+
+set(gui.handles.value_model_GUI, 'Value', 2);
+get_and_plot;
+gui = guidata(fig);
+sample = gui.results.H(:);
+valid = isfinite(sample) & sample >= 0;
+verifyEqual(testCase, gui.axis.x2plot, sample(valid));
+verifyEqual(testCase, gui.axis.y2plot, ...
+    repmat(gui.results.Hf_fit(1), size(gui.axis.x2plot)));
+verifyEqual(testCase, gui.axis.legend_str, 'Fitted film hardness (constant)');
+
+gui.variables.val2 = 6;
+gui.results.H = [2, 3, NaN, 4];
+gui.results.Hf = [4, 8, 2, -1];
+guidata(fig, gui);
+verifyWarning(testCase, @plot_exp_vs_mod, 'NIMS:HardnessPlot:InvalidSamples');
+gui = guidata(fig);
+verifyEqual(testCase, reshape(get(gui.handles.plot_data, 'XData'), 1, []), [2, 3]);
+verifyEqual(testCase, reshape(get(gui.handles.plot_data, 'YData'), 1, []), [4, 8]);
+
+gui.variables.val2 = 3;
+gui.results.H = [2, 3, 4];
+gui.results.Hf_fit = [5, 2];
+gui.results.Hf = [7, 8, 9];
+guidata(fig, gui);
+plot_exp_vs_mod;
+gui = guidata(fig);
+verifyEqual(testCase, reshape(get(gui.handles.plot_data, 'YData'), 1, []), [5, 5, 5]);
+verifyEqual(testCase, gui.axis.legend_str, 'Fitted film hardness (constant)');
+
+set(gui.handles.value_param2plotinyaxis_GUI, 'Value', 4);
+verifyWarning(testCase, @get_and_plot, 'NIMS:HardnessPlot:IncompatibleAxis');
+gui = guidata(fig);
+verifyEqual(testCase, get(gui.handles.value_param2plotinxaxis_GUI, 'Value'), 1);
+verifyEqual(testCase, get(gui.handles.cb_SD_plot_GUI, 'Enable'), 'on');
+verifyEqual(testCase, get(gui.handles.cb_lines_plot_GUI, 'Enable'), 'on');
+end

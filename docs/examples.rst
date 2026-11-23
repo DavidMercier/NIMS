@@ -40,6 +40,14 @@ Residuals are available for a single model only. The Mencik linear model
 does not use the optional thickness correction; this is noted in the legend.
 Fits that do not converge are also identified in the legend.
 
+To plot estimated film hardness directly against measured sample hardness,
+select **Hardness** on the Y axis and **Sample hardness** on the X axis,
+then select a film and a hardness model. KaoByrne and BhattacharyaNix
+produce a single fitted film hardness, shown at each sample hardness;
+the other hardness models provide depth-dependent estimates. Invalid
+hardness pairs are excluded with a warning. Interface lines, residuals,
+and standard-deviation bars are unavailable in this view.
+
 Please check that surface detection is accurate, especially when the substrate is compliant [#Kaufman_2009]_ and [#Piccarolo_2010]_.
 For more information about surface detection, see the `NIMS documentation <http://nims.readthedocs.org/en/latest/models.html>`_.
 

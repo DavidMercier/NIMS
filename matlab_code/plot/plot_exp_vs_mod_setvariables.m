@@ -65,6 +65,11 @@ else
             gui.axis.xmax = round(max(gui.data.h/gui.data.t));
         end
         gui.axis.xmin = 0;
+    elseif gui.variables.x_axis == 4
+        gui.axis.x2plot = gui.results.H;
+        gui.axis.xlabelstr = 'Sample hardness (GPa)';
+        gui.axis.xmin = 0;
+        gui.axis.xmax = 0;
     end
     
     if gui.variables.y_axis == 1

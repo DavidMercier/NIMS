@@ -7,6 +7,15 @@ elastic_list = ismember(get(gui.handles.value_param2plotinyaxis_GUI, 'Value'), [
     get(gui.handles.value_numthinfilm_GUI, 'Value') == 2;
 old_elastic_list = ismember(gui.variables.y_axis_old, [4 5]) && ...
     gui.variables.num_thinfilm_old == 2;
+hardness_comparison = get(gui.handles.value_param2plotinyaxis_GUI, 'Value') == 6 && ...
+    get(gui.handles.value_param2plotinxaxis_GUI, 'Value') == 4;
+if hardness_comparison
+    set(gui.handles.cb_lines_plot_GUI, 'Enable', 'off');
+    set(gui.handles.cb_SD_plot_GUI, 'Enable', 'off');
+else
+    set(gui.handles.cb_lines_plot_GUI, 'Enable', 'on');
+    set(gui.handles.cb_SD_plot_GUI, 'Enable', 'on');
+end
 
 % Young's modulus and Hardness models
 if get(gui.handles.value_param2plotinyaxis_GUI , 'Value') < 4
@@ -160,7 +169,9 @@ else
 end
 
 % Residuals
-if viscoelastic
+if hardness_comparison
+    set(gui.handles.pb_residual_plot_GUI, 'Visible', 'off');
+elseif viscoelastic
     set(gui.handles.cb_corr_thickness_GUI, 'Visible', 'off');
     set(gui.handles.title_neta_corr_thickness_GUI, 'Visible', 'off');
     set(gui.handles.value_neta_corr_thickness_GUI, 'Visible', 'off');

@@ -13,6 +13,12 @@ gui.flag.residuals = 0;
 
 gui.variables.log_plot_value = get(gui.handles.cb_log_plot_GUI, 'Value');
 
+if gui.variables.x_axis == 4 && gui.variables.y_axis == 6
+    guidata(gcf, gui);
+    plot_hardness_comparison;
+    return;
+end
+
 if get(gui.handles.cb_lines_plot_GUI, 'value') == 1
     if gui.variables.log_plot_value == 0
         if gui.variables.x_axis == 1
@@ -330,4 +336,48 @@ guidata(gcf, gui);
 
 plot_properties;
 
+end
+
+function plot_hardness_comparison
+gui = guidata(gcf);
+gui.axis.xlabelstr = 'Sample hardness (GPa)';
+gui.axis.ylabelstr = 'Estimated film hardness (GPa)';
+gui.axis.xmin = 0;
+gui.axis.xmax = 0;
+gui.axis.ymin = 0;
+gui.axis.ymax = 0;
+gui.axis.legend_str = 'Estimated film hardness';
+
+if gui.variables.num_thinfilm == 1 || gui.variables.val2 == 1
+    gui.axis.x2plot = NaN;
+    gui.axis.y2plot = NaN;
+    gui.axis.title_str = 'Select a film and a hardness model';
+else
+    sample = gui.results.H(:);
+    if gui.variables.num_thinfilm == 2 && ismember(gui.variables.val2, [2 3 4])
+        film = repmat(gui.results.Hf_fit(1), size(sample));
+        gui.axis.legend_str = 'Fitted film hardness (constant)';
+    else
+        film = gui.results.Hf(:);
+    end
+    if numel(sample) ~= numel(film) || ~isreal(sample) || ~isreal(film)
+        error('NIMS:HardnessPlot:InvalidData', ...
+            'Sample and film hardness must be matching real vectors.');
+    end
+    valid = isfinite(sample) & sample >= 0 & isfinite(film) & film >= 0;
+    if ~any(valid)
+        error('NIMS:HardnessPlot:NoValidSamples', ...
+            'No finite nonnegative sample and film hardness pairs are available.');
+    end
+    if any(~valid)
+        warning('NIMS:HardnessPlot:InvalidSamples', ...
+            'Excluded %d invalid sample and film hardness pairs.', sum(~valid));
+    end
+    gui.axis.x2plot = sample(valid);
+    gui.axis.y2plot = film(valid);
+    gui.axis.title_str = 'Film hardness versus sample hardness';
+end
+gui.handles.plot_data = plot(gui.axis.x2plot, gui.axis.y2plot, 'rx');
+guidata(gcf, gui);
+plot_properties;
 end

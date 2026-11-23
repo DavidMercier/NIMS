@@ -3,6 +3,13 @@ function get_and_plot
 %% Function used to get and plot data
 gui = guidata(gcf);
 
+if get(gui.handles.value_param2plotinxaxis_GUI, 'Value') == 4 && ...
+        get(gui.handles.value_param2plotinyaxis_GUI, 'Value') ~= 6
+    set(gui.handles.value_param2plotinxaxis_GUI, 'Value', 1);
+    warning('NIMS:HardnessPlot:IncompatibleAxis', ...
+        'Sample hardness on the X axis requires Hardness on the Y axis; X axis reset to displacement.');
+end
+
 viscoelastic = get(gui.handles.value_param2plotinyaxis_GUI, 'Value') >= 10;
 if viscoelastic
     if ~gui.flag.flag_data || ~isfield(gui.data, 'storage_stiffness_init') || ...
@@ -219,7 +226,8 @@ if ~gui.flag.wrong_inputs
     gui = guidata(gcf); guidata(gcf, gui);
     
     plot_exp_vs_mod;
-    if gui.variables.val2 > 1 && numel(gui.variables.elastic_models) == 1
+    if gui.variables.x_axis ~= 4 && gui.variables.val2 > 1 && ...
+            numel(gui.variables.elastic_models) == 1
         rSquare = r_square(gui.axis.y2plot, gui.axis.y2plot_2);
         xl = xlim;
         yl = ylim;
