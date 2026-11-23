@@ -30,6 +30,13 @@ This Matlab toolbox has been developed to :
 
 - Generation of a Python script for FEM simulation of indentation test on bulk or multilayer sample with ABAQUS 6.12 to ABAQUS 6.14.
 
+Related projects
+----------------
+`Abapy <https://abapy.readthedocs.io/en/latest/>`_ provides Python tools for
+finite-element indentation. NIMS can prepare bulk or multilayer axisymmetric
+Abapy scripts without installing Abapy, from MATLAB or the notebook; see the
+`FEM documentation <docs/python_abaqus.rst>`_ for prerequisites and limits.
+
 Author
 ------
 :Author: `David Mercier <david9684@gmail.com>`_ [1,2,3]

@@ -139,7 +139,7 @@ Multilayer models to extract hardness of thin films on a multilayer sample (with
 Finite Element Modelling of conical indentation of thin film(s) on a substrate
 ---------------------------------------------------------------------------------
 
-* `Charleux L., "Abapy Documentation" <http://abapy.readthedocs.org/en/latest/index.html>`_
+* `Charleux L., "Abapy Documentation" <https://abapy.readthedocs.io/en/latest/index.html>`_ — related Python finite-element project; NIMS provides bulk and multilayer axisymmetric script preparation.
 * ABAQUS documentation
 * `Bhattacharya A.K. and Nix W.D., "Analysis of elastic and plastic deformation associated with indentation testing of thin films on substrates" (1988). <https://doi.org/10.1016/0020-7683(88)90091-1>`_
 * `Bhattacharya A.K. and Nix W.D., "Finite element analysis of cone indentation." (1991). <https://doi.org/10.1016/0020-7683(91)90100-T>`_

@@ -170,6 +170,80 @@ To generate the FEM model in ABAQUS, apply the following procedure:
 ..  note::
     Dimensions are in nm and Young's moduli are in GPa, implying that load is in nN.
 
+Abapy axisymmetric bulk and multilayer export
+############################################
+
+The separate `Abapy <https://abapy.readthedocs.io/en/latest/>`_ bridge creates
+an Abaqus input deck for a bulk or multilayer isotropic linear-elastic sample.
+It does not extract plastic hardness or replace the existing MATLAB/CAE FEM
+generator above. It uses CAX4 elements and a sharp Abapy meshed cone constrained
+as rigid, with frictionless contact and loading/unloading steps. This is not
+the rounded cone used by the existing NIMS generator.
+
+Abapy's published code uses Python 2 syntax and requires a separately
+configured compatible Python environment and its dependencies. It is not
+included in NIMS and is not known to work in a current Python 3 notebook
+kernel. Provide the full path to that environment's Python executable.
+From MATLAB, after adding the NIMS folders to the path, run for example::
+
+    abapy_export('C:\path\to\python.exe', 'C:\work\bulk.inp', 165, 0.28, 200, 600, 70.3)
+
+The arguments are executable, new output file, Young's modulus (GPa), Poisson
+ratio, maximum depth (nm), fine mesh region size (nm), and cone half-angle
+(degrees, optional; default 70.3). The mesh region size must exceed the
+depth; it is not the full specimen size. Existing files are never overwritten.
+Choose domain size, mesh density and loading conditions based on convergence
+studies. The optional cell in the multilayer notebook calls the same bridge
+using its substrate properties and the fitted top-film modulus.
+
+Preparing a multilayer script without installing Abapy
+------------------------------------------------------
+
+Python 3 can prepare a self-contained script without importing Abapy.
+Run the following from the repository root (one command, shown split for
+readability)::
+
+    python matlab_code\fem\abapy_export.py --prepare-script
+        --output multilayer_abapy.py --young 165 --poisson 0.28
+        --depth 200 --mesh-size 600 --width 6000 --substrate-depth 6000
+        --film 500 90 0.32 --film 500 120 0.34 --film 500 70 0.18
+
+Each ``--film`` specifies thickness (nm), Young's modulus (GPa), and Poisson
+ratio, ordered **surface to substrate** (Au, Ti, SiO2 in this example).
+The 90 GPa value is illustrative; the notebook uses its actual fitted value.
+``--young`` and ``--poisson`` specify the substrate, and ``--substrate-depth``
+and ``--width`` specify its thickness and the full sample radial extent.
+With films, ``--mesh-size`` controls only the indenter mesher length scale.
+
+The sample mesh has rows exactly at each interface and shared nodes across
+regions, enforcing perfect bonding without duplicate nodes or tie contacts.
+Each film and the substrate have their own element set and material section.
+This is a rectangular finite domain; the axis is constrained radially and the
+bottom is fixed. The outside radial edge is free. Defaults are 64 radial
+elements, 16 rows per film, and 32 substrate rows; adjust
+``--radial-elements``, ``--layer-elements``, and ``--substrate-elements`` for
+mesh convergence. Abapy's single-material ``MakeInp`` is retained for bulk
+only; the multilayer path assembles sections using Abapy's mesh, material,
+indenter and step exporters.
+
+From MATLAB, the same preparation can be invoked using a regular Python 3::
+
+    films = [500 90 0.32; 500 120 0.34; 500 70 0.18];
+    abapy_export('C:\path\to\python.exe', 'C:\work\multilayer_abapy.py', ...
+        165, 0.28, 200, 600, 70.3, films, 6000, 6000, true)
+
+Alternatively set ``prepare_abapy_script = True`` in the notebook. Run the
+resulting script later with a compatible Abapy interpreter, in the desired
+working directory. It writes ``multilayer_abapy.inp`` there, refuses to
+overwrite it, and submits no job. For direct export with Abapy installed,
+omit ``--prepare-script`` and use a new ``.inp`` output filename.
+
+The bridge only generates an input file. Review its mesh, contact, boundary
+conditions and outputs in a compatible Abaqus installation before use; no
+Abaqus job is submitted. Local tests check mesh topology, layer assignments,
+and script preparation; they do not validate the external Abapy exporters.
+Neither the MATLAB wrapper nor an Abaqus solution has been executed locally.
+
 Results of the FEM simulation
 ###############################
 
