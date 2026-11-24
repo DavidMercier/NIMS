@@ -150,19 +150,19 @@ if ~gui.flag.wrong_inputs
             gui.data.delta_P, gui.data.delta_h, gui.data.delta_S);
         guidata(gcf, gui);
         %% Set model to use for calculations
-        if get(gui.handles.value_numthinfilm_GUI, 'Value') == 2
-            try
+        try
+            if get(gui.handles.value_numthinfilm_GUI, 'Value') == 2
                 if numel(gui.variables.elastic_models) > 1
                     model_compare_elastic(gui.variables.elastic_models);
                 else
                     model_bilayer_elastic(gui.variables.val2);
                 end
-            catch exception
-                delete(gui.handles.h_waitbar);
-                rethrow(exception);
+            elseif get(gui.handles.value_numthinfilm_GUI, 'Value') > 2
+                model_multilayer_elastic(gui.variables.val2);
             end
-        elseif get(gui.handles.value_numthinfilm_GUI, 'Value') > 2
-            model_multilayer_elastic(gui.variables.val2);
+        catch exception
+            delete(gui.handles.h_waitbar);
+            rethrow(exception);
         end
     elseif gui.variables.y_axis == 6
         gui.results.H = model_hardness(gui.data.P, gui.results.Ac);

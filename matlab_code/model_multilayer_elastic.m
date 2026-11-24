@@ -3,6 +3,17 @@ function model_multilayer_elastic(val2)
 %% Function used to calculate Young's modulus in multilayer system with the model of Mercier et al. (2010)
 gui = guidata(gcf);
 
+if val2 >= 3 && val2 <= numel(gui.handles.list_multilayermodel)
+    model = lower(strrep(gui.handles.list_multilayermodel{val2}, 'PuchiCabrera_', ''));
+    model_puchi_cabrera(model);
+    gui = guidata(gcf);
+    gui.results.Em = non_reduced_YM(gui.results.Em_red, gui.data.nuf);
+    gui.results.Ef = non_reduced_YM(gui.results.Ef_red, gui.data.nuf);
+    set(gui.MainWindows, 'CurrentAxes', gui.handles.AxisPlot_GUI);
+    guidata(gcf, gui);
+    return;
+end
+
 %% Setting variables & parameters
 gui.data.Es_red = reduced_YM(gui.data.Es, gui.data.nus); % Reduced Young's modulus of the substrate (in GPa)
 gui.data.E0_red = reduced_YM(gui.data.E0, gui.data.nuf0); % Reduced Young's modulus of the film 0 (in GPa)

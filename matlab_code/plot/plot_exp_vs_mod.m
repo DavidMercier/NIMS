@@ -202,6 +202,20 @@ elseif gui.variables.num_thinfilm == 1
             num2str(round(mean(gui.results.cleaned_H.*1000)./10)./100), 'GPa');
     end
     
+elseif isfield(gui.results, 'puchi_cabrera') && ismember(gui.variables.y_axis, [4 5])
+    if gui.variables.num_thinfilm == 3
+        filmControl = gui.handles.value_youngfilm1_GUI;
+    else
+        filmControl = gui.handles.value_youngfilm2_GUI;
+    end
+    set(filmControl, 'String', num2str(gui.results.Ef_sol_fit));
+    gui.axis.title_str = sprintf( ...
+        'Puchi-Cabrera %s: fitted top-film $E$ = %.3g GPa (fixed weights; nominal thickness)', ...
+        strrep(gui.results.puchi_cabrera.model, '_', ' '), gui.results.Ef_sol_fit);
+    if gui.results.exitflag <= 0
+        gui.axis.title_str = [gui.axis.title_str, ' (fit did not converge)'];
+    end
+
 elseif gui.variables.num_thinfilm == 2
     if gui.variables.y_axis == 4 || gui.variables.y_axis == 5
         if gui.variables.val2 == 14

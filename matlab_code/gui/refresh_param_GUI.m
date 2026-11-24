@@ -87,7 +87,7 @@ elseif get(gui.handles.value_param2plotinyaxis_GUI , 'Value') == 6
         set(gui.handles.value_model_GUI, ...
             'String', gui.handles.list_multilayermodel_plastic);
         set(gui.handles.value_models_Saha_GUI, ...
-            'String', gui.handles.list_multilayermodel);
+            'String', gui.handles.list_multilayermodel(1:2));
     end
 end
 

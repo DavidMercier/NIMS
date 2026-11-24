@@ -598,6 +598,157 @@ of the substrate material. In his paper, Puchi-Cabrera modified and extended
 from the bilayer to the multilayer specimen, the models of Doerner and
 Nix, Gao, Bec, Menčík, Perriot and Barthel, Antunes, Korsunsky and Constantinescu and Bull.
 
+NIMS implements **ten formulations**: the Doerner--Nix extension in the
+main text and the nine formulations in Appendix 1. The equations were
+checked against the `openly archived paper <https://hal.science/hal-01169478/document>`_.
+These are elastic mixture models, not hardness or finite-element models.
+
+Volume fractions and onset of underlying layers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Films are numbered from the surface downwards. For cumulative thickness
+:math:`T_j=\sum_{i=1}^{j}t_i`, define :math:`q_j=(h-T_j/100)/T_j`
+when :math:`h>T_j/100`. Here :math:`h` is the penetration depth, not the
+contact depth or the measured contact radius. The cumulative film fraction
+:math:`F_j` is one at and below this onset, and otherwise follows the
+selected weighting function. The individual fractions are
+
+.. math::
+
+    x_v^1=F_1,\qquad x_v^j=F_j-F_{j-1},\qquad x_v^s=1-F_N.
+
+Thus an underlying layer cannot contribute before the published
+1%-of-cumulative-thickness threshold. Equality at the threshold is handled
+by the continuous, fully supported limit. Fractions must be nonnegative
+and sum to one; crossing cumulative functions are rejected rather than
+silently clipped. Only floating-point roundoff is normalized.
+
+The implementation uses the corresponding previous layer's parameters
+in :math:`F_{j-1}` and cumulative thickness in both terms. This follows
+the construction in Eqs. (19)--(21), rather than the inconsistent
+previous-layer exponent subscripts in (A24)/(A37) and thickness subscripts
+in (A41)/(A42).
+
+.. list-table:: Implemented formulations
+   :header-rows: 1
+   :widths: 27 12 39 22
+
+   * - API model name
+     - Mixture
+     - Cumulative fraction above onset
+     - Parameters per film
+   * - ``doerner_nix``
+     - Harmonic
+     - :math:`1-\exp(-\alpha_j/q_j)`
+     - :math:`\alpha_j`
+   * - ``gao``
+     - Linear
+     - Gao function (A2), at :math:`a/t=q_j\tan\psi`
+     - Poisson ratio
+   * - ``bec``
+     - Harmonic
+     - :math:`2/(2+\pi q_j\tan\psi)`
+     - None
+   * - ``mencik_1``
+     - Linear
+     - :math:`\exp(-\alpha_j q_j)`
+     - :math:`\alpha_j`
+   * - ``mencik_2``
+     - Harmonic
+     - :math:`\exp(-\alpha_j q_j)`
+     - :math:`\alpha_j`
+   * - ``perriot_barthel``
+     - Linear
+     - :math:`1/[1+(q_j\tan\psi/\beta_j)^{n_j}]`
+     - :math:`\beta_j,n_j`
+   * - ``antunes_1``
+     - Linear
+     - :math:`1-\exp(-\alpha_j/q_j)`
+     - :math:`\alpha_j`
+   * - ``antunes_2``
+     - Harmonic
+     - Same Gao function as ``gao``
+     - Poisson ratio
+   * - ``korsunsky_constantinescu``
+     - Linear
+     - :math:`1/[1+(q_j/\beta_j)^{n_j}]`
+     - :math:`\beta_j,n_j`
+   * - ``bull``
+     - Harmonic
+     - Same fraction as ``bec``
+     - None
+
+Linear mixtures return :math:`E=\sum_i x_v^i E_i`; harmonic mixtures return
+:math:`E=1/\sum_i x_v^i/E_i`, including the substrate in both sums.
+Bec and Bull are algebraically equivalent in this implementation.
+
+Standalone MATLAB use
+~~~~~~~~~~~~~~~~~~~~~
+
+The function ``puchi_cabrera_response`` accepts any positive number of films,
+with thicknesses and parameters ordered **surface to substrate**. The modulus
+vector contains every film followed by the substrate. Depth and thickness
+must share a length unit; all moduli must share a modulus unit. Its first
+output has the same shape as the depth vector. Its second output has one row
+per depth and columns for each film followed by the substrate.
+
+For example, after adding ``matlab_code`` and its subfolders to the path::
+
+    h = logspace(0, 3, 100);                 % nm
+    thickness = [500, 500, 500];            % Au, Ti, SiO2
+    E = [93.61, 120, 70, 165];              % GPa; substrate last
+    [composite, fractions] = puchi_cabrera_response(h, thickness, E, 'bec');
+
+    alpha = [0.25; 0.25; 0.25];             % illustrative, not calibrated
+    compositeDN = puchi_cabrera_response(h, thickness, E, 'doerner_nix', alpha);
+
+    nu = [0.32, 0.34, 0.18];
+    compositeGao = puchi_cabrera_response(h, thickness, E, 'gao', [], nu, 70.3);
+
+Empirical parameters are required explicitly: an N-by-1 column of positive
+``alpha`` values, or an N-by-2 matrix containing positive ``beta`` and
+``exponent`` values. Parameter-free models accept ``[]``. Gao and Antunes 2
+also require one Poisson ratio per film. The optional cone half-angle
+defaults to 70.3 degrees.
+
+GUI fitting and limitations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For **two or three films on a substrate**, select an elastic modulus plot
+and a ``PuchiCabrera_...`` entry in the Multilayer Model menu. Mercier remains
+the existing second entry. The new models use the nominal layer thicknesses;
+if the additional thickness-correction checkbox is enabled, a warning
+explains that it is not applied. The model's 1% onset shift is always applied.
+
+The GUI fits **only the top-film modulus** against the measured reduced
+sample modulus, with lower-layer and substrate moduli fixed from the
+material controls. The initial top-film modulus is not used by the fit and
+may be zero; lower-layer and substrate moduli must be positive.
+Empirical weighting parameters are fixed at one in the
+GUI (``alpha = 1`` or ``beta = exponent = 1`` for every film), not calibrated
+from the data. Use the standalone API for independently calibrated
+per-layer parameters. The plot title identifies these fixed-weight fits.
+This is not the paper's simultaneous regression of every layer modulus and
+empirical parameter, and one curve should not be assumed to identify an
+entire stack uniquely.
+
+To match NIMS's modulus plots, the GUI applies the mixture to
+:math:`E_i/(1-\nu_i^2)` in GPa and converts the fitted top-film result back
+to Young's modulus. This reduced-modulus convention is an explicit NIMS
+adaptation; the standalone API can instead use unreduced Young's moduli
+as in the expressions above. The fit uses bounded, one-dimensional
+``fminbnd`` and does not require Optimization Toolbox.
+
+Pointwise inversions and fit residuals retain the original data shape.
+Nonpositive/nonfinite measurements are excluded with a warning; unresolved
+or nonphysical inversions are reported as NaN with a warning. Results store
+the model, fixed parameters, volume fractions, and fit mask under
+``puchi_cabrera`` in the YAML export, along with both fitted Young's and
+reduced moduli. The top-film ``fit_Young_modulus`` field records the fitted
+Young's modulus; its ``mean_Young_modulus`` field averages the finite,
+physical pointwise inversions. These models are not exposed in the
+multilayer hardness selector.
+
 Plastic properties of a thin film on a substrate
 ###################################################
 

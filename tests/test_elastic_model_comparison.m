@@ -168,3 +168,49 @@ verifyEqual(testCase, get(gui.handles.value_param2plotinxaxis_GUI, 'Value'), 1);
 verifyEqual(testCase, get(gui.handles.cb_SD_plot_GUI, 'Enable'), 'on');
 verifyEqual(testCase, get(gui.handles.cb_lines_plot_GUI, 'Enable'), 'on');
 end
+
+function testPuchiCabreraMultilayerSelection(testCase)
+fig = testCase.TestData.fig;
+figure(fig);
+gui = guidata(fig);
+set(gui.handles.value_param2plotinxaxis_GUI, 'Value', 1);
+set(gui.handles.cb_corr_thickness_GUI, 'Value', 0);
+for count = [3, 4]
+    set(gui.handles.value_numthinfilm_GUI, 'Value', count);
+    set(gui.handles.value_param2plotinyaxis_GUI, 'Value', 4);
+    get_and_plot;
+    gui = guidata(fig);
+    for selection = 3:numel(gui.handles.list_multilayermodel)
+        set(gui.handles.value_youngfilm0_GUI, 'String', '70');
+        set(gui.handles.value_youngfilm1_GUI, 'String', '120');
+        set(gui.handles.value_youngfilm2_GUI, 'String', '90');
+        if count == 3
+            set(gui.handles.value_youngfilm1_GUI, 'String', '0');
+        else
+            set(gui.handles.value_youngfilm2_GUI, 'String', '0');
+        end
+        set(gui.handles.value_poissfilm0_GUI, 'String', '0.3');
+        set(gui.handles.value_poissfilm1_GUI, 'String', '0.3');
+        set(gui.handles.value_poissfilm2_GUI, 'String', '0.3');
+        set(gui.handles.value_model_GUI, 'Value', selection);
+        get_and_plot;
+        gui = guidata(fig);
+        expected = lower(strrep(gui.handles.list_multilayermodel{selection}, 'PuchiCabrera_', ''));
+        verifyEqual(testCase, gui.results.puchi_cabrera.model, expected);
+        verifyEqual(testCase, gui.axis.y2plot_2, gui.results.Em_red);
+        verifyEqual(testCase, size(gui.results.puchi_cabrera.volume_fractions, 2), count);
+        verifyNotEmpty(testCase, strfind(gui.axis.title_str, 'fixed weights'));
+    end
+    set(gui.handles.value_param2plotinyaxis_GUI, 'Value', 5);
+    get_and_plot;
+    set(gui.handles.value_model_GUI, 'Value', selection);
+    get_and_plot;
+    gui = guidata(fig);
+    verifyEqual(testCase, gui.results.puchi_cabrera.model, expected);
+    verifyEqual(testCase, gui.axis.y2plot_2, gui.results.Ef_red);
+    set(gui.handles.value_model_GUI, 'Value', 2);
+    get_and_plot;
+    gui = guidata(fig);
+    verifyFalse(testCase, isfield(gui.results, 'puchi_cabrera'));
+end
+end

@@ -327,6 +327,8 @@ Other links / References
 * `Isselé H. et al., "Determination of the Young's modulus of a TiN Thin Film by nanoindentation: analytical models and numerical FEM simulation." (2012). <http://doi.org/10.1380/ejssnt.2012.624>`_
 * `Phiciato's blog (2013) <https://phiciato.wordpress.com/2013/07/11/abaqus-simple-case-indentation-of-thin-coating/>`_
 * `Karimpour M. et al., "An inverse method for extracting the mechanical properties of the constituent materials of a multilayer from nanoindentation data." (2013). <http://doi.org/10.1016/j.commatsci.2012.11.007>`_
+* `Lee J.-H., Ham J.-B. and Kim Y.-C., "An Investigation of the Indentation Elastic Modulus for Metal Films on Flexible Substrates Considering the Substrate Effect." (2025). <https://doi.org/10.3390/ma18010154>`_
+* `Zak S., Trost C. O. W., Kreiml P. and Cordill M. J., "Accurate measurement of thin film mechanical properties using nanoindentation." (2022). <https://doi.org/10.1557/s43578-022-00541-1>`_
 * Fourcade T., "Études des propriétés mécaniques de matériaux métalliques en couches minces", PhD thesis - Université de Toulouse (2013).
 * `Moćko W. et al., "Simulation of nanoindentation experiments of single-layer and double-layer thin films using finite element method." (2014). <http://doi.org/10.1002/sia.5473>`_
 * `Kibech S. et al., "Nanoindentation" (2014). <https://nanohub.org/resources/nanoindentation>`_

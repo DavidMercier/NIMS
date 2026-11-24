@@ -42,7 +42,10 @@ else
     val2_str  = list_val2(num_val2, :);
     gui.results.multi_bilayer_model_elastic = val2_str;
     
-    if get(gui.handles.cb_corr_thickness_GUI, 'Value') == 1
+    if isfield(gui.results, 'puchi_cabrera')
+        gui.results.correction_multi_bilayer_model_elastic = ...
+            'Nominal thicknesses with the Puchi-Cabrera 1% onset shift; no additional thickness correction';
+    elseif get(gui.handles.cb_corr_thickness_GUI, 'Value') == 1
         param2_corr_model_str = 'Correction of the effective thickness applied. See in Mencik et al. (2003)';
         gui.results.correction_multi_bilayer_model_elastic = ...
             param2_corr_model_str;
@@ -116,6 +119,18 @@ else
         
     end
     
+    if isfield(gui.results, 'puchi_cabrera')
+        topIndex = gui.variables.num_thinfilm - 2;
+        gui.results.(sprintf('fit_Young_modulus_film%d_GPa', topIndex)) = gui.results.Ef_sol_fit;
+        pointwise = gui.results.Ef(isfinite(gui.results.Ef) & gui.results.Ef > 0);
+        if isempty(pointwise)
+            meanModulus = 'Not calculated: no physical pointwise film moduli';
+        else
+            meanModulus = mean(pointwise);
+        end
+        gui.results.(sprintf('mean_Young_modulus_film%d_GPa', topIndex)) = meanModulus;
+    end
+
     %% Write data in a YAML file
     list_val2 = get(gui.handles.value_model_GUI, 'String');
     num_val2  = get(gui.handles.value_model_GUI, 'Value');
