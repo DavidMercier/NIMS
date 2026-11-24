@@ -85,7 +85,3 @@ Screenshot
    :align: center
    
    *Plot of the evolution of the Young's modulus of the sample in function of the indentation depth.*
-
-Links
------
-http://fr.mathworks.com/matlabcentral/fileexchange/43392-davidmercier-nims
