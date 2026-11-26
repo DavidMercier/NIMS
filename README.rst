@@ -11,6 +11,14 @@ The `multilayer Python notebook <notebooks/multilayer_indentation.ipynb>`_
 analyzes the bundled Au/Ti/SiO2/Si example and links to the existing Abaqus
 script. It requires Jupyter, NumPy, SciPy, Matplotlib, and PyYAML. Its Abaqus
 example is not generated from the notebook inputs or run by the notebook.
+The `elastic-versus-plastic comparison notebook
+<notebooks/multilayer_elastic_vs_plastic.ipynb>`_ compares the multilayer
+elastic-modulus fit with NIMS-style hardness estimates and documents the
+distinction between those estimates and a plastic constitutive simulation.
+The `single-film comparison notebook
+<notebooks/single_film_elastic_vs_plastic.ipynb>`_ applies the bilayer
+Doerner–Nix and hardness analysis to the bundled SiO2/Si Excel example; it
+requires `xlrd` to read the legacy `.xls` workbook.
 
 Features
 --------
