@@ -119,10 +119,50 @@ behavior and hard for the normal behavior.
 The external surface of the indenter is defined as the "master"
 region and the top surface of the (multilayer) sample is defined as the "slave" region.
 
-..  note::
-    Usually, the effect of friction may be neglected when indenter tips with half-angle
-    larger than 60◦ are used (e.g.: Berkovich, Vickers) [#AtkinsTabor_1965]_, [#Johnson_1987]_, 
-    [#DiCarlo_2004]_, [#Harsono_2008]_ and [#Wang_2016]_.
+Influence of friction
+---------------------
+
+Friction opposes relative tangential motion between the indenter and the
+sample and can change the deformation field, contact area and indentation
+load. In the Coulomb model, the tangential traction magnitude :math:`|q|`
+is bounded by :math:`\mu p`, where :math:`p` is the local normal contact
+pressure and :math:`\mu` is the dimensionless coefficient of friction:
+
+.. math:: |q| \leq \mu p
+
+Equality applies during sliding; the ratio :math:`|q|/p` can be smaller
+than :math:`\mu` in a sticking region. A frictionless contact has
+:math:`\mu = 0`. The effective coefficient depends on the contacting
+materials and surface conditions; the effect of friction on indentation
+also depends on the contact geometry and material response.
+
+Johnson's idealized analysis considers a rigid wedge indenting a
+rigid-perfectly plastic half-space [#Johnson_1987]_. The mean pressure depends
+on the wedge semi-angle :math:`\alpha` and on the frictional constraint.
+As illustrated in :numref:`friction_wedge_schematic`, the difference between
+frictionless and sticking conditions generally decreases as the wedge becomes
+blunter, especially above approximately :math:`50^\circ`. This is a
+qualitative trend, not a universal threshold for neglecting friction.
+
+.. figure:: ./_pictures/friction_wedge_schematic.png
+   :name: friction_wedge_schematic
+   :width: 650px
+   :align: center
+   :alt: Qualitative diagram showing the mean pressure for frictionless and sticking wedge contacts approaching each other as the wedge semi-angle increases.
+
+   *Qualitative schematic inspired by Johnson's rigid-wedge indentation
+   analysis [#Johnson_1987]_. The curves are illustrative, not numerical
+   predictions; no thesis-specific region is excluded.*
+
+The wedge result is not directly quantitative for a conical or spherical
+indenter, an elastic-plastic solid, or a layered sample. In particular, the
+local contact geometry of a rounded tip changes with penetration. The
+frictionless assumption in the NIMS FEM generator is therefore a
+simplification, not a guarantee of negligible friction. For friction-sensitive
+materials, sharp tips or interfaces, assess its influence with a sensitivity
+study using suitable friction coefficients and compare the resulting loads,
+contact areas and deformation fields [#DiCarlo_2004]_, [#Harsono_2008]_,
+[#Wang_2016]_.
 
 Boundary conditions
 ------------------------

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620">
+  <rect width="1000" height="620" fill="white"/>
+  <g font-family="Arial, sans-serif" fill="#222">
+    <text x="500" y="46" text-anchor="middle" font-size="25">Rigid wedge on a rigid-perfectly plastic half-space</text>
+    <g stroke="#333" stroke-width="2.5" fill="none">
+      <path d="M140 85 V490 H805"/>
+      <path d="M140 490 v9 M362 490 v9 M583 490 v9 M805 490 v9"/>
+    </g>
+    <g font-size="22" text-anchor="middle">
+      <text x="140" y="530">0°</text>
+      <text x="362" y="530">30°</text>
+      <text x="583" y="530">60°</text>
+      <text x="805" y="530">90°</text>
+      <text x="472" y="578">Wedge semi-angle α</text>
+      <text transform="translate(48 290) rotate(-90)">Mean contact pressure</text>
+    </g>
+    <path d="M255 94 C282 208 325 258 420 268 C520 276 642 223 805 205"
+          fill="none" stroke="#2466a5" stroke-width="5"/>
+    <path d="M140 402 C300 397 480 310 805 205"
+          fill="none" stroke="#ba542e" stroke-width="5"/>
+    <g font-size="22">
+      <text x="389" y="135" fill="#2466a5">Sticking (no slip)</text>
+      <path d="M442 146 L418 251" fill="none" stroke="#2466a5" stroke-width="2"/>
+      <text x="290" y="435" fill="#ba542e">Frictionless</text>
+      <path d="M349 413 L359 369" fill="none" stroke="#ba542e" stroke-width="2"/>
+      <text x="895" y="565" text-anchor="end" fill="#555" font-size="19">Illustrative only</text>
+    </g>
+  </g>
+</svg>
