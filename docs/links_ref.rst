@@ -232,7 +232,7 @@ Reviews and overviews of nanoindentation applied to coatings
 
 Books
 ###########
-* Johnson K.L., "Contact Mechanics" (1987), ISBN - 9780521347969.
+* `Johnson K.L., "Contact Mechanics" (1987), ISBN - 9780521347969. <https://www.cambridge.org/core/books/contact-mechanics/E3707F77C2EBCE727C3911AFBD2E4AC2>`_
 * `Bhushan B., "Micro/Nanotribology and Its Applications" (1997). <https://doi.org/10.1007/978-94-011-5646-2>`_
 * `Fischer-Cripps A.C., "Introduction to Contact Mechanics" Springer 1st Ed. (2000). <https://doi.org/10.1007/b97709>`_
 * `Fischer-Cripps A.C., "Nanoindentation" Springer 1st Ed. (2002). <https://doi.org/10.1007/978-0-387-22462-6>`_

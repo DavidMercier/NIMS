@@ -1,0 +1,83 @@
+"""Create a Mechanical indentation project from a NIMS Discovery geometry.
+
+Run this journal in a new Workbench project. Edit the absolute paths below.
+The material data are illustrative only and must be replaced before use.
+"""
+import os
+import tempfile
+
+geometry_file = r"C:\path\to\indentation_geometry.scdocx"
+mechanical_script = r"C:\path\to\mechanical_indentation_setup.py"
+project_file = r"C:\path\to\indentation_example.wbpj"
+
+# Young's modulus (GPa), Poisson ratio, and illustrative pairs of
+# (plastic strain, true stress in GPa). Silicon is elastic.
+materials = [
+    ("Silicon", 130.0, 0.28, []),
+    ("SiO2", 72.0, 0.17, [(0.0, 1.0), (0.02, 1.2)]),
+    ("Al", 70.0, 0.33, [(0.0, 0.2), (0.02, 0.3)]),
+    ("Al2O3", 300.0, 0.22, [(0.0, 3.0), (0.02, 3.6)]),
+]
+
+if not os.path.isfile(geometry_file):
+    raise IOError("Geometry file does not exist: " + geometry_file)
+if not os.path.isfile(mechanical_script):
+    raise IOError("Mechanical script does not exist: " + mechanical_script)
+if not os.path.isabs(project_file) or not project_file.lower().endswith(".wbpj"):
+    raise ValueError("project_file must be an absolute .wbpj path")
+if os.path.exists(project_file) or os.path.exists(os.path.splitext(project_file)[0] + "_files"):
+    raise IOError("Project or its associated files already exist: " + project_file)
+if not os.path.isdir(os.path.dirname(project_file)):
+    raise IOError("Project directory does not exist: " + os.path.dirname(project_file))
+
+system = GetTemplate(TemplateName="Static Structural", Solver="ANSYS").CreateSystem()
+engineering_data = system.GetContainer(ComponentName="Engineering Data")
+for name, modulus, poisson, curve in materials:
+    material = engineering_data.CreateMaterial(Name="NIMS_example_" + name)
+    elasticity = material.CreateProperty(
+        Name="Elasticity", Behavior="Isotropic",
+        Qualifiers={"Definition": "", "Behavior": "Isotropic"})
+    qualifiers = {"Definition": "", "Behavior": "Isotropic",
+                  "Derive from": "Young's Modulus and Poisson's Ratio"}
+    elasticity.SetData(SheetName="Elasticity", SheetQualifiers=qualifiers,
+                       Variables=["Young's Modulus"], Values=[[str(modulus) + " [GPa]"]])
+    elasticity.SetData(SheetName="Elasticity", SheetQualifiers=qualifiers,
+                       Variables=["Poisson's Ratio"], Values=[[str(poisson)]])
+    if curve:
+        plasticity = material.CreateProperty(Name="Isotropic Hardening", Definition="Multilinear")
+        plasticity.SetData(
+            SheetName="Isotropic Hardening", SheetQualifiers={"Definition Method": "Multilinear"},
+            Variables=["Temperature", "Plastic Strain", "Stress"],
+            Values=[[0] * len(curve), [point[0] for point in curve],
+                    [str(point[1]) + " [GPa]" for point in curve]])
+
+system.GetContainer(ComponentName="Geometry").SetFile(FilePath=geometry_file)
+model = system.GetContainer(ComponentName="Model")
+model.Edit(Hidden=True)
+descriptor, status_file = tempfile.mkstemp(prefix="nims_mechanical_", suffix=".txt")
+os.close(descriptor)
+try:
+    with open(mechanical_script, "r") as stream:
+        script = stream.read()
+    command = (
+        "import traceback\n"
+        "try:\n"
+        "    exec(compile({!r}, {!r}, 'exec'))\n"
+        "except Exception:\n"
+        "    with open({!r}, 'w') as stream:\n"
+        "        stream.write(traceback.format_exc())\n"
+        "    raise\n"
+        "else:\n"
+        "    with open({!r}, 'w') as stream:\n"
+        "        stream.write('OK')\n"
+    ).format(script, mechanical_script, status_file, status_file)
+    model.SendCommand(Language="Python", Command=command)
+    with open(status_file, "r") as stream:
+        status = stream.read()
+    if status != "OK":
+        raise RuntimeError("Mechanical setup failed:\n" + (status or "No status returned"))
+finally:
+    model.Exit()
+    os.remove(status_file)
+Save(FilePath=project_file, Overwrite=False)
+print("Created project with illustrative materials: " + project_file)

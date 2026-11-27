@@ -151,7 +151,7 @@ qualitative trend, not a universal threshold for neglecting friction.
    :alt: Qualitative diagram showing the mean pressure for frictionless and sticking wedge contacts approaching each other as the wedge semi-angle increases.
 
    *Qualitative schematic inspired by Johnson's rigid-wedge indentation
-   analysis [#Johnson_1987]_. The curves are illustrative, not numerical
+   analysis* [#Johnson_1987]_. *The curves are illustrative, not numerical
    predictions; no thesis-specific region is excluded.*
 
 The wedge result is not directly quantitative for a conical or spherical
@@ -191,6 +191,69 @@ A value of 200nm for the indentation depth is set by default.
    
 ..  warning::
     Indentation displacement is given in nanometers and is negative.
+
+Discovery geometry and Mechanical indentation example
+#####################################################
+
+The separate Ansys workflow creates a three-dimensional cylindrical silicon
+substrate, one to three coatings, and a rigid cono-spherical indenter. It does
+not use the NIMS GUI or replace the Abaqus generator. The geometry is created
+with the active Discovery/SpaceClaim scripting API (tested with V242 and
+V261 in SpaceClaim); the indentation analysis is prepared in Workbench and
+Mechanical.
+
+1. In a new, empty Discovery document, set the length scale to **Small**
+   and the displayed length unit to micrometres. Edit and run
+   `discovery_indentation_geometry.py <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/fem/discovery_indentation_geometry.py>`_
+   in the script editor. When pasting into a new script, keep the editor's
+   API version header and include the final ``create_geometry()`` call.
+   The script fits an isometric view of all bodies; use an English-language
+   interface for the named view. It does not reset or save the document.
+   Save the resulting geometry and use its actual absolute path below.
+2. Edit the three absolute paths at the top of
+   `workbench_indentation.wbjn <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/fem/workbench_indentation.wbjn>`_:
+   the saved geometry, the
+   `mechanical_indentation_setup.py <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/fem/mechanical_indentation_setup.py>`_
+   script and a new ``.wbpj`` project path. In a new Workbench project, run
+   the journal using **File > Scripting > Run Script File**. It refuses to
+   overwrite an existing project or its associated files.
+3. Open the saved model in Mechanical, review the geometry, material data,
+   contact, mesh and analysis settings, then generate the mesh and solve.
+   The journal prepares the analysis but does not mesh or solve it.
+
+Geometry parameters are edited at the top of the Discovery script, in
+micrometres. The ``layers`` list contains one to three ``(material, thickness)``
+pairs, ordered from the exposed surface down to the substrate. The supplied
+coating names are ``SiO2``, ``Al`` and ``Al2O3``. For another coating, use a
+name containing only letters, digits and underscores and add a matching
+material entry to the Workbench journal. By default their
+thicknesses are 0.1, 0.2 and 0.3 µm, respectively; the substrate radius is
+18.5 µm, its thickness is 37 µm, and the indenter has a 7.4 µm tip radius
+and a 70.3-degree cone half-angle. The spherical and conical profiles are
+tangent. The sample surface and indenter apex initially touch at :math:`z=0`.
+Do not share topology between the separate bodies.
+
+The Mechanical setup assigns an isotropic elastic silicon substrate, an
+elastic-plastic coating model and a rigid indenter. Separate coating
+interfaces are bonded and the indenter contact is frictionless. The bottom
+of the substrate is fixed; a remote displacement loads the indenter to
+0.2 µm and unloads it over two analysis steps. A reaction-force probe is
+provided at maximum depth. The depth and initial mesh sizes can be changed
+in the Mechanical script.
+
+.. warning::
+   All supplied elastic constants and plastic stress-strain curves are
+   **illustrative, not validated material data**. In particular, isotropic
+   plasticity is not necessarily an appropriate constitutive model for
+   silicon dioxide or alumina. Replace the properties with suitable measured
+   data and models before interpreting results.
+
+The body-wide coating sizing can produce a very large 3D mesh, especially
+for thin films. Select an appropriate local mesh strategy and check mesh and
+domain-size convergence, contact settings, loading increments, units and
+solver warnings. The geometry and material parameters are independent of
+the Abaqus settings. Small-unit models are not solved in Discovery's
+Explore/Refine stages; use the Mechanical workflow instead.
 
 Generation of the Python script for ABAQUS
 #################################################
@@ -318,7 +381,7 @@ References
 .. [#AtkinsTabor_1965] `Atkins A.G. and Tabor D., "Plastic indentation in metals with cones" (1965). <https://doi.org/10.1016/0022-5096(65)90018-9>`_
 .. [#DiCarlo_2004] `DiCarlo A. et al., "Prediction of stress–strain relation using cone indentation: effect of friction" (2004). <https://doi.org/10.1002/nme.979>`_
 .. [#Harsono_2008] `Harsono E. et al., "The effect of friction on indentation test results" (2008). <https://doi.org/10.1088/0965-0393/16/6/065001>`_
-.. [#Johnson_1987] Johnson K.L., "Contact Mechanics" (1987), ISBN - 9780521347969.
+.. [#Johnson_1987] `Johnson K.L., "Contact Mechanics" (1987), ISBN - 9780521347969. <https://www.cambridge.org/core/books/contact-mechanics/E3707F77C2EBCE727C3911AFBD2E4AC2>`_
 .. [#Wang_2016] `Wang. Y., "Effects of indenter angle and friction on the mechanical properties of film materials" (2016). <https://doi.org/10.1016/j.rinp.2016.08.008>`_
 .. [#Han_2022] `Han G., "Evaluation of thin film material properties using a deep nanoindentation and ANN" (2022). <https://doi.org/10.1016/j.matdes.2022.111000>`_
 
