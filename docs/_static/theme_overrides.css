@@ -1,3 +1,29 @@
-.wy-nav-content {
-   max-width: 1050px
+div.body table.docutils {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+div.body div.math {
+    overflow-x: auto;
+}
+
+@media screen and (max-width: 700px) {
+    div.document {
+        display: block;
+    }
+
+    div.documentwrapper {
+        float: none;
+    }
+
+    div.bodywrapper {
+        margin: 0;
+    }
+
+    div.sphinxsidebar {
+        float: none;
+        width: auto;
+        margin: 0;
+    }
 }

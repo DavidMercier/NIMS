@@ -109,6 +109,12 @@ numfig_format = {'figure': 'Figure %s', 'table': 'Table %s', 'code-block': 'Code
 # a list of builtin themes.
 # See http://sphinx-doc.org/theming.html
 html_theme = 'default'
+html_theme_options = {
+    'body_max_width': 'none',
+    'body_min_width': 0,
+}
+html_static_path = ['_static']
+html_css_files = ['theme_overrides.css']
 #html_theme = 'classic'
 #html_theme = 'alabaster'
 #html_theme = 'agogo'
