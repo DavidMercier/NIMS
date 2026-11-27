@@ -598,13 +598,21 @@ of the substrate material. In his paper, Puchi-Cabrera modified and extended
 from the bilayer to the multilayer specimen, the models of Doerner and
 Nix, Gao, Bec, Menčík, Perriot and Barthel, Antunes, Korsunsky and Constantinescu and Bull.
 
+.. _multilayer-elastic-models-in-nims:
+
+Multilayer elastic models in NIMS
+#################################
+
+The following implementation details and usage examples concern the
+multilayer formulations described by Puchi-Cabrera et al. [#PuchiCabrera_2015]_.
+
 NIMS implements **ten formulations**: the Doerner--Nix extension in the
 main text and the nine formulations in Appendix 1. The equations were
 checked against the `openly archived paper <https://hal.science/hal-01169478/document>`_.
 These are elastic mixture models, not hardness or finite-element models.
 
 Volume fractions and onset of underlying layers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------------------
 
 Films are numbered from the surface downwards. For cumulative thickness
 :math:`T_j=\sum_{i=1}^{j}t_i`, define :math:`q_j=(h-T_j/100)/T_j`
@@ -683,7 +691,7 @@ Linear mixtures return :math:`E=\sum_i x_v^i E_i`; harmonic mixtures return
 Bec and Bull are algebraically equivalent in this implementation.
 
 Standalone MATLAB use
-~~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 The function ``puchi_cabrera_response`` accepts any positive number of films,
 with thicknesses and parameters ordered **surface to substrate**. The modulus
@@ -712,7 +720,7 @@ also require one Poisson ratio per film. The optional cone half-angle
 defaults to 70.3 degrees.
 
 GUI fitting and limitations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 For **two or three films on a substrate**, select an elastic modulus plot
 and a ``PuchiCabrera_...`` entry in the Multilayer Model menu. Mercier remains
