@@ -22,20 +22,19 @@ With this Matlab toolbox, it is possible to:
 * calculate the loading energy (the area under the load-displacement curve);
 * plot the evolution of stiffness and load/stiffness squared;
 * calculate the Young's modulus and hardness of bulk materials;
-* calculate the Young's modulus and hardness of thin films on a substrate, for bilayer or multilayer samples (up to three layers on a substrate);
-* generate a Python script for an axisymmetric FEM model in ABAQUS (conical-spherical indentation of a multilayer sample).
+* calculate the Young's modulus and hardness of thin films on a substrate, for bilayer or multilayer samples (up to three layers on a substrate).
 
 Finite element modelling
 ------------------------
 
 NIMS provides separate workflows for indentation modelling:
 
-* **Abaqus:** generate an axisymmetric bulk or multilayer model with a
+* **Abaqus via MATLAB:** generate an axisymmetric bulk or multilayer model with a
   cono-spherical indenter from the MATLAB GUI.
-* **Abapy:** prepare a bulk or multilayer axisymmetric Abaqus input-deck
+* **Abaqus via Abapy:** prepare a bulk or multilayer axisymmetric Abaqus input-deck
   script from MATLAB, Python or the multilayer notebook. This linear-elastic
   model uses a sharp cone; executing the generated script requires a separate
-  compatible Abapy environment.
+  compatible Abapy environment. Abapy is an input generator, not a solver.
 * **Ansys Discovery and Mechanical:** create a parameterized 3D specimen with
   one to three coatings and a cono-spherical indenter, and prepare a
   Mechanical indentation analysis. The supplied material data are

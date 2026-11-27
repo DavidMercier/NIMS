@@ -1,13 +1,20 @@
-﻿FEM model
-====================
+﻿Indentation FEM workflows
+=========================
 
 .. include:: includes.rst
 
-Finite element modeling (FEM) of conical indentation
-#######################################################
+Two workflows prepare models for the **Abaqus** solver: the MATLAB-generated
+CAE script and the separate Abapy input-deck bridge. A third workflow prepares
+a model for **Ansys Mechanical** using Discovery/SpaceClaim and Workbench.
+Abapy is a Python library for generating Abaqus input, not a solver.
+The workflows have different geometries, materials and setup assumptions;
+the model details in each section apply only to that workflow. None submits
+or solves an analysis automatically.
 
-The present model is a simulation of the conical nanoindentation process,
-using the FEM software ABAQUS.
+Abaqus: MATLAB-generated model
+##################################
+
+This workflow generates a model of conical nanoindentation for Abaqus/CAE.
 
 The |matlab| function used to generate a Python script for ABAQUS is :
 `python_abaqus <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/fem/python4abaqus.m>`_
@@ -192,71 +199,8 @@ A value of 200nm for the indentation depth is set by default.
 ..  warning::
     Indentation displacement is given in nanometers and is negative.
 
-Discovery geometry and Mechanical indentation example
-#####################################################
-
-The separate Ansys workflow creates a three-dimensional cylindrical silicon
-substrate, one to three coatings, and a rigid cono-spherical indenter. It does
-not use the NIMS GUI or replace the Abaqus generator. The geometry is created
-with the active Discovery/SpaceClaim scripting API (tested with V242 and
-V261 in SpaceClaim); the indentation analysis is prepared in Workbench and
-Mechanical.
-
-1. In a new, empty Discovery document, set the length scale to **Small**
-   and the displayed length unit to micrometres. Edit and run
-   `discovery_indentation_geometry.py <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/fem/discovery_indentation_geometry.py>`_
-   in the script editor. When pasting into a new script, keep the editor's
-   API version header and include the final ``create_geometry()`` call.
-   The script fits an isometric view of all bodies; use an English-language
-   interface for the named view. It does not reset or save the document.
-   Save the resulting geometry and use its actual absolute path below.
-2. Edit the three absolute paths at the top of
-   `workbench_indentation.wbjn <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/fem/workbench_indentation.wbjn>`_:
-   the saved geometry, the
-   `mechanical_indentation_setup.py <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/fem/mechanical_indentation_setup.py>`_
-   script and a new ``.wbpj`` project path. In a new Workbench project, run
-   the journal using **File > Scripting > Run Script File**. It refuses to
-   overwrite an existing project or its associated files.
-3. Open the saved model in Mechanical, review the geometry, material data,
-   contact, mesh and analysis settings, then generate the mesh and solve.
-   The journal prepares the analysis but does not mesh or solve it.
-
-Geometry parameters are edited at the top of the Discovery script, in
-micrometres. The ``layers`` list contains one to three ``(material, thickness)``
-pairs, ordered from the exposed surface down to the substrate. The supplied
-coating names are ``SiO2``, ``Al`` and ``Al2O3``. For another coating, use a
-name containing only letters, digits and underscores and add a matching
-material entry to the Workbench journal. By default their
-thicknesses are 0.1, 0.2 and 0.3 µm, respectively; the substrate radius is
-18.5 µm, its thickness is 37 µm, and the indenter has a 7.4 µm tip radius
-and a 70.3-degree cone half-angle. The spherical and conical profiles are
-tangent. The sample surface and indenter apex initially touch at :math:`z=0`.
-Do not share topology between the separate bodies.
-
-The Mechanical setup assigns an isotropic elastic silicon substrate, an
-elastic-plastic coating model and a rigid indenter. Separate coating
-interfaces are bonded and the indenter contact is frictionless. The bottom
-of the substrate is fixed; a remote displacement loads the indenter to
-0.2 µm and unloads it over two analysis steps. A reaction-force probe is
-provided at maximum depth. The depth and initial mesh sizes can be changed
-in the Mechanical script.
-
-.. warning::
-   All supplied elastic constants and plastic stress-strain curves are
-   **illustrative, not validated material data**. In particular, isotropic
-   plasticity is not necessarily an appropriate constitutive model for
-   silicon dioxide or alumina. Replace the properties with suitable measured
-   data and models before interpreting results.
-
-The body-wide coating sizing can produce a very large 3D mesh, especially
-for thin films. Select an appropriate local mesh strategy and check mesh and
-domain-size convergence, contact settings, loading increments, units and
-solver warnings. The geometry and material parameters are independent of
-the Abaqus settings. Small-unit models are not solved in Discovery's
-Explore/Refine stages; use the Mechanical workflow instead.
-
-Generation of the Python script for ABAQUS
-#################################################
+Generating and running the Abaqus model script
+----------------------------------------------
 
 After configuring the material properties (Young's moduli and Poisson's ratios)
 and specifying the model geometry (the thickness of each thin film),
@@ -272,9 +216,33 @@ To generate the FEM model in ABAQUS, apply the following procedure:
 
 ..  note::
     Dimensions are in nm and Young's moduli are in GPa, implying that load is in nN.
+    Running the script creates the model; the analysis must be submitted separately.
 
-Abapy axisymmetric bulk and multilayer export
-############################################
+Example Abaqus results
+----------------------
+
+The following pictures were obtained for a `multilayer Au/Ti/SiO2/Si <https://github.com/DavidMercier/NIMS/blob/master/data_indentation/MTS_3films_Au-Ti-SiO2-Si_CSM-1nm.xls>`_.
+
+.. figure:: ./_pictures/fem_result_S_Mises.png
+   :scale: 20 %
+   :align: center
+
+   *Screenshot of the Von Mises stress distribution at maximum load.*
+
+.. figure:: ./_pictures/fem_result_S_Mises_zoom.png
+   :scale: 20 %
+   :align: center
+
+   *Screenshot (with a zoom in on the contact area) of the Von Mises stress distribution at maximum load.*
+
+.. figure:: ./_pictures/fem_result_U_magnitude.png
+   :scale: 20 %
+   :align: center
+
+   *Screenshot (with a zoom in on the contact area) of the magnitude of the displacement at maximum load.*
+
+Abaqus: Abapy axisymmetric input-deck export
+#############################################
 
 The separate `Abapy <https://abapy.readthedocs.io/en/latest/>`_ bridge creates
 an Abaqus input deck for a bulk or multilayer isotropic linear-elastic sample.
@@ -347,33 +315,75 @@ Abaqus job is submitted. Local tests check mesh topology, layer assignments,
 and script preparation; they do not validate the external Abapy exporters.
 Neither the MATLAB wrapper nor an Abaqus solution has been executed locally.
 
-Results of the FEM simulation
-###############################
+Ansys: Discovery geometry and Mechanical indentation
+####################################################
 
-The following pictures were obtained for a `multilayer Au/Ti/SiO2/Si <https://github.com/DavidMercier/NIMS/blob/master/data_indentation/MTS_3films_Au-Ti-SiO2-Si_CSM-1nm.xls>`_.
+The separate Ansys workflow creates a three-dimensional cylindrical silicon
+substrate, one to three coatings, and a rigid cono-spherical indenter. It does
+not use the NIMS GUI or replace the Abaqus generator. The geometry is created
+with the active Discovery/SpaceClaim scripting API (tested with V242 and
+V261 in SpaceClaim); the indentation analysis is prepared in Workbench and
+Mechanical.
 
-.. figure:: ./_pictures/fem_result_S_Mises.png
-   :scale: 20 %
-   :align: center
-   
-   *Screenshot of the Von Mises stress distribution at maximum load.*
+1. In a new, empty Discovery document, set the length scale to **Small**
+   and the displayed length unit to micrometres. Edit and run
+   `discovery_indentation_geometry.py <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/fem/discovery_indentation_geometry.py>`_
+   in the script editor. When pasting into a new script, keep the editor's
+   API version header and include the final ``create_geometry()`` call.
+   The script fits an isometric view of all bodies; use an English-language
+   interface for the named view. It does not reset or save the document.
+   Save the resulting geometry and use its actual absolute path below.
+2. Edit the three absolute paths at the top of
+   `workbench_indentation.wbjn <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/fem/workbench_indentation.wbjn>`_:
+   the saved geometry, the
+   `mechanical_indentation_setup.py <https://github.com/DavidMercier/NIMS/blob/master/matlab_code/fem/mechanical_indentation_setup.py>`_
+   script and a new ``.wbpj`` project path. In a new Workbench project, run
+   the journal using **File > Scripting > Run Script File**. It refuses to
+   overwrite an existing project or its associated files.
+3. Open the saved model in Mechanical, review the geometry, material data,
+   contact, mesh and analysis settings, then generate the mesh and solve.
+   The journal prepares the analysis but does not mesh or solve it.
 
-.. figure:: ./_pictures/fem_result_S_Mises_zoom.png
-   :scale: 20 %
-   :align: center
-   
-   *Screenshot (with a zoom in on the contact area) of the Von Mises stress distribution at maximum load.*
-   
-.. figure:: ./_pictures/fem_result_U_magnitude.png
-   :scale: 20 %
-   :align: center
-   
-   *Screenshot (with a zoom in on the contact area) of the magnitude of the displacement at maximum load.*
-   
+Geometry parameters are edited at the top of the Discovery script, in
+micrometres. The ``layers`` list contains one to three ``(material, thickness)``
+pairs, ordered from the exposed surface down to the substrate. The supplied
+coating names are ``SiO2``, ``Al`` and ``Al2O3``. For another coating, use a
+name containing only letters, digits and underscores and add a matching
+material entry to the Workbench journal. By default their
+thicknesses are 0.1, 0.2 and 0.3 µm, respectively; the substrate radius is
+18.5 µm, its thickness is 37 µm, and the indenter has a 7.4 µm tip radius
+and a 70.3-degree cone half-angle. The spherical and conical profiles are
+tangent. The sample surface and indenter apex initially touch at :math:`z=0`.
+Do not share topology between the separate bodies.
+
+The Mechanical setup assigns an isotropic elastic silicon substrate, an
+elastic-plastic coating model and a rigid indenter. Separate coating
+interfaces are bonded and the indenter contact is frictionless. The bottom
+of the substrate is fixed; a remote displacement loads the indenter to
+0.2 µm and unloads it over two analysis steps. A reaction-force probe is
+provided at maximum depth. The depth and initial mesh sizes can be changed
+in the Mechanical script.
+
+.. warning::
+   All supplied elastic constants and plastic stress-strain curves are
+   **illustrative, not validated material data**. In particular, isotropic
+   plasticity is not necessarily an appropriate constitutive model for
+   silicon dioxide or alumina. Replace the properties with suitable measured
+   data and models before interpreting results.
+
+The body-wide coating sizing can produce a very large 3D mesh, especially
+for thin films. Select an appropriate local mesh strategy and check mesh and
+domain-size convergence, contact settings, loading increments, units and
+solver warnings. The geometry and material parameters are independent of
+the Abaqus settings. Small-unit models are not solved in Discovery's
+Explore/Refine stages; use the Mechanical workflow instead.
+
 Future developments
 ###############################
 
-More recently, thin-film material properties have been evaluated using FEM analysis coupled with an artificial neural network (ANN) [#Han_2022]_.
+Thin-film material properties have also been evaluated using FEM analysis
+coupled with machine learning [#Han_2022]_. See
+:doc:`machine_learning_indentation` for a literature overview.
     
 References
 ############

@@ -34,28 +34,10 @@ This Matlab toolbox has been developed to :
 
 - Young's modulus and Hardness of bulk materials ;
 
-- Young's modulus and Hardness of a thin film on a substrate or on a multilayer sample (3 layers on a substrate) ;
+- Young's modulus and Hardness of a thin film on a substrate or on a multilayer sample (up to 3 layers on a substrate) ;
 
-- Generation of a Python script for axisymmetric indentation FEM in Abaqus.
-
-Finite element modelling
-------------------------
-
-- **Abaqus:** the MATLAB GUI generates an axisymmetric model of indentation
-  into a bulk or multilayer sample with a cono-spherical indenter.
-- **Abapy:** prepare a bulk or multilayer axisymmetric Abaqus input-deck
-  script from MATLAB, Python, or the multilayer notebook. The model uses a
-  sharp cone and linear-elastic materials. Script preparation does not
-  require `Abapy <https://abapy.readthedocs.io/en/latest/>`_; running the
-  generated script requires a separate compatible Abapy environment.
-- **Ansys Discovery and Mechanical:** create a parameterized 3D specimen
-  with one to three coatings and a cono-spherical indenter, then prepare a
-  Mechanical indentation analysis. The supplied material data are
-  illustrative and must be replaced before interpreting results.
-
-These workflows prepare models or input files; they do not automatically
-solve the analysis. See the `FEM documentation <docs/python_abaqus.rst>`_
-for instructions, requirements and limitations.
+- Preparation of indentation FEM models for Abaqus and Ansys; see the
+  `FEM documentation <docs/python_abaqus.rst>`_ for workflows and limitations.
 
 Author
 ------
