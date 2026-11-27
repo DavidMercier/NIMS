@@ -12,11 +12,6 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-import sys
-import os
-import shlex
-#import sphinx_bootstrap_theme
-
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -33,6 +28,7 @@ import shlex
 extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.doctest',
+    'sphinx_rtd_theme',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -105,47 +101,10 @@ numfig_format = {'figure': 'Figure %s', 'table': 'Table %s', 'code-block': 'Code
 
 # -- Options for HTML output ----------------------------------------------
 
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-# See http://sphinx-doc.org/theming.html
-html_theme = 'default'
-html_theme_options = {
-    'body_max_width': 'none',
-    'body_min_width': 0,
-}
+# Use the Read the Docs theme for HTML output.
+html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 html_css_files = ['theme_overrides.css']
-#html_theme = 'classic'
-#html_theme = 'alabaster'
-#html_theme = 'agogo'
-#html_theme =  'traditional'
-#html_theme =  'pyramid'
-#html_theme =  'sphinxdoc'
-#html_theme = 'nature' # no option !
-#html_theme_options{}
-#html_theme = 'bootstrap'
-#html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
-
-# on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
-on_rtd = os.environ.get('READTHEDOCS', None) == 'True'                           
-                                                                                 
-#if not on_rtd:  # only import and set the theme if we're building docs locally   
-#    import sphinx_rtd_theme                                                      
-#    html_theme = 'sphinx_rtd_theme'                                              
-#    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]                   
-#    # Override default css to get a larger width for local build                 
-#    def setup(app):                                                              
-#        #app.add_javascript("custom.js")                                         
-#        app.add_stylesheet('theme_overrides.css')                                
-#else:                                                                            
-    # Override default css to get a larger width for ReadTheDoc build            
-# html_context = {                                                             
-	# 'css_files': [                                                           
-		# 'https://media.readthedocs.org/css/sphinx_rtd_theme.css',            
-		# 'https://media.readthedocs.org/css/readthedocs-doc-embed.css',       
-		# '_static/theme_overrides.css',                                       
-	# ],                                                                       
-# }
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the

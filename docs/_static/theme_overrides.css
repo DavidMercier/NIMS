@@ -1,29 +1,7 @@
-div.body table.docutils {
-    display: block;
-    max-width: 100%;
-    overflow-x: auto;
+.wy-nav-content {
+    max-width: none;
 }
 
-div.body div.math {
+.rst-content div.math {
     overflow-x: auto;
-}
-
-@media screen and (max-width: 700px) {
-    div.document {
-        display: block;
-    }
-
-    div.documentwrapper {
-        float: none;
-    }
-
-    div.bodywrapper {
-        margin: 0;
-    }
-
-    div.sphinxsidebar {
-        float: none;
-        width: auto;
-        margin: 0;
-    }
 }
